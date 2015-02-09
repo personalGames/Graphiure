@@ -13,6 +13,7 @@
         <itemPath>CommandQueue.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="ConcreteState" projectFiles="true">
+        <itemPath>GameState.h</itemPath>
         <itemPath>LoadingState.h</itemPath>
         <itemPath>MenuState.h</itemPath>
         <itemPath>PauseState.h</itemPath>
@@ -42,6 +43,11 @@
         <itemPath>Utilities.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="World" projectFiles="true">
+        <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
+          <itemPath>SceneNode.h</itemPath>
+          <itemPath>SpriteNode.h</itemPath>
+          <itemPath>TextNode.h</itemPath>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -61,6 +67,7 @@
         <itemPath>CommandQueue.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
+        <itemPath>GameState.cpp</itemPath>
         <itemPath>LoadingState.cpp</itemPath>
         <itemPath>MenuState.cpp</itemPath>
         <itemPath>PauseState.cpp</itemPath>
@@ -87,12 +94,10 @@
           <itemPath>Level.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
+          <itemPath>Layer.h</itemPath>
           <itemPath>SceneNode.cpp</itemPath>
-          <itemPath>SceneNode.h</itemPath>
           <itemPath>SpriteNode.cpp</itemPath>
-          <itemPath>SpriteNode.h</itemPath>
           <itemPath>TextNode.cpp</itemPath>
-          <itemPath>TextNode.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -161,6 +166,10 @@
       </item>
       <item path="Context.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
@@ -168,6 +177,8 @@
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Layer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Level.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -280,6 +291,10 @@
       </item>
       <item path="Context.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
@@ -287,6 +302,8 @@
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Layer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Level.cpp" ex="false" tool="1" flavor2="0">
       </item>

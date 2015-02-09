@@ -8,14 +8,65 @@
 #ifndef LEVEL_H
 #define	LEVEL_H
 
-class Level {
+#include "CommandQueue.h"
+#include "SceneNode.h"
+#include "Layer.h"
+#include "ResourceHolder.h"
+#include "IDFonts.h"
+#include "IDTextures.h"
+
+class Level : private sf::NonCopyable{
 public:
     
-    Level();
-    Level(const Level& orig);
+    explicit Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts);
     virtual ~Level();
-private:
+    
+    void update(sf::Time dt);
+    void draw();
 
+    inline CommandQueue& getCommandQueue(){ return commandQueue; }
+    
+private:
+    void loadTextures();
+    void buildScene();
+    sf::FloatRect getViewBounds() const;
+    
+private:
+    /**
+     * View of the map
+     */
+    sf::View mapView;
+    /**
+     * Target where draw
+     */
+    sf::RenderTarget& target;
+    /**
+     * Resources
+     */
+    ResourceHolder<IDTextures, sf::Texture> textures;
+    ResourceHolder<IDFonts, sf::Font>& fonts;
+    
+    /**
+     * Scene graph
+     */
+    SceneNode sceneGraph;
+    std::array<SceneNode*, LayerCount> sceneLayers;
+    
+    /**
+     * Queue of commands
+     */
+    CommandQueue commandQueue;
+    
+    /**
+     * Limits of the world
+     */
+    sf::FloatRect worldBounds;
+    /**
+     * Position where character will appear
+     */
+    sf::Vector2f spawnPosition;
+    
+    
 };
 
 #endif	/* LEVEL_H */

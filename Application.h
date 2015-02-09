@@ -19,7 +19,7 @@
 #include "MenuState.h"
 #include "TitleState.h"
 #include "PauseState.h"
-
+#include "GameState.h"
 
 class Application {
 public:

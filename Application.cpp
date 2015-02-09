@@ -9,7 +9,7 @@
 
 const sf::Time Application::timePerFrame = sf::seconds(1.f / 60.f);
 
-Application::Application(): window(sf::VideoMode(1024, 768), "Gameplay", sf::Style::Close)
+Application::Application(): window(sf::VideoMode(1024, 768), "Graphiure", sf::Style::Close)
 , textures(), fonts(), stateStack(Context(window, textures, fonts)) {
 
     window.setKeyRepeatEnabled(false);
@@ -70,7 +70,7 @@ void Application::render() {
 void Application::registerStates() {
     stateStack.registerState<TitleState>(StatesID::Title);
     stateStack.registerState<MenuState>(StatesID::Menu);
-//    stateStack.registerState<GameState>(StatesID::Game);
+    stateStack.registerState<GameState>(StatesID::Game);
     stateStack.registerState<PauseState>(StatesID::Pause);
 //    stateStack.registerState<SettingsState>(StatesID::Settings);
 //    stateStack.registerState<GameOverState>(StatesID::GameOver);
