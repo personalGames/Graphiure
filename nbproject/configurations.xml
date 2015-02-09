@@ -8,6 +8,10 @@
         <itemPath>Application.h</itemPath>
         <itemPath>Context.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f8" displayName="Command" projectFiles="true">
+        <itemPath>Command.h</itemPath>
+        <itemPath>CommandQueue.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="ConcreteState" projectFiles="true">
         <itemPath>LoadingState.h</itemPath>
         <itemPath>MenuState.h</itemPath>
@@ -52,6 +56,10 @@
         <itemPath>Context.cpp</itemPath>
         <itemPath>main.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f7" displayName="Command" projectFiles="true">
+        <itemPath>Command.cpp</itemPath>
+        <itemPath>CommandQueue.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
         <itemPath>LoadingState.cpp</itemPath>
         <itemPath>MenuState.cpp</itemPath>
@@ -74,6 +82,10 @@
         <itemPath>Utilities.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="World" projectFiles="true">
+        <logicalFolder name="f2" displayName="Level" projectFiles="true">
+          <itemPath>Level.cpp</itemPath>
+          <itemPath>Level.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
           <itemPath>SceneNode.cpp</itemPath>
           <itemPath>SceneNode.h</itemPath>
@@ -129,6 +141,14 @@
       </item>
       <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Command.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Command.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CommandQueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CommandQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Component.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Component.h" ex="false" tool="3" flavor2="0">
@@ -148,6 +168,10 @@
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Level.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Level.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LoadingState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -236,6 +260,14 @@
       </item>
       <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Command.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Command.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CommandQueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CommandQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Component.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Component.h" ex="false" tool="3" flavor2="0">
@@ -255,6 +287,10 @@
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Level.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Level.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LoadingState.cpp" ex="false" tool="1" flavor2="0">
       </item>
