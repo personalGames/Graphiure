@@ -27,7 +27,7 @@ namespace GUI {
 
     }
 
-    void Button::setText(const std::string& text) {
+    void Button::setText(const wchar_t* text) {
         this->text.setString(text);
         centerOrigin(this->text);
     }

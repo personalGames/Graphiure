@@ -14,15 +14,16 @@
 #include "IDFonts.h"
 #include "Utilities.h"
 #include "Component.h"
+#include <wchar.h>
 
 namespace GUI {
     class Label : public Component {
     public:
-        Label(const std::string& text, const ResourceHolder<IDFonts, sf::Font>& fonts);
+        Label(const wchar_t* text, const ResourceHolder<IDFonts, sf::Font>& fonts);
         virtual ~Label();
         
         virtual bool isSelectable() const;
-        void setText(const std::string& text);
+        void setText(const wchar_t* text);
         virtual void handleEvent(const sf::Event& event);
         
     private:

@@ -16,7 +16,7 @@
 #include "ButtonState.h"
 
 #include <vector>
-#include <string>
+#include <wchar.h>
 #include <memory>
 #include <functional>
 #include "Context.h"
@@ -31,7 +31,7 @@ namespace GUI {
         virtual ~Button();
 
         void setCallback(Callback callback);
-        void setText(const std::string& text);
+        void setText(const  wchar_t* text);
         void setToggle(bool flag);
 
         virtual bool isSelectable() const;

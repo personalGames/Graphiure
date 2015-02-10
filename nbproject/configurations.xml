@@ -43,7 +43,11 @@
         <itemPath>Utilities.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="World" projectFiles="true">
+        <logicalFolder name="f2" displayName="Level" projectFiles="true">
+          <itemPath>Level.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
+          <itemPath>Layer.h</itemPath>
           <itemPath>SceneNode.h</itemPath>
           <itemPath>SpriteNode.h</itemPath>
           <itemPath>TextNode.h</itemPath>
@@ -91,13 +95,13 @@
       <logicalFolder name="f6" displayName="World" projectFiles="true">
         <logicalFolder name="f2" displayName="Level" projectFiles="true">
           <itemPath>Level.cpp</itemPath>
-          <itemPath>Level.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
-          <itemPath>Layer.h</itemPath>
           <itemPath>SceneNode.cpp</itemPath>
           <itemPath>SpriteNode.cpp</itemPath>
           <itemPath>TextNode.cpp</itemPath>
+          <itemPath>TileNode.cpp</itemPath>
+          <itemPath>TileNode.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -228,6 +232,10 @@
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileNode.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TitleState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TitleState.h" ex="false" tool="3" flavor2="0">
@@ -352,6 +360,10 @@
       <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TitleState.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -9,7 +9,7 @@
 
 namespace GUI {
 
-    Label::Label(const std::string& text, const ResourceHolder<IDFonts, sf::Font>& fonts)
+    Label::Label(const wchar_t* text, const ResourceHolder<IDFonts, sf::Font>& fonts)
     : text() {
         this->text.setString(text);
         this->text.setCharacterSize(16);
@@ -28,7 +28,7 @@ namespace GUI {
         target.draw(text, states);
     }
 
-    void Label::setText(const std::string& text) {
+    void Label::setText(const wchar_t* text) {
         this->text.setString(text);
     }
         Label::~Label() {

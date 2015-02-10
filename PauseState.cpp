@@ -16,28 +16,28 @@ PauseState::PauseState(StateStack& stack, Context context)
     sf::Vector2f windowSize(context.window->getSize());
 
     pausedText.setFont(font);
-    pausedText.setString("Juego pausado");
+    pausedText.setString(L"Juego pausado");
     pausedText.setCharacterSize(70);
     centerOrigin(pausedText);
     pausedText.setPosition(0.5f * windowSize.x, 0.4f * windowSize.y);
 
     GUI::Button* returnButton = new GUI::Button(context);
     returnButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 75);
-    returnButton->setText("Continuar");
+    returnButton->setText(L"Continuar");
     returnButton->setCallback([this] () {
         requestStackPop();
     });
     
     GUI::Button* settingsButton = new GUI::Button(context);
     settingsButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 125);
-    settingsButton->setText("Opciones");
+    settingsButton->setText(L"Opciones");
     settingsButton->setCallback([this] () {
         requestStackPush(StatesID::Settings);
     });
 
     GUI::Button* backToMenuButton = new GUI::Button(context);
     backToMenuButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 175);
-    backToMenuButton->setText("Volver al menú principal");
+    backToMenuButton->setText(L"Volver al menú principal");
     backToMenuButton->setCallback([this] () {
         requestStateClear();
         requestStackPush(StatesID::Menu);

@@ -18,7 +18,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 
     GUI::Button* playButton = new GUI::Button(context);
     playButton->setPosition(100, 300);
-    playButton->setText("Nueva partida");
+    playButton->setText(L"Nueva partida");
     playButton->setCallback([this]() {
         requestStackPop();
         requestStackPush(StatesID::Game);
@@ -26,7 +26,7 @@ MenuState::MenuState(StateStack& stack, Context context)
     
     GUI::Button* loadButton = new GUI::Button(context);
     loadButton->setPosition(100, 350);
-    loadButton->setText("Cargar partida");
+    loadButton->setText(L"Cargar partida");
     loadButton->setCallback([this]() {
         requestStackPop();
         requestStackPush(StatesID::Game);
@@ -34,14 +34,14 @@ MenuState::MenuState(StateStack& stack, Context context)
 
     GUI::Button* settingsButton = new GUI::Button(context);
     settingsButton->setPosition(100, 400);
-    settingsButton->setText("Opciones");
+    settingsButton->setText(L"Opciones");
     settingsButton->setCallback([this] () {
         requestStackPush(StatesID::Settings);
     });
 
     GUI::Button* exitButton = new GUI::Button(context);
     exitButton->setPosition(100, 450);
-    exitButton->setText("Salir");
+    exitButton->setText(L"Salir");
     exitButton->setCallback([this] () {
         requestStackPop();
     });
