@@ -10,7 +10,8 @@
 
 enum class IDTextures{
     TitleScreen,
-    Buttons
+    Buttons,
+    TileSet
 };
 
 #endif	/* IDTEXTURES_H */

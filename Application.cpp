@@ -77,6 +77,7 @@ void Application::registerStates() {
 }
 
 void Application::loadTextures(){
+    textures.load(IDTextures::TileSet, "Media/Textures/TileSet.png");
     textures.load(IDTextures::TitleScreen, "Media/Textures/TitleScreen.png");
     textures.load(IDTextures::Buttons, "Media/Textures/Buttons.png");
 }

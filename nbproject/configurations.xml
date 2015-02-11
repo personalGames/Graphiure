@@ -28,6 +28,7 @@
       </logicalFolder>
       <logicalFolder name="f5" displayName="Resources" projectFiles="true">
         <itemPath>IDFonts.h</itemPath>
+        <itemPath>IDGroupsTextures.h</itemPath>
         <itemPath>IDTextures.h</itemPath>
         <itemPath>ResourceHolder.h</itemPath>
       </logicalFolder>
@@ -100,6 +101,8 @@
           <itemPath>SceneNode.cpp</itemPath>
           <itemPath>SpriteNode.cpp</itemPath>
           <itemPath>TextNode.cpp</itemPath>
+          <itemPath>TileMapNode.cpp</itemPath>
+          <itemPath>TileMapNode.h</itemPath>
           <itemPath>TileNode.cpp</itemPath>
           <itemPath>TileNode.h</itemPath>
         </logicalFolder>
@@ -176,6 +179,8 @@
       </item>
       <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
@@ -231,6 +236,10 @@
       <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMapNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMapNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -305,6 +314,8 @@
       </item>
       <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Label.cpp" ex="false" tool="1" flavor2="0">
@@ -360,6 +371,10 @@
       <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMapNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMapNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
       </item>

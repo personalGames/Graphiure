@@ -8,7 +8,7 @@
 #include "GameState.h"
 
 GameState::GameState(StateStack& stack, Context context):
-        State(stack, context), level(*context.window, *context.fonts){
+        State(stack, context), level(*context.window, *context.fonts, *context.textures){
 
 }
 

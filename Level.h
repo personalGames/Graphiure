@@ -18,7 +18,8 @@
 class Level : private sf::NonCopyable{
 public:
     
-    explicit Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts);
+    explicit Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
+            ResourceHolder<IDTextures, sf::Texture>& images);
     virtual ~Level();
     
     void update(sf::Time dt);
@@ -29,6 +30,7 @@ public:
 private:
     void loadTextures();
     void buildScene();
+    void setPointCharacter(int x, int y);
     sf::FloatRect getViewBounds() const;
     
 private:
