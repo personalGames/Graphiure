@@ -16,14 +16,20 @@ public:
     void execute();
     bool isFinished();
     float getCompletion();
+    
+    virtual ~ParallelTask();
 
-private:
-    void runTask();
 
+
+    virtual void runTask()=0;
+protected:
     sf::Thread thread;
     bool finished;
-    sf::Clock elapsedTime;
     sf::Mutex mutex;
+    /**
+     * Number between 0 and 100 (percentaje of completion)
+     */
+    int completion;
 
 };
 

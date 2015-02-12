@@ -15,6 +15,8 @@
 #include "ResourceHolder.h"
 #include "IDTextures.h"
 #include "IDFonts.h"
+#include "Level.h"
+
 
 class Context {
 public:
@@ -27,6 +29,9 @@ public:
     //resources
     ResourceHolder<IDTextures, sf::Texture>* textures;
     ResourceHolder<IDFonts, sf::Font>* fonts;
+    
+    //level
+    Level* actualLevel;
     
 };
 

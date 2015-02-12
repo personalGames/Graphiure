@@ -24,12 +24,11 @@ public:
     
     void update(sf::Time dt);
     void draw();
-
+    void buildScene();
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
 private:
     void loadTextures();
-    void buildScene();
     void setPointCharacter(int x, int y);
     sf::FloatRect getViewBounds() const;
     

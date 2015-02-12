@@ -6,25 +6,30 @@
  */
 
 #include "GameState.h"
+#include <iostream>
 
-GameState::GameState(StateStack& stack, Context context):
-        State(stack, context), level(*context.window, *context.fonts, *context.textures){
+
+GameState::GameState(StateStack& stack, Context context) :
+        State(stack, context), level(context.actualLevel) {
 
 }
 
 void GameState::draw() {
-    level.draw();
+    std::cout << "drawed"<<std::endl;
+        level->draw();
+        std::cout << "drawed"<<std::endl;
 }
 
 bool GameState::handleEvent(const sf::Event& event) {
-    // Game input handling
-    CommandQueue& commands = level.getCommandQueue();
-    //player.handleEvent(event, commands);
-    
-    // Escape pressed, trigger the pause screen
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-        requestStackPush(StatesID::Pause);
 
+        // Game input handling
+        CommandQueue& commands = level->getCommandQueue();
+        //player.handleEvent(event, commands);
+
+        // Escape pressed, trigger the pause screen
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+            requestStackPush(StatesID::Pause);
+    
     return true;
 }
 

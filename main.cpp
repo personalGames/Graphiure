@@ -7,12 +7,14 @@
 
 #include "Application.h"
 #include <iostream>
+#include <X11/Xlib.h>
 
 /*
  * 
  */
 int main(int argc, char** argv) {
     try {
+        XInitThreads();
         Application game;
         game.run();
     } catch (std::exception& e) {

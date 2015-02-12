@@ -8,14 +8,13 @@
 #include "Level.h"
 #include "TileMapNode.h"
 #include "Context.h"
-
+#include <iostream>
 
 Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
         ResourceHolder<IDTextures, sf::Texture>& images) :
         target(outputTarget),  mapView(outputTarget.getDefaultView()),
         textures(images), fonts(fonts), sceneGraph(), sceneLayers(), worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
     
-    buildScene();
 }
 
 void Level::buildScene() {
@@ -66,7 +65,7 @@ void Level::buildScene() {
             15,15));
     tileMap->prepareMap(tiles);
     sceneLayers[Background]->addChild(std::move(tileMap));
-    setPointCharacter(0,0);
+    setPointCharacter(spawnPosition.x, spawnPosition.y);
 }
 
 void Level::setPointCharacter(int x, int y){

@@ -20,6 +20,7 @@
 #include "TitleState.h"
 #include "PauseState.h"
 #include "GameState.h"
+#include "LoadingState.h"
 
 class Application {
 public:

@@ -12,6 +12,8 @@
 #include "State.h"
 #include "ParallelTask.h"
 #include "Utilities.h"
+#include "LoadingLevel.h"
+#include "Levels.h"
 
 class LoadingState : public State {
 public:
@@ -28,7 +30,8 @@ private:
     sf::RectangleShape progressBarBackground;
     sf::RectangleShape progressBar;
 
-    ParallelTask loadingTask;
+    bool taskCreated;
+    ParallelTask* loadingTask;
 };
 
 #endif	/* LOADINGSTATE_H */

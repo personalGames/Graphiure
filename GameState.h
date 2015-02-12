@@ -21,7 +21,7 @@ public:
     virtual bool handleEvent(const sf::Event& event);
     
 private:
-    Level level;
+    Level* level;
 };
 
 #endif	/* GAMESTATE_H */

@@ -6,9 +6,11 @@
  */
 
 #include "LoadingState.h"
+#include <iostream>
 
 LoadingState::LoadingState(StateStack& stack, Context context)
 : State(stack, context) {
+
     sf::RenderWindow& window = *getContext().window;
     sf::Font& font = context.fonts->get(IDFonts::Main);
     sf::Vector2f viewSize = window.getView().getSize();
@@ -26,9 +28,10 @@ LoadingState::LoadingState(StateStack& stack, Context context)
     progressBar.setSize(sf::Vector2f(200, 10));
     progressBar.setPosition(10, loadingText.getPosition().y + 40);
 
-    setCompletion(0.f);
 
-    loadingTask.execute();
+    setCompletion(0.f);
+    taskCreated = false;
+    loadingTask = nullptr;
 }
 
 void LoadingState::draw() {
@@ -43,11 +46,28 @@ void LoadingState::draw() {
 
 bool LoadingState::update(sf::Time) {
     // Update the progress bar from the remote task or finish it
-    if (loadingTask.isFinished()) {
+    if (loadingTask != nullptr && loadingTask->isFinished()) {
+        //reset the task so next time will create another task to do
+        taskCreated = false;
+        //task finished, deleting data...
+        delete loadingTask;
         requestStackPop();
         requestStackPush(StatesID::Game);
     } else {
-        setCompletion(loadingTask.getCompletion());
+        if (!taskCreated) {
+            std::cout << "creating task" << std::endl;
+            //switch que decide qué tarea a cargar ha de realizar según el contexto
+            //delete the old level and load new level
+            //if (context.actualLevel != nullptr) {
+            //    delete context.actualLevel;
+            //}
+            context.actualLevel = new Level(*context.window, *context.fonts, *context.textures);
+            loadingTask = new LoadingLevel(Levels::Test, context.actualLevel);
+            loadingTask->execute();
+            taskCreated=true;
+            std::cout << "execute task" << std::endl;
+        }
+        setCompletion(loadingTask->getCompletion());
     }
     return true;
 }

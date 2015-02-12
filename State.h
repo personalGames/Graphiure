@@ -24,7 +24,7 @@ public:
     virtual bool update(sf::Time delta)=0;
     virtual bool handleEvent(const sf::Event& event)=0;
     
-private:
+protected:
     StateStack* stack;
     Context context;
     

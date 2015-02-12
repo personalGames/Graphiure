@@ -12,7 +12,6 @@ ParallelTask::ParallelTask(): thread(&ParallelTask::runTask, this), finished(fal
 
 void ParallelTask::execute() {
     finished = false;
-    elapsedTime.restart();
     thread.launch();
 }
 
@@ -23,23 +22,9 @@ bool ParallelTask::isFinished() {
 
 float ParallelTask::getCompletion() {
     sf::Lock lock(mutex);
-
-    // 100% at 10 seconds of elapsed time
-    return elapsedTime.getElapsedTime().asSeconds() / 10.f;
+    return completion;
 }
 
-void ParallelTask::runTask() {
-    // Dummy task - stall 10 seconds
-    bool ended = false;
-    while (!ended) {
-        sf::Lock lock(mutex); // Protect the clock 
-        if (elapsedTime.getElapsedTime().asSeconds() >= 10.f)
-            ended = true;
-    }
-
-    
-    { // mFinished may be accessed from multiple threads, protect it
-        sf::Lock lock(mutex);
-        finished = true;
-    }
+ParallelTask::~ParallelTask() {
+    //something...
 }
