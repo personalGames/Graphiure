@@ -7,19 +7,19 @@
 
 #include "TitleState.h"
 
-TitleState::TitleState(StateStack& stack, Context context): State(stack, context),
+TitleState::TitleState(StateStack& stack, Context* context): State(stack, context),
         text(), showText(true), textEffectTime(sf::Time::Zero) {
     
-    backgroundSprite.setTexture(context.textures->get(IDTextures::TitleScreen));
+    backgroundSprite.setTexture(context->textures->get(IDTextures::TitleScreen));
 
-    text.setFont(context.fonts->get(IDFonts::Main));
+    text.setFont(context->fonts->get(IDFonts::Main));
     text.setString("Press any key to start");
     centerOrigin(text);
-    text.setPosition(context.window->getView().getSize() / 2.f);
+    text.setPosition(context->window->getView().getSize() / 2.f);
 }
 
 void TitleState::draw() {
-    sf::RenderWindow& window = *getContext().window;
+    sf::RenderWindow& window = *getContext()->window;
     window.draw(backgroundSprite);
     sf::View view=window.getView();
     view.setSize(1024.f,768.f);

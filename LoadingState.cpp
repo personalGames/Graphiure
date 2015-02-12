@@ -6,13 +6,12 @@
  */
 
 #include "LoadingState.h"
-#include <iostream>
 
-LoadingState::LoadingState(StateStack& stack, Context context)
+LoadingState::LoadingState(StateStack& stack, Context* context)
 : State(stack, context) {
 
-    sf::RenderWindow& window = *getContext().window;
-    sf::Font& font = context.fonts->get(IDFonts::Main);
+    sf::RenderWindow& window = *getContext()->window;
+    sf::Font& font = context->fonts->get(IDFonts::Main);
     sf::Vector2f viewSize = window.getView().getSize();
 
     loadingText.setFont(font);
@@ -35,7 +34,7 @@ LoadingState::LoadingState(StateStack& stack, Context context)
 }
 
 void LoadingState::draw() {
-    sf::RenderWindow& window = *getContext().window;
+    sf::RenderWindow& window = *getContext()->window;
 
     window.setView(window.getDefaultView());
 
@@ -55,17 +54,15 @@ bool LoadingState::update(sf::Time) {
         requestStackPush(StatesID::Game);
     } else {
         if (!taskCreated) {
-            std::cout << "creating task" << std::endl;
             //switch que decide qué tarea a cargar ha de realizar según el contexto
             //delete the old level and load new level
-            //if (context.actualLevel != nullptr) {
-            //    delete context.actualLevel;
-            //}
-            context.actualLevel = new Level(*context.window, *context.fonts, *context.textures);
-            loadingTask = new LoadingLevel(Levels::Test, context.actualLevel);
+            if (context->actualLevel != nullptr) {
+                delete context->actualLevel;
+            }
+            context->actualLevel = new Level(*context->window, *context->fonts, *context->textures);
+            loadingTask = new LoadingLevel(Levels::Test, context->actualLevel);
             loadingTask->execute();
             taskCreated=true;
-            std::cout << "execute task" << std::endl;
         }
         setCompletion(loadingTask->getCompletion());
     }

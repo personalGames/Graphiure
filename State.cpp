@@ -10,7 +10,7 @@
 //to avoid circular dependencies
 
 
-State::State(StateStack& stack, Context context) : stack(&stack), context(context) {
+State::State(StateStack& stack, Context* context) : stack(&stack), context(context) {
 }
 
 State::~State() {
@@ -29,6 +29,6 @@ void State::requestStateClear() {
 }
 
 
-Context State::getContext() const {
+Context* State::getContext() const {
     return context;
 }

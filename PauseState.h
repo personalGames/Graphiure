@@ -17,7 +17,7 @@
 
 class PauseState : public State {
 public:
-    PauseState(StateStack& stack, Context context);
+    PauseState(StateStack& stack, Context* context);
     ~PauseState();
 
     virtual void draw();

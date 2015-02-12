@@ -68,10 +68,12 @@ void StateStack::applyPendingChanges() {
 
     for (PendingChange change : pendingList) {
         switch (change.action) {
-            case ActionStack::Push:
-                stack.push_back(createState(change.stateID));
+            case ActionStack::Push:{
+                State* state=createState(change.stateID);
+                state->pushedAction();
+                stack.push_back(state);
                 break;
-
+            }
             case ActionStack::Pop:
                 stack.pop_back();
                 break;

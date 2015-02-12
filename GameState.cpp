@@ -6,18 +6,15 @@
  */
 
 #include "GameState.h"
-#include <iostream>
 
 
-GameState::GameState(StateStack& stack, Context context) :
-        State(stack, context), level(context.actualLevel) {
+GameState::GameState(StateStack& stack, Context* context) :
+        State(stack, context) {
 
 }
 
 void GameState::draw() {
-    std::cout << "drawed"<<std::endl;
-        level->draw();
-        std::cout << "drawed"<<std::endl;
+    level->draw();
 }
 
 bool GameState::handleEvent(const sf::Event& event) {
@@ -35,4 +32,8 @@ bool GameState::handleEvent(const sf::Event& event) {
 
 bool GameState::update(sf::Time dt) {
     return true;
+}
+
+void GameState::pushedAction(){
+    level=context->actualLevel;
 }

@@ -7,13 +7,13 @@
 
 #include "PauseState.h"
 
-PauseState::PauseState(StateStack& stack, Context context)
+PauseState::PauseState(StateStack& stack, Context* context)
 : State(stack, context)
 , backgroundSprite()
 , pausedText()
 , GUIContainer() {
-    sf::Font& font = context.fonts->get(IDFonts::Main);
-    sf::Vector2f windowSize(context.window->getSize());
+    sf::Font& font = context->fonts->get(IDFonts::Main);
+    sf::Vector2f windowSize(context->window->getSize());
 
     pausedText.setFont(font);
     pausedText.setString(L"Juego pausado");
@@ -21,21 +21,21 @@ PauseState::PauseState(StateStack& stack, Context context)
     centerOrigin(pausedText);
     pausedText.setPosition(0.5f * windowSize.x, 0.4f * windowSize.y);
 
-    GUI::Button* returnButton = new GUI::Button(context);
+    GUI::Button* returnButton = new GUI::Button(*context);
     returnButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 75);
     returnButton->setText(L"Continuar");
     returnButton->setCallback([this] () {
         requestStackPop();
     });
     
-    GUI::Button* settingsButton = new GUI::Button(context);
+    GUI::Button* settingsButton = new GUI::Button(*context);
     settingsButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 125);
     settingsButton->setText(L"Opciones");
     settingsButton->setCallback([this] () {
         requestStackPush(StatesID::Settings);
     });
 
-    GUI::Button* backToMenuButton = new GUI::Button(context);
+    GUI::Button* backToMenuButton = new GUI::Button(*context);
     backToMenuButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 175);
     backToMenuButton->setText(L"Volver al menú principal");
     backToMenuButton->setCallback([this] () {
@@ -55,7 +55,7 @@ PauseState::~PauseState() {
 }
 
 void PauseState::draw() {
-    sf::RenderWindow& window = *getContext().window;
+    sf::RenderWindow& window = *getContext()->window;
     window.setView(window.getDefaultView());
 
     sf::RectangleShape backgroundShape;

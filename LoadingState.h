@@ -17,7 +17,7 @@
 
 class LoadingState : public State {
 public:
-    LoadingState(StateStack& stack, Context context);
+    LoadingState(StateStack& stack, Context* context);
 
     virtual void draw();
     virtual bool update(sf::Time delta);

@@ -17,22 +17,24 @@ class StateStack; //because StateStack has dependencies too with State, so
 
 class State {
 public:
-    State(StateStack& stack, Context context);
+    State(StateStack& stack, Context* context);
     virtual ~State();
     
     virtual void draw()=0;
     virtual bool update(sf::Time delta)=0;
     virtual bool handleEvent(const sf::Event& event)=0;
+    virtual void pushedAction() { //nothing by default   
+    };
     
 protected:
     StateStack* stack;
-    Context context;
+    Context* context;
     
 protected:
     void requestStackPush(StatesID state);
     void requestStackPop();
     void requestStateClear();
-    Context getContext() const;
+    Context* getContext() const;
 
 };
 
