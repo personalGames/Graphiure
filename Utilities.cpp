@@ -54,3 +54,29 @@ sf::Vector2f unitVector(sf::Vector2f vector) {
     assert(vector != sf::Vector2f(0.f, 0.f));
     return vector / length(vector);
 }
+
+std::vector<char>* convertString(std::string convert){
+    std::vector<char>* writable=new std::vector<char>();
+    writable->assign(convert.begin(), convert.end());
+    writable->push_back('\0');
+    return writable;
+}
+
+std::vector<std::string> &split(const std::string &s, 
+                                char delim, std::vector<std::string> &elems) {
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        if(!item.empty()){
+                elems.push_back(item);
+        }
+    }
+    return elems;
+}
+
+
+std::vector<std::string> split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    split(s, delim, elems);
+    return elems;
+}

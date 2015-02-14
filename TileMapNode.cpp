@@ -6,37 +6,37 @@
  */
 
 #include "TileMapNode.h"
+#include "StructMap.h"
+#include <iostream>
 
 TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
-        int numberRows, int numberColumns, int width, int height, 
+        StructMap *mapInfo, int width, int height, 
         int numberRowsVisible, int numberColumnsVisible):
 
-        numberRows(numberRows), numberColumns(numberColumns), widthWindow(width),
-        heightWindow(height), numberColumnsVisible(numberColumnsVisible), 
+        numberRows(mapInfo->numberRows), numberColumns(mapInfo->numberColumns), 
+        widthWindow(width),heightWindow(height), numberColumnsVisible(numberColumnsVisible), 
         numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet))
         {
-    
+        
+    tileSize=sf::Vector2u(mapInfo->tileWidth, mapInfo->tileHeight);
 }
 
 void TileMapNode::prepareMap(const int* tilesMap){
-    //size in tileset
-    sf::Vector2u tileSize = sf::Vector2u(32, 32);
     //size in window
     sf::Vector2u quadSize = sf::Vector2u(widthWindow/numberColumnsVisible,
                                          heightWindow/(numberRowsVisible));
     // resize the vertex array to fit the level size (4 is for the four vertices))
     vertices.setPrimitiveType(sf::Quads);
     vertices.resize(widthWindow * heightWindow * 4);
-
+    
     // populate the vertex array, with one quad per tile
-    for (unsigned int i = 0; i < numberColumns; ++i) {
-        for (unsigned int j = 0; j < numberRows; ++j) {
+    for (int i = 0; i < numberColumns; ++i) {
+        for (int j = 0; j < numberRows; ++j) {
             // get the current tile number
             int tileNumber = tilesMap[i + j * numberColumns];
 
             // find its position in the tileset texture
             int division = (tileset.getSize().x / tileSize.x);
-
             int tu = tileNumber % division;
             int tv = tileNumber / division;
 

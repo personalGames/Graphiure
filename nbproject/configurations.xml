@@ -55,6 +55,10 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="f1" displayName="Libs" projectFiles="true">
+      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp</itemPath>
+      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h</itemPath>
+    </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
@@ -91,11 +95,10 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <logicalFolder name="f1" displayName="XMLParser" projectFiles="true">
+          <itemPath>StructMap.cpp</itemPath>
+          <itemPath>StructMap.h</itemPath>
           <itemPath>XMLParser.cpp</itemPath>
           <itemPath>XMLParser.h</itemPath>
-          <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp</itemPath>
-          <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h</itemPath>
-          <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/xmltest.cpp</itemPath>
         </logicalFolder>
         <itemPath>ParallelTask.cpp</itemPath>
         <itemPath>Utilities.cpp</itemPath>
@@ -122,6 +125,12 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f2"
+                     displayName="TinyXmlTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -152,6 +161,11 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp"
             ex="false"
             tool="1"
@@ -160,11 +174,6 @@
       <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/xmltest.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
@@ -265,6 +274,10 @@
       </item>
       <item path="StatesID.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StructMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
@@ -289,6 +302,21 @@
       </item>
       <item path="XMLParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -312,6 +340,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp"
             ex="false"
             tool="1"
@@ -320,11 +353,6 @@
       <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/xmltest.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
@@ -425,6 +453,10 @@
       </item>
       <item path="StatesID.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StructMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TextNode.h" ex="false" tool="3" flavor2="0">
@@ -449,6 +481,21 @@
       </item>
       <item path="XMLParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>

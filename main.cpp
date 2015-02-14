@@ -12,14 +12,14 @@
 /*
  * 
  */
-//int main(int argc, char** argv) {
-//    try {
-//        XInitThreads();
-//        Application game;
-//        game.run();
-//    } catch (std::exception& e) {
-//        std::cout << "\nExcepción: " << e.what() << std::endl;
-//    }
-//    return 0;
-//}
+int main(int argc, char** argv) {
+    try {
+        XInitThreads();
+        Application game;
+        game.run();
+    } catch (std::exception& e) {
+        std::cout << "\nExcepción: " << e.what() << std::endl;
+    }
+    return 0;
+}
 

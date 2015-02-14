@@ -19,15 +19,13 @@ public:
     
     virtual ~ParallelTask();
 
-
-
     virtual void runTask()=0;
 protected:
     sf::Thread thread;
     bool finished;
     sf::Mutex mutex;
     /**
-     * Number between 0 and 100 (percentaje of completion)
+     * Number between 0 and 1 (percentaje of completion)
      */
     int completion;
 

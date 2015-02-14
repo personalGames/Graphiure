@@ -11,6 +11,8 @@
 #include <SFML/Graphics.hpp>
 //#include "Animation.h"
 #include <sstream>
+#include <vector>
+#include <string.h>
 #include <cmath>
 #include <cassert>
 
@@ -49,6 +51,24 @@ std::string toString(const T& value) {
     return stream.str();
 }
 
+/**
+ * Needs to ALWAYS free the vector when used
+ * @param convert
+ * @return 
+ */
+std::vector<char>* convertString(std::string convert);
+
+template <class E>
+void deleteVector(std::vector<E> &deleted){
+    deleted.clear();
+    std::vector<E>(deleted).swap(deleted);
+}
+
+std::vector<std::string> &split(const std::string &s, 
+                                char delim, std::vector<std::string> &elems);
+
+
+std::vector<std::string> split(const std::string &s, char delim);
 
 #endif	/* UTILITIES_H */
 

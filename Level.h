@@ -14,6 +14,8 @@
 #include "ResourceHolder.h"
 #include "IDFonts.h"
 #include "IDTextures.h"
+#include "TileMapNode.h"
+#include "XMLParser.h"
 
 class Level : private sf::NonCopyable{
 public:
@@ -23,7 +25,7 @@ public:
     
     void update(sf::Time dt);
     void draw();
-    void buildScene();
+    void buildScene(StructMap* infoMap);
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
 private:

@@ -8,14 +8,24 @@
 #ifndef XMLPARSER_H
 #define	XMLPARSER_H
 
+#include "StructMap.h"
+#include <string>
+#include "tinyxml2.h"
+#include "Utilities.h"
+#include <sstream>
+
 class XMLParser {
 public:
-    XMLParser();
+    XMLParser(std::string path);
     XMLParser(const XMLParser& orig);
     virtual ~XMLParser();
+
+    StructMap* readMap();
+    
 private:
+    tinyxml2::XMLDocument doc;
+    
 
 };
 
 #endif	/* XMLPARSER_H */
-
