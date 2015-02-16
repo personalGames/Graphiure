@@ -22,6 +22,9 @@
 #include "GameState.h"
 #include "LoadingState.h"
 
+#include "FrameClock.h"
+#include "ClockHUD.h"
+
 class Application {
 public:
     Application();
@@ -32,7 +35,6 @@ private:
     sf::RenderWindow window;
     ResourceHolder<IDTextures, sf::Texture> textures;
     ResourceHolder<IDFonts, sf::Font> fonts;
-//    Player player;
     StateStack stateStack;
 //    MusicPlayer mMusic;
 //    SoundPlayer mSounds;
@@ -44,6 +46,11 @@ private:
 
     void loadTextures();
     void loadFonts();
+    
+    sfx::FrameClock clock;
+    ClockHUD* hud;
+    
+    Player player;
 
 };
 
