@@ -60,7 +60,7 @@ bool LoadingState::update(sf::Time) {
                 delete context->actualLevel;
             }
             context->actualLevel = new Level(*context->window, *context->fonts, *context->textures);
-            loadingTask = new LoadingLevel(Levels::Test, context->actualLevel);
+            loadingTask = new LoadingLevel(Levels::Test, context->actualLevel, context->textures);
             loadingTask->execute();
             taskCreated=true;
         }

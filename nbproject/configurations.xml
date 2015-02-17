@@ -69,11 +69,15 @@
       <logicalFolder name="f5" displayName="Application" projectFiles="true">
         <itemPath>Application.cpp</itemPath>
         <itemPath>Context.cpp</itemPath>
+        <itemPath>Player.cpp</itemPath>
+        <itemPath>Player.h</itemPath>
         <itemPath>main.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="Command" projectFiles="true">
+        <itemPath>Actions.h</itemPath>
         <itemPath>Command.cpp</itemPath>
         <itemPath>CommandQueue.cpp</itemPath>
+        <itemPath>MoveCharacter.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
         <itemPath>GameState.cpp</itemPath>
@@ -82,11 +86,29 @@
         <itemPath>PauseState.cpp</itemPath>
         <itemPath>TitleState.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f8" displayName="Debug" projectFiles="true">
+        <itemPath>ClockHUD.h</itemPath>
+        <itemPath>FrameClock.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f9" displayName="Entities" projectFiles="true">
+        <itemPath>Category.h</itemPath>
+        <itemPath>Character.cpp</itemPath>
+        <itemPath>Character.h</itemPath>
+        <itemPath>Direction.h</itemPath>
+        <itemPath>Entity.cpp</itemPath>
+        <itemPath>Entity.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
         <itemPath>Button.cpp</itemPath>
         <itemPath>Component.cpp</itemPath>
         <itemPath>Container.cpp</itemPath>
         <itemPath>Label.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f10" displayName="Sprites" projectFiles="true">
+        <itemPath>AnimatedSprite.cpp</itemPath>
+        <itemPath>AnimatedSprite.h</itemPath>
+        <itemPath>Animation.cpp</itemPath>
+        <itemPath>Animation.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="States" projectFiles="true">
         <itemPath>PendingChange.cpp</itemPath>
@@ -178,6 +200,16 @@
       </item>
       <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Actions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AnimatedSprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Animation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Animation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Application.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Application.h" ex="false" tool="3" flavor2="0">
@@ -187,6 +219,14 @@
       <item path="Button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Category.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Character.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Command.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -207,6 +247,14 @@
       <item path="Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Direction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FrameClock.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -242,6 +290,8 @@
       </item>
       <item path="MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MoveCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ParallelTask.h" ex="false" tool="3" flavor2="0">
@@ -253,6 +303,10 @@
       <item path="PendingChange.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PendingChange.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -357,6 +411,16 @@
       </item>
       <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Actions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AnimatedSprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Animation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Animation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Application.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Application.h" ex="false" tool="3" flavor2="0">
@@ -366,6 +430,14 @@
       <item path="Button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Category.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Character.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Command.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -386,6 +458,14 @@
       <item path="Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Direction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FrameClock.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -421,6 +501,8 @@
       </item>
       <item path="MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MoveCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ParallelTask.h" ex="false" tool="3" flavor2="0">
@@ -432,6 +514,10 @@
       <item path="PendingChange.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PendingChange.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>

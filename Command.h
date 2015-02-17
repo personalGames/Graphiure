@@ -12,15 +12,20 @@
 #include <cassert>
 #include <SFML/System.hpp>
 
+#include "Category.h"
+
 class SceneNode;
 
 struct Command {
     //constructor of the structure
     Command();
+    
     /**
      * This is a method/variable where store an action an execute it when call action
      * from struct command.
      * Example: 
+     * .action = derivedAction<Avion>(AircraftMover(-1, 0));
+     * 
      * //en clase avion
      * Command mFireCommand;
      * mFireCommand.action = [this, &textures] (SceneNode& node, sf::Time) {
@@ -39,6 +44,8 @@ struct Command {
      * command.action(*this, delta); (el this es el nodo involucrado, creo)
      */
     std::function<void(SceneNode&, sf::Time) > action;
+    
+    unsigned int category;
 };
 
 //TODO: habrá que adaptar el node a entity para no limitar los comandos a los nodos

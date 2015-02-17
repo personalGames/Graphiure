@@ -7,7 +7,7 @@
 
 #include "XMLParser.h"
 #include <iostream>
-using namespace tinyxml2;
+
 
 XMLParser::XMLParser(std::string path) {
     std::vector<char> writable = *convertString(path);
@@ -30,7 +30,7 @@ XMLParser::~XMLParser() {
 StructMap* XMLParser::readMap() {
     StructMap* result = new StructMap();
     //get root node
-    XMLElement* detailsMap = doc.FirstChildElement("map");
+    tinyxml2::XMLElement* detailsMap = doc.FirstChildElement("map");
     if (detailsMap == nullptr) {
         std::cout << "Vacio" << std::endl;
     }
@@ -48,12 +48,12 @@ StructMap* XMLParser::readMap() {
     
     //for every layer map...
     //TODO
-    XMLElement* detailsLayer = detailsMap->FirstChildElement("tileset")->FirstChildElement("layer");
+    tinyxml2::XMLElement* detailsLayer = detailsMap->FirstChildElement("tileset")->FirstChildElement("layer");
     //result->layer=detailsLayer->Attribute("name");
     // populate the vertex array, with one quad per tile
     result->tiles = new int[width * height];
     uint i=0; 
-    XMLElement* child=detailsLayer->FirstChildElement();
+    tinyxml2::XMLElement* child=detailsLayer->FirstChildElement();
     
     while(child){
         std::string dataRow(child->GetText());

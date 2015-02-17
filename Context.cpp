@@ -8,8 +8,8 @@
 #include "Context.h"
 
 Context::Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
-        ResourceHolder<IDFonts, sf::Font>& fonts): window(&window), textures(&textures),
-        fonts(&fonts), actualLevel(nullptr) {
+        ResourceHolder<IDFonts, sf::Font>& fonts, Player& player): window(&window), textures(&textures),
+        fonts(&fonts), actualLevel(nullptr), player(&player) {
     
 }
 

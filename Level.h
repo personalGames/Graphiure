@@ -8,6 +8,7 @@
 #ifndef LEVEL_H
 #define	LEVEL_H
 
+#include "Character.h"
 #include "CommandQueue.h"
 #include "SceneNode.h"
 #include "Layer.h"
@@ -16,8 +17,11 @@
 #include "IDTextures.h"
 #include "TileMapNode.h"
 #include "XMLParser.h"
+#include "Entity.h"
+#include "StructMap.h"
 
-class Level : private sf::NonCopyable{
+
+class Level : private sf::NonCopyable {
 public:
     explicit Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
             ResourceHolder<IDTextures, sf::Texture>& images);
@@ -25,7 +29,7 @@ public:
     
     void update(sf::Time dt);
     void draw();
-    void buildScene(StructMap* infoMap);
+    void buildScene(StructMap* infoMap, Character* characterCreated);
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
 private:
@@ -68,7 +72,7 @@ private:
      */
     sf::Vector2f spawnPosition;
     
-    
+    Character* principalCharacter;
 };
 
 #endif	/* LEVEL_H */

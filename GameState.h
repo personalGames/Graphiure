@@ -24,6 +24,7 @@ public:
     
 private:
     Level* level;
+    Player& player;
 };
 
 #endif	/* GAMESTATE_H */

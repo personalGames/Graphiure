@@ -7,6 +7,6 @@
 
 #include "Command.h"
 
-Command::Command(): action() {
+Command::Command(): action(), category(Category::None) {
 }
 

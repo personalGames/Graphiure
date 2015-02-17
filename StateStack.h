@@ -53,5 +53,6 @@ template <typename T>
 void StateStack::registerState(StatesID stateID) {
     factories[stateID] = (new T(*this, &context));
 }
+
 #endif	/* STATESTACK_H */
 

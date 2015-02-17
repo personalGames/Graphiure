@@ -15,10 +15,10 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/NonCopyable.hpp>
-//#include "Command.h"
+#include "Command.h"
 #include <utility>
 #include <cmath>
-//#include "CommandQueue.h"
+#include "CommandQueue.h"
 #include "Utilities.h"
 
 /**
@@ -28,6 +28,8 @@
 class SceneNode : public sf::Transformable, public sf::Drawable, private sf::NonCopyable {
 public:
     SceneNode();
+    SceneNode(Category category);
+    
     virtual ~SceneNode();
 
     typedef std::pair<SceneNode*, SceneNode*> Pair;
@@ -53,19 +55,19 @@ public:
      * @return a vector x,y of floats
      */
     sf::Vector2f getWorldPosition() const;
-//    void update(sf::Time dt, CommandQueue& commands);
+    void update(sf::Time dt, CommandQueue& commands);
 
     /**
      * Reacts to a command
      * @param command the command
      * @param delta the time
      */
-//    void onCommand(const Command& command, sf::Time delta);
+    void onCommand(const Command& command, sf::Time delta);
     /**
      * Get the category of this node.
      * @return the category of the node
      */
-//    virtual unsigned int getCategory() const;
+    virtual unsigned int getCategory() const;
 
     void removeWrecks();
     virtual sf::FloatRect getBoundingRect() const;
@@ -82,18 +84,18 @@ private:
      */
     SceneNode* parent;
 
-//    Category mDefaultCategory;
+    Category defaultCategory;
 
     /**
      * Update the node with the time since last update
      * @param delta
      */
-//    virtual void updateCurrent(sf::Time delta, CommandQueue& commands);
+    virtual void updateCurrent(sf::Time delta, CommandQueue& commands);
     /**
      * Update the children
      * @param delta
      */
-//    void updateChildren(sf::Time delta, CommandQueue& commands);
+    void updateChildren(sf::Time delta, CommandQueue& commands);
     /**
      * Inherit from drawable. Draw the node. Is overriden by  concrete class
      * as an example, aircraft, spriteNode...

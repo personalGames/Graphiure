@@ -8,10 +8,10 @@
 
 #include "SceneNode.h"
 
-//SceneNode::SceneNode(Category category) : children(), parent(nullptr), mDefaultCategory(category) {
-//}
+SceneNode::SceneNode(Category category) : children(), parent(nullptr), defaultCategory(category) {
+}
 
-SceneNode::SceneNode() : children(), parent(nullptr) {
+SceneNode::SceneNode() : children(), parent(nullptr), defaultCategory(Category::None) {
 }
 
 SceneNode::~SceneNode() {
@@ -64,19 +64,20 @@ void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) 
     }
 }
 
-//void SceneNode::update(sf::Time dt, CommandQueue& commands) {
-//    updateCurrent(dt, commands);
-//    updateChildren(dt, commands);
-//}
+void SceneNode::update(sf::Time dt, CommandQueue& commands) {
+    updateCurrent(dt, commands);
+    updateChildren(dt, commands);
+}
 
-//void SceneNode::updateCurrent(sf::Time delta, CommandQueue&) {
-//}
-//
-//void SceneNode::updateChildren(sf::Time delta, CommandQueue& commands) {
-//    for (SceneNode* child : children) {
-//        child->update(delta, commands);
-//    }
-//}
+void SceneNode::updateCurrent(sf::Time delta, CommandQueue&) {
+    
+}
+
+void SceneNode::updateChildren(sf::Time delta, CommandQueue& commands) {
+    for (SceneNode* child : children) {
+        child->update(delta, commands);
+    }
+}
 
 sf::Transform SceneNode::getWorldTransform() const {
     //initialize a transform
@@ -94,21 +95,21 @@ sf::Vector2f SceneNode::getWorldPosition() const {
     return getWorldTransform() * sf::Vector2f();
 }
 
-//void SceneNode::onCommand(const Command& command, sf::Time delta) {
-//    // Command current node, if category matches
-//    if ((command.category & this->getCategory())>=1) {
-//        command.action(*this, delta);
-//    }
-//
-//    // Propagate command to children
-//    for (SceneNode* child : children) {
-//        child->onCommand(command, delta);
-//    }
-//}
-//
-//unsigned int SceneNode::getCategory() const {
-//    return mDefaultCategory;
-//}
+void SceneNode::onCommand(const Command& command, sf::Time delta) {
+    // Command current node, if category matches
+    if ((command.category & this->getCategory())>=1) {
+        command.action(*this, delta);
+    }
+
+    // Propagate command to children
+    for (SceneNode* child : children) {
+        child->onCommand(command, delta);
+    }
+}
+
+unsigned int SceneNode::getCategory() const {
+    return defaultCategory;
+}
 
 void SceneNode::removeWrecks() {
     // Remove all children which request so

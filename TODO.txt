@@ -1,0 +1,5 @@
+Combinar animation de la wiki de github con el animation de sfml-tutorial
+Diseñar los entities
+Relacionado con lo anterior, para saber si ejecutar o no los comandos a según que nodos, utiliza un sistema de categorías (jugador, enemigo...). Un pequeño problema es saber cómo hacerlo y categorizar todo. Buscar otras opciones.
+hacer substates (pause dentro de game, por ejemplo)
+Mejorar el update del character para ajustar mejor las animaciones y no sobrecargar comprobando que animación necesita en el momento

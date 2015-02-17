@@ -16,12 +16,13 @@
 #include "IDTextures.h"
 #include "IDFonts.h"
 #include "Level.h"
+#include "Player.h"
 
 
 class Context {
 public:
     Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
-            ResourceHolder<IDFonts, sf::Font>& fonts);
+            ResourceHolder<IDFonts, sf::Font>& fonts, Player& player);
     virtual ~Context();
     
     sf::RenderWindow* window;
@@ -32,6 +33,8 @@ public:
     
     //level
     Level* actualLevel;
+    
+    Player* player;
     
 };
 
