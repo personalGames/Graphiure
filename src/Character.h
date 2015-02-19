@@ -28,8 +28,8 @@ public:
 
 
 private:
-    AnimatedSprite animatedCharacter;
     sf::Texture texture;
+    AnimatedSprite animatedCharacter;
     std::vector<Animation*> animations;
 
     virtual void updateAction(float x, float y);

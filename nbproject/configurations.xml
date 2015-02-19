@@ -4,60 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f6" displayName="Application" projectFiles="true">
-        <itemPath>Application.h</itemPath>
-        <itemPath>Context.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f8" displayName="Command" projectFiles="true">
-        <itemPath>Command.h</itemPath>
-        <itemPath>CommandQueue.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="ConcreteState" projectFiles="true">
-        <itemPath>GameState.h</itemPath>
-        <itemPath>LoadingState.h</itemPath>
-        <itemPath>MenuState.h</itemPath>
-        <itemPath>PauseState.h</itemPath>
-        <itemPath>TitleState.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1" displayName="GUI" projectFiles="true">
-        <itemPath>Button.h</itemPath>
-        <itemPath>ButtonState.h</itemPath>
-        <itemPath>Component.h</itemPath>
-        <itemPath>Container.h</itemPath>
-        <itemPath>Label.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f5" displayName="Resources" projectFiles="true">
-        <itemPath>IDFonts.h</itemPath>
-        <itemPath>IDGroupsTextures.h</itemPath>
-        <itemPath>IDTextures.h</itemPath>
-        <itemPath>ResourceHolder.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f4" displayName="States" projectFiles="true">
-        <itemPath>ActionStack.h</itemPath>
-        <itemPath>PendingChange.h</itemPath>
-        <itemPath>State.h</itemPath>
-        <itemPath>StateStack.h</itemPath>
-        <itemPath>StatesID.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
-        <itemPath>ParallelTask.h</itemPath>
-        <itemPath>Utilities.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f7" displayName="World" projectFiles="true">
-        <logicalFolder name="f2" displayName="Level" projectFiles="true">
-          <itemPath>Level.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
-          <itemPath>Layer.h</itemPath>
-          <itemPath>SceneNode.h</itemPath>
-          <itemPath>SpriteNode.h</itemPath>
-          <itemPath>TextNode.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-    </logicalFolder>
-    <logicalFolder name="f1" displayName="Libs" projectFiles="true">
-      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp</itemPath>
-      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h</itemPath>
+      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.cpp</itemPath>
+      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -67,79 +15,111 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f5" displayName="Application" projectFiles="true">
-        <itemPath>Application.cpp</itemPath>
-        <itemPath>Context.cpp</itemPath>
-        <itemPath>Player.cpp</itemPath>
-        <itemPath>Player.h</itemPath>
-        <itemPath>main.cpp</itemPath>
+        <itemPath>src/Application.cpp</itemPath>
+        <itemPath>src/Application.h</itemPath>
+        <itemPath>src/Context.cpp</itemPath>
+        <itemPath>src/Context.h</itemPath>
+        <itemPath>src/Player.cpp</itemPath>
+        <itemPath>src/Player.h</itemPath>
+        <itemPath>src/main.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="Command" projectFiles="true">
-        <itemPath>Actions.h</itemPath>
-        <itemPath>Command.cpp</itemPath>
-        <itemPath>CommandQueue.cpp</itemPath>
-        <itemPath>MoveCharacter.h</itemPath>
+        <itemPath>src/Actions.h</itemPath>
+        <itemPath>src/Command.cpp</itemPath>
+        <itemPath>src/Command.h</itemPath>
+        <itemPath>src/CommandQueue.cpp</itemPath>
+        <itemPath>src/CommandQueue.h</itemPath>
+        <itemPath>src/MoveCharacter.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
-        <itemPath>GameState.cpp</itemPath>
-        <itemPath>LoadingState.cpp</itemPath>
-        <itemPath>MenuState.cpp</itemPath>
-        <itemPath>PauseState.cpp</itemPath>
-        <itemPath>TitleState.cpp</itemPath>
+        <itemPath>src/GameState.cpp</itemPath>
+        <itemPath>src/GameState.h</itemPath>
+        <itemPath>src/LoadingState.cpp</itemPath>
+        <itemPath>src/LoadingState.h</itemPath>
+        <itemPath>src/MenuState.cpp</itemPath>
+        <itemPath>src/MenuState.h</itemPath>
+        <itemPath>src/PauseState.cpp</itemPath>
+        <itemPath>src/PauseState.h</itemPath>
+        <itemPath>src/TitleState.cpp</itemPath>
+        <itemPath>src/TitleState.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f8" displayName="Debug" projectFiles="true">
-        <itemPath>ClockHUD.h</itemPath>
-        <itemPath>FrameClock.h</itemPath>
+        <itemPath>src/ClockHUD.h</itemPath>
+        <itemPath>src/FrameClock.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f9" displayName="Entities" projectFiles="true">
-        <itemPath>Category.h</itemPath>
-        <itemPath>Character.cpp</itemPath>
-        <itemPath>Character.h</itemPath>
-        <itemPath>Direction.h</itemPath>
-        <itemPath>Entity.cpp</itemPath>
-        <itemPath>Entity.h</itemPath>
+        <itemPath>src/Category.h</itemPath>
+        <itemPath>src/Character.cpp</itemPath>
+        <itemPath>src/Character.h</itemPath>
+        <itemPath>src/Direction.h</itemPath>
+        <itemPath>src/Entity.cpp</itemPath>
+        <itemPath>src/Entity.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
-        <itemPath>Button.cpp</itemPath>
-        <itemPath>Component.cpp</itemPath>
-        <itemPath>Container.cpp</itemPath>
-        <itemPath>Label.cpp</itemPath>
+        <itemPath>src/Button.cpp</itemPath>
+        <itemPath>src/Button.h</itemPath>
+        <itemPath>src/ButtonState.h</itemPath>
+        <itemPath>src/Component.cpp</itemPath>
+        <itemPath>src/Component.h</itemPath>
+        <itemPath>src/Container.cpp</itemPath>
+        <itemPath>src/Container.h</itemPath>
+        <itemPath>src/Label.cpp</itemPath>
+        <itemPath>src/Label.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f11" displayName="Resources" projectFiles="true">
+        <itemPath>src/IDFonts.h</itemPath>
+        <itemPath>src/IDGroupsTextures.h</itemPath>
+        <itemPath>src/IDTextures.h</itemPath>
+        <itemPath>src/ResourceHolder.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f10" displayName="Sprites" projectFiles="true">
-        <itemPath>AnimatedSprite.cpp</itemPath>
-        <itemPath>AnimatedSprite.h</itemPath>
-        <itemPath>Animation.cpp</itemPath>
-        <itemPath>Animation.h</itemPath>
+        <itemPath>src/AnimatedSprite.cpp</itemPath>
+        <itemPath>src/AnimatedSprite.h</itemPath>
+        <itemPath>src/Animation.cpp</itemPath>
+        <itemPath>src/Animation.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="States" projectFiles="true">
-        <itemPath>PendingChange.cpp</itemPath>
-        <itemPath>State.cpp</itemPath>
-        <itemPath>StateStack.cpp</itemPath>
+        <itemPath>src/ActionStack.h</itemPath>
+        <itemPath>src/PendingChange.cpp</itemPath>
+        <itemPath>src/PendingChange.h</itemPath>
+        <itemPath>src/State.cpp</itemPath>
+        <itemPath>src/State.h</itemPath>
+        <itemPath>src/StateStack.cpp</itemPath>
+        <itemPath>src/StateStack.h</itemPath>
+        <itemPath>src/StatesID.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <logicalFolder name="f1" displayName="XMLParser" projectFiles="true">
-          <itemPath>StructMap.cpp</itemPath>
-          <itemPath>StructMap.h</itemPath>
-          <itemPath>XMLParser.cpp</itemPath>
-          <itemPath>XMLParser.h</itemPath>
+          <itemPath>src/StructMap.cpp</itemPath>
+          <itemPath>src/StructMap.h</itemPath>
+          <itemPath>src/XMLParser.cpp</itemPath>
+          <itemPath>src/XMLParser.h</itemPath>
         </logicalFolder>
-        <itemPath>ParallelTask.cpp</itemPath>
-        <itemPath>Utilities.cpp</itemPath>
+        <itemPath>src/ParallelTask.cpp</itemPath>
+        <itemPath>src/ParallelTask.h</itemPath>
+        <itemPath>src/Utilities.cpp</itemPath>
+        <itemPath>src/Utilities.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="World" projectFiles="true">
         <logicalFolder name="f2" displayName="Level" projectFiles="true">
-          <itemPath>Level.cpp</itemPath>
-          <itemPath>Levels.h</itemPath>
-          <itemPath>LoadingLevel.cpp</itemPath>
-          <itemPath>LoadingLevel.h</itemPath>
+          <itemPath>src/Level.cpp</itemPath>
+          <itemPath>src/Level.h</itemPath>
+          <itemPath>src/Levels.h</itemPath>
+          <itemPath>src/LoadingLevel.cpp</itemPath>
+          <itemPath>src/LoadingLevel.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
-          <itemPath>SceneNode.cpp</itemPath>
-          <itemPath>SpriteNode.cpp</itemPath>
-          <itemPath>TextNode.cpp</itemPath>
-          <itemPath>TileMapNode.cpp</itemPath>
-          <itemPath>TileMapNode.h</itemPath>
-          <itemPath>TileNode.cpp</itemPath>
-          <itemPath>TileNode.h</itemPath>
+          <itemPath>src/Layer.h</itemPath>
+          <itemPath>src/SceneNode.cpp</itemPath>
+          <itemPath>src/SceneNode.h</itemPath>
+          <itemPath>src/SpriteNode.cpp</itemPath>
+          <itemPath>src/SpriteNode.h</itemPath>
+          <itemPath>src/TextNode.cpp</itemPath>
+          <itemPath>src/TextNode.h</itemPath>
+          <itemPath>src/TileMapNode.cpp</itemPath>
+          <itemPath>src/TileMapNode.h</itemPath>
+          <itemPath>src/TileNode.cpp</itemPath>
+          <itemPath>src/TileNode.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -158,9 +138,12 @@
                    displayName="Important Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
-      <itemPath>Makefile</itemPath>
+      <itemPath>/home/dorian/Proyectos/Código/C/Graphiure/Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -183,178 +166,20 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h"
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Actions.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="AnimatedSprite.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Animation.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Animation.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Application.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Application.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Button.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Button.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Category.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Character.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Character.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ClockHUD.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Command.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Command.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CommandQueue.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CommandQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Component.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Component.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Container.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Container.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Context.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Context.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Direction.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Entity.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Entity.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="FrameClock.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="GameState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Label.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Label.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Layer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Level.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Level.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Levels.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="LoadingLevel.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LoadingState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="LoadingState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MenuState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MenuState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MoveCharacter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ParallelTask.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ParallelTask.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PauseState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PauseState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PendingChange.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PendingChange.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Player.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ResourceHolder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="SceneNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="SceneNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="SpriteNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="SpriteNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="State.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="State.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StateStack.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StateStack.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StatesID.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StructMap.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StructMap.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TextNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TileMapNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TileMapNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TileNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TitleState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TitleState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Utilities.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Utilities.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="XMLParser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="XMLParser.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <folder path="TestFiles/f2">
         <cTool>
@@ -371,7 +196,165 @@
           <output>${TESTDIR}/TestFiles/f2</output>
         </linkerTool>
       </folder>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ActionStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Actions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AnimatedSprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Animation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Animation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Application.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Application.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Button.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Button.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Category.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Command.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Command.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CommandQueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CommandQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Component.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Component.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Container.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Container.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Direction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Layer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Level.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Level.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Levels.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoadingLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoadingState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoadingState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MoveCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ParallelTask.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PauseState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PauseState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PendingChange.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PendingChange.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SceneNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SpriteNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/State.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StateStack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StateStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StatesID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TextNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TextNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TileMapNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TileMapNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TileNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TileNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TitleState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TitleState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Utilities.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -394,178 +377,20 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tinyxml2.h"
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/include/tinyxml2.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="ActionStack.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Actions.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="AnimatedSprite.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Animation.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Animation.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Application.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Application.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Button.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Button.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ButtonState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Category.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Character.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Character.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ClockHUD.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Command.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Command.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CommandQueue.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CommandQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Component.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Component.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Container.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Container.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Context.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Context.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Direction.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Entity.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Entity.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="FrameClock.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="GameState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDFonts.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="IDTextures.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Label.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Label.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Layer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Level.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Level.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Levels.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="LoadingLevel.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LoadingState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="LoadingState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MenuState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MenuState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MoveCharacter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ParallelTask.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ParallelTask.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PauseState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PauseState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PendingChange.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PendingChange.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Player.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ResourceHolder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="SceneNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="SceneNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="SpriteNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="SpriteNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="State.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="State.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StateStack.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StateStack.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StatesID.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="StructMap.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StructMap.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TextNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TextNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TileMapNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TileMapNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TileNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TileNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TitleState.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TitleState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Utilities.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Utilities.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="XMLParser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="XMLParser.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/dorian/Proyectos/Código/C/Graphiure/tests/TinyXmlTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <folder path="TestFiles/f2">
         <cTool>
@@ -582,7 +407,165 @@
           <output>${TESTDIR}/TestFiles/f2</output>
         </linkerTool>
       </folder>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ActionStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Actions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AnimatedSprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AnimatedSprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Animation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Animation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Application.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Application.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Button.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Button.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Category.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Command.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Command.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CommandQueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CommandQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Component.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Component.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Container.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Container.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Direction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/IDTextures.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Label.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Layer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Level.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Level.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Levels.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoadingLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoadingState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoadingState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MoveCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ParallelTask.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PauseState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PauseState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PendingChange.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PendingChange.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SceneNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SpriteNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/State.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StateStack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StateStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StatesID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TextNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TextNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TileMapNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TileMapNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TileNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TileNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TitleState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TitleState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Utilities.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

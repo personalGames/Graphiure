@@ -31,7 +31,7 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
-            15, 15));
+            20, 20));
     tileMap->prepareMap(infoMap->tiles);
     sceneLayers[Background]->addChild(std::move(tileMap));
     

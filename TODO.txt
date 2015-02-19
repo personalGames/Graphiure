@@ -3,3 +3,5 @@ Diseñar los entities
 Relacionado con lo anterior, para saber si ejecutar o no los comandos a según que nodos, utiliza un sistema de categorías (jugador, enemigo...). Un pequeño problema es saber cómo hacerlo y categorizar todo. Buscar otras opciones.
 hacer substates (pause dentro de game, por ejemplo)
 Mejorar el update del character para ajustar mejor las animaciones y no sobrecargar comprobando que animación necesita en el momento
+mover el mapa junto al personaje
+Mejorar el dibujado del mapa, con zonas sucias, para mejorar los fps que bajan peligrosamente (aunque parece que es sólo al principio, cuando pasa el tiempo mejora)

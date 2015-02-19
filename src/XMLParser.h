@@ -10,7 +10,7 @@
 
 #include "StructMap.h"
 #include <string>
-#include "tinyxml2.h"
+#include "../include/tinyxml2.h"
 #include "Utilities.h"
 #include <sstream>
 
