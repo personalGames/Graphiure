@@ -51,7 +51,6 @@
         <itemPath>src/Category.h</itemPath>
         <itemPath>src/Character.cpp</itemPath>
         <itemPath>src/Character.h</itemPath>
-        <itemPath>src/Direction.h</itemPath>
         <itemPath>src/Entity.cpp</itemPath>
         <itemPath>src/Entity.h</itemPath>
       </logicalFolder>
@@ -245,8 +244,6 @@
       <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Direction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -456,8 +453,6 @@
       <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Direction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
