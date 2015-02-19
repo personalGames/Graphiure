@@ -33,7 +33,9 @@ private:
     sf::Texture texture;
     AnimatedSprite animatedCharacter;
     std::vector<Animation*> animations;
-
+    Actions lastAction;
+    
+    void adaptVelocity();
 };
 
 #endif	/* CHARACTER_H */

@@ -31,7 +31,6 @@ public:
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
-    sf::VertexArray vertices;
     
     sf::Vector2u tileSize;
     
@@ -45,6 +44,8 @@ private:
     int numberRowsVisible;
     
     sf::Texture tileset;
+    std::vector< std::vector <sf::VertexArray> > chunks;
+    sf::Vector2u quadSize;
 
 };
 
