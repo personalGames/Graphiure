@@ -18,6 +18,7 @@
 class Character : public Entity {
 public:
     Character(const ResourceHolder<IDTextures, sf::Texture>& textures);
+    void initCharacter();
     virtual ~Character();
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;

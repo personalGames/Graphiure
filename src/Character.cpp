@@ -12,7 +12,10 @@
 Character::Character(const ResourceHolder<IDTextures, sf::Texture>& textures) : 
         texture(textures.get(IDTextures::Player)),
         animatedCharacter(sf::seconds(0.2), true, false){
-    
+    initCharacter();
+}
+
+void Character::initCharacter() {
     // set up the animations for all four directions (set spritesheet and push frames)
     Animation* walkingAnimationDown=new Animation();
     walkingAnimationDown->setSpriteSheet(texture);
@@ -46,10 +49,10 @@ Character::Character(const ResourceHolder<IDTextures, sf::Texture>& textures) :
     walkingAnimationUp->addFrame(sf::IntRect(0, 96, 32, 32));
     animations.push_back(std::move(walkingAnimationUp));
     
-    //character.setAnimation(*animations[0]);
     animatedCharacter.play(*animations[0]);
     animatedCharacter.setPosition(200,200);
 }
+
 
 Character::~Character() {
 }
@@ -60,6 +63,10 @@ void Character::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) c
 
 void Character::updateCurrent(sf::Time dt, CommandQueue& commands) {
     animatedCharacter.update(dt);
+    sf::Vector2f vel=getVelocity();
+    if(vel.x==0 && vel.y==0){
+        animatedCharacter.stop();
+    }
     Entity::updateCurrent(dt, commands);
 }
 
