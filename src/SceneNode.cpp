@@ -11,7 +11,7 @@
 SceneNode::SceneNode(Category category) : children(), parent(nullptr), defaultCategory(category) {
 }
 
-SceneNode::SceneNode() : children(), parent(nullptr), defaultCategory(Category::None) {
+SceneNode::SceneNode() : children(), parent(nullptr), defaultCategory(Category::NONE) {
 }
 
 SceneNode::~SceneNode() {

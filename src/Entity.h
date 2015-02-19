@@ -61,8 +61,6 @@ protected:
      * Update the entity given a time since the last update
      */
     virtual void updateCurrent(sf::Time dt, CommandQueue& commands);
-    
-    virtual void updateAction(float x, float y);
 };
 
 #endif	/* ENTITY_H */

@@ -9,6 +9,7 @@
 #define	CHARACTER_H
 
 #include "Entity.h"
+#include "Actions.h"
 #include "ResourceHolder.h"
 #include "Animation.h"
 #include "AnimatedSprite.h"
@@ -26,14 +27,12 @@ public:
 
     float getMaxSpeed() const;
     virtual unsigned int getCategory() const;
-
+    void updateAnimation(Actions action);
 
 private:
     sf::Texture texture;
     AnimatedSprite animatedCharacter;
     std::vector<Animation*> animations;
-
-    virtual void updateAction(float x, float y);
 
 };
 

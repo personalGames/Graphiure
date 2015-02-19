@@ -9,10 +9,12 @@
 #define	ACTIONS_H
 
 enum Actions {
+    None,
     Left,
     Right,
     Up,
     Down,
+    Move,
     ActionCount
 };
 

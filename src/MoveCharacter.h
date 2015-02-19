@@ -16,6 +16,7 @@ struct MoveCharacter {
 
     void operator() (Character & character, sf::Time) const {
         character.accelerate(velocity * character.getMaxSpeed());
+        character.updateAnimation(Actions::Move);
     }
 
     sf::Vector2f velocity;

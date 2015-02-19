@@ -27,10 +27,10 @@ void Player::initializeActions() {
     actionBinding[Up].action = derivedAction<Character>(MoveCharacter(0, -1));
     actionBinding[Down].action = derivedAction<Character>(MoveCharacter(0, +1));
     
-    actionBinding[Left].category = Category::CharacterFUCKK;
-    actionBinding[Right].category= Category::CharacterFUCKK;
-    actionBinding[Up].category = Category::CharacterFUCKK;
-    actionBinding[Down].category = Category::CharacterFUCKK;
+    actionBinding[Left].category = Category::CHARACTER;
+    actionBinding[Right].category= Category::CHARACTER;
+    actionBinding[Up].category = Category::CHARACTER;
+    actionBinding[Down].category = Category::CHARACTER;
 }
 
 Player::~Player() {

@@ -30,15 +30,9 @@ void Entity::updateCurrent(sf::Time delta, CommandQueue&) {
 
 void Entity::accelerate(sf::Vector2f velocity) {
     this->velocity += velocity;
-    updateAction(velocity.x, velocity.y);
 }
 
 void Entity::accelerate(float vx, float vy) {
     velocity.x += vx;
     velocity.y += vy;
-    updateAction(vx, vy);
-}
-
-void Entity::updateAction(float x, float y) {
-    //do nothing by default
 }
