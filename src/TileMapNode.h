@@ -28,10 +28,12 @@ public:
      * @param tilesMap
      */
     void prepareMap(const int* tilesMap);
+    
+    sf::Vector2f getSizeMap();
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
-private:
     
+private:  
     sf::Vector2u tileSize;
     
     int numberRows;

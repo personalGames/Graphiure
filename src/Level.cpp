@@ -42,6 +42,7 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
             mapView.getSize().x, mapView.getSize().y,
             20, 20));
     tileMap->prepareMap(infoMap->tiles);
+    sizeMap=tileMap->getSizeMap();
     sceneLayers[Background]->addChild(std::move(tileMap));
     
     sceneLayers[Ground]->addChild(std::move(principalCharacter));
@@ -89,5 +90,22 @@ void Level::update(sf::Time dt) {
 }
 
 void Level::correctWorldPosition() {
-        mapView.move(0.5,0.5);
+    sf::Vector2f center=mapView.getCenter();
+    sf::Vector2f windowHalf=mapView.getSize()/2.f;
+    sf::Vector2f offsetCharacter=principalCharacter->getPosition()-(center-windowHalf);
+    sf::Vector2f move(0,0);
+    
+    if(offsetCharacter.x>0){
+        move.x=std::min(offsetCharacter.x,sizeMap.x-(center.x+windowHalf.x));
+    }else{
+        move.x=std::max(offsetCharacter.x,-(center.x-windowHalf.x));
+    }
+    
+    if(offsetCharacter.y>0){
+        move.y=std::min(offsetCharacter.y,sizeMap.y-(center.y+windowHalf.y));
+    }else{
+        move.y=std::max(offsetCharacter.y,-(center.y-windowHalf.y));
+    }
+    
+    mapView.move(move);
 }

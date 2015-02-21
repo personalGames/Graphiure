@@ -72,6 +72,8 @@ private:
      */
     sf::Vector2f spawnPosition;
     
+    sf::Vector2f sizeMap;
+    
     Character* principalCharacter;
     
     void correctWorldPosition();

@@ -6,7 +6,6 @@
  */
 
 #include "TileMapNode.h"
-#include <iostream>
 
 
 TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
@@ -68,16 +67,18 @@ void TileMapNode::prepareMap(const int* tilesMap) {
     }
 }
 
+sf::Vector2f TileMapNode::getSizeMap() {
+    sf::Vector2f result(numberColumns*quadSize.x,numberRows*quadSize.y);
+    return result;
+}
+
+
 void TileMapNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     // apply the transform
     states.transform *= getTransform();
 
     // apply the tileset texture
     states.texture = &tileset;
-
-
-//    std::cout<<target.getView().getCenter().x<<std::endl;
-//    std::cout<<target.getView().getCenter().y<<std::endl;
     
     
     int left = 0, right = 0, top = 0, bottom = 0;
@@ -94,11 +95,6 @@ void TileMapNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states)
     top = std::max(0, std::min(top, numberRows));
     right = std::max(0, std::min(right, numberColumns));
     bottom = std::max(0, std::min(bottom, numberRows));
-
-    std::cout<<left<<std::endl;
-    std::cout<<right<<std::endl;
-    std::cout<<top<<std::endl;
-    std::cout<<bottom<<std::endl;
     
     for (int ix = left; ix < right; ++ix) {
         for (int iy = top; iy < bottom; ++iy) {
