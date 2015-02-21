@@ -6,6 +6,7 @@
  */
 
 #include "TileMapNode.h"
+#include <iostream>
 
 
 TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
@@ -25,7 +26,7 @@ numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), 
 
 void TileMapNode::prepareMap(const int* tilesMap) {
     //size in window
-    quadSize = sf::Vector2u(widthWindow / numberColumnsVisible,
+    quadSize = sf::Vector2f(widthWindow / numberColumnsVisible,
             heightWindow / (numberRowsVisible));
     
     
@@ -75,23 +76,33 @@ void TileMapNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states)
     states.texture = &tileset;
 
 
+//    std::cout<<target.getView().getCenter().x<<std::endl;
+//    std::cout<<target.getView().getCenter().y<<std::endl;
+    
+    
     int left = 0, right = 0, top = 0, bottom = 0;
     //get chunk indices into which top left and bottom right points of view fall:
     sf::Vector2f temp = target.getView().getCenter()-(target.getView().getSize() / 2.f); //get top left point of view
-    left = static_cast<int> (temp.x / tileSize.x);
-    top = static_cast<int> (temp.y / tileSize.x);
+    left = static_cast<int> (temp.x / quadSize.x)-0.5;
+    top = static_cast<int> (temp.y / quadSize.y)-0.5;
+    
     temp += target.getView().getSize(); //get bottom right point of view
-    right = 1 + static_cast<int> (temp.x / tileSize.x);
-    bottom = 1 + static_cast<int> (temp.y / tileSize.x);
+    right = 1 + static_cast<int> (temp.x / quadSize.x)+0.5;
+    bottom = 1 + static_cast<int> (temp.y / quadSize.y)+0.5;
     //clamp these to fit into array bounds:
-    left = std::max(0, std::min(left, numberColumnsVisible+1));
-    top = std::max(0, std::min(top, numberRowsVisible+1));
-    right = std::max(0, std::min(right, numberColumnsVisible+1));
-    bottom = std::max(0, std::min(bottom, numberRowsVisible+1));
+    left = std::max(0, std::min(left, numberColumns));
+    top = std::max(0, std::min(top, numberRows));
+    right = std::max(0, std::min(right, numberColumns));
+    bottom = std::max(0, std::min(bottom, numberRows));
 
+    std::cout<<left<<std::endl;
+    std::cout<<right<<std::endl;
+    std::cout<<top<<std::endl;
+    std::cout<<bottom<<std::endl;
+    
     for (int ix = left; ix < right; ++ix) {
         for (int iy = top; iy < bottom; ++iy) {
-            target.draw(chunks[ix][iy], states);
+            target.draw(chunks[iy][ix], states);
         }
     }
 }

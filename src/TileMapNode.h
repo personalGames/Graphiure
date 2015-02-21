@@ -45,7 +45,7 @@ private:
     
     sf::Texture tileset;
     std::vector< std::vector <sf::VertexArray> > chunks;
-    sf::Vector2u quadSize;
+    sf::Vector2f quadSize;
 
 };
 

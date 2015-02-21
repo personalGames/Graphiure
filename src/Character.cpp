@@ -73,6 +73,7 @@ void Character::updateCurrent(sf::Time dt, CommandQueue& commands) {
     adaptVelocity();
     animatedCharacter.update(dt);
     Entity::updateCurrent(dt, commands);
+    this->getPosition();
 }
 
 void Character::adaptVelocity() {

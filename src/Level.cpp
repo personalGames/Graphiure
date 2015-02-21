@@ -31,7 +31,7 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
     std::vector< sf::Vector3i >* underground=infoMap->underground;
     int i=underground->size();
     while(i>0){
-        sceneLayers[Underground]->addChild();
+//        sceneLayers[Underground]->addChild();
         --i;
     }
     
@@ -45,6 +45,8 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
     sceneLayers[Background]->addChild(std::move(tileMap));
     
     sceneLayers[Ground]->addChild(std::move(principalCharacter));
+    
+    
     
 }
 
@@ -75,6 +77,8 @@ Level::~Level() {
 
 void Level::update(sf::Time dt) {
     principalCharacter->setVelocity(0.f,0.f);
+   
+    correctWorldPosition();
     
     // Forward commands to scene graph
     while (!commandQueue.isEmpty()) {
@@ -82,4 +86,8 @@ void Level::update(sf::Time dt) {
     }
     // Regular update step
     sceneGraph.update(dt, commandQueue);
+}
+
+void Level::correctWorldPosition() {
+        mapView.move(0.5,0.5);
 }

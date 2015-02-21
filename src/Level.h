@@ -73,6 +73,8 @@ private:
     sf::Vector2f spawnPosition;
     
     Character* principalCharacter;
+    
+    void correctWorldPosition();
 };
 
 #endif	/* LEVEL_H */
