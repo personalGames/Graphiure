@@ -10,6 +10,7 @@
 
 #include <vector>
 #include "Layer.h"
+#include <SFML/Graphics.hpp>
 
 
 class StructMap{
@@ -21,7 +22,8 @@ public:
     int numberRows;
     int tileHeight;
     int tileWidth;
-    int* tiles;
+    int* tiles; //whole background
+    std::vector< sf::Vector3i >* underground;
 };
 
 #endif	/* STRUCTMAP_H */

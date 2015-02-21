@@ -7,9 +7,12 @@
 
 #include "StructMap.h"
 
-StructMap::StructMap(): numberColumns(0), numberRows(0), tileHeight(0), tileWidth(0), tiles() {
+StructMap::StructMap(): numberColumns(0), numberRows(0), tileHeight(0),
+        tileWidth(0), tiles(), underground() {
+    underground=new std::vector< sf::Vector3i >();
 }
 
 StructMap::~StructMap() {
-
+    delete tiles;
+    delete underground; //delete content vector!!
 }

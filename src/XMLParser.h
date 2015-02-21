@@ -25,6 +25,8 @@ public:
 private:
     tinyxml2::XMLDocument doc;
     
+    void parseBackground(StructMap* result, tinyxml2::XMLElement* layer);
+    void parseUnderground(StructMap* result, tinyxml2::XMLElement* layer);
 
 };
 

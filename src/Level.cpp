@@ -27,7 +27,16 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
         sceneGraph.addChild(std::move(layer));
     }
     
-    //prepare the background
+    //prepare the underground
+    std::vector< sf::Vector3i >* underground=infoMap->underground;
+    int i=underground->size();
+    while(i>0){
+        sceneLayers[Underground]->addChild();
+        --i;
+    }
+    
+    
+    //prepare the principal background
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,

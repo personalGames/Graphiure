@@ -8,7 +8,6 @@
 #include "XMLParser.h"
 #include <iostream>
 
-
 XMLParser::XMLParser(std::string path) {
     std::vector<char> writable = *convertString(path);
 
@@ -37,35 +36,61 @@ StructMap* XMLParser::readMap() {
 
     uint width;
     uint height;
-    width=detailsMap->IntAttribute("width");
-    height=detailsMap->IntAttribute("height");
-    
+    width = detailsMap->IntAttribute("width");
+    height = detailsMap->IntAttribute("height");
+
     result->numberColumns = width;
     result->numberRows = height;
-    
-    result->tileWidth=detailsMap->IntAttribute("tilewidth"); 
-    result->tileHeight=detailsMap->IntAttribute("tileheight");
-    
+
+    result->tileWidth = detailsMap->IntAttribute("tilewidth");
+    result->tileHeight = detailsMap->IntAttribute("tileheight");
+
     //for every layer map...
-    //TODO
-    tinyxml2::XMLElement* detailsLayer = detailsMap->FirstChildElement("tileset")->FirstChildElement("layer");
-    //result->layer=detailsLayer->Attribute("name");
-    // populate the vertex array, with one quad per tile
-    result->tiles = new int[width * height];
-    uint i=0; 
-    tinyxml2::XMLElement* child=detailsLayer->FirstChildElement();
-    
-    while(child){
-        std::string dataRow(child->GetText());
-        std::vector<std::string> numbers = std::move(split(dataRow, ','));
-        for (uint j = 0; j < numbers.size(); ++j) {
-              result->tiles[i + j * width]= atoi(numbers[j].c_str());
+    tinyxml2::XMLElement* layer = detailsMap->FirstChildElement("layer");
+    while (layer) {
+        const char* nameLayer = layer->Attribute("name");
+        if (strcmp(nameLayer, "Background") == 0) {
+            parseBackground(result, layer);
+            
+        } else if (strcmp(nameLayer, "Underground") == 0) {
+            parseUnderground(result, layer);
         }
-        
-        i++;
-        child=child->NextSiblingElement();
+        layer = layer->NextSiblingElement();
     }
+
 
     return result;
 }
 
+void XMLParser::parseBackground(StructMap* result, tinyxml2::XMLElement* layer) {
+    result->tiles = new int[result->numberColumns * result->numberRows];
+    uint i = 0;
+    //get the data element and next, the gid element
+    tinyxml2::XMLElement* child = layer->FirstChildElement()->FirstChildElement();
+
+    while (child) {
+        result->tiles[i] = child->IntAttribute("gid");
+        i++;
+        child = child->NextSiblingElement();
+    }
+}
+
+void XMLParser::parseUnderground(StructMap* result, tinyxml2::XMLElement* layer) {
+    uint i = 0;
+    //get the data element and next, the gid element
+    tinyxml2::XMLElement* child = layer->FirstChildElement()->FirstChildElement();
+
+    int width=result->numberColumns;
+    while (child) {
+        uint value = child->IntAttribute("gid");
+        if (value != 0) {
+            int y=i%width;
+            int x=i/width;
+            y++;
+            sf::Vector3i point = *(new sf::Vector3i(x,y,value));
+            result->underground->push_back(std::move(point));
+        }
+        i++;
+        child = child->NextSiblingElement();
+    }
+}

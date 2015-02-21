@@ -6,8 +6,7 @@
  */
 
 #include "TileMapNode.h"
-#include "StructMap.h"
-#include <iostream>
+
 
 TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
         StructMap *mapInfo, int width, int height,
@@ -42,27 +41,28 @@ void TileMapNode::prepareMap(const int* tilesMap) {
             int division = (tileset.getSize().x / tileSize.x);
             int tu = tileNumber % division;
             int tv = tileNumber / division;
+            --tu; //adjust the index
 
             // get a pointer to the current tile's quad
             //aquí relleno los chunks
-            sf::VertexArray* garr = &chunks[j][i];
+            sf::VertexArray* quad = &chunks[j][i];
             
             sf::Vertex ver=*(new sf::Vertex());
             ver.position = sf::Vector2f(i * quadSize.x, j * quadSize.y);
             ver.texCoords = sf::Vector2f(tu * tileSize.x, tv * tileSize.y);
-            garr->append(std::move(ver));
+            quad->append(std::move(ver));
 
             ver.position = sf::Vector2f((i + 1) * quadSize.x, j * quadSize.y);
             ver.texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y);
-            garr->append(std::move(ver));
+            quad->append(std::move(ver));
 
             ver.position = sf::Vector2f((i + 1) * quadSize.x, (j + 1) * quadSize.y);
             ver.texCoords = sf::Vector2f((tu + 1) * tileSize.x, (tv + 1) * tileSize.y);
-            garr->append(std::move(ver));
+            quad->append(std::move(ver));
 
             ver.position = sf::Vector2f(i * quadSize.x, (j + 1) * quadSize.y);
             ver.texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y);
-            garr->append(std::move(ver));
+            quad->append(std::move(ver));
         }
     }
 }
@@ -84,10 +84,10 @@ void TileMapNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states)
     right = 1 + static_cast<int> (temp.x / tileSize.x);
     bottom = 1 + static_cast<int> (temp.y / tileSize.x);
     //clamp these to fit into array bounds:
-    left = std::max(0, std::min(left, numberColumnsVisible));
-    top = std::max(0, std::min(top, numberRowsVisible));
-    right = std::max(0, std::min(right, numberColumnsVisible));
-    bottom = std::max(0, std::min(bottom, numberRowsVisible));
+    left = std::max(0, std::min(left, numberColumnsVisible+1));
+    top = std::max(0, std::min(top, numberRowsVisible+1));
+    right = std::max(0, std::min(right, numberColumnsVisible+1));
+    bottom = std::max(0, std::min(bottom, numberRowsVisible+1));
 
     for (int ix = left; ix < right; ++ix) {
         for (int iy = top; iy < bottom; ++iy) {

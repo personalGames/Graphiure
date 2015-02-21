@@ -12,18 +12,27 @@
 #include "ResourceHolder.h"
 #include <SFML/Graphics.hpp>
 #include "IDTextures.h"
-
+#include "StructMap.h"
 
 class TileNode : public SceneNode {
 public:
-    TileNode(const ResourceHolder<IDTextures, sf::Texture>& images);
+    TileNode(const ResourceHolder<IDTextures, sf::Texture>& images, 
+        sf::Vector2i position, StructMap *mapInfo, int width, int height, 
+        int numberRowsVisible, int numberColumnsVisible);
 
     virtual ~TileNode();
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+    
 private:
-    sf::VertexArray vertices;
+    int numberColumnsVisible;
+    int numberRowsVisible;
+    
+    sf::Vector2i position;
+    sf::Vector2u tileSize;
     sf::Texture tileset;
+    sf::VertexArray vertices;
+    sf::Vector2u quadSize;
 };
 
 #endif	/* TILENODE_H */
