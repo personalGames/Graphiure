@@ -6,6 +6,8 @@
  */
 
 #include "Level.h"
+#include "TileNode.h"
+#include <iostream>
 
 Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
         ResourceHolder<IDTextures, sf::Texture>& images) :
@@ -26,23 +28,34 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
         sceneGraph.addChild(std::move(layer));
     }
 
-    //prepare the underground
-    std::vector< sf::Vector3i >* underground = infoMap->underground;
-    int i = underground->size();
-    while (i > 0) {
-        //        sceneLayers[Underground]->addChild();
-        --i;
-    }
-
 
     //prepare the principal background
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
             20, 20));
+
     tileMap->prepareMap(infoMap->tiles);
     sizeMap = tileMap->getSizeMap();
-    sceneLayers[Background]->addChild(std::move(tileMap));
+    //sceneLayers[Background]->addChild(std::move(tileMap));
+
+    //prepare the underground
+    sf::Vector2f quadSize(tileMap->getQuadSize());
+    sf::Vector2i tileSize(infoMap->tileWidth, infoMap->tileHeight);
+    std::vector< sf::Vector3i > underground = *(infoMap->underground);
+    int i = 0;
+    int size=underground.size();
+    std::cout<<size<<std::endl;
+    while (i < size) {
+        sf::Vector3i vector=underground[i];
+        sceneLayers[Underground]->addChild(
+                new TileNode(textures.get(IDTextures::TileSet),
+                sf::Vector2i(vector.x, vector.y),
+                vector.z,
+                tileSize, quadSize)
+                );
+        ++i;
+    }
 
     sceneLayers[Ground]->addChild(std::move(principalCharacter));
 
@@ -89,32 +102,30 @@ void Level::update(sf::Time dt) {
 
 void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f windowHalf = mapView.getSize() / 2.f;
-    sf::Vector2f center = mapView.getCenter();
     sf::Vector2f positionCharacter = principalCharacter->getPosition();
-    sf::Vector2f move(0,0);
-    
-    if(positionCharacter.x>windowHalf.x){
-        if(positionCharacter.x<(sizeMap.x-windowHalf.x)){
-            move.x=positionCharacter.x;
-        }else{
-            move.x=sizeMap.x-windowHalf.x;
+    sf::Vector2f move(0, 0);
+
+    if (positionCharacter.x > windowHalf.x) {
+        if (positionCharacter.x < (sizeMap.x - windowHalf.x)) {
+            move.x = positionCharacter.x;
+        } else {
+            move.x = sizeMap.x - windowHalf.x;
         }
-        
-    }else{
-        move.x=windowHalf.x;
+
+    } else {
+        move.x = windowHalf.x;
     }
-    
-    if(positionCharacter.y>windowHalf.y){
-        if(positionCharacter.y<(sizeMap.y-windowHalf.y)){
-            move.y=positionCharacter.y;
-        }else{
-            move.y=sizeMap.y-windowHalf.y;
+
+    if (positionCharacter.y > windowHalf.y) {
+        if (positionCharacter.y < (sizeMap.y - windowHalf.y)) {
+            move.y = positionCharacter.y;
+        } else {
+            move.y = sizeMap.y - windowHalf.y;
         }
-        
-    }else{
-        move.y=windowHalf.y;
+
+    } else {
+        move.y = windowHalf.y;
     }
-    
-    //move=move+windowHalf;
+
     mapView.setCenter(move);
 }

@@ -16,23 +16,20 @@
 
 class TileNode : public SceneNode {
 public:
-    TileNode(const ResourceHolder<IDTextures, sf::Texture>& images, 
-        sf::Vector2i position, StructMap *mapInfo, int width, int height, 
-        int numberRowsVisible, int numberColumnsVisible);
+    TileNode(const sf::Texture& image, sf::Vector2i position, int tile,
+        sf::Vector2i tileSize, sf::Vector2f quadSize);
 
     virtual ~TileNode();
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
     
 private:
-    int numberColumnsVisible;
-    int numberRowsVisible;
     
     sf::Vector2i position;
     sf::Vector2u tileSize;
     sf::Texture tileset;
     sf::VertexArray vertices;
-    sf::Vector2u quadSize;
+    sf::Vector2f quadSize;
 };
 
 #endif	/* TILENODE_H */

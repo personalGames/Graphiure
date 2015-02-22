@@ -30,6 +30,9 @@ public:
     void prepareMap(const int* tilesMap);
     
     sf::Vector2f getSizeMap();
+    inline sf::Vector2f getQuadSize(){
+        return quadSize;
+    }
 
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
     
