@@ -8,17 +8,16 @@
 #include "Level.h"
 
 Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
-            ResourceHolder<IDTextures, sf::Texture>& images) :
+        ResourceHolder<IDTextures, sf::Texture>& images) :
 mapView(outputTarget.getDefaultView()), target(outputTarget),
-textures(images), fonts(fonts), sceneGraph(), sceneLayers(), 
-        worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
-    
+textures(images), fonts(fonts), sceneGraph(), sceneLayers(),
+worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
+
 }
 
-
 void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
-    principalCharacter=characterCreated;
-    
+    principalCharacter = characterCreated;
+
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
         SceneNode* layer = new SceneNode();
@@ -26,29 +25,29 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
         sceneLayers[i] = std::move(layer);
         sceneGraph.addChild(std::move(layer));
     }
-    
+
     //prepare the underground
-    std::vector< sf::Vector3i >* underground=infoMap->underground;
-    int i=underground->size();
-    while(i>0){
-//        sceneLayers[Underground]->addChild();
+    std::vector< sf::Vector3i >* underground = infoMap->underground;
+    int i = underground->size();
+    while (i > 0) {
+        //        sceneLayers[Underground]->addChild();
         --i;
     }
-    
-    
+
+
     //prepare the principal background
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
             20, 20));
     tileMap->prepareMap(infoMap->tiles);
-    sizeMap=tileMap->getSizeMap();
+    sizeMap = tileMap->getSizeMap();
     sceneLayers[Background]->addChild(std::move(tileMap));
-    
+
     sceneLayers[Ground]->addChild(std::move(principalCharacter));
-    
-    
-    
+
+
+
 }
 
 void Level::setPointCharacter(int x, int y) {
@@ -78,8 +77,8 @@ Level::~Level() {
 
 void Level::update(sf::Time dt) {
     correctWorldPosition(dt);
-    principalCharacter->setVelocity(0.f,0.f);
-    
+    principalCharacter->setVelocity(0.f, 0.f);
+
     // Forward commands to scene graph
     while (!commandQueue.isEmpty()) {
         sceneGraph.onCommand(commandQueue.pop(), dt);
@@ -89,22 +88,33 @@ void Level::update(sf::Time dt) {
 }
 
 void Level::correctWorldPosition(sf::Time dt) {
-    sf::Vector2f center=mapView.getCenter();
-    sf::Vector2f windowHalf=mapView.getSize()/2.f;
-    sf::Vector2f offsetCharacter=principalCharacter->getPosition()-(center);
+    sf::Vector2f windowHalf = mapView.getSize() / 2.f;
+    sf::Vector2f center = mapView.getCenter();
+    sf::Vector2f positionCharacter = principalCharacter->getPosition();
     sf::Vector2f move(0,0);
     
-    if(offsetCharacter.x>0){
-        move.x=static_cast<int> (std::min(offsetCharacter.x,sizeMap.x-(center.x+windowHalf.x)));
+    if(positionCharacter.x>windowHalf.x){
+        if(positionCharacter.x<(sizeMap.x-windowHalf.x)){
+            move.x=positionCharacter.x;
+        }else{
+            move.x=sizeMap.x-windowHalf.x;
+        }
+        
     }else{
-        move.x=static_cast<int> (std::max(offsetCharacter.x,-(center.x-windowHalf.x)));
+        move.x=windowHalf.x;
     }
     
-    if(offsetCharacter.y>0){
-        move.y=static_cast<int> (std::min(offsetCharacter.y,sizeMap.y-(center.y+windowHalf.y)));
+    if(positionCharacter.y>windowHalf.y){
+        if(positionCharacter.y<(sizeMap.y-windowHalf.y)){
+            move.y=positionCharacter.y;
+        }else{
+            move.y=sizeMap.y-windowHalf.y;
+        }
+        
     }else{
-        move.y=static_cast<int> (std::max(offsetCharacter.y,-(center.y-windowHalf.y)));
+        move.y=windowHalf.y;
     }
     
-    mapView.move(move);
+    //move=move+windowHalf;
+    mapView.setCenter(move);
 }

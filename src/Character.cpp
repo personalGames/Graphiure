@@ -59,7 +59,7 @@ void Character::initCharacter() {
         animations.push_back(std::move(walk));
     }
     animatedCharacter.play(*animations[0]);
-    animatedCharacter.setPosition(200, 200);
+    animatedCharacter.setPosition(0, 0);
 }
 
 Character::~Character() {
