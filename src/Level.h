@@ -76,7 +76,7 @@ private:
     
     Character* principalCharacter;
     
-    void correctWorldPosition();
+    void correctWorldPosition(sf::Time dt);
 };
 
 #endif	/* LEVEL_H */

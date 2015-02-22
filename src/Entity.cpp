@@ -25,7 +25,8 @@ void Entity::setVelocity(float x, float y) {
 void Entity::updateCurrent(sf::Time delta, CommandQueue&) {
     //move is a function of sfml. Adds to the current position by moving
     //an offset unlike setPosition which overwrites it.
-    move(velocity * delta.asSeconds());
+    sf::Vector2f s=velocity * delta.asSeconds();
+    move(static_cast<int>(s.x), static_cast<int>(s.y));
 }
 
 void Entity::accelerate(sf::Vector2f velocity) {

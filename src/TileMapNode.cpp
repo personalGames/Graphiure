@@ -26,7 +26,7 @@ numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), 
 void TileMapNode::prepareMap(const int* tilesMap) {
     //size in window
     quadSize = sf::Vector2f(widthWindow / numberColumnsVisible,
-            heightWindow / (numberRowsVisible));
+                            heightWindow / numberRowsVisible);
     
     
     // populate the vertex array, with one quad per tile

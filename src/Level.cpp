@@ -77,9 +77,8 @@ Level::~Level() {
 }
 
 void Level::update(sf::Time dt) {
+    correctWorldPosition(dt);
     principalCharacter->setVelocity(0.f,0.f);
-   
-    correctWorldPosition();
     
     // Forward commands to scene graph
     while (!commandQueue.isEmpty()) {
@@ -89,22 +88,22 @@ void Level::update(sf::Time dt) {
     sceneGraph.update(dt, commandQueue);
 }
 
-void Level::correctWorldPosition() {
+void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f center=mapView.getCenter();
     sf::Vector2f windowHalf=mapView.getSize()/2.f;
-    sf::Vector2f offsetCharacter=principalCharacter->getPosition()-(center-windowHalf);
+    sf::Vector2f offsetCharacter=principalCharacter->getPosition()-(center);
     sf::Vector2f move(0,0);
     
     if(offsetCharacter.x>0){
-        move.x=std::min(offsetCharacter.x,sizeMap.x-(center.x+windowHalf.x));
+        move.x=static_cast<int> (std::min(offsetCharacter.x,sizeMap.x-(center.x+windowHalf.x)));
     }else{
-        move.x=std::max(offsetCharacter.x,-(center.x-windowHalf.x));
+        move.x=static_cast<int> (std::max(offsetCharacter.x,-(center.x-windowHalf.x)));
     }
     
     if(offsetCharacter.y>0){
-        move.y=std::min(offsetCharacter.y,sizeMap.y-(center.y+windowHalf.y));
+        move.y=static_cast<int> (std::min(offsetCharacter.y,sizeMap.y-(center.y+windowHalf.y)));
     }else{
-        move.y=std::max(offsetCharacter.y,-(center.y-windowHalf.y));
+        move.y=static_cast<int> (std::max(offsetCharacter.y,-(center.y-windowHalf.y)));
     }
     
     mapView.move(move);

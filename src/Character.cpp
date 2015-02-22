@@ -73,7 +73,6 @@ void Character::updateCurrent(sf::Time dt, CommandQueue& commands) {
     adaptVelocity();
     animatedCharacter.update(dt);
     Entity::updateCurrent(dt, commands);
-    this->getPosition();
 }
 
 void Character::adaptVelocity() {
@@ -90,7 +89,7 @@ void Character::adaptVelocity() {
 }
 
 float Character::getMaxSpeed() const {
-    return 100.f;
+    return 200.f;
 }
 
 void Character::updateAnimation(Actions action) {
@@ -102,7 +101,7 @@ void Character::updateAnimation(Actions action) {
             if (vel.x != 0 && vel.y != 0) {
                 //do nothing, just continue
                 //here must be control what animation to be seen when diagonal;
-                //                concreteAction = lastAction;
+                //concreteAction = lastAction;
             } else if (vel.y != 0) {
                 concreteAction = (vel.y > 0) ? Actions::Down : Actions::Up;
                 lastAction = concreteAction;
