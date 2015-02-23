@@ -21,7 +21,6 @@ public:
             int numberRowsVisible, int numberColumnsVisible);
 
     virtual ~TileMapNode();
-    
     /**
      * Prepare the map after initialize the node with details like
      * numbers of rows/columns, size of windows...

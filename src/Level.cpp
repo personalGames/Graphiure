@@ -34,29 +34,19 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
             20, 20));
-
     tileMap->prepareMap(infoMap->tiles);
-    sizeMap = tileMap->getSizeMap();
-    //sceneLayers[Background]->addChild(std::move(tileMap));
+    sizeMap=tileMap->getSizeMap();
+    sceneLayers[Background]->addChild(std::move(tileMap));
 
     //prepare the underground
-    sf::Vector2f quadSize(tileMap->getQuadSize());
-    sf::Vector2i tileSize(infoMap->tileWidth, infoMap->tileHeight);
-    std::vector< sf::Vector3i > underground = *(infoMap->underground);
-    int i = 0;
-    int size=underground.size();
-    std::cout<<size<<std::endl;
-    while (i < size) {
-        sf::Vector3i vector=underground[i];
-        sceneLayers[Underground]->addChild(
-                new TileNode(textures.get(IDTextures::TileSet),
-                sf::Vector2i(vector.x, vector.y),
-                vector.z,
-                tileSize, quadSize)
-                );
-        ++i;
-    }
+    TileNode * tiles(new TileNode(textures,
+            infoMap,mapView.getSize().x, mapView.getSize().y,
+            20, 20));
 
+    tiles->prepareMap(*(infoMap->underground));
+    sceneLayers[Underground]->addChild(std::move(tileMap));
+    
+    
     sceneLayers[Ground]->addChild(std::move(principalCharacter));
 
 
