@@ -45,7 +45,7 @@ void LoadingLevel::runTask() {
         sf::Lock lock(mutex);
         completion = 70;
     }
-    sf::sleep(sf::milliseconds(300));
+    //sf::sleep(sf::milliseconds(300));
 
     delete infoMap;
     delete parser;

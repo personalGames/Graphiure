@@ -44,7 +44,7 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
             20, 20));
 
     tiles->prepareMap(*(infoMap->underground));
-    sceneLayers[Underground]->addChild(std::move(tileMap));
+    sceneLayers[Underground]->addChild(std::move(tiles));
     
     
     sceneLayers[Ground]->addChild(std::move(principalCharacter));

@@ -6,6 +6,8 @@
  */
 
 #include "TileNode.h"
+#include <iostream>
+#include <bits/stl_vector.h>
 
 TileNode::TileNode(const ResourceHolder<IDTextures, sf::Texture>& images,
         StructMap *mapInfo, int width, int height,
@@ -34,10 +36,10 @@ void TileNode::prepareMap(const std::vector< sf::Vector3i >& tilesMap) {
         column = tile.x;
         if (row != tile.y) {
             row = tile.y;
-            if (rowVector.size()>0) {
+            if (rowVector.size() > 0) {
                 chunks.push_back(std::move(rowVector));
             }
-            rowVector =*( new std::vector< Tile >);
+            rowVector = *(new std::vector< Tile >);
         }
 
         // get the current tile number
@@ -72,13 +74,13 @@ void TileNode::prepareMap(const std::vector< sf::Vector3i >& tilesMap) {
         quad->append(std::move(ver));
 
         //create the tile
-        Tile tilePrepared* = new Tile(row, column, *quad);
+        Tile tilePrepared = *(new Tile(column, row, *quad));
 
         //append the tile to the row
-        rowVector->push_back(*tilePrepared);
+        rowVector.push_back(tilePrepared);
     }
 
-    if (rowVector.size()>0) {
+    if (rowVector.size() > 0) {
         chunks.push_back(std::move(rowVector));
     }
 }
@@ -115,17 +117,24 @@ void TileNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) co
     bool stillRow = true;
     bool stillColumn = true;
 
-    int i = 0;
-    int j = 0;
+    
+    uint i = 0;
+    uint j = 0;
     while (stillColumn) {
+        std::cout<<chunks.size()<<std::endl;
+        std::cout<<i<<std::endl;
+        if(chunks.size()<=(i+1)){
+            std::cout<<"entra"<<std::endl;
+            stillColumn=false;
+        }
         while (stillRow) {
-            if (chunks[i][j].x > right) {
-                stillRow = false;
-            } else if (chunks[i][j].y > bottom) {
+            if (chunks[i][j].y > bottom) {
                 stillColumn = false;
-            }else if(chunks[i][j].x>left && chunks[i][j].y>top){
+            } else if (chunks[i].size() <= j || chunks[i][j].x > right) {
+                stillRow = false;
+            } else if (chunks[i][j].x >= left && chunks[i][j].y >= top) {
                 //dibujar
-                target.draw(chunks[i][j], states);
+                target.draw(chunks[i][j].vertices, states);
             }
             ++j;
         }

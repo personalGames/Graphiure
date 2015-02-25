@@ -89,10 +89,6 @@
         <itemPath>src/StatesID.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
-        <logicalFolder name="f2" displayName="QuadTree" projectFiles="true">
-          <itemPath>src/QuadTree.cpp</itemPath>
-          <itemPath>src/QuadTree.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="f1" displayName="XMLParser" projectFiles="true">
           <itemPath>src/StructMap.cpp</itemPath>
           <itemPath>src/StructMap.h</itemPath>
@@ -304,10 +300,6 @@
       </item>
       <item path="src/Player.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/QuadTree.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/QuadTree.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SceneNode.cpp" ex="false" tool="1" flavor2="0">
@@ -512,10 +504,6 @@
       <item path="src/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Player.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/QuadTree.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/QuadTree.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>

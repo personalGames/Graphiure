@@ -65,6 +65,7 @@ StructMap* XMLParser::readMap() {
 void XMLParser::parseBackground(StructMap* result, tinyxml2::XMLElement* layer) {
     result->tiles = new int[result->numberColumns * result->numberRows];
     uint i = 0;
+            
     //get the data element and next, the gid element
     tinyxml2::XMLElement* child = layer->FirstChildElement()->FirstChildElement();
 
@@ -86,8 +87,8 @@ void XMLParser::parseUnderground(StructMap* result, tinyxml2::XMLElement* layer)
         if (value != 0) {
             int y=i%width;
             int x=i/width;
-            y++;
-            sf::Vector3i point = *(new sf::Vector3i(x,y,value));
+            
+            sf::Vector3i point = *(new sf::Vector3i(y,x,value));
             result->underground->push_back(std::move(point));
         }
         i++;
