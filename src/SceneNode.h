@@ -39,22 +39,27 @@ public:
      * @param child the child
      */
     void addChild(SceneNode* child);
+    
     /**
      * Remove the given node to this node
      * @param node the child to remove
      * @return the removed node
      */
     SceneNode* removeChild(const SceneNode& node);
+    
     /**
      * Get the absolute transform (position/rotation and scale) of the node
      * @return the absolute transform
      */
     sf::Transform getWorldTransform() const;
+    
     /**
      * Get the relative position of the node
      * @return a vector x,y of floats
      */
     sf::Vector2f getWorldPosition() const;
+    
+    
     void update(sf::Time dt, CommandQueue& commands);
 
     /**
@@ -79,6 +84,7 @@ private:
      * Vector of children nodes
      */
     std::vector<SceneNode*> children;
+    
     /**
      * The parent of this node
      */
@@ -91,11 +97,13 @@ private:
      * @param delta
      */
     virtual void updateCurrent(sf::Time delta, CommandQueue& commands);
+    
     /**
      * Update the children
      * @param delta
      */
     void updateChildren(sf::Time delta, CommandQueue& commands);
+    
     /**
      * Inherit from drawable. Draw the node. Is overriden by  concrete class
      * as an example, aircraft, spriteNode...
@@ -103,12 +111,14 @@ private:
      * @param states
      */
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    
     /**
      * Draw the actual state of the node
      * @param target
      * @param states
      */
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+    
     /**
      * Draw children
      * @param target

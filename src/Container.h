@@ -12,7 +12,7 @@
 #include <SFML/Graphics/RenderStates.hpp>
 #include <vector>
 #include <memory.h>
-#include <event.h>
+//#include <event.h>
 
 #include "Component.h"
 
