@@ -15,10 +15,6 @@ Entity2::Entity2(const Entity2& orig) {
 
 }
 
-PropertyManager Entity2::getProperties() {
-
-}
-
 Entity2::~Entity2() {
 
 }

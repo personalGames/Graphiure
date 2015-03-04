@@ -19,6 +19,7 @@
 #include "XMLParser.h"
 #include "Entity.h"
 #include "StructMap.h"
+#include "Entity2.h"
 
 
 class Level : private sf::NonCopyable {
@@ -29,7 +30,7 @@ public:
     
     void update(sf::Time dt);
     void draw();
-    void buildScene(StructMap* infoMap, Character* characterCreated);
+    void buildScene(StructMap* infoMap, Entity2* characterCreated);
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
 private:
@@ -74,7 +75,8 @@ private:
     
     sf::Vector2f sizeMap;
     
-    Character* principalCharacter;
+    //Character* principalCharacter;
+    Entity2* principalCharacter;
     
     void correctWorldPosition(sf::Time dt);
 };

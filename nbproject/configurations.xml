@@ -49,6 +49,8 @@
         <itemPath>src/FrameClock.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f9" displayName="Entities" projectFiles="true">
+        <logicalFolder name="f2" displayName="ConcreteProperties" projectFiles="true">
+        </logicalFolder>
         <logicalFolder name="f1" displayName="Properties" projectFiles="true">
           <itemPath>src/IProperty.cpp</itemPath>
           <itemPath>src/IProperty.h</itemPath>
@@ -64,6 +66,8 @@
         <itemPath>src/Entity.h</itemPath>
         <itemPath>src/Entity2.cpp</itemPath>
         <itemPath>src/Entity2.h</itemPath>
+        <itemPath>src/EntityManager.cpp</itemPath>
+        <itemPath>src/EntityManager.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
         <itemPath>src/Button.cpp</itemPath>
@@ -119,6 +123,8 @@
           <itemPath>src/LoadingLevel.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="SceneGraph" projectFiles="true">
+          <itemPath>src/EntityNode.cpp</itemPath>
+          <itemPath>src/EntityNode.h</itemPath>
           <itemPath>src/Layer.h</itemPath>
           <itemPath>src/SceneNode.cpp</itemPath>
           <itemPath>src/SceneNode.h</itemPath>
@@ -257,6 +263,14 @@
       <item path="src/Entity2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Entity2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/EntityManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/EntityManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/EntityNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/EntityNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -478,6 +492,14 @@
       <item path="src/Entity2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Entity2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/EntityManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/EntityManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/EntityNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/EntityNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
       </item>

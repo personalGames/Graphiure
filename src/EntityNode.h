@@ -1,28 +1,28 @@
 /* 
- * File:   Entity.h
+ * File:   EntityNode.h
  * Author: dorian
  *
- * Created on 15 de febrero de 2015, 14:13
+ * Created on 4 de marzo de 2015, 12:22
  */
 
-#ifndef ENTITY_H
-#define	ENTITY_H
+#ifndef ENTITYNODE_H
+#define	ENTITYNODE_H
 
-#include <SFML/System/Time.hpp>
+#include "Entity2.h"
 #include "SceneNode.h"
+#include "PropertyManager.h"
+#include <SFML/System/Vector2.hpp>
 
-class Entity : public SceneNode {
+class EntityNode : public SceneNode {
 public:
-    Entity();
-    virtual ~Entity();
-
+    EntityNode(Entity2* entity);
+    virtual ~EntityNode();
+    
     /**
      * Get the velocity of the entity
      * @return a vector x,y of floats
      */
-    inline sf::Vector2f getVelocity() const {
-        return velocity;
-    }
+    sf::Vector2f getVelocity() const;
 
     /**
      * Set the velocity of the entity
@@ -50,20 +50,24 @@ public:
      */
     void accelerate(float x, float y);
     
+    virtual unsigned int getCategory() const;
     
-
-private:
     /**
-     * The velocity of the game object (entity)
+     * Inherit from SceneNode, draw the entity
+     * @param target
+     * @param states
      */
-    sf::Vector2f velocity;
-
-protected:
+    virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+    
+private:
+    Entity2* entity;
+    
+    protected:
     /*
      * Update the entity given a time since the last update
      */
     virtual void updateCurrent(sf::Time dt, CommandQueue& commands);
 };
 
-#endif	/* ENTITY_H */
+#endif	/* ENTITYNODE_H */
 

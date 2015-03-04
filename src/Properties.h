@@ -8,11 +8,16 @@
 #ifndef PROPERTIES_H
 #define	PROPERTIES_H
 
-enum class {
-    POSITION,
-    VELOCITY,
-    ACCELERATION,
+enum class TypeProperty {
+    POSITION, //sf::Vector2f
+    VELOCITY, //sf::Vector2f
     DRAWABLE,
+    WALKABLE, //sf::Drawable
+};
+
+struct Animation{
+    int x,y;
+    Position(int x, int y):x(x),y(y){};
 };
 
 #endif	/* PROPERTIES_H */

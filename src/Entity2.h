@@ -10,17 +10,17 @@
 
 #include "PropertyManager.h"
 
-class Entity2 {
+//TODO id of the entity
+
+class Entity2 : public PropertyManager{
 public:
     Entity2();
     Entity2(const Entity2& orig);
     virtual ~Entity2();
     
-    PropertyManager getProperties();
     
     
 private:
-    PropertyManager properties;
 };
 
 #endif	/* ENTITY2_H */

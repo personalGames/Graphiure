@@ -37,3 +37,5 @@ void Entity::accelerate(float vx, float vy) {
     velocity.x += vx;
     velocity.y += vy;
 }
+
+

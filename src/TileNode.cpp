@@ -121,10 +121,7 @@ void TileNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) co
     uint i = 0;
     uint j = 0;
     while (stillColumn) {
-        std::cout<<chunks.size()<<std::endl;
-        std::cout<<i<<std::endl;
         if(chunks.size()<=(i+1)){
-            std::cout<<"entra"<<std::endl;
             stillColumn=false;
         }
         while (stillRow) {

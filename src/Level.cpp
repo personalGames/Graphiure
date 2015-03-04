@@ -7,6 +7,7 @@
 
 #include "Level.h"
 #include "TileNode.h"
+#include "EntityNode.h"
 #include <iostream>
 
 Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
@@ -17,8 +18,9 @@ worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
 
 }
 
-void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
+void Level::buildScene(StructMap* infoMap, Entity2* characterCreated) {
     principalCharacter = characterCreated;
+    
 
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
@@ -46,8 +48,8 @@ void Level::buildScene(StructMap* infoMap, Character* characterCreated) {
     tiles->prepareMap(*(infoMap->underground));
     sceneLayers[Underground]->addChild(std::move(tiles));
     
-    
-    sceneLayers[Ground]->addChild(std::move(principalCharacter));
+    EntityNode* node=new EntityNode(principalCharacter);
+    sceneLayers[Ground]->addChild(std::move(node));
 
 
 
@@ -80,7 +82,8 @@ Level::~Level() {
 
 void Level::update(sf::Time dt) {
     correctWorldPosition(dt);
-    principalCharacter->setVelocity(0.f, 0.f);
+    //principalCharacter->setVelocity(0.f, 0.f);
+    principalCharacter->Set<sf::Vector2f>("Velocity", sf::Vector2f(0,0));
 
     // Forward commands to scene graph
     while (!commandQueue.isEmpty()) {
@@ -92,7 +95,8 @@ void Level::update(sf::Time dt) {
 
 void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f windowHalf = mapView.getSize() / 2.f;
-    sf::Vector2f positionCharacter = principalCharacter->getPosition();
+    //sf::Vector2f positionCharacter = principalCharacter->getPosition();
+    sf::Vector2f positionCharacter = principalCharacter->Get<sf::Vector2f>("Position");
     sf::Vector2f move(0, 0);
 
     if (positionCharacter.x > windowHalf.x) {
