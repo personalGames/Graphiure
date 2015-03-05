@@ -43,6 +43,9 @@ private:
         
         Tile(int x, int y, sf::VertexArray& vertices):
                 x(x),y(y),vertices(vertices){}
+        
+        Tile(const Tile &tile):
+                x(tile.x),y(tile.y),vertices(tile.vertices){}
     };
     
     sf::Vector2u tileSize;

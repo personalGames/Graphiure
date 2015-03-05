@@ -117,18 +117,19 @@ void TileNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) co
     bool stillRow = true;
     bool stillColumn = true;
 
-    
+
     uint i = 0;
     uint j = 0;
     while (stillColumn) {
-        if(chunks.size()<=(i+1)){
-            stillColumn=false;
+        if (chunks.size() <= (i + 1)) {
+            stillColumn = false;
         }
         while (stillRow) {
-            if (chunks[i][j].y > bottom) {
-                stillColumn = false;
-            } else if (chunks[i].size() <= j || chunks[i][j].x > right) {
+            if (chunks[i].size() <= j || chunks[i][j].x > right) {
                 stillRow = false;
+            } else if (chunks[i][j].y > bottom) {
+                stillColumn = false;
+
             } else if (chunks[i][j].x >= left && chunks[i][j].y >= top) {
                 //dibujar
                 target.draw(chunks[i][j].vertices, states);
