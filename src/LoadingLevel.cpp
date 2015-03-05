@@ -47,11 +47,11 @@ void LoadingLevel::runTask() {
         completion = 35;
     }
 
-    sf::sleep(sf::milliseconds(2000));
+    //sf::sleep(sf::milliseconds(2000));
     //recojo los elementos necesarios y los comunico al manejador de recursos
     //Character* character=new Character(*textures);
     Entity2* character=new Entity2();
-    character->Set<sf::Vector2f>("Position",sf::Vector2f(0,0));
+    
     
     AnimatedSprite animatedCharacter;
     std::vector<Animation*> animations;
@@ -93,7 +93,9 @@ void LoadingLevel::runTask() {
     animatedCharacter.setPosition(0, 0);
     
     
-    character->Set<AnimatedSprite>("Drawable", animatedCharacter);
+    character->Add<AnimatedSprite>("Drawable", animatedCharacter);
+    character->Add<sf::Vector2f>("Position",sf::Vector2f(0,0));
+    character->Add<sf::Vector2f>("Velocity",sf::Vector2f(0,0));
     
     //pass the information to build the scene with all this data readed
     levelToLoad->buildScene(infoMap, character);
