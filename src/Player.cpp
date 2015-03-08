@@ -23,7 +23,14 @@ Player::Player() {
 }
 
 void Player::initializeActions() {
-    actionBinding[Left].action = derivedAction<EntityNode>(MoveCharacter(-1, 0));
+    auto finder = [] (EntityNode& character, sf::Time) {
+            character.accelerate(sf::Vector2f(-1,0) * character.getMaxSpeed());
+            character.updateAnimation(Actions::Move);
+        };
+    
+    actionBinding[Left].action = derivedAction<EntityNode>(finder);
+            
+            //MoveCharacter(-1, 0));
     actionBinding[Right].action = derivedAction<EntityNode>(MoveCharacter(+1, 0));
     actionBinding[Up].action = derivedAction<EntityNode>(MoveCharacter(0, -1));
     actionBinding[Down].action = derivedAction<EntityNode>(MoveCharacter(0, +1));
