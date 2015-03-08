@@ -49,7 +49,6 @@ void LoadingLevel::runTask() {
 
     //sf::sleep(sf::milliseconds(2000));
     //recojo los elementos necesarios y los comunico al manejador de recursos
-    //Character* character=new Character(*textures);
     Entity2* character=new Entity2();
     
     
@@ -94,7 +93,9 @@ void LoadingLevel::runTask() {
     
     
     character->Add<AnimatedSprite>("Drawable", animatedCharacter);
-    character->Add<sf::Vector2f>("Position",sf::Vector2f(0,0));
+    sf::Transformable trans=sf::Transformable();
+    trans.setPosition(0,0);
+    character->Add<sf::Transformable>("Position",trans);
     character->Add<sf::Vector2f>("Velocity",sf::Vector2f(0,0));
     
     //pass the information to build the scene with all this data readed

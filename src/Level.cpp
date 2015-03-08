@@ -82,7 +82,6 @@ Level::~Level() {
 
 void Level::update(sf::Time dt) {
     correctWorldPosition(dt);
-    //principalCharacter->setVelocity(0.f, 0.f);
     principalCharacter->Set<sf::Vector2f>("Velocity", sf::Vector2f(0,0));
 
     // Forward commands to scene graph
@@ -95,8 +94,8 @@ void Level::update(sf::Time dt) {
 
 void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f windowHalf = mapView.getSize() / 2.f;
-    //sf::Vector2f positionCharacter = principalCharacter->getPosition();
-    sf::Vector2f positionCharacter = principalCharacter->Get<sf::Vector2f>("Position");
+    sf::Vector2f positionCharacter = principalCharacter->
+            Get<sf::Transformable>("Position").getPosition();
     sf::Vector2f move(0, 0);
 
     if (positionCharacter.x > windowHalf.x) {

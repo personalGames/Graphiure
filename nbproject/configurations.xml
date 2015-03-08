@@ -49,8 +49,6 @@
         <itemPath>src/FrameClock.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f9" displayName="Entities" projectFiles="true">
-        <logicalFolder name="f2" displayName="ConcreteProperties" projectFiles="true">
-        </logicalFolder>
         <logicalFolder name="f1" displayName="Properties" projectFiles="true">
           <itemPath>src/IProperty.cpp</itemPath>
           <itemPath>src/IProperty.h</itemPath>

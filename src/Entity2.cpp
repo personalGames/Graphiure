@@ -11,10 +11,6 @@ Entity2::Entity2() {
 
 }
 
-Entity2::Entity2(const Entity2& orig) {
-
-}
-
 Entity2::~Entity2() {
 
 }

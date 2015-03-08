@@ -33,20 +33,82 @@ void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
     sf::Vector2f s=(this->entity->Get<sf::Vector2f>("Velocity"))
                         * delta.asSeconds();
     move(static_cast<int>(s.x), static_cast<int>(s.y));
+
+    sf::Transformable actualPosition=sf::Transformable();
+    actualPosition.setPosition(getPosition());
+    this->entity->Set<sf::Transformable>("Position",actualPosition);
+    
 }
 
 void EntityNode::accelerate(sf::Vector2f velocity) {
-    //this->velocity += velocity;
+    sf::Vector2f previous(this->entity->Get<sf::Vector2f>("Velocity"));
+    previous+=velocity;
+    this->entity->Set<sf::Vector2f>("Velocity",previous);
 }
 
 void EntityNode::accelerate(float vx, float vy) {
-    //velocity.x += vx;
-    //velocity.y += vy;
+    sf::Vector2f previous(this->entity->Get<sf::Vector2f>("Velocity"));
+    previous.x += vx;
+    previous.y += vy;
+    this->entity->Set<sf::Vector2f>("Velocity",previous);
 }
+
+void EntityNode::updateAnimation(Actions action) {
+//switch (action) {
+//        case Move:
+//        {
+//            Actions concreteAction = Actions::None;
+//            sf::Vector2f vel = getVelocity();
+//            if (vel.x != 0 && vel.y != 0) {
+//                //do nothing, just continue
+//                //here must be control what animation to be seen when diagonal;
+//                //concreteAction = lastAction;
+//            } else if (vel.y != 0) {
+//                concreteAction = (vel.y > 0) ? Actions::Down : Actions::Up;
+//                lastAction = concreteAction;
+//            } else {
+//                concreteAction = (vel.x > 0) ? Actions::Right : Actions::Left;
+//                lastAction = concreteAction;
+//            }
+//            updateAnimation(concreteAction);
+//
+//
+//            break;
+//        }
+//        case Up:
+//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Up]);
+//            break;
+//        case Down:
+//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Down]);
+//            break;
+//        case Right:
+//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Rigth]);
+//            break;
+//        case Left:
+//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Left]);
+//            break;
+//        default:
+//            break;
+//    }
+}
+
 
 unsigned int EntityNode::getCategory() const {
     return Category::CHARACTER;
 }
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(entity->Get<AnimatedSprite>("Drawable"), states);
+}
+
+void EntityNode::onCommand(const Command& command, sf::Time delta) {
+    // Command current node, if category matches
+    if ((command.category & this->getCategory())>=1) {
+        //command.action(this->entity, delta);
+        command.action(*this, delta);
+    }
+
+    // Propagate command to children
+    for (SceneNode* child : children) {
+        child->onCommand(command, delta);
+    }
 }

@@ -15,7 +15,6 @@
 class Entity2 : public PropertyManager{
 public:
     Entity2();
-    Entity2(const Entity2& orig);
     virtual ~Entity2();
     
     

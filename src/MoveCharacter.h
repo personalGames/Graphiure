@@ -8,13 +8,14 @@
 #ifndef MOVECHARACTER_H
 #define	MOVECHARACTER_H
 #include "Character.h"
+#include "EntityNode.h"
 
 struct MoveCharacter {
 
     MoveCharacter(float vx, float vy) : velocity(vx, vy) {
     }
 
-    void operator() (Character & character, sf::Time) const {
+    void operator() (EntityNode & character, sf::Time) const {
         character.accelerate(velocity * character.getMaxSpeed());
         character.updateAnimation(Actions::Move);
     }

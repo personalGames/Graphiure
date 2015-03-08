@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "Context.h"
 #include "MoveCharacter.h"
+#include "EntityNode.h"
 #include <iostream>
 
 Player::Player() {
@@ -22,10 +23,10 @@ Player::Player() {
 }
 
 void Player::initializeActions() {
-    actionBinding[Left].action = derivedAction<Character>(MoveCharacter(-1, 0));
-    actionBinding[Right].action = derivedAction<Character>(MoveCharacter(+1, 0));
-    actionBinding[Up].action = derivedAction<Character>(MoveCharacter(0, -1));
-    actionBinding[Down].action = derivedAction<Character>(MoveCharacter(0, +1));
+    actionBinding[Left].action = derivedAction<EntityNode>(MoveCharacter(-1, 0));
+    actionBinding[Right].action = derivedAction<EntityNode>(MoveCharacter(+1, 0));
+    actionBinding[Up].action = derivedAction<EntityNode>(MoveCharacter(0, -1));
+    actionBinding[Down].action = derivedAction<EntityNode>(MoveCharacter(0, +1));
     
     actionBinding[Left].category = Category::CHARACTER;
     actionBinding[Right].category= Category::CHARACTER;

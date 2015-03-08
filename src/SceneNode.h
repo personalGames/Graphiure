@@ -67,7 +67,8 @@ public:
      * @param command the command
      * @param delta the time
      */
-    void onCommand(const Command& command, sf::Time delta);
+    virtual void onCommand(const Command& command, sf::Time delta);
+    
     /**
      * Get the category of this node.
      * @return the category of the node
@@ -78,12 +79,14 @@ public:
     virtual sf::FloatRect getBoundingRect() const;
     virtual bool isMarkedForRemoval() const;
     virtual bool isDestroyed() const;
-
-private:
-    /**
+    
+    protected:
+        /**
      * Vector of children nodes
      */
     std::vector<SceneNode*> children;
+
+private:
     
     /**
      * The parent of this node

@@ -11,13 +11,18 @@
 #include "Entity2.h"
 #include "SceneNode.h"
 #include "PropertyManager.h"
+#include "Actions.h"
 #include <SFML/System/Vector2.hpp>
 
 class EntityNode : public SceneNode {
 public:
     EntityNode(Entity2* entity);
     virtual ~EntityNode();
-    
+
+    Entity2* getEntity() const {
+        return entity;
+    }
+
     /**
      * Get the velocity of the entity
      * @return a vector x,y of floats
@@ -49,24 +54,34 @@ public:
      * @param y axis y
      */
     void accelerate(float x, float y);
-    
+
     virtual unsigned int getCategory() const;
-    
+
+    float getMaxSpeed() const {
+        return 200.f;
+    }
+
+    void updateAnimation(Actions action);
+
     /**
      * Inherit from SceneNode, draw the entity
      * @param target
      * @param states
      */
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
-    
+
 private:
     Entity2* entity;
-    
-    protected:
+
+protected:
     /*
      * Update the entity given a time since the last update
      */
     virtual void updateCurrent(sf::Time dt, CommandQueue& commands);
+    
+
+    virtual void onCommand(const Command& command, sf::Time delta);
+
 };
 
 #endif	/* ENTITYNODE_H */
