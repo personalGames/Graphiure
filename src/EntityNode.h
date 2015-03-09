@@ -8,7 +8,7 @@
 #ifndef ENTITYNODE_H
 #define	ENTITYNODE_H
 
-#include "Entity2.h"
+#include "Entity.h"
 #include "SceneNode.h"
 #include "PropertyManager.h"
 #include "Actions.h"
@@ -16,10 +16,10 @@
 
 class EntityNode : public SceneNode {
 public:
-    EntityNode(Entity2* entity);
+    EntityNode(Entity* entity);
     virtual ~EntityNode();
 
-    Entity2* getEntity() const {
+    Entity* getEntity() const {
         return entity;
     }
 
@@ -54,12 +54,12 @@ public:
      * @param y axis y
      */
     void accelerate(float x, float y);
+    
+    void adaptVelocity();
 
     virtual unsigned int getCategory() const;
 
-    float getMaxSpeed() const {
-        return 200.f;
-    }
+    float getMaxSpeed() const;
 
     void updateAnimation(Actions action);
 
@@ -71,7 +71,7 @@ public:
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 
 private:
-    Entity2* entity;
+    Entity* entity;
 
 protected:
     /*

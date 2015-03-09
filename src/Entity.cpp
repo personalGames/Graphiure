@@ -1,41 +1,16 @@
 /* 
- * File:   Entity.cpp
+ * File:   Entity2.cpp
  * Author: dorian
  * 
- * Created on 15 de febrero de 2015, 14:13
+ * Created on 3 de marzo de 2015, 9:30
  */
 
 #include "Entity.h"
 
-Entity::Entity() : velocity() {
+Entity::Entity() {
+
 }
 
 Entity::~Entity() {
+
 }
-
-void Entity::setVelocity(sf::Vector2f velocity) {
-    this->velocity = velocity;
-}
-
-void Entity::setVelocity(float x, float y) {
-    this->velocity.x = x;
-    this->velocity.y = y;
-}
-
-void Entity::updateCurrent(sf::Time delta, CommandQueue&) {
-    //move is a function of sfml. Adds to the current position by moving
-    //an offset unlike setPosition which overwrites it.
-    sf::Vector2f s=velocity * delta.asSeconds();
-    move(static_cast<int>(s.x), static_cast<int>(s.y));
-}
-
-void Entity::accelerate(sf::Vector2f velocity) {
-    this->velocity += velocity;
-}
-
-void Entity::accelerate(float vx, float vy) {
-    velocity.x += vx;
-    velocity.y += vy;
-}
-
-

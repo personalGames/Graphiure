@@ -1,0 +1,143 @@
+<Animation id="character-up-walking" idImage="characterWalking" replay="true">
+<frame>
+	<vertice>32</vertice>
+	<vertice>96</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>64</vertice>
+	<vertice>96</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>32</vertice>
+	<vertice>96</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>0</vertice>
+	<vertice>96</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-down-walking" idImage="characterWalking" replay="true">
+<frame>
+	<vertice>32</vertice>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>64</vertice>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>32</vertice>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>0</vertice>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-right-walking" idImage="characterWalking" replay="true">
+<frame>
+	<vertice>32</vertice>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>64</vertice>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>32</vertice>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>0</vertice>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-left-walking" idImage="characterWalking" replay="true">
+<frame>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+<frame>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-up-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice>32</vertice>
+	<vertice>96</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-down-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice>32</vertice>
+	<vertice>0</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-right-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice>32</vertice>
+	<vertice>64</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>	
+</Animation>
+
+<Animation id="character-left-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+	<vertice>32</vertice>
+</frame>
+</Animation>

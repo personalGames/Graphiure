@@ -8,6 +8,10 @@
 #ifndef ACTIONS_H
 #define	ACTIONS_H
 
+#include <vector>
+#include <string>
+#include <algorithm>
+
 enum Actions {
     None,
     Left,

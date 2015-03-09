@@ -6,7 +6,8 @@
  */
 
 #include "LoadingLevel.h"
-#include "Entity2.h"
+#include "Entity.h"
+#include "AnimatedSprite.h"
 
 LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures,sf::Texture>* textures) : ParallelTask(),
 level(level), levelToLoad(levelToLoad){
@@ -49,7 +50,7 @@ void LoadingLevel::runTask() {
 
     //sf::sleep(sf::milliseconds(2000));
     //recojo los elementos necesarios y los comunico al manejador de recursos
-    Entity2* character=new Entity2();
+    Entity* character=new Entity();
     
     
     AnimatedSprite animatedCharacter;
@@ -97,6 +98,7 @@ void LoadingLevel::runTask() {
     trans.setPosition(0,0);
     character->Add<sf::Transformable>("Position",trans);
     character->Add<sf::Vector2f>("Velocity",sf::Vector2f(0,0));
+    character->Add<float>("MaxVelocity",200.f);
     
     //pass the information to build the scene with all this data readed
     levelToLoad->buildScene(infoMap, character);

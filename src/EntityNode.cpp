@@ -9,7 +9,7 @@
 #include "EntityNode.h"
 #include "AnimatedSprite.h"
 
-EntityNode::EntityNode(Entity2* entity): entity(entity) {
+EntityNode::EntityNode(Entity* entity): entity(entity) {
 }
 
 EntityNode::~EntityNode() {
@@ -27,6 +27,9 @@ void EntityNode::setVelocity(float x, float y) {
 }
 
 void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
+    adaptVelocity();
+    //animatedCharacter.update(dt); actualizar renderizado
+    //eso tendría que ir en el sistema de renderizado
     //move is a function of sfml. Adds to the current position by moving
     //an offset unlike setPosition which overwrites it.
     //sf::Vector2f s=velocity * delta.asSeconds();
@@ -40,6 +43,11 @@ void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
     
 }
 
+float EntityNode::getMaxSpeed() const {
+    return this->entity->Get<float>("MaxVelocity");
+}
+
+
 void EntityNode::accelerate(sf::Vector2f velocity) {
     sf::Vector2f previous(this->entity->Get<sf::Vector2f>("Velocity"));
     previous+=velocity;
@@ -51,6 +59,19 @@ void EntityNode::accelerate(float vx, float vy) {
     previous.x += vx;
     previous.y += vy;
     this->entity->Set<sf::Vector2f>("Velocity",previous);
+}
+
+void EntityNode::adaptVelocity() {
+    sf::Vector2f velocity = this->entity->Get<sf::Vector2f>("Velocity");
+
+    // If moving diagonally, reduce velocity (to have always same velocity)
+    if (velocity.x != 0.f && velocity.y != 0.f) {
+        this->setVelocity(velocity / std::sqrt(2.f));
+        
+    //if none, stop the animation
+    } else if (velocity.x == 0 && velocity.y == 0) {
+        //animatedCharacter.stop();
+    }
 }
 
 void EntityNode::updateAnimation(Actions action) {

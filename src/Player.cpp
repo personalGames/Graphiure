@@ -17,26 +17,41 @@ Player::Player() {
     keyBinding[sf::Keyboard::Right] = Actions::Right;
     keyBinding[sf::Keyboard::Up] = Actions::Up;
     keyBinding[sf::Keyboard::Down] = Actions::Down;
-    
+
     // Set initial action bindings
     initializeActions();
 }
 
 void Player::initializeActions() {
     auto finder = [] (EntityNode& character, sf::Time) {
-            character.accelerate(sf::Vector2f(-1,0) * character.getMaxSpeed());
-            character.updateAnimation(Actions::Move);
-        };
-    
+        character.accelerate(sf::Vector2f(-1, 0) * character.getMaxSpeed());
+        character.updateAnimation(Actions::Move);
+    };
     actionBinding[Left].action = derivedAction<EntityNode>(finder);
-            
-            //MoveCharacter(-1, 0));
-    actionBinding[Right].action = derivedAction<EntityNode>(MoveCharacter(+1, 0));
-    actionBinding[Up].action = derivedAction<EntityNode>(MoveCharacter(0, -1));
-    actionBinding[Down].action = derivedAction<EntityNode>(MoveCharacter(0, +1));
-    
+
+
+    auto finder2 = [] (EntityNode& character, sf::Time) {
+        character.accelerate(sf::Vector2f(+1, 0) * character.getMaxSpeed());
+        character.updateAnimation(Actions::Move);
+    };
+    actionBinding[Right].action = derivedAction<EntityNode>(finder2);
+
+
+    auto finder3 = [] (EntityNode& character, sf::Time) {
+        character.accelerate(sf::Vector2f(0, -1) * character.getMaxSpeed());
+        character.updateAnimation(Actions::Move);
+    };
+    actionBinding[Up].action = derivedAction<EntityNode>(finder3);
+
+
+    auto finder4 = [] (EntityNode& character, sf::Time) {
+        character.accelerate(sf::Vector2f(0, +1) * character.getMaxSpeed());
+        character.updateAnimation(Actions::Move);
+    };
+    actionBinding[Down].action = derivedAction<EntityNode>(finder4);
+
     actionBinding[Left].category = Category::CHARACTER;
-    actionBinding[Right].category= Category::CHARACTER;
+    actionBinding[Right].category = Category::CHARACTER;
     actionBinding[Up].category = Category::CHARACTER;
     actionBinding[Down].category = Category::CHARACTER;
 }
@@ -49,7 +64,7 @@ void Player::handleEvent(const sf::Event& event, CommandQueue& commands) {
         // Check if pressed key appears in key binding, trigger command if so
         auto found = keyBinding.find(event.key.code);
 
-        if (found != keyBinding.end() ){ //&& !isRealtimeAction(found->second)){
+        if (found != keyBinding.end()) { //&& !isRealtimeAction(found->second)){
             commands.push(actionBinding[found->second]);
         }
     }

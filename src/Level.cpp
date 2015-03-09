@@ -18,7 +18,7 @@ worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
 
 }
 
-void Level::buildScene(StructMap* infoMap, Entity2* characterCreated) {
+void Level::buildScene(StructMap* infoMap, Entity* characterCreated) {
     principalCharacter = characterCreated;
     
 
