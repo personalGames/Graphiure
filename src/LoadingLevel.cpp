@@ -9,6 +9,7 @@
 #include "Entity.h"
 #include "AnimatedSprite.h"
 #include "IXMLParser.h"
+#include "StateMachineAnimation.h"
 
 LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures,sf::Texture>* textures) : ParallelTask(),
 level(level), levelToLoad(levelToLoad){
@@ -56,47 +57,49 @@ void LoadingLevel::runTask() {
     Entity* character=new Entity();
     
     
-    AnimatedSprite animatedCharacter;
-    std::vector<Animation*> animations;
+//    AnimatedSprite animatedCharacter;
+//    std::vector<Animation*> animations;
+//    
+//    //first four positions are walking animation
+//    for (int i = 0; i < 4; i++) {
+//        Animation* walk = new Animation();
+//        walk->setSpriteSheet(textures->get(IDTextures::Player));
+//        switch (i) {
+//            case DataStructureCharacter::AnimeDirections::Up:
+//                walk->addFrame(sf::IntRect(32, 96, 32, 32));
+//                walk->addFrame(sf::IntRect(64, 96, 32, 32));
+//                walk->addFrame(sf::IntRect(32, 96, 32, 32));
+//                walk->addFrame(sf::IntRect(0, 96, 32, 32));
+//                break;
+//            case DataStructureCharacter::AnimeDirections::Down:
+//                walk->addFrame(sf::IntRect(32, 0, 32, 32));
+//                walk->addFrame(sf::IntRect(64, 0, 32, 32));
+//                walk->addFrame(sf::IntRect(32, 0, 32, 32));
+//                walk->addFrame(sf::IntRect(0, 0, 32, 32));
+//
+//                break;
+//            case DataStructureCharacter::AnimeDirections::Rigth:
+//                walk->addFrame(sf::IntRect(32, 64, 32, 32));
+//                walk->addFrame(sf::IntRect(64, 64, 32, 32));
+//                walk->addFrame(sf::IntRect(32, 64, 32, 32));
+//                walk->addFrame(sf::IntRect(0, 64, 32, 32));
+//                break;
+//            case DataStructureCharacter::AnimeDirections::Left:
+//                walk->addFrame(sf::IntRect(32, 32, 32, 32));
+//                walk->addFrame(sf::IntRect(64, 32, 32, 32));
+//                walk->addFrame(sf::IntRect(32, 32, 32, 32));
+//                walk->addFrame(sf::IntRect(0, 32, 32, 32));
+//                break;
+//        }
+//        animations.push_back(std::move(walk));
+//    }
+//    animatedCharacter.play(*animations[0]);
+//    animatedCharacter.setPosition(0, 0);
+//    
+//    
+//    character->Add<AnimatedSprite>("Drawable", animatedCharacter);
     
-    //first four positions are walking animation
-    for (int i = 0; i < 4; i++) {
-        Animation* walk = new Animation();
-        walk->setSpriteSheet(textures->get(IDTextures::Player));
-        switch (i) {
-            case DataStructureCharacter::AnimeDirections::Up:
-                walk->addFrame(sf::IntRect(32, 96, 32, 32));
-                walk->addFrame(sf::IntRect(64, 96, 32, 32));
-                walk->addFrame(sf::IntRect(32, 96, 32, 32));
-                walk->addFrame(sf::IntRect(0, 96, 32, 32));
-                break;
-            case DataStructureCharacter::AnimeDirections::Down:
-                walk->addFrame(sf::IntRect(32, 0, 32, 32));
-                walk->addFrame(sf::IntRect(64, 0, 32, 32));
-                walk->addFrame(sf::IntRect(32, 0, 32, 32));
-                walk->addFrame(sf::IntRect(0, 0, 32, 32));
-
-                break;
-            case DataStructureCharacter::AnimeDirections::Rigth:
-                walk->addFrame(sf::IntRect(32, 64, 32, 32));
-                walk->addFrame(sf::IntRect(64, 64, 32, 32));
-                walk->addFrame(sf::IntRect(32, 64, 32, 32));
-                walk->addFrame(sf::IntRect(0, 64, 32, 32));
-                break;
-            case DataStructureCharacter::AnimeDirections::Left:
-                walk->addFrame(sf::IntRect(32, 32, 32, 32));
-                walk->addFrame(sf::IntRect(64, 32, 32, 32));
-                walk->addFrame(sf::IntRect(32, 32, 32, 32));
-                walk->addFrame(sf::IntRect(0, 32, 32, 32));
-                break;
-        }
-        animations.push_back(std::move(walk));
-    }
-    animatedCharacter.play(*animations[0]);
-    animatedCharacter.setPosition(0, 0);
     
-    
-    character->Add<AnimatedSprite>("Drawable", animatedCharacter);
     sf::Transformable trans=sf::Transformable();
     trans.setPosition(0,0);
     character->Add<sf::Transformable>("Position",trans);
@@ -113,6 +116,16 @@ void LoadingLevel::runTask() {
 
     delete infoMap;
     delete parser;
+    
+    parser=IXMLParser::make_parser(TypeParser::ANIMATION);
+    parser->setXML("Media/Data/Animations.xml");
+    parser->parse().animations;
+//    int i=1;
+//    StateMachine* state=new StateMachine(i);
+//    StateMachineAnimation* machineAnimation=new StateMachineAnimation(*state);
+//    machineAnimation->setAnimations(parser->parse().animations->animations);
+//    character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
+    
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);
         completion = 100;

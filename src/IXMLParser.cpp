@@ -7,6 +7,7 @@
 
 #include "IXMLParser.h"
 #include "XMLParserMap.h"
+#include "XMLParserAnimation.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     IXMLParser* parser;
@@ -16,6 +17,8 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
             break;
 
         case TypeParser::ANIMATION:
+            parser=new XMLParserAnimation();
+            break;
         case TypeParser::ENTITY:
         case TypeParser::STATE_MACHINE:
         default:

@@ -8,6 +8,7 @@
 
 #include "EntityNode.h"
 #include "AnimatedSprite.h"
+#include "StateMachineAnimation.h"
 
 EntityNode::EntityNode(Entity* entity): entity(entity) {
 }
@@ -118,7 +119,8 @@ unsigned int EntityNode::getCategory() const {
     return Category::CHARACTER;
 }
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(entity->Get<AnimatedSprite>("Drawable"), states);
+//    entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
+    //target.draw(entity->Get<StateMachineAnimation*>("Drawable"), states);
 }
 
 void EntityNode::onCommand(const Command& command, sf::Time delta) {

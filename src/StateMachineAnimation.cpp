@@ -30,12 +30,12 @@ StateMachineAnimation::~StateMachineAnimation() {
 }
 
 void StateMachineAnimation::update(int action) {
-    int newState = stateMachine.processEntry(action);
-    
-    if(newState!=-1){
-        actualState=newState;
-        actualAnimation.play(*((*animations)[actualState]));
-    }
+//    int newState = stateMachine.processEntry(action);
+//    
+//    if(newState!=-1){
+//        actualState=newState;
+//        actualAnimation.play(*((*animations)[actualState]));
+//    }
     
 }
 

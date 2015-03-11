@@ -15,7 +15,6 @@ public:
     StructAnimation():animations(){};
     virtual ~StructAnimation(){};
     
-private:
     std::vector<Animation*>* animations;
 };
 
