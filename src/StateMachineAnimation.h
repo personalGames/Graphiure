@@ -32,6 +32,7 @@ public:
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+    void setAnimations(std::vector<Animation*>* animations);
     
 private:
     /**
@@ -41,7 +42,7 @@ private:
     /**
      * Set of animations of the entity
      */
-    std::vector<Animation*> animations;
+    std::vector<Animation*>* animations;
     /**
      * Actual animation setted
      */

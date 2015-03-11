@@ -14,9 +14,14 @@ StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
     stateMachine(stateMachine){
 }
 
+void StateMachineAnimation::setAnimations(std::vector<Animation*>* animations) {
+    this->animations=animations;
+}
+
+
 void StateMachineAnimation::addAnimation(Animation* animation) {
     if (animation != nullptr) {
-        animations.push_back(animation);
+        animations->push_back(animation);
     }
 }
 
@@ -29,7 +34,7 @@ void StateMachineAnimation::update(int action) {
     
     if(newState!=-1){
         actualState=newState;
-        actualAnimation.play(*animations[actualState]);
+        actualAnimation.play(*((*animations)[actualState]));
     }
     
 }

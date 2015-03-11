@@ -13,8 +13,8 @@
 #include <SFML/Graphics.hpp>
 
 
-class StructMap{
-public:
+struct StructMap{
+
     StructMap();
     virtual ~StructMap();
     
@@ -23,7 +23,7 @@ public:
     int tileHeight;
     int tileWidth;
     int* tiles; //whole background
-    std::vector< sf::Vector3i >* underground;
+    std::vector< sf::Vector3i >* underground; //another layer not totally fully
 };
 
 #endif	/* STRUCTMAP_H */

@@ -16,7 +16,7 @@
 #include "IDFonts.h"
 #include "IDTextures.h"
 #include "TileMapNode.h"
-#include "XMLParser.h"
+#include "IXMLParser.h"
 #include "Entity.h"
 #include "StructMap.h"
 #include "Entity.h"

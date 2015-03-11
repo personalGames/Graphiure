@@ -20,22 +20,33 @@
 
 
 class Context {
+    
+    
 public:
-    Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
-            ResourceHolder<IDFonts, sf::Font>& fonts, Player& player);
+
     virtual ~Context();
     
+    static Context* getInstance();
+
+    static void DestroySingleton();
+
+    Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
+            ResourceHolder<IDFonts, sf::Font>& fonts, Player& player);
+
+
+public:
     sf::RenderWindow* window;
-    
+
     //resources
     ResourceHolder<IDTextures, sf::Texture>* textures;
     ResourceHolder<IDFonts, sf::Font>* fonts;
-    
+
     //level
     Level* actualLevel;
-    
     Player* player;
-    
+
+    private:
+    static Context* instance;
 };
 
 #endif	/* CONTEXT_H */

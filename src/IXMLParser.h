@@ -20,10 +20,12 @@
 class IXMLParser {
 public:
     static IXMLParser *make_parser(TypeParser choice);
+    virtual ~IXMLParser();
+
     
     void setXML(std::string path);
-    virtual DataUnion parse(std::string path)=0;
-    virtual DataUnion parse(std::string path, std::string id)=0;
+    virtual DataUnion parse()=0;
+    virtual DataUnion parse(std::string id)=0;
     
 protected:
     tinyxml2::XMLDocument doc;

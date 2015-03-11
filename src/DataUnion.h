@@ -9,10 +9,12 @@
 #define	DATAUNION_H
 
 #include "StructMap.h"
-
+#include "StructAnimation.h"
 
 union DataUnion{
     StructMap* map;
+    Animation* animation;
+    StructAnimation* animations;
 };
 
 #endif	/* DATAUNION_H */

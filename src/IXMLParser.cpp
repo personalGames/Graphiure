@@ -6,16 +6,24 @@
  */
 
 #include "IXMLParser.h"
+#include "XMLParserMap.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
+    IXMLParser* parser;
     switch (choice) {
         case TypeParser::MAP:
+            parser = new XMLParserMap();
             break;
-        defaul:
+
+        case TypeParser::ANIMATION:
+        case TypeParser::ENTITY:
+        case TypeParser::STATE_MACHINE:
+        default:
+            parser = new XMLParserMap();
             break;
     };
-    
-    return nullptr;
+
+    return parser;
 }
 
 void IXMLParser::setXML(std::string path) {
@@ -29,3 +37,8 @@ void IXMLParser::setXML(std::string path) {
     //delete the created vector
     deleteVector(writable);
 }
+
+IXMLParser::~IXMLParser() {
+
+}
+

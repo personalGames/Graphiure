@@ -8,6 +8,7 @@
 #include "LoadingLevel.h"
 #include "Entity.h"
 #include "AnimatedSprite.h"
+#include "IXMLParser.h"
 
 LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures,sf::Texture>* textures) : ParallelTask(),
 level(level), levelToLoad(levelToLoad){
@@ -35,14 +36,16 @@ void LoadingLevel::runTask() {
         completion = 5;
     }
     //recojo el xml del nivel
-    XMLParser* parser = new XMLParser("Media/Levels/level1.xml");
+    IXMLParser* parser=IXMLParser::make_parser(TypeParser::MAP);
+    parser->setXML("Media/Levels/level1.xml");
+    //XMLParser* parser = new XMLParser("Media/Levels/level1.xml");
     {
         sf::Lock lock(mutex);
         completion = 10;
     }
 //    sf::sleep(sf::milliseconds(2000));
     //parseo el nivel
-    StructMap* infoMap = parser->readMap();
+    StructMap* infoMap = parser->parse().map;
     {
         sf::Lock lock(mutex);
         completion = 35;

@@ -47,6 +47,8 @@
       <logicalFolder name="f12" displayName="Data" projectFiles="true">
         <logicalFolder name="f2" displayName="DataStructure" projectFiles="true">
           <itemPath>src/DataUnion.h</itemPath>
+          <itemPath>src/StructAnimation.cpp</itemPath>
+          <itemPath>src/StructAnimation.h</itemPath>
           <itemPath>src/StructMap.cpp</itemPath>
           <itemPath>src/StructMap.h</itemPath>
         </logicalFolder>
@@ -54,8 +56,8 @@
           <itemPath>src/IXMLParser.cpp</itemPath>
           <itemPath>src/IXMLParser.h</itemPath>
           <itemPath>src/TypeParser.h</itemPath>
-          <itemPath>src/XMLParser.cpp</itemPath>
-          <itemPath>src/XMLParser.h</itemPath>
+          <itemPath>src/XMLParserAnimation.cpp</itemPath>
+          <itemPath>src/XMLParserAnimation.h</itemPath>
           <itemPath>src/XMLParserMap.cpp</itemPath>
           <itemPath>src/XMLParserMap.h</itemPath>
         </logicalFolder>
@@ -378,6 +380,10 @@
       </item>
       <item path="src/StatesID.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/StructAnimation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
@@ -406,9 +412,9 @@
       </item>
       <item path="src/Utilities.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/XMLParser.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/XMLParser.h" ex="false" tool="3" flavor2="0">
+      <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -623,6 +629,10 @@
       </item>
       <item path="src/StatesID.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/StructAnimation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
@@ -651,9 +661,9 @@
       </item>
       <item path="src/Utilities.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/XMLParser.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/XMLParser.h" ex="false" tool="3" flavor2="0">
+      <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
