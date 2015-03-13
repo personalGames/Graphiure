@@ -12,7 +12,9 @@
 
 struct StructAnimation {
 public:
-    StructAnimation():animations(){};
+    StructAnimation(){
+        animations=new std::vector<Animation*>();
+    };
     virtual ~StructAnimation(){};
     
     std::vector<Animation*>* animations;

@@ -119,7 +119,7 @@ unsigned int EntityNode::getCategory() const {
     return Category::CHARACTER;
 }
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
-//    entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
+    entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
     //target.draw(entity->Get<StateMachineAnimation*>("Drawable"), states);
 }
 

@@ -29,6 +29,11 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     return parser;
 }
 
+void IXMLParser::setResources(ResourceHolder<IDTextures, sf::Texture>* textures) {
+    this->textures=textures;
+}
+
+
 void IXMLParser::setXML(std::string path) {
     std::vector<char> writable = *convertString(path);
 

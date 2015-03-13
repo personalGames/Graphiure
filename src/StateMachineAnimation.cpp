@@ -6,6 +6,7 @@
  */
 
 #include "StateMachineAnimation.h"
+#include <iostream>
 
 StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
     :actualState(0),
@@ -16,6 +17,7 @@ StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
 
 void StateMachineAnimation::setAnimations(std::vector<Animation*>* animations) {
     this->animations=animations;
+    actualAnimation.play(*((*animations)[0]));
 }
 
 
@@ -30,6 +32,8 @@ StateMachineAnimation::~StateMachineAnimation() {
 }
 
 void StateMachineAnimation::update(int action) {
+    std::cout<<"Establezco animacion"<<std::endl;
+    actualAnimation.play(*((*animations)[0]));
 //    int newState = stateMachine.processEntry(action);
 //    
 //    if(newState!=-1){
@@ -41,5 +45,4 @@ void StateMachineAnimation::update(int action) {
 
 void StateMachineAnimation::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(actualAnimation, states);
-    
 }

@@ -16,6 +16,8 @@
 #include <vector>
 #include <iostream>
 #include "Utilities.h"
+#include "ResourceHolder.h"
+#include "IDTextures.h"
 
 class IXMLParser {
 public:
@@ -24,11 +26,13 @@ public:
 
     
     void setXML(std::string path);
+    void setResources(ResourceHolder<IDTextures, sf::Texture>* textures);
     virtual DataUnion parse()=0;
     virtual DataUnion parse(std::string id)=0;
     
 protected:
     tinyxml2::XMLDocument doc;
+    ResourceHolder<IDTextures, sf::Texture>* textures;
 };
 
 #endif	/* IXMLPARSER_H */

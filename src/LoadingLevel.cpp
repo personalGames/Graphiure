@@ -38,6 +38,7 @@ void LoadingLevel::runTask() {
     }
     //recojo el xml del nivel
     IXMLParser* parser=IXMLParser::make_parser(TypeParser::MAP);
+    parser->setResources(textures);
     parser->setXML("Media/Levels/level1.xml");
     //XMLParser* parser = new XMLParser("Media/Levels/level1.xml");
     {
@@ -118,13 +119,14 @@ void LoadingLevel::runTask() {
     delete parser;
     
     parser=IXMLParser::make_parser(TypeParser::ANIMATION);
+    parser->setResources(textures);
     parser->setXML("Media/Data/Animations.xml");
-    parser->parse().animations;
-//    int i=1;
-//    StateMachine* state=new StateMachine(i);
-//    StateMachineAnimation* machineAnimation=new StateMachineAnimation(*state);
-//    machineAnimation->setAnimations(parser->parse().animations->animations);
-//    character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
+    //parser->parse().animations;
+    int i=1;
+    StateMachine* state=new StateMachine(i);
+    StateMachineAnimation* machineAnimation=new StateMachineAnimation(*state);
+    machineAnimation->setAnimations(parser->parse().animations->animations);
+    character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
     
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);
