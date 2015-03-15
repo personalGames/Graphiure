@@ -90,7 +90,7 @@ void LoadingLevel::runTask() {
     quad[2].position = sf::Vector2f(32, 32);
     quad[3].position = sf::Vector2f(0, 32);
     coli->addArrayVertex(quad);
-    character->Add<Collision*>(coli);
+    character->Add<Collision*>("Collision", coli);
     
     
     // y una colisión cualquiera para probar
@@ -107,7 +107,7 @@ void LoadingLevel::runTask() {
     quad2[2].position = sf::Vector2f(32, 32);
     quad2[3].position = sf::Vector2f(0, 32);
     coli->addArrayVertex(quad2);
-    arg->Add<Collision*>(coli);
+    arg->Add<Collision*>("Collision", coli);
     
     collision->addCollisionable(arg);
     

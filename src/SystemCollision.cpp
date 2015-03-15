@@ -25,5 +25,5 @@ void SystemCollision::checkCollisions() {
 
 
 void SystemCollision::update() {
-    tree->update();
+    tree.update();
 }
