@@ -19,6 +19,12 @@ public:
         vertices.append(vertex);
     };
     
+    void addArrayVertex(sf::VertexArray array){
+        for(uint i=0; i<array.getVertexCount(); ++i){
+            vertices.append(array[i]);
+        }
+    }
+    
     sf::Rect<int> getAABB(){
         return sf::Rect<int>();
     };

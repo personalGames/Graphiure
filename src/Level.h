@@ -19,6 +19,7 @@
 #include "Entity.h"
 #include "StructMap.h"
 #include "Entity.h"
+#include "SystemCollision.h"
 
 
 class Level : private sf::NonCopyable {
@@ -32,8 +33,14 @@ public:
     void buildScene(StructMap* infoMap, Entity* characterCreated);
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
+    inline sf::FloatRect getBounds(){
+        return worldBounds;
+    }
+    inline void setSystemCollision(SystemCollision* collision){
+        this->collision=collision;
+    }
+    
 private:
-    void loadTextures();
     void setPointCharacter(int x, int y);
     sf::FloatRect getViewBounds() const;
     
@@ -74,10 +81,11 @@ private:
     
     sf::Vector2f sizeMap;
     
-    //Character* principalCharacter;
     Entity* principalCharacter;
     
     void correctWorldPosition(sf::Time dt);
+    
+    SystemCollision* collision;
 };
 
 #endif	/* LEVEL_H */

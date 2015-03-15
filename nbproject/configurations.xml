@@ -125,6 +125,8 @@
         <itemPath>src/StatesID.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f13" displayName="Systems" projectFiles="true">
+        <itemPath>src/SystemCollision.cpp</itemPath>
+        <itemPath>src/SystemCollision.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <itemPath>src/ParallelTask.cpp</itemPath>
@@ -394,6 +396,10 @@
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SystemCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TextNode.cpp" ex="false" tool="1" flavor2="0">
@@ -646,6 +652,10 @@
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SystemCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>

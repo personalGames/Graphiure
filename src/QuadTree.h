@@ -21,7 +21,8 @@ const int MAX_LEVELS = 20;
 
 class QuadTree {
 public:
-    QuadTree(int level, sf::Rect<int> bounds);
+    QuadTree(int level, sf::IntRect bounds);
+    QuadTree(int level, sf::FloatRect bounds);
 
     void clear();
     void insert(Entity* objectNew);
@@ -35,7 +36,7 @@ private:
 private:
     int level;
     std::list<Entity*> objects;
-    sf::Rect<int> bounds;
+    sf::IntRect bounds;
     std::vector<QuadTree*> nodes;
 };
 

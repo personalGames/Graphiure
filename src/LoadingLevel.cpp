@@ -30,16 +30,12 @@ void LoadingLevel::runTask() {
     IXMLParser* parser=IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
     parser->setXML("Media/Levels/level1.xml");
-    {
-        sf::Lock lock(mutex);
-        completion = 10;
-    }
     
     //parseo el nivel
     StructMap* infoMap = parser->parse().map;
     {
         sf::Lock lock(mutex);
-        completion = 35;
+        completion = 10;
     }
 
     //recojo los elementos necesarios y los comunico al manejador de recursos
@@ -55,7 +51,7 @@ void LoadingLevel::runTask() {
     levelToLoad->buildScene(infoMap, character);
     {
         sf::Lock lock(mutex);
-        completion = 70;
+        completion = 35;
     }
 
     delete infoMap;
@@ -75,6 +71,38 @@ void LoadingLevel::runTask() {
     machineAnimation->setAnimations(parser->parse().animations->animations);
     character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
     delete parser;
+    {
+        sf::Lock lock(mutex);
+        completion = 70;
+    }
+    
+    
+    //seteo las colisiones, de momento en debug
+    //las seteo a mano directamente
+    SystemCollision* collision=new SystemCollision(levelToLoad->getBounds());
+    //meto mi personaje
+    collision->addCollisionable(character);
+    //a mi personaje le doy la colisión de su cuerpo
+    Collision* coli=new Collision();
+    sf::VertexArray quad(sf::Quads, 4);
+    quad[0].position = sf::Vector2f(0, 0);
+    quad[1].position = sf::Vector2f(32, 0);
+    quad[2].position = sf::Vector2f(32, 32);
+    quad[3].position = sf::Vector2f(0, 32);
+    
+    coli->addArrayVertex(quad);
+    
+    
+    // y una colisión cualquiera para probar
+    coli=new Collision();
+    sf::VertexArray quad2(sf::Quads, 4);
+    quad2[0].position = sf::Vector2f(639, 296);
+    quad2[1].position = sf::Vector2f(32+639, 296);
+    quad2[2].position = sf::Vector2f(32+639, 32+296);
+    quad2[3].position = sf::Vector2f(639, 32+296);
+    
+    coli->addArrayVertex(quad2);
+    
     
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);

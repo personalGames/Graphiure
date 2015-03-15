@@ -7,8 +7,15 @@
 
 #include "QuadTree.h"
 
-QuadTree::QuadTree(int level, sf::Rect<int> bounds) : level(level), objects(), bounds(bounds), nodes(4) {
+QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(bounds), nodes(4) {
 
+};
+
+QuadTree::QuadTree(int level, sf::FloatRect bounds) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
+    this->bounds.top=static_cast<int>(bounds.top);
+    this->bounds.left=static_cast<int>(bounds.left);
+    this->bounds.height=static_cast<int>(bounds.height);
+    this->bounds.width=static_cast<int>(bounds.width);
 };
 
 void QuadTree::clear() {
@@ -27,7 +34,7 @@ void QuadTree::clear() {
 }
 
 int QuadTree::getIndex(Collision collision) {
-    sf::Rect<int> bound=collision.getAABB();
+    sf::IntRect bound=collision.getAABB();
     int index = -1;
     double verticalMidpoint = bounds.left + (bounds.width / 2);
     double horizontalMidpoint = bounds.top + (bounds.height / 2);
@@ -92,10 +99,10 @@ void QuadTree::split() {
     int x = bounds.left;
     int y = bounds.top;
 
-    nodes[0] = new QuadTree(level + 1, sf::Rect<int>(x + subWidth, y, subWidth, subHeight));
-    nodes[1] = new QuadTree(level + 1, sf::Rect<int>(x, y, subWidth, subHeight));
-    nodes[2] = new QuadTree(level + 1, sf::Rect<int>(x, y + subHeight, subWidth, subHeight));
-    nodes[3] = new QuadTree(level + 1, sf::Rect<int>(x + subWidth, y + subHeight, subWidth, subHeight));
+    nodes[0] = new QuadTree(level + 1, sf::IntRect(x + subWidth, y, subWidth, subHeight));
+    nodes[1] = new QuadTree(level + 1, sf::IntRect(x, y, subWidth, subHeight));
+    nodes[2] = new QuadTree(level + 1, sf::IntRect(x, y + subHeight, subWidth, subHeight));
+    nodes[3] = new QuadTree(level + 1, sf::IntRect(x + subWidth, y + subHeight, subWidth, subHeight));
 }
 
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {

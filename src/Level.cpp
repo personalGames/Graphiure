@@ -14,7 +14,7 @@ Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& 
         ResourceHolder<IDTextures, sf::Texture>& images) :
 mapView(outputTarget.getDefaultView()), target(outputTarget),
 textures(images), fonts(fonts), sceneGraph(), sceneLayers(),
-worldBounds(0.f, 0.f, mapView.getSize().x, 2000.f) {
+worldBounds(0.f, 0.f, mapView.getSize().x, mapView.getSize().y) {
 
 }
 
@@ -51,8 +51,6 @@ void Level::buildScene(StructMap* infoMap, Entity* characterCreated) {
     EntityNode* node=new EntityNode(principalCharacter);
     sceneLayers[Ground]->addChild(std::move(node));
 
-
-
 }
 
 void Level::setPointCharacter(int x, int y) {
@@ -76,6 +74,7 @@ sf::FloatRect Level::getViewBounds() const {
     return sf::FloatRect(mapView.getCenter() - mapView.getSize() / 2.f, mapView.getSize());
 }
 
+
 Level::~Level() {
 
 }
@@ -88,8 +87,14 @@ void Level::update(sf::Time dt) {
     while (!commandQueue.isEmpty()) {
         sceneGraph.onCommand(commandQueue.pop(), dt);
     }
+    
+    //todas estas actualizaciones de sistemas luego se sustituye
+    //por el system manager que irá llamando a cada uno de ellos
     // Regular update step
     sceneGraph.update(dt, commandQueue);
+    
+    collision->update();
+    collision->checkCollisions();
 }
 
 void Level::correctWorldPosition(sf::Time dt) {
