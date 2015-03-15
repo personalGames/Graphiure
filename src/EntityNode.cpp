@@ -41,6 +41,7 @@ void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
     sf::Transformable actualPosition=sf::Transformable();
     actualPosition.setPosition(getPosition());
     this->entity->Set<sf::Transformable>("Position",actualPosition);
+    this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
     
 }
 

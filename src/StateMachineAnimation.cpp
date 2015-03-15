@@ -17,7 +17,7 @@ StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
 
 void StateMachineAnimation::setAnimations(std::vector<Animation*>* animations) {
     this->animations=animations;
-    actualAnimation.play(*((*animations)[0]));
+    actualAnimation.play(*((*animations)[1]));
 }
 
 
@@ -31,16 +31,18 @@ void StateMachineAnimation::addAnimation(Animation* animation) {
 StateMachineAnimation::~StateMachineAnimation() {
 }
 
+void StateMachineAnimation::update(sf::Time delta){
+    actualAnimation.update(delta);
+}
+
+
 void StateMachineAnimation::update(int action) {
-    std::cout<<"Establezco animacion"<<std::endl;
-    actualAnimation.play(*((*animations)[0]));
-//    int newState = stateMachine.processEntry(action);
-//    
-//    if(newState!=-1){
-//        actualState=newState;
-//        actualAnimation.play(*((*animations)[actualState]));
-//    }
+    int newState = stateMachine.processEntry(action);
     
+    if(newState!=-1){
+        actualState=newState;
+        actualAnimation.play(*((*animations)[actualState]));
+    }
 }
 
 void StateMachineAnimation::draw(sf::RenderTarget& target, sf::RenderStates states) const {

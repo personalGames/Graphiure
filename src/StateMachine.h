@@ -11,7 +11,8 @@
 #include <vector>
 
 struct Transition{
-    Transition(int state, int entry, int newState);;
+    Transition(int state, int entry, int newState):
+        state(state), entry(entry), newState(newState){};
     
     int state;
     int entry;
@@ -20,7 +21,7 @@ struct Transition{
 
 class StateMachine {
 public:
-    StateMachine(int numberTransitions);
+    StateMachine(int numberStates);
     virtual ~StateMachine();
     
     void addTransition(Transition &transition);

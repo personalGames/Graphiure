@@ -9,14 +9,13 @@
 
 #include "StateMachine.h"
 
-StateMachine::StateMachine(int numberTransitions): transitions(numberTransitions) {
-    for(int i=0; i<numberTransitions; ++i){
+StateMachine::StateMachine(int numberStates): transitions(numberStates) {
+    for(int i=0; i<numberStates; ++i){
         transitions[i]=std::vector<Transition>();
     }
 }
 
 void StateMachine::addTransition(Transition &transition) {
-    
     transitions[transition.state].push_back(std::move(transition));
 }
 

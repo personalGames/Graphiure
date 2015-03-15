@@ -8,6 +8,7 @@
 #include "IXMLParser.h"
 #include "XMLParserMap.h"
 #include "XMLParserAnimation.h"
+#include "XMLParserStateMachines.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     IXMLParser* parser;
@@ -17,10 +18,13 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
             break;
 
         case TypeParser::ANIMATION:
-            parser=new XMLParserAnimation();
+            parser = new XMLParserAnimation();
             break;
-        case TypeParser::ENTITY:
         case TypeParser::STATE_MACHINE:
+            parser = new XMLParserStateMachines();
+            break;
+
+        case TypeParser::ENTITY:
         default:
             parser = new XMLParserMap();
             break;
@@ -30,9 +34,8 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
 }
 
 void IXMLParser::setResources(ResourceHolder<IDTextures, sf::Texture>* textures) {
-    this->textures=textures;
+    this->textures = textures;
 }
-
 
 void IXMLParser::setXML(std::string path) {
     std::vector<char> writable = *convertString(path);

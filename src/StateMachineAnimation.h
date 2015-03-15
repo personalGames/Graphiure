@@ -23,11 +23,11 @@ public:
     
     void addAnimation(Animation* animation);
     
+    void update(sf::Time delta);
+    
     void update(int action);
     
-    inline void update(Actions action){
-        update(static_cast<int>(action));
-    }
+    inline void update(Actions action);
     
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

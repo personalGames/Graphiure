@@ -1,41 +1,41 @@
-<StateMachine id="1">
-	<Transition state="0" entry="1" newState="7">
-	<Transition state="0" entry="2" newState="6">
-	<Transition state="0" entry="3" newState="4">
-	<Transition state="0" entry="4" newState="5">
+<StateMachine id="1" numberStates="8">
+	<Transition state="0" entry="1" newState="7"/>
+	<Transition state="0" entry="2" newState="6"/>
+	<Transition state="0" entry="3" newState="4"/>
+	<Transition state="0" entry="4" newState="5"/>
 	
-	<Transition state="1" entry="1" newState="7">
-	<Transition state="1" entry="2" newState="6">
-	<Transition state="1" entry="3" newState="4">
-	<Transition state="1" entry="4" newState="5">
+	<Transition state="1" entry="1" newState="7"/>
+	<Transition state="1" entry="2" newState="6"/>
+	<Transition state="1" entry="3" newState="4"/>
+	<Transition state="1" entry="4" newState="5"/>
 	
-	<Transition state="2" entry="1" newState="7">
-	<Transition state="2" entry="2" newState="6">
-	<Transition state="2" entry="3" newState="4">
-	<Transition state="2" entry="4" newState="5">
+	<Transition state="2" entry="1" newState="7"/>
+	<Transition state="2" entry="2" newState="6"/>
+	<Transition state="2" entry="3" newState="4"/>
+	<Transition state="2" entry="4" newState="5"/>
 	
-	<Transition state="3" entry="1" newState="7">
-	<Transition state="3" entry="2" newState="6">
-	<Transition state="3" entry="3" newState="4">
-	<Transition state="3" entry="4" newState="5">
+	<Transition state="3" entry="1" newState="7"/>
+	<Transition state="3" entry="2" newState="6"/>
+	<Transition state="3" entry="3" newState="4"/>
+	<Transition state="3" entry="4" newState="5"/>
 	
-	<Transition state="4" entry="0" newState="1">
-	<Transition state="4" entry="1" newState="7">
-	<Transition state="4" entry="2" newState="6">
-	<Transition state="4" entry="4" newState="5">
+	<Transition state="4" entry="0" newState="1"/>
+	<Transition state="4" entry="1" newState="7"/>
+	<Transition state="4" entry="2" newState="6"/>
+	<Transition state="4" entry="4" newState="5"/>
 	
-	<Transition state="5" entry="0" newState="0">
-	<Transition state="5" entry="1" newState="7">
-	<Transition state="5" entry="2" newState="6">
-	<Transition state="5" entry="3" newState="4">
+	<Transition state="5" entry="0" newState="0"/>
+	<Transition state="5" entry="1" newState="7"/>
+	<Transition state="5" entry="2" newState="6"/>
+	<Transition state="5" entry="3" newState="4"/>
 	
-	<Transition state="6" entry="0" newState="2">
-	<Transition state="6" entry="1" newState="7">
-	<Transition state="6" entry="3" newState="4">
-	<Transition state="6" entry="4" newState="5">
+	<Transition state="6" entry="0" newState="2"/>
+	<Transition state="6" entry="1" newState="7"/>
+	<Transition state="6" entry="3" newState="4"/>
+	<Transition state="6" entry="4" newState="5"/>
 	
-	<Transition state="7" entry="0" newState="3">
-	<Transition state="7" entry="2" newState="6">
-	<Transition state="7" entry="3" newState="4">
-	<Transition state="7" entry="4" newState="5">
+	<Transition state="7" entry="0" newState="3"/>
+	<Transition state="7" entry="2" newState="6"/>
+	<Transition state="7" entry="3" newState="4"/>
+	<Transition state="7" entry="4" newState="5"/>
 </StateMachine>

@@ -60,6 +60,8 @@
           <itemPath>src/XMLParserAnimation.h</itemPath>
           <itemPath>src/XMLParserMap.cpp</itemPath>
           <itemPath>src/XMLParserMap.h</itemPath>
+          <itemPath>src/XMLParserStateMachines.cpp</itemPath>
+          <itemPath>src/XMLParserStateMachines.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f8" displayName="Debug" projectFiles="true">
@@ -420,6 +422,10 @@
       </item>
       <item path="src/XMLParserMap.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/XMLParserStateMachines.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserStateMachines.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -668,6 +674,10 @@
       <item path="src/XMLParserMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLParserMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserStateMachines.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserStateMachines.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
