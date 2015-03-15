@@ -8,7 +8,6 @@
 #ifndef LEVEL_H
 #define	LEVEL_H
 
-#include "Character.h"
 #include "CommandQueue.h"
 #include "SceneNode.h"
 #include "Layer.h"

@@ -9,6 +9,7 @@
 #define	PLAYER_H
 
 #include "Actions.h"
+#include "EntityNode.h"
 #include "Animation.h"
 #include <SFML/Window.hpp>
 #include "Command.h"

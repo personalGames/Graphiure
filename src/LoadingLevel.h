@@ -13,7 +13,6 @@
 #include "Level.h"
 #include "ResourceHolder.h"
 #include "IDTextures.h"
-#include "Character.h"
 
 class LoadingLevel : public ParallelTask{
 public:

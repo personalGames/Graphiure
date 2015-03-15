@@ -21,7 +21,6 @@
 
 class Context {
     
-    
 public:
 
     virtual ~Context();

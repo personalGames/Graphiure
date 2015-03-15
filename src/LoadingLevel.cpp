@@ -20,16 +20,6 @@ LoadingLevel::~LoadingLevel() {
 
 }
 
-namespace DataStructureCharacter {
-    enum AnimeDirections {
-        Up = 0,
-        Down = 1,
-        Rigth,
-        Left,
-        EnumCount
-    };
-};
-
 void LoadingLevel::runTask() {
     //compruebo el nivel que tengo que cargar
     {
@@ -40,12 +30,11 @@ void LoadingLevel::runTask() {
     IXMLParser* parser=IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
     parser->setXML("Media/Levels/level1.xml");
-    //XMLParser* parser = new XMLParser("Media/Levels/level1.xml");
     {
         sf::Lock lock(mutex);
         completion = 10;
     }
-//    sf::sleep(sf::milliseconds(2000));
+    
     //parseo el nivel
     StructMap* infoMap = parser->parse().map;
     {
@@ -53,7 +42,6 @@ void LoadingLevel::runTask() {
         completion = 35;
     }
 
-    //sf::sleep(sf::milliseconds(2000));
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character=new Entity();
     
@@ -69,7 +57,6 @@ void LoadingLevel::runTask() {
         sf::Lock lock(mutex);
         completion = 70;
     }
-    //sf::sleep(sf::milliseconds(300));
 
     delete infoMap;
     delete parser;

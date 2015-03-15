@@ -29,8 +29,6 @@
         <itemPath>src/Command.h</itemPath>
         <itemPath>src/CommandQueue.cpp</itemPath>
         <itemPath>src/CommandQueue.h</itemPath>
-        <itemPath>src/MoveCharacter.h</itemPath>
-        <itemPath>src/MoveDirection.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
         <itemPath>src/GameState.cpp</itemPath>
@@ -78,8 +76,6 @@
           <itemPath>src/TProperty.h</itemPath>
         </logicalFolder>
         <itemPath>src/Category.h</itemPath>
-        <itemPath>src/Character.cpp</itemPath>
-        <itemPath>src/Character.h</itemPath>
         <itemPath>src/Entity.cpp</itemPath>
         <itemPath>src/Entity.h</itemPath>
         <itemPath>src/EntityManager.cpp</itemPath>
@@ -244,10 +240,6 @@
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Command.cpp" ex="false" tool="1" flavor2="0">
@@ -327,10 +319,6 @@
       <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/MoveCharacter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/MoveDirection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -497,10 +485,6 @@
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Command.cpp" ex="false" tool="1" flavor2="0">
@@ -580,10 +564,6 @@
       <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/MoveCharacter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/MoveDirection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>

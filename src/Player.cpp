@@ -6,10 +6,6 @@
  */
 
 #include "Player.h"
-#include "Context.h"
-#include "MoveCharacter.h"
-#include "EntityNode.h"
-#include <iostream>
 
 Player::Player() {
     // Set initial key bindings
