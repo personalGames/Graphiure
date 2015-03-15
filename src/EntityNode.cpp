@@ -70,48 +70,11 @@ void EntityNode::adaptVelocity() {
     //if none, stop the animation
     } else if (velocity.x == 0 && velocity.y == 0) {
         updateAnimation(Actions::None);
-        //animatedCharacter.stop();
     }
 }
 
 void EntityNode::updateAnimation(Actions action) {
     this->entity->Get<StateMachineAnimation*>("Drawable")->update(action);
-//switch (action) {
-//        case Move:
-//        {
-//            Actions concreteAction = Actions::None;
-//            sf::Vector2f vel = getVelocity();
-//            if (vel.x != 0 && vel.y != 0) {
-//                //do nothing, just continue
-//                //here must be control what animation to be seen when diagonal;
-//                //concreteAction = lastAction;
-//            } else if (vel.y != 0) {
-//                concreteAction = (vel.y > 0) ? Actions::Down : Actions::Up;
-//                lastAction = concreteAction;
-//            } else {
-//                concreteAction = (vel.x > 0) ? Actions::Right : Actions::Left;
-//                lastAction = concreteAction;
-//            }
-//            updateAnimation(concreteAction);
-//
-//
-//            break;
-//        }
-//        case Up:
-//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Up]);
-//            break;
-//        case Down:
-//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Down]);
-//            break;
-//        case Right:
-//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Rigth]);
-//            break;
-//        case Left:
-//            animatedCharacter.play(*animations[DataStructureCharacter::AnimeDirections::Left]);
-//            break;
-//        default:
-//            break;
-//    }
 }
 
 
@@ -120,13 +83,11 @@ unsigned int EntityNode::getCategory() const {
 }
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
-    //target.draw(entity->Get<StateMachineAnimation*>("Drawable"), states);
 }
 
 void EntityNode::onCommand(const Command& command, sf::Time delta) {
     // Command current node, if category matches
     if ((command.category & this->getCategory())>=1) {
-        //command.action(this->entity, delta);
         command.action(*this, delta);
     }
 
