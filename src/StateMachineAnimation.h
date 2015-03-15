@@ -27,7 +27,7 @@ public:
     
     void update(int action);
     
-    inline void update(Actions action);
+    inline void update(Actions action){ update(static_cast<int>(action)); };
     
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

@@ -18,13 +18,10 @@ EntityNode::~EntityNode() {
 
 void EntityNode::setVelocity(sf::Vector2f velocity) {
     this->entity->Set<sf::Vector2f>("Velocity",velocity);
-    //this->velocity = velocity;
 }
 
 void EntityNode::setVelocity(float x, float y) {
     this->entity->Set<sf::Vector2f>("Velocity",sf::Vector2f(x,y));
-    //this->velocity.x = x;
-    //this->velocity.y = y;
 }
 
 void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
@@ -72,11 +69,13 @@ void EntityNode::adaptVelocity() {
         
     //if none, stop the animation
     } else if (velocity.x == 0 && velocity.y == 0) {
+        updateAnimation(Actions::None);
         //animatedCharacter.stop();
     }
 }
 
 void EntityNode::updateAnimation(Actions action) {
+    this->entity->Get<StateMachineAnimation*>("Drawable")->update(action);
 //switch (action) {
 //        case Move:
 //        {

@@ -1,3 +1,37 @@
+<Animation id="character-down-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-up-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+<Animation id="character-right-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-left-idle" idImage="characterWalking" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+</Animation>
 <Animation id="character-up-walking" idImage="characterWalking" replay="true">
 <frame>
 	<vertice value="32"/>
@@ -104,40 +138,4 @@
 	<vertice value="32"/>
 	<vertice value="32"/>
 </frame>	
-</Animation>
-
-<Animation id="character-up-idle" idImage="characterWalking" replay="false">
-<frame>
-	<vertice value="32"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>	
-</Animation>
-
-<Animation id="character-down-idle" idImage="characterWalking" replay="false">
-<frame>
-	<vertice value="32"/>
-	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>	
-</Animation>
-
-<Animation id="character-right-idle" idImage="characterWalking" replay="false">
-<frame>
-	<vertice value="32"/>
-	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>	
-</Animation>
-
-<Animation id="character-left-idle" idImage="characterWalking" replay="false">
-<frame>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
 </Animation>

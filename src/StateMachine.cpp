@@ -6,10 +6,10 @@
  */
 
 #include <stdlib.h>
-
+#include <iostream>
 #include "StateMachine.h"
 
-StateMachine::StateMachine(int numberStates): transitions(numberStates) {
+StateMachine::StateMachine(int numberStates): state(0), transitions(numberStates) {
     for(int i=0; i<numberStates; ++i){
         transitions[i]=std::vector<Transition>();
     }
@@ -28,6 +28,7 @@ int StateMachine::processEntry(int entry) {
             finish=true;
             state=stateTransition[i].newState;
         }
+        ++i;
     }
     return (finish)? state:-1;
 }

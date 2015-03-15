@@ -18,6 +18,10 @@ enum Actions {
     Right,
     Up,
     Down,
+    LeftUp,
+    LeftDown,
+    RightUp,
+    RightDown,
     Move,
     ActionCount
 };
