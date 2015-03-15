@@ -17,7 +17,7 @@ public:
     virtual ~SystemCollision();
     
     void checkCollisions();
-    void update();;
+    void update();
     void addCollisionable(Entity* entity);
     
 private:

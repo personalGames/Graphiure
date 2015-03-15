@@ -105,6 +105,11 @@ void QuadTree::split() {
     nodes[3] = new QuadTree(level + 1, sf::IntRect(x + subWidth, y + subHeight, subWidth, subHeight));
 }
 
+void QuadTree::update() {
+    //arg no sé!!
+}
+
+
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {
     int index = getIndex(object->Get<Collision>("Collision"));
     if (index != -1 && nodes[0] != nullptr) {

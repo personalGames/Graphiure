@@ -27,6 +27,8 @@ public:
     void clear();
     void insert(Entity* objectNew);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
+    void update();
+    
 //    void toString();
 
 private:

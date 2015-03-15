@@ -14,16 +14,16 @@ SystemCollision::~SystemCollision() {
 }
 
 void SystemCollision::addCollisionable(Entity* entity) {
-    if (entity->HasID("Collision")) {
+    if (entity->HasID("Collision") && entity->HasID("Position")) {
         tree.insert(entity);
     }
 }
 
 void SystemCollision::checkCollisions() {
-
+    
 }
 
 
 void SystemCollision::update() {
-    
+    tree->update();
 }

@@ -89,20 +89,27 @@ void LoadingLevel::runTask() {
     quad[1].position = sf::Vector2f(32, 0);
     quad[2].position = sf::Vector2f(32, 32);
     quad[3].position = sf::Vector2f(0, 32);
-    
     coli->addArrayVertex(quad);
+    character->Add<Collision*>(coli);
     
     
     // y una colisión cualquiera para probar
+    Entity* arg=new Entity();
+    sf::Transformable tr=sf::Transformable();
+    tr.setPosition(639, 296);
+    arg->Add<sf::Transformable>("Position",tr);
+    
+    
     coli=new Collision();
     sf::VertexArray quad2(sf::Quads, 4);
-    quad2[0].position = sf::Vector2f(639, 296);
-    quad2[1].position = sf::Vector2f(32+639, 296);
-    quad2[2].position = sf::Vector2f(32+639, 32+296);
-    quad2[3].position = sf::Vector2f(639, 32+296);
-    
+    quad2[0].position = sf::Vector2f(0,0);
+    quad2[1].position = sf::Vector2f(32, 0);
+    quad2[2].position = sf::Vector2f(32, 32);
+    quad2[3].position = sf::Vector2f(0, 32);
     coli->addArrayVertex(quad2);
+    arg->Add<Collision*>(coli);
     
+    collision->addCollisionable(arg);
     
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);
