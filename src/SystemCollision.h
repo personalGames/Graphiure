@@ -17,6 +17,7 @@ public:
     virtual ~SystemCollision();
     
     void checkCollisions();
+    bool checkCollisions(Entity* one, Entity* another);
     void update();
     void addCollisionable(Entity* entity);
     

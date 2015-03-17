@@ -81,6 +81,7 @@ void EntityNode::updateAnimation(Actions action) {
 unsigned int EntityNode::getCategory() const {
     return Category::CHARACTER;
 }
+
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
 }

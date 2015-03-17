@@ -80,8 +80,7 @@ void LoadingLevel::runTask() {
     //seteo las colisiones, de momento en debug
     //las seteo a mano directamente
     SystemCollision* collision=new SystemCollision(levelToLoad->getBounds());
-    //meto mi personaje
-    collision->addCollisionable(character);
+    
     //a mi personaje le doy la colisión de su cuerpo
     Collision* coli=new Collision();
     sf::VertexArray quad(sf::Quads, 4);
@@ -92,13 +91,11 @@ void LoadingLevel::runTask() {
     coli->addArrayVertex(quad);
     character->Add<Collision*>("Collision", coli);
     
-    
     // y una colisión cualquiera para probar
     Entity* arg=new Entity();
     sf::Transformable tr=sf::Transformable();
     tr.setPosition(639, 296);
     arg->Add<sf::Transformable>("Position",tr);
-    
     
     coli=new Collision();
     sf::VertexArray quad2(sf::Quads, 4);
@@ -109,7 +106,12 @@ void LoadingLevel::runTask() {
     coli->addArrayVertex(quad2);
     arg->Add<Collision*>("Collision", coli);
     
+    //meto mi personaje
+    collision->addCollisionable(character);
+    //y al colisionable
     collision->addCollisionable(arg);
+    
+    levelToLoad->setSystemCollision(collision);
     
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);

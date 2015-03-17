@@ -12,25 +12,19 @@
 
 class Collision {
 public:
-    Collision() : vertices() {};
-    virtual ~Collision(){};
+    Collision();
+    virtual ~Collision();
 
-    void addVertice(sf::Vertex & vertex) {
-        vertices.append(vertex);
-    };
+    void addVertice(sf::Vertex & vertex);
+    void addArrayVertex(sf::VertexArray array);
+    sf::FloatRect getAABB();
+    bool collision(Collision* other);
+    void update(sf::Transformable transform);
     
-    void addArrayVertex(sf::VertexArray array){
-        for(uint i=0; i<array.getVertexCount(); ++i){
-            vertices.append(array[i]);
-        }
-    }
-    
-    sf::Rect<int> getAABB(){
-        return sf::Rect<int>();
-    };
 
 private:
     sf::VertexArray vertices;
+    sf::Transformable transform;
 
 };
 

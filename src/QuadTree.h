@@ -28,12 +28,13 @@ public:
     void insert(Entity* objectNew);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
     void update();
-    
+    void getObjects(std::vector<Entity*>& list);
+//    void checkCollisions();
 //    void toString();
 
 private:
     void split();
-    int getIndex(Collision collision);
+    int getIndex(Collision* collision);
 
 private:
     int level;
