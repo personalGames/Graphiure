@@ -18,8 +18,8 @@ public:
     virtual ~XMLParserMap();
     
 
-    virtual DataUnion parse(std::string id);
-    virtual DataUnion parse();
+    virtual void parse(DataUnion& data, std::string id);
+    virtual void parse(DataUnion& data);
 
     
 private:

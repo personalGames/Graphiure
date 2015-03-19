@@ -20,6 +20,10 @@ public:
     sf::FloatRect getAABB();
     bool collision(Collision* other);
     void update(sf::Transformable transform);
+    void applyRatio(sf::Vector2f ratio);
+    inline sf::Transformable getTransform() const {
+        return transform;
+    }
     
 
 private:

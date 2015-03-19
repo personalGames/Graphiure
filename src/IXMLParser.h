@@ -27,8 +27,8 @@ public:
     
     void setXML(std::string path);
     void setResources(ResourceHolder<IDTextures, sf::Texture>* textures);
-    virtual DataUnion parse()=0;
-    virtual DataUnion parse(std::string id)=0;
+    virtual void parse(DataUnion& data)=0;
+    virtual void parse(DataUnion& data, std::string id)=0;
     
 protected:
     tinyxml2::XMLDocument doc;

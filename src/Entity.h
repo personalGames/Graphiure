@@ -9,6 +9,7 @@
 #define	ENTITY2_H
 
 #include "PropertyManager.h"
+#include "IdEntity.h"
 
 //TODO id of the entity
 
@@ -17,9 +18,17 @@ public:
     Entity();
     virtual ~Entity();
     
-    
+    inline IdEntity getId() const {
+        return id;
+    }
+
+    inline void setId(IdEntity id) {
+        this->id = id;
+    }
+
     
 private:
+    IdEntity id;
 };
 
 #endif	/* ENTITY2_H */

@@ -3,9 +3,6 @@
  <tileset firstgid="1" name="TileSet" tilewidth="32" tileheight="32">
   <image source="../../../../../../../../home/dorian/Proyectos/Código/C/Graphiure/Media/Textures/TileSet.png" width="1024" height="1024"/>
  </tileset>
- <tileset firstgid="1025" name="TileSet" tilewidth="32" tileheight="32">
-  <image source="../../../../../../../../home/dorian/Proyectos/Código/C/Graphiure/Media/Textures/TileSet.png" width="1024" height="1024"/>
- </tileset>
  <layer name="Underground" width="50" height="50">
   <data>
    <tile gid="0"/>

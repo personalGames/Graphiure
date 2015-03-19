@@ -62,6 +62,8 @@
           <itemPath>src/TypeParser.h</itemPath>
           <itemPath>src/XMLParserAnimation.cpp</itemPath>
           <itemPath>src/XMLParserAnimation.h</itemPath>
+          <itemPath>src/XMLParserCollisionsMap.cpp</itemPath>
+          <itemPath>src/XMLParserCollisionsMap.h</itemPath>
           <itemPath>src/XMLParserMap.cpp</itemPath>
           <itemPath>src/XMLParserMap.h</itemPath>
           <itemPath>src/XMLParserStateMachines.cpp</itemPath>
@@ -86,6 +88,8 @@
         <itemPath>src/Entity.h</itemPath>
         <itemPath>src/EntityManager.cpp</itemPath>
         <itemPath>src/EntityManager.h</itemPath>
+        <itemPath>src/IdEntity.cpp</itemPath>
+        <itemPath>src/IdEntity.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
         <itemPath>src/Button.cpp</itemPath>
@@ -125,6 +129,8 @@
         <itemPath>src/StatesID.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f13" displayName="Systems" projectFiles="true">
+        <itemPath>src/MessageCollision.cpp</itemPath>
+        <itemPath>src/MessageCollision.h</itemPath>
         <itemPath>src/SystemCollision.cpp</itemPath>
         <itemPath>src/SystemCollision.h</itemPath>
       </logicalFolder>
@@ -310,6 +316,10 @@
       </item>
       <item path="src/IXMLParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/IdEntity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/IdEntity.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -333,6 +343,10 @@
       <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -427,6 +441,10 @@
       <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisionsMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisionsMap.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -567,6 +585,10 @@
       </item>
       <item path="src/IXMLParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/IdEntity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/IdEntity.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -590,6 +612,10 @@
       <item path="src/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ParallelTask.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -684,6 +710,10 @@
       <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisionsMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisionsMap.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserMap.cpp" ex="false" tool="1" flavor2="0">
       </item>

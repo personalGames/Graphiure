@@ -16,8 +16,8 @@ public:
     XMLParserAnimation();
     virtual ~XMLParserAnimation();
     
-    virtual DataUnion parse(std::string id);
-    virtual DataUnion parse();
+    virtual void parse(DataUnion& data, std::string id);
+    virtual void parse(DataUnion& data);
     
 private:
     void storeFrames(tinyxml2::XMLElement* node, StructAnimation* animation);

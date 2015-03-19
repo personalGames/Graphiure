@@ -13,6 +13,7 @@ enum class TypeParser{
     ENTITY,
     ANIMATION,
     STATE_MACHINE,
+    COLLISIONS
 };
 
 

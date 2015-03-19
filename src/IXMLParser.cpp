@@ -9,6 +9,7 @@
 #include "XMLParserMap.h"
 #include "XMLParserAnimation.h"
 #include "XMLParserStateMachines.h"
+#include "XMLParserCollisionsMap.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     IXMLParser* parser;
@@ -22,6 +23,10 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
             break;
         case TypeParser::STATE_MACHINE:
             parser = new XMLParserStateMachines();
+            break;
+            
+        case TypeParser::COLLISIONS:
+            parser=new XMLParserCollisionsMap();
             break;
 
         case TypeParser::ENTITY:

@@ -14,7 +14,8 @@ TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
 
 numberRows(mapInfo->numberRows), numberColumns(mapInfo->numberColumns),
 widthWindow(width), heightWindow(height), numberColumnsVisible(numberColumnsVisible),
-numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), chunks(), quadSize() {
+numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), 
+chunks(), quadSize(), adjustedRatio(1,1) {
 
     tileSize = sf::Vector2u(mapInfo->tileWidth, mapInfo->tileHeight);
     //ready up empty 2d arrays
@@ -27,7 +28,7 @@ void TileMapNode::prepareMap(const int* tilesMap) {
     //size in window
     quadSize = sf::Vector2f(widthWindow / numberColumnsVisible,
                             heightWindow / numberRowsVisible);
-    
+    adjustedRatio=sf::Vector2f(quadSize.x/tileSize.x, quadSize.y/tileSize.y);
     
     // populate the vertex array, with one quad per tile
     for (int j = 0; j < numberRows; ++j) {

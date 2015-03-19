@@ -14,14 +14,11 @@ Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& 
         ResourceHolder<IDTextures, sf::Texture>& images) :
 mapView(outputTarget.getDefaultView()), target(outputTarget),
 textures(images), fonts(fonts), sceneGraph(), sceneLayers(),
-worldBounds(0.f, 0.f, mapView.getSize().x, mapView.getSize().y) {
+worldBounds(0.f, 0.f, mapView.getSize().x, mapView.getSize().y), ratio(1,1) {
 
 }
 
-void Level::buildScene(StructMap* infoMap, Entity* characterCreated) {
-    principalCharacter = characterCreated;
-    
-
+void Level::buildScene(StructMap* infoMap) {
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
         SceneNode* layer = new SceneNode();
@@ -38,6 +35,7 @@ void Level::buildScene(StructMap* infoMap, Entity* characterCreated) {
             20, 20));
     tileMap->prepareMap(infoMap->tiles);
     sizeMap=tileMap->getSizeMap();
+    ratio=tileMap->getAdjustRatio();
     sceneLayers[Background]->addChild(std::move(tileMap));
 
     //prepare the underground
@@ -47,11 +45,19 @@ void Level::buildScene(StructMap* infoMap, Entity* characterCreated) {
 
     tiles->prepareMap(*(infoMap->underground));
     sceneLayers[Underground]->addChild(std::move(tiles));
-    
+}
+
+void Level::setCharacter(Entity* characterCreated) {
+    principalCharacter = characterCreated;
     EntityNode* node=new EntityNode(principalCharacter);
     sceneLayers[Ground]->addChild(std::move(node));
+}
+
+void Level::setSceneCollision() {
 
 }
+
+
 
 void Level::setPointCharacter(int x, int y) {
     int xInitial, yInitial;
@@ -101,6 +107,8 @@ void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f windowHalf = mapView.getSize() / 2.f;
     sf::Vector2f positionCharacter = principalCharacter->
             Get<sf::Transformable>("Position").getPosition();
+    
+//    std::cout<<positionCharacter.x<<" "<<positionCharacter.y<<std::endl;
     sf::Vector2f move(0, 0);
 
     if (positionCharacter.x > windowHalf.x) {

@@ -7,6 +7,7 @@
 
 #include "SystemCollision.h"
 #include <iostream>
+#include <queue>
 #include "Collision.h"
 
 SystemCollision::SystemCollision(sf::FloatRect bounds) : tree(0, bounds) {
@@ -32,6 +33,7 @@ void SystemCollision::checkCollisions() {
         
         for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
             if(checkCollisions(entity, *(it))){
+                queue.push(MessageCollision(entity->getId(), (*(it))->getId()));
                 std::cout<<"Collision"<<std::endl;
             }
         }
@@ -39,7 +41,7 @@ void SystemCollision::checkCollisions() {
 }
 
 bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
-    if(one==another){
+    if(one->getId()==another->getId()){
         return false;
     }
     Collision* oneCol=one->Get<Collision*>("Collision");

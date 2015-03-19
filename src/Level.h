@@ -30,7 +30,10 @@ public:
     
     void update(sf::Time dt);
     void draw();
-    void buildScene(StructMap* infoMap, Entity* characterCreated);
+    void buildScene(StructMap* infoMap);
+    void setCharacter(Entity* characterCreated);
+    void setSceneCollision();
+    
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
     inline sf::FloatRect getBounds(){
@@ -40,9 +43,14 @@ public:
         this->collision=collision;
     }
     
+    inline sf::Vector2f getRatio(){
+        return ratio;
+    }
+    
 private:
     void setPointCharacter(int x, int y);
     sf::FloatRect getViewBounds() const;
+    void correctWorldPosition(sf::Time dt);
     
 private:
     /**
@@ -83,9 +91,10 @@ private:
     
     Entity* principalCharacter;
     
-    void correctWorldPosition(sf::Time dt);
     
     SystemCollision* collision;
+    
+    sf::Vector2f ratio;
 };
 
 #endif	/* LEVEL_H */

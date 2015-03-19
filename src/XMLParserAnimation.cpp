@@ -18,12 +18,11 @@ XMLParserAnimation::XMLParserAnimation() {
 XMLParserAnimation::~XMLParserAnimation() {
 }
 
-DataUnion XMLParserAnimation::parse(std::string id) {
-    DataUnion data;
-    return data;
+void XMLParserAnimation::parse(DataUnion& data, std::string id) {
+    
 }
 
-DataUnion XMLParserAnimation::parse() {
+void XMLParserAnimation::parse(DataUnion& data) {
     StructAnimation* result=new StructAnimation();
     
     //get first node
@@ -38,9 +37,7 @@ DataUnion XMLParserAnimation::parse() {
        animation=animation->NextSiblingElement();
     }
     
-    DataUnion data=DataUnion();
     data.animations=result;
-    return data;
 }
 
 //pilla los frames, con los vértices de cada frame

@@ -9,6 +9,8 @@
 #define	SYSTEMCOLLISION_H
 
 #include "QuadTree.h"
+#include "MessageCollision.h"
+#include <queue>
 
 
 class SystemCollision {
@@ -23,6 +25,8 @@ public:
     
 private:
     QuadTree tree;
+    //queue
+    std::queue<MessageCollision> queue;
 };
 
 #endif	/* SYSTEMCOLLISION_H */

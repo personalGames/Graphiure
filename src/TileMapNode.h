@@ -28,6 +28,10 @@ public:
      */
     void prepareMap(const int* tilesMap);
     
+    inline sf::Vector2f getAdjustRatio(){
+        return adjustedRatio;
+    }
+    
     sf::Vector2f getSizeMap();
     inline sf::Vector2f getQuadSize(){
         return quadSize;
@@ -50,6 +54,7 @@ private:
     sf::Texture tileset;
     std::vector< std::vector <sf::VertexArray> > chunks;
     sf::Vector2f quadSize;
+    sf::Vector2f adjustedRatio;
 
 };
 

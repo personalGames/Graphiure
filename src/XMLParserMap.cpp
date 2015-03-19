@@ -13,12 +13,11 @@ XMLParserMap::XMLParserMap() {
 XMLParserMap::~XMLParserMap() {
 }
 
-DataUnion XMLParserMap::parse(std::string id) {
-    DataUnion data;
-    return data;
+void XMLParserMap::parse(DataUnion& data, std::string id) {
+    
 }
 
-DataUnion XMLParserMap::parse() {
+void XMLParserMap::parse(DataUnion& data) {
     StructMap* result = new StructMap();
     //get root node
     tinyxml2::XMLElement* detailsMap = doc.FirstChildElement("map");
@@ -50,9 +49,7 @@ DataUnion XMLParserMap::parse() {
         layer = layer->NextSiblingElement();
     }
 
-    DataUnion data=DataUnion();
     data.map=result;
-    return data;
 }
 
 void XMLParserMap::parseBackground(StructMap* result, tinyxml2::XMLElement* layer) {

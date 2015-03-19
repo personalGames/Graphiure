@@ -11,8 +11,8 @@
 #include "IXMLParser.h"
 #include "StateMachineAnimation.h"
 
-LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures,sf::Texture>* textures) : ParallelTask(),
-level(level), levelToLoad(levelToLoad){
+LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures,sf::Texture>* textures)
+: ParallelTask(), level(level), levelToLoad(levelToLoad){
     this->textures=textures;
 }
 
@@ -26,18 +26,31 @@ void LoadingLevel::runTask() {
         sf::Lock lock(mutex);
         completion = 5;
     }
+    
+    DataUnion data=DataUnion();
     //recojo el xml del nivel
     IXMLParser* parser=IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
     parser->setXML("Media/Levels/level1.xml");
     
     //parseo el nivel
-    StructMap* infoMap = parser->parse().map;
+    parser->parse(data);
+    StructMap* infoMap = data.map;
     {
         sf::Lock lock(mutex);
         completion = 10;
     }
+    
+    //pass the information to build the scene with all this data readed
+    levelToLoad->buildScene(infoMap);
+    {
+        sf::Lock lock(mutex);
+        completion = 35;
+    }
 
+    delete infoMap;
+    delete parser;
+    
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character=new Entity();
     
@@ -47,20 +60,13 @@ void LoadingLevel::runTask() {
     character->Add<sf::Vector2f>("Velocity",sf::Vector2f(0,0));
     character->Add<float>("MaxVelocity",200.f);
     
-    //pass the information to build the scene with all this data readed
-    levelToLoad->buildScene(infoMap, character);
-    {
-        sf::Lock lock(mutex);
-        completion = 35;
-    }
-
-    delete infoMap;
-    delete parser;
+    levelToLoad->setCharacter(character);
     
     parser=IXMLParser::make_parser(TypeParser::STATE_MACHINE);
     parser->setResources(textures);
     parser->setXML("Media/Data/StateMachines.xml");
-    StateMachine* state=parser->parse().stateMachine;
+    parser->parse(data);
+    StateMachine* state=data.stateMachine;
     delete parser;
     
     parser=IXMLParser::make_parser(TypeParser::ANIMATION);
@@ -68,7 +74,8 @@ void LoadingLevel::runTask() {
     parser->setXML("Media/Data/Animations.xml");
     
     StateMachineAnimation* machineAnimation=new StateMachineAnimation(*state);
-    machineAnimation->setAnimations(parser->parse().animations->animations);
+    parser->parse(data);
+    machineAnimation->setAnimations(data.animations->animations);
     character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
     delete parser;
     {
@@ -93,17 +100,17 @@ void LoadingLevel::runTask() {
     
     // y una colisión cualquiera para probar
     Entity* arg=new Entity();
-    sf::Transformable tr=sf::Transformable();
-    tr.setPosition(639, 296);
-    arg->Add<sf::Transformable>("Position",tr);
+    parser=IXMLParser::make_parser(TypeParser::COLLISIONS);
+    parser->setXML("Media/Levels/level1.xml");
+    parser->parse(data);
+
+    coli=data.collisions->at(0);
+    //la posición hay que ajustarla al tamaño modificado del mapa
+    //se saca el factor del mapa y se aplica
+    sf::Vector2f ratio=levelToLoad->getRatio();
+    coli->applyRatio(ratio);
     
-    coli=new Collision();
-    sf::VertexArray quad2(sf::Quads, 4);
-    quad2[0].position = sf::Vector2f(0,0);
-    quad2[1].position = sf::Vector2f(32, 0);
-    quad2[2].position = sf::Vector2f(32, 32);
-    quad2[3].position = sf::Vector2f(0, 32);
-    coli->addArrayVertex(quad2);
+    arg->Add<sf::Transformable>("Position",coli->getTransform());
     arg->Add<Collision*>("Collision", coli);
     
     //meto mi personaje

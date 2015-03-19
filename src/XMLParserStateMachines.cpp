@@ -17,12 +17,11 @@ XMLParserStateMachines::~XMLParserStateMachines() {
 
 }
 
-DataUnion XMLParserStateMachines::parse(std::string id) {
-    DataUnion data;
-    return data;
+void XMLParserStateMachines::parse(DataUnion& data, std::string id) {
+    
 }
 
-DataUnion XMLParserStateMachines::parse() {
+void XMLParserStateMachines::parse(DataUnion& data) {
     //get first node
     tinyxml2::XMLElement* stateMachine = doc.FirstChildElement("StateMachine");
     StateMachine* result;
@@ -46,7 +45,5 @@ DataUnion XMLParserStateMachines::parse() {
        stateMachine=stateMachine->NextSiblingElement();
     }
     
-    DataUnion data=DataUnion();
     data.stateMachine=result;
-    return data;
 }

@@ -11,12 +11,15 @@
 #include "StructMap.h"
 #include "StructAnimation.h"
 #include "StateMachine.h"
+#include <vector>
+#include "Collision.h"
 
 union DataUnion{
     StructMap* map;
     Animation* animation;
     StructAnimation* animations;
     StateMachine* stateMachine;
+    std::vector<Collision*>* collisions;
 };
 
 #endif	/* DATAUNION_H */

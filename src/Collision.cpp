@@ -28,6 +28,16 @@ void Collision::update(sf::Transformable transform) {
     this->transform = transform;
 }
 
+void Collision::applyRatio(sf::Vector2f ratio) {
+//    transform.setScale(ratio);
+//    std::cout<<transform.getPosition().x<<" "<<transform.getPosition().y<<std::endl;
+//    for(uint i=0; i<vertices.getVertexCount(); ++i){
+//        vertices[i].position.x=(vertices[i].position.x)*ratio.x;
+//        vertices[i].position.y=(vertices[i].position.y)*ratio.y;
+//    }
+}
+
+
 sf::FloatRect Collision::getAABB() {
     return transform.getTransform().transformRect(vertices.getBounds());
 }
@@ -35,16 +45,6 @@ sf::FloatRect Collision::getAABB() {
 bool Collision::collision(Collision* other) {
     sf::FloatRect one = getAABB();
     sf::FloatRect another = other->getAABB();
-
-//    std::cout<<std::endl<<std::endl << "Compare x: " << one.top << std::endl;
-//    std::cout << "Compare y: " << one.left << std::endl;
-//    std::cout << "Compare height: " << another.height << std::endl;
-//    std::cout << "Compare width: " << another.width << std::endl<<std::endl;
-//    
-//    std::cout << "Compare x: " << another.top << std::endl;
-//    std::cout << "Compare y: " << another.left << std::endl;
-//    std::cout << "Compare height: " << another.height << std::endl;
-//    std::cout << "Compare widht: " << another.width << std::endl;
     
     return one.intersects(another);
 }
