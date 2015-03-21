@@ -135,6 +135,8 @@
         <itemPath>src/SystemCollision.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
+        <itemPath>src/ConvexHull.cpp</itemPath>
+        <itemPath>src/ConvexHull.h</itemPath>
         <itemPath>src/ParallelTask.cpp</itemPath>
         <itemPath>src/ParallelTask.h</itemPath>
         <itemPath>src/Utilities.cpp</itemPath>
@@ -281,6 +283,10 @@
       <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/DataUnion.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -550,6 +556,10 @@
       <item path="src/Context.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/DataUnion.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -11,6 +11,7 @@
 #include "QuadTree.h"
 #include "MessageCollision.h"
 #include <queue>
+#include "Collision.h"
 
 
 class SystemCollision {

@@ -106,7 +106,7 @@ void Level::update(sf::Time dt) {
 void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f windowHalf = mapView.getSize() / 2.f;
     sf::Vector2f positionCharacter = principalCharacter->
-            Get<sf::Transformable>("Position").getPosition();
+            Get<sf::Transformable*>("Position")->getPosition();
     
 //    std::cout<<positionCharacter.x<<" "<<positionCharacter.y<<std::endl;
     sf::Vector2f move(0, 0);

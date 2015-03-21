@@ -54,9 +54,9 @@ void LoadingLevel::runTask() {
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character=new Entity();
     
-    sf::Transformable trans=sf::Transformable();
-    trans.setPosition(0,0);
-    character->Add<sf::Transformable>("Position",trans);
+    sf::Transformable* trans=new sf::Transformable();
+    trans->setPosition(0,0);
+    character->Add<sf::Transformable*>("Position",trans);
     character->Add<sf::Vector2f>("Velocity",sf::Vector2f(0,0));
     character->Add<float>("MaxVelocity",200.f);
     
@@ -98,6 +98,8 @@ void LoadingLevel::runTask() {
     coli->addArrayVertex(quad);
     character->Add<Collision*>("Collision", coli);
     
+    
+    
     // y una colisión cualquiera para probar
     Entity* arg=new Entity();
     parser=IXMLParser::make_parser(TypeParser::COLLISIONS);
@@ -109,8 +111,9 @@ void LoadingLevel::runTask() {
     //se saca el factor del mapa y se aplica
     sf::Vector2f ratio=levelToLoad->getRatio();
     coli->applyRatio(ratio);
+    arg->Add<sf::Transformable*>("Position",coli->getTransform());
     
-    arg->Add<sf::Transformable>("Position",coli->getTransform());
+    
     arg->Add<Collision*>("Collision", coli);
     
     //meto mi personaje

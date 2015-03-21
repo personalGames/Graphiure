@@ -35,9 +35,9 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
         Collision* collisionObject = new Collision();
         
         //get the position
-        sf::Transformable transform=sf::Transformable();
-        transform.setPosition(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
-        collisionObject->update(transform);
+        sf::Transformable* transform=new sf::Transformable();
+        transform->setPosition(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
+        collisionObject->update(*transform);
         
         //get the points
         tinyxml2::XMLElement* vertices = object->FirstChildElement("polyline");

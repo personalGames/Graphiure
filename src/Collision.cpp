@@ -7,8 +7,9 @@
 
 #include "Collision.h"
 #include <iostream>
+#include "ConvexHull.h"
 
-Collision::Collision() : vertices() {
+Collision::Collision() : vertices(), convexHull() {
 }
 
 Collision::~Collision() {
@@ -24,27 +25,30 @@ void Collision::addVertice(sf::Vertex& vertex) {
     vertices.append(vertex);
 }
 
-void Collision::update(sf::Transformable transform) {
-    this->transform = transform;
+void Collision::update(sf::Transformable& transform) {
+    this->transform.setPosition(transform.getPosition());
 }
 
 void Collision::applyRatio(sf::Vector2f ratio) {
-//    transform.setScale(ratio);
-//    std::cout<<transform.getPosition().x<<" "<<transform.getPosition().y<<std::endl;
-//    for(uint i=0; i<vertices.getVertexCount(); ++i){
-//        vertices[i].position.x=(vertices[i].position.x)*ratio.x;
-//        vertices[i].position.y=(vertices[i].position.y)*ratio.y;
-//    }
+    for (uint i = 0; i < vertices.getVertexCount(); ++i) {
+        vertices[i].position.x = (vertices[i].position.x) * ratio.x;
+        vertices[i].position.y = (vertices[i].position.y) * ratio.y;
+    }
+    //hallo su nueva posición dado el ratio con el que está el mapa
+    sf::Vector2f position = transform.getPosition();
+    position.x *= ratio.x;
+    position.y *= ratio.y;
+    transform.setPosition(position);
 }
 
-
 sf::FloatRect Collision::getAABB() {
-    return transform.getTransform().transformRect(vertices.getBounds());
+    sf::FloatRect cuadro = vertices.getBounds();
+    return transform.getTransform().transformRect(cuadro);
 }
 
 bool Collision::collision(Collision* other) {
     sf::FloatRect one = getAABB();
     sf::FloatRect another = other->getAABB();
-    
+
     return one.intersects(another);
 }

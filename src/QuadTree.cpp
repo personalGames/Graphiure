@@ -108,9 +108,9 @@ void QuadTree::update() {
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
         Entity* entity = *(it);
         //pillo su posicion
-        sf::Transformable transform=entity->Get<sf::Transformable>("Position");
+        sf::Transformable* transform=entity->Get<sf::Transformable*>("Position");
         //actualizo los datos de la colisión con la posición
-        entity->Get<Collision*>("Collision")->update(transform);
+        entity->Get<Collision*>("Collision")->update(*transform);
     }
     
      for (uint i = 0; i < nodes.size(); ++i) {

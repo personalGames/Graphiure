@@ -10,6 +10,7 @@
 
 #include <SFML/Graphics.hpp>
 
+
 class Collision {
 public:
     Collision();
@@ -19,17 +20,17 @@ public:
     void addArrayVertex(sf::VertexArray array);
     sf::FloatRect getAABB();
     bool collision(Collision* other);
-    void update(sf::Transformable transform);
+    void update(sf::Transformable& transform);
     void applyRatio(sf::Vector2f ratio);
-    inline sf::Transformable getTransform() const {
-        return transform;
+    inline sf::Transformable* getTransform() {
+        return &transform;
     }
     
 
 private:
     sf::VertexArray vertices;
     sf::Transformable transform;
-
+    sf::VertexArray convexHull;
 };
 
 #endif	/* COLLISION_H */

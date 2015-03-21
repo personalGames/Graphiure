@@ -28,6 +28,7 @@ void TileMapNode::prepareMap(const int* tilesMap) {
     //size in window
     quadSize = sf::Vector2f(widthWindow / numberColumnsVisible,
                             heightWindow / numberRowsVisible);
+
     adjustedRatio=sf::Vector2f(quadSize.x/tileSize.x, quadSize.y/tileSize.y);
     
     // populate the vertex array, with one quad per tile

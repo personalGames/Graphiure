@@ -7,8 +7,7 @@
 
 #include "SystemCollision.h"
 #include <iostream>
-#include <queue>
-#include "Collision.h"
+
 
 SystemCollision::SystemCollision(sf::FloatRect bounds) : tree(0, bounds) {
 }

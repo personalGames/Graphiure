@@ -11,6 +11,10 @@
 #include "StateMachineAnimation.h"
 
 EntityNode::EntityNode(Entity* entity): entity(entity) {
+    sf::Transformable* trans=entity->Get<sf::Transformable*>("Position");
+    setOrigin(trans->getOrigin());
+    setPosition(trans->getPosition());
+    setScale(trans->getScale());
 }
 
 EntityNode::~EntityNode() {
@@ -37,7 +41,7 @@ void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
 
     sf::Transformable actualPosition=sf::Transformable();
     actualPosition.setPosition(getPosition());
-    this->entity->Set<sf::Transformable>("Position",actualPosition);
+    this->entity->Get<sf::Transformable*>("Position")->setPosition(getPosition());
     this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
     
 }

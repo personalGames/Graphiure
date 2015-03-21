@@ -9,7 +9,6 @@
 #define	UTILITIES_H
 
 #include <SFML/Graphics.hpp>
-//#include "Animation.h"
 #include <sstream>
 #include <vector>
 #include <string.h>
