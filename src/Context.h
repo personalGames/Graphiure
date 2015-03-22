@@ -17,6 +17,7 @@
 #include "IDFonts.h"
 #include "Level.h"
 #include "Player.h"
+#include "SystemManager.h"
 
 
 class Context {
@@ -26,7 +27,8 @@ public:
     virtual ~Context();
 
     Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
-            ResourceHolder<IDFonts, sf::Font>& fonts, Player& player);
+            ResourceHolder<IDFonts, sf::Font>& fonts, Player& player, 
+            SystemManager& manager);
 
 
 public:
@@ -39,6 +41,9 @@ public:
     //level
     Level* actualLevel;
     Player* player;
+    
+    //systems
+    SystemManager* systemManager;
 };
 
 #endif	/* CONTEXT_H */

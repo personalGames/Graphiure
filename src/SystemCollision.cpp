@@ -9,17 +9,19 @@
 #include <iostream>
 
 
-SystemCollision::SystemCollision(sf::FloatRect bounds) : tree(0, bounds) {
+SystemCollision::SystemCollision(sf::FloatRect bounds) : ISystem(), tree(0, bounds) {
+    type=TypeSystem::COLLISION;
 }
 
 SystemCollision::~SystemCollision() {
 }
 
-void SystemCollision::addCollisionable(Entity* entity) {
+void SystemCollision::registerEntity(Entity* entity) {
     if (entity->HasID("Collision") && entity->HasID("Position")) {
         tree.insert(entity);
     }
 }
+
 
 void SystemCollision::checkCollisions(sf::FloatRect region) {
     QuadTree* subtree=tree.getNodeRegion(region);
@@ -57,4 +59,15 @@ bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
 
 void SystemCollision::update() {
     tree.update();
+
+
+}
+
+void SystemCollision::clear() {
+    tree.clear();
+}
+
+
+void SystemCollision::finalize() {
+    tree.clear();
 }

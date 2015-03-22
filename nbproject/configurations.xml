@@ -129,12 +129,15 @@
         <itemPath>src/StatesID.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f13" displayName="Systems" projectFiles="true">
+        <itemPath>src/ISystem.cpp</itemPath>
+        <itemPath>src/ISystem.h</itemPath>
         <itemPath>src/MessageCollision.cpp</itemPath>
         <itemPath>src/MessageCollision.h</itemPath>
         <itemPath>src/SystemCollision.cpp</itemPath>
         <itemPath>src/SystemCollision.h</itemPath>
         <itemPath>src/SystemManager.cpp</itemPath>
         <itemPath>src/SystemManager.h</itemPath>
+        <itemPath>src/TypeSystem.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <itemPath>src/ConvexHull.cpp</itemPath>
@@ -320,6 +323,10 @@
       </item>
       <item path="src/IProperty.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/ISystem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ISystem.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/IXMLParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IXMLParser.h" ex="false" tool="3" flavor2="0">
@@ -445,6 +452,8 @@
       <item path="src/TitleState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TypeSystem.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Utilities.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -597,6 +606,10 @@
       </item>
       <item path="src/IProperty.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/ISystem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ISystem.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/IXMLParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IXMLParser.h" ex="false" tool="3" flavor2="0">
@@ -722,6 +735,8 @@
       <item path="src/TitleState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TypeSystem.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Utilities.cpp" ex="false" tool="1" flavor2="0">
       </item>

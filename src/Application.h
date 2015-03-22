@@ -15,6 +15,7 @@
 #include "StateStack.h"
 #include "IDFonts.h"
 #include "IDTextures.h"
+#include "SystemManager.h"
 
 #include "MenuState.h"
 #include "TitleState.h"
@@ -35,7 +36,7 @@ private:
     sf::RenderWindow window;
     ResourceHolder<IDTextures, sf::Texture> textures;
     ResourceHolder<IDFonts, sf::Font> fonts;
-    StateStack stateStack;
+    
 //    MusicPlayer mMusic;
 //    SoundPlayer mSounds;
     
@@ -51,6 +52,9 @@ private:
     ClockHUD* hud;
     
     Player player;
+    SystemManager systemManager;
+    
+    StateStack stateStack;
 
 };
 

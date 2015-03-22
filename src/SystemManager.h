@@ -8,13 +8,25 @@
 #ifndef SYSTEMMANAGER_H
 #define	SYSTEMMANAGER_H
 
+#include "ISystem.h"
+
+
 class SystemManager {
 public:
     SystemManager();
-    SystemManager(const SystemManager& orig);
     virtual ~SystemManager();
+    
+    void addSystem(ISystem* system);
+    void initializeAll();
+    void finalizeAll();
+    void updateAll();
+    void clearSystems();
+    void registerEntity(Entity* entity);
+    
+    ISystem* getSystem(TypeSystem type);
+    
 private:
-
+    std::vector<ISystem*> systems;
 };
 
 #endif	/* SYSTEMMANAGER_H */

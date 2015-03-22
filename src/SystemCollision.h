@@ -12,17 +12,27 @@
 #include "MessageCollision.h"
 #include <queue>
 #include "Collision.h"
+#include "ISystem.h"
 
 
-class SystemCollision {
+class SystemCollision: public ISystem{
 public:
     SystemCollision(sf::FloatRect bounds);
     virtual ~SystemCollision();
     
+
+    virtual void initialize(){};
+    virtual void finalize();
+    virtual void update();
+    virtual void updateSecondPart(){};
+    virtual void registerEntity(Entity* entity);
+
+
+
+    void clear();
+    
     void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
-    void update();
-    void addCollisionable(Entity* entity);
     
 private:
     QuadTree tree;

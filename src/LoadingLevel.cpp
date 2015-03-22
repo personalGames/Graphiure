@@ -116,18 +116,18 @@ void LoadingLevel::runTask() {
         colisionable=new Entity();
         colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
         colisionable->Add<Collision*>("Collision", coli);
-        collision->addCollisionable(colisionable);
+        //collision->addCollisionable(colisionable);
     }
     
     for(int i=0; i< 5; ++i){
         colisionable=new Entity();
         colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
         colisionable->Add<Collision*>("Collision", coli);
-        collision->addCollisionable(colisionable);
+        //collision->addCollisionable(colisionable);
     }
     
     //meto mi personaje
-    collision->addCollisionable(character);
+    //collision->addCollisionable(character);
     //y al colisionable
     
 
