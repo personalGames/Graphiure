@@ -22,6 +22,11 @@ void SystemCollision::registerEntity(Entity* entity) {
     }
 }
 
+void SystemCollision::removedEntity(Entity* entity) {
+    tree.remove(entity);
+}
+
+
 
 void SystemCollision::checkCollisions(sf::FloatRect region) {
     QuadTree* subtree=tree.getNodeRegion(region);

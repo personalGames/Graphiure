@@ -32,7 +32,7 @@ void Level::buildScene(StructMap* infoMap) {
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
-            10, 10));
+            20, 20));
     tileMap->prepareMap(infoMap->tiles);
     sf::Vector2f sizeMap=tileMap->getSizeMap();
     worldBounds.height=sizeMap.y;
@@ -43,7 +43,7 @@ void Level::buildScene(StructMap* infoMap) {
     //prepare the underground
     TileNode * tiles(new TileNode(textures,
             infoMap,mapView.getSize().x, mapView.getSize().y,
-            10, 10));
+            20, 20));
 
     tiles->prepareMap(*(infoMap->underground));
     sceneLayers[Underground]->addChild(std::move(tiles));
@@ -102,7 +102,7 @@ void Level::update(sf::Time dt) {
     // Regular update step
     sceneGraph.update(dt, commandQueue);
     
-    collision->update();
+    collision->update(); //pasar también el tiempo delta
     collision->checkCollisions(getViewBounds());
 }
 

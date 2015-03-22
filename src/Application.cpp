@@ -16,7 +16,7 @@ Application::Application(): window(sf::VideoMode(1024,768), "Graphiure", sf::Sty
          {
     
     window.setKeyRepeatEnabled(false);
-    window.setVerticalSyncEnabled(true);
+    window.setVerticalSyncEnabled(false);
     window.setFramerateLimit(60);
     
     loadFonts();

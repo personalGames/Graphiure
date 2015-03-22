@@ -10,6 +10,7 @@
 
 #include "ISystem.h"
 
+#include <vector>
 
 class SystemManager {
 public:
@@ -22,6 +23,7 @@ public:
     void updateAll();
     void clearSystems();
     void registerEntity(Entity* entity);
+    void removeEntity(Entity* entity);
     
     ISystem* getSystem(TypeSystem type);
     

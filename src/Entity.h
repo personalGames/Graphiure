@@ -25,10 +25,19 @@ public:
     inline void setId(IdEntity id) {
         this->id = id;
     }
+    
+    bool isDestroyed() const {
+        return destroyed;
+    }
+
+    inline void destroy(){
+        destroyed=true;
+    }
 
     
 private:
     IdEntity id;
+    bool destroyed;
 };
 
 #endif	/* ENTITY2_H */

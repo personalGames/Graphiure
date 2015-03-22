@@ -11,9 +11,11 @@
 #include "IXMLParser.h"
 #include "StateMachineAnimation.h"
 
-LoadingLevel::LoadingLevel(Levels level, Level* levelToLoad, ResourceHolder<IDTextures, sf::Texture>* textures)
-: ParallelTask(), level(level), levelToLoad(levelToLoad) {
+LoadingLevel::LoadingLevel(Levels level, Context* context)
+: ParallelTask(), level(level) {
+    levelToLoad=context->actualLevel;
     this->textures = textures;
+    this->systemManager=context->systemManager;
 }
 
 LoadingLevel::~LoadingLevel() {

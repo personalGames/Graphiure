@@ -15,7 +15,7 @@
 #include "ISystem.h"
 
 
-class SystemCollision: public ISystem{
+class SystemCollision : public ISystem{
 public:
     SystemCollision(sf::FloatRect bounds);
     virtual ~SystemCollision();
@@ -26,6 +26,8 @@ public:
     virtual void update();
     virtual void updateSecondPart(){};
     virtual void registerEntity(Entity* entity);
+    virtual void removedEntity(Entity* entity);
+
 
 
 

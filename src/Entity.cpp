@@ -7,7 +7,7 @@
 
 #include "Entity.h"
 
-Entity::Entity():id() {
+Entity::Entity():id(), destroyed(false) {
 
 }
 

@@ -13,11 +13,12 @@
 #include "Level.h"
 #include "ResourceHolder.h"
 #include "IDTextures.h"
+#include "SystemManager.h"
+#include "Context.h"
 
 class LoadingLevel : public ParallelTask{
 public:
-    LoadingLevel(Levels levelToLoad, Level* load, 
-            ResourceHolder<IDTextures,sf::Texture>* textures);
+    LoadingLevel(Levels levelToLoad, Context* context);
     virtual ~LoadingLevel();
     
 
@@ -28,6 +29,7 @@ private:
     Levels level;
     Level* levelToLoad;
     ResourceHolder<IDTextures,sf::Texture>* textures;
+    SystemManager* systemManager;
 };
 
 #endif	/* LOADINGLEVEL_H */

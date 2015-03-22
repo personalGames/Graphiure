@@ -31,6 +31,13 @@ void SystemManager::registerEntity(Entity* entity) {
     }
 }
 
+void SystemManager::removeEntity(Entity* entity) {
+    for (std::vector<ISystem*>::iterator it = systems.begin(); it != systems.end(); ++it) {
+        (*it)->removedEntity(entity);
+    }
+}
+
+
 ISystem* SystemManager::getSystem(TypeSystem type) {
     ISystem* system=nullptr;
     for (std::vector<ISystem*>::iterator it = systems.begin(); 

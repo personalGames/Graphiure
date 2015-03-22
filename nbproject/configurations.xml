@@ -137,11 +137,15 @@
         <itemPath>src/SystemCollision.h</itemPath>
         <itemPath>src/SystemManager.cpp</itemPath>
         <itemPath>src/SystemManager.h</itemPath>
+        <itemPath>src/SystemObjectsGame.cpp</itemPath>
+        <itemPath>src/SystemObjectsGame.h</itemPath>
         <itemPath>src/TypeSystem.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <itemPath>src/ConvexHull.cpp</itemPath>
         <itemPath>src/ConvexHull.h</itemPath>
+        <itemPath>HashEnum.h</itemPath>
+        <itemPath>src/HashIdEntity.h</itemPath>
         <itemPath>src/ParallelTask.cpp</itemPath>
         <itemPath>src/ParallelTask.h</itemPath>
         <itemPath>src/Utilities.cpp</itemPath>
@@ -220,6 +224,8 @@
             tool="1"
             flavor2="0">
       </item>
+      <item path="HashEnum.h" ex="false" tool="3" flavor2="0">
+      </item>
       <folder path="TestFiles/f2">
         <cTool>
           <incDir>
@@ -312,6 +318,8 @@
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HashIdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -432,6 +440,10 @@
       <item path="src/SystemManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SystemManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SystemObjectsGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemObjectsGame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -503,6 +515,8 @@
             tool="1"
             flavor2="0">
       </item>
+      <item path="HashEnum.h" ex="false" tool="3" flavor2="0">
+      </item>
       <folder path="TestFiles/f2">
         <cTool>
           <incDir>
@@ -595,6 +609,8 @@
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HashIdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -715,6 +731,10 @@
       <item path="src/SystemManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SystemManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SystemObjectsGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemObjectsGame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>

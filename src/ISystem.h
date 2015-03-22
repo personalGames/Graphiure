@@ -30,6 +30,7 @@ public:
     virtual void updateSecondPart(){};
     
     virtual void registerEntity(Entity* entity)=0;
+    virtual void removedEntity(Entity* entity)=0;
     
     inline bool isFinalized() const {
         return finalized;
