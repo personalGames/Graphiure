@@ -1,11 +1,11 @@
 Combinar animation de la wiki de github con el animation de sfml-tutorial
-Diseñar los entities
+--Diseñar los entities
 Relacionado con lo anterior, para saber si ejecutar o no los comandos a según que nodos, utiliza un sistema de categorías (jugador, enemigo...). Un pequeño problema es saber cómo hacerlo y categorizar todo. Buscar otras opciones.
 hacer substates (pause dentro de game, por ejemplo)
 -- Mejorar el update del character para ajustar mejor las animaciones y no sobrecargar comprobando que animación necesita en el momento
 -- mover el mapa junto al personaje
-Mejorar el dibujado del mapa, con zonas sucias, para mejorar los fps que bajan peligrosamente (aunque parece que es sólo al principio, cuando pasa el tiempo mejora)
-Comprobar cómo mejorar el efecto del mapa cuando lo muevo junto al personaje
+--Mejorar el dibujado del mapa, con zonas sucias, para mejorar los fps que bajan peligrosamente (aunque parece que es sólo al principio, cuando pasa el tiempo mejora)
+Comprobar cómo mejorar el efecto del mapa cuando lo muevo junto al personaje (stuttering)
 Implementar bus de mensajes
 Implementar los procesos (actualización de inteligencia, de dibujado, de colisiones, audio... (colission system, bullet system, radar system...))
 Crear el sistema de objetos
@@ -14,4 +14,4 @@ MakeClone is responsible for creating a clone of this IProperty derived class an
 Adaptar el update de las propiedades
 Ver mejor como funcionan las propiedades
 Establecer las factorías de entidades
-Hacer una clase implementación de drawable que me sirva para guardar cualquier drawable en las properties, ya que al ser abstract no me deja (animaciones, sprites...)
+--Hacer una clase implementación de drawable que me sirva para guardar cualquier drawable en las properties, ya que al ser abstract no me deja (animaciones, sprites...)
