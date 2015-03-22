@@ -6,6 +6,7 @@
  */
 
 #include "QuadTree.h"
+#include "ActionStack.h"
 
 QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(bounds), nodes(4) {
 };
@@ -35,24 +36,38 @@ void QuadTree::clear() {
 
 int QuadTree::getIndex(Collision* collision) {
     sf::FloatRect bound = collision->getAABB();
+    return getIndex(bound);
+}
+
+int QuadTree::getIndex(sf::FloatRect rect) {
+    sf::FloatRect bound = rect;
     int index = -1;
+    
+    if(!inside(rect)){
+        return index;
+    }
+    
     double verticalMidpoint = bounds.left + (bounds.width / 2);
     double horizontalMidpoint = bounds.top + (bounds.height / 2);
 
     // Object can completely fit within the top quadrants
-    bool topQuadrant = (bound.top < horizontalMidpoint && bound.top + bound.height < horizontalMidpoint);
+    bool topQuadrant = (bound.top < horizontalMidpoint && 
+                        bound.top + bound.height < horizontalMidpoint && 
+                        bound.top>bounds.top);
     // Object can completely fit within the bottom quadrants
-    bool bottomQuadrant = (bound.top > horizontalMidpoint);
+    bool bottomQuadrant = (bound.top > horizontalMidpoint && 
+                            bound.top+bound.height<bounds.top+bounds.height);
 
     // Object can completely fit within the left quadrants
-    if (bound.left < verticalMidpoint && bound.left + bound.width < verticalMidpoint) {
+    if (bound.left < verticalMidpoint && bound.left + bound.width < verticalMidpoint
+                && bound.left>bounds.left) {
         if (topQuadrant) {
             index = 1;
         } else if (bottomQuadrant) {
             index = 2;
         }
-    }        // Object can completely fit within the right quadrants
-    else if (bound.left > verticalMidpoint) {
+    }// Object can completely fit within the right quadrants
+    else if (bound.left > verticalMidpoint && bound.left+bound.width<bounds.left+bounds.width) {
         if (topQuadrant) {
             index = 0;
         } else if (bottomQuadrant) {
@@ -63,14 +78,32 @@ int QuadTree::getIndex(Collision* collision) {
     return index;
 }
 
+QuadTree* QuadTree::getNodeRegion(sf::FloatRect region) {
+    int fit = getIndex(region);
+    QuadTree* result = nullptr;
+    if (fit == -1) {
+        result = this;
+    } else {
+        if (nodes[fit] != nullptr) {
+            result = nodes[fit]->getNodeRegion(region);
+        } else {
+            result = this;
+        }
+    }
+    return result;
+}
+
 void QuadTree::insert(Entity* objectNew) {
+    Collision* coli=objectNew->Get<Collision*>("Collision");
     if (nodes[0] != nullptr) {
-        int index = getIndex(objectNew->Get<Collision*>("Collision"));
+        int index = getIndex(coli);
 
         if (index != -1) {
-            nodes[index]->insert(objectNew);
+            if (nodes[index] != nullptr) {
+                nodes[index]->insert(objectNew);
 
-            return;
+                return;
+            }
         }
     }
 
@@ -80,13 +113,16 @@ void QuadTree::insert(Entity* objectNew) {
         if (nodes[0] == nullptr) {
             split();
         }
-
-        for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
+        std::list<Entity*>::iterator it = objects.begin();
+        while (it != objects.end()) {
             Entity* ob = *(it);
             int index = getIndex(ob->Get<Collision*>("Collision"));
             if (index != -1) {
+                std::cout<<"Al hijo"<<std::endl;
                 nodes[index]->insert(ob);
                 it = objects.erase(it);
+            } else {
+                ++it;
             }
         }
     }
@@ -102,21 +138,68 @@ void QuadTree::split() {
     nodes[1] = new QuadTree(level + 1, sf::IntRect(x, y, subWidth, subHeight));
     nodes[2] = new QuadTree(level + 1, sf::IntRect(x, y + subHeight, subWidth, subHeight));
     nodes[3] = new QuadTree(level + 1, sf::IntRect(x + subWidth, y + subHeight, subWidth, subHeight));
+    
+    nodes[0]->parent=this;
+    nodes[1]->parent=this;
+    nodes[2]->parent=this;
+    nodes[3]->parent=this;
 }
 
 void QuadTree::update() {
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
         Entity* entity = *(it);
         //pillo su posicion
-        sf::Transformable* transform=entity->Get<sf::Transformable*>("Position");
+        sf::Transformable* transform = entity->Get<sf::Transformable*>("Position");
         //actualizo los datos de la colisión con la posición
         entity->Get<Collision*>("Collision")->update(*transform);
     }
-    
-     for (uint i = 0; i < nodes.size(); ++i) {
+
+    //actualizo los hijos
+    for (uint i = 0; i < nodes.size(); ++i) {
         if (nodes[i] != nullptr) {
             nodes[i]->update();
         }
+    }
+
+    //una vez actualizados, recoloco el árbol (este nodo, los hijos ya se habrán recolocado)
+    updateTree();
+}
+
+void QuadTree::updateTree() {
+    std::list<Entity*>::iterator it = objects.begin();
+    while (it != objects.end()) {
+        Entity* entity = *it;
+        if (inside(entity->Get<Collision*>("Collision")->getAABB())) {
+            int index = getIndex(entity->Get<Collision*>("Collision"));
+            if (index != -1) {
+                if (nodes[index] != nullptr) {
+                    nodes[index]->insert(entity);
+                    it = objects.erase(it);
+                } else {
+                    ++it;
+                }
+            } else {
+                ++it;
+            }
+
+        } else {
+            if (parent != nullptr) {
+                parent->insert(entity);
+                it = objects.erase(it);
+            }else{
+                ++it;
+            }
+        }
+    }
+}
+
+bool QuadTree::inside(sf::FloatRect rect) {
+    if(rect.top>=bounds.top && rect.left>=bounds.left
+            && rect.top+rect.height<=bounds.top+bounds.height
+            && rect.left+rect.width<=bounds.left+bounds.width){
+        return true;
+    }else{
+        return false;
     }
 }
 
@@ -132,7 +215,6 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
         }
     }
 }
-
 
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {
     int index = getIndex(object->Get<Collision*>("Collision"));

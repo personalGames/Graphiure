@@ -55,7 +55,7 @@ void LoadingLevel::runTask() {
     Entity* character = new Entity();
 
     sf::Transformable* trans = new sf::Transformable();
-    trans->setPosition(0, 0);
+    trans->setPosition(100, 100);
     character->Add<sf::Transformable*>("Position", trans);
     character->Add<sf::Vector2f>("Velocity", sf::Vector2f(0, 0));
     character->Add<float>("MaxVelocity", 200.f);
@@ -118,6 +118,14 @@ void LoadingLevel::runTask() {
         colisionable->Add<Collision*>("Collision", coli);
         collision->addCollisionable(colisionable);
     }
+    
+    for(int i=0; i< 5; ++i){
+        colisionable=new Entity();
+        colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
+        colisionable->Add<Collision*>("Collision", coli);
+        collision->addCollisionable(colisionable);
+    }
+    
     //meto mi personaje
     collision->addCollisionable(character);
     //y al colisionable

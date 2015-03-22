@@ -39,6 +39,7 @@ public:
     inline sf::FloatRect getBounds(){
         return worldBounds;
     }
+    
     inline void setSystemCollision(SystemCollision* collision){
         this->collision=collision;
     }
@@ -86,8 +87,6 @@ private:
      * Position where character will appear
      */
     sf::Vector2f spawnPosition;
-    
-    sf::Vector2f sizeMap;
     
     Entity* principalCharacter;
     

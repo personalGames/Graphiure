@@ -19,7 +19,7 @@ public:
     SystemCollision(sf::FloatRect bounds);
     virtual ~SystemCollision();
     
-    void checkCollisions();
+    void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
     void update();
     void addCollisionable(Entity* entity);

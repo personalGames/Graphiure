@@ -32,16 +32,18 @@ void Level::buildScene(StructMap* infoMap) {
     TileMapNode * tileMap(new TileMapNode(textures,
             infoMap,
             mapView.getSize().x, mapView.getSize().y,
-            20, 20));
+            10, 10));
     tileMap->prepareMap(infoMap->tiles);
-    sizeMap=tileMap->getSizeMap();
+    sf::Vector2f sizeMap=tileMap->getSizeMap();
+    worldBounds.height=sizeMap.y;
+    worldBounds.width=sizeMap.x;
     ratio=tileMap->getAdjustRatio();
     sceneLayers[Background]->addChild(std::move(tileMap));
 
     //prepare the underground
     TileNode * tiles(new TileNode(textures,
             infoMap,mapView.getSize().x, mapView.getSize().y,
-            20, 20));
+            10, 10));
 
     tiles->prepareMap(*(infoMap->underground));
     sceneLayers[Underground]->addChild(std::move(tiles));
@@ -56,7 +58,6 @@ void Level::setCharacter(Entity* characterCreated) {
 void Level::setSceneCollision() {
 
 }
-
 
 
 void Level::setPointCharacter(int x, int y) {
@@ -77,7 +78,9 @@ void Level::draw() {
 }
 
 sf::FloatRect Level::getViewBounds() const {
-    return sf::FloatRect(mapView.getCenter() - mapView.getSize() / 2.f, mapView.getSize());
+    sf::Vector2f origin=mapView.getCenter() - mapView.getSize() / 2.f;
+    return sf::FloatRect(origin,
+            mapView.getSize()+origin);
 }
 
 
@@ -100,7 +103,7 @@ void Level::update(sf::Time dt) {
     sceneGraph.update(dt, commandQueue);
     
     collision->update();
-    collision->checkCollisions();
+    collision->checkCollisions(getViewBounds());
 }
 
 void Level::correctWorldPosition(sf::Time dt) {
@@ -112,10 +115,10 @@ void Level::correctWorldPosition(sf::Time dt) {
     sf::Vector2f move(0, 0);
 
     if (positionCharacter.x > windowHalf.x) {
-        if (positionCharacter.x < (sizeMap.x - windowHalf.x)) {
+        if (positionCharacter.x < (worldBounds.width - windowHalf.x)) {
             move.x = positionCharacter.x;
         } else {
-            move.x = sizeMap.x - windowHalf.x;
+            move.x = worldBounds.width - windowHalf.x;
         }
 
     } else {
@@ -123,10 +126,10 @@ void Level::correctWorldPosition(sf::Time dt) {
     }
 
     if (positionCharacter.y > windowHalf.y) {
-        if (positionCharacter.y < (sizeMap.y - windowHalf.y)) {
+        if (positionCharacter.y < (worldBounds.height - windowHalf.y)) {
             move.y = positionCharacter.y;
         } else {
-            move.y = sizeMap.y - windowHalf.y;
+            move.y = worldBounds.height - windowHalf.y;
         }
 
     } else {

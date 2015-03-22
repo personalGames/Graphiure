@@ -28,18 +28,22 @@ public:
     void insert(Entity* objectNew);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
     void update();
+    void updateTree();
     void getObjects(std::vector<Entity*>& list);
-//    void checkCollisions();
+    QuadTree* getNodeRegion(sf::FloatRect region);
 //    void toString();
 
 private:
     void split();
     int getIndex(Collision* collision);
+    int getIndex(sf::FloatRect rect);
+    bool inside(sf::FloatRect rect);
 
 private:
     int level;
     std::list<Entity*> objects;
     sf::IntRect bounds;
+    QuadTree* parent;
     std::vector<QuadTree*> nodes;
 };
 

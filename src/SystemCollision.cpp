@@ -21,19 +21,23 @@ void SystemCollision::addCollisionable(Entity* entity) {
     }
 }
 
-void SystemCollision::checkCollisions() {
+void SystemCollision::checkCollisions(sf::FloatRect region) {
+    QuadTree* subtree=tree.getNodeRegion(region);
+    if(subtree==nullptr){
+        subtree=&tree;
+    }
     std::vector<Entity*> list=std::vector<Entity*>();
-    tree.getObjects(list);
-    
+    subtree->getObjects(list);
+    std::cout<<list.size()<<std::endl;
     for(std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
         Entity* entity=*(it);
         std::vector<Entity*> posibles=std::vector<Entity*>();
-        tree.retrieve(&posibles,entity);
+        subtree->retrieve(&posibles,entity);
         
         for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
             if(checkCollisions(entity, *(it))){
                 queue.push(MessageCollision(entity->getId(), (*(it))->getId()));
-                std::cout<<"Collision"<<std::endl;
+//                std::cout<<"Collision"<<std::endl;
             }
         }
     }
