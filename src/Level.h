@@ -30,39 +30,39 @@ public:
     virtual ~Level();
     
     void update(sf::Time dt);
-    void draw();
-    void buildScene(StructMap* infoMap);
-    void setCharacter(Entity* characterCreated);
-    void setSceneCollision();
+//    void draw();
+//    void buildScene(StructMap* infoMap);
+//    void setCharacter(Entity* characterCreated);
+//    void setSceneCollision();
     
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
     
-    inline sf::FloatRect getBounds(){
-        return worldBounds;
-    }
+//    inline sf::FloatRect getBounds(){
+//        return worldBounds;
+//    }
     
 //    inline void setSystemCollision(SystemCollision* collision){
 //        this->collision=collision;
 //    }
     
-    inline sf::Vector2f getRatio(){
-        return ratio;
-    }
+//    inline sf::Vector2f getRatio(){
+//        return ratio;
+//    }
     
 private:
-    void setPointCharacter(int x, int y);
-    sf::FloatRect getViewBounds() const;
-    void correctWorldPosition(sf::Time dt);
+//    void setPointCharacter(int x, int y);
+//    sf::FloatRect getViewBounds() const;
+//    void correctWorldPosition(sf::Time dt);
     
 private:
     /**
      * View of the map
      */
-    sf::View mapView;
+//    sf::View mapView;
     /**
      * Target where draw
      */
-    sf::RenderTarget& target;
+//    sf::RenderTarget& target;
     /**
      * Resources
      */
@@ -72,8 +72,8 @@ private:
     /**
      * Scene graph
      */
-    SceneNode sceneGraph;
-    std::array<SceneNode*, LayerCount> sceneLayers;
+//    SceneNode sceneGraph;
+//    std::array<SceneNode*, LayerCount> sceneLayers;
     
     /**
      * Queue of commands
@@ -83,7 +83,7 @@ private:
     /**
      * Limits of the world
      */
-    sf::FloatRect worldBounds;
+//    sf::FloatRect worldBounds;
     /**
      * Position where character will appear
      */
@@ -91,11 +91,9 @@ private:
     
     Entity* principalCharacter;
     
-     sf::Vector2f ratio;
+//     sf::Vector2f ratio;
     
     SystemManager* systemManager;
-    
-//    SystemCollision* collision;
     
    
 };
