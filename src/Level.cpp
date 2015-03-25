@@ -11,10 +11,11 @@
 #include <iostream>
 
 Level::Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
-        ResourceHolder<IDTextures, sf::Texture>& images) :
+        ResourceHolder<IDTextures, sf::Texture>& images, SystemManager& systemManager) :
 mapView(outputTarget.getDefaultView()), target(outputTarget),
 textures(images), fonts(fonts), sceneGraph(), sceneLayers(),
-worldBounds(0.f, 0.f, mapView.getSize().x, mapView.getSize().y), ratio(1,1) {
+worldBounds(0.f, 0.f, mapView.getSize().x, mapView.getSize().y), ratio(1,1),
+systemManager(&systemManager){
 
 }
 
@@ -102,8 +103,13 @@ void Level::update(sf::Time dt) {
     // Regular update step
     sceneGraph.update(dt, commandQueue);
     
-    collision->update(); //pasar también el tiempo delta
+    systemManager->updateAll(dt);
+    
+    SystemCollision* collision = static_cast<SystemCollision*>(systemManager->getSystem(TypeSystem::COLLISION));
     collision->checkCollisions(getViewBounds());
+    
+//    collision->update(); //pasar también el tiempo delta
+//    collision->checkCollisions(getViewBounds());
 }
 
 void Level::correctWorldPosition(sf::Time dt) {

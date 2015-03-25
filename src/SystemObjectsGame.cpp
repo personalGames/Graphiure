@@ -47,6 +47,13 @@ void SystemObjectsGame::initialize() {
     //nada en especial que hacer
 }
 
+void SystemObjectsGame::registerEntity(Entity* entity) {
+    if(entities.find(entity->getId())==entities.end()){
+        newEntity(entity);
+    }
+}
+
+
 void SystemObjectsGame::newEntity(Entity* entity) {
     entities[entity->getId()]=entity;
     //aviso a los demás subsistemas de que hay nueva entidad por si quieren 
@@ -55,7 +62,7 @@ void SystemObjectsGame::newEntity(Entity* entity) {
 }
 
 
-void SystemObjectsGame::update() {
+void SystemObjectsGame::update(sf::Time dt) {
     if(removedEntities.size()>0){
         auto it = removedEntities.begin();
         while (it != removedEntities.end()){

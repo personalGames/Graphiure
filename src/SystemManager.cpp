@@ -10,6 +10,7 @@
 #include "SystemManager.h"
 
 SystemManager::SystemManager() : systems() {
+    
 }
 
 SystemManager::~SystemManager() {
@@ -50,9 +51,9 @@ ISystem* SystemManager::getSystem(TypeSystem type) {
 }
 
 
-void SystemManager::updateAll() {
+void SystemManager::updateAll(sf::Time dt) {
     for (std::vector<ISystem*>::iterator it = systems.begin(); it != systems.end(); ++it) {
-        (*it)->update();
+        (*it)->update(dt);
     }
 }
 

@@ -20,12 +20,13 @@
 #include "StructMap.h"
 #include "Entity.h"
 #include "SystemCollision.h"
+#include "SystemManager.h"
 
 
 class Level : private sf::NonCopyable {
 public:
     explicit Level(sf::RenderTarget& outputTarget, ResourceHolder<IDFonts, sf::Font>& fonts,
-            ResourceHolder<IDTextures, sf::Texture>& images);
+            ResourceHolder<IDTextures, sf::Texture>& images, SystemManager& systemManager);
     virtual ~Level();
     
     void update(sf::Time dt);
@@ -40,9 +41,9 @@ public:
         return worldBounds;
     }
     
-    inline void setSystemCollision(SystemCollision* collision){
-        this->collision=collision;
-    }
+//    inline void setSystemCollision(SystemCollision* collision){
+//        this->collision=collision;
+//    }
     
     inline sf::Vector2f getRatio(){
         return ratio;
@@ -90,10 +91,13 @@ private:
     
     Entity* principalCharacter;
     
+     sf::Vector2f ratio;
     
-    SystemCollision* collision;
+    SystemManager* systemManager;
     
-    sf::Vector2f ratio;
+//    SystemCollision* collision;
+    
+   
 };
 
 #endif	/* LEVEL_H */

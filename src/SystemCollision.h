@@ -18,26 +18,26 @@
 class SystemCollision : public ISystem{
 public:
     SystemCollision(sf::FloatRect bounds);
+    SystemCollision();
     virtual ~SystemCollision();
     
 
     virtual void initialize(){};
     virtual void finalize();
-    virtual void update();
-    virtual void updateSecondPart(){};
+    virtual void update(sf::Time dt);
+    virtual void updateSecondPart(sf::Time dt){};
     virtual void registerEntity(Entity* entity);
     virtual void removedEntity(Entity* entity);
 
 
-
-
+    void newWorldCollision(sf::FloatRect bounds);
     void clear();
     
     void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
     
 private:
-    QuadTree tree;
+    QuadTree* tree;
     //queue
     std::queue<MessageCollision> queue;
 };

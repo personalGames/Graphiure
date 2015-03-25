@@ -10,11 +10,12 @@
 #include "AnimatedSprite.h"
 #include "IXMLParser.h"
 #include "StateMachineAnimation.h"
+#include "SystemObjectsGame.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level) {
     levelToLoad=context->actualLevel;
-    this->textures = textures;
+    this->textures = context->textures;
     this->systemManager=context->systemManager;
 }
 
@@ -52,6 +53,23 @@ void LoadingLevel::runTask() {
 
     delete infoMap;
     delete parser;
+    
+    //preparo los sistemas que necesito
+    SystemCollision* collision = static_cast<SystemCollision*>(systemManager->getSystem(TypeSystem::COLLISION));
+    if(collision==nullptr){
+        collision=new SystemCollision(levelToLoad->getBounds());
+        systemManager->addSystem(collision);
+    }else{
+        collision->newWorldCollision(levelToLoad->getBounds());
+    }
+    
+    //y por último el sistema de objetos
+    SystemObjectsGame* objectsGame= static_cast<SystemObjectsGame*>(systemManager->getSystem(TypeSystem::OBJECTS));
+    if(objectsGame==nullptr){
+        objectsGame=new SystemObjectsGame(*systemManager);
+        systemManager->addSystem(objectsGame);
+    }
+    
 
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character = new Entity();
@@ -70,7 +88,6 @@ void LoadingLevel::runTask() {
     parser->parse(data);
     StateMachine* state = data.stateMachine;
     delete parser;
-
     parser = IXMLParser::make_parser(TypeParser::ANIMATION);
     parser->setResources(textures);
     parser->setXML("Media/Data/Animations.xml");
@@ -85,10 +102,7 @@ void LoadingLevel::runTask() {
         completion = 70;
     }
 
-
     //seteo las colisiones, de momento en debug
-    //las seteo a mano directamente
-    SystemCollision* collision = new SystemCollision(levelToLoad->getBounds());
 
     //a mi personaje le doy la colisión de su cuerpo
     Collision* coli = new Collision();
@@ -99,10 +113,11 @@ void LoadingLevel::runTask() {
     quad[3].position = sf::Vector2f(0, 32);
     coli->addArrayVertex(quad);
     character->Add<Collision*>("Collision", coli);
+    
+    //he terminado con mi personaje, lo registro/guardo
+    objectsGame->registerEntity(character);
 
-
-
-    // y una colisión cualquiera para probar
+    // y leo las colisiones
     Entity* colisionable;
     parser = IXMLParser::make_parser(TypeParser::COLLISIONS);
     parser->setXML("Media/Levels/level1.xml");
@@ -118,23 +133,12 @@ void LoadingLevel::runTask() {
         colisionable=new Entity();
         colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
         colisionable->Add<Collision*>("Collision", coli);
-        //collision->addCollisionable(colisionable);
+        //registro el entity y los subsistemas lo recogerán si es de su incumbencia
+        objectsGame->registerEntity(colisionable);
     }
     
-    for(int i=0; i< 5; ++i){
-        colisionable=new Entity();
-        colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
-        colisionable->Add<Collision*>("Collision", coli);
-        //collision->addCollisionable(colisionable);
-    }
-    
-    //meto mi personaje
-    //collision->addCollisionable(character);
-    //y al colisionable
-    
 
-    levelToLoad->setSystemCollision(collision);
-
+//    levelToLoad->setSystemCollision(collision);
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);
         completion = 100;

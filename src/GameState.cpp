@@ -8,7 +8,7 @@
 #include "GameState.h"
 
 GameState::GameState(StateStack& stack, Context* context) :
-        State(stack, context),player(*context->player) {
+        State(stack, context),player(*context->player), systemManager(context->systemManager) {
 
 }
 
@@ -30,6 +30,8 @@ bool GameState::handleEvent(const sf::Event& event) {
 
 bool GameState::update(sf::Time dt) {
     level->update(dt);
+    
+//    systemManager->updateAll(dt);
     
     CommandQueue& commands = level->getCommandQueue();
     player.handleRealtimeInput(commands);

@@ -36,7 +36,6 @@ void XMLParserAnimation::parse(DataUnion& data) {
         
        animation=animation->NextSiblingElement();
     }
-    
     data.animations=result;
 }
 

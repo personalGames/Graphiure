@@ -25,6 +25,7 @@ public:
 private:
     Level* level;
     Player& player;
+    SystemManager* systemManager;
 };
 
 #endif	/* GAMESTATE_H */

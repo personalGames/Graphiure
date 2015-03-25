@@ -23,6 +23,7 @@ class QuadTree {
 public:
     QuadTree(int level, sf::IntRect bounds);
     QuadTree(int level, sf::FloatRect bounds);
+    QuadTree(int level);
 
     void clear();
     void insert(Entity* objectNew);
@@ -43,7 +44,7 @@ private:
 private:
     int level;
     std::list<Entity*> objects;
-    sf::IntRect bounds;
+    sf::FloatRect bounds;
     QuadTree* parent;
     std::vector<QuadTree*> nodes;
 };

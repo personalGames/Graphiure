@@ -8,16 +8,22 @@
 #include "QuadTree.h"
 #include "ActionStack.h"
 
-QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(bounds), nodes(4) {
+QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
+     this->bounds.top = static_cast<float> (bounds.top);
+    this->bounds.left = static_cast<float> (bounds.left);
+    this->bounds.height = static_cast<float> (bounds.height);
+    this->bounds.width = static_cast<float> (bounds.width);
 };
 
-QuadTree::QuadTree(int level, sf::FloatRect bounds) : level(level), objects(), bounds(0, 0, 0, 0), nodes(4) {
-    this->bounds.top = static_cast<int> (bounds.top);
-    this->bounds.left = static_cast<int> (bounds.left);
-    this->bounds.height = static_cast<int> (bounds.height);
-    this->bounds.width = static_cast<int> (bounds.width);
+QuadTree::QuadTree(int level, sf::FloatRect bounds) : level(level), objects(), bounds(bounds), nodes(4) {
+   
 
 };
+
+QuadTree::QuadTree(int level) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
+
+}
+
 
 void QuadTree::clear() {
     //    for(std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {

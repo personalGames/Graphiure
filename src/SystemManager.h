@@ -17,10 +17,12 @@ public:
     SystemManager();
     virtual ~SystemManager();
     
+    
+    
     void addSystem(ISystem* system);
     void initializeAll();
     void finalizeAll();
-    void updateAll();
+    void updateAll(sf::Time dt);
     void clearSystems();
     void registerEntity(Entity* entity);
     void removeEntity(Entity* entity);

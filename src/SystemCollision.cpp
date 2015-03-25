@@ -9,8 +9,14 @@
 #include <iostream>
 
 
-SystemCollision::SystemCollision(sf::FloatRect bounds) : ISystem(), tree(0, bounds) {
+SystemCollision::SystemCollision(sf::FloatRect bounds) : ISystem(), tree() {
     type=TypeSystem::COLLISION;
+    tree=new QuadTree(0, bounds);
+}
+
+SystemCollision::SystemCollision() : ISystem(), tree() {
+    type=TypeSystem::COLLISION;
+    tree=new QuadTree(0);
 }
 
 SystemCollision::~SystemCollision() {
@@ -18,24 +24,24 @@ SystemCollision::~SystemCollision() {
 
 void SystemCollision::registerEntity(Entity* entity) {
     if (entity->HasID("Collision") && entity->HasID("Position")) {
-        tree.insert(entity);
+        tree->insert(entity);
     }
 }
 
 void SystemCollision::removedEntity(Entity* entity) {
-    tree.remove(entity);
+    tree->remove(entity);
 }
 
 
 
 void SystemCollision::checkCollisions(sf::FloatRect region) {
-    QuadTree* subtree=tree.getNodeRegion(region);
+    QuadTree* subtree=tree->getNodeRegion(region);
     if(subtree==nullptr){
-        subtree=&tree;
+        subtree=tree;
     }
     std::vector<Entity*> list=std::vector<Entity*>();
     subtree->getObjects(list);
-    std::cout<<list.size()<<std::endl;
+//    std::cout<<list.size()<<std::endl;
     for(std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
         Entity* entity=*(it);
         std::vector<Entity*> posibles=std::vector<Entity*>();
@@ -44,7 +50,7 @@ void SystemCollision::checkCollisions(sf::FloatRect region) {
         for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
             if(checkCollisions(entity, *(it))){
                 queue.push(MessageCollision(entity->getId(), (*(it))->getId()));
-//                std::cout<<"Collision"<<std::endl;
+                std::cout<<"Collision"<<std::endl;
             }
         }
     }
@@ -62,17 +68,24 @@ bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
 
 
 
-void SystemCollision::update() {
-    tree.update();
+void SystemCollision::update(sf::Time dt) {
+    tree->update();
 
 
 }
 
+void SystemCollision::newWorldCollision(sf::FloatRect bounds) {
+    tree->clear();
+    delete tree;
+    tree=new QuadTree(0, bounds);
+}
+
+
 void SystemCollision::clear() {
-    tree.clear();
+    tree->clear();
 }
 
 
 void SystemCollision::finalize() {
-    tree.clear();
+    tree->clear();
 }

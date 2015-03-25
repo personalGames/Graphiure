@@ -23,19 +23,18 @@ public:
 
     virtual void initialize();
     virtual void finalize();
-    virtual void registerEntity(Entity* entity){
-        //do nothing, this system has his own method to add new entities};
-    }
+    virtual void registerEntity(Entity* entity);
     virtual void removedEntity(Entity* entity){};
 
-    virtual void update();
-    virtual void updateSecondPart(){};
+    virtual void update(sf::Time dt);
+    virtual void updateSecondPart(sf::Time dt){};
     
-    void newEntity(Entity* entity);
+    
     Entity* getEntity(IdEntity id);
     void destroyEntity(IdEntity id);
     
 private:
+    void newEntity(Entity* entity);
     std::unordered_map<IdEntity, Entity*, HashIdEntity> entities;
     std::list<Entity*> removedEntities;
     SystemManager* systemManager;
