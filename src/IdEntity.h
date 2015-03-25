@@ -8,8 +8,6 @@
 #ifndef IDENTITY_H
 #define	IDENTITY_H
 
-#include <functional>
-
 static int count = 0;
 
 class IdEntity {
@@ -28,32 +26,29 @@ public:
 
     virtual ~IdEntity() {
     };
+    
 
-//    std::size_t operator()(const IdEntity &c) const {
-//        return std::hash<int>()(c.id);
-//    }
-
-    inline bool operator==(const IdEntity lhs) {
-        return lhs.id == this->id;
+    inline bool operator==(const IdEntity lhs) const{
+        return lhs.id == id;
     }
 
-    inline bool operator!=(const IdEntity& lhs) {
+    inline bool operator!=(const IdEntity& lhs) const {
         return !operator==(lhs);
     }
 
-    inline bool operator<(const IdEntity& lhs) {
-        return lhs.id<this->id;
+    inline bool operator<(const IdEntity& lhs) const {
+        return lhs.id<id;
     }
 
-    inline bool operator>(const IdEntity& lhs) {
+    inline bool operator>(const IdEntity& lhs) const {
         return operator<(lhs);
     }
 
-    inline bool operator<=(const IdEntity& lhs) {
+    inline bool operator<=(const IdEntity& lhs) const {
         return !operator>(lhs);
     }
 
-    inline bool operator>=(const IdEntity& lhs) {
+    inline bool operator>=(const IdEntity& lhs) const {
         return !operator<(lhs);
     }
 
