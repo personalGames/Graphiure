@@ -7,9 +7,14 @@
 
 #include "Entity.h"
 
-Entity::Entity():id(), destroyed(false) {
+Entity::Entity(): Entity(Category::NONE) {
 
 }
+
+Entity::Entity(Category category):id(), destroyed(false), category(category) {
+
+}
+
 
 Entity::~Entity() {
 

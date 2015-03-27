@@ -41,7 +41,6 @@ void SystemCollision::checkCollisions(sf::FloatRect region) {
     }
     std::vector<Entity*> list=std::vector<Entity*>();
     subtree->getObjects(list);
-//    std::cout<<list.size()<<std::endl;
     for(std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
         Entity* entity=*(it);
         std::vector<Entity*> posibles=std::vector<Entity*>();

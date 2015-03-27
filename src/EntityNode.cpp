@@ -90,14 +90,14 @@ void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) 
     entity->Get<StateMachineAnimation*>("Drawable")->draw(target,states);
 }
 
-void EntityNode::onCommand(const Command& command, sf::Time delta) {
-    // Command current node, if category matches
-    if ((command.category & this->getCategory())>=1) {
-        command.action(*this, delta);
-    }
-
-    // Propagate command to children
-    for (SceneNode* child : children) {
-        child->onCommand(command, delta);
-    }
-}
+//void EntityNode::onCommand(const Command& command, sf::Time delta) {
+//    // Command current node, if category matches
+//    if ((command.category & this->getCategory())>=1) {
+//        command.action(*this, delta);
+//    }
+//
+//    // Propagate command to children
+//    for (SceneNode* child : children) {
+//        child->onCommand(command, delta);
+//    }
+//}

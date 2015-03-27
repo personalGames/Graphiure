@@ -31,8 +31,6 @@ bool GameState::handleEvent(const sf::Event& event) {
 bool GameState::update(sf::Time dt) {
     level->update(dt);
     
-//    systemManager->updateAll(dt);
-    
     CommandQueue& commands = level->getCommandQueue();
     player.handleRealtimeInput(commands);
     

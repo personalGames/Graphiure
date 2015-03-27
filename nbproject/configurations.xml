@@ -135,6 +135,8 @@
         <itemPath>src/MessageCollision.h</itemPath>
         <itemPath>src/SystemCollision.cpp</itemPath>
         <itemPath>src/SystemCollision.h</itemPath>
+        <itemPath>src/SystemCommand.cpp</itemPath>
+        <itemPath>src/SystemCommand.h</itemPath>
         <itemPath>src/SystemGraphic.cpp</itemPath>
         <itemPath>src/SystemGraphic.h</itemPath>
         <itemPath>src/SystemManager.cpp</itemPath>
@@ -439,6 +441,10 @@
       </item>
       <item path="src/SystemCollision.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SystemCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/SystemGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SystemGraphic.h" ex="false" tool="3" flavor2="0">
@@ -733,6 +739,10 @@
       <item path="src/SystemCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SystemCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SystemCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SystemGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>

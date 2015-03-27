@@ -80,7 +80,7 @@ protected:
     virtual void updateCurrent(sf::Time dt, CommandQueue& commands);
     
 
-    virtual void onCommand(const Command& command, sf::Time delta);
+//    virtual void onCommand(const Command& command, sf::Time delta);
 
 };
 

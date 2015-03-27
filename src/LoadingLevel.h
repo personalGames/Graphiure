@@ -30,6 +30,7 @@ private:
     Level* levelToLoad;
     ResourceHolder<IDTextures,sf::Texture>* textures;
     SystemManager* systemManager;
+    Context* context;
 };
 
 #endif	/* LOADINGLEVEL_H */

@@ -47,6 +47,7 @@ private:
 
     void loadTextures();
     void loadFonts();
+    void setSystemManager();
     
     sfx::FrameClock clock;
     ClockHUD* hud;

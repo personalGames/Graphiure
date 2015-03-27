@@ -59,8 +59,7 @@ bool LoadingState::update(sf::Time) {
             if (context->actualLevel != nullptr) {
                 delete context->actualLevel;
             }
-            context->actualLevel = new Level(*context->window, 
-                    *context->fonts, *context->textures, *context->systemManager);
+            context->actualLevel = new Level(*context->systemManager);
             loadingTask = new LoadingLevel(Levels::Test, context);
             loadingTask->execute();
             taskCreated=true;

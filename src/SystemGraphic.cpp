@@ -7,8 +7,12 @@
 
 #include "SystemGraphic.h"
 
-SystemGraphic::SystemGraphic() {
+SystemGraphic::SystemGraphic(sf::RenderWindow& window,ResourceHolder<IDFonts, sf::Font>& fonts,
+        ResourceHolder<IDTextures, sf::Texture>& images): 
+        target(window), mapView(target.getDefaultView()),
+        fonts(fonts), textures(images){
 
+    type=TypeSystem::GRAPHIC;
 }
 
 void SystemGraphic::finalize() {
@@ -16,10 +20,11 @@ void SystemGraphic::finalize() {
 }
 
 void SystemGraphic::initialize() {
-
+    
 }
 
 void SystemGraphic::newScene(StructMap* infoMap) {
+    //clear previous scene
     
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
@@ -59,7 +64,7 @@ void SystemGraphic::registerEntity(Entity* entity) {
 }
 
 void SystemGraphic::removedEntity(Entity* entity) {
-
+    
 }
 
 void SystemGraphic::update(sf::Time dt) {

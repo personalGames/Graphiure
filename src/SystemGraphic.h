@@ -9,11 +9,23 @@
 #define	SYSTEMGRAPHIC_H
 
 #include "ISystem.h"
+#include <SFML/Graphics.hpp>
+#include "ResourceHolder.h"
+#include "Entity.h"
+#include "SceneNode.h"
+#include "IDFonts.h"
+#include "IDTextures.h"
+#include "StructMap.h"
+#include "Layer.h"
+#include "TileNode.h"
+#include "TileMapNode.h"
+#include "EntityNode.h"
 
 
 class SystemGraphic : public ISystem {
 public:
-    SystemGraphic();
+    SystemGraphic(sf::RenderWindow& window, ResourceHolder<IDFonts, sf::Font>& fonts,
+        ResourceHolder<IDTextures, sf::Texture>& images);
     virtual ~SystemGraphic();
     
 
@@ -44,13 +56,13 @@ private:
     
 private:
     /**
-     * View of the map
-     */
-    sf::View mapView;
-    /**
      * Target where draw
      */
     sf::RenderTarget& target;
+    /**
+     * View of the map
+     */
+    sf::View mapView;
     /**
      * Limits of the world
      */
@@ -59,8 +71,9 @@ private:
     /**
      * Resources
      */
-    ResourceHolder<IDTextures, sf::Texture> textures;
     ResourceHolder<IDFonts, sf::Font>& fonts;
+    ResourceHolder<IDTextures, sf::Texture>& textures;
+    
     /**
      * Scene graph
      */

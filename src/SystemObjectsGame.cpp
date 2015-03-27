@@ -36,9 +36,9 @@ void SystemObjectsGame::finalize() {
 Entity* SystemObjectsGame::getEntity(IdEntity id) {
     Entity* result=nullptr;
     try{
-        entities.at(id);
+        result=entities.at(id);
     }catch(std::out_of_range exception){
-        
+        std::cout<<"Error buscando entidad"<<std::endl;
     }
     return result;
 }

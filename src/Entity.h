@@ -10,12 +10,14 @@
 
 #include "PropertyManager.h"
 #include "IdEntity.h"
+#include "Category.h"
 
 //TODO id of the entity
 
 class Entity : public PropertyManager{
 public:
     Entity();
+    Entity(Category category);
     virtual ~Entity();
     
     inline IdEntity getId() const {
@@ -33,11 +35,17 @@ public:
     inline void destroy(){
         destroyed=true;
     }
+    
+    inline Category getCategory() const {
+        return category;
+    }
+
 
     
 private:
     IdEntity id;
     bool destroyed;
+    Category category;
 };
 
 #endif	/* ENTITY2_H */

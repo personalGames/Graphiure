@@ -19,56 +19,112 @@ Player::Player() {
 }
 
 void Player::initializeActions() {
-    auto finder = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(-1, 0) * character.getMaxSpeed());
-        character.updateAnimation(Actions::Left);
+    auto finder = [] (Entity& character, sf::Time) {
+        //character.accelerate(sf::Vector2f(-1, 0) * character.getMaxSpeed());
+
+        sf::Vector2f velocity=sf::Vector2f(-1,0)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
+        //character.updateAnimation(Actions::Left);
     };
-    actionBinding[Left].action = derivedAction<EntityNode>(finder);
+    actionBinding[Left].action = derivedAction<Entity>(finder);
 
 
-    auto finder2 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(+1, 0) * character.getMaxSpeed());
-        character.updateAnimation(Actions::Right);
+    auto finder2 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(+1, 0) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::Right);
+        
+        sf::Vector2f velocity=sf::Vector2f(1,0)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
     };
-    actionBinding[Right].action = derivedAction<EntityNode>(finder2);
+    actionBinding[Right].action = derivedAction<Entity>(finder2);
 
 
-    auto finder3 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(0, -1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::Up);
+    auto finder3 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(0, -1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::Up);
+        
+        sf::Vector2f velocity=sf::Vector2f(0,-1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
     };
-    actionBinding[Up].action = derivedAction<EntityNode>(finder3);
+    actionBinding[Up].action = derivedAction<Entity>(finder3);
 
 
-    auto finder4 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(0, +1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::Down);
-    };
-    actionBinding[Down].action = derivedAction<EntityNode>(finder4);
+    auto finder4 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(0, +1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::Down);
+        
+        sf::Vector2f velocity=sf::Vector2f(0,1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
 
-    auto finder5 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(1, 1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::RightDown);
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
     };
-    actionBinding[RightDown].action = derivedAction<EntityNode>(finder5);
-    
-    auto finder6 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(-1, 1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::LeftDown);
+    actionBinding[Down].action = derivedAction<Entity>(finder4);
+
+    auto finder5 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(1, 1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::RightDown);
+        
+        sf::Vector2f velocity=sf::Vector2f(1,1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightDown);
     };
-    actionBinding[LeftDown].action = derivedAction<EntityNode>(finder6);
-    
-    auto finder7 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(1, -1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::RightUp);
+    actionBinding[RightDown].action = derivedAction<Entity>(finder5);
+
+    auto finder6 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(-1, 1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::LeftDown);
+        
+        sf::Vector2f velocity=sf::Vector2f(-1,-1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftDown);
     };
-    actionBinding[RightUp].action = derivedAction<EntityNode>(finder7);
-    
-    auto finder8 = [] (EntityNode& character, sf::Time) {
-        character.accelerate(sf::Vector2f(-1, -1) * character.getMaxSpeed());
-        character.updateAnimation(Actions::LeftUp);
+    actionBinding[LeftDown].action = derivedAction<Entity>(finder6);
+
+    auto finder7 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(1, -1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::RightUp);
+        
+        sf::Vector2f velocity=sf::Vector2f(1,-1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightUp);
     };
-    actionBinding[LeftUp].action = derivedAction<EntityNode>(finder8);
+    actionBinding[RightUp].action = derivedAction<Entity>(finder7);
+
+    auto finder8 = [] (Entity& character, sf::Time) {
+//        character.accelerate(sf::Vector2f(-1, -1) * character.getMaxSpeed());
+//        character.updateAnimation(Actions::LeftUp);
+        
+        sf::Vector2f velocity=sf::Vector2f(-1,-1)* character.Get<float>("MaxVelocity");
+        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
+        previous += velocity;
+        character.Set<sf::Vector2f>("Velocity", previous);
+
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftUp);
+    };
+    actionBinding[LeftUp].action = derivedAction<Entity>(finder8);
 
 
     actionBinding[RightUp].category = Category::CHARACTER;
@@ -89,7 +145,7 @@ void Player::handleEvent(const sf::Event& event, CommandQueue& commands) {
         // Check if pressed key appears in key binding, trigger command if so
         auto found = keyBinding.find(event.key.code);
 
-        if (found != keyBinding.end() && !isRealtimeAction(found->second)){
+        if (found != keyBinding.end() && !isRealtimeAction(found->second)) {
             commands.push(actionBinding[found->second]);
         }
     }
@@ -102,8 +158,8 @@ void Player::handleRealtimeInput(CommandQueue& commands) {
     //            if (sf::Keyboard::isKeyPressed(pair.first) && isRealtimeAction(pair.second))
     //                commands.push(actionBinding[pair.second]);
     //        }
-    
-    
+
+
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) &&
             sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
@@ -112,15 +168,15 @@ void Player::handleRealtimeInput(CommandQueue& commands) {
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) &&
             sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
         commands.push(actionBinding[LeftUp]);
-        
+
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) &&
             sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
         commands.push(actionBinding[RightUp]);
-        
+
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) &&
             sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
         commands.push(actionBinding[RightDown]);
-    
+
     } else {
         for (auto pair : keyBinding) {
             // If key is pressed, lookup action and trigger corresponding command

@@ -14,7 +14,7 @@
 
 #include "Category.h"
 
-class SceneNode;
+class Entity;
 
 struct Command {
     //constructor of the structure
@@ -43,7 +43,7 @@ struct Command {
      * Y ejecutan como
      * command.action(*this, delta); (el this es el nodo involucrado, creo)
      */
-    std::function<void(SceneNode&, sf::Time) > action;
+    std::function<void(Entity&, sf::Time) > action;
     
     unsigned int category;
 };
@@ -52,8 +52,8 @@ struct Command {
 //aunque es posible que no haga falta, en principio todo objeto para comandos va a
 //estar en el scene graph
 template <typename GameObject, typename Function>
-std::function<void(SceneNode& node, sf::Time dt) > derivedAction(Function fn) {
-    return [ = ] (SceneNode& node, sf::Time dt){
+std::function<void(Entity& node, sf::Time dt) > derivedAction(Function fn) {
+    return [ = ] (Entity& node, sf::Time dt){
         // Check if cast is safe
         assert(dynamic_cast<GameObject*> (&node) != nullptr);
         // Downcast node and invoke function on it

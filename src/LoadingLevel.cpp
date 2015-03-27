@@ -11,9 +11,10 @@
 #include "IXMLParser.h"
 #include "StateMachineAnimation.h"
 #include "SystemObjectsGame.h"
+#include "SystemGraphic.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
-: ParallelTask(), level(level) {
+: ParallelTask(), level(level), context(context) {
     levelToLoad=context->actualLevel;
     this->textures = context->textures;
     this->systemManager=context->systemManager;
@@ -31,6 +32,17 @@ void LoadingLevel::runTask() {
     }
 
     DataUnion data = DataUnion();
+    
+    
+    //preparo los sistemas que necesito
+    SystemCollision* collision = static_cast<SystemCollision*>(systemManager->getSystem(TypeSystem::COLLISION));
+    SystemGraphic* graphics=static_cast<SystemGraphic*>(systemManager->getSystem(TypeSystem::GRAPHIC));
+    //y por último el sistema de objetos
+    SystemObjectsGame* objectsGame= static_cast<SystemObjectsGame*>(systemManager->getSystem(TypeSystem::OBJECTS));
+
+    
+    
+    
     //recojo el xml del nivel
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
@@ -43,9 +55,13 @@ void LoadingLevel::runTask() {
         sf::Lock lock(mutex);
         completion = 10;
     }
+    
+    
+    
 
     //pass the information to build the scene with all this data readed
-    levelToLoad->buildScene(infoMap);
+    graphics->newScene(infoMap);
+    collision->newWorldCollision(graphics->getBounds());
     {
         sf::Lock lock(mutex);
         completion = 35;
@@ -54,33 +70,46 @@ void LoadingLevel::runTask() {
     delete infoMap;
     delete parser;
     
-    //preparo los sistemas que necesito
-    SystemCollision* collision = static_cast<SystemCollision*>(systemManager->getSystem(TypeSystem::COLLISION));
-    if(collision==nullptr){
-        collision=new SystemCollision(levelToLoad->getBounds());
-        systemManager->addSystem(collision);
-    }else{
-        collision->newWorldCollision(levelToLoad->getBounds());
-    }
     
-    //y por último el sistema de objetos
-    SystemObjectsGame* objectsGame= static_cast<SystemObjectsGame*>(systemManager->getSystem(TypeSystem::OBJECTS));
-    if(objectsGame==nullptr){
-        objectsGame=new SystemObjectsGame(*systemManager);
-        systemManager->addSystem(objectsGame);
+    // leo las colisiones del mapa
+    Collision* coli;
+    Entity* colisionable;
+    parser = IXMLParser::make_parser(TypeParser::COLLISIONS);
+    parser->setXML("Media/Levels/level1.xml");
+    parser->parse(data);
+
+    //la posición hay que ajustarla al tamaño modificado del mapa
+    //se saca el factor del mapa y se aplica
+    sf::Vector2f ratio = graphics->getRatio();
+    for (std::vector<Collision*>::iterator it = data.collisions->begin();
+            it != data.collisions->end(); ++it) {
+        coli=*it;
+        coli->applyRatio(ratio);
+        colisionable=new Entity();
+        colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
+        colisionable->Add<Collision*>("Collision", coli);
+        //registro el entity y los subsistemas lo recogerán si es de su incumbencia
+        objectsGame->registerEntity(colisionable);
     }
     
 
+    
+    
+    
+    
+    
+    
     //recojo los elementos necesarios y los comunico al manejador de recursos
-    Entity* character = new Entity();
+    Entity* character = new Entity(Category::CHARACTER);
 
     sf::Transformable* trans = new sf::Transformable();
     trans->setPosition(100, 100);
     character->Add<sf::Transformable*>("Position", trans);
     character->Add<sf::Vector2f>("Velocity", sf::Vector2f(0, 0));
     character->Add<float>("MaxVelocity", 200.f);
+    character->Add<bool>("Commandable", true);
 
-    levelToLoad->setCharacter(character);
+    levelToLoad->setCharacter(character->getId());
 
     parser = IXMLParser::make_parser(TypeParser::STATE_MACHINE);
     parser->setResources(textures);
@@ -105,7 +134,7 @@ void LoadingLevel::runTask() {
     //seteo las colisiones, de momento en debug
 
     //a mi personaje le doy la colisión de su cuerpo
-    Collision* coli = new Collision();
+    coli = new Collision();
     sf::VertexArray quad(sf::Quads, 4);
     quad[0].position = sf::Vector2f(0, 0);
     quad[1].position = sf::Vector2f(32, 0);
@@ -117,28 +146,10 @@ void LoadingLevel::runTask() {
     //he terminado con mi personaje, lo registro/guardo
     objectsGame->registerEntity(character);
 
-    // y leo las colisiones
-    Entity* colisionable;
-    parser = IXMLParser::make_parser(TypeParser::COLLISIONS);
-    parser->setXML("Media/Levels/level1.xml");
-    parser->parse(data);
-
-    //la posición hay que ajustarla al tamaño modificado del mapa
-    //se saca el factor del mapa y se aplica
-    sf::Vector2f ratio = levelToLoad->getRatio();
-    for (std::vector<Collision*>::iterator it = data.collisions->begin();
-            it != data.collisions->end(); ++it) {
-        coli=*it;
-        coli->applyRatio(ratio);
-        colisionable=new Entity();
-        colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
-        colisionable->Add<Collision*>("Collision", coli);
-        //registro el entity y los subsistemas lo recogerán si es de su incumbencia
-        objectsGame->registerEntity(colisionable);
-    }
     
-
-//    levelToLoad->setSystemCollision(collision);
+   
+    
+    
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);
         completion = 100;

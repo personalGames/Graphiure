@@ -97,14 +97,14 @@ sf::Vector2f SceneNode::getWorldPosition() const {
 
 void SceneNode::onCommand(const Command& command, sf::Time delta) {
     // Command current node, if category matches
-    if ((command.category & this->getCategory())>=1) {
-        command.action(*this, delta);
-    }
-
-    // Propagate command to children
-    for (SceneNode* child : children) {
-        child->onCommand(command, delta);
-    }
+//    if ((command.category & this->getCategory())>=1) {
+//        command.action(*this, delta);
+//    }
+//
+//    // Propagate command to children
+//    for (SceneNode* child : children) {
+//        child->onCommand(command, delta);
+//    }
 }
 
 unsigned int SceneNode::getCategory() const {
