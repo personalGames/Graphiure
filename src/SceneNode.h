@@ -60,15 +60,8 @@ public:
     sf::Vector2f getWorldPosition() const;
     
     
-    void update(sf::Time dt, CommandQueue& commands);
+    void update(sf::Time dt);
 
-    /**
-     * Reacts to a command
-     * @param command the command
-     * @param delta the time
-     */
-    virtual void onCommand(const Command& command, sf::Time delta);
-    
     /**
      * Get the category of this node.
      * @return the category of the node
@@ -99,13 +92,13 @@ private:
      * Update the node with the time since last update
      * @param delta
      */
-    virtual void updateCurrent(sf::Time delta, CommandQueue& commands);
+    virtual void updateCurrent(sf::Time delta);
     
     /**
      * Update the children
      * @param delta
      */
-    void updateChildren(sf::Time delta, CommandQueue& commands);
+    void updateChildren(sf::Time delta);
     
     /**
      * Inherit from drawable. Draw the node. Is overriden by  concrete class

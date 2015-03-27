@@ -24,7 +24,7 @@
 #include "SystemGraphic.h"
 #include "SystemObjectsGame.h"
 #include "SystemCommand.h"
-
+#include "Velocity.h"
 
 class Level : private sf::NonCopyable {
 public:

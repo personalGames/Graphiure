@@ -69,8 +69,6 @@ bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
 
 void SystemCollision::update(sf::Time dt) {
     tree->update();
-
-
 }
 
 void SystemCollision::newWorldCollision(sf::FloatRect bounds) {

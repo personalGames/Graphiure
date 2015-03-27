@@ -51,7 +51,6 @@ public:
     
     void correctWorldPosition(sf::Vector2f positionCenter);
     
-private:
     sf::FloatRect getViewBounds() const;
     
 private:

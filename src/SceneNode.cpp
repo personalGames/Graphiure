@@ -64,18 +64,18 @@ void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) 
     }
 }
 
-void SceneNode::update(sf::Time dt, CommandQueue& commands) {
-    updateCurrent(dt, commands);
-    updateChildren(dt, commands);
+void SceneNode::update(sf::Time dt) {
+    updateCurrent(dt);
+    updateChildren(dt);
 }
 
-void SceneNode::updateCurrent(sf::Time delta, CommandQueue&) {
+void SceneNode::updateCurrent(sf::Time delta) {
     
 }
 
-void SceneNode::updateChildren(sf::Time delta, CommandQueue& commands) {
+void SceneNode::updateChildren(sf::Time delta) {
     for (SceneNode* child : children) {
-        child->update(delta, commands);
+        child->update(delta);
     }
 }
 
@@ -93,18 +93,6 @@ sf::Transform SceneNode::getWorldTransform() const {
 
 sf::Vector2f SceneNode::getWorldPosition() const {
     return getWorldTransform() * sf::Vector2f();
-}
-
-void SceneNode::onCommand(const Command& command, sf::Time delta) {
-    // Command current node, if category matches
-//    if ((command.category & this->getCategory())>=1) {
-//        command.action(*this, delta);
-//    }
-//
-//    // Propagate command to children
-//    for (SceneNode* child : children) {
-//        child->onCommand(command, delta);
-//    }
 }
 
 unsigned int SceneNode::getCategory() const {

@@ -6,6 +6,7 @@
  */
 
 #include "Player.h"
+#include "Velocity.h"
 
 Player::Player() {
     // Set initial key bindings
@@ -20,108 +21,53 @@ Player::Player() {
 
 void Player::initializeActions() {
     auto finder = [] (Entity& character, sf::Time) {
-        //character.accelerate(sf::Vector2f(-1, 0) * character.getMaxSpeed());
-
-        sf::Vector2f velocity=sf::Vector2f(-1,0)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
-        //character.updateAnimation(Actions::Left);
     };
     actionBinding[Left].action = derivedAction<Entity>(finder);
 
 
     auto finder2 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(+1, 0) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::Right);
-        
-        sf::Vector2f velocity=sf::Vector2f(1,0)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
     };
     actionBinding[Right].action = derivedAction<Entity>(finder2);
 
 
     auto finder3 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(0, -1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::Up);
-        
-        sf::Vector2f velocity=sf::Vector2f(0,-1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0,-1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
     };
     actionBinding[Up].action = derivedAction<Entity>(finder3);
 
 
     auto finder4 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(0, +1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::Down);
-        
-        sf::Vector2f velocity=sf::Vector2f(0,1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+       character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0,1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
     };
     actionBinding[Down].action = derivedAction<Entity>(finder4);
 
     auto finder5 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(1, 1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::RightDown);
-        
-        sf::Vector2f velocity=sf::Vector2f(1,1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightDown);
     };
     actionBinding[RightDown].action = derivedAction<Entity>(finder5);
 
     auto finder6 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(-1, 1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::LeftDown);
-        
-        sf::Vector2f velocity=sf::Vector2f(-1,-1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftDown);
     };
     actionBinding[LeftDown].action = derivedAction<Entity>(finder6);
 
     auto finder7 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(1, -1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::RightUp);
-        
-        sf::Vector2f velocity=sf::Vector2f(1,-1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,-1));
 
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightUp);
     };
     actionBinding[RightUp].action = derivedAction<Entity>(finder7);
 
     auto finder8 = [] (Entity& character, sf::Time) {
-//        character.accelerate(sf::Vector2f(-1, -1) * character.getMaxSpeed());
-//        character.updateAnimation(Actions::LeftUp);
-        
-        sf::Vector2f velocity=sf::Vector2f(-1,-1)* character.Get<float>("MaxVelocity");
-        sf::Vector2f previous(character.Get<sf::Vector2f>("Velocity"));
-        previous += velocity;
-        character.Set<sf::Vector2f>("Velocity", previous);
-
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,-1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftUp);
     };
     actionBinding[LeftUp].action = derivedAction<Entity>(finder8);

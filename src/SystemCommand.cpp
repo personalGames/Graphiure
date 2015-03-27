@@ -6,6 +6,7 @@
  */
 
 #include "SystemCommand.h"
+#include "Velocity.h"
 #include <iostream>
 
 SystemCommand::SystemCommand() : commandable() {
@@ -45,6 +46,11 @@ void SystemCommand::updateSecondPart(sf::Time dt) {
 }
 
 void SystemCommand::onCommand(CommandQueue& queue, sf::Time delta) {
+//    for (auto &entity : commandable) {
+//            entity->Get<Velocity*>("Velocity")->reset();
+//        }
+    
+    
     while (!queue.isEmpty()) {
         const Command& command = queue.pop();
         for (auto &entity : commandable) {

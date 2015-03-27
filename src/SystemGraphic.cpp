@@ -68,7 +68,7 @@ void SystemGraphic::removedEntity(Entity* entity) {
 }
 
 void SystemGraphic::update(sf::Time dt) {
-
+    sceneGraph.update(dt);
 }
 
 void SystemGraphic::execute() {

@@ -12,6 +12,7 @@
 #include "StateMachineAnimation.h"
 #include "SystemObjectsGame.h"
 #include "SystemGraphic.h"
+#include "Velocity.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level), context(context) {
@@ -105,8 +106,10 @@ void LoadingLevel::runTask() {
     sf::Transformable* trans = new sf::Transformable();
     trans->setPosition(100, 100);
     character->Add<sf::Transformable*>("Position", trans);
-    character->Add<sf::Vector2f>("Velocity", sf::Vector2f(0, 0));
-    character->Add<float>("MaxVelocity", 200.f);
+    Velocity* vel=new Velocity();
+    vel->setMaxVelocity(200.f);
+    character->Add<Velocity*>("Velocity", vel);
+//    character->Add<float>("MaxVelocity", 200.f);
     character->Add<bool>("Commandable", true);
 
     levelToLoad->setCharacter(character->getId());
