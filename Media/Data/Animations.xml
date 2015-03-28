@@ -1,4 +1,4 @@
-<Animation id="character-down-idle" idImage="characterWalking" replay="false">
+<Animation id="character-down-idle" idImage="player.png" replay="false">
 <frame>
 	<vertice value="32"/>
 	<vertice value="0"/>
@@ -7,7 +7,7 @@
 </frame>	
 </Animation>
 
-<Animation id="character-up-idle" idImage="characterWalking" replay="false">
+<Animation id="character-up-idle" idImage="player.png" replay="false">
 <frame>
 	<vertice value="32"/>
 	<vertice value="96"/>
@@ -15,7 +15,7 @@
 	<vertice value="32"/>
 </frame>	
 </Animation>
-<Animation id="character-right-idle" idImage="characterWalking" replay="false">
+<Animation id="character-right-idle" idImage="player.png" replay="false">
 <frame>
 	<vertice value="32"/>
 	<vertice value="64"/>
@@ -24,7 +24,7 @@
 </frame>	
 </Animation>
 
-<Animation id="character-left-idle" idImage="characterWalking" replay="false">
+<Animation id="character-left-idle" idImage="player.png" replay="false">
 <frame>
 	<vertice value="32"/>
 	<vertice value="32"/>
@@ -32,7 +32,7 @@
 	<vertice value="32"/>
 </frame>
 </Animation>
-<Animation id="character-up-walking" idImage="characterWalking" replay="true">
+<Animation id="character-up-walking" idImage="player.png" replay="true">
 <frame>
 	<vertice value="32"/>
 	<vertice value="96"/>
@@ -59,7 +59,7 @@
 </frame>	
 </Animation>
 
-<Animation id="character-down-walking" idImage="characterWalking" replay="true">
+<Animation id="character-down-walking" idImage="player.png" replay="true">
 <frame>
 	<vertice value="32"/>
 	<vertice value="0"/>
@@ -86,7 +86,7 @@
 </frame>	
 </Animation>
 
-<Animation id="character-right-walking" idImage="characterWalking" replay="true">
+<Animation id="character-right-walking" idImage="player.png" replay="true">
 <frame>
 	<vertice value="32"/>
 	<vertice value="64"/>
@@ -113,7 +113,7 @@
 </frame>	
 </Animation>
 
-<Animation id="character-left-walking" idImage="characterWalking" replay="true">
+<Animation id="character-left-walking" idImage="player.png" replay="true">
 <frame>
 	<vertice value="32"/>
 	<vertice value="32"/>

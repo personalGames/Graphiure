@@ -115,6 +115,7 @@ void Application::loadTextures() {
 //    textures.load(IDTextures::Player, "Media/Textures/player.png");
     
     textures.load("TileSet.png", "Media/Textures/TileSet.png");
+    textures.load("healthbar.png", "Media/Textures/healthbar.png");
     textures.load("TitleScreen.png", "Media/Textures/TitleScreen.png");
     textures.load("Buttons.png", "Media/Textures/Buttons.png");
     textures.load("player.png", "Media/Textures/player.png");

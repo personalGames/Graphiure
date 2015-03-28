@@ -1,4 +1,4 @@
-<Animation id="backgroundLife" idImage="healthbar" replay="false">
+<Animation id="backgroundLife" idImage="healthbar.png" replay="false">
 <frame>
 	<vertice value="35"/>
 	<vertice value="0"/>
@@ -7,7 +7,7 @@
 </frame>	
 </Animation>
 
-<Animation id="life" idImage="healthbar" replay="false">
+<Animation id="life" idImage="healthbar.png" replay="false">
 <frame>
 	<vertice value="35"/>
 	<vertice value="0"/>
@@ -16,7 +16,7 @@
 </frame>	
 </Animation>
 
-<Animation id="heart" idImage="healthbar" replay="false">
+<Animation id="heart" idImage="healthbar.png" replay="false">
 <frame>
 	<vertice value="0"/>
 	<vertice value="0"/>

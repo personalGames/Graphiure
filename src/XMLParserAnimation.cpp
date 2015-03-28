@@ -28,11 +28,13 @@ void XMLParserAnimation::parse(DataUnion& data) {
     //get first node
     tinyxml2::XMLElement* animation = doc.FirstChildElement("Animation");
     
+    
     //pilla las animaciones, cada animación se guarda en la lista
     //por ahora considero que todos son del mismo entity (debug)
     while(animation){
         tinyxml2::XMLElement* anim=animation->FirstChildElement("frame");
-        storeFrames(anim, result);
+        std::string image(animation->Attribute("idImage"));
+        storeFrames(image, anim, result);
         
        animation=animation->NextSiblingElement();
     }
@@ -40,16 +42,15 @@ void XMLParserAnimation::parse(DataUnion& data) {
 }
 
 //pilla los frames, con los vértices de cada frame
-void XMLParserAnimation::storeFrames(tinyxml2::XMLElement* node, StructAnimation* animation){
+void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* node, StructAnimation* animation){
     if(node!=nullptr && strcmp(node->Name(),"frame")!=0){
         return;
     }
     tinyxml2::XMLElement* vertice;
     Animation* anim=new Animation();
-    //image fot this animation
-    
-    
-    anim->setSpriteSheet(textures->get("player.png"));
+    //image for this animation
+    anim->setSpriteSheet(textures->get(image));
+
 //    bool replay=node->BoolAttribute("replay");
     //recojo los frames de una animación concreta
     while(node){
