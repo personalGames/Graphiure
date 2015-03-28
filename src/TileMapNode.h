@@ -16,7 +16,7 @@
 
 class TileMapNode : public SceneNode {
 public:
-    TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
+    TileMapNode(const ResourceHolder<std::string, sf::Texture>& images,
         StructMap *mapInfo, int  width, int heiht,
             int numberRowsVisible, int numberColumnsVisible);
 

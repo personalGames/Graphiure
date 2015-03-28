@@ -34,7 +34,7 @@ public:
 private:
     static const sf::Time timePerFrame;
     sf::RenderWindow window;
-    ResourceHolder<IDTextures, sf::Texture> textures;
+    ResourceHolder<std::string, sf::Texture> textures;
     ResourceHolder<IDFonts, sf::Font> fonts;
     
 //    MusicPlayer mMusic;

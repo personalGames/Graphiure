@@ -8,7 +8,7 @@
 #include "SystemGraphic.h"
 
 SystemGraphic::SystemGraphic(sf::RenderWindow& window,ResourceHolder<IDFonts, sf::Font>& fonts,
-        ResourceHolder<IDTextures, sf::Texture>& images): 
+        ResourceHolder<std::string, sf::Texture>& images): 
         target(window), mapView(target.getDefaultView()),
         fonts(fonts), textures(images){
 

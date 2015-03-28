@@ -10,7 +10,7 @@
 namespace GUI {
 
     Button::Button(Context context) : callback(),
-    sprite(context.textures->get(IDTextures::Buttons)),
+    sprite(context.textures->get("Buttons.png")),
     text(), isToggle(false){//, mSounds(*context.sounds) {
 
         changeTexture(Normal);

@@ -47,7 +47,10 @@ void XMLParserAnimation::storeFrames(tinyxml2::XMLElement* node, StructAnimation
     tinyxml2::XMLElement* vertice;
     Animation* anim=new Animation();
     //image fot this animation
-    anim->setSpriteSheet(textures->get(IDTextures::Player));
+    
+    
+    anim->setSpriteSheet(textures->get("player.png"));
+//    bool replay=node->BoolAttribute("replay");
     //recojo los frames de una animación concreta
     while(node){
         sf::IntRect rect;

@@ -57,22 +57,3 @@ void Velocity::updateVelocity(sf::Time dt, sf::Transformable& actualPosition) {
     sf::Vector2f update=velocity*dt.asSeconds();
     actualPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
 }
-
-
-//void EntityNode::updateCurrent(sf::Time delta, CommandQueue&) {
-//    adaptVelocity();
-//    //animatedCharacter.update(dt); actualizar renderizado
-//    //eso tendría que ir en el sistema de renderizado
-//    //move is a function of sfml. Adds to the current position by moving
-//    //an offset unlike setPosition which overwrites it.
-//    //sf::Vector2f s=velocity * delta.asSeconds();
-//    sf::Vector2f s = (this->entity->Get<sf::Vector2f>("Velocity"))
-//            * delta.asSeconds();
-//    move(static_cast<int> (s.x), static_cast<int> (s.y));
-//
-//    sf::Transformable actualPosition = sf::Transformable();
-//    actualPosition.setPosition(getPosition());
-//    this->entity->Get<sf::Transformable*>("Position")->setPosition(getPosition());
-//    this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
-//
-//}

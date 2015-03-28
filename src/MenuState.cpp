@@ -11,7 +11,7 @@ MenuState::MenuState(StateStack& stack, Context* context)
 : State(stack, context), container() {
 
 
-    sf::Texture& texture = context->textures->get(IDTextures::TitleScreen);
+    sf::Texture& texture = context->textures->get("TitleScreen.png");
     backgroundSprite.setTexture(texture);
     
 //    context.music->play(MusicID::MenuTheme);

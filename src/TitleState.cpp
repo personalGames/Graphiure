@@ -10,7 +10,7 @@
 TitleState::TitleState(StateStack& stack, Context* context): State(stack, context),
         text(), showText(true), textEffectTime(sf::Time::Zero) {
     
-    backgroundSprite.setTexture(context->textures->get(IDTextures::TitleScreen));
+    backgroundSprite.setTexture(context->textures->get("TitleScreen.png"));
 
     text.setFont(context->fonts->get(IDFonts::Main));
     text.setString("Press any key to start");

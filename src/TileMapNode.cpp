@@ -8,13 +8,13 @@
 #include "TileMapNode.h"
 
 
-TileMapNode::TileMapNode(const ResourceHolder<IDTextures, sf::Texture>& images,
+TileMapNode::TileMapNode(const ResourceHolder<std::string, sf::Texture>& images,
         StructMap *mapInfo, int width, int height,
         int numberRowsVisible, int numberColumnsVisible) :
 
 numberRows(mapInfo->numberRows), numberColumns(mapInfo->numberColumns),
 widthWindow(width), heightWindow(height), numberColumnsVisible(numberColumnsVisible),
-numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), 
+numberRowsVisible(numberRowsVisible), tileset(images.get("TileSet.png")), 
 chunks(), quadSize(), adjustedRatio(1,1) {
 
     tileSize = sf::Vector2u(mapInfo->tileWidth, mapInfo->tileHeight);

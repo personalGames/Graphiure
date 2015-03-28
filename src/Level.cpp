@@ -53,24 +53,4 @@ void Level::update(sf::Time dt) {
     
     collision->checkCollisions(graphics->getViewBounds());
 
-
-
-
-    //   void Level::update(sf::Time dt) {
-    //    correctWorldPosition(dt);
-    //    principalCharacter->Set<sf::Vector2f>("Velocity", sf::Vector2f(0,0));
-    //
-    //    // Forward commands to scene graph
-    //    while (!commandQueue.isEmpty()) {
-    //        sceneGraph.onCommand(commandQueue.pop(), dt);
-    //    }
-    //    
-    //    //todas estas actualizaciones de sistemas luego se sustituye
-    //    //por el system manager que irá llamando a cada uno de ellos
-    //    // Regular update step
-    //    sceneGraph.update(dt, commandQueue);
-    //    
-    //    collision->update(); //pasar también el tiempo delta
-    //    collision->checkCollisions(getViewBounds());
-    //}
 }

@@ -9,13 +9,13 @@
 #include <iostream>
 #include <bits/stl_vector.h>
 
-TileNode::TileNode(const ResourceHolder<IDTextures, sf::Texture>& images,
+TileNode::TileNode(const ResourceHolder<std::string, sf::Texture>& images,
         StructMap *mapInfo, int width, int height,
         int numberRowsVisible, int numberColumnsVisible) :
 
 numberRows(mapInfo->numberRows), numberColumns(mapInfo->numberColumns),
 widthWindow(width), heightWindow(height), numberColumnsVisible(numberColumnsVisible),
-numberRowsVisible(numberRowsVisible), tileset(images.get(IDTextures::TileSet)), chunks(), quadSize() {
+numberRowsVisible(numberRowsVisible), tileset(images.get("TileSet.png")), chunks(), quadSize() {
 
     tileSize = sf::Vector2u(mapInfo->tileWidth, mapInfo->tileHeight);
 

@@ -86,6 +86,8 @@
       </logicalFolder>
       <logicalFolder name="f9" displayName="Entities" projectFiles="true">
         <logicalFolder name="f2" displayName="ConcreteProperties" projectFiles="true">
+          <itemPath>src/Life.cpp</itemPath>
+          <itemPath>src/Life.h</itemPath>
           <itemPath>src/Velocity.cpp</itemPath>
           <itemPath>src/Velocity.h</itemPath>
         </logicalFolder>
@@ -171,6 +173,8 @@
           <itemPath>src/EntityNode.cpp</itemPath>
           <itemPath>src/EntityNode.h</itemPath>
           <itemPath>src/Layer.h</itemPath>
+          <itemPath>src/LifeNode.cpp</itemPath>
+          <itemPath>src/LifeNode.h</itemPath>
           <itemPath>src/SceneNode.cpp</itemPath>
           <itemPath>src/SceneNode.h</itemPath>
           <itemPath>src/SpriteNode.cpp</itemPath>
@@ -362,6 +366,14 @@
       <item path="src/Level.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Levels.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Life.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Life.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LifeNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LifeNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -665,6 +677,14 @@
       <item path="src/Level.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Levels.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Life.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Life.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LifeNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LifeNode.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/LoadingLevel.cpp" ex="false" tool="1" flavor2="0">
       </item>

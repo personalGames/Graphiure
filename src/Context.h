@@ -26,7 +26,7 @@ public:
 
     virtual ~Context();
 
-    Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
+    Context(sf::RenderWindow& window, ResourceHolder<std::string, sf::Texture>& textures,
             ResourceHolder<IDFonts, sf::Font>& fonts, Player& player, 
             SystemManager& manager);
 
@@ -35,7 +35,7 @@ public:
     sf::RenderWindow* window;
 
     //resources
-    ResourceHolder<IDTextures, sf::Texture>* textures;
+    ResourceHolder<std::string, sf::Texture>* textures;
     ResourceHolder<IDFonts, sf::Font>* fonts;
 
     //level

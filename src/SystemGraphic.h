@@ -25,7 +25,7 @@
 class SystemGraphic : public ISystem {
 public:
     SystemGraphic(sf::RenderWindow& window, ResourceHolder<IDFonts, sf::Font>& fonts,
-        ResourceHolder<IDTextures, sf::Texture>& images);
+        ResourceHolder<std::string, sf::Texture>& images);
     virtual ~SystemGraphic();
     
 
@@ -71,7 +71,7 @@ private:
      * Resources
      */
     ResourceHolder<IDFonts, sf::Font>& fonts;
-    ResourceHolder<IDTextures, sf::Texture>& textures;
+    ResourceHolder<std::string, sf::Texture>& textures;
     
     /**
      * Scene graph

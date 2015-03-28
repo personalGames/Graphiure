@@ -26,13 +26,13 @@ public:
 
     
     void setXML(std::string path);
-    void setResources(ResourceHolder<IDTextures, sf::Texture>* textures);
+    void setResources(ResourceHolder<std::string, sf::Texture>* textures);
     virtual void parse(DataUnion& data)=0;
     virtual void parse(DataUnion& data, std::string id)=0;
     
 protected:
     tinyxml2::XMLDocument doc;
-    ResourceHolder<IDTextures, sf::Texture>* textures;
+    ResourceHolder<std::string, sf::Texture>* textures;
 };
 
 #endif	/* IXMLPARSER_H */

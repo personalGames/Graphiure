@@ -38,7 +38,7 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     return parser;
 }
 
-void IXMLParser::setResources(ResourceHolder<IDTextures, sf::Texture>* textures) {
+void IXMLParser::setResources(ResourceHolder<std::string, sf::Texture>* textures) {
     this->textures = textures;
 }
 

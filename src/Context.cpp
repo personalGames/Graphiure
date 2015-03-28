@@ -7,7 +7,7 @@
 
 #include "Context.h"
 
-Context::Context(sf::RenderWindow& window, ResourceHolder<IDTextures, sf::Texture>& textures,
+Context::Context(sf::RenderWindow& window, ResourceHolder<std::string, sf::Texture>& textures,
         ResourceHolder<IDFonts, sf::Font>& fonts, Player& player,SystemManager& manager): 
         window(&window), textures(&textures),
         fonts(&fonts), actualLevel(nullptr), player(&player), systemManager(&manager) {

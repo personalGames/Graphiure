@@ -28,7 +28,7 @@ public:
 private:
     Levels level;
     Level* levelToLoad;
-    ResourceHolder<IDTextures,sf::Texture>* textures;
+    ResourceHolder<std::string, sf::Texture>* textures;
     SystemManager* systemManager;
     Context* context;
 };

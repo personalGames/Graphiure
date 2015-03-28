@@ -1,0 +1,26 @@
+<Animation id="backgroundLife" idImage="healthbar" replay="false">
+<frame>
+	<vertice value="35"/>
+	<vertice value="0"/>
+	<vertice value="370"/>
+	<vertice value="24"/>
+</frame>	
+</Animation>
+
+<Animation id="life" idImage="healthbar" replay="false">
+<frame>
+	<vertice value="35"/>
+	<vertice value="0"/>
+	<vertice value="370"/>
+	<vertice value="24"/>
+</frame>	
+</Animation>
+
+<Animation id="heart" idImage="healthbar" replay="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="0"/>
+	<vertice value="35"/>
+	<vertice value="48"/>
+</frame>	
+</Animation>
