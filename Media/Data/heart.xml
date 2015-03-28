@@ -1,9 +1,9 @@
 <Animation id="backgroundLife" idImage="healthbar.png" replay="false">
 <frame>
 	<vertice value="35"/>
-	<vertice value="0"/>
-	<vertice value="370"/>
 	<vertice value="24"/>
+	<vertice value="370"/>
+	<vertice value="48"/>
 </frame>	
 </Animation>
 

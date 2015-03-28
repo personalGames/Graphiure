@@ -6,11 +6,12 @@
  */
 
 #include "SystemGraphic.h"
+#include "LifeNode.h"
 
 SystemGraphic::SystemGraphic(sf::RenderWindow& window,ResourceHolder<IDFonts, sf::Font>& fonts,
         ResourceHolder<std::string, sf::Texture>& images): 
         target(window), mapView(target.getDefaultView()),
-        fonts(fonts), textures(images){
+        fonts(fonts), textures(images), sizeTile(1,1){
 
     type=TypeSystem::GRAPHIC;
 }
@@ -45,6 +46,7 @@ void SystemGraphic::newScene(StructMap* infoMap) {
     worldBounds.height=sizeMap.y;
     worldBounds.width=sizeMap.x;
     ratio=tileMap->getAdjustRatio();
+    sizeTile=tileMap->getQuadSize();
     sceneLayers[Background]->addChild(std::move(tileMap));
 
     //prepare the underground
@@ -59,6 +61,14 @@ void SystemGraphic::newScene(StructMap* infoMap) {
 void SystemGraphic::registerEntity(Entity* entity) {
     if(entity->HasID("Drawable")){
         EntityNode* node=new EntityNode(entity);
+        
+        if(entity->HasID("Life")){
+            sf::Vector2f size(sizeTile.x *3.f, sizeTile.y/1.5);
+            LifeNode* life=new LifeNode(textures, *entity->Get<Life*>("Life"),size);
+            life->setPosition(-(sizeTile/3.f*2.f));
+            node->addChild(life);
+        }
+        
         sceneLayers[Ground]->addChild(std::move(node));
     }
 }

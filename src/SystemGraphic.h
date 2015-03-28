@@ -78,6 +78,12 @@ private:
      */
     SceneNode sceneGraph;
     std::array<SceneNode*, LayerCount> sceneLayers;
+    
+    sf::Vector2f sizeTile;
+    inline sf::Vector2f getSizeTile() const {
+        return sizeTile;
+    }
+
 };
 
 #endif	/* SYSTEMGRAPHIC_H */

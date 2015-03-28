@@ -15,12 +15,12 @@
 
 class LifeNode : public SceneNode {
 public:
-    LifeNode(ResourceHolder<std::string, sf::Texture>& texture, Life& life);
+    LifeNode(ResourceHolder<std::string, sf::Texture>& texture, Life& life, sf::Vector2f size);
     virtual ~LifeNode();
     
 private:
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
-    
+
     Life* life;
     
     AnimatedSprite heart;

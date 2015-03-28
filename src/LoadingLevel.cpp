@@ -13,6 +13,7 @@
 #include "SystemObjectsGame.h"
 #include "SystemGraphic.h"
 #include "Velocity.h"
+#include "Life.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level), context(context) {
@@ -111,6 +112,9 @@ void LoadingLevel::runTask() {
     character->Add<Velocity*>("Velocity", vel);
 //    character->Add<float>("MaxVelocity", 200.f);
     character->Add<bool>("Commandable", true);
+    
+    Life* life= new Life(100);
+    character->Add<Life*>("Life", life);
 
     levelToLoad->setCharacter(character->getId());
 
