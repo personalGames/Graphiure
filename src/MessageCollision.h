@@ -8,14 +8,14 @@
 #ifndef MESSAGECOLLISION_H
 #define	MESSAGECOLLISION_H
 
-#include "IdEntity.h"
+#include "Entity.h"
 
 struct MessageCollision {
-    MessageCollision(IdEntity one, IdEntity two): one(one),two(two){};
+    MessageCollision(Entity* one, Entity* two): one(one),two(two){};
     virtual ~MessageCollision(){};
     
-    IdEntity one;
-    IdEntity two;
+    Entity* one;
+    Entity* two;
     //more about the collision
 
 };

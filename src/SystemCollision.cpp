@@ -48,7 +48,7 @@ void SystemCollision::checkCollisions(sf::FloatRect region) {
         
         for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
             if(checkCollisions(entity, *(it))){
-                queue.push(MessageCollision(entity->getId(), (*(it))->getId()));
+                queue.push(MessageCollision(entity, *(it)));
                 std::cout<<"Collision"<<std::endl;
             }
         }

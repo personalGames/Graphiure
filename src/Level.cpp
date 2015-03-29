@@ -39,9 +39,7 @@ void Level::draw() {
 
 void Level::update(sf::Time dt) {
     Entity* entity = objectsGame->getEntity(idCharacter);
-    sf::Vector2f position = entity->Get<sf::Transformable*>("Position")->getPosition();
-
-    graphics->correctWorldPosition(position);
+    
     entity->Get<Velocity*>("Velocity")->reset();
     
     commands->update(dt);
@@ -52,5 +50,9 @@ void Level::update(sf::Time dt) {
     objectsGame->update(dt);
     
     collision->checkCollisions(graphics->getViewBounds());
+    //graphics second update, only set positions
+    
+    sf::Vector2f position = entity->Get<sf::Transformable*>("Position")->getPosition();
 
+    graphics->correctWorldPosition(position);
 }
