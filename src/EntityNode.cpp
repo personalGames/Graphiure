@@ -10,12 +10,13 @@
 #include "AnimatedSprite.h"
 #include "StateMachineAnimation.h"
 #include "Velocity.h"
+#include "Position.h"
 
 EntityNode::EntityNode(Entity* entity) : entity(entity) {
-    sf::Transformable* trans = entity->Get<sf::Transformable*>("Position");
-    setOrigin(trans->getOrigin());
-    setPosition(trans->getPosition());
-    setScale(trans->getScale());
+    Transformable trans = (entity->Get<Position*>("Position")->getPosition());
+    setOrigin(trans.getOrigin());
+    setPosition(trans.getPosition());
+    setScale(trans.getScale());
 }
 
 EntityNode::~EntityNode() {
@@ -29,8 +30,8 @@ void EntityNode::updateCurrent(sf::Time delta) {
         }
     }
 
-    sf::Transformable* position = this->entity->Get<sf::Transformable*>("Position");
-    setPosition(position->getPosition());
+    Position* position = this->entity->Get<Position*>("Position");
+    setPosition(position->getPosition().getPosition());
 
     this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
 }

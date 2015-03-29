@@ -66,7 +66,7 @@ void Level::update(sf::Time dt) {
     
     
     //update the world with the final position of character
-    sf::Vector2f position = entity->Get<sf::Transformable*>("Position")->getPosition();
+    sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
     
     //update objects in general (delete dead objects)

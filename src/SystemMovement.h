@@ -13,6 +13,7 @@
 #include "ISystem.h"
 #include <algorithm>
 #include "Velocity.h"
+#include "Position.h"
 
 class SystemMovement : public ISystem {
 public:

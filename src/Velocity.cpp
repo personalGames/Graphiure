@@ -10,6 +10,7 @@
 #include <SFML/Graphics/Transformable.hpp>
 
 #include "Velocity.h"
+#include "Position.h"
 
 #include <iostream>
 
@@ -53,7 +54,8 @@ bool Velocity::isQuiet() {
 
 }
 
-void Velocity::updateVelocity(sf::Time dt, sf::Transformable& actualPosition) {
+void Velocity::updateVelocity(sf::Time dt, Position& actualPosition) {
     sf::Vector2f update=velocity*dt.asSeconds();
-    actualPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
+    actualPosition.updatePosition(static_cast<int> (update.x), static_cast<int> (update.y));
+//    actualPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
 }

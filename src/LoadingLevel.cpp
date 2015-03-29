@@ -88,7 +88,9 @@ void LoadingLevel::runTask() {
         coli=*it;
         coli->applyRatio(ratio);
         colisionable=new Entity();
-        colisionable->Add<sf::Transformable*>("Position", coli->getTransform());
+        Position* position=new Position();
+        position->setPosition(*(coli->getTransform()));
+        colisionable->Add<Position*>("Position", position);
         colisionable->Add<Collision*>("Collision", coli);
         //registro el entity y los subsistemas lo recogerán si es de su incumbencia
         objectsGame->registerEntity(colisionable);
@@ -104,13 +106,13 @@ void LoadingLevel::runTask() {
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character = new Entity(Category::CHARACTER);
 
-    sf::Transformable* trans = new sf::Transformable();
-    trans->setPosition(100, 100);
-    character->Add<sf::Transformable*>("Position", trans);
+    Position* trans=new Position();
+    trans->setPosition(sf::Transformable());
+    trans->updatePosition(100,100);
+    character->Add<Position*>("Position", trans);
     Velocity* vel=new Velocity();
     vel->setMaxVelocity(200.f);
     character->Add<Velocity*>("Velocity", vel);
-//    character->Add<float>("MaxVelocity", 200.f);
     character->Add<bool>("Commandable", true);
     
     Life* life= new Life(100);

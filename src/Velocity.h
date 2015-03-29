@@ -10,6 +10,7 @@
 
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Time.hpp>
+#include "Position.h"
 
 class Velocity {
 public:
@@ -36,7 +37,7 @@ public:
     void reset();
     void adaptVelocity();
     bool isQuiet();
-    void updateVelocity(sf::Time dt, sf::Transformable& actualPosition);
+    void updateVelocity(sf::Time dt, Position& actualPosition);
 
     void setMaxVelocity(float maxVelocity) {
         this->maxVelocity = maxVelocity;

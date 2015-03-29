@@ -7,6 +7,7 @@
 
 #include "QuadTree.h"
 #include "ActionStack.h"
+#include "Position.h"
 
 QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
      this->bounds.top = static_cast<float> (bounds.top);
@@ -185,9 +186,9 @@ void QuadTree::update() {
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
         Entity* entity = *(it);
         //pillo su posicion
-        sf::Transformable* transform = entity->Get<sf::Transformable*>("Position");
+        sf::Transformable transform = entity->Get<Position*>("Position")->getPosition();
         //actualizo los datos de la colisión con la posición
-        entity->Get<Collision*>("Collision")->update(*transform);
+        entity->Get<Collision*>("Collision")->update(transform);
     }
 
     //actualizo los hijos

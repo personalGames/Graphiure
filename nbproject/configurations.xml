@@ -91,6 +91,8 @@
           <itemPath>src/Behaviour.h</itemPath>
           <itemPath>src/Life.cpp</itemPath>
           <itemPath>src/Life.h</itemPath>
+          <itemPath>src/Position.cpp</itemPath>
+          <itemPath>src/Position.h</itemPath>
           <itemPath>src/Velocity.cpp</itemPath>
           <itemPath>src/Velocity.h</itemPath>
         </logicalFolder>
@@ -423,6 +425,10 @@
       </item>
       <item path="src/Player.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Position.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Position.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Properties.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/PropertyManager.cpp" ex="false" tool="1" flavor2="0">
@@ -749,6 +755,10 @@
       <item path="src/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Position.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Position.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Properties.h" ex="false" tool="3" flavor2="0">
       </item>

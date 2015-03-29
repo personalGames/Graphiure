@@ -34,7 +34,7 @@ void SystemMovement::update(sf::Time dt) {
         Velocity* velocity = entity->Get<Velocity*>("Velocity");
         velocity->adaptVelocity();
 
-        sf::Transformable* position = entity->Get<sf::Transformable*>("Position");
+        Position* position = entity->Get<Position*>("Position");
         velocity->updateVelocity(dt, *position);
     }
 }
