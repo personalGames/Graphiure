@@ -6,6 +6,7 @@
  */
 
 #include "SystemCollision.h"
+#include "Position.h"
 #include <iostream>
 
 
@@ -49,7 +50,6 @@ void SystemCollision::checkCollisions(sf::FloatRect region) {
         for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
             if(checkCollisions(entity, *(it))){
                 queue.push(MessageCollision(entity, *(it)));
-                std::cout<<"Collision"<<std::endl;
             }
         }
     }
@@ -62,7 +62,7 @@ bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
     Collision* oneCol=one->Get<Collision*>("Collision");
     Collision* anotherCol=another->Get<Collision*>("Collision");
     
-    return oneCol->collision(anotherCol);
+    return oneCol->collision(anotherCol)>0;
 }
 
 
@@ -91,7 +91,15 @@ void SystemCollision::resolveCollisions() {
     while(queue.size()>0){
         MessageCollision collision=queue.front();
         queue.pop();
-        
+        Collision* one=collision.one->Get<Collision*>("Collision");
+        if(one->getType()==TypeCollision::STATIC){
+            //nada que hacer, empuja al otro para evitar colision
+            Collision* two=collision.two->Get<Collision*>("Collision");
+            Position* positionTwo=collision.two->Get<Position*>("Position");
+            sf::Vector2f separation=one->normalSeparation(two);
+            collision.two->Get<Position*>("Position")->updatePosition(separation.x, separation.y);
+            
+        }
     }
 }
 

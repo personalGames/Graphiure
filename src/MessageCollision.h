@@ -16,8 +16,6 @@ struct MessageCollision {
     
     Entity* one;
     Entity* two;
-    //more about the collision
-
 };
 
 #endif	/* MESSAGECOLLISION_H */

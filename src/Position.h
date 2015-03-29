@@ -31,6 +31,8 @@ public:
         this->previousPosition = previousPosition;
     }
     
+    sf::Vector2f getMoveVector();
+    
 private:
     sf::Transformable position;
     sf::Transformable previousPosition;

@@ -20,10 +20,11 @@ public:
 
     void addVertice(sf::Vertex & vertex);
     void addArrayVertex(sf::VertexArray array);
-    sf::FloatRect getAABB();
-    bool collision(Collision* other);
+    sf::FloatRect getAABB(); //first level of collision, will add another two
+    int collision(Collision* other);
     void update(sf::Transformable& transform);
     void applyRatio(sf::Vector2f ratio);
+    sf::Vector2f normalSeparation(Collision* other);
     inline sf::Transformable* getTransform() {
         return &transform;
     }
@@ -41,7 +42,6 @@ private:
     TypeCollision type;
     sf::VertexArray vertices;
     sf::Transformable transform;
-    sf::VertexArray convexHull;
 };
 
 #endif	/* COLLISION_H */

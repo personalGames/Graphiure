@@ -150,6 +150,7 @@ void LoadingLevel::runTask() {
     quad[2].position = sf::Vector2f(32, 32);
     quad[3].position = sf::Vector2f(0, 32);
     coli->addArrayVertex(quad);
+    coli->setType(TypeCollision::DYNAMIC);
     character->Add<Collision*>("Collision", coli);
     
     //he terminado con mi personaje, lo registro/guardo
