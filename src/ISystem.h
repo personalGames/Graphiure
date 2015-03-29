@@ -30,8 +30,6 @@ public:
     virtual void update(sf::Time dt){};
     virtual void updateSecondPart(sf::Time dt){};
     
-    virtual void execute(){};
-    
     virtual void registerEntity(Entity* entity)=0;
     virtual void removedEntity(Entity* entity)=0;
     

@@ -86,3 +86,12 @@ void SystemCollision::clear() {
 void SystemCollision::finalize() {
     tree->clear();
 }
+
+void SystemCollision::resolveCollisions() {
+    while(queue.size()>0){
+        MessageCollision collision=queue.front();
+        queue.pop();
+        
+    }
+}
+

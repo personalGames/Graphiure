@@ -19,12 +19,8 @@
 #include "Entity.h"
 #include "StructMap.h"
 #include "Entity.h"
-#include "SystemCollision.h"
-#include "SystemManager.h"
-#include "SystemGraphic.h"
-#include "SystemObjectsGame.h"
-#include "SystemCommand.h"
 #include "Velocity.h"
+#include "ImportSystems.h"
 
 class Level : private sf::NonCopyable {
 public:
@@ -56,6 +52,7 @@ private:
     SystemGraphic* graphics;
     SystemCollision* collision;
     SystemCommand* commands;
+    SystemMovement* movement;
    
 };
 

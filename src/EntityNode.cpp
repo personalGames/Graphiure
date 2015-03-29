@@ -22,18 +22,17 @@ EntityNode::~EntityNode() {
 }
 
 void EntityNode::updateCurrent(sf::Time delta) {
-    Velocity* velocity = this->entity->Get<Velocity*>("Velocity");
-    velocity->adaptVelocity();
+    if (this->entity->HasID("Velocity")) {
+        Velocity* velocity = this->entity->Get<Velocity*>("Velocity");
+        if (velocity->isQuiet()) {
+            entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::None);
+        }
+    }
 
     sf::Transformable* position = this->entity->Get<sf::Transformable*>("Position");
-    velocity->updateVelocity(delta, *position);
-    if (velocity->isQuiet()) {
-        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::None);
-    }
     setPosition(position->getPosition());
 
     this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
-
 }
 
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {

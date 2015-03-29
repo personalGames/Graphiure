@@ -13,6 +13,7 @@
 #include <queue>
 #include "Collision.h"
 #include "ISystem.h"
+#include "vector"
 
 
 class SystemCollision : public ISystem{
@@ -35,6 +36,8 @@ public:
     
     void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
+    std::vector<Entity*> checkCollisions(Entity* entity, float radius);
+    void resolveCollisions();
     
 private:
     QuadTree* tree;

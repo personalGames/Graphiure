@@ -9,7 +9,7 @@
 #include <iostream>
 #include "ConvexHull.h"
 
-Collision::Collision() : vertices(), convexHull() {
+Collision::Collision() : type(TypeCollision::STATIC), vertices(), convexHull() {
 }
 
 Collision::~Collision() {

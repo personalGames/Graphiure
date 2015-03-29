@@ -6,6 +6,7 @@
  */
 
 #include "Application.h"
+#include "SystemMovement.h"
 
 
 const sf::Time Application::timePerFrame = sf::seconds(1.f / 60.f);
@@ -43,6 +44,9 @@ void Application::setSystemManager() {
     systemManager.addSystem(system);
     
     system = new SystemObjectsGame(systemManager);
+    systemManager.addSystem(system);
+    
+    system = new SystemMovement();
     systemManager.addSystem(system);
 
 }

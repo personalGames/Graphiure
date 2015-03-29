@@ -26,8 +26,6 @@ public:
     virtual void updateSecondPart(sf::Time dt);
     virtual void registerEntity(Entity* entity);
     virtual void removedEntity(Entity* entity);
-
-    virtual void execute();
     
     void onCommand(CommandQueue& queue, sf::Time delta);
     

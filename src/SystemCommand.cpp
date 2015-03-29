@@ -6,18 +6,12 @@
  */
 
 #include "SystemCommand.h"
-#include "Velocity.h"
-#include <iostream>
 
 SystemCommand::SystemCommand() : commandable() {
     type=TypeSystem::INPUT;
 }
 
 SystemCommand::~SystemCommand() {
-}
-
-void SystemCommand::execute() {
-
 }
 
 void SystemCommand::finalize() {

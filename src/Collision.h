@@ -10,6 +10,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "TypeCollision.h"
+
 
 class Collision {
 public:
@@ -26,8 +28,17 @@ public:
         return &transform;
     }
     
+    TypeCollision getType() const {
+        return type;
+    }
+
+    void setType(TypeCollision type) {
+        this->type = type;
+    }
+    
 
 private:
+    TypeCollision type;
     sf::VertexArray vertices;
     sf::Transformable transform;
     sf::VertexArray convexHull;

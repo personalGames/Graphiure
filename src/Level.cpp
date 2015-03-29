@@ -21,6 +21,9 @@ systemManager(&systemManager) {
 
     commands = static_cast<SystemCommand*>
             (systemManager.getSystem(TypeSystem::INPUT));
+    
+    movement = static_cast<SystemMovement*>
+            (systemManager.getSystem(TypeSystem::MOVEMENT));
 }
 
 void Level::setCharacter(IdEntity characterCreated) {
@@ -38,21 +41,34 @@ void Level::draw() {
 }
 
 void Level::update(sf::Time dt) {
+    //get the entity/character
     Entity* entity = objectsGame->getEntity(idCharacter);
-    
+    //reset velocity
     entity->Get<Velocity*>("Velocity")->reset();
-    
+    //update all input
     commands->update(dt);
     commands->onCommand(commandQueue, dt);
     
+    //update movements
+    movement->update(dt);
+    //update the scene (update the animations)
     graphics->update(dt);
+    //update tree collisions
     collision->update(dt);
-    objectsGame->update(dt);
     
+    //check the collisions
     collision->checkCollisions(graphics->getViewBounds());
-    //graphics second update, only set positions
+    //resolve the collisions (separate bodies and generate the commands
+    //for next frame)
+    collision->resolveCollisions();
     
+    //graphics second update, only set positions (changed by collisions)
+    
+    
+    //update the world with the final position of character
     sf::Vector2f position = entity->Get<sf::Transformable*>("Position")->getPosition();
-
     graphics->correctWorldPosition(position);
+    
+    //update objects in general (delete dead objects)
+    objectsGame->update(dt);
 }

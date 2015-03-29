@@ -14,7 +14,8 @@ enum class TypeSystem{
     GRAPHIC,
     HISTORY,
     INPUT,
-    OBJECTS
+    OBJECTS,
+    MOVEMENT
 };
 
 
