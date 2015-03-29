@@ -145,10 +145,10 @@ void LoadingLevel::runTask() {
     //a mi personaje le doy la colisión de su cuerpo
     coli = new Collision();
     sf::VertexArray quad(sf::Quads, 4);
-    quad[0].position = sf::Vector2f(0, 0);
-    quad[1].position = sf::Vector2f(32, 0);
+    quad[0].position = sf::Vector2f(16, 16);
+    quad[1].position = sf::Vector2f(32, 16);
     quad[2].position = sf::Vector2f(32, 32);
-    quad[3].position = sf::Vector2f(0, 32);
+    quad[3].position = sf::Vector2f(16, 32);
     coli->addArrayVertex(quad);
     coli->setType(TypeCollision::DYNAMIC);
     character->Add<Collision*>("Collision", coli);

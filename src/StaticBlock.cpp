@@ -29,11 +29,11 @@ Entity* StaticBlock::prepareEntity() {
 
 void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision message) {
-        Entity* other=message.one;
-        Entity* me=message.two;
+        Entity* other=message.entityOne;
+        Entity* me=message.entityTwo;
         if(other->getId()==idObject){
             me=other;
-            other=message.two;
+            other=message.entityTwo;
         }
         //mandar a tomar por saco a other para evitar la colisión
     };

@@ -11,11 +11,11 @@
 #include "Entity.h"
 
 struct MessageCollision {
-    MessageCollision(Entity* one, Entity* two): one(one),two(two){};
+    MessageCollision(Entity* one, Entity* two): entityOne(one),entityTwo(two){};
     virtual ~MessageCollision(){};
     
-    Entity* one;
-    Entity* two;
+    Entity* entityOne;
+    Entity* entityTwo;
 };
 
 #endif	/* MESSAGECOLLISION_H */

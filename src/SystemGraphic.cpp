@@ -65,7 +65,7 @@ void SystemGraphic::registerEntity(Entity* entity) {
         if(entity->HasID("Life")){
             sf::Vector2f size(sizeTile.x *3.f, sizeTile.y/1.5);
             LifeNode* life=new LifeNode(textures, *entity->Get<Life*>("Life"),size);
-            life->setPosition(-(sizeTile/3.f*2.f));
+            life->setPosition(-((sizeTile.x*3.f)/2.6),-(sizeTile.y/3.f*2.f));
             node->addChild(life);
         }
         

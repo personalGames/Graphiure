@@ -7,17 +7,17 @@
 
 #include "SystemCollision.h"
 #include "Position.h"
+#include "ActionStack.h"
 #include <iostream>
 
-
 SystemCollision::SystemCollision(sf::FloatRect bounds) : ISystem(), tree() {
-    type=TypeSystem::COLLISION;
-    tree=new QuadTree(0, bounds);
+    type = TypeSystem::COLLISION;
+    tree = new QuadTree(0, bounds);
 }
 
 SystemCollision::SystemCollision() : ISystem(), tree() {
-    type=TypeSystem::COLLISION;
-    tree=new QuadTree(0);
+    type = TypeSystem::COLLISION;
+    tree = new QuadTree(0);
 }
 
 SystemCollision::~SystemCollision() {
@@ -33,22 +33,20 @@ void SystemCollision::removedEntity(Entity* entity) {
     tree->remove(entity);
 }
 
-
-
 void SystemCollision::checkCollisions(sf::FloatRect region) {
-    QuadTree* subtree=tree->getNodeRegion(region);
-    if(subtree==nullptr){
-        subtree=tree;
+    QuadTree* subtree = tree->getNodeRegion(region);
+    if (subtree == nullptr) {
+        subtree = tree;
     }
-    std::vector<Entity*> list=std::vector<Entity*>();
+    std::vector<Entity*> list = std::vector<Entity*>();
     subtree->getObjects(list);
-    for(std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
-        Entity* entity=*(it);
-        std::vector<Entity*> posibles=std::vector<Entity*>();
-        subtree->retrieve(&posibles,entity);
-        
-        for(std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
-            if(checkCollisions(entity, *(it))){
+    for (std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
+        Entity* entity = *(it);
+        std::vector<Entity*> posibles = std::vector<Entity*>();
+        subtree->retrieve(&posibles, entity);
+
+        for (std::vector<Entity*>::iterator it = posibles.begin(); it != posibles.end(); ++it) {
+            if (checkCollisions(entity, *(it))) {
                 queue.push(MessageCollision(entity, *(it)));
             }
         }
@@ -56,16 +54,14 @@ void SystemCollision::checkCollisions(sf::FloatRect region) {
 }
 
 bool SystemCollision::checkCollisions(Entity* one, Entity* another) {
-    if(one->getId()==another->getId()){
+    if (one->getId() == another->getId()) {
         return false;
     }
-    Collision* oneCol=one->Get<Collision*>("Collision");
-    Collision* anotherCol=another->Get<Collision*>("Collision");
-    
-    return oneCol->collision(anotherCol)>0;
+    Collision* oneCol = one->Get<Collision*>("Collision");
+    Collision* anotherCol = another->Get<Collision*>("Collision");
+
+    return oneCol->collision(anotherCol) > 0;
 }
-
-
 
 void SystemCollision::update(sf::Time dt) {
     tree->update();
@@ -74,31 +70,34 @@ void SystemCollision::update(sf::Time dt) {
 void SystemCollision::newWorldCollision(sf::FloatRect bounds) {
     tree->clear();
     delete tree;
-    tree=new QuadTree(0, bounds);
+    tree = new QuadTree(0, bounds);
 }
-
 
 void SystemCollision::clear() {
     tree->clear();
 }
-
 
 void SystemCollision::finalize() {
     tree->clear();
 }
 
 void SystemCollision::resolveCollisions() {
-    while(queue.size()>0){
-        MessageCollision collision=queue.front();
+    while (queue.size() > 0) {
+        MessageCollision collision = queue.front();
         queue.pop();
-        Collision* one=collision.one->Get<Collision*>("Collision");
-        if(one->getType()==TypeCollision::STATIC){
+        
+        Collision* collisionOne = collision.entityOne->Get<Collision*>("Collision");
+        if ((collisionOne->getType() == TypeCollision::STATIC) || (collisionOne->getType()==TypeCollision::KINEMATIC)) {
             //nada que hacer, empuja al otro para evitar colision
-            Collision* two=collision.two->Get<Collision*>("Collision");
-            Position* positionTwo=collision.two->Get<Position*>("Position");
-            sf::Vector2f separation=one->normalSeparation(two);
-            collision.two->Get<Position*>("Position")->updatePosition(separation.x, separation.y);
             
+            Collision* collisionTwo = collision.entityTwo->Get<Collision*>("Collision");
+            Position* positionTwo = collision.entityTwo->Get<Position*>("Position");
+            sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo);
+            
+            positionTwo->updatePosition(separation.x, separation.y);
+            
+        }else{
+            //lo resolverá el entity
         }
     }
 }
