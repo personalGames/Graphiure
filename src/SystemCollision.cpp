@@ -91,11 +91,7 @@ void SystemCollision::resolveCollisions() {
         if ((collisionOne->getType() == TypeCollision::STATIC) || (collisionOne->getType()==TypeCollision::KINEMATIC)) {
             //nada que hacer, empuja al otro para evitar colision
             
-            Collision* collisionTwo = collision.entityTwo->Get<Collision*>("Collision");
-            Position* positionTwo = collision.entityTwo->Get<Position*>("Position");
-            sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo);
             
-            positionTwo->updatePosition(separation.x, separation.y);
             
         }else{
             //lo resolverá el entity

@@ -9,35 +9,41 @@
 #include "Entity.h"
 #include "Behaviour.h"
 
-StaticBlock::StaticBlock(Collision* coli): coli(coli) {
+StaticBlock::StaticBlock(Collision* coli) : coli(coli) {
 }
 
 StaticBlock::~StaticBlock() {
 }
 
 Entity* StaticBlock::prepareEntity() {
-    Entity* entity=new Entity();
-    
+    Entity* entity = new Entity();
+
     entity->Add<sf::Transformable*>("Position", coli->getTransform());
     entity->Add<Collision*>("Collision", coli);
-    
-    Behaviour* behaviour=new Behaviour();
+
+    Behaviour* behaviour = new Behaviour();
     makeBehaviour(entity->getId(), behaviour);
-    
+
     return entity;
 }
 
 void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision message) {
-        Entity* other=message.entityOne;
-        Entity* me=message.entityTwo;
-        if(other->getId()==idObject){
-            me=other;
-            other=message.entityTwo;
+        Entity* other = message.entityOne;
+        Entity* me = message.entityTwo;
+        if (other->getId() == idObject) {
+            me = other;
+            other = message.entityTwo;
         }
-        //mandar a tomar por saco a other para evitar la colisión
+
+        Collision* collisionOne = message.entityOne->Get<Collision*>("Collision");
+        Collision* collisionTwo = message.entityTwo->Get<Collision*>("Collision");
+        Position* positionTwo = message.entityTwo->Get<Position*>("Position");
+        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo);
+
+        positionTwo->updatePosition(separation.x, separation.y);
     };
-    
+
     //guardo la función creada
-    behaviour->behaviourFunction=aFunction;
+    behaviour->behaviourFunction = aFunction;
 }
