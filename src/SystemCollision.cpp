@@ -8,6 +8,7 @@
 #include "SystemCollision.h"
 #include "Position.h"
 #include "ActionStack.h"
+#include "Behaviour.h"
 #include <iostream>
 
 SystemCollision::SystemCollision(sf::FloatRect bounds) : ISystem(), tree() {
@@ -98,6 +99,9 @@ void SystemCollision::resolveCollisions() {
             
         }else{
             //lo resolverá el entity
+            if(collision.entityOne->HasID("Behaviour")){
+                collision.entityOne->Get<Behaviour*>("Behaviour")->behaviourFunction(collision);
+            }
         }
     }
 }

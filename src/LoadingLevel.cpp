@@ -14,6 +14,7 @@
 #include "SystemGraphic.h"
 #include "Velocity.h"
 #include "Life.h"
+#include "Hole.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level), context(context) {
@@ -87,11 +88,15 @@ void LoadingLevel::runTask() {
             it != data.collisions->end(); ++it) {
         coli=*it;
         coli->applyRatio(ratio);
-        colisionable=new Entity();
-        Position* position=new Position();
-        position->setPosition(*(coli->getTransform()));
-        colisionable->Add<Position*>("Position", position);
-        colisionable->Add<Collision*>("Collision", coli);
+        coli->setType(TypeCollision::DYNAMIC);
+        
+        colisionable=Hole::prepareEntity(coli);
+        
+//        colisionable=new Entity();
+//        Position* position=new Position();
+//        position->setPosition(*(coli->getTransform()));
+//        colisionable->Add<Position*>("Position", position);
+//        colisionable->Add<Collision*>("Collision", coli);
         //registro el entity y los subsistemas lo recogerán si es de su incumbencia
         objectsGame->registerEntity(colisionable);
     }

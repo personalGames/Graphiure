@@ -32,7 +32,7 @@ LifeNode::LifeNode(ResourceHolder<std::string, sf::Texture>& texture, Life& life
 
 void LifeNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(background, states);
-    float percentaje=life->getActualLife()/life->getMaxLife();
+    float percentaje=((float)life->getActualLife())/life->getMaxLife();
     states.transform.scale(percentaje,1);
     target.draw(fill, states);
 }
