@@ -19,7 +19,8 @@ public:
     virtual ~Collision();
 
     void addVertice(sf::Vertex & vertex);
-    void addArrayVertex(sf::VertexArray array);
+    void addArrayVertex(sf::VertexArray& array);
+    void setArrayVertex(sf::VertexArray* array);
     sf::FloatRect getAABB(); //first level of collision, will add another two
     int collision(Collision* other);
     void update(sf::Transformable& transform);
@@ -40,7 +41,7 @@ public:
 
 private:
     TypeCollision type;
-    sf::VertexArray vertices;
+    sf::VertexArray* vertices;
     sf::Transformable transform;
 };
 

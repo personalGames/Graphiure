@@ -15,6 +15,7 @@
 #include "Velocity.h"
 #include "Life.h"
 #include "Hole.h"
+#include "FactoryGameObjects.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level), context(context) {
@@ -53,6 +54,7 @@ void LoadingLevel::runTask() {
 
     //parseo el nivel
     parser->parse(data);
+    delete parser;
     StructMap* infoMap = data.map;
     {
         sf::Lock lock(mutex);
@@ -71,43 +73,47 @@ void LoadingLevel::runTask() {
     }
 
     delete infoMap;
-    delete parser;
     
     
     // leo las colisiones del mapa
-    Collision* coli;
+    
     Entity* colisionable;
     parser = IXMLParser::make_parser(TypeParser::COLLISIONS);
     parser->setXML("Media/Levels/level1.xml");
     parser->parse(data);
+    delete parser;
 
+    
+    PropertyManager parameters;
     //la posición hay que ajustarla al tamaño modificado del mapa
     //se saca el factor del mapa y se aplica
     sf::Vector2f ratio = graphics->getRatio();
-    for (std::vector<Collision*>::iterator it = data.collisions->begin();
+    for (std::vector<StructCollision*>::iterator it = data.collisions->begin();
             it != data.collisions->end(); ++it) {
-        coli=*it;
-        coli->applyRatio(ratio);
-        coli->setType(TypeCollision::DYNAMIC);
+        //pillo la estructura de esta collision en concreto
+        StructCollision* coli=*it;
+        //guardo los datos que se necesitarán para construir el objeto
+        parameters=PropertyManager();
+        parameters.Add<sf::Vector2f>("Ratio", ratio);
+        parameters.Add<sf::Vector2f>("Position", coli->position );
+        parameters.Add<sf::VertexArray*>("Vertex", coli->vertices);
+        //parameters.Add<std::string>("Type",coli.typeCollision);
         
-        colisionable=Hole::prepareEntity(coli);
+        //preparo el factory que creará el entity
+        std::unique_ptr<GameObjects> gameObject=FactoryGameObjects::getFactory(coli->typeCollision);
+        //creo el entity
+        colisionable=gameObject->prepareEntity(parameters);
         
-//        colisionable=new Entity();
-//        Position* position=new Position();
-//        position->setPosition(*(coli->getTransform()));
-//        colisionable->Add<Position*>("Position", position);
-//        colisionable->Add<Collision*>("Collision", coli);
+        //coli->applyRatio(ratio);
+        //parameters.Add<Collision*>("Colisionable", coli);
+        //coli->setType(TypeCollision::STATIC);
+        //colisionable=Hole::prepareEntity(coli);
         //registro el entity y los subsistemas lo recogerán si es de su incumbencia
         objectsGame->registerEntity(colisionable);
+        delete *it;
     }
     
-
-    
-    
-    
-    
-    
-    
+    Collision* coli;
     //recojo los elementos necesarios y los comunico al manejador de recursos
     Entity* character = new Entity(Category::CHARACTER);
 
@@ -129,17 +135,18 @@ void LoadingLevel::runTask() {
     parser->setResources(textures);
     parser->setXML("Media/Data/StateMachines.xml");
     parser->parse(data);
-    StateMachine* state = data.stateMachine;
     delete parser;
+    StateMachine* state = data.stateMachine;
     parser = IXMLParser::make_parser(TypeParser::ANIMATION);
     parser->setResources(textures);
     parser->setXML("Media/Data/Animations.xml");
-
+    
     StateMachineAnimation* machineAnimation = new StateMachineAnimation(*state);
     parser->parse(data);
+    delete parser;
     machineAnimation->setAnimations(data.animations->animations);
     character->Add<StateMachineAnimation*>("Drawable", machineAnimation);
-    delete parser;
+
     {
         sf::Lock lock(mutex);
         completion = 70;
@@ -161,9 +168,6 @@ void LoadingLevel::runTask() {
     //he terminado con mi personaje, lo registro/guardo
     objectsGame->registerEntity(character);
 
-    
-   
-    
     
     { // finished may be accessed from multiple threads, protect it
         sf::Lock lock(mutex);

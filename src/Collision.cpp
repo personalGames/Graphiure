@@ -7,20 +7,28 @@
 
 #include "Collision.h"
 
-Collision::Collision() : type(TypeCollision::STATIC), vertices() {
+Collision::Collision() : type(TypeCollision::STATIC) {
+    vertices=new sf::VertexArray();
 }
 
 Collision::~Collision() {
 }
 
-void Collision::addArrayVertex(sf::VertexArray array) {
+void Collision::addArrayVertex(sf::VertexArray& array) {
     for (uint i = 0; i < array.getVertexCount(); ++i) {
-        vertices.append(array[i]);
+        vertices->append(array[i]);
     }
 }
 
+void Collision::setArrayVertex(sf::VertexArray* array) {
+    //borro el anterior
+    delete vertices;
+    //y pongo el nuevo
+    vertices=array;
+}
+
 void Collision::addVertice(sf::Vertex& vertex) {
-    vertices.append(vertex);
+    vertices->append(vertex);
 }
 
 void Collision::update(sf::Transformable& transform) {
@@ -28,9 +36,9 @@ void Collision::update(sf::Transformable& transform) {
 }
 
 void Collision::applyRatio(sf::Vector2f ratio) {
-    for (uint i = 0; i < vertices.getVertexCount(); ++i) {
-        vertices[i].position.x = (vertices[i].position.x) * ratio.x;
-        vertices[i].position.y = (vertices[i].position.y) * ratio.y;
+    for (uint i = 0; i < vertices->getVertexCount(); ++i) {
+        (*vertices)[i].position.x = ((*vertices)[i].position.x) * ratio.x;
+        (*vertices)[i].position.y = ((*vertices)[i].position.y) * ratio.y;
     }
     //hallo su nueva posición dado el ratio con el que está el mapa
     sf::Vector2f position = transform.getPosition();
@@ -40,7 +48,7 @@ void Collision::applyRatio(sf::Vector2f ratio) {
 }
 
 sf::FloatRect Collision::getAABB() {
-    sf::FloatRect cuadro = vertices.getBounds();
+    sf::FloatRect cuadro = vertices->getBounds();
     return transform.getTransform().transformRect(cuadro);
 }
 

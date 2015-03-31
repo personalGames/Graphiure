@@ -64,6 +64,8 @@
           <itemPath>src/DataUnion.h</itemPath>
           <itemPath>src/StructAnimation.cpp</itemPath>
           <itemPath>src/StructAnimation.h</itemPath>
+          <itemPath>src/StructCollision.cpp</itemPath>
+          <itemPath>src/StructCollision.h</itemPath>
           <itemPath>src/StructMap.cpp</itemPath>
           <itemPath>src/StructMap.h</itemPath>
         </logicalFolder>
@@ -107,12 +109,14 @@
         <itemPath>src/Category.h</itemPath>
         <itemPath>src/Entity.cpp</itemPath>
         <itemPath>src/Entity.h</itemPath>
-        <itemPath>src/EntityManager.cpp</itemPath>
-        <itemPath>src/EntityManager.h</itemPath>
         <itemPath>src/IdEntity.cpp</itemPath>
         <itemPath>src/IdEntity.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f15" displayName="GameObjects" projectFiles="true">
+        <itemPath>src/FactoryGameObjects.cpp</itemPath>
+        <itemPath>src/FactoryGameObjects.h</itemPath>
+        <itemPath>src/GameObjects.cpp</itemPath>
+        <itemPath>src/GameObjects.h</itemPath>
         <itemPath>src/Hole.cpp</itemPath>
         <itemPath>src/Hole.h</itemPath>
         <itemPath>src/StaticBlock.cpp</itemPath>
@@ -335,15 +339,19 @@
       </item>
       <item path="src/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/EntityManager.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/EntityManager.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/EntityNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/EntityNode.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/FactoryGameObjects.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FactoryGameObjects.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameObjects.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameObjects.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -480,6 +488,10 @@
       <item path="src/StructAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StructCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -670,15 +682,19 @@
       </item>
       <item path="src/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/EntityManager.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/EntityManager.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/EntityNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/EntityNode.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/FactoryGameObjects.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FactoryGameObjects.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/FrameClock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameObjects.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameObjects.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -815,6 +831,10 @@
       <item path="src/StructAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/StructCollision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/StructCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>

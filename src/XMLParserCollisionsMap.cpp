@@ -18,7 +18,7 @@ void XMLParserCollisionsMap::parse(DataUnion& data, std::string id) {
 }
 
 void XMLParserCollisionsMap::parse(DataUnion& data) {
-    std::vector<Collision*>* result = new std::vector<Collision*>();
+    std::vector<StructCollision*>* result = new std::vector<StructCollision*>();
 
     //get root node
     tinyxml2::XMLElement* detailsMap = doc.FirstChildElement("map");
@@ -32,13 +32,13 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
     tinyxml2::XMLElement* object = collisions->FirstChildElement("object");
     while (object) {
         //creo el objeto colisionable a crear
-        Collision* collisionObject = new Collision();
+        StructCollision* collisionObject=new StructCollision();
+        collisionObject->vertices=new sf::VertexArray();
         
         //get the position
-        sf::Transformable* transform=new sf::Transformable();
-        transform->setPosition(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
-        collisionObject->update(*transform);
-        
+        sf::Vector2f position(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
+        collisionObject->position=position;
+        collisionObject->typeCollision=object->Attribute("type");
         //get the points
         tinyxml2::XMLElement* vertices = object->FirstChildElement("polyline");
         
@@ -53,7 +53,7 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
                 vertex.position.x=atof(number);
             }else{
                 vertex.position.y=atof(number);
-                collisionObject->addVertice(vertex);
+                collisionObject->vertices->append(vertex);
                 vertex=sf::Vertex();
             }
             isX=!isX;

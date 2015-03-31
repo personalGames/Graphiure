@@ -9,6 +9,7 @@
 #define	MESSAGECOLLISION_H
 
 #include "Entity.h"
+#include "TypeCollision.h"
 
 struct MessageCollision {
     MessageCollision(Entity* one, Entity* two): entityOne(one),entityTwo(two){};
@@ -16,6 +17,8 @@ struct MessageCollision {
     
     Entity* entityOne;
     Entity* entityTwo;
+    //type collision
+    
 };
 
 #endif	/* MESSAGECOLLISION_H */

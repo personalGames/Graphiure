@@ -14,12 +14,17 @@
 #include "Life.h"
 #include "Behaviour.h"
 #include "Position.h"
+#include "GameObjects.h"
 
-namespace Hole{
-    Entity* prepareEntity(Collision* coli);
+class Hole : public GameObjects {
+public:
+    virtual ~Hole() {
+    }
 
+    virtual Entity* prepareEntity(PropertyManager& parameters);
+private:
     void makeBehaviour(IdEntity idObject, Behaviour* behaviour);
-}
+};
 
 #endif	/* HOLE_H */
 

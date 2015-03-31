@@ -8,21 +8,17 @@
 #include "StaticBlock.h"
 #include "Entity.h"
 #include "Behaviour.h"
+#include "Position.h"
 
-StaticBlock::StaticBlock(Collision* coli) : coli(coli) {
-}
-
-StaticBlock::~StaticBlock() {
-}
-
-Entity* StaticBlock::prepareEntity() {
+Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
     Entity* entity = new Entity();
 
-    entity->Add<sf::Transformable*>("Position", coli->getTransform());
-    entity->Add<Collision*>("Collision", coli);
-
-    Behaviour* behaviour = new Behaviour();
-    makeBehaviour(entity->getId(), behaviour);
+//    entity->Add<sf::Transformable*>("Position", coli->getTransform());
+//    entity->Add<Collision*>("Collision", coli);
+//
+//    Behaviour* behaviour = new Behaviour();
+//    makeBehaviour(entity->getId(), behaviour);
+//    entity->Add<Behaviour*>("Behaviour", behaviour);
 
     return entity;
 }

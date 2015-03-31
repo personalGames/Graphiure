@@ -12,17 +12,17 @@
 #include "Collision.h"
 #include "MessageCollision.h"
 #include "Behaviour.h"
+#include "GameObjects.h"
 
-class StaticBlock {
+
+class StaticBlock : public GameObjects {
 public:
-    StaticBlock(Collision* coli);
-    virtual ~StaticBlock();
-    
-    Entity* prepareEntity();
-    
+    virtual ~StaticBlock() {
+
+    }
+
+    virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
-    Collision* coli;
-    
     void makeBehaviour(IdEntity idObject, Behaviour* behaviour);
 };
 

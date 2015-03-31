@@ -88,10 +88,10 @@ void SystemCollision::resolveCollisions() {
         queue.pop();
         
         Collision* collisionOne = collision.entityOne->Get<Collision*>("Collision");
-        if ((collisionOne->getType() == TypeCollision::STATIC) || (collisionOne->getType()==TypeCollision::KINEMATIC)) {
-            //nada que hacer, empuja al otro para evitar colision
-            
-            
+        Collision* collisionTwo = collision.entityTwo->Get<Collision*>("Collision");
+        
+        if ((collisionOne->getType() == TypeCollision::KINEMATIC) && (collisionTwo->getType()==TypeCollision::KINEMATIC)) {
+            //cuidado...
             
         }else{
             //lo resolverá el entity

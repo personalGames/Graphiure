@@ -13,13 +13,15 @@
 #include "StateMachine.h"
 #include <vector>
 #include "Collision.h"
+#include "StructCollision.h"
 
 union DataUnion{
     StructMap* map;
     Animation* animation;
     StructAnimation* animations;
     StateMachine* stateMachine;
-    std::vector<Collision*>* collisions;
+    //std::vector<Collision*>* collisions;
+    std::vector<StructCollision*>* collisions;
 };
 
 #endif	/* DATAUNION_H */
