@@ -1,29 +1,25 @@
 /* 
- * File:   XMLParserCollisionsMap.cpp
+ * File:   XMLParserCollisions.cpp
  * Author: dorian
  * 
- * Created on 19 de marzo de 2015, 12:36
+ * Created on 1 de abril de 2015, 14:01
  */
 
-#include "XMLParserCollisionsMap.h"
+#include "XMLParserCollisions.h"
 
-XMLParserCollisionsMap::XMLParserCollisionsMap() {
+XMLParserCollisions::XMLParserCollisions() {
+
 }
 
-XMLParserCollisionsMap::~XMLParserCollisionsMap() {
+XMLParserCollisions::~XMLParserCollisions() {
+
 }
 
-void XMLParserCollisionsMap::parse(DataUnion& data) {
+void XMLParserCollisions::parse(DataUnion& data) {
     std::vector<StructCollision*>* result = new std::vector<StructCollision*>();
 
-    //get root node
-    tinyxml2::XMLElement* detailsMap = doc->FirstChildElement("map");
-    if (detailsMap == nullptr) {
-        std::cout << "Vacio" << std::endl;
-    }
-
     //get the node of collisions
-    tinyxml2::XMLElement* collisions = detailsMap->FirstChildElement("objectgroup");
+    tinyxml2::XMLElement* collisions = doc->FirstChildElement("Collision");
     //get the object/collision 
     tinyxml2::XMLElement* object = collisions->FirstChildElement("object");
     while (object) {

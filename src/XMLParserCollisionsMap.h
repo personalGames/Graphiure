@@ -21,7 +21,6 @@ public:
     
 
     virtual void parse(DataUnion& data);
-    virtual void parse(DataUnion& data, std::string id);
     
 private:
     

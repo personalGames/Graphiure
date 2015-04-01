@@ -10,14 +10,13 @@
 
 #include "TypeParser.h"
 #include <string>
-#include <sstream>
 #include "../include/tinyxml2.h"
 #include "DataUnion.h"
 #include <vector>
 #include <iostream>
-#include "Utilities.h"
 #include "ResourceHolder.h"
 #include "IDTextures.h"
+#include "XMLDocument.h"
 
 class IXMLParser {
 public:
@@ -25,13 +24,13 @@ public:
     virtual ~IXMLParser();
 
     
-    void setXML(std::string path);
+    void setXML(tinyxml2::XMLDocument& path);
+    void setXML(XMLDocument& path);
     void setResources(ResourceHolder<std::string, sf::Texture>* textures);
     virtual void parse(DataUnion& data)=0;
-    virtual void parse(DataUnion& data, std::string id)=0;
     
 protected:
-    tinyxml2::XMLDocument doc;
+    tinyxml2::XMLDocument* doc;
     ResourceHolder<std::string, sf::Texture>* textures;
 };
 

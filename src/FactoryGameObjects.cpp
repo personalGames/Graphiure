@@ -6,6 +6,7 @@
  */
 
 #include "FactoryGameObjects.h"
+#include "Character.h"
 #include <iostream>
 
 std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type){
@@ -13,6 +14,8 @@ std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type){
         return std::unique_ptr<StaticBlock>(new StaticBlock());
     }else if(type.compare("Hole")==0){
         return std::unique_ptr<Hole>(new Hole());
+    }else if(type.compare("Character")==0){
+        return std::unique_ptr<Character>(new Character());
     }else{
         return std::unique_ptr<StaticBlock>(new StaticBlock());
     }

@@ -73,8 +73,14 @@
           <itemPath>src/IXMLParser.cpp</itemPath>
           <itemPath>src/IXMLParser.h</itemPath>
           <itemPath>src/TypeParser.h</itemPath>
+          <itemPath>src/XMLDocument.cpp</itemPath>
+          <itemPath>src/XMLDocument.h</itemPath>
           <itemPath>src/XMLParserAnimation.cpp</itemPath>
           <itemPath>src/XMLParserAnimation.h</itemPath>
+          <itemPath>src/XMLParserCharacter.cpp</itemPath>
+          <itemPath>src/XMLParserCharacter.h</itemPath>
+          <itemPath>src/XMLParserCollisions.cpp</itemPath>
+          <itemPath>src/XMLParserCollisions.h</itemPath>
           <itemPath>src/XMLParserCollisionsMap.cpp</itemPath>
           <itemPath>src/XMLParserCollisionsMap.h</itemPath>
           <itemPath>src/XMLParserMap.cpp</itemPath>
@@ -113,6 +119,8 @@
         <itemPath>src/IdEntity.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f15" displayName="GameObjects" projectFiles="true">
+        <itemPath>src/Character.cpp</itemPath>
+        <itemPath>src/Character.h</itemPath>
         <itemPath>src/FactoryGameObjects.cpp</itemPath>
         <itemPath>src/FactoryGameObjects.h</itemPath>
         <itemPath>src/GameObjects.cpp</itemPath>
@@ -303,6 +311,10 @@
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Collision.cpp" ex="false" tool="1" flavor2="0">
@@ -553,9 +565,21 @@
       </item>
       <item path="src/Velocity.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLDocument.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCharacter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserCollisionsMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -646,6 +670,10 @@
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Character.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Character.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/ClockHUD.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Collision.cpp" ex="false" tool="1" flavor2="0">
@@ -896,9 +924,21 @@
       </item>
       <item path="src/Velocity.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLDocument.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/XMLParserAnimation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLParserAnimation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCharacter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XMLParserCollisions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLParserCollisionsMap.cpp" ex="false" tool="1" flavor2="0">
       </item>

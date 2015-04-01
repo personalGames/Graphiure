@@ -25,7 +25,7 @@ EntityNode::~EntityNode() {
 void EntityNode::updateCurrent(sf::Time delta) {
     if (this->entity->HasID("Velocity")) {
         Velocity* velocity = this->entity->Get<Velocity*>("Velocity");
-        if (velocity->isQuiet()) {
+        if (velocity->isQuiet() && entity->HasID("Drawable")) {
             entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::None);
         }
     }

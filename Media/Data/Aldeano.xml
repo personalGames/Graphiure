@@ -1,0 +1,203 @@
+<Entity id="aldeano" numberChoices="1">
+	<Properties>
+		<Property id="MaxVelocity" value="200" />
+		<Property id="Drawable" numberAnimations="8"/>
+		<Property id="Collision">
+			<object type="Block" x="0" y="0"><polyline points="16,16 16,32 32,32 32,16"/>
+		</Property> 
+		<Property id="Talk" value="Hola chico."/>
+	</Properties>
+</Entity>
+
+<StateMachine numberStates="8">
+	<Transition state="0" entry="1" newState="7"/>
+	<Transition state="0" entry="2" newState="6"/>
+	<Transition state="0" entry="3" newState="4"/>
+	<Transition state="0" entry="4" newState="5"/>
+	
+	<Transition state="1" entry="1" newState="7"/>
+	<Transition state="1" entry="2" newState="6"/>
+	<Transition state="1" entry="3" newState="4"/>
+	<Transition state="1" entry="4" newState="5"/>
+	
+	<Transition state="2" entry="1" newState="7"/>
+	<Transition state="2" entry="2" newState="6"/>
+	<Transition state="2" entry="3" newState="4"/>
+	<Transition state="2" entry="4" newState="5"/>
+	
+	<Transition state="3" entry="1" newState="7"/>
+	<Transition state="3" entry="2" newState="6"/>
+	<Transition state="3" entry="3" newState="4"/>
+	<Transition state="3" entry="4" newState="5"/>
+	
+	<Transition state="4" entry="0" newState="1"/>
+	<Transition state="4" entry="1" newState="7"/>
+	<Transition state="4" entry="2" newState="6"/>
+	<Transition state="4" entry="4" newState="5"/>
+	<Transition state="4" entry="5" newState="7"/>
+	<Transition state="4" entry="7" newState="6"/>
+	<Transition state="4" entry="3" newState="4"/>
+	
+	<Transition state="5" entry="0" newState="0"/>
+	<Transition state="5" entry="1" newState="7"/>
+	<Transition state="5" entry="2" newState="6"/>
+	<Transition state="5" entry="3" newState="4"/>
+	<Transition state="5" entry="6" newState="7"/>
+	<Transition state="5" entry="8" newState="6"/>
+	<Transition state="5" entry="4" newState="5"/>
+	
+	<Transition state="6" entry="0" newState="2"/>
+	<Transition state="6" entry="1" newState="7"/>
+	<Transition state="6" entry="3" newState="4"/>
+	<Transition state="6" entry="4" newState="5"/>
+	<Transition state="6" entry="2" newState="6"/>
+	
+	<Transition state="7" entry="0" newState="3"/>
+	<Transition state="7" entry="2" newState="6"/>
+	<Transition state="7" entry="3" newState="4"/>
+	<Transition state="7" entry="4" newState="5"/>
+	<Transition state="7" entry="1" newState="7"/>
+</StateMachine>
+
+
+<Animation id="character-down-idle" idImage="player.png" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-up-idle" idImage="player.png" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+<Animation id="character-right-idle" idImage="player.png" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-left-idle" idImage="player.png" replay="false">
+<frame>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+</Animation>
+<Animation id="character-up-walking" idImage="player.png" replay="true">
+<frame>
+	<vertice value="32"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="64"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="32"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice  value="0"/>
+	<vertice value="96"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-down-walking" idImage="player.png" replay="true">
+<frame>
+	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="64"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="0"/>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-right-walking" idImage="player.png" replay="true">
+<frame>
+	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>
+
+<Animation id="character-left-walking" idImage="player.png" replay="true">
+<frame>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="64"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>
+<frame>
+	<vertice value="0"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+	<vertice value="32"/>
+</frame>	
+</Animation>

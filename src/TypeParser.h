@@ -11,8 +11,10 @@
 enum class TypeParser{
     MAP,
     ENTITY,
+    CHARACTER,
     ANIMATION,
     STATE_MACHINE,
+    COLLISIONS_MAP,
     COLLISIONS
 };
 

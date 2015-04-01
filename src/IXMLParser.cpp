@@ -10,6 +10,8 @@
 #include "XMLParserAnimation.h"
 #include "XMLParserStateMachines.h"
 #include "XMLParserCollisionsMap.h"
+#include "XMLParserCharacter.h"
+#include "XMLParserCollisions.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     IXMLParser* parser;
@@ -24,9 +26,17 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
         case TypeParser::STATE_MACHINE:
             parser = new XMLParserStateMachines();
             break;
-            
+
+        case TypeParser::COLLISIONS_MAP:
+            parser = new XMLParserCollisionsMap();
+            break;
+
         case TypeParser::COLLISIONS:
-            parser=new XMLParserCollisionsMap();
+            parser = new XMLParserCollisions();
+            break;
+
+        case TypeParser::CHARACTER:
+            parser = new XMLParserCharacter();
             break;
 
         case TypeParser::ENTITY:
@@ -42,16 +52,12 @@ void IXMLParser::setResources(ResourceHolder<std::string, sf::Texture>* textures
     this->textures = textures;
 }
 
-void IXMLParser::setXML(std::string path) {
-    std::vector<char> writable = *convertString(path);
+void IXMLParser::setXML(tinyxml2::XMLDocument& path) {
+    this->doc = &path;
+}
 
-    doc.LoadFile(&writable[0]);
-    if (doc.ErrorID() != 0) {
-        std::cout << "Error: " << doc.ErrorID() << " - " << doc.ErrorName() << std::endl;
-    }
-
-    //delete the created vector
-    deleteVector(writable);
+void IXMLParser::setXML(XMLDocument& path) {
+    this->doc = path.doc;
 }
 
 IXMLParser::~IXMLParser() {

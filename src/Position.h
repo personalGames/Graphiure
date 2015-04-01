@@ -8,6 +8,8 @@
 #ifndef POSITION_H
 #define	POSITION_H
 
+#include <SFML/Graphics.hpp>
+
 class Position {
 public:
     Position();

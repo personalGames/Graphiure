@@ -6,12 +6,14 @@
  */
 
 #include "LifeNode.h"
+#include "XMLDocument.h"
 
 LifeNode::LifeNode(ResourceHolder<std::string, sf::Texture>& texture, Life& life, sf::Vector2f size)
 : life(&life) {
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::ANIMATION);
     parser->setResources(&texture);
-    parser->setXML("Media/Data/heart.xml");
+    XMLDocument doc=XMLDocument("Media/Data/heart.xml");
+    parser->setXML(doc);
     DataUnion data;
     parser->parse(data);
     

@@ -20,7 +20,7 @@ void XMLParserMap::parse(DataUnion& data, std::string id) {
 void XMLParserMap::parse(DataUnion& data) {
     StructMap* result = new StructMap();
     //get root node
-    tinyxml2::XMLElement* detailsMap = doc.FirstChildElement("map");
+    tinyxml2::XMLElement* detailsMap = doc->FirstChildElement("map");
     if (detailsMap == nullptr) {
         std::cout << "Vacio" << std::endl;
     }
@@ -46,7 +46,7 @@ void XMLParserMap::parse(DataUnion& data) {
         } else if (strcmp(nameLayer, "Underground") == 0) {
             parseUnderground(result, layer);
         }
-        layer = layer->NextSiblingElement();
+        layer = layer->NextSiblingElement("layer");
     }
 
     data.map=result;
@@ -57,19 +57,19 @@ result->tiles = new int[result->numberColumns * result->numberRows];
     uint i = 0;
             
     //get the data element and next, the gid element
-    tinyxml2::XMLElement* child = layer->FirstChildElement()->FirstChildElement();
+    tinyxml2::XMLElement* child = layer->FirstChildElement("data")->FirstChildElement("tile");
 
     while (child) {
         result->tiles[i] = child->IntAttribute("gid");
         i++;
-        child = child->NextSiblingElement();
+        child = child->NextSiblingElement("tile");
     }
 }
 
 void XMLParserMap::parseUnderground(StructMap* result, tinyxml2::XMLElement* layer) {
 uint i = 0;
     //get the data element and next, the gid element
-    tinyxml2::XMLElement* child = layer->FirstChildElement()->FirstChildElement();
+    tinyxml2::XMLElement* child = layer->FirstChildElement("data")->FirstChildElement("tile");
 
     int width=result->numberColumns;
     while (child) {
@@ -82,6 +82,6 @@ uint i = 0;
             result->underground->push_back(std::move(point));
         }
         i++;
-        child = child->NextSiblingElement();
+        child = child->NextSiblingElement("tile");
     }
 }

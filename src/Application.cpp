@@ -123,6 +123,7 @@ void Application::loadTextures() {
     textures.load("TitleScreen.png", "Media/Textures/TitleScreen.png");
     textures.load("Buttons.png", "Media/Textures/Buttons.png");
     textures.load("player.png", "Media/Textures/player.png");
+    textures.load("maskman.png", "Media/Textures/maskman.png");
 }
 
 void Application::loadFonts() {

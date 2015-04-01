@@ -15,7 +15,6 @@ public:
     XMLParserStateMachines();
     virtual ~XMLParserStateMachines();
     
-    virtual void parse(DataUnion& data, std::string id);
     virtual void parse(DataUnion& data);
 private:
 

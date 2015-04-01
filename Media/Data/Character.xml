@@ -1,18 +1,16 @@
 <Entity id="principal">
 	<Properties>
+		<Property id="Position" x="100" y="100" />
+		<Property id="Life" value="100" />
 		<Property id="MaxVelocity" value="200" />
-		<Property id="Drawable" numberAnimations="8">
-			<Animation id="character-down-idle" state="0" />
-			<Animation id="character-up-idle" state="1" />
-			<Animation id="character-right-idle" state="2" />
-			<Animation id="character-left-idle" state="3" />
-			<Animation id="character-up-walking" state="4" />
-			<Animation id="character-down-walking" state="5" />
-			<Animation id="character-right-walking" state="6" />
-			<Animation id="character-left-walking" state="7" />
-		</Property>
+		<Property id="Drawable" numberAnimations="8"/>
+		<Property id="Collision" />
 	</Properties>
 </Entity>
+
+<Collision>
+	<object type="Block" x="0" y="0"><polyline points="32,32 32,64 64,64 64,32"/></object>
+</Collision>
 
 <StateMachine numberStates="8">
 	<Transition state="0" entry="1" newState="7"/>
@@ -65,144 +63,240 @@
 </StateMachine>
 
 
-<Animation id="character-down-idle" idImage="player.png" replay="false">
+<Animation id="character-down-idle" idImage="maskman.png" replay="false">
 <frame>
-	<vertice value="32"/>
 	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>	
 </Animation>
 
-<Animation id="character-up-idle" idImage="player.png" replay="false">
+<Animation id="character-up-idle" idImage="maskman.png" replay="false">
 <frame>
-	<vertice value="32"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>	
 </Animation>
-<Animation id="character-right-idle" idImage="player.png" replay="false">
+<Animation id="character-right-idle" idImage="maskman.png" replay="false">
 <frame>
-	<vertice value="32"/>
+	<vertice value="0"/>
+	<vertice value="192"/>
 	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>	
-</Animation>
-
-<Animation id="character-left-idle" idImage="player.png" replay="false">
-<frame>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-</Animation>
-<Animation id="character-up-walking" idImage="player.png" replay="true">
-<frame>
-	<vertice value="32"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-<frame>
 	<vertice value="64"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-<frame>
-	<vertice value="32"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-<frame>
-	<vertice  value="0"/>
-	<vertice value="96"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
 </frame>	
 </Animation>
 
-<Animation id="character-down-walking" idImage="player.png" replay="true">
+<Animation id="character-left-idle" idImage="maskman.png" replay="false">
 <frame>
-	<vertice value="32"/>
 	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>
+</Animation>
+<Animation id="character-up-walking" idImage="maskman.png" replay="true">
 <frame>
 	<vertice value="64"/>
 	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>
 <frame>
-	<vertice value="32"/>
+	<vertice value="128"/>
 	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>
 <frame>
+	<vertice value="192"/>
 	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
 	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="0"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+</Animation>
+
+<Animation id="character-down-walking" idImage="maskman.png" replay="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="128"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+</Animation>
+
+<Animation id="character-right-walking" idImage="maskman.png" replay="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>	
 </Animation>
 
-<Animation id="character-right-walking" idImage="player.png" replay="true">
-<frame>
-	<vertice value="32"/>
-	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
+<Animation id="character-left-walking" idImage="maskman.png" replay="true">
 <frame>
 	<vertice value="64"/>
 	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-<frame>
-	<vertice value="32"/>
 	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>
-<frame>
-	<vertice value="0"/>
 	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-</frame>	
-</Animation>
-
-<Animation id="character-left-walking" idImage="player.png" replay="true">
-<frame>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
 </frame>
 <frame>
+	<vertice value="128"/>
 	<vertice value="64"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>
 <frame>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="192"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>
 <frame>
-	<vertice value="0"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
-	<vertice value="32"/>
+	<vertice value="256"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
 </frame>	
 </Animation>

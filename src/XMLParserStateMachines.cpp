@@ -17,13 +17,10 @@ XMLParserStateMachines::~XMLParserStateMachines() {
 
 }
 
-void XMLParserStateMachines::parse(DataUnion& data, std::string id) {
-    
-}
-
 void XMLParserStateMachines::parse(DataUnion& data) {
     //get first node
-    tinyxml2::XMLElement* stateMachine = doc.FirstChildElement("StateMachine");
+    tinyxml2::XMLElement* stateMachine = doc->FirstChildElement("StateMachine");
+
     StateMachine* result;
     //pilla cada maquina de turing
     while(stateMachine){
@@ -39,10 +36,10 @@ void XMLParserStateMachines::parse(DataUnion& data) {
             Transition tran=Transition(state,entry,newState);
             result->addTransition(tran);
             
-            transicion=transicion->NextSiblingElement();
+            transicion=transicion->NextSiblingElement("Transition");
         }
         
-       stateMachine=stateMachine->NextSiblingElement();
+       stateMachine=stateMachine->NextSiblingElement("StateMachine");
     }
     
     data.stateMachine=result;
