@@ -42,6 +42,8 @@ Entity* Hole::prepareEntity(PropertyManager& parameters) {
     colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
     colli->setType(TypeCollision::DYNAMIC);
     
+    position->setPosition(*(colli->getTransform()));
+    
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);
     
