@@ -10,16 +10,29 @@
 #include "Behaviour.h"
 #include "Position.h"
 
-Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
-    Entity* entity = new Entity();
-
-//    entity->Add<sf::Transformable*>("Position", coli->getTransform());
-//    entity->Add<Collision*>("Collision", coli);
-//
-//    Behaviour* behaviour = new Behaviour();
-//    makeBehaviour(entity->getId(), behaviour);
-//    entity->Add<Behaviour*>("Behaviour", behaviour);
-
+Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {   
+    Entity* entity=new Entity();
+    
+    Collision* colli=new Collision();
+    sf::Vector2f pos=parameters.Get<sf::Vector2f>("Position");
+    Position* position=new Position();
+    position->updatePosition(pos.x,pos.y);
+    
+    sf::Transformable transform=position->getPosition();
+    colli->update(transform);
+    colli->setArrayVertex(parameters.Get<sf::VertexArray*>("Vertex"));
+    colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
+    colli->setType(TypeCollision::DYNAMIC);
+    
+    position->setPosition(*(colli->getTransform()));
+    
+    entity->Add<Position*>("Position", position);
+    entity->Add<Collision*>("Collision", colli);
+    
+    Behaviour* behaviour=new Behaviour();
+    makeBehaviour(entity->getId(), behaviour);
+    entity->Add<Behaviour*>("Behaviour", behaviour);
+    
     return entity;
 }
 
