@@ -33,6 +33,10 @@ public:
     void updateTree();
     void getObjects(std::vector<Entity*>& list);
     QuadTree* getNodeRegion(sf::FloatRect region);
+    inline sf::FloatRect getBounds() const {
+        return bounds;
+    }
+
 //    void toString();
 
 private:

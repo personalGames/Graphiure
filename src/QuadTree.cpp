@@ -27,9 +27,6 @@ QuadTree::QuadTree(int level) : level(level), objects(), bounds(0,0,0,0), nodes(
 
 
 void QuadTree::clear() {
-    //    for(std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
-    //        delete *(it);
-    //    }
     objects.clear();
 
     for (uint i = 0; i < nodes.size(); ++i) {

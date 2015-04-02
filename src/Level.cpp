@@ -43,6 +43,9 @@ void Level::draw() {
 void Level::update(sf::Time dt) {
     //get the entity/character
     Entity* entity = objectsGame->getEntity(idCharacter);
+    //reset position character
+    collision->correctInsidePosition(entity);
+    
     //reset velocity
     entity->Get<Velocity*>("Velocity")->reset();
     //update all input
@@ -62,7 +65,7 @@ void Level::update(sf::Time dt) {
     //for next frame)
     collision->resolveCollisions();
     
-    //graphics second update, only set positions (changed by collisions)
+    //graphics second update, only set positions (changed by collisions) and sort the tree by y
     
     
     //update the world with the final position of character

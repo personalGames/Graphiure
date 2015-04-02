@@ -82,6 +82,23 @@ void SystemCollision::finalize() {
     tree->clear();
 }
 
+void SystemCollision::correctInsidePosition(Entity* entity) {
+    Collision* collision=entity->Get<Collision*>("Collision");
+    sf::FloatRect viewBounds = tree->getBounds();
+
+    sf::Vector2f position = collision->getTransform()->getPosition();
+    sf::FloatRect bounds=collision->getAABB();
+    position.x = std::max(position.x, viewBounds.left);
+    position.x = std::min(position.x, viewBounds.left + viewBounds.width - bounds.width);
+    position.y = std::max(position.y, viewBounds.top);
+    position.y = std::min(position.y, viewBounds.top + viewBounds.height - bounds.height);
+    Position* pos=entity->Get<Position*>("Position");
+    sf::Transformable newPosition=sf::Transformable();
+    newPosition.setPosition(position.x, position.y);
+    pos->setPosition(newPosition);
+}
+
+
 void SystemCollision::resolveCollisions() {
     while (queue.size() > 0) {
         MessageCollision collision = queue.front();

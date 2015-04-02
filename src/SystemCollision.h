@@ -36,6 +36,7 @@ public:
     
     void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
+    void correctInsidePosition(Entity* entity);
     std::vector<Entity*> checkCollisions(Entity* entity, float radius);
     void resolveCollisions();
     
