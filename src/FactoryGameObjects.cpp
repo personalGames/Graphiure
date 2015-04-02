@@ -7,16 +7,19 @@
 
 #include "FactoryGameObjects.h"
 #include "Character.h"
+#include "Villager.h"
 #include <iostream>
 
-std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type){
-    if(type.compare("Block")==0){
+std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type) {
+    if (type.compare("Block") == 0) {
         return std::unique_ptr<StaticBlock>(new StaticBlock());
-    }else if(type.compare("Hole")==0){
+    } else if (type.compare("Hole") == 0) {
         return std::unique_ptr<Hole>(new Hole());
-    }else if(type.compare("Character")==0){
+    } else if (type.compare("Character") == 0) {
         return std::unique_ptr<Character>(new Character());
-    }else{
+    } else if (type.compare("Villager") == 0) {
+        return std::unique_ptr<Villager>(new Villager());
+    } else {
         return std::unique_ptr<StaticBlock>(new StaticBlock());
     }
 }

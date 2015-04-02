@@ -129,6 +129,8 @@
         <itemPath>src/Hole.h</itemPath>
         <itemPath>src/StaticBlock.cpp</itemPath>
         <itemPath>src/StaticBlock.h</itemPath>
+        <itemPath>src/Villager.cpp</itemPath>
+        <itemPath>src/Villager.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
         <itemPath>src/Button.cpp</itemPath>
@@ -565,6 +567,10 @@
       </item>
       <item path="src/Velocity.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Villager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Villager.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XMLDocument.h" ex="false" tool="3" flavor2="0">
@@ -923,6 +929,10 @@
       <item path="src/Velocity.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Velocity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Villager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Villager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
       </item>

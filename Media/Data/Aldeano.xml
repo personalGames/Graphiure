@@ -1,13 +1,16 @@
 <Entity id="aldeano" numberChoices="1">
 	<Properties>
-		<Property id="MaxVelocity" value="200" />
+		<Property id="Position" x="500" y ="500" />
+		<Property id="MaxVelocity" value="100" />
 		<Property id="Drawable" numberAnimations="8"/>
-		<Property id="Collision">
-			<object type="Block" x="0" y="0"><polyline points="16,16 16,32 32,32 32,16"/>
-		</Property> 
+		<Property id="Collision" /> 
 		<Property id="Talk" value="Hola chico."/>
 	</Properties>
 </Entity>
+
+<Collision>
+	<object type="Block" x="0" y="0"><polyline points="16,16 16,32 32,32 32,16"/></object>
+</Collision>
 
 <StateMachine numberStates="8">
 	<Transition state="0" entry="1" newState="7"/>

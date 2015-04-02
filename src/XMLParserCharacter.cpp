@@ -28,6 +28,7 @@ void XMLParserCharacter::parse(DataUnion& data) {
             parserAnimations(properties);
         } else if (id.compare("Position") == 0) {
             sf::Vector2f pos=sf::Vector2f(entity->FloatAttribute("x"), entity->FloatAttribute("y"));
+            properties->Add<sf::Vector2f>("Position", pos);
         } else if (id.compare("Collision") == 0) {
             parserCollisions(properties);
         } else if (id.compare("Life") == 0) {
