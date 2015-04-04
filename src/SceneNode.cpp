@@ -79,6 +79,13 @@ void SceneNode::updateChildren(sf::Time delta) {
     }
 }
 
+void SceneNode::updateSecondPart(sf::Time dt) {
+    for (SceneNode* child : children) {
+        child->updateSecondPart(dt);
+    }
+}
+
+
 sf::Transform SceneNode::getWorldTransform() const {
     //initialize a transform
     sf::Transform transform = sf::Transform::Identity;

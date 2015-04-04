@@ -61,6 +61,7 @@ public:
     
     
     void update(sf::Time dt);
+    virtual void updateSecondPart(sf::Time dt);
 
     /**
      * Get the category of this node.

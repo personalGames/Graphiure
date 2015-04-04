@@ -50,7 +50,7 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
             colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
         }
         colli->setType(TypeCollision::DYNAMIC);
-        position->setPosition(*(colli->getTransform()));
+        position->setPosition(colli->getTransform());
         
         delete colliStruct;
         entity->Add<Collision*>("Collision", colli);
@@ -85,7 +85,7 @@ void Villager::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
         Collision* collisionOne = message.entityOne->Get<Collision*>("Collision");
         Collision* collisionTwo = message.entityTwo->Get<Collision*>("Collision");
         Position* positionTwo = message.entityTwo->Get<Position*>("Position");
-        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo);
+        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, sf::Vector2f(0,0));
 
         positionTwo->updatePosition(separation.x, separation.y);
     };

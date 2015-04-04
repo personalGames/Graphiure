@@ -6,6 +6,7 @@
  */
 
 #include "Hole.h"
+#include <iostream>
 
 void Hole::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision message) {
@@ -26,6 +27,7 @@ void Hole::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     
     //guardo la función creada
     behaviour->behaviourFunction=aFunction;
+    
 }
 
 Entity* Hole::prepareEntity(PropertyManager& parameters) {
@@ -42,7 +44,7 @@ Entity* Hole::prepareEntity(PropertyManager& parameters) {
     colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
     colli->setType(TypeCollision::DYNAMIC);
     
-    position->setPosition(*(colli->getTransform()));
+    position->setPosition(colli->getTransform());
     
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);

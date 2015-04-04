@@ -8,6 +8,7 @@
 #include "QuadTree.h"
 #include "ActionStack.h"
 #include "Position.h"
+#include "Velocity.h"
 
 QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
      this->bounds.top = static_cast<float> (bounds.top);
@@ -179,6 +180,7 @@ void QuadTree::split() {
     nodes[3]->parent = this;
 }
 
+
 void QuadTree::update() {
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
         Entity* entity = *(it);
@@ -199,11 +201,19 @@ void QuadTree::update() {
     updateTree();
 }
 
+
+
 void QuadTree::updateTree() {
     std::list<Entity*>::iterator it = objects.begin();
     while (it != objects.end()) {
         Entity* entity = *it;
-        if (inside(entity->Get<Collision*>("Collision")->getAABB())) {
+        sf::FloatRect rect;
+        if(entity->HasID("Velocity")){
+            rect=entity->Get<Collision*>("Collision")->getAABBSwept();
+        }else{
+            rect=entity->Get<Collision*>("Collision")->getAABB();
+        }
+        if (inside(rect)) {
             int index = getIndex(entity->Get<Collision*>("Collision"));
             if (index != -1) {
                 if (nodes[index] != nullptr) {

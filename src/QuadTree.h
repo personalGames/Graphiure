@@ -30,7 +30,8 @@ public:
     bool remove(Entity* object);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
     void update();
-    void updateTree();
+//    void updateSimulated();
+    
     void getObjects(std::vector<Entity*>& list);
     QuadTree* getNodeRegion(sf::FloatRect region);
     inline sf::FloatRect getBounds() const {
@@ -44,6 +45,9 @@ private:
     int getIndex(Collision* collision);
     int getIndex(sf::FloatRect rect);
     bool inside(sf::FloatRect rect);
+    
+    void updateTree();
+//    void updateSimulatedTree();
 
 private:
     int level;

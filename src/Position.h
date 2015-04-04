@@ -24,7 +24,7 @@ public:
     inline void setPosition(sf::Transformable position) {
         this->position = position;
     }
-
+    
     inline sf::Transformable getPreviousPosition() const {
         return previousPosition;
     }

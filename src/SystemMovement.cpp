@@ -7,8 +7,8 @@
 
 #include "SystemMovement.h"
 
-SystemMovement::SystemMovement(): ISystem(), movement() {
-    type=TypeSystem::MOVEMENT;
+SystemMovement::SystemMovement() : ISystem(), movement() {
+    type = TypeSystem::MOVEMENT;
 }
 
 void SystemMovement::finalize() {
@@ -30,17 +30,29 @@ void SystemMovement::removedEntity(Entity* entity) {
 }
 
 void SystemMovement::update(sf::Time dt) {
-    for(auto entity: movement){
+    for (auto entity : movement) {
         Velocity* velocity = entity->Get<Velocity*>("Velocity");
         velocity->adaptVelocity();
 
         Position* position = entity->Get<Position*>("Position");
         velocity->updateVelocity(dt, *position);
     }
+    //    for(auto entity: movement){
+    //        Velocity* velocity = entity->Get<Velocity*>("Velocity");
+    //        velocity->adaptVelocity();
+    //
+    //        Position* position = entity->Get<Position*>("Position");
+    //        velocity->simulateUpdateVelocity(dt, *position);
+    //    }
 }
 
 void SystemMovement::updateSecondPart(sf::Time dt) {
-
+    //    for(auto entity: movement){
+    //        Velocity* velocity = entity->Get<Velocity*>("Velocity");
+    //
+    //        Position* position = entity->Get<Position*>("Position");
+    //        velocity->updateVelocity(dt, *position);
+    //    }
 }
 
 SystemMovement::~SystemMovement() {

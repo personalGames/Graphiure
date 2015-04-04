@@ -36,6 +36,16 @@ void EntityNode::updateCurrent(sf::Time delta) {
     this->entity->Get<StateMachineAnimation*>("Drawable")->update(delta);
 }
 
+void EntityNode::updateSecondPart(sf::Time dt) {
+    Position* position = this->entity->Get<Position*>("Position");
+    setPosition(position->getPosition().getPosition());
+    
+    for (SceneNode* child : children) {
+        child->updateSecondPart(dt);
+    }
+}
+
+
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     entity->Get<StateMachineAnimation*>("Drawable")->draw(target, states);
 }

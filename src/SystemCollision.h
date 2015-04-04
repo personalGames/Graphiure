@@ -26,7 +26,7 @@ public:
     virtual void initialize(){};
     virtual void finalize();
     virtual void update(sf::Time dt);
-    virtual void updateSecondPart(sf::Time dt){};
+    virtual void updateSecondPart(sf::Time dt);
     virtual void registerEntity(Entity* entity);
     virtual void removedEntity(Entity* entity);
 
@@ -34,6 +34,7 @@ public:
     void newWorldCollision(sf::FloatRect bounds);
     void clear();
     
+    bool ContinuousCollisionDetection(Entity* one);
     void checkCollisions(sf::FloatRect region);
     bool checkCollisions(Entity* one, Entity* another);
     void correctInsidePosition(Entity* entity);

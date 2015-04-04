@@ -36,6 +36,8 @@
       <logicalFolder name="f14" displayName="Collision" projectFiles="true">
         <itemPath>src/Collision.cpp</itemPath>
         <itemPath>src/Collision.h</itemPath>
+        <itemPath>src/MessageCollision.cpp</itemPath>
+        <itemPath>src/MessageCollision.h</itemPath>
         <itemPath>src/QuadTree.cpp</itemPath>
         <itemPath>src/QuadTree.h</itemPath>
         <itemPath>src/TypeCollision.h</itemPath>
@@ -163,8 +165,6 @@
         <itemPath>src/ISystem.cpp</itemPath>
         <itemPath>src/ISystem.h</itemPath>
         <itemPath>src/ImportSystems.h</itemPath>
-        <itemPath>src/MessageCollision.cpp</itemPath>
-        <itemPath>src/MessageCollision.h</itemPath>
         <itemPath>src/SystemCollision.cpp</itemPath>
         <itemPath>src/SystemCollision.h</itemPath>
         <itemPath>src/SystemCommand.cpp</itemPath>

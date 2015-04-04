@@ -38,6 +38,8 @@ public:
     void adaptVelocity();
     bool isQuiet();
     void updateVelocity(sf::Time dt, Position& actualPosition);
+    
+//    void simulateUpdateVelocity(sf::Time dt, Position& actualPosition);
 
     void setMaxVelocity(float maxVelocity) {
         this->maxVelocity = maxVelocity;
@@ -46,11 +48,17 @@ public:
     float getMaxVelocity() const {
         return maxVelocity;
     }
+    
+//    sf::Transformable getFinalPosition() const {
+//        return finalPosition;
+//    }
+
 
     
 private:
     sf::Vector2f velocity;
     float maxVelocity;
+//    sf::Transformable finalPosition;
 };
 
 #endif	/* VELOCITY_H */

@@ -57,5 +57,10 @@ bool Velocity::isQuiet() {
 void Velocity::updateVelocity(sf::Time dt, Position& actualPosition) {
     sf::Vector2f update=velocity*dt.asSeconds();
     actualPosition.updatePosition(static_cast<int> (update.x), static_cast<int> (update.y));
-//    actualPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
 }
+
+//void Velocity::simulateUpdateVelocity(sf::Time dt, Position& actualPosition) {
+//    sf::Vector2f update=velocity*dt.asSeconds();
+//    finalPosition=Position.getPosition();
+//    finalPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
+//}

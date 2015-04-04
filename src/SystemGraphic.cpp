@@ -88,7 +88,7 @@ void SystemGraphic::execute() {
 
 
 void SystemGraphic::updateSecondPart(sf::Time dt) {
-
+    sceneGraph.updateSecondPart(dt);
 }
 
 SystemGraphic::~SystemGraphic() {

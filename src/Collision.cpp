@@ -6,9 +6,11 @@
  */
 
 #include "Collision.h"
+#include "ActionStack.h"
+#include <iostream>
 
 Collision::Collision() : type(TypeCollision::STATIC) {
-    vertices=new sf::VertexArray();
+    vertices = new sf::VertexArray();
 }
 
 Collision::~Collision() {
@@ -24,7 +26,7 @@ void Collision::setArrayVertex(sf::VertexArray* array) {
     //borro el anterior
     delete vertices;
     //y pongo el nuevo
-    vertices=array;
+    vertices = array;
 }
 
 void Collision::addVertice(sf::Vertex& vertex) {
@@ -32,6 +34,7 @@ void Collision::addVertice(sf::Vertex& vertex) {
 }
 
 void Collision::update(sf::Transformable& transform) {
+    this->previousTransform.setPosition(this->transform.getPosition());
     this->transform.setPosition(transform.getPosition());
 }
 
@@ -52,45 +55,92 @@ sf::FloatRect Collision::getAABB() {
     return transform.getTransform().transformRect(cuadro);
 }
 
-int Collision::collision(Collision* other) {
-    sf::FloatRect one = getAABB();
-    sf::FloatRect another = other->getAABB();
-
-    return one.intersects(another)? 1:0;
+sf::FloatRect Collision::getPreviousAABB(){
+    sf::FloatRect cuadro = vertices->getBounds();
+    return previousTransform.getTransform().transformRect(cuadro);
 }
 
-sf::Vector2f Collision::normalSeparation(Collision* other){
-    float x=0;
-    float y=0;
-    
-    sf::FloatRect me=getAABB();
-    sf::FloatRect otherRect=other->getAABB();
-    sf::FloatRect intersection=sf::FloatRect();
-    me.intersects(otherRect, intersection);
-    
-    //collision at vertical axis (y)
-    if(intersection.width > intersection.height){
-        //collision at top
-        if(intersection.contains(intersection.left, otherRect.top)){
-            y=intersection.height;
-            
-        //collision at bottom
-        }else{
-            y=-intersection.height;
-        }
-        
-    //collision at horizontal axis (x)
-    }else if(intersection.width<intersection.height){
-        //collision at right
-        if(intersection.contains(otherRect.left+otherRect.width-0.1, otherRect.top+0.1)){
-            x=-intersection.width;
-            
-        //collision at left
-        }else{
-            x=intersection.width;
-        }
-        
+sf::FloatRect Collision::getAABBSwept() {
+    sf::FloatRect AABBFinal=getAABB();
+    sf::FloatRect AABBInitial=getPreviousAABB();
+    if(AABBFinal==AABBInitial){
+        return AABBFinal;
     }
+    sf::FloatRect result=sf::FloatRect();
+    result.left=std::min(AABBFinal.left, AABBInitial.left);
+    result.top=std::min(AABBFinal.top, AABBInitial.top);
+    float calculus= (std::max(AABBFinal.left+AABBFinal.width, AABBInitial.left+AABBInitial.width)) - result.left;
+    result.width=calculus;
+    calculus= (std::max(AABBFinal.top+AABBFinal.height, AABBInitial.top+AABBInitial.height)) - result.top;
+    result.height=calculus;
     
-    return sf::Vector2f(x,y);
+    return result;
+}
+
+int Collision::collision(Collision* other) {
+    sf::FloatRect one = getAABBSwept();
+    sf::FloatRect another = other->getAABBSwept();
+    
+    //collision with swept (CCD) check the first moment collide
+    if(one.intersects(another)){
+        return 1;
+    }else{
+        return 0;
+    }
+
+    //return one.intersects(another) ? 1 : 0;
+}
+
+sf::Vector2f Collision::normalSeparation(Collision* other, sf::Vector2f move) {
+    float x = 0;
+    float y = 0;
+
+    sf::FloatRect me = getAABB();
+    sf::FloatRect otherRect = other->getAABBSwept();
+    sf::FloatRect intersection = sf::FloatRect();
+    me.intersects(otherRect, intersection);
+
+    //collision at vertical axis (y)
+    if (intersection.width > intersection.height) {
+        //collision at top
+        if (intersection.contains(otherRect.left, otherRect.top)
+                ||intersection.contains(otherRect.left+otherRect.width, otherRect.top)) {
+            y = intersection.height+0.5;
+
+            //collision at bottom
+        } else {
+            y = -(intersection.height+0.5);
+        }
+
+        //collision at horizontal axis (x)
+    }else if (intersection.width < intersection.height) {
+        //collision at right
+        if (intersection.contains(otherRect.left + otherRect.width - 0.1, otherRect.top + 0.1)
+                || intersection.contains(otherRect.left + otherRect.width - 0.1, 
+                                        otherRect.top+otherRect.height + 0.1)) {
+            x = -(intersection.width+0.5);
+
+            //collision at left
+        } else {
+            x = intersection.width+0.5;
+        }
+
+    }
+//    else if(intersection.width==intersection.height){
+//        
+//        sf::Vector2f substract=move;
+//        std::cout<<substract.x<<" "<<substract.y<<std::endl;
+//        if(substract.x!=0){
+//            x=intersection.width;
+//            
+//        }
+//        
+//        if(substract.y!=0){
+//            y=intersection.height;
+//            
+//        }
+//        std::cout<<"Igualados"<<std::endl;
+//    }
+
+    return sf::Vector2f(x, y);
 }

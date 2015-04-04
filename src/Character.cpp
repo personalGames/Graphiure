@@ -45,7 +45,7 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
     colli->setType(TypeCollision::DYNAMIC);
 
     
-    position->setPosition(*(colli->getTransform()));
+    position->setPosition(colli->getTransform());
 
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);

@@ -24,7 +24,7 @@ Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
     colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
     colli->setType(TypeCollision::DYNAMIC);
     
-    position->setPosition(*(colli->getTransform()));
+    position->setPosition(colli->getTransform());
     
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);
@@ -38,19 +38,22 @@ Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
 
 void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision message) {
-        Entity* other = message.entityOne;
+       Entity* other = message.entityOne;
         Entity* me = message.entityTwo;
         if (other->getId() == idObject) {
             me = other;
             other = message.entityTwo;
         }
-
-        Collision* collisionOne = message.entityOne->Get<Collision*>("Collision");
-        Collision* collisionTwo = message.entityTwo->Get<Collision*>("Collision");
-        Position* positionTwo = message.entityTwo->Get<Position*>("Position");
-        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo);
+        
+        
+        Collision* collisionOne = me->Get<Collision*>("Collision");
+        Collision* collisionTwo = other->Get<Collision*>("Collision");
+        
+        Position* positionTwo = other->Get<Position*>("Position");
+        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, positionTwo->getMoveVector());
 
         positionTwo->updatePosition(separation.x, separation.y);
+        positionTwo->updatePosition(0,0);
     };
 
     //guardo la función creada
