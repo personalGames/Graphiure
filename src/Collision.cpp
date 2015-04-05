@@ -83,10 +83,15 @@ int Collision::collision(Collision* other) {
     
     //collision with swept (CCD) check the first moment collide
     if(one.intersects(another)){
+        //if collide, get the first and final time of collision which binary search
         return 1;
     }else{
         return 0;
     }
+    
+    //if collide, divide the vertex in triangles and see if collide one of them
+    
+    //if collide
 
     //return one.intersects(another) ? 1 : 0;
 }

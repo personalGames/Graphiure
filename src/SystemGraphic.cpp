@@ -7,6 +7,7 @@
 
 #include "SystemGraphic.h"
 #include "LifeNode.h"
+#include "Debug.h"
 
 SystemGraphic::SystemGraphic(sf::RenderWindow& window,ResourceHolder<IDFonts, sf::Font>& fonts,
         ResourceHolder<std::string, sf::Texture>& images): 
@@ -69,6 +70,11 @@ void SystemGraphic::registerEntity(Entity* entity) {
             node->addChild(life);
         }
         
+        sceneLayers[Ground]->addChild(std::move(node));
+    }
+    
+    if(entity->HasID("Debug")){
+        Debug* node=new Debug(entity);
         sceneLayers[Ground]->addChild(std::move(node));
     }
 }

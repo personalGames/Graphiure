@@ -43,9 +43,10 @@ public:
     sf::FloatRect getAABBSwept();
     
 
+    sf::VertexArray* vertices;
 private:
     TypeCollision type;
-    sf::VertexArray* vertices;
+    
     sf::Transformable transform;
     sf::Transformable previousTransform;
     

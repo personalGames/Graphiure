@@ -36,11 +36,12 @@ void SystemCollision::removedEntity(Entity* entity) {
 }
 
 void SystemCollision::checkCollisions(sf::FloatRect region) {
-    QuadTree* subtree = tree->getNodeRegion(region);
+    QuadTree* subtree=tree->getNodeRegion(region);
     if (subtree == nullptr) {
         subtree = tree;
     }
     std::vector<Entity*> list = std::vector<Entity*>();
+    
     subtree->getObjects(list);
     for (std::vector<Entity*>::iterator it = list.begin(); it != list.end(); ++it) {
         Entity* entity = *(it);
@@ -127,8 +128,8 @@ void SystemCollision::resolveCollisions() {
         MessageCollision collision = queue.front();
         queue.pop();
 
-        Collision* collisionOne = collision.entityOne->Get<Collision*>("Collision");
-        Collision* collisionTwo = collision.entityTwo->Get<Collision*>("Collision");
+//        Collision* collisionOne = collision.entityOne->Get<Collision*>("Collision");
+//        Collision* collisionTwo = collision.entityTwo->Get<Collision*>("Collision");
 
         //lo resolverá el entity
         if (collision.entityOne->HasID("Behaviour")) {

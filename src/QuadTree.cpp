@@ -10,22 +10,21 @@
 #include "Position.h"
 #include "Velocity.h"
 
-QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
-     this->bounds.top = static_cast<float> (bounds.top);
+QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0, 0, 0, 0), nodes(4) {
+    this->bounds.top = static_cast<float> (bounds.top);
     this->bounds.left = static_cast<float> (bounds.left);
     this->bounds.height = static_cast<float> (bounds.height);
     this->bounds.width = static_cast<float> (bounds.width);
 };
 
 QuadTree::QuadTree(int level, sf::FloatRect bounds) : level(level), objects(), bounds(bounds), nodes(4) {
-   
+
 
 };
 
-QuadTree::QuadTree(int level) : level(level), objects(), bounds(0,0,0,0), nodes(4) {
+QuadTree::QuadTree(int level) : level(level), objects(), bounds(0, 0, 0, 0), nodes(4) {
 
 }
-
 
 void QuadTree::clear() {
     objects.clear();
@@ -70,7 +69,7 @@ bool QuadTree::remove(Entity* object) {
 }
 
 int QuadTree::getIndex(Collision* collision) {
-    sf::FloatRect bound = collision->getAABB();
+    sf::FloatRect bound = collision->getAABBSwept();
     return getIndex(bound);
 }
 
@@ -130,8 +129,14 @@ QuadTree* QuadTree::getNodeRegion(sf::FloatRect region) {
 
 void QuadTree::insert(Entity* objectNew) {
     Collision* coli = objectNew->Get<Collision*>("Collision");
+    sf::FloatRect rect;
+    if (objectNew->HasID("Velocity")) {
+        rect = coli->getAABBSwept();
+    } else {
+        rect = coli->getAABB();
+    }
     if (nodes[0] != nullptr) {
-        int index = getIndex(coli);
+        int index = getIndex(rect);
 
         if (index != -1) {
             if (nodes[index] != nullptr) {
@@ -180,7 +185,6 @@ void QuadTree::split() {
     nodes[3]->parent = this;
 }
 
-
 void QuadTree::update() {
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
         Entity* entity = *(it);
@@ -196,22 +200,19 @@ void QuadTree::update() {
             nodes[i]->update();
         }
     }
-
     //una vez actualizados, recoloco el árbol (este nodo, los hijos ya se habrán recolocado)
     updateTree();
 }
-
-
 
 void QuadTree::updateTree() {
     std::list<Entity*>::iterator it = objects.begin();
     while (it != objects.end()) {
         Entity* entity = *it;
         sf::FloatRect rect;
-        if(entity->HasID("Velocity")){
-            rect=entity->Get<Collision*>("Collision")->getAABBSwept();
-        }else{
-            rect=entity->Get<Collision*>("Collision")->getAABB();
+        if (entity->HasID("Velocity")) {
+            rect = entity->Get<Collision*>("Collision")->getAABBSwept();
+        } else {
+            rect = entity->Get<Collision*>("Collision")->getAABB();
         }
         if (inside(rect)) {
             int index = getIndex(entity->Get<Collision*>("Collision"));
@@ -252,7 +253,7 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
         Entity* entity = *(it);
         list.push_back(entity);
     }
-
+    
     for (uint i = 0; i < nodes.size(); ++i) {
         if (nodes[i] != nullptr) {
             nodes[i]->getObjects(list);
@@ -261,9 +262,31 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
 }
 
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {
-    int index = getIndex(object->Get<Collision*>("Collision"));
-    if (index != -1 && nodes[0] != nullptr) {
-        nodes[index]->retrieve(list, object);
+    sf::FloatRect rect=object->Get<Collision*>("Collision")->getAABBSwept();
+    for(int i=0; i<4;++i){
+        if(nodes[i]!=nullptr){
+            sf::FloatRect bounds=nodes[i]->bounds;
+            
+            bool touch=false;
+            touch=touch | bounds.contains(rect.left,rect.top);
+            touch=touch | bounds.contains(rect.left+rect.height,rect.top);
+            touch=touch | bounds.contains(rect.left,rect.top+rect.width);
+            touch=touch | bounds.contains(rect.left+rect.height,rect.top+rect.width);
+            
+            if(touch){
+                nodes[i]->retrieve(list, object);
+                continue;
+            }
+            
+            touch=touch | rect.contains(bounds.left, bounds.top);
+            touch=touch | rect.contains(bounds.left+bounds.width, bounds.top);
+            touch=touch | rect.contains(bounds.left, bounds.top+bounds.height);
+            touch=touch | rect.contains(bounds.left+bounds.width, bounds.top+bounds.height);
+            
+            if(touch){
+                nodes[i]->retrieve(list, object);
+            }
+        }
     }
 
     for (std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {

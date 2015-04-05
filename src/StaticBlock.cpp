@@ -22,12 +22,14 @@ Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
     colli->update(transform);
     colli->setArrayVertex(parameters.Get<sf::VertexArray*>("Vertex"));
     colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
-    colli->setType(TypeCollision::DYNAMIC);
+    colli->setType(TypeCollision::STATIC);
     
     position->setPosition(colli->getTransform());
     
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);
+    
+    entity->Add<Collision*>("Debug", colli);
     
     Behaviour* behaviour=new Behaviour();
     makeBehaviour(entity->getId(), behaviour);
@@ -45,9 +47,12 @@ void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
             other = message.entityTwo;
         }
         
-        
         Collision* collisionOne = me->Get<Collision*>("Collision");
         Collision* collisionTwo = other->Get<Collision*>("Collision");
+        
+        if(collisionTwo->getType()==TypeCollision::STATIC){   
+            return;
+        }
         
         Position* positionTwo = other->Get<Position*>("Position");
         sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, positionTwo->getMoveVector());

@@ -11,6 +11,7 @@
 #include "StateMachineAnimation.h"
 #include "Velocity.h"
 #include "Position.h"
+#include "Collision.h"
 
 EntityNode::EntityNode(Entity* entity) : entity(entity) {
     Transformable trans = (entity->Get<Position*>("Position")->getPosition());
@@ -48,4 +49,7 @@ void EntityNode::updateSecondPart(sf::Time dt) {
 
 void EntityNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
     entity->Get<StateMachineAnimation*>("Drawable")->draw(target, states);
+    
+    Collision* col=entity->Get<Collision*>("Collision");
+    target.draw(*(col->vertices), states);
 }

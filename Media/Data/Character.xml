@@ -2,14 +2,14 @@
 	<Properties>
 		<Property id="Position" x="100" y="100" />
 		<Property id="Life" value="100" />
-		<Property id="MaxVelocity" value="200" />
+		<Property id="MaxVelocity" value="300" />
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" />
 	</Properties>
 </Entity>
 
 <Collision>
-	<object type="Block" x="0" y="0"><polyline points="43,43 43,64 64,64 64,43"/></object>
+	<object type="Block" ><polyline x="0" y="0" points="21,43 21,64 43,64 43,43"/></object>
 </Collision>
 
 <StateMachine numberStates="8">

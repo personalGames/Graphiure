@@ -7,6 +7,11 @@
 
 #include "XMLParserCollisionsMap.h"
 
+#include "Utilities.h"
+#include "ConvexTest.h"
+#include <iostream>
+#include <cassert>
+
 XMLParserCollisionsMap::XMLParserCollisionsMap() {
 }
 
@@ -28,32 +33,42 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
     tinyxml2::XMLElement* object = collisions->FirstChildElement("object");
     while (object) {
         //creo el objeto colisionable a crear
-        StructCollision* collisionObject=new StructCollision();
-        collisionObject->vertices=new sf::VertexArray();
-        
+        StructCollision* collisionObject = new StructCollision();
+        collisionObject->vertices = new sf::VertexArray();
+
         //get the position
         sf::Vector2f position(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
-        collisionObject->position=position;
-        collisionObject->typeCollision=object->Attribute("type");
+        collisionObject->position = position;
+        collisionObject->typeCollision = object->Attribute("type");
         //get the points
         tinyxml2::XMLElement* vertices = object->FirstChildElement("polyline");
-        
+
         //recojo los puntos
         char* points = strdup(vertices->Attribute("points"));
         //trato la tira de puntos
         char* number = strtok(points, " ,");
-        sf::Vertex vertex=sf::Vertex();
-        bool isX=true;
+        sf::Vertex vertex;
+        vertex.color = sf::Color::Red;
+        bool isX = true;
         while (number != nullptr) {
-            if(isX){
-                vertex.position.x=atof(number);
-            }else{
-                vertex.position.y=atof(number);
+            if (isX) {
+                vertex = sf::Vertex();
+                vertex.position.x = atof(number);
+            } else {
+                vertex.position.y = atof(number);
                 collisionObject->vertices->append(vertex);
-                vertex=sf::Vertex();
+                
             }
-            isX=!isX;
+            isX = !isX;
             number = strtok(nullptr, " ,");
+        }
+
+        //compruebo que el poligono esté bien formado
+        //assert(polygonIsConvex(collisionObject));
+        if (polygonIsConvex(collisionObject)) {
+            std::cout << "Es convexo" << std::endl;
+        } else {
+            std::cout << "No lo es" << std::endl;
         }
         result->push_back(collisionObject);
         object = object->NextSiblingElement("object");
@@ -61,3 +76,4 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
 
     data.collisions = result;
 }
+

@@ -75,19 +75,19 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
 
 void Villager::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision message) {
-        Entity* other = message.entityOne;
-        Entity* me = message.entityTwo;
-        if (other->getId() == idObject) {
-            me = other;
-            other = message.entityTwo;
-        }
-
-        Collision* collisionOne = message.entityOne->Get<Collision*>("Collision");
-        Collision* collisionTwo = message.entityTwo->Get<Collision*>("Collision");
-        Position* positionTwo = message.entityTwo->Get<Position*>("Position");
-        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, sf::Vector2f(0,0));
-
-        positionTwo->updatePosition(separation.x, separation.y);
+//        Entity* other = message.entityOne;
+//        Entity* me = message.entityTwo;
+//        if (other->getId() == idObject) {
+//            me = other;
+//            other = message.entityTwo;
+//        }
+//
+//        Collision* collisionOne = me->Get<Collision*>("Collision");
+//        Collision* collisionTwo = other->Get<Collision*>("Collision");
+//        Position* positionTwo = other->Get<Position*>("Position");
+//        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, sf::Vector2f(0,0));
+//
+//        positionTwo->updatePosition(separation.x, separation.y);
     };
 
     //guardo la función creada
