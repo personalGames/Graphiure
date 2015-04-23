@@ -158,7 +158,6 @@ void QuadTree::insert(Entity* objectNew) {
             Entity* ob = *(it);
             int index = getIndex(ob->Get<Collision*>("Collision"));
             if (index != -1) {
-                std::cout << "Al hijo" << std::endl;
                 nodes[index]->insert(ob);
                 it = objects.erase(it);
             } else {

@@ -39,7 +39,6 @@ public:
     bool isQuiet();
     void updateVelocity(sf::Time dt, Position& actualPosition);
     
-//    void simulateUpdateVelocity(sf::Time dt, Position& actualPosition);
 
     void setMaxVelocity(float maxVelocity) {
         this->maxVelocity = maxVelocity;
@@ -48,17 +47,38 @@ public:
     float getMaxVelocity() const {
         return maxVelocity;
     }
-    
-//    sf::Transformable getFinalPosition() const {
-//        return finalPosition;
-//    }
 
+    inline bool operator==(const Velocity& lhs) const{
+        return lhs.velocity == velocity;
+    }
 
+    inline bool operator!=(const Velocity& lhs) const {
+        return !operator==(lhs);
+    }
+
+    inline bool operator<(const Velocity& lhs) const {
+        
+        return lhs.getMagnitud()<getMagnitud();
+    }
+
+    inline bool operator>(const Velocity& lhs) const {
+        return operator<(lhs);
+    }
+
+    inline bool operator<=(const Velocity& lhs) const {
+        return !operator>(lhs);
+    }
+
+    inline bool operator>=(const Velocity& lhs) const {
+        return !operator<(lhs);
+    }
     
 private:
     sf::Vector2f velocity;
     float maxVelocity;
-//    sf::Transformable finalPosition;
+    
+private:
+    float getMagnitud() const;
 };
 
 #endif	/* VELOCITY_H */

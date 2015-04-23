@@ -14,7 +14,7 @@
 
 struct Behaviour {
     Behaviour() {}
-    std::function<void(MessageCollision message)> behaviourFunction;
+    std::function<void(MessageCollision* message)> behaviourFunction;
 
 };
 

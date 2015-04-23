@@ -8,12 +8,15 @@
 #ifndef SYSTEMOBJECTSGAME_H
 #define	SYSTEMOBJECTSGAME_H
 
+
+
 #include "ISystem.h"
 #include "IdEntity.h"
-#include <unordered_map>
 #include "SystemManager.h"
 #include "HashIdEntity.h"
+#include "Entity.h"
 #include <SFML/System/NonCopyable.hpp>
+#include <unordered_map>
 
 class SystemObjectsGame : public ISystem, sf::NonCopyable {
 public:

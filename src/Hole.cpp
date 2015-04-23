@@ -9,12 +9,12 @@
 #include <iostream>
 
 void Hole::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
-    auto aFunction = [idObject] (MessageCollision message) {
-        Entity* other=message.entityOne;
+    auto aFunction = [idObject] (MessageCollision* message) {
+        Entity* other=message->entityOne;
         //Entity* me=message.entityTwo;
         if(other->getId()==idObject){
             //me=other;
-            other=message.entityTwo;
+            other=message->entityTwo;
         }
         //le dañamos
         if(other->HasID("Life")){
@@ -42,12 +42,14 @@ Entity* Hole::prepareEntity(PropertyManager& parameters) {
     colli->update(transform);
     colli->setArrayVertex(parameters.Get<sf::VertexArray*>("Vertex"));
     colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
-    colli->setType(TypeCollision::DYNAMIC);
+    colli->setType(TypeCollision::STATIC);
     
     position->setPosition(colli->getTransform());
     
     entity->Add<Position*>("Position", position);
     entity->Add<Collision*>("Collision", colli);
+    
+    entity->Add<Collision*>("Debug", colli);
     
     Behaviour* behaviour=new Behaviour();
     makeBehaviour(entity->getId(), behaviour);

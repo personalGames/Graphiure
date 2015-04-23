@@ -59,8 +59,15 @@ void Velocity::updateVelocity(sf::Time dt, Position& actualPosition) {
     actualPosition.updatePosition(static_cast<int> (update.x), static_cast<int> (update.y));
 }
 
-//void Velocity::simulateUpdateVelocity(sf::Time dt, Position& actualPosition) {
-//    sf::Vector2f update=velocity*dt.asSeconds();
-//    finalPosition=Position.getPosition();
-//    finalPosition.move(static_cast<int> (update.x), static_cast<int> (update.y));
-//}
+float Velocity::getMagnitud() const{
+    if (velocity.x != 0.f && velocity.y != 0.f) {
+        return std::sqrt((pow(velocity.x,2.f)) + (pow(velocity.y,2.f)));
+        
+    }else if(velocity.y==0.f){
+        return velocity.x;
+        
+    }else{
+        return velocity.y;
+    }
+}
+

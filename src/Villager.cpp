@@ -74,7 +74,7 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
 }
 
 void Villager::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
-    auto aFunction = [idObject] (MessageCollision message) {
+    auto aFunction = [idObject] (MessageCollision* message) {
 //        Entity* other = message.entityOne;
 //        Entity* me = message.entityTwo;
 //        if (other->getId() == idObject) {

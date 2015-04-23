@@ -55,6 +55,15 @@ sf::FloatRect Collision::getAABB() {
     return transform.getTransform().transformRect(cuadro);
 }
 
+sf::FloatRect Collision::getAABB(float time) {
+    sf::FloatRect cuadro = vertices->getBounds();
+    sf::Vector2f update=(transform.getPosition()-previousTransform.getPosition())*time;
+    sf::Transformable f=sf::Transformable();
+    f.setPosition(previousTransform.getPosition());
+    f.move(static_cast<int> (update.x), static_cast<int> (update.y));
+    return f.getTransform().transformRect(cuadro);
+}
+
 sf::FloatRect Collision::getPreviousAABB(){
     sf::FloatRect cuadro = vertices->getBounds();
     return previousTransform.getTransform().transformRect(cuadro);
@@ -75,77 +84,4 @@ sf::FloatRect Collision::getAABBSwept() {
     result.height=calculus;
     
     return result;
-}
-
-int Collision::collision(Collision* other) {
-    sf::FloatRect one = getAABBSwept();
-    sf::FloatRect another = other->getAABBSwept();
-    
-    //collision with swept (CCD) check the first moment collide
-    if(one.intersects(another)){
-        //if collide, get the first and final time of collision which binary search
-        return 1;
-    }else{
-        return 0;
-    }
-    
-    //if collide, divide the vertex in triangles and see if collide one of them
-    
-    //if collide
-
-    //return one.intersects(another) ? 1 : 0;
-}
-
-sf::Vector2f Collision::normalSeparation(Collision* other, sf::Vector2f move) {
-    float x = 0;
-    float y = 0;
-
-    sf::FloatRect me = getAABB();
-    sf::FloatRect otherRect = other->getAABBSwept();
-    sf::FloatRect intersection = sf::FloatRect();
-    me.intersects(otherRect, intersection);
-
-    //collision at vertical axis (y)
-    if (intersection.width > intersection.height) {
-        //collision at top
-        if (intersection.contains(otherRect.left, otherRect.top)
-                ||intersection.contains(otherRect.left+otherRect.width, otherRect.top)) {
-            y = intersection.height+0.5;
-
-            //collision at bottom
-        } else {
-            y = -(intersection.height+0.5);
-        }
-
-        //collision at horizontal axis (x)
-    }else if (intersection.width < intersection.height) {
-        //collision at right
-        if (intersection.contains(otherRect.left + otherRect.width - 0.1, otherRect.top + 0.1)
-                || intersection.contains(otherRect.left + otherRect.width - 0.1, 
-                                        otherRect.top+otherRect.height + 0.1)) {
-            x = -(intersection.width+0.5);
-
-            //collision at left
-        } else {
-            x = intersection.width+0.5;
-        }
-
-    }
-//    else if(intersection.width==intersection.height){
-//        
-//        sf::Vector2f substract=move;
-//        std::cout<<substract.x<<" "<<substract.y<<std::endl;
-//        if(substract.x!=0){
-//            x=intersection.width;
-//            
-//        }
-//        
-//        if(substract.y!=0){
-//            y=intersection.height;
-//            
-//        }
-//        std::cout<<"Igualados"<<std::endl;
-//    }
-
-    return sf::Vector2f(x, y);
 }

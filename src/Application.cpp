@@ -6,7 +6,6 @@
  */
 
 #include "Application.h"
-#include "SystemMovement.h"
 
 
 const sf::Time Application::timePerFrame = sf::seconds(1.f / 60.f);
@@ -16,7 +15,7 @@ Application::Application() : window(sf::VideoMode(1024, 768), "Graphiure", sf::S
 Context(window, textures, fonts, player, systemManager)) {
 
     window.setKeyRepeatEnabled(false);
-    window.setVerticalSyncEnabled(false);
+    window.setVerticalSyncEnabled(true);
     window.setFramerateLimit(60);
 
     loadFonts();

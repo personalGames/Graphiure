@@ -58,16 +58,28 @@ std::string toString(const T& value) {
 std::vector<char>* convertString(std::string convert);
 
 template <class E>
-void deleteVector(std::vector<E> &deleted){
+void deleteVector(std::vector<E> &deleted) {
     deleted.clear();
     std::vector<E>(deleted).swap(deleted);
 }
 
-std::vector<std::string> &split(const std::string &s, 
-                                char delim, std::vector<std::string> &elems);
+std::vector<std::string> &split(const std::string &s,
+        char delim, std::vector<std::string> &elems);
 
 
 std::vector<std::string> split(const std::string &s, char delim);
+
+inline double Dot(const sf::Vector2f& a, const sf::Vector2f& b) {
+    return (a.x * b.x) + (a.y * b.y);
+}
+
+inline double PerpDot(const sf::Vector2f& a, const sf::Vector2f& b) {
+    return (a.y * b.x) - (a.x * b.y);
+}
+
+bool LineCollision(const sf::Vector2f& A1, const sf::Vector2f& A2,
+        const sf::Vector2f& B1, const sf::Vector2f& B2,
+        double* out = 0);
 
 #endif	/* UTILITIES_H */
 

@@ -10,14 +10,21 @@
 
 #include "Entity.h"
 #include "TypeCollision.h"
+#include "Triangle.h"
+#include "MTV.h"
 
 struct MessageCollision {
-    MessageCollision(Entity* one, Entity* two): entityOne(one),entityTwo(two){};
+    MessageCollision(): entityOne(nullptr), entityTwo(nullptr), axisX(false), toRightDown(false){}
+    MessageCollision(Entity* one, Entity* two): entityOne(one),entityTwo(two),
+                        axisX(false),toRightDown(false) {};
     virtual ~MessageCollision(){};
     
     Entity* entityOne;
     Entity* entityTwo;
-    //type collision
+    bool axisX;
+    bool toRightDown;
+    MTV mtv;
+    
     
 };
 

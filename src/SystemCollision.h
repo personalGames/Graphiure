@@ -14,9 +14,15 @@
 #include "Collision.h"
 #include "ISystem.h"
 #include "vector"
+#include "Position.h"
+#include "ActionStack.h"
+#include "Behaviour.h"
+#include "Velocity.h"
+#include "Triangle.h"
+#include "DelaunayTriangulation.h"
 
 
-class SystemCollision : public ISystem{
+class SystemCollision : public ISystem {
 public:
     SystemCollision(sf::FloatRect bounds);
     SystemCollision();
@@ -34,9 +40,7 @@ public:
     void newWorldCollision(sf::FloatRect bounds);
     void clear();
     
-    bool ContinuousCollisionDetection(Entity* one);
     void checkCollisions(sf::FloatRect region);
-    bool checkCollisions(Entity* one, Entity* another);
     void correctInsidePosition(Entity* entity);
     std::vector<Entity*> checkCollisions(Entity* entity, float radius);
     void resolveCollisions();
@@ -44,7 +48,12 @@ public:
 private:
     QuadTree* tree;
     //queue
-    std::queue<MessageCollision> queue;
+    std::queue<MessageCollision*> queue;
+    
+    MessageCollision* triangulate(Collision* first, Collision* second, float time);
+    MessageCollision* collisionDetection(Entity* one, Entity* two);
+    MessageCollision* firstTimeCollision(Entity* one, Entity* two);
+    MTV checkCollisions(Triangle& poly1, Triangle& poly2);
 };
 
 #endif	/* SYSTEMCOLLISION_H */

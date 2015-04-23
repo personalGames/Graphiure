@@ -25,6 +25,10 @@ public:
         this->position = position;
     }
     
+    inline void setPosition(float x, float y){
+        position.setPosition(x,y);
+    }
+    
     inline sf::Transformable getPreviousPosition() const {
         return previousPosition;
     }

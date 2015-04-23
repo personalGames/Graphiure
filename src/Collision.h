@@ -22,10 +22,8 @@ public:
     void addArrayVertex(sf::VertexArray& array);
     void setArrayVertex(sf::VertexArray* array);
     
-    int collision(Collision* other);
     void update(sf::Transformable& transform);
     void applyRatio(sf::Vector2f ratio);
-    sf::Vector2f normalSeparation(Collision* other, sf::Vector2f move);
     inline sf::Transformable getTransform() {
         return transform;
     }
@@ -38,7 +36,8 @@ public:
         this->type = type;
     }
     
-    sf::FloatRect getAABB(); //first level of collision, will add another two
+    sf::FloatRect getAABB();
+    sf::FloatRect getAABB(float time);
     sf::FloatRect getPreviousAABB();
     sf::FloatRect getAABBSwept();
     

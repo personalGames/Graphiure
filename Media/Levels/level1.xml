@@ -5012,7 +5012,8 @@
   </data>
  </layer>
  <objectgroup name="Capa de Objetos 1">
-  <object id="87" name="Block" type="Block" x="663.333" y="1216.33">
+ 
+ <object id="87" name="Block" type="Block" x="663.333" y="1216.33">
    <polyline points="0,0 -114.333,-118.667 -221,-119.667 -236.667,-99.3333 -237.667,-54"/>
   </object>
   
@@ -5063,8 +5064,6 @@
   <object id="102" name="Block" type="Block" x="661.333" y="1260">
    <polyline points="0,0 -0.666667,-45 -21,-40.3333"/>
   </object>
-  
-  
   
   <object id="2" name="Hole" type="Hole" x="698" y="343.75">
    <polyline points="0,0 -3.75,-23.25 -13.75,-42.5 -22,-47 -39,-48.75 -61.75,-45.5 -78.25,-25 -78.5,4.25 -61.25,26.25 -18.75,26.75 -0.25,0.75"/>
