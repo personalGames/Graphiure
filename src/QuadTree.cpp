@@ -77,6 +77,8 @@ int QuadTree::getIndex(sf::FloatRect rect) {
     sf::FloatRect bound = rect;
     int index = -1;
 
+    //sino esta dentro de mi completamente, directamente no 
+    //entrará en los hijos
     if (!inside(rect)) {
         return index;
     }
@@ -135,18 +137,16 @@ void QuadTree::insert(Entity* objectNew) {
     } else {
         rect = coli->getAABB();
     }
-    if (nodes[0] != nullptr) {
+    if (nodes[0] != nullptr && !inside(rect)) {
         int index = getIndex(rect);
 
         if (index != -1) {
             if (nodes[index] != nullptr) {
                 nodes[index]->insert(objectNew);
-
                 return;
             }
         }
     }
-
     objects.push_back(objectNew);
 
     if (objects.size() > MAX_OCCUPANTS && level < MAX_LEVELS) {
@@ -213,25 +213,23 @@ void QuadTree::updateTree() {
         } else {
             rect = entity->Get<Collision*>("Collision")->getAABB();
         }
-        if (inside(rect)) {
-            int index = getIndex(entity->Get<Collision*>("Collision"));
-            if (index != -1) {
-                if (nodes[index] != nullptr) {
-                    nodes[index]->insert(entity);
-                    it = objects.erase(it);
-                } else {
-                    ++it;
-                }
-            } else {
-                ++it;
-            }
-
-        } else {
-            if (parent != nullptr) {
-                parent->insert(entity);
+        //si esta dentro del recuadro actual
+        int index = getIndex(entity->Get<Collision*>("Collision"));
+        if (index != -1) {
+            if (nodes[index] != nullptr) {
+                nodes[index]->insert(entity);
                 it = objects.erase(it);
             } else {
                 ++it;
+            }
+        } else {
+            if (inside(rect)) {
+                ++it;
+            } else {
+                if (parent != nullptr) {
+                    parent->insert(entity);
+                    it = objects.erase(it);
+                }
             }
         }
     }
@@ -252,7 +250,7 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
         Entity* entity = *(it);
         list.push_back(entity);
     }
-    
+
     for (uint i = 0; i < nodes.size(); ++i) {
         if (nodes[i] != nullptr) {
             nodes[i]->getObjects(list);
@@ -261,28 +259,28 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
 }
 
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {
-    sf::FloatRect rect=object->Get<Collision*>("Collision")->getAABBSwept();
-    for(int i=0; i<4;++i){
-        if(nodes[i]!=nullptr){
-            sf::FloatRect bounds=nodes[i]->bounds;
-            
-            bool touch=false;
-            touch=touch | bounds.contains(rect.left,rect.top);
-            touch=touch | bounds.contains(rect.left+rect.height,rect.top);
-            touch=touch | bounds.contains(rect.left,rect.top+rect.width);
-            touch=touch | bounds.contains(rect.left+rect.height,rect.top+rect.width);
-            
-            if(touch){
+    sf::FloatRect rect = object->Get<Collision*>("Collision")->getAABBSwept();
+    for (int i = 0; i < 4; ++i) {
+        if (nodes[i] != nullptr) {
+            sf::FloatRect bounds = nodes[i]->bounds;
+
+            bool touch = false;
+            touch = touch | bounds.contains(rect.left, rect.top);
+            touch = touch | bounds.contains(rect.left + rect.height, rect.top);
+            touch = touch | bounds.contains(rect.left, rect.top + rect.width);
+            touch = touch | bounds.contains(rect.left + rect.height, rect.top + rect.width);
+
+            if (touch) {
                 nodes[i]->retrieve(list, object);
                 continue;
             }
-            
-            touch=touch | rect.contains(bounds.left, bounds.top);
-            touch=touch | rect.contains(bounds.left+bounds.width, bounds.top);
-            touch=touch | rect.contains(bounds.left, bounds.top+bounds.height);
-            touch=touch | rect.contains(bounds.left+bounds.width, bounds.top+bounds.height);
-            
-            if(touch){
+
+            touch = touch | rect.contains(bounds.left, bounds.top);
+            touch = touch | rect.contains(bounds.left + bounds.width, bounds.top);
+            touch = touch | rect.contains(bounds.left, bounds.top + bounds.height);
+            touch = touch | rect.contains(bounds.left + bounds.width, bounds.top + bounds.height);
+
+            if (touch) {
                 nodes[i]->retrieve(list, object);
             }
         }

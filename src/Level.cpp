@@ -55,8 +55,10 @@ void Level::update(sf::Time dt) {
     
     //simulate movements
     movement->update(dt);
+    
     //check CCD, the tree has update with the aabbswept
     collision->update(dt);
+    std::cout<<std::endl<<std::endl;
     //check CCD
 //    collision->checkCollisions(graphics->getViewBounds());
     
