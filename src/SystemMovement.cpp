@@ -36,6 +36,8 @@ void SystemMovement::update(sf::Time dt) {
 
         Position* position = entity->Get<Position*>("Position");
         velocity->updateVelocity(dt, *position);
+        
+        position->getDirection();
     }
     //    for(auto entity: movement){
     //        Velocity* velocity = entity->Get<Velocity*>("Velocity");

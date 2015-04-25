@@ -11,11 +11,11 @@
 #include "SystemCollision.h"
 
 Player::Player() {
-    
+
 }
 
 void Player::initialize(SystemManager& managerSystem) {
-    this->system=managerSystem;
+    this->system = managerSystem;
     // Set initial key bindings
     keyBinding[sf::Keyboard::Left] = Actions::Left;
     keyBinding[sf::Keyboard::Right] = Actions::Right;
@@ -27,71 +27,84 @@ void Player::initialize(SystemManager& managerSystem) {
     initializeActions();
 }
 
-
 void Player::initializeActions() {
     auto finder123 = [this] (Entity& character, sf::Time) {
-        SystemCollision* coll=static_cast<SystemCollision*>(system.getSystem(TypeSystem::COLLISION));
-        sf::FloatRect query=character.Get<Collision*>("Collision")->getAABB();
-        
-        
-        
-        std::vector<Entity*>* entities=coll->query(query);
-        for(Entity* entity: *entities){
-            if(entity->getId()!=character.getId() && entity->HasID("Behaviour")){
+        SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
+        sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
+
+        Position* pos = character.Get<Position*>("Position");
+        switch (pos->getDirection()) {
+            case CardinalPoints::EAST:
+                query.left+=query.width;
+                break;
+            case CardinalPoints::WEST:
+                query.left-=query.width;
+                break;
+            case CardinalPoints::SOUTH:
+                query.top+=query.height;
+                break;
+            case CardinalPoints::NORTH:
+                query.top-=query.height;
+                break;
+        }
+
+        std::vector<Entity*>* entities = coll->query(query);
+        for (Entity* entity : *entities) {
+            if (entity->getId() != character.getId() && entity->HasID("Behaviour")) {
                 entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
             }
         }
     };
     actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder123);
-    
+
     auto finder = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,0));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1, 0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
     };
     actionBinding[Left].action = derivedAction<Entity>(finder);
 
 
     auto finder2 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,0));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1, 0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
     };
     actionBinding[Right].action = derivedAction<Entity>(finder2);
 
 
     auto finder3 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0,-1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0, -1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
     };
     actionBinding[Up].action = derivedAction<Entity>(finder3);
 
 
     auto finder4 = [] (Entity& character, sf::Time) {
-       character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0,1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(0, 1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
     };
     actionBinding[Down].action = derivedAction<Entity>(finder4);
 
     auto finder5 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1, 1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightDown);
     };
     actionBinding[RightDown].action = derivedAction<Entity>(finder5);
 
     auto finder6 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1, 1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftDown);
     };
     actionBinding[LeftDown].action = derivedAction<Entity>(finder6);
 
     auto finder7 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1,-1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(1, -1));
 
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::RightUp);
     };
     actionBinding[RightUp].action = derivedAction<Entity>(finder7);
 
     auto finder8 = [] (Entity& character, sf::Time) {
-        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,-1));
+        character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1, -1));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftUp);
     };
     actionBinding[LeftUp].action = derivedAction<Entity>(finder8);
