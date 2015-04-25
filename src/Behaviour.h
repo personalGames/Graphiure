@@ -2,19 +2,19 @@
  * File:   Behaviour.h
  * Author: dorian
  *
- * Created on 29 de marzo de 2015, 0:35
+ * Created on 25 de abril de 2015, 16:31
  */
 
 #ifndef BEHAVIOUR_H
 #define	BEHAVIOUR_H
 
-#include "MessageCollision.h"
 #include <functional>
+#include "Actions.h"
 
 
 struct Behaviour {
     Behaviour() {}
-    std::function<void(MessageCollision* message)> behaviourFunction;
+    std::function<void(Actions action)> behaviourFunction;
 
 };
 

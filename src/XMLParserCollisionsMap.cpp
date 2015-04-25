@@ -65,10 +65,8 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
 
         //compruebo que el poligono esté bien formado
         //assert(polygonIsConvex(collisionObject));
-        if (polygonIsConvex(collisionObject)) {
-            std::cout << "Es convexo" << std::endl;
-        } else {
-            std::cout << "No lo es" << std::endl;
+        if (!polygonIsConvex(collisionObject)) {
+            std::cout << "No es convexo" << std::endl;
         }
         result->push_back(collisionObject);
         object = object->NextSiblingElement("object");

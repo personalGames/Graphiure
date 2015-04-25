@@ -12,7 +12,7 @@
 #include "PropertyManager.h"
 #include "Entity.h"
 #include "Life.h"
-#include "Behaviour.h"
+#include "OnCollision.h"
 #include "Position.h"
 #include "GameObjects.h"
 
@@ -23,7 +23,7 @@ public:
 
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
-    void makeBehaviour(IdEntity idObject, Behaviour* behaviour);
+    void makeOnCollision(IdEntity idObject, OnCollision* onCollision);
 };
 
 #endif	/* HOLE_H */

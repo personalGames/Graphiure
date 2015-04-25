@@ -74,20 +74,20 @@ void Level::update(sf::Time dt) {
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
-    switch (entity->Get<Position*>("Position")->getDirection()) {
-        case CardinalPoints::EAST:
-            std::cout<<"Mira a la derecha"<<std::endl;
-            break;
-        case CardinalPoints::WEST:
-            std::cout<<"Mira a la izquierda"<<std::endl;
-            break;
-        case CardinalPoints::SOUTH:
-            std::cout<<"Mira al sur"<<std::endl;
-            break;
-        case CardinalPoints::NORTH:
-            std::cout<<"Mira al norte"<<std::endl;
-            break;
-    }
+//    switch (entity->Get<Position*>("Position")->getDirection()) {
+//        case CardinalPoints::EAST:
+//            std::cout<<"Mira a la derecha"<<std::endl;
+//            break;
+//        case CardinalPoints::WEST:
+//            std::cout<<"Mira a la izquierda"<<std::endl;
+//            break;
+//        case CardinalPoints::SOUTH:
+//            std::cout<<"Mira al sur"<<std::endl;
+//            break;
+//        case CardinalPoints::NORTH:
+//            std::cout<<"Mira al norte"<<std::endl;
+//            break;
+//    }
 
     //update objects in general (delete dead objects)
     objectsGame->update(dt);

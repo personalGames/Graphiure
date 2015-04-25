@@ -7,7 +7,7 @@
 
 #include "StaticBlock.h"
 #include "Entity.h"
-#include "Behaviour.h"
+#include "OnCollision.h"
 #include "Position.h"
 #include <cstdlib>
 
@@ -32,17 +32,20 @@ Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
 
     entity->Add<Collision*>("Debug", colli);
 
-    Behaviour* behaviour = new Behaviour();
-    makeBehaviour(entity->getId(), behaviour);
-    entity->Add<Behaviour*>("Behaviour", behaviour);
+    OnCollision* onCollision = new OnCollision();
+    makeOnCollision(entity->getId(), onCollision);
+    entity->Add<OnCollision*>("OnCollision", onCollision);
 
     return entity;
 }
 
-void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
+void StaticBlock::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
     auto aFunction = [idObject] (MessageCollision * message) {
 
         Entity* moveEntity = message->entityTwo;
+        if(moveEntity->getId()==idObject){
+            moveEntity=message->entityOne;
+        }
 
         double x, y;
         x = message->mtv.pushX;
@@ -61,5 +64,5 @@ void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
 
     };
     //guardo la función creada
-    behaviour->behaviourFunction = aFunction;
+    onCollision->onCollisionFunction = aFunction;
 }

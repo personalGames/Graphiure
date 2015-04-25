@@ -7,8 +7,15 @@
 
 #include "Player.h"
 #include "Velocity.h"
+#include "Behaviour.h"
+#include "SystemCollision.h"
 
 Player::Player() {
+    
+}
+
+void Player::initialize(SystemManager& managerSystem) {
+    this->system=managerSystem;
     // Set initial key bindings
     keyBinding[sf::Keyboard::Left] = Actions::Left;
     keyBinding[sf::Keyboard::Right] = Actions::Right;
@@ -20,7 +27,23 @@ Player::Player() {
     initializeActions();
 }
 
+
 void Player::initializeActions() {
+    auto finder123 = [this] (Entity& character, sf::Time) {
+        SystemCollision* coll=static_cast<SystemCollision*>(system.getSystem(TypeSystem::COLLISION));
+        sf::FloatRect query=character.Get<Collision*>("Collision")->getAABB();
+        
+        
+        
+        std::vector<Entity*>* entities=coll->query(query);
+        for(Entity* entity: *entities){
+            if(entity->getId()!=character.getId() && entity->HasID("Behaviour")){
+                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
+            }
+        }
+    };
+    actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder123);
+    
     auto finder = [] (Entity& character, sf::Time) {
         character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1,0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);

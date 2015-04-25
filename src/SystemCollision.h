@@ -16,7 +16,7 @@
 #include "vector"
 #include "Position.h"
 #include "ActionStack.h"
-#include "Behaviour.h"
+#include "OnCollision.h"
 #include "Velocity.h"
 #include "Triangle.h"
 #include "DelaunayTriangulation.h"
@@ -40,7 +40,7 @@ public:
     void newWorldCollision(sf::FloatRect bounds);
     void clear();
     
-    std::vector<Entity*> query(sf::FloatRect query);
+    std::vector<Entity*>* query(sf::FloatRect query);
     void checkCollisions(sf::FloatRect region);
     void correctInsidePosition(Entity* entity);
     std::vector<Entity*> checkCollisions(Entity* entity, float radius);
@@ -54,7 +54,7 @@ private:
     MessageCollision* triangulate(Collision* first, Collision* second, float time);
     MessageCollision* collisionDetection(Entity* one, Entity* two);
     MessageCollision* firstTimeCollision(Entity* one, Entity* two);
-    MTV checkCollisions(Triangle& poly1, Triangle& poly2);
+    MTV checkCollisions(Triangle& poly1, Triangle& poly2, bool detailed);
 };
 
 #endif	/* SYSTEMCOLLISION_H */

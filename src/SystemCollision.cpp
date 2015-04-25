@@ -178,7 +178,7 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
         float timeCollision2 = (yMoveFinal - yStaticFinal) / -velocity.y;
         time = timeCollision2 - timeYCollision;
     }
-    
+
 
     //tengo el tiempo y el eje, con ello puedo conocer las posiciones de cuando chocaron
     //triangulo las figuras y compruebo exactamente cómo han chocado
@@ -255,10 +255,10 @@ MessageCollision* SystemCollision::triangulate(Collision* first, Collision* seco
     if (collisionTriangles) {
         //devuelvo el mtv por si lo van a usar
         //calculo mtv...
-        MTV finalMtv = checkCollisions(collisionTwo[0], collisionOne[0]);
+        MTV finalMtv = checkCollisions(collisionTwo[0], collisionOne[0], true);
         MTV mtv;
         for (uint i = 1; i < collisionOne.size(); ++i) {
-            mtv = checkCollisions(collisionOne[i], collisionTwo[i]);
+            mtv = checkCollisions(collisionOne[i], collisionTwo[i], true);
 
             if ((mtv.pushX > 0 && finalMtv.pushX < 0) || (mtv.pushX < 0 && finalMtv.pushX > 0)
                     || (mtv.pushY > 0 && finalMtv.pushY < 0) || (mtv.pushY < 0 && finalMtv.pushY > 0)) {
@@ -279,9 +279,7 @@ MessageCollision* SystemCollision::triangulate(Collision* first, Collision* seco
             }
         }
         //sumo al mtv  el plus por la posición final dado por el movimiento desde el momento que chocó
-       
-        
-        
+
         //guardo los triangulos en el mensaje de collisión
         if (collisionTriangles) {
             message = new MessageCollision();
@@ -291,7 +289,7 @@ MessageCollision* SystemCollision::triangulate(Collision* first, Collision* seco
     return message;
 }
 
-MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
+MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2, bool detailed) {
     MTV mtv;
     mtv.collision = false;
 
@@ -301,11 +299,10 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
     if (Rect1.left > (Rect2.left + Rect2.width) || (Rect1.left + Rect1.width) < Rect2.left
             || Rect1.top + Rect1.height < Rect2.top || Rect1.top > (Rect2.top + Rect2.height)) {
         return mtv;
+    } else if (!detailed) {
+        mtv.collision = true;
+        return mtv;
     }
-//        else if (!detailed) {
-//            mtv.collision = true;
-//            return mtv;
-//        }
 
     Vector axis; // Axis we will project onto
     Vector projection; // The direction of the projection
@@ -371,11 +368,6 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
             else if (tmp > maxB)
                 maxB = tmp;
         }
-
-        /* correct with offset */
-        //        tmp = poly2.getPos().x * axis.x + poly2.getPos().y * axis.y;
-        //        minB += tmp;
-        //        maxB += tmp;
 
         /* test if they intersect, if not then store the penetration depth and axis */
         if (minA > maxB || maxA < minB) {
@@ -536,8 +528,8 @@ void SystemCollision::resolveCollisions() {
         queue.pop();
 
         //lo resolverá el entity
-        if (collision->entityOne->HasID("Behaviour")) {
-            collision->entityOne->Get<Behaviour*>("Behaviour")->behaviourFunction(collision);
+        if (collision->entityOne->HasID("OnCollision")) {
+            collision->entityOne->Get<OnCollision*>("OnCollision")->onCollisionFunction(collision);
         }
 
         delete collision;
@@ -545,8 +537,37 @@ void SystemCollision::resolveCollisions() {
     }
 }
 
-std::vector<Entity*> SystemCollision::query(sf::FloatRect query){
+std::vector<Entity*>* SystemCollision::query(sf::FloatRect query) {
+    QuadTree* node = tree->getNodeRegion(query);
+    if (node == nullptr) {
+        node = tree;
+    }
+
+    std::vector<Entity*> posibles = std::vector<Entity*>();
+    std::vector<Entity*>* result = new std::vector<Entity*>();
+    node->retrieve(&posibles, query);
+    
+    //
+    std::vector<sf::Vector2f> extra = std::vector<sf::Vector2f>();
     
     
-    return std::vector<Entity*>();
+    //itero las posibles entidades colisionables
+    for(Entity* entity: posibles){
+        //pillo el colisionable de la entidad
+        Collision* col=entity->Get<Collision*>("Collision");
+        
+        sf::Transform transform = col->getTransform().getTransform();
+        //lo triangulo
+        std::vector<Triangle> triangles=std::vector<Triangle>();
+        CreateDelaunayTriangulation(col->vertices, col->vertices->getVertexCount(), extra, 0, triangles, transform);
+        //compruebo cada triangulo del entity, si colisiona, lo guardo
+        for(Triangle tri: triangles){
+            if(tri.aabbCollision(query)){
+                result->push_back(entity);
+                break;
+            }
+        }
+    }
+
+    return result;
 }

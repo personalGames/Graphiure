@@ -29,8 +29,8 @@ public:
     void insert(Entity* objectNew);
     bool remove(Entity* object);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
+    std::vector<Entity*>* retrieve(std::vector<Entity*>* list, sf::FloatRect rect);
     void update();
-//    void updateSimulated();
     
     void getObjects(std::vector<Entity*>& list);
     QuadTree* getNodeRegion(sf::FloatRect region);
@@ -38,7 +38,7 @@ public:
         return bounds;
     }
 
-//    void toString();
+    void toString();
 
 private:
     void split();

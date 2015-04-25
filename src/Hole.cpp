@@ -8,7 +8,7 @@
 #include "Hole.h"
 #include <iostream>
 
-void Hole::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
+void Hole::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
     auto aFunction = [idObject] (MessageCollision* message) {
         Entity* other=message->entityOne;
         //Entity* me=message.entityTwo;
@@ -26,7 +26,7 @@ void Hole::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     };
     
     //guardo la función creada
-    behaviour->behaviourFunction=aFunction;
+    onCollision->onCollisionFunction=aFunction;
     
 }
 
@@ -51,9 +51,9 @@ Entity* Hole::prepareEntity(PropertyManager& parameters) {
     
     entity->Add<Collision*>("Debug", colli);
     
-    Behaviour* behaviour=new Behaviour();
-    makeBehaviour(entity->getId(), behaviour);
-    entity->Add<Behaviour*>("Behaviour", behaviour);
+    OnCollision* onCollision=new OnCollision();
+    makeOnCollision(entity->getId(), onCollision);
+    entity->Add<OnCollision*>("OnCollision", onCollision);
     
     return entity;
 }

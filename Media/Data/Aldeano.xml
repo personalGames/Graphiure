@@ -9,7 +9,7 @@
 </Entity>
 
 <Collision>
-	<object type="Block" x="0" y="0"><polyline points="16,16 16,32 32,32 32,16"/></object>
+	<object type="Block" x="0" y="0"><polyline points="2,16 2,32 30,32 30,16"/></object>
 </Collision>
 
 <StateMachine numberStates="8">

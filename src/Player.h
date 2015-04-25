@@ -18,10 +18,14 @@
 #include "Entity.h"
 #include "StateMachineAnimation.h"
 
+#include "SystemManager.h"
+
 class Player {
 public:
     Player();
     virtual ~Player();
+    
+    void initialize(SystemManager& managerSystem);
     
     void handleEvent(const sf::Event& event, CommandQueue& commands);
     void handleRealtimeInput(CommandQueue& commands);
@@ -30,6 +34,7 @@ public:
     sf::Keyboard::Key getAssignedKey(Actions action) const;
     
 private:
+    SystemManager system;
     
     std::map<sf::Keyboard::Key, Actions> keyBinding;
     std::map<Actions, Command> actionBinding;

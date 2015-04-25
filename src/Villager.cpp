@@ -51,45 +51,65 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         }
         colli->setType(TypeCollision::DYNAMIC);
         position->setPosition(colli->getTransform());
-        
+
         delete colliStruct;
         entity->Add<Collision*>("Collision", colli);
     }
 
     entity->Add<Position*>("Position", position);
-    
+
 
     if (parameters.HasID("Drawable")) {
         StateMachineAnimation* animations = parameters.Get<StateMachineAnimation*>("Drawable");
         entity->Add<StateMachineAnimation*>("Drawable", animations);
     }
-    
-//    if(parameters.HasID("Talk")){
-//        Behaviour* behaviour=new Behaviour();
-//        makeBehaviour(entity->getId(), behaviour);
-//        entity->Add<Behaviour*>("Behaviour", behaviour);
-//    }
-    
+
+    //    if(parameters.HasID("Talk")){
+
+    OnCollision* onCollision = new OnCollision();
+    makeOnCollision(entity->getId(), onCollision);
+    entity->Add<OnCollision*>("OnCollision", onCollision);
+
+    Behaviour* behaviour=new Behaviour();
+    makeBehaviour(behaviour);
+    entity->Add<Behaviour*>("Behaviour", behaviour);
+
     return entity;
 }
 
-void Villager::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
-    auto aFunction = [idObject] (MessageCollision* message) {
-//        Entity* other = message.entityOne;
-//        Entity* me = message.entityTwo;
-//        if (other->getId() == idObject) {
-//            me = other;
-//            other = message.entityTwo;
-//        }
-//
-//        Collision* collisionOne = me->Get<Collision*>("Collision");
-//        Collision* collisionTwo = other->Get<Collision*>("Collision");
-//        Position* positionTwo = other->Get<Position*>("Position");
-//        sf::Vector2f separation = collisionOne->normalSeparation(collisionTwo, sf::Vector2f(0,0));
-//
-//        positionTwo->updatePosition(separation.x, separation.y);
+void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
+    auto aFunction = [idObject] (MessageCollision * message) {
+
+        Entity* moveEntity = message->entityTwo;
+        if (moveEntity->getId() == idObject) {
+            moveEntity = message->entityOne;
+        }
+
+        double x, y;
+        x = message->mtv.pushX;
+        y = message->mtv.pushY;
+        if (message->axisX)
+
+            if (abs(x) < 0.1) {
+                x = 0;
+            }
+
+        if (abs(y) < 0.1) {
+            y = 0;
+        }
+        std::cout << x << " " << y << std::endl;
+        moveEntity->Get<Position*>("Position")->setPositionIncrement(x, y);
     };
 
     //guardo la función creada
-    behaviour->behaviourFunction = aFunction;
+    onCollision->onCollisionFunction = aFunction;
 }
+
+void Villager::makeBehaviour(Behaviour* behaviour) {
+    auto function = [] (Actions action) {
+        std::cout<<"Hola, soy un anciano niño"<<std::endl;
+    };
+    
+    behaviour->behaviourFunction = function;
+}
+

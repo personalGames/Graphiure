@@ -11,7 +11,7 @@
 #include "Entity.h"
 #include "Collision.h"
 #include "MessageCollision.h"
-#include "Behaviour.h"
+#include "OnCollision.h"
 #include "GameObjects.h"
 
 
@@ -23,7 +23,7 @@ public:
 
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
-    void makeBehaviour(IdEntity idObject, Behaviour* behaviour);
+    void makeOnCollision(IdEntity idObject, OnCollision* onCollision);
 };
 
 #endif	/* STATICBLOCK_H */

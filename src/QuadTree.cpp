@@ -9,6 +9,7 @@
 #include "ActionStack.h"
 #include "Position.h"
 #include "Velocity.h"
+#include <iostream>
 
 QuadTree::QuadTree(int level, sf::IntRect bounds) : level(level), objects(), bounds(0, 0, 0, 0), nodes(4) {
     this->bounds.top = static_cast<float> (bounds.top);
@@ -260,6 +261,10 @@ void QuadTree::getObjects(std::vector<Entity*>& list) {
 
 std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* object) {
     sf::FloatRect rect = object->Get<Collision*>("Collision")->getAABBSwept();
+    return retrieve(list,rect);
+}
+
+std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, sf::FloatRect rect) {
     for (int i = 0; i < 4; ++i) {
         if (nodes[i] != nullptr) {
             sf::FloatRect bounds = nodes[i]->bounds;
@@ -271,7 +276,7 @@ std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* obj
             touch = touch | bounds.contains(rect.left + rect.height, rect.top + rect.width);
 
             if (touch) {
-                nodes[i]->retrieve(list, object);
+                nodes[i]->retrieve(list, rect);
                 continue;
             }
 
@@ -281,7 +286,7 @@ std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* obj
             touch = touch | rect.contains(bounds.left + bounds.width, bounds.top + bounds.height);
 
             if (touch) {
-                nodes[i]->retrieve(list, object);
+                nodes[i]->retrieve(list, rect);
             }
         }
     }
@@ -293,19 +298,20 @@ std::vector<Entity*>* QuadTree::retrieve(std::vector<Entity*>* list, Entity* obj
     return list;
 }
 
-//void QuadTree::toString() {
-//    
-//    for(std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
-//        int le=level;
-//        while(le>0){
-//            std::cout<<"  ";
-//            --le;
-//        }
-//        std::cout<<"XY: "<<(*(it))->bounds.left<<" "<<(*(it))->bounds.top<<". Size: "<<(*(it))->bounds.width<<" "<<(*(it))->bounds.height<<std::endl;
-//    }
-//    for(uint i=0; i<nodes.size(); ++i){
-//        if(nodes[i]!=nullptr){
-//            nodes[i]->toString();
-//        }
-//    }
-//}
+void QuadTree::toString() {
+    
+    for(std::list<Entity*>::iterator it = objects.begin(); it != objects.end(); ++it) {
+        int le=level;
+        while(le>0){
+            std::cout<<"  ";
+            --le;
+        }
+        sf::FloatRect rect = (*(it))->Get<Collision*>("Collision")->getAABBSwept();
+        std::cout<<"XY: "<<rect.left<<" "<<rect.top<<". Size: "<<rect.width<<" "<<rect.height<<std::endl;
+    }
+    for(uint i=0; i<nodes.size(); ++i){
+        if(nodes[i]!=nullptr){
+            nodes[i]->toString();
+        }
+    }
+}

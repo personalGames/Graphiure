@@ -22,7 +22,7 @@ Context(window, textures, fonts, player, systemManager)) {
     loadTextures();
     
     setSystemManager();
-
+    player.initialize(systemManager);
     registerStates();
     stateStack.pushState(StatesID::Title);
 
