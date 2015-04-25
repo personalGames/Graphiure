@@ -40,6 +40,7 @@ public:
     void newWorldCollision(sf::FloatRect bounds);
     void clear();
     
+    std::vector<Entity*> query(sf::FloatRect query);
     void checkCollisions(sf::FloatRect region);
     void correctInsidePosition(Entity* entity);
     std::vector<Entity*> checkCollisions(Entity* entity, float radius);

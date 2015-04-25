@@ -14,6 +14,7 @@ Player::Player() {
     keyBinding[sf::Keyboard::Right] = Actions::Right;
     keyBinding[sf::Keyboard::Up] = Actions::Up;
     keyBinding[sf::Keyboard::Down] = Actions::Down;
+    keyBinding[sf::Keyboard::E] = Actions::ActionPlayer;
 
     // Set initial action bindings
     initializeActions();
@@ -81,6 +82,7 @@ void Player::initializeActions() {
     actionBinding[Right].category = Category::CHARACTER;
     actionBinding[Up].category = Category::CHARACTER;
     actionBinding[Down].category = Category::CHARACTER;
+    actionBinding[ActionPlayer].category = Category::CHARACTER;
 }
 
 Player::~Player() {

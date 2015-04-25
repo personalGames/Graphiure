@@ -42,7 +42,6 @@ Entity* StaticBlock::prepareEntity(PropertyManager& parameters) {
 void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
     auto aFunction = [idObject] (MessageCollision * message) {
 
-//        Entity* staticEntity = message->entityOne;
         Entity* moveEntity = message->entityTwo;
 
         double x, y;
@@ -58,7 +57,7 @@ void StaticBlock::makeBehaviour(IdEntity idObject, Behaviour* behaviour) {
             y = 0;
         }
         std::cout << x << " " << y << std::endl;
-        moveEntity->Get<Position*>("Position")->updatePosition(x, y);
+        moveEntity->Get<Position*>("Position")->setPositionIncrement(static_cast<int> (x), static_cast<int> (y));
 
     };
     //guardo la función creada

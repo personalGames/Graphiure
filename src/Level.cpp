@@ -21,7 +21,7 @@ systemManager(&systemManager) {
 
     commands = static_cast<SystemCommand*>
             (systemManager.getSystem(TypeSystem::INPUT));
-    
+
     movement = static_cast<SystemMovement*>
             (systemManager.getSystem(TypeSystem::MOVEMENT));
 }
@@ -47,34 +47,48 @@ void Level::update(sf::Time dt) {
     collision->correctInsidePosition(entity);
     //reset velocity
     entity->Get<Velocity*>("Velocity")->reset();
-    
-    
+
+
     //update all input
     commands->update(dt);
     commands->onCommand(commandQueue, dt);
-    
+
     //simulate movements
     movement->update(dt);
-    
+
     //check CCD, the tree has update with the aabbswept
     collision->update(dt);
-    
+
     //check the collisions
     collision->checkCollisions(graphics->getViewBounds());
     //resolve the collisions (separate bodies and generate the commands
     //for next frame)
     collision->resolveCollisions();
-    
+
     //update the scene (update the animations)
     graphics->update(dt);
     //graphics second update, only set positions (changed by collisions) and sort the tree by y
     //graphics->updateSecondPart(dt);
-    
-    
+
+
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
-    
+    switch (entity->Get<Position*>("Position")->getDirection()) {
+        case CardinalPoints::EAST:
+            std::cout<<"Mira a la derecha"<<std::endl;
+            break;
+        case CardinalPoints::WEST:
+            std::cout<<"Mira a la izquierda"<<std::endl;
+            break;
+        case CardinalPoints::SOUTH:
+            std::cout<<"Mira al sur"<<std::endl;
+            break;
+        case CardinalPoints::NORTH:
+            std::cout<<"Mira al norte"<<std::endl;
+            break;
+    }
+
     //update objects in general (delete dead objects)
     objectsGame->update(dt);
 }

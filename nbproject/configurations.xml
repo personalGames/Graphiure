@@ -187,6 +187,7 @@
         <itemPath>src/TypeSystem.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
+        <itemPath>src/CardinalPoints.h</itemPath>
         <itemPath>src/ConvexHull.cpp</itemPath>
         <itemPath>src/ConvexHull.h</itemPath>
         <itemPath>src/ConvexTest.h</itemPath>
@@ -317,6 +318,8 @@
       <item path="src/Button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CardinalPoints.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -698,6 +701,8 @@
       <item path="src/Button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ButtonState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CardinalPoints.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Category.h" ex="false" tool="3" flavor2="0">
       </item>

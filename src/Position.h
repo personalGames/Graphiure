@@ -10,11 +10,19 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "CardinalPoints.h"
+
 class Position {
 public:
     Position();
+    Position(Position& other);
     virtual ~Position();
 
+    /**
+     * Normal update
+     * @param x
+     * @param y
+     */
     void updatePosition(float x, float y);
     
     inline sf::Transformable getPosition() const {
@@ -22,26 +30,34 @@ public:
     }
 
     inline void setPosition(sf::Transformable position) {
+        this->previousPosition=position;
         this->position = position;
     }
     
     inline void setPosition(float x, float y){
+        previousPosition.setPosition(x,y);
         position.setPosition(x,y);
     }
     
-    inline sf::Transformable getPreviousPosition() const {
-        return previousPosition;
-    }
-
-    inline void setPreviousPosition(sf::Transformable previousPosition) {
-        this->previousPosition = previousPosition;
-    }
+    void setPositionIncrement(float x, float y);
     
-    sf::Vector2f getMoveVector();
+//    inline sf::Transformable getPreviousPosition() const {
+//        return previousPosition;
+//    }
+
+//    inline void setPreviousPosition(sf::Transformable previousPosition) {
+//        this->previousPosition = previousPosition;
+//    }
+   
+    CardinalPoints getDirection();
     
 private:
     sf::Transformable position;
     sf::Transformable previousPosition;
+    
+    CardinalPoints direction;
+    
+    sf::Vector2f getMoveVector();
 };
 
 #endif	/* POSITION_H */

@@ -154,20 +154,13 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     yStaticFinal = firstRect.top;
 
     //compruebo con la velocidad si me he equivocado en mi suposición y corrigo los valores asignados
-//    bool negative = false;
     if (velocity.x != 0) {
-//        if (velocity.x < 0) {
-//            negative = true;
-//        }
         xMove = secondRect.left + secondRect.width;
         xStatic = firstRect.left;
         xMoveFinal = secondRect.left;
         xStaticFinal = firstRect.left + firstRect.width;
     }
     if (velocity.y != 0) {
-//        if (velocity.y < 0) {
-//            negative = true;
-//        }
         yMove = secondRect.top + secondRect.width;
         yStatic = firstRect.top;
         yMoveFinal = secondRect.top;
@@ -177,10 +170,6 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     //calculo el momento de colisión
     timeXCollision = (xMove - xStatic) / velocity.x;
     timeYCollision = (yMove - yStatic) / velocity.y;
-    
-//    float totalTime=std::max(xMove-xMoveFinal/velocity.x, yMove-yMoveFinal/velocity.y);
-
-//    bool x = true;
     float time = 0;
     if (std::isfinite(timeXCollision)) {
         float timeCollision2 = (xMoveFinal - xStaticFinal) / -velocity.x;
@@ -188,21 +177,13 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     } else {
         float timeCollision2 = (yMoveFinal - yStaticFinal) / -velocity.y;
         time = timeCollision2 - timeYCollision;
-//        x = false;
     }
     
-//    totalTime=totalTime-time;
-//    float extraMoveX=totalTime*velocity.x;
-//    float extraMoveY=totalTime*velocity.y;
 
     //tengo el tiempo y el eje, con ello puedo conocer las posiciones de cuando chocaron
     //triangulo las figuras y compruebo exactamente cómo han chocado
     MessageCollision* collision = triangulate(firstCollision, secondCollision, time);
     if (collision != nullptr) {
-//        collision->mtv.pushX+=extraMoveX;
-//        collision->mtv.pushY+=extraMoveY;
-        //me aseguro que la entidad corresponde con el triángulo colisionado
-        //(que el triangulo es de su figura, no del otro)
         if (changed) {
             collision->entityOne = two;
             collision->entityTwo = one;
@@ -210,9 +191,6 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
             collision->entityOne = one;
             collision->entityTwo = two;
         }
-
-//        collision->axisX = x;
-//        collision->toRightDown = !negative;
 
     }
 
@@ -324,10 +302,10 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
             || Rect1.top + Rect1.height < Rect2.top || Rect1.top > (Rect2.top + Rect2.height)) {
         return mtv;
     }
-    //    else if (!detailed) {
-    //        mtv.collision = true;
-    //        return mtv;
-    //    }
+//        else if (!detailed) {
+//            mtv.collision = true;
+//            return mtv;
+//        }
 
     Vector axis; // Axis we will project onto
     Vector projection; // The direction of the projection
@@ -539,13 +517,13 @@ void SystemCollision::correctInsidePosition(Entity* entity) {
     Collision* collision = entity->Get<Collision*>("Collision");
     sf::FloatRect viewBounds = tree->getBounds();
 
-    sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
+    Position* pos = entity->Get<Position*>("Position");
+    sf::Vector2f position = pos->getPosition().getPosition();
     sf::FloatRect bounds = collision->getAABB();
     position.x = std::max(position.x, viewBounds.left);
     position.x = std::min(position.x, viewBounds.left + viewBounds.width - bounds.width);
     position.y = std::max(position.y, viewBounds.top);
     position.y = std::min(position.y, viewBounds.top + viewBounds.height - bounds.height);
-    Position* pos = entity->Get<Position*>("Position");
 
     sf::Transformable newPosition = sf::Transformable();
     newPosition.setPosition(position.x, position.y);
@@ -565,4 +543,10 @@ void SystemCollision::resolveCollisions() {
         delete collision;
 
     }
+}
+
+std::vector<Entity*> SystemCollision::query(sf::FloatRect query){
+    
+    
+    return std::vector<Entity*>();
 }
