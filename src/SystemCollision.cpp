@@ -154,20 +154,20 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     yStaticFinal = firstRect.top;
 
     //compruebo con la velocidad si me he equivocado en mi suposición y corrigo los valores asignados
-    bool negative = false;
+//    bool negative = false;
     if (velocity.x != 0) {
-        if (velocity.x < 0) {
-            negative = true;
-        }
+//        if (velocity.x < 0) {
+//            negative = true;
+//        }
         xMove = secondRect.left + secondRect.width;
         xStatic = firstRect.left;
         xMoveFinal = secondRect.left;
         xStaticFinal = firstRect.left + firstRect.width;
     }
     if (velocity.y != 0) {
-        if (velocity.y < 0) {
-            negative = true;
-        }
+//        if (velocity.y < 0) {
+//            negative = true;
+//        }
         yMove = secondRect.top + secondRect.width;
         yStatic = firstRect.top;
         yMoveFinal = secondRect.top;
@@ -177,8 +177,10 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     //calculo el momento de colisión
     timeXCollision = (xMove - xStatic) / velocity.x;
     timeYCollision = (yMove - yStatic) / velocity.y;
+    
+//    float totalTime=std::max(xMove-xMoveFinal/velocity.x, yMove-yMoveFinal/velocity.y);
 
-    bool x = true;
+//    bool x = true;
     float time = 0;
     if (std::isfinite(timeXCollision)) {
         float timeCollision2 = (xMoveFinal - xStaticFinal) / -velocity.x;
@@ -186,13 +188,19 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
     } else {
         float timeCollision2 = (yMoveFinal - yStaticFinal) / -velocity.y;
         time = timeCollision2 - timeYCollision;
-        x = false;
+//        x = false;
     }
+    
+//    totalTime=totalTime-time;
+//    float extraMoveX=totalTime*velocity.x;
+//    float extraMoveY=totalTime*velocity.y;
 
     //tengo el tiempo y el eje, con ello puedo conocer las posiciones de cuando chocaron
     //triangulo las figuras y compruebo exactamente cómo han chocado
     MessageCollision* collision = triangulate(firstCollision, secondCollision, time);
     if (collision != nullptr) {
+//        collision->mtv.pushX+=extraMoveX;
+//        collision->mtv.pushY+=extraMoveY;
         //me aseguro que la entidad corresponde con el triángulo colisionado
         //(que el triangulo es de su figura, no del otro)
         if (changed) {
@@ -203,8 +211,8 @@ MessageCollision* SystemCollision::firstTimeCollision(Entity* one, Entity* two) 
             collision->entityTwo = two;
         }
 
-        collision->axisX = x;
-        collision->toRightDown = !negative;
+//        collision->axisX = x;
+//        collision->toRightDown = !negative;
 
     }
 
@@ -225,12 +233,10 @@ MessageCollision* SystemCollision::triangulate(Collision* first, Collision* seco
     sf::FloatRect oneRect;
 
     //me aseguro que en el segundo esta el que tiene menos vértices
-    bool flipped = false;
     if (first->vertices->getVertexCount() < second->vertices->getVertexCount()) {
         one = second;
         two = first;
         oneRect = one->getAABB(time);
-        flipped = true;
     }
 
     oneRect = one->getAABB(time);
@@ -267,22 +273,42 @@ MessageCollision* SystemCollision::triangulate(Collision* first, Collision* seco
         }
     }
 
-    //devuelvo el mtv por si lo van a usar
-    //calculo mtv...
-    //sumo al mtv  el plus por la posición final dado por el movimiento desde el momento que chocó
-
     MessageCollision* message = nullptr;
-    //guardo los triangulos en el mensaje de collisión
     if (collisionTriangles) {
-        message = new MessageCollision();
-        message->mtv=checkCollisions(collisionTwo[0],collisionOne[0]);
-        //        if (flipped) {
-        //            message->oneTriangle = collisionTwo;
-        //            message->twoTriangle = collisionOne;
-        //        } else {
-        //            message->oneTriangle = collisionOne;
-        //            message->twoTriangle = collisionTwo;
-        //        }
+        //devuelvo el mtv por si lo van a usar
+        //calculo mtv...
+        MTV finalMtv = checkCollisions(collisionTwo[0], collisionOne[0]);
+        MTV mtv;
+        for (uint i = 1; i < collisionOne.size(); ++i) {
+            mtv = checkCollisions(collisionOne[i], collisionTwo[i]);
+
+            if ((mtv.pushX > 0 && finalMtv.pushX < 0) || (mtv.pushX < 0 && finalMtv.pushX > 0)
+                    || (mtv.pushY > 0 && finalMtv.pushY < 0) || (mtv.pushY < 0 && finalMtv.pushY > 0)) {
+                //anomalía!!!
+                std::cout << "BUAAAAAAAHHHH!!!!!" << std::endl;
+                continue;
+            }
+
+            if (mtv.pushX > 0) {
+                finalMtv.pushX = std::min(mtv.pushX, finalMtv.pushX);
+            } else {
+                finalMtv.pushX = std::max(mtv.pushX, finalMtv.pushX);
+            }
+            if (mtv.pushY > 0) {
+                finalMtv.pushY = std::min(mtv.pushY, finalMtv.pushY);
+            } else {
+                finalMtv.pushY = std::max(mtv.pushY, finalMtv.pushY);
+            }
+        }
+        //sumo al mtv  el plus por la posición final dado por el movimiento desde el momento que chocó
+       
+        
+        
+        //guardo los triangulos en el mensaje de collisión
+        if (collisionTriangles) {
+            message = new MessageCollision();
+            message->mtv = finalMtv;
+        }
     }
     return message;
 }
@@ -302,9 +328,6 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
     //        mtv.collision = true;
     //        return mtv;
     //    }
-
-//    Triangle tmp1 = poly1;
-//    Triangle tmp2 = poly2;
 
     Vector axis; // Axis we will project onto
     Vector projection; // The direction of the projection
@@ -341,18 +364,13 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
                     tmp = (poly1.p2.x * axis.x + poly1.p2.y * axis.y);
                     break;
             }
-            
+
 
             if (tmp < minA)
                 minA = tmp;
             else if (tmp > maxA)
                 maxA = tmp;
         }
-
-        /* correct with offset */ //already corrected
-//        tmp = poly1.getPos().x * axis.x + poly1.getPos().y * axis.y;
-//        minA += tmp;
-//        maxA += tmp;
 
         /* project Shape B's points on the axis to find MIN and MAX points */
         minB = maxB = (poly2.p0.x * axis.x + poly2.p0.y * axis.y);
@@ -377,9 +395,9 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
         }
 
         /* correct with offset */
-//        tmp = poly2.getPos().x * axis.x + poly2.getPos().y * axis.y;
-//        minB += tmp;
-//        maxB += tmp;
+        //        tmp = poly2.getPos().x * axis.x + poly2.getPos().y * axis.y;
+        //        minB += tmp;
+        //        maxB += tmp;
 
         /* test if they intersect, if not then store the penetration depth and axis */
         if (minA > maxB || maxA < minB) {
@@ -409,98 +427,86 @@ MTV SystemCollision::checkCollisions(Triangle& poly1, Triangle& poly2) {
             - see above for detailed comments
      */
 
-//    // test Shape B's sides
-//    for (i = 0; i < 3; i++) {
-//        /* get the axis we will project on */
-//        if (i == 0) {
-//            axis.x = (poly2.p2.y - poly2.p0.y);
-//            axis.y = poly2.p2.x - poly2.p0.x;
-//        } else if (i == 1) {
-//            axis.x = (poly2.p0.y - poly2.p1.y);
-//            axis.y = poly2.p0.x - poly2.p1.x;// should be reversed?:O
-//        } else {
-//            axis.x = (poly2.p1.y - poly2.p2.y);
-//            axis.y = poly2.p1.x - poly2.p2.x;// should be reversed?:O
-//        }
-//
-//        /* normalize the axis */
-//        axisLen = sqrt(axis.x * axis.x + axis.y * axis.y);
-//        axis.x /= axisLen;
-//        axis.y /= axisLen;
-//
-//        /* project Shape B's points on the axis to find MIN and MAX points */
-//        minB = maxB = (poly2.p0.x * axis.x + poly2.p0.y * axis.y);
-//        
-//        for (int i = 1; i < 3; i++) {
-//            switch (i) {
-//                case 0:
-//                    tmp = (poly2.p0.x * axis.x + poly2.p0.y * axis.y);
-//                    break;
-//                case 1:
-//                    tmp = (poly2.p1.x * axis.x + poly2.p1.y * axis.y);
-//                    break;
-//                case 2:
-//                    tmp = (poly2.p2.x * axis.x + poly2.p2.y * axis.y);
-//                    break;
-//            }
-//
-//            if (tmp < minB)
-//                minB = tmp;
-//            else if (tmp > maxB)
-//                maxB = tmp;
-//        }
-//
-//        /* correct with offset */
-////        tmp = poly2.getPos().x * axis.x + poly2.getPos().y * axis.y;
-////        minB += tmp;
-////        maxB += tmp;
-//
-//        /* project Shape A's points on the axis to find MIN and MAX points */
-//        minA = maxA = (poly1.p0.x * axis.x + poly1.p0.y * axis.y);
-//
-//        for (int i = 1; i < 3; i++) {
-//            switch (i) {
-//                case 0:
-//                    tmp = (poly1.p0.x * axis.x + poly1.p0.y * axis.y);// - gets removed??
-//                    break;
-//                case 1:
-//                    tmp = (poly1.p1.x * axis.x + poly1.p1.y * axis.y);// - gets removed??
-//                    break;
-//                case 2:
-//                    tmp = (poly1.p2.x * axis.x + poly1.p2.y * axis.y);// - gets removed??
-//                    break;
-//            }
-//            
-//
-//            if (tmp < minA)
-//                minA = tmp;
-//            else if (tmp > maxA)
-//                maxA = tmp;
-//        }
-//
-//        /* correct with offset */
-////        tmp = poly1.getPos().x * axis.x + poly1.getPos().y * axis.y;
-////        minA += tmp;
-////        maxA += tmp;
-//
-//        /* test if they intersect, if not then return false */
-//        if (minA > maxB) {// || maxA < minB)	{
-//            mtv.collision = false;
-//            return mtv;
-//        } else {
-//            // get the minimal depth of intersection and the correct axis
-//            if (maxA < maxB) // Will have to make it work with triangles as well!
-//                tmpDepth = maxA - minB;
-//            //else if(maxA > maxB)	// HAAAX KINGGG!!!"!!!b<3333
-//            //	tmpDepth = maxB - minA;
-//
-//            if (tmpDepth < minLen) {
-//
-//                minLen = tmpDepth;
-//                projection = axis;
-//            }
-//        }
-//    }
+    // test Shape B's sides
+    for (i = 0; i < 3; i++) {
+        /* get the axis we will project on */
+        if (i == 0) {
+            axis.x = (poly2.p2.y - poly2.p0.y);
+            axis.y = poly2.p2.x - poly2.p0.x;
+        } else if (i == 1) {
+            axis.x = (poly2.p0.y - poly2.p1.y);
+            axis.y = poly2.p0.x - poly2.p1.x; // should be reversed?:O
+        } else {
+            axis.x = (poly2.p1.y - poly2.p2.y);
+            axis.y = poly2.p1.x - poly2.p2.x; // should be reversed?:O
+        }
+
+        /* normalize the axis */
+        axisLen = sqrt(axis.x * axis.x + axis.y * axis.y);
+        axis.x /= axisLen;
+        axis.y /= axisLen;
+
+        /* project Shape B's points on the axis to find MIN and MAX points */
+        minB = maxB = (poly2.p0.x * axis.x + poly2.p0.y * axis.y);
+
+        for (int i = 1; i < 3; i++) {
+            switch (i) {
+                case 0:
+                    tmp = (poly2.p0.x * axis.x + poly2.p0.y * axis.y);
+                    break;
+                case 1:
+                    tmp = (poly2.p1.x * axis.x + poly2.p1.y * axis.y);
+                    break;
+                case 2:
+                    tmp = (poly2.p2.x * axis.x + poly2.p2.y * axis.y);
+                    break;
+            }
+
+            if (tmp < minB)
+                minB = tmp;
+            else if (tmp > maxB)
+                maxB = tmp;
+        }
+
+        /* project Shape A's points on the axis to find MIN and MAX points */
+        minA = maxA = (poly1.p0.x * axis.x + poly1.p0.y * axis.y);
+
+        for (int i = 1; i < 3; i++) {
+            switch (i) {
+                case 0:
+                    tmp = (poly1.p0.x * axis.x + poly1.p0.y * axis.y); // - gets removed??
+                    break;
+                case 1:
+                    tmp = (poly1.p1.x * axis.x + poly1.p1.y * axis.y); // - gets removed??
+                    break;
+                case 2:
+                    tmp = (poly1.p2.x * axis.x + poly1.p2.y * axis.y); // - gets removed??
+                    break;
+            }
+
+
+            if (tmp < minA)
+                minA = tmp;
+            else if (tmp > maxA)
+                maxA = tmp;
+        }
+
+        /* test if they intersect, if not then return false */
+        if (minA > maxB) {// || maxA < minB)	{
+            mtv.collision = false;
+            return mtv;
+        } else {
+            // get the minimal depth of intersection and the correct axis
+            if (maxA < maxB) // Will have to make it work with triangles as well!
+                tmpDepth = maxA - minB;
+
+            if (tmpDepth < minLen) {
+
+                minLen = tmpDepth;
+                projection = axis;
+            }
+        }
+    }
     /* return minimum intersection depth */
     mtv = MTV(minLen, projection);
     mtv.collision = true;
