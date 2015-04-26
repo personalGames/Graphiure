@@ -4,7 +4,7 @@
 		<Property id="MaxVelocity" value="100" />
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" /> 
-		<Property id="Talk" value="Hola chico."/>
+		<Property id="Talk" value="Hola chico,que te trae por aquí."/>
 	</Properties>
 </Entity>
 

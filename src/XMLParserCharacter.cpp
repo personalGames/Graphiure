@@ -33,6 +33,9 @@ void XMLParserCharacter::parse(DataUnion& data) {
             parserCollisions(properties);
         } else if (id.compare("Life") == 0) {
             properties->Add<float>("Life", entity->FloatAttribute("value"));
+        } else if(id.compare("Talk")==0){
+            std::string* chars=new std::string(entity->Attribute("value"));
+            properties->Add<std::string*>("Talk", chars);
         }
         entity = entity->NextSiblingElement("Property");
     }

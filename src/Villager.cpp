@@ -64,14 +64,17 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         entity->Add<StateMachineAnimation*>("Drawable", animations);
     }
 
-    //    if(parameters.HasID("Talk")){
+    if(parameters.HasID("Talk")){
+        Talk* talk=new Talk(parameters.Get<std::string*>("Talk"));
+        entity->Add<Talk*>("Talk", talk);
+    }
 
     OnCollision* onCollision = new OnCollision();
     makeOnCollision(entity->getId(), onCollision);
     entity->Add<OnCollision*>("OnCollision", onCollision);
 
     Behaviour* behaviour=new Behaviour();
-    makeBehaviour(behaviour);
+    makeBehaviour(behaviour, entity);
     entity->Add<Behaviour*>("Behaviour", behaviour);
 
     return entity;
@@ -105,9 +108,19 @@ void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
     onCollision->onCollisionFunction = aFunction;
 }
 
-void Villager::makeBehaviour(Behaviour* behaviour) {
-    auto function = [] (Actions action) {
-        std::cout<<"Hola, soy un anciano niño"<<std::endl;
+void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
+    auto function = [entity] (Actions action) {
+        std::string phrase="Hola, soy un fracaso";
+        switch(action){
+            case Actions::ActionPlayer:
+                if(entity->HasID("Talk")){
+                    phrase=*(entity->Get<Talk*>("Talk")->phrase);
+                }
+                break;
+            default:
+                break;
+        }
+        std::cout<<phrase<<std::endl;
     };
     
     behaviour->behaviourFunction = function;

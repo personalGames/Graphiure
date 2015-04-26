@@ -18,6 +18,7 @@
 #include "Life.h"
 #include "OnCollision.h"
 #include "Behaviour.h"
+#include "Talk.h"
 
 class Villager : public GameObjects{
 public:
@@ -26,7 +27,7 @@ public:
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
     void makeOnCollision(IdEntity idObject, OnCollision* onCollision);
-    void makeBehaviour(Behaviour* behaviour);
+    void makeBehaviour(Behaviour* behaviour, Entity* entity);
 };
 
 #endif	/* VILLAGER_H */
