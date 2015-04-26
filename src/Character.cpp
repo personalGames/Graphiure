@@ -44,6 +44,9 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
     }
     colli->setType(TypeCollision::DYNAMIC);
 
+    sf::Vector2f offset=colliStruct->position;
+    offset.x+=(*colli->vertices)[0].position.x;
+    offset.y+=(*colli->vertices)[0].position.y;
     
     position->setPosition(colli->getTransform());
 
@@ -51,6 +54,8 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
     entity->Add<Collision*>("Collision", colli);
     StateMachineAnimation* animations=parameters.Get<StateMachineAnimation*>("Drawable");
     entity->Add<StateMachineAnimation*>("Drawable", animations);
+    
+    entity->Add<sf::Vector2f>("OffsetDrawable", offset);
 
     delete colliStruct;
     

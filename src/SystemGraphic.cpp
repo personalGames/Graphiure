@@ -70,6 +70,12 @@ void SystemGraphic::registerEntity(Entity* entity) {
             node->addChild(life);
         }
         
+        if(entity->HasID("OffsetDrawable")){
+            sf::Vector2f offset=entity->Get<sf::Vector2f>("OffsetDrawable");
+            node->setYOffset(offset.x);
+            node->setXOffset(offset.y);
+        }
+        
         sceneLayers[Ground]->addChild(std::move(node));
     }
     
@@ -90,18 +96,19 @@ void SystemGraphic::update(sf::Time dt) {
 void SystemGraphic::execute() {
     target.setView(mapView);
     target.draw(sceneGraph);
+
 }
 
 
 void SystemGraphic::updateSecondPart(sf::Time dt) {
-    sceneGraph.updateSecondPart(dt);
+    for (SceneNode* child : sceneLayers) {
+        child->updateSecondPart(dt);
+    }
 }
 
 SystemGraphic::~SystemGraphic() {
 
 }
-
-
 
 sf::FloatRect SystemGraphic::getViewBounds() const {
     sf::Vector2f origin=mapView.getCenter() - mapView.getSize() / 2.f;

@@ -20,6 +20,7 @@
 #include <cmath>
 #include "CommandQueue.h"
 #include "Utilities.h"
+#include <iostream>
 
 /**
  * Defines a node from a scene graph
@@ -33,7 +34,7 @@ public:
     virtual ~SceneNode();
 
     typedef std::pair<SceneNode*, SceneNode*> Pair;
-
+    
     /**
      * Add a node to this node
      * @param child the child
@@ -74,11 +75,31 @@ public:
     virtual bool isMarkedForRemoval() const;
     virtual bool isDestroyed() const;
     
+    inline float getXOffset() const {
+        return xOffset;
+    }
+
+    inline float getYOffset() const {
+        return yOffset;
+    }
+    
+    void setXOffset(float xOffset) {
+        this->xOffset = xOffset;
+    }
+
+    void setYOffset(float yOffset) {
+        this->yOffset = yOffset;
+    }
+
+
+    
     protected:
         /**
      * Vector of children nodes
      */
     std::vector<SceneNode*> children;
+    float xOffset;
+    float yOffset;
 
 private:
     
@@ -124,6 +145,12 @@ private:
     void drawChildren(sf::RenderTarget& target, sf::RenderStates states) const;
 
     void drawBoundingRect(sf::RenderTarget& target, sf::RenderStates states) const;
+};
+
+struct OrderScene{
+    inline bool operator() (const SceneNode* node1, const SceneNode* node2) {
+        return ((node1->getWorldPosition().y+node1->getYOffset()) < (node2->getWorldPosition().y+node2->getYOffset()));
+    }
 };
 
 #endif	/* SCENENODE_H */

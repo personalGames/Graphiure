@@ -49,7 +49,7 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         if (parameters.HasID("Ratio")) {
             colli->applyRatio(parameters.Get<sf::Vector2f>("Ratio"));
         }
-        colli->setType(TypeCollision::DYNAMIC);
+        colli->setType(TypeCollision::STATIC);
         position->setPosition(colli->getTransform());
 
         delete colliStruct;

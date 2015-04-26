@@ -68,7 +68,7 @@ void Level::update(sf::Time dt) {
     //update the scene (update the animations)
     graphics->update(dt);
     //graphics second update, only set positions (changed by collisions) and sort the tree by y
-    //graphics->updateSecondPart(dt);
+    graphics->updateSecondPart(dt);
 
 
     //update the world with the final position of character

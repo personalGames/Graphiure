@@ -8,7 +8,7 @@
 
 #include "SceneNode.h"
 
-SceneNode::SceneNode(Category category) : children(), parent(nullptr), defaultCategory(category) {
+SceneNode::SceneNode(Category category) : children(), parent(nullptr), defaultCategory(category), xOffset(0), yOffset(0) {
 }
 
 SceneNode::SceneNode() : children(), parent(nullptr), defaultCategory(Category::NONE) {
@@ -80,6 +80,9 @@ void SceneNode::updateChildren(sf::Time delta) {
 }
 
 void SceneNode::updateSecondPart(sf::Time dt) {
+    //ordeno primero...
+    std::sort (children.begin(), children.end(), OrderScene());
+    
     for (SceneNode* child : children) {
         child->updateSecondPart(dt);
     }

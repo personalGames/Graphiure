@@ -41,9 +41,7 @@ void EntityNode::updateSecondPart(sf::Time dt) {
     Position* position = this->entity->Get<Position*>("Position");
     setPosition(position->getPosition().getPosition());
     
-    for (SceneNode* child : children) {
-        child->updateSecondPart(dt);
-    }
+    SceneNode::updateSecondPart(dt);
 }
 
 
