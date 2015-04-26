@@ -5,6 +5,7 @@
 		<Property id="MaxVelocity" value="300" />
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" />
+		<Property id="query" x="45" y="45" />
 	</Properties>
 </Entity>
 

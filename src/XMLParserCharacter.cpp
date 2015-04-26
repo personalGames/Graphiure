@@ -36,6 +36,10 @@ void XMLParserCharacter::parse(DataUnion& data) {
         } else if(id.compare("Talk")==0){
             std::string* chars=new std::string(entity->Attribute("value"));
             properties->Add<std::string*>("Talk", chars);
+            
+        } else if(id.compare("query")==0){
+            sf::Vector2f size=sf::Vector2f(entity->FloatAttribute("x"), entity->FloatAttribute("y"));
+            properties->Add<sf::Vector2f>("query", size);
         }
         entity = entity->NextSiblingElement("Property");
     }

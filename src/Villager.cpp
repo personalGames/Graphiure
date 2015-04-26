@@ -63,6 +63,11 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         StateMachineAnimation* animations = parameters.Get<StateMachineAnimation*>("Drawable");
         entity->Add<StateMachineAnimation*>("Drawable", animations);
     }
+    
+    if(parameters.HasID("query")){
+        sf::Vector2f size=parameters.Get<sf::Vector2f>("query");
+        entity->Add<sf::Vector2f>("query",size);
+    }
 
     if(parameters.HasID("Talk")){
         Talk* talk=new Talk(parameters.Get<std::string*>("Talk"));
