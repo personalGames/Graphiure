@@ -13,11 +13,27 @@
 
 class SubStateGame {
 public:
+    SubStateGame(): ended(false) {
+    }
+    virtual ~SubStateGame() {
+
+    }
+
+    
     virtual void draw()=0;
     virtual bool update(sf::Time delta)=0;
     virtual bool handleEvent(const sf::Event& event)=0;
-private:
+    
+    void setEnded() {
+        this->ended = true;
+    }
+    
+    bool isEnded() const {
+        return ended;
+    }
 
+private:
+    bool ended;
 };
 
 #endif	/* SUBSTATEGAME_H */

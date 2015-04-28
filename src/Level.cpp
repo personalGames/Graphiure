@@ -10,7 +10,7 @@
 
 Level::Level(SystemManager& systemManager) :
 Observer(), systemManager(&systemManager), state(nullptr) {
-    
+
     objectsGame = static_cast<SystemObjectsGame*>
             (systemManager.getSystem(TypeSystem::OBJECTS));
 
@@ -25,7 +25,7 @@ Observer(), systemManager(&systemManager), state(nullptr) {
 
     movement = static_cast<SystemMovement*>
             (systemManager.getSystem(TypeSystem::MOVEMENT));
-    
+
     setSubject(objectsGame->getMessageEntities());
 }
 
@@ -41,46 +41,57 @@ void Level::draw() {
     SystemGraphic* graphics = static_cast<SystemGraphic*>
             (systemManager->getSystem(TypeSystem::GRAPHIC));
     graphics->execute();
-    
-    if(state!=nullptr){
+
+    if (state != nullptr) {
         state->draw();
     }
 }
 
 bool Level::handleEvent(const sf::Event& event) {
-    player->handleEvent(event, commandQueue);
+    if (state != nullptr) {
+        state->handleEvent(event);
+    } else {
+        player->handleEvent(event, commandQueue);
+    }
     return true;
 }
 
-
 void Level::update(sf::Time dt) {
+    if(state!=nullptr && state->isEnded()){
+        delete state;
+        state=nullptr;
+    }
     //get the entity/character
     Entity* entity = objectsGame->getEntity(idCharacter);
-    //reset position character
-    collision->correctInsidePosition(entity);
-    //reset velocity
-    entity->Get<Velocity*>("Velocity")->reset();
+    if (state == nullptr) {
+        //reset position character
+        collision->correctInsidePosition(entity);
+        //reset velocity
+        entity->Get<Velocity*>("Velocity")->reset();
 
 
-    //update all input
-    commands->update(dt);
-    commands->onCommand(commandQueue, dt);
+        //update all input
+        commands->update(dt);
+        commands->onCommand(commandQueue, dt);
 
-    //simulate movements
-    movement->update(dt);
+        //simulate movements
+        movement->update(dt);
 
-    //check CCD, the tree has update with the aabbswept
-    collision->update(dt);
+        //check CCD, the tree has update with the aabbswept
+        collision->update(dt);
 
-    //check the collisions
-    collision->checkCollisions(graphics->getViewBounds());
-    //resolve the collisions (separate bodies and generate the commands
-    //for next frame)
-    collision->resolveCollisions();
+        //check the collisions
+        collision->checkCollisions(graphics->getViewBounds());
+        //resolve the collisions (separate bodies and generate the commands
+        //for next frame)
+        collision->resolveCollisions();
+    } else {
+        state->update(dt);
+    }
 
     //update the scene (update the animations)
     graphics->update(dt);
-    //graphics second update, only set positions (changed by collisions) and sort the tree by y
+    //graphics second update, only set positions (changed by collisions and anothers) and sort the tree by y
     graphics->updateSecondPart(dt);
 
 
@@ -90,9 +101,10 @@ void Level::update(sf::Time dt) {
 
     //update objects in general (delete dead objects)
     objectsGame->update(dt);
-    
-    
-    player->handleRealtimeInput(commandQueue);
+
+    if (state == nullptr) {
+        player->handleRealtimeInput(commandQueue);
+    }
 }
 
 void Level::update() {
