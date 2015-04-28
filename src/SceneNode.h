@@ -94,12 +94,13 @@ public:
 
     
     protected:
+        float xOffset;
+        float yOffset;
         /**
      * Vector of children nodes
      */
     std::vector<SceneNode*> children;
-    float xOffset;
-    float yOffset;
+    
 
 private:
     

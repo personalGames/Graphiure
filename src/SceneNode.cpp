@@ -8,7 +8,7 @@
 
 #include "SceneNode.h"
 
-SceneNode::SceneNode(Category category) : children(), parent(nullptr), defaultCategory(category), xOffset(0), yOffset(0) {
+SceneNode::SceneNode(Category category) : xOffset(0), yOffset(0), children(), parent(nullptr),  defaultCategory(category) {
 }
 
 SceneNode::SceneNode() : children(), parent(nullptr), defaultCategory(Category::NONE) {

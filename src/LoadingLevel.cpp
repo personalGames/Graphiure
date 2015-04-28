@@ -106,7 +106,6 @@ void LoadingLevel::runTask() {
         delete *it;
     }
     
-//    Collision* coli;
     //recojo los elementos necesarios y los comunico al manejador de recursos
     
     parser = IXMLParser::make_parser(TypeParser::CHARACTER);

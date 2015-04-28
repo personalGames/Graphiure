@@ -17,6 +17,7 @@ enum Layer {
     Ground,
     Particles,
     Air,
+    HUD,
     LayerCount
 };
 

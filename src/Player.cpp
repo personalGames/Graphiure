@@ -9,6 +9,7 @@
 #include "Velocity.h"
 #include "Behaviour.h"
 #include "SystemCollision.h"
+#include "Subject.h"
 
 Player::Player() {
 

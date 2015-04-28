@@ -15,8 +15,10 @@
 #include "SystemManager.h"
 #include "HashIdEntity.h"
 #include "Entity.h"
+#include "Subject.h"
 #include <SFML/System/NonCopyable.hpp>
 #include <unordered_map>
+#include <list>
 
 class SystemObjectsGame : public ISystem, sf::NonCopyable {
 public:
@@ -32,6 +34,9 @@ public:
     virtual void update(sf::Time dt);
     virtual void updateSecondPart(sf::Time dt){};
     
+    Subject* getMessageEntities() const {
+        return messageEntities;
+    }
     
     Entity* getEntity(IdEntity id);
     void destroyEntity(IdEntity id);
@@ -41,6 +46,8 @@ private:
     std::unordered_map<IdEntity, Entity*, HashIdEntity> entities;
     std::list<Entity*> removedEntities;
     SystemManager* systemManager;
+    
+    Subject* messageEntities;
 };
 
 #endif	/* SYSTEMOBJECTSGAME_H */

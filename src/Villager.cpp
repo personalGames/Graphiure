@@ -6,6 +6,7 @@
  */
 
 #include "Villager.h"
+#include "Subject.h"
 
 Villager::Villager() {
 }
@@ -114,18 +115,23 @@ void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
 }
 
 void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
+    
     auto function = [entity] (Actions action) {
-        std::string phrase="Hola, soy un fracaso";
         switch(action){
             case Actions::ActionPlayer:
                 if(entity->HasID("Talk")){
-                    phrase=*(entity->Get<Talk*>("Talk")->phrase);
+                    //phrase=*(entity->Get<Talk*>("Talk")->phrase);
+                    Subject* sub=entity->Get<Subject*>("messageEntities");
+                    Message m=Message();
+                    m.setState(GameStates::CONVERSATION);
+                    m.setIdEntity(entity->getId());
+                    sub->setMessage(m);
                 }
                 break;
             default:
                 break;
         }
-        std::cout<<phrase<<std::endl;
+        //std::cout<<phrase<<std::endl;
     };
     
     behaviour->behaviourFunction = function;

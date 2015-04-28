@@ -9,7 +9,8 @@
 #include <iostream>
 
 Level::Level(SystemManager& systemManager) :
-systemManager(&systemManager) {
+Observer(), systemManager(&systemManager), state(nullptr) {
+    
     objectsGame = static_cast<SystemObjectsGame*>
             (systemManager.getSystem(TypeSystem::OBJECTS));
 
@@ -24,6 +25,8 @@ systemManager(&systemManager) {
 
     movement = static_cast<SystemMovement*>
             (systemManager.getSystem(TypeSystem::MOVEMENT));
+    
+    setSubject(objectsGame->getMessageEntities());
 }
 
 void Level::setCharacter(IdEntity characterCreated) {
@@ -38,7 +41,17 @@ void Level::draw() {
     SystemGraphic* graphics = static_cast<SystemGraphic*>
             (systemManager->getSystem(TypeSystem::GRAPHIC));
     graphics->execute();
+    
+    if(state!=nullptr){
+        state->draw();
+    }
 }
+
+bool Level::handleEvent(const sf::Event& event) {
+    player->handleEvent(event, commandQueue);
+    return true;
+}
+
 
 void Level::update(sf::Time dt) {
     //get the entity/character
@@ -74,21 +87,28 @@ void Level::update(sf::Time dt) {
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
-//    switch (entity->Get<Position*>("Position")->getDirection()) {
-//        case CardinalPoints::EAST:
-//            std::cout<<"Mira a la derecha"<<std::endl;
-//            break;
-//        case CardinalPoints::WEST:
-//            std::cout<<"Mira a la izquierda"<<std::endl;
-//            break;
-//        case CardinalPoints::SOUTH:
-//            std::cout<<"Mira al sur"<<std::endl;
-//            break;
-//        case CardinalPoints::NORTH:
-//            std::cout<<"Mira al norte"<<std::endl;
-//            break;
-//    }
 
     //update objects in general (delete dead objects)
     objectsGame->update(dt);
+    
+    
+    player->handleRealtimeInput(commandQueue);
+}
+
+void Level::update() {
+    Message message = getSubject()->getMessage();
+    GameStates stateGame = message.getState();
+    switch (stateGame) {
+        case GameStates::GAMING:
+            break;
+        case GameStates::CONVERSATION:
+            state = (SubStateGame*)new ConversationState(message.getIdEntity(), systemManager);
+            break;
+        case GameStates::INVENTORY:
+            break;
+    }
+    //read the messages from the entities and react
+    //switch type of message
+    //if talk, change state to talk
+    //if inventory, change state to inventory
 }

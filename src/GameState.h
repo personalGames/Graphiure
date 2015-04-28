@@ -12,7 +12,7 @@
 #include "Level.h"
 
 
-class GameState : public State{
+class GameState : public State {
 public:
     GameState(StateStack& stack, Context* context);
     
@@ -24,7 +24,7 @@ public:
     
 private:
     Level* level;
-    Player& player;
+//    Player& player;
     SystemManager* systemManager;
 };
 

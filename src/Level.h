@@ -21,8 +21,12 @@
 #include "Entity.h"
 #include "Velocity.h"
 #include "ImportSystems.h"
+#include "Player.h"
+#include "Observer.h"
+#include "SubStateGame.h"
+#include "ConversationState.h"
 
-class Level : private sf::NonCopyable {
+class Level : private sf::NonCopyable, Observer {
 public:
     explicit Level(SystemManager& systemManager);
     virtual ~Level();
@@ -32,6 +36,16 @@ public:
     void draw();
     
     inline CommandQueue& getCommandQueue(){ return commandQueue; }
+    
+    bool handleEvent(const sf::Event& event);
+    
+    void setPlayer(Player* player) {
+        this->player = player;
+    }
+    
+
+    virtual void update();
+
     
 private:
    
@@ -53,6 +67,14 @@ private:
     SystemCollision* collision;
     SystemCommand* commands;
     SystemMovement* movement;
+    
+    /**
+     * Player
+     */
+    Player* player;
+    
+    
+    SubStateGame* state;
    
 };
 

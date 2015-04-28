@@ -83,6 +83,8 @@ void SystemGraphic::registerEntity(Entity* entity) {
         Debug* node=new Debug(entity);
         sceneLayers[Ground]->addChild(std::move(node));
     }
+    
+    
 }
 
 void SystemGraphic::removedEntity(Entity* entity) {

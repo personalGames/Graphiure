@@ -53,6 +53,15 @@ public:
     
     sf::FloatRect getViewBounds() const;
     
+    inline sf::RenderTarget& getTarget() const {
+        return target;
+    }
+    
+    inline ResourceHolder<IDFonts, sf::Font>& getFonts() const {
+        return fonts;
+    }
+
+    
 private:
     /**
      * Target where draw

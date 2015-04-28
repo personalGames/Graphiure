@@ -131,6 +131,19 @@
         <itemPath>src/Villager.cpp</itemPath>
         <itemPath>src/Villager.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f16" displayName="GameStates" projectFiles="true">
+        <itemPath>src/ConversationState.cpp</itemPath>
+        <itemPath>src/ConversationState.h</itemPath>
+        <itemPath>src/GameStates.h</itemPath>
+        <itemPath>src/Message.cpp</itemPath>
+        <itemPath>src/Message.h</itemPath>
+        <itemPath>src/Observer.cpp</itemPath>
+        <itemPath>src/Observer.h</itemPath>
+        <itemPath>src/SubStateGame.cpp</itemPath>
+        <itemPath>src/SubStateGame.h</itemPath>
+        <itemPath>src/Subject.cpp</itemPath>
+        <itemPath>src/Subject.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="GUI" projectFiles="true">
         <itemPath>src/Button.cpp</itemPath>
         <itemPath>src/Button.h</itemPath>
@@ -357,6 +370,10 @@
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/ConversationState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConversationState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
@@ -394,6 +411,8 @@
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameStates.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/HashIdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -461,9 +480,17 @@
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Observer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/OnCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -542,6 +569,14 @@
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SubStateGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SubStateGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SystemCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -748,6 +783,10 @@
       </item>
       <item path="src/Context.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/ConversationState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConversationState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
@@ -785,6 +824,8 @@
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameStates.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/HashIdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -852,9 +893,17 @@
       </item>
       <item path="src/MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Observer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/OnCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -933,6 +982,14 @@
       <item path="src/StructMap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/StructMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SubStateGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SubStateGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SystemCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>

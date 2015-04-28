@@ -10,8 +10,9 @@
 #include "SystemObjectsGame.h"
 
 SystemObjectsGame::SystemObjectsGame(SystemManager& systemManager): ISystem(), 
-        entities(), systemManager(&systemManager){
+        entities(), systemManager(&systemManager), messageEntities(){
     type=TypeSystem::OBJECTS;
+    messageEntities=new Subject();
 }
 
 void SystemObjectsGame::destroyEntity(IdEntity id){
@@ -49,6 +50,7 @@ void SystemObjectsGame::initialize() {
 
 void SystemObjectsGame::registerEntity(Entity* entity) {
     if(entities.find(entity->getId())==entities.end()){
+        entity->Add<Subject*>("messageEntities", messageEntities);
         newEntity(entity);
     }
 }

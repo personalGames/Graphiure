@@ -8,8 +8,8 @@
 #include "GameState.h"
 
 GameState::GameState(StateStack& stack, Context* context) :
-        State(stack, context),player(*context->player), systemManager(context->systemManager) {
-
+State(stack, context), systemManager(context->systemManager) {
+    //player(*context->player)
 }
 
 void GameState::draw() {
@@ -17,26 +17,28 @@ void GameState::draw() {
 }
 
 bool GameState::handleEvent(const sf::Event& event) {
-        // Game input handling
-        CommandQueue& commands = level->getCommandQueue();
-        player.handleEvent(event, commands);
+    // Game input handling
+    level->handleEvent(event);
 
-        // Escape pressed, trigger the pause screen
-        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-            requestStackPush(StatesID::Pause);
-    
+    // Escape pressed, trigger the pause screen
+    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+        requestStackPush(StatesID::Pause);
+
     return true;
 }
 
 bool GameState::update(sf::Time dt) {
     level->update(dt);
-    
-    CommandQueue& commands = level->getCommandQueue();
-    player.handleRealtimeInput(commands);
-    
+
+    //check if player is alive
+
+    //    CommandQueue& commands = level->getCommandQueue();
+    //    player.handleRealtimeInput(commands);
+
     return true;
 }
 
-void GameState::pushedAction(){
-    level=context->actualLevel;
+void GameState::pushedAction() {
+    level = context->actualLevel;
+    level->setPlayer(context->player);
 }
