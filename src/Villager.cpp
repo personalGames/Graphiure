@@ -71,7 +71,7 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
     }
 
     if(parameters.HasID("Talk")){
-        Talk* talk=new Talk(parameters.Get<std::string*>("Talk"));
+        Talk* talk=new Talk(parameters.Get<sf::String*>("Talk"));
         entity->Add<Talk*>("Talk", talk);
     }
 

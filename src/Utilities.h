@@ -81,5 +81,6 @@ bool LineCollision(const sf::Vector2f& A1, const sf::Vector2f& A2,
         const sf::Vector2f& B1, const sf::Vector2f& B2,
         double* out = 0);
 
+
 #endif	/* UTILITIES_H */
 

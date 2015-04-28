@@ -8,13 +8,13 @@
 #ifndef TALK_H
 #define	TALK_H
 
-#include <string>
+#include <SFML/System/String.hpp>
 
 struct Talk {
-    Talk(std::string* phrase){
+    Talk(sf::String* phrase){
         this->phrase=phrase;
     }
-    std::string* phrase;
+    sf::String* phrase;
 
 };
 
