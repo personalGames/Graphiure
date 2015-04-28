@@ -19,15 +19,28 @@ class ConversationState : SubStateGame {
 public:
     ConversationState(IdEntity id, SystemManager* system);
     virtual ~ConversationState();
-    
+
     virtual void draw();
     virtual bool update(sf::Time delta);
     virtual bool handleEvent(const sf::Event& event);
-    
+
 private:
     SystemObjectsGame* objects;
     SystemGraphic* graphics;
-    sf::Text text;
+    sf::Text textShown;
+    sf::Vector2f sizeRectangle;
+    float marginRectangle;
+    float marginPhrases;
+    sf::Vector2f position;
+    sf::String text;
+    int positionText;
+    sf::Font* font;
+    unsigned int fontSize;
+    bool textFinish;
+    float radius;
+    
+private:
+    void prepareText();
 };
 
 #endif	/* CONVERSATIONSTATE_H */
