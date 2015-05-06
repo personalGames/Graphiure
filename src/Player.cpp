@@ -36,22 +36,36 @@ void Player::initializeActions() {
         Position* pos = character.Get<Position*>("Position");
         switch (pos->getDirection()) {
             case CardinalPoints::EAST:
-                query.left+=query.width;
+                query.left += query.width;
                 break;
             case CardinalPoints::WEST:
-                query.left-=query.width;
+                query.left -= query.width;
                 break;
             case CardinalPoints::SOUTH:
-                query.top+=query.height;
+                query.top += query.height;
                 break;
             case CardinalPoints::NORTH:
-                query.top-=query.height;
+                query.top -= query.height;
                 break;
         }
 
         std::vector<Entity*>* entities = coll->query(query);
         for (Entity* entity : *entities) {
             if (entity->getId() != character.getId() && entity->HasID("Behaviour")) {
+                switch (pos->getDirection()) {
+                    case CardinalPoints::EAST:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
+                        break;
+                    case CardinalPoints::WEST:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
+                        break;
+                    case CardinalPoints::SOUTH:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
+                        break;
+                    case CardinalPoints::NORTH:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
+                        break;
+                }
                 entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
             }
         }

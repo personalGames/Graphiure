@@ -125,6 +125,7 @@ void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
                     Message m=Message();
                     m.setState(GameStates::CONVERSATION);
                     m.setIdEntity(entity->getId());
+                    
                     sub->setMessage(m);
                 }
                 break;
