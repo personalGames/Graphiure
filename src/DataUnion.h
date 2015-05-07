@@ -15,6 +15,7 @@
 #include "Collision.h"
 #include "StructCollision.h"
 #include "PropertyManager.h"
+#include "Quest.h"
 
 union DataUnion{
     StructMap* map;
@@ -22,6 +23,7 @@ union DataUnion{
     StructAnimation* animations;
     StateMachine* stateMachine;
     std::vector<StructCollision*>* collisions;
+    std::vector<Quest*>* quests;
     PropertyManager* propertiesEntity;
 };
 

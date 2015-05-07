@@ -14,7 +14,7 @@ Quest::Quest(int id, sf::String* text, sf::Time time) {
     this->id = id;
     this->textQuest = text;
     this->time = time;
-    this->timer = sf::Time();
+    this->timer = sf::Time(sf::seconds(0));
 }
 
 void Quest::addPartQuest(PartQuest* part) {
