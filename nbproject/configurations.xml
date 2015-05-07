@@ -164,10 +164,19 @@
         <itemPath>src/OnCollision.h</itemPath>
         <itemPath>src/Position.cpp</itemPath>
         <itemPath>src/Position.h</itemPath>
+        <itemPath>src/Questeable.cpp</itemPath>
+        <itemPath>src/Questeable.h</itemPath>
         <itemPath>src/Talk.cpp</itemPath>
         <itemPath>src/Talk.h</itemPath>
         <itemPath>src/Velocity.cpp</itemPath>
         <itemPath>src/Velocity.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f17" displayName="Quest" projectFiles="true">
+        <itemPath>src/PartQuest.cpp</itemPath>
+        <itemPath>src/PartQuest.h</itemPath>
+        <itemPath>src/Quest.cpp</itemPath>
+        <itemPath>src/Quest.h</itemPath>
+        <itemPath>src/TypeQuest.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f11" displayName="Resources" projectFiles="true">
         <itemPath>src/IDFonts.h</itemPath>
@@ -201,6 +210,8 @@
         <itemPath>src/SystemMovement.h</itemPath>
         <itemPath>src/SystemObjectsGame.cpp</itemPath>
         <itemPath>src/SystemObjectsGame.h</itemPath>
+        <itemPath>src/SystemQuest.cpp</itemPath>
+        <itemPath>src/SystemQuest.h</itemPath>
         <itemPath>src/TypeSystem.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
@@ -500,6 +511,10 @@
       </item>
       <item path="src/ParallelTask.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/PartQuest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PartQuest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PauseState.h" ex="false" tool="3" flavor2="0">
@@ -525,6 +540,14 @@
       <item path="src/QuadTree.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/QuadTree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Quest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Questeable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Questeable.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -602,6 +625,10 @@
       </item>
       <item path="src/SystemObjectsGame.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SystemQuest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemQuest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Talk.cpp" ex="false" tool="1" flavor2="0">
@@ -629,6 +656,8 @@
       <item path="src/TypeCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TypeQuest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeSystem.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -913,6 +942,10 @@
       </item>
       <item path="src/ParallelTask.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/PartQuest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PartQuest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PauseState.h" ex="false" tool="3" flavor2="0">
@@ -938,6 +971,14 @@
       <item path="src/QuadTree.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/QuadTree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Quest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Questeable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Questeable.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ResourceHolder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1015,6 +1056,10 @@
       </item>
       <item path="src/SystemObjectsGame.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SystemQuest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SystemQuest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TProperty.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Talk.cpp" ex="false" tool="1" flavor2="0">
@@ -1042,6 +1087,8 @@
       <item path="src/TypeCollision.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TypeQuest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TypeSystem.h" ex="false" tool="3" flavor2="0">
       </item>

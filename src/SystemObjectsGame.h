@@ -8,8 +8,6 @@
 #ifndef SYSTEMOBJECTSGAME_H
 #define	SYSTEMOBJECTSGAME_H
 
-
-
 #include "ISystem.h"
 #include "IdEntity.h"
 #include "SystemManager.h"

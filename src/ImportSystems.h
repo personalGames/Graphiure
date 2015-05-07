@@ -14,6 +14,7 @@
 #include "SystemManager.h"
 #include "SystemMovement.h"
 #include "SystemObjectsGame.h"
+#include "SystemQuest.h"
 
 #endif	/* IMPORTSYSTEMS_H */
 
