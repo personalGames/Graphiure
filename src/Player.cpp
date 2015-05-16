@@ -34,22 +34,22 @@ void Player::initializeActions() {
         SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
         sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
         sf::Vector2f range=character.Get<sf::Vector2f>("query");
-        query.height=range.y;
-        query.width=range.x;
 
         Position* pos = character.Get<Position*>("Position");
         switch (pos->getDirection()) {
             case CardinalPoints::EAST:
-                query.left += query.width;
+                query.width+=range.x;
                 break;
             case CardinalPoints::WEST:
-                query.left -= query.width;
+                query.left-=range.x;
+                query.width+=range.x;
                 break;
             case CardinalPoints::SOUTH:
-                query.top += query.height;
+                query.height+=range.y;
                 break;
             case CardinalPoints::NORTH:
-                query.top -= query.height;
+                query.top-=range.y;
+                query.height+=range.y;
                 break;
         }
 
