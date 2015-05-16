@@ -12,6 +12,7 @@
 #include "XMLParserCollisionsMap.h"
 #include "XMLParserCharacter.h"
 #include "XMLParserCollisions.h"
+#include "XMLParserQuests.h"
 
 IXMLParser* IXMLParser::make_parser(TypeParser choice) {
     IXMLParser* parser;
@@ -37,6 +38,10 @@ IXMLParser* IXMLParser::make_parser(TypeParser choice) {
 
         case TypeParser::CHARACTER:
             parser = new XMLParserCharacter();
+            break;
+            
+        case TypeParser::QUEST:
+            parser= new XMLParserQuests();
             break;
 
         case TypeParser::ENTITY:

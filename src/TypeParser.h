@@ -15,7 +15,8 @@ enum class TypeParser{
     ANIMATION,
     STATE_MACHINE,
     COLLISIONS_MAP,
-    COLLISIONS
+    COLLISIONS,
+    QUEST
 };
 
 

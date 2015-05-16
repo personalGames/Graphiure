@@ -19,12 +19,20 @@ void XMLParserQuests::parse(DataUnion& data) {
 
     std::vector<Quest*>* result=new std::vector<Quest*>();
     Quest* oneQuest;
-    //pilla cada maquina de turing
+    //pilla cada quest
     while(quest){
         int idQuest=quest->IntAttribute("id");
         sf::String* text=new sf::String(quest->Attribute("text"));
         sf::Time time = sf::seconds(quest->IntAttribute("time"));
         oneQuest=new Quest(idQuest, text, time);
+        
+        bool order=quest->BoolAttribute("order");
+        oneQuest->setInOrder(order);
+        std::string finish=std::string(quest->Attribute("finish"));
+        std::vector<std::string> resultFinish=split(finish, ',');
+        for(std::vector<std::string>::iterator it=resultFinish.begin(); it!=resultFinish.end(); ++it){
+            oneQuest->addQuestOpen(atoi((*it).c_str()));
+        }
         
         tinyxml2::XMLElement* partQuest=quest->FirstChildElement("part");
         while(partQuest){

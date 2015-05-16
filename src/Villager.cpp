@@ -166,7 +166,7 @@ void Villager::processQuest(Questeable* quest, Entity* entity, Actions action) {
         PartQuest* part = *it;
         TypeQuest type = part->getType();
 
-        if (part->getIdDestiny() == entity->getId()) {
+        if (true){//part->getIdDestiny() == entity->getId()) {
             switch (type) {
                 case TypeQuest::KILL:
                 {

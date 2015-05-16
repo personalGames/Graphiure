@@ -9,6 +9,7 @@
 #define	XMLPARSERQUESTS_H
 
 #include "IXMLParser.h"
+#include <string>
 
 class XMLParserQuests : public IXMLParser{
 public:

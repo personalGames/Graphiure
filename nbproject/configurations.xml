@@ -71,6 +71,8 @@
       <logicalFolder name="f12" displayName="Data" projectFiles="true">
         <logicalFolder name="f2" displayName="DataStructure" projectFiles="true">
           <itemPath>src/DataUnion.h</itemPath>
+          <itemPath>src/QuestData.cpp</itemPath>
+          <itemPath>src/QuestData.h</itemPath>
           <itemPath>src/StructAnimation.cpp</itemPath>
           <itemPath>src/StructAnimation.h</itemPath>
           <itemPath>src/StructCollision.cpp</itemPath>
@@ -549,6 +551,10 @@
       </item>
       <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/QuestData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/QuestData.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/QuestState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/QuestState.h" ex="false" tool="3" flavor2="0">
@@ -987,6 +993,10 @@
       <item path="src/Quest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/QuestData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/QuestData.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/QuestState.cpp" ex="false" tool="1" flavor2="0">
       </item>

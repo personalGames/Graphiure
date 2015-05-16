@@ -69,6 +69,9 @@ public:
         this->inOrder = inOrder;
     }
 
+    inline const std::vector<PartQuest*>& getPartQuests(){
+        return list;
+    }
     
 private:
     int id;
