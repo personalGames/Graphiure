@@ -61,6 +61,12 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
 
     delete colliStruct;
     
+    if (parameters.HasID("query")) {
+        sf::Vector2f size = parameters.Get<sf::Vector2f>("query");
+        entity->Add<sf::Vector2f>("query", size);
+    }
+    
+    
     Behaviour* behaviour=new Behaviour();
     //para mostrar la pantalla de los quests -> que en realidad debería ser 
     //otro state aparte, al igual que el inventarioA

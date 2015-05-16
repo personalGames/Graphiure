@@ -120,7 +120,6 @@ void LoadingLevel::runTask() {
 
     std::unique_ptr<GameObjects> gameObject = FactoryGameObjects::getFactory("Character");
     Entity* character = gameObject->prepareEntity(*data.propertiesEntity);
-    IdEntity idCharacter = character->getId();
     delete data.propertiesEntity;
 
 

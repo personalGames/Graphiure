@@ -33,6 +33,9 @@ void Player::initializeActions() {
     auto finder123 = [this] (Entity& character, sf::Time) {
         SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
         sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
+        sf::Vector2f range=character.Get<sf::Vector2f>("query");
+        query.height=range.y;
+        query.width=range.x;
 
         Position* pos = character.Get<Position*>("Position");
         switch (pos->getDirection()) {
