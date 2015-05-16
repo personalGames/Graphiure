@@ -15,7 +15,8 @@ enum class TypeSystem{
     HISTORY,
     INPUT,
     OBJECTS,
-    MOVEMENT
+    MOVEMENT,
+    QUEST
 };
 
 

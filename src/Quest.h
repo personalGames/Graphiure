@@ -30,6 +30,10 @@ public:
     inline void setTime(sf::Time time) {
         this->time = time;
     }
+    
+    inline sf::String* getText(){
+        return textQuest;
+    }
 
     bool isFinished();
     std::vector<int> onFinished();
@@ -48,17 +52,34 @@ public:
     void setId(int id) {
         this->id = id;
     }
+    
+    bool isOpened() const {
+        return opened;
+    }
+
+    void setOpened(bool opened) {
+        this->opened = opened;
+    }
+    
+    bool isInOrder() const {
+        return inOrder;
+    }
+
+    void setInOrder(bool inOrder) {
+        this->inOrder = inOrder;
+    }
 
     
 private:
     int id;
+    bool opened;
     std::vector<PartQuest*> list;
     std::vector<PartQuest*> doneList;
     sf::Time time;
     sf::Time timer;
     std::vector<int> idQuestToOpen;
     sf::String* textQuest;
-    
+    bool inOrder;
 };
 
 #endif	/* QUEST_H */

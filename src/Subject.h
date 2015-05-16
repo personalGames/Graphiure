@@ -15,6 +15,7 @@ class Subject {
 private:
     // 1. "independent" functionality
     std::vector<class Observer*> views;
+    //TODO: hacer vector de mensajes, por si se junta varios
     Message value; //el mensaje
 public:
 

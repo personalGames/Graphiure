@@ -16,6 +16,8 @@
 #include "StructCollision.h"
 #include "Velocity.h"
 #include "StateMachineAnimation.h"
+#include "Behaviour.h"
+#include "GameStates.h"
 
 class Character : public GameObjects{
 public:
@@ -23,7 +25,7 @@ public:
     
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
-    
+    void makeBehaviour(Behaviour* behaviour, Entity* entity);
 };
 
 #endif	/* CHARACTER_H */

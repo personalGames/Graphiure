@@ -24,6 +24,7 @@ enum Actions {
     RightDown,
     Move,
     ActionPlayer,
+    ActionQuest,
     ActionCount
 };
 

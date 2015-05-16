@@ -7,10 +7,14 @@
 
 #include "Questeable.h"
 
-Questeable::Questeable(int id, PartQuest* quest) {
+Questeable::Questeable(int id): quest() {
     this->idQuest=id;
-    this->quest=quest;
 }
+
+void Questeable::addPartQuest(PartQuest* quest) {
+    this->quest.push_back(quest);
+}
+
 
 Questeable::Questeable(const Questeable& orig) {
     this->idQuest=orig.idQuest;
@@ -20,10 +24,10 @@ Questeable::Questeable(const Questeable& orig) {
 Questeable::~Questeable() {
 }
 
-bool Questeable::isDone() {
-    return quest->IsDone();
-}
-
-void Questeable::setDone(bool done) {
-    quest->SetDone(done);
-}
+//bool Questeable::isDone() {
+//    return quest->isDone();
+//}
+//
+//void Questeable::setDone(bool done) {
+//    quest->setDone(done);
+//}

@@ -67,6 +67,7 @@ private:
     SystemCollision* collision;
     SystemCommand* commands;
     SystemMovement* movement;
+    SystemQuest* quests;
     
     /**
      * Player

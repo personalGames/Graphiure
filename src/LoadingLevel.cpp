@@ -17,6 +17,7 @@
 #include "Hole.h"
 #include "FactoryGameObjects.h"
 #include "XMLDocument.h"
+#include "Questeable.h"
 
 LoadingLevel::LoadingLevel(Levels level, Context* context)
 : ParallelTask(), level(level), context(context) {
@@ -42,6 +43,7 @@ void LoadingLevel::runTask() {
     //preparo los sistemas que necesito
     SystemCollision* collision = static_cast<SystemCollision*>(systemManager->getSystem(TypeSystem::COLLISION));
     SystemGraphic* graphics=static_cast<SystemGraphic*>(systemManager->getSystem(TypeSystem::GRAPHIC));
+    SystemQuest* quests=static_cast<SystemQuest*>(systemManager->getSystem(TypeSystem::QUEST));
     //y por último el sistema de objetos
     SystemObjectsGame* objectsGame= static_cast<SystemObjectsGame*>(systemManager->getSystem(TypeSystem::OBJECTS));
 
@@ -118,6 +120,7 @@ void LoadingLevel::runTask() {
     
     std::unique_ptr<GameObjects> gameObject=FactoryGameObjects::getFactory("Character");
     Entity* character = gameObject->prepareEntity(*data.propertiesEntity);
+    IdEntity idCharacter=character->getId();
     delete data.propertiesEntity;
 
 
@@ -145,6 +148,30 @@ void LoadingLevel::runTask() {
     character = gameObject->prepareEntity(*data.propertiesEntity);
     delete data.propertiesEntity;
     objectsGame->registerEntity(character);
+    
+    IdEntity id=character->getId();
+    
+    
+    //he terminado con todos los objetos y personajes, ahora formo la historia
+    sf::String* text=new sf::String("Hablar con el aldeano");
+    Quest* quest=new Quest(1, text); //creo el quest principal y el texto que define lo que hay que hacer (y tiempo si esta limitado)
+    quest->setOpened(true);
+    quest->setInOrder(true);
+    
+    //hago las partes del quest
+    PartQuest* part=new PartQuest(TypeQuest::TALK, id, idCharacter); 
+    quest->addPartQuest(part);
+    //aquí añadíría que quest abrirían al cumplirse este
+    
+    //a los entities implicados, les añado su partquest asociado
+    Questeable* questeable=new Questeable(1);
+    questeable->addPartQuest(part);
+    character->Add<Questeable*>("Questeable", questeable);
+    
+    //guardo el quest en el sistema
+    quests->addQuest(quest);
+    //registro los entities questeables
+    quests->registerEntity(character);
 
     
     { // finished may be accessed from multiple threads, protect it

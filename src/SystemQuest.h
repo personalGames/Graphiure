@@ -12,6 +12,7 @@
 #include "Quest.h"
 #include "Entity.h"
 #include <unordered_map>
+#include <SFML/System/String.hpp>
 #include <SFML/System/NonCopyable.hpp>
 
 class SystemQuest : public ISystem, sf::NonCopyable {
@@ -28,6 +29,7 @@ public:
     virtual void updateSecondPart(sf::Time dt){};
     
     void addQuest(Quest* quest);
+    sf::String* toString();
     
 private:
     std::vector<Entity*> entities;

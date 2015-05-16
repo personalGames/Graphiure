@@ -47,6 +47,9 @@ void Application::setSystemManager() {
     
     system = new SystemMovement();
     systemManager.addSystem(system);
+    
+    system = new SystemQuest();
+    systemManager.addSystem(system);
 
 }
 

@@ -1,0 +1,5 @@
+<Quest id="1" time=0 text="Tienes que hablar con el aldeano">
+
+<part type="talk" id="1" idOrigin="2" action="">
+
+</Quest>

@@ -23,6 +23,7 @@ void Player::initialize(SystemManager& managerSystem) {
     keyBinding[sf::Keyboard::Up] = Actions::Up;
     keyBinding[sf::Keyboard::Down] = Actions::Down;
     keyBinding[sf::Keyboard::E] = Actions::ActionPlayer;
+    keyBinding[sf::Keyboard::Q] = Actions::ActionQuest;
 
     // Set initial action bindings
     initializeActions();
@@ -71,7 +72,12 @@ void Player::initializeActions() {
         }
     };
     actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder123);
-
+    
+    auto finder12 = [this] (Entity& character, sf::Time) {
+        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionQuest);
+    };
+    actionBinding[Actions::ActionQuest].action = derivedAction<Entity>(finder12);
+    
     auto finder = [] (Entity& character, sf::Time) {
         character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1, 0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
@@ -134,6 +140,7 @@ void Player::initializeActions() {
     actionBinding[Up].category = Category::CHARACTER;
     actionBinding[Down].category = Category::CHARACTER;
     actionBinding[ActionPlayer].category = Category::CHARACTER;
+    actionBinding[ActionQuest].category = Category::CHARACTER;
 }
 
 Player::~Player() {

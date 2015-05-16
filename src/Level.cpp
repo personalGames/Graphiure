@@ -6,6 +6,7 @@
  */
 
 #include "Level.h"
+#include "QuestState.h"
 #include <iostream>
 
 Level::Level(SystemManager& systemManager) :
@@ -25,6 +26,9 @@ Observer(), systemManager(&systemManager), state(nullptr) {
 
     movement = static_cast<SystemMovement*>
             (systemManager.getSystem(TypeSystem::MOVEMENT));
+    
+    quests = static_cast<SystemQuest*>
+            (systemManager.getSystem(TypeSystem::QUEST));
 
     setSubject(objectsGame->getMessageEntities());
 }
@@ -98,6 +102,8 @@ void Level::update(sf::Time dt) {
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
+    
+    quests->update(dt);
 
     //update objects in general (delete dead objects)
     objectsGame->update(dt);
@@ -117,6 +123,9 @@ void Level::update() {
             state = (SubStateGame*)new ConversationState(message.getIdEntity(), systemManager);
             break;
         case GameStates::INVENTORY:
+            break;
+        case GameStates::QUEST:
+            state = (SubStateGame*) new QuestState(systemManager);
             break;
     }
     //read the messages from the entities and react

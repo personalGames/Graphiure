@@ -19,6 +19,7 @@
 #include "OnCollision.h"
 #include "Behaviour.h"
 #include "Talk.h"
+#include "Questeable.h"
 
 class Villager : public GameObjects{
 public:
@@ -28,6 +29,7 @@ public:
 private:
     void makeOnCollision(IdEntity idObject, OnCollision* onCollision);
     void makeBehaviour(Behaviour* behaviour, Entity* entity);
+    void processQuest(Questeable* quest, Entity* entity, Actions action);
 };
 
 #endif	/* VILLAGER_H */

@@ -7,6 +7,9 @@
 
 #include "Villager.h"
 #include "Subject.h"
+#include "Quest.h"
+#include "Questeable.h"
+#include "ActionStack.h"
 
 Villager::Villager() {
 }
@@ -64,22 +67,27 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         StateMachineAnimation* animations = parameters.Get<StateMachineAnimation*>("Drawable");
         entity->Add<StateMachineAnimation*>("Drawable", animations);
     }
-    
-    if(parameters.HasID("query")){
-        sf::Vector2f size=parameters.Get<sf::Vector2f>("query");
-        entity->Add<sf::Vector2f>("query",size);
+
+    if (parameters.HasID("query")) {
+        sf::Vector2f size = parameters.Get<sf::Vector2f>("query");
+        entity->Add<sf::Vector2f>("query", size);
     }
 
-    if(parameters.HasID("Talk")){
-        Talk* talk=new Talk(parameters.Get<sf::String*>("Talk"));
+    if (parameters.HasID("Talk")) {
+        Talk* talk = new Talk(parameters.Get<sf::String*>("Talk"));
         entity->Add<Talk*>("Talk", talk);
+    }
+
+    if (true) {//parameters.HasID("Quest")){
+        //Talk* talk=new Talk(parameters.Get<sf::String*>("Talk"));
+
     }
 
     OnCollision* onCollision = new OnCollision();
     makeOnCollision(entity->getId(), onCollision);
     entity->Add<OnCollision*>("OnCollision", onCollision);
 
-    Behaviour* behaviour=new Behaviour();
+    Behaviour* behaviour = new Behaviour();
     makeBehaviour(behaviour, entity);
     entity->Add<Behaviour*>("Behaviour", behaviour);
 
@@ -115,26 +123,86 @@ void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
 }
 
 void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
-    
-    auto function = [entity] (Actions action) {
-        switch(action){
+    auto function = [this, entity] (Actions action) {
+        switch (action) {
             case Actions::ActionPlayer:
-                if(entity->HasID("Talk")){
-                    //phrase=*(entity->Get<Talk*>("Talk")->phrase);
-                    Subject* sub=entity->Get<Subject*>("messageEntities");
-                    Message m=Message();
+            {
+                if (entity->HasID("Talk")) {
+                    Subject* sub = entity->Get<Subject*>("messageEntities");
+                    Message m = Message();
                     m.setState(GameStates::CONVERSATION);
                     m.setIdEntity(entity->getId());
-                    
+
                     sub->setMessage(m);
                 }
                 break;
+            }
+            case Actions::ActionQuest:
+            {
+                Subject* sub = entity->Get<Subject*>("messageEntities");
+                Message m = Message();
+                m.setState(GameStates::QUEST);
+
+                sub->setMessage(m);
+                break;
+            }
             default:
                 break;
         }
-        //std::cout<<phrase<<std::endl;
+
+        //don't mind the action or if has a reaction, but notify the partquest
+        if (entity->HasID("Questeable")) {
+            Questeable* quest = entity->Get<Questeable*>("Questeable");
+            processQuest(quest, entity, action);
+        }
     };
-    
+
     behaviour->behaviourFunction = function;
 }
 
+void Villager::processQuest(Questeable* quest, Entity* entity, Actions action) {
+    const std::vector<PartQuest*> list = quest->getPartQuest();
+    for (std::vector<PartQuest*>::const_iterator it = list.begin(); it != list.end(); ++it) {
+        PartQuest* part = *it;
+        TypeQuest type = part->getType();
+
+        if (part->getIdDestiny() == entity->getId()) {
+            switch (type) {
+                case TypeQuest::KILL:
+                {
+                    if (entity->HasID("Life")) {
+                        Life* life = entity->Get<Life*>("Life");
+                        if (!life->isAlive()) {
+                            part->setDone(true);
+                        }
+                    }
+                    break;
+                }
+
+                case TypeQuest::ACTION:
+                {
+                    if (action == part->getAction()) {
+                        part->setDone(true);
+                    }
+                    break;
+                }
+
+                case TypeQuest::TALK:
+                {
+                    if (action == Actions::ActionPlayer) {
+                        part->setDone(true);
+                    }
+                    break;
+                }
+
+                case TypeQuest::CARRY:
+                {
+                    break;
+                }
+
+                default:
+                    break;
+            }
+        }
+    }
+}

@@ -11,7 +11,8 @@
 enum GameStates{
     GAMING,
     CONVERSATION,
-    INVENTORY
+    INVENTORY,
+    QUEST
 };
 
 

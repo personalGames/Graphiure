@@ -27,4 +27,3 @@ PartQuest::PartQuest(const PartQuest& orig) {
 
 PartQuest::~PartQuest() {
 }
-

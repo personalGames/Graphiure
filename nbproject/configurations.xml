@@ -141,6 +141,8 @@
         <itemPath>src/Message.h</itemPath>
         <itemPath>src/Observer.cpp</itemPath>
         <itemPath>src/Observer.h</itemPath>
+        <itemPath>src/QuestState.cpp</itemPath>
+        <itemPath>src/QuestState.h</itemPath>
         <itemPath>src/SubStateGame.cpp</itemPath>
         <itemPath>src/SubStateGame.h</itemPath>
         <itemPath>src/Subject.cpp</itemPath>
@@ -546,6 +548,10 @@
       <item path="src/Quest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/QuestState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/QuestState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Questeable.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -981,6 +987,10 @@
       <item path="src/Quest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Quest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/QuestState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/QuestState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Questeable.cpp" ex="false" tool="1" flavor2="0">
       </item>

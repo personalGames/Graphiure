@@ -6,11 +6,12 @@
  */
 
 #include "Quest.h"
+#include <iostream>
 
-Quest::Quest(int id, sf::String* text) : Quest(id, text, sf::Time()) {
+Quest::Quest(int id, sf::String* text) : Quest(id, text, sf::Time(sf::seconds(0))) {
 }
 
-Quest::Quest(int id, sf::String* text, sf::Time time) {
+Quest::Quest(int id, sf::String* text, sf::Time time) : opened(false) {
     this->id = id;
     this->textQuest = text;
     this->time = time;
@@ -37,22 +38,28 @@ void Quest::removeQuestOpen(int id) {
 
 void Quest::update(sf::Time dt) {
     bool finish = false;
-    for (std::vector<PartQuest*>::iterator iter = list.begin(); iter != list.end() && !finish;) {
-        if ((*iter)->IsDone()) {
-            doneList.push_back(*iter);
-            iter = list.erase(iter);
-            finish = true;
+    for (std::vector<PartQuest*>::iterator iter = list.begin(); iter != list.end(); ++iter) {
+        if ((*iter)->isDone()) {
+            if (isInOrder() && finish) {
+                (*iter)->setDone(false);
+            } else {
+                doneList.push_back(*iter);
+                iter = list.erase(iter);
+                --iter;
+            }
         } else {
-            ++iter;
+            finish = true;
         }
     }
 
-    timer += dt;
-    if (timer > time) {
-        for (std::vector<PartQuest*>::reverse_iterator iter = doneList.rbegin(); iter != doneList.rend(); ++iter){
-            (*iter)->SetDone(false);
-            list.insert(list.begin(), *iter);
-            ++iter;
+    if (time != sf::Time::Zero) {
+        timer += dt;
+        if (timer > time) {
+            for (std::vector<PartQuest*>::reverse_iterator iter = doneList.rbegin(); iter != doneList.rend(); ++iter) {
+                (*iter)->setDone(false);
+                list.insert(list.begin(), *iter);
+                ++iter;
+            }
         }
     }
 }

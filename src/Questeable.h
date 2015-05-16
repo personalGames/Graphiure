@@ -13,20 +13,25 @@
 
 class Questeable {
 public:
-    Questeable(int id, PartQuest* quest);
+    Questeable(int id);
     Questeable(const Questeable& orig);
     virtual ~Questeable();
     
-    bool isDone();
+    void addPartQuest(PartQuest* quest);
+//    bool isDone();
     
     inline int getIdQuest() const {
         return idQuest;
     }
+    
+    inline const std::vector<PartQuest*>& getPartQuest(){
+        return quest;
+    }
 
-    void setDone(bool done);
+//    void setDone(bool done);
     
 private:
-    PartQuest* quest;
+    std::vector<PartQuest*> quest;
     int idQuest;
 
 };

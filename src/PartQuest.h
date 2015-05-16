@@ -20,46 +20,45 @@ public:
     PartQuest(const PartQuest& orig);
     virtual ~PartQuest();
     
-    inline Actions GetAction() const {
+    inline Actions getAction() const {
         return action;
     }
 
-    inline void SetAction(Actions action) {
+    inline void setAction(Actions action) {
         this->action = action;
     }
 
-    inline IdEntity GetIdDestiny() const {
+    inline IdEntity getIdDestiny() const {
         return idDestiny;
     }
 
-    inline void SetIdDestiny(IdEntity idDestiny) {
+    inline void setIdDestiny(IdEntity idDestiny) {
         this->idDestiny = idDestiny;
     }
 
-    inline IdEntity GetIdOrigin() const {
+    inline IdEntity getIdOrigin() const {
         return idOrigin;
     }
 
-    inline void SetIdOrigin(IdEntity idOrigin) {
+    inline void setIdOrigin(IdEntity idOrigin) {
         this->idOrigin = idOrigin;
     }
 
-    inline TypeQuest GetType() const {
+    inline TypeQuest getType() const {
         return type;
     }
 
-    inline void SetType(TypeQuest type) {
+    inline void setType(TypeQuest type) {
         this->type = type;
     }
 
-    inline bool IsDone() const {
+    inline bool isDone() const {
         return done;
     }
 
-    inline void SetDone(bool done) {
+    inline void setDone(bool done) {
         this->done = done;
     }
-
     
 private:
     TypeQuest type;
@@ -67,6 +66,7 @@ private:
     IdEntity idOrigin;
     Actions action;
     bool done;
+    
     
 };
 

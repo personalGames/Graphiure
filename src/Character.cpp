@@ -6,6 +6,8 @@
  */
 
 #include "Character.h"
+#include "Message.h"
+#include "Subject.h"
 
 
 Character::~Character() {
@@ -59,5 +61,30 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
 
     delete colliStruct;
     
+    Behaviour* behaviour=new Behaviour();
+    //para mostrar la pantalla de los quests -> que en realidad debería ser 
+    //otro state aparte, al igual que el inventarioA
+    makeBehaviour(behaviour, entity);
+    entity->Add<Behaviour*>("Behaviour", behaviour);
+    
     return entity;
+}
+
+void Character::makeBehaviour(Behaviour* behaviour, Entity* entity) {
+    auto function = [entity] (Actions action) {
+        switch(action){
+            case Actions::ActionQuest:{
+                Subject* sub=entity->Get<Subject*>("messageEntities");
+                    Message m=Message();
+                    m.setState(GameStates::QUEST);
+                    
+                    sub->setMessage(m);
+                    break;
+            }
+            default:
+                break;
+        }
+    };
+    
+    behaviour->behaviourFunction = function;
 }
