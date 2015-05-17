@@ -78,11 +78,6 @@ Entity* Villager::prepareEntity(PropertyManager& parameters) {
         entity->Add<Talk*>("Talk", talk);
     }
 
-    if (true) {//parameters.HasID("Quest")){
-        //Talk* talk=new Talk(parameters.Get<sf::String*>("Talk"));
-
-    }
-
     OnCollision* onCollision = new OnCollision();
     makeOnCollision(entity->getId(), onCollision);
     entity->Add<OnCollision*>("OnCollision", onCollision);

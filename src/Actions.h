@@ -25,6 +25,8 @@ enum Actions {
     Move,
     ActionPlayer,
     ActionQuest,
+    Attack,
+    Dead,
     ActionCount
 };
 

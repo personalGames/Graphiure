@@ -69,7 +69,7 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
     
     Behaviour* behaviour=new Behaviour();
     //para mostrar la pantalla de los quests -> que en realidad debería ser 
-    //otro state aparte, al igual que el inventarioA
+    //otro state aparte, al igual que el inventario
     makeBehaviour(behaviour, entity);
     entity->Add<Behaviour*>("Behaviour", behaviour);
     

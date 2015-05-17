@@ -24,63 +24,13 @@ void Player::initialize(SystemManager& managerSystem) {
     keyBinding[sf::Keyboard::Down] = Actions::Down;
     keyBinding[sf::Keyboard::E] = Actions::ActionPlayer;
     keyBinding[sf::Keyboard::Q] = Actions::ActionQuest;
+    keyBinding[sf::Keyboard::F] = Actions::Attack;
 
     // Set initial action bindings
     initializeActions();
 }
 
 void Player::initializeActions() {
-    auto finder123 = [this] (Entity& character, sf::Time) {
-        SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
-        sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
-        sf::Vector2f range=character.Get<sf::Vector2f>("query");
-
-        Position* pos = character.Get<Position*>("Position");
-        switch (pos->getDirection()) {
-            case CardinalPoints::EAST:
-                query.width+=range.x;
-                break;
-            case CardinalPoints::WEST:
-                query.left-=range.x;
-                query.width+=range.x;
-                break;
-            case CardinalPoints::SOUTH:
-                query.height+=range.y;
-                break;
-            case CardinalPoints::NORTH:
-                query.top-=range.y;
-                query.height+=range.y;
-                break;
-        }
-
-        std::vector<Entity*>* entities = coll->query(query);
-        for (Entity* entity : *entities) {
-            if (entity->getId() != character.getId() && entity->HasID("Behaviour")) {
-                switch (pos->getDirection()) {
-                    case CardinalPoints::EAST:
-                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
-                        break;
-                    case CardinalPoints::WEST:
-                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
-                        break;
-                    case CardinalPoints::SOUTH:
-                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
-                        break;
-                    case CardinalPoints::NORTH:
-                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
-                        break;
-                }
-                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
-            }
-        }
-    };
-    actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder123);
-    
-    auto finder12 = [this] (Entity& character, sf::Time) {
-        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionQuest);
-    };
-    actionBinding[Actions::ActionQuest].action = derivedAction<Entity>(finder12);
-    
     auto finder = [] (Entity& character, sf::Time) {
         character.Get<Velocity*>("Velocity")->incrementVelocity(sf::Vector2f(-1, 0));
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
@@ -132,7 +82,63 @@ void Player::initializeActions() {
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftUp);
     };
     actionBinding[LeftUp].action = derivedAction<Entity>(finder8);
+    
+    auto finder9 = [this] (Entity& character, sf::Time) {
+        SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
+        sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
+        sf::Vector2f range=character.Get<sf::Vector2f>("query");
 
+        Position* pos = character.Get<Position*>("Position");
+        switch (pos->getDirection()) {
+            case CardinalPoints::EAST:
+                query.width+=range.x;
+                break;
+            case CardinalPoints::WEST:
+                query.left-=range.x;
+                query.width+=range.x;
+                break;
+            case CardinalPoints::SOUTH:
+                query.height+=range.y;
+                break;
+            case CardinalPoints::NORTH:
+                query.top-=range.y;
+                query.height+=range.y;
+                break;
+        }
+
+        std::vector<Entity*>* entities = coll->query(query);
+        for (Entity* entity : *entities) {
+            if (entity->getId() != character.getId() && entity->HasID("Behaviour")) {
+                switch (pos->getDirection()) {
+                    case CardinalPoints::EAST:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
+                        break;
+                    case CardinalPoints::WEST:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
+                        break;
+                    case CardinalPoints::SOUTH:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
+                        break;
+                    case CardinalPoints::NORTH:
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
+                        break;
+                }
+                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
+            }
+        }
+    };
+    actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder9);
+    
+    auto finder10 = [this] (Entity& character, sf::Time) {
+        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Attack);
+        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::Attack);
+    };
+    actionBinding[Actions::Attack].action = derivedAction<Entity>(finder10);
+
+    auto finder11 = [this] (Entity& character, sf::Time) {
+        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionQuest);
+    };
+    actionBinding[Actions::ActionQuest].action = derivedAction<Entity>(finder11);
 
     actionBinding[RightUp].category = Category::CHARACTER;
     actionBinding[LeftDown].category = Category::CHARACTER;
@@ -144,6 +150,7 @@ void Player::initializeActions() {
     actionBinding[Down].category = Category::CHARACTER;
     actionBinding[ActionPlayer].category = Category::CHARACTER;
     actionBinding[ActionQuest].category = Category::CHARACTER;
+    actionBinding[Attack].category = Category::CHARACTER;
 }
 
 Player::~Player() {
