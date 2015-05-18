@@ -52,7 +52,8 @@ void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* no
     textures->get(image);
     anim->setSpriteSheet(textures->get(image));
 
-//    bool replay=node->BoolAttribute("replay");
+    bool replay=node->BoolAttribute("replay");
+    anim->setReplay(replay);
     //recojo los frames de una animación concreta
     while(node){
         sf::IntRect rect;
@@ -81,6 +82,7 @@ void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* no
         }
         //añado el frame
         anim->addFrame(rect);
+        
         node=node->NextSiblingElement("frame");
     }
     //ya tengo una animación con sus frames, lo añado a la lista de animaciones

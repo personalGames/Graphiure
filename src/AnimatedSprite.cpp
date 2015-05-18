@@ -141,14 +141,14 @@ void AnimatedSprite::update(sf::Time deltaTime) {
             // get next Frame index
             if (m_currentFrame + 1 < m_animation->getSize()) {
                 m_currentFrame++;
-            } else {
+                
+            } else if (!m_isLooped && (m_currentFrame+1 == m_animation->getSize())) {
                 // animation has ended
-                m_currentFrame = 0; // reset to start
+                m_isPaused = true;
 
-                if (!m_isLooped) {
-                    m_isPaused = true;
-                }
 
+            } else {
+                m_currentFrame = 0;
             }
 
             // set the current frame, not reseting the time

@@ -18,6 +18,7 @@ StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
 void StateMachineAnimation::setAnimations(std::vector<Animation*>* animations) {
     this->animations=animations;
     actualAnimation.play(*((*animations)[1]));
+    actualAnimation.setLooped(((*animations)[1])->getReplay());
 }
 
 
@@ -42,6 +43,7 @@ void StateMachineAnimation::update(int action) {
     if(newState!=-1){
         actualState=newState;
         actualAnimation.play(*((*animations)[actualState]));
+        actualAnimation.setLooped(((*animations)[actualState])->getReplay());
     }
 }
 

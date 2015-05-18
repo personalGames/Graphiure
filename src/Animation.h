@@ -38,10 +38,19 @@ public:
     const sf::Texture* getSpriteSheet() const;
     std::size_t getSize() const;
     const sf::IntRect& getFrame(std::size_t n) const;
+    
+    inline void setReplay(bool replay){
+        this->replay=replay;
+    }
+    
+    inline bool getReplay(){
+        return replay;
+    }
 
 private:
     std::vector<sf::IntRect> m_frames;
     const sf::Texture* m_texture;
+    bool replay;
 };
 
 #endif // ANIMATION_INCLUDE
