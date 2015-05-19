@@ -20,7 +20,7 @@ public:
     virtual void parse(DataUnion& data);
     
 private:
-    void storeFrames(std::string image, tinyxml2::XMLElement* node, StructAnimation* animation, bool replay);
+    void storeFrames(std::string image, tinyxml2::XMLElement* node, StructAnimation* animation, bool replay, bool wait);
 };
 
 #endif	/* XMLPARSERANIMATION_H */

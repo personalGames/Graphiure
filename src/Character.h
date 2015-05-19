@@ -15,6 +15,7 @@
 #include "Collision.h"
 #include "StructCollision.h"
 #include "Velocity.h"
+#include "Weapon.h"
 #include "StateMachineAnimation.h"
 #include "Behaviour.h"
 #include "GameStates.h"

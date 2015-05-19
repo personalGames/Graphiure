@@ -16,6 +16,9 @@
 #include "StateMachine.h"
 #include "AnimatedSprite.h"
 
+#include <iostream>
+
+
 class StateMachineAnimation : sf::Drawable {
 public:
     StateMachineAnimation(StateMachine &stateMachine);

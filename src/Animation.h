@@ -46,11 +46,20 @@ public:
     inline bool getReplay(){
         return replay;
     }
+    
+    inline void setWait(bool wait){
+        this->wait=wait;
+    }
+    
+    inline bool getWait(){
+        return wait;
+    }
 
 private:
     std::vector<sf::IntRect> m_frames;
     const sf::Texture* m_texture;
     bool replay;
+    bool wait;
 };
 
 #endif // ANIMATION_INCLUDE

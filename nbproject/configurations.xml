@@ -130,10 +130,14 @@
         <itemPath>src/GameObjects.h</itemPath>
         <itemPath>src/Hole.cpp</itemPath>
         <itemPath>src/Hole.h</itemPath>
+        <itemPath>src/Knife.cpp</itemPath>
+        <itemPath>src/Knife.h</itemPath>
         <itemPath>src/StaticBlock.cpp</itemPath>
         <itemPath>src/StaticBlock.h</itemPath>
         <itemPath>src/Villager.cpp</itemPath>
         <itemPath>src/Villager.h</itemPath>
+        <itemPath>src/Weapon.cpp</itemPath>
+        <itemPath>src/Weapon.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f16" displayName="GameStates" projectFiles="true">
         <itemPath>src/ConversationState.cpp</itemPath>

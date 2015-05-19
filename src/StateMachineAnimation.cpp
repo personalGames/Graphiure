@@ -9,18 +9,17 @@
 #include <iostream>
 
 StateMachineAnimation::StateMachineAnimation(StateMachine &stateMachine)
-    :actualState(0),
-    animations(),
-    actualAnimation(),
-    stateMachine(stateMachine){
+: actualState(0),
+animations(),
+actualAnimation(),
+stateMachine(stateMachine) {
 }
 
 void StateMachineAnimation::setAnimations(std::vector<Animation*>* animations) {
-    this->animations=animations;
+    this->animations = animations;
     actualAnimation.play(*((*animations)[1]));
     actualAnimation.setLooped(((*animations)[1])->getReplay());
 }
-
 
 void StateMachineAnimation::addAnimation(Animation* animation) {
     if (animation != nullptr) {
@@ -28,22 +27,24 @@ void StateMachineAnimation::addAnimation(Animation* animation) {
     }
 }
 
-
 StateMachineAnimation::~StateMachineAnimation() {
 }
 
-void StateMachineAnimation::update(sf::Time delta){
+void StateMachineAnimation::update(sf::Time delta) {
     actualAnimation.update(delta);
 }
 
-
 void StateMachineAnimation::update(int action) {
-    int newState = stateMachine.processEntry(action);
-    
-    if(newState!=-1){
-        actualState=newState;
-        actualAnimation.play(*((*animations)[actualState]));
-        actualAnimation.setLooped(((*animations)[actualState])->getReplay());
+    if (actualAnimation.getWait() && actualAnimation.isPlaying() && action == 0) {
+        return;
+    } else {
+        int newState = stateMachine.processEntry(action);
+        if (newState != -1) {
+            actualState = newState;
+            actualAnimation.play(*((*animations)[actualState]));
+            actualAnimation.setLooped(((*animations)[actualState])->getReplay());
+            actualAnimation.setWait(((*animations)[actualState])->getWait());
+        }
     }
 }
 

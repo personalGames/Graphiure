@@ -6,7 +6,6 @@
  */
 
 #include "XMLParserCharacter.h"
-#include "Weapon.h"
 #include <iostream>
 
 XMLParserCharacter::XMLParserCharacter() {
@@ -59,8 +58,8 @@ void XMLParserCharacter::parseWeapon(PropertyManager* properties, tinyxml2::XMLE
     std::string type = std::string(node->Attribute("type"));
     int damage=node->IntAttribute("damage");
     int range=node->IntAttribute("range");
-    //Weapon* weapon=new Weapon(damage, range);
-//    properties->Add<Weapon*>("Weapon", weapon);
+    Weapon* weapon=new Weapon(damage, range);
+    properties->Add<Weapon*>("Weapon", weapon);
 }
 
 

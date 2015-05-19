@@ -7,15 +7,15 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(int damage, int range) {
+Weapon::Weapon(int damage, int range): damage(damage), range(range), extraDamage(0) {
     
 }
 
 
 Weapon::Weapon(const Weapon& orig) {
-//    damage=orig.damage;
-//    range=orig.range;
-//    extraDamage=orig.extraDamage;
+    damage=orig.damage;
+    range=orig.range;
+    extraDamage=orig.extraDamage;
 }
 
 Weapon::~Weapon() {

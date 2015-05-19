@@ -11,6 +11,7 @@
 #include "IXMLParser.h"
 #include "StateMachineAnimation.h"
 #include "Collision.h"
+#include "Weapon.h"
 
 class XMLParserCharacter : public IXMLParser {
 public:

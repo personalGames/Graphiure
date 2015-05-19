@@ -23,7 +23,7 @@
 
 #include "Animation.h"
 
-Animation::Animation() : m_texture(nullptr), replay(true) {
+Animation::Animation() : m_texture(nullptr), replay(true), wait(false) {
 
 }
 

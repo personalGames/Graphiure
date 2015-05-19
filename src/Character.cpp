@@ -66,6 +66,10 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
         entity->Add<sf::Vector2f>("query", size);
     }
     
+    if (parameters.HasID("Weapon")) {
+        Weapon* weapon= parameters.Get<Weapon*>("Weapon");
+        entity->Add<Weapon*>("Weapon", weapon);
+    }
     
     Behaviour* behaviour=new Behaviour();
     //para mostrar la pantalla de los quests -> que en realidad debería ser 

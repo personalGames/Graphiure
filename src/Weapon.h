@@ -14,35 +14,35 @@ public:
     Weapon(const Weapon& orig);
     virtual ~Weapon();
     
-//    inline int getDamage() const {
-//        return damage;
-//    }
-//
-//    inline void setDamage(int damage) {
-//        this->damage = damage;
-//    }
-//
-//    inline int getExtraDamage() const {
-//        return extraDamage;
-//    }
-//
-//    inline void setExtraDamage(int extraDamage) {
-//        this->extraDamage = extraDamage;
-//    }
-//
-//    inline int getRange() const {
-//        return range;
-//    }
-//
-//    inline void setRange(int range) {
-//        this->range = range;
-//    }
+    inline int getDamage() const {
+        return damage;
+    }
+
+    inline void setDamage(int damage) {
+        this->damage = damage;
+    }
+
+    inline int getExtraDamage() const {
+        return extraDamage;
+    }
+
+    inline void setExtraDamage(int extraDamage) {
+        this->extraDamage = extraDamage;
+    }
+
+    inline int getRange() const {
+        return range;
+    }
+
+    inline void setRange(int range) {
+        this->range = range;
+    }
 
     
 private:
-//    int damage;
-//    int range;
-//    int extraDamage;
+    int damage;
+    int range;
+    int extraDamage;
 };
 
 #endif	/* WEAPON_H */

@@ -34,7 +34,9 @@ void XMLParserAnimation::parse(DataUnion& data) {
         tinyxml2::XMLElement* anim=animation->FirstChildElement("frame");
         std::string image(animation->Attribute("idImage"));
         bool replay=animation->BoolAttribute("replay");
-        storeFrames(image, anim, result, replay);
+        bool wait=animation->BoolAttribute("wait");
+        std::cout<<wait<<std::endl;
+        storeFrames(image, anim, result, replay, wait);
         
        animation=animation->NextSiblingElement("Animation");
     }
@@ -42,7 +44,7 @@ void XMLParserAnimation::parse(DataUnion& data) {
 }
 
 //pilla los frames, con los vértices de cada frame
-void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* node, StructAnimation* animation, bool replay){
+void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* node, StructAnimation* animation, bool replay, bool wait){
     if(node!=nullptr && strcmp(node->Name(),"frame")!=0){
         return;
     }
@@ -52,7 +54,7 @@ void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* no
     //image for this animation
     textures->get(image);
     anim->setSpriteSheet(textures->get(image));
-
+    anim->setWait(wait);
     anim->setReplay(replay);
     //recojo los frames de una animación concreta
     while(node){
