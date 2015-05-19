@@ -141,6 +141,14 @@ void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
                 sub->setMessage(m);
                 break;
             }
+            
+            case Actions::Attack:{
+                if(entity->HasID("Life")){
+                    //hacer daño
+                }
+                break;
+            }
+            
             default:
                 break;
         }

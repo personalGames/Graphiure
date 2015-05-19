@@ -19,6 +19,7 @@ public:
     
     virtual void parse(DataUnion& data);
 private:
+    void parseWeapon(PropertyManager* properties, tinyxml2::XMLElement* node);
     void parserAnimations(PropertyManager* properties);
     void parserCollisions(PropertyManager* properties);
 };

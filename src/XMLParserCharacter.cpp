@@ -6,6 +6,7 @@
  */
 
 #include "XMLParserCharacter.h"
+#include "Weapon.h"
 #include <iostream>
 
 XMLParserCharacter::XMLParserCharacter() {
@@ -40,6 +41,8 @@ void XMLParserCharacter::parse(DataUnion& data) {
         } else if(id.compare("query")==0){
             sf::Vector2f size=sf::Vector2f(entity->FloatAttribute("x"), entity->FloatAttribute("y"));
             properties->Add<sf::Vector2f>("query", size);
+        }else if(id.compare("Weapon")==0){
+            parseWeapon(properties, entity);
         }
         entity = entity->NextSiblingElement("Property");
     }
@@ -51,6 +54,15 @@ void XMLParserCharacter::parse(DataUnion& data) {
 XMLParserCharacter::~XMLParserCharacter() {
 
 }
+
+void XMLParserCharacter::parseWeapon(PropertyManager* properties, tinyxml2::XMLElement* node) {
+    std::string type = std::string(node->Attribute("type"));
+    int damage=node->IntAttribute("damage");
+    int range=node->IntAttribute("range");
+    //Weapon* weapon=new Weapon(damage, range);
+//    properties->Add<Weapon*>("Weapon", weapon);
+}
+
 
 void XMLParserCharacter::parserAnimations(PropertyManager* properties) {
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::STATE_MACHINE);

@@ -461,6 +461,10 @@
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Knife.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Knife.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -690,6 +694,10 @@
       <item path="src/Villager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Villager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -904,6 +912,10 @@
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Knife.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Knife.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -1133,6 +1145,10 @@
       <item path="src/Villager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Villager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/XMLDocument.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -82,27 +82,27 @@ void Player::initializeActions() {
         character.Get<StateMachineAnimation*>("Drawable")->update(Actions::LeftUp);
     };
     actionBinding[LeftUp].action = derivedAction<Entity>(finder8);
-    
+
     auto finder9 = [this] (Entity& character, sf::Time) {
         SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
         sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
-        sf::Vector2f range=character.Get<sf::Vector2f>("query");
+        sf::Vector2f range = character.Get<sf::Vector2f>("query");
 
         Position* pos = character.Get<Position*>("Position");
         switch (pos->getDirection()) {
             case CardinalPoints::EAST:
-                query.width+=range.x;
+                query.width += range.x;
                 break;
             case CardinalPoints::WEST:
-                query.left-=range.x;
-                query.width+=range.x;
+                query.left -= range.x;
+                query.width += range.x;
                 break;
             case CardinalPoints::SOUTH:
-                query.height+=range.y;
+                query.height += range.y;
                 break;
             case CardinalPoints::NORTH:
-                query.top-=range.y;
-                query.height+=range.y;
+                query.top -= range.y;
+                query.height += range.y;
                 break;
         }
 
@@ -128,10 +128,38 @@ void Player::initializeActions() {
         }
     };
     actionBinding[Actions::ActionPlayer].action = derivedAction<Entity>(finder9);
-    
+
     auto finder10 = [this] (Entity& character, sf::Time) {
-        character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Attack);
-        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::Attack);
+        if (character.HasID("Weapon")) {
+            character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Attack);
+
+            SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
+            sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
+            sf::Vector2f range = character.Get<sf::Vector2f>("query");
+
+            Position* pos = character.Get<Position*>("Position");
+            switch (pos->getDirection()) {
+                case CardinalPoints::EAST:
+                    query.width += range.x;
+                    break;
+                case CardinalPoints::WEST:
+                    query.left -= range.x;
+                    query.width += range.x;
+                    break;
+                case CardinalPoints::SOUTH:
+                    query.height += range.y;
+                    break;
+                case CardinalPoints::NORTH:
+                    query.top -= range.y;
+                    query.height += range.y;
+                    break;
+            }
+
+            std::vector<Entity*>* entities = coll->query(query);
+            for (Entity* entity : *entities) {
+                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::Attack);
+            }
+        }
     };
     actionBinding[Actions::Attack].action = derivedAction<Entity>(finder10);
 
