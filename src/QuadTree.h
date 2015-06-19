@@ -26,7 +26,7 @@ public:
     QuadTree(int level);
 
     void clear();
-    void insert(Entity* objectNew);
+    void insert(Entity* objectNew, bool notChild=false);
     bool remove(Entity* object);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, Entity* object);
     std::vector<Entity*>* retrieve(std::vector<Entity*>* list, sf::FloatRect rect);

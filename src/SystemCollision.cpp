@@ -513,9 +513,9 @@ void SystemCollision::correctInsidePosition(Entity* entity) {
     sf::Vector2f position = pos->getPosition().getPosition();
     sf::FloatRect bounds = collision->getAABB();
     position.x = std::max(position.x, viewBounds.left);
-    position.x = std::min(position.x, viewBounds.left + viewBounds.width - bounds.width);
+    position.x = std::min(position.x, viewBounds.left + viewBounds.width - bounds.width*2);
     position.y = std::max(position.y, viewBounds.top);
-    position.y = std::min(position.y, viewBounds.top + viewBounds.height - bounds.height);
+    position.y = std::min(position.y, viewBounds.top + viewBounds.height-bounds.height*3);
 
     sf::Transformable newPosition = sf::Transformable();
     newPosition.setPosition(position.x, position.y);

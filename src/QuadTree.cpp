@@ -130,7 +130,7 @@ QuadTree* QuadTree::getNodeRegion(sf::FloatRect region) {
     return result;
 }
 
-void QuadTree::insert(Entity* objectNew) {
+void QuadTree::insert(Entity* objectNew, bool notChild) {
     Collision* coli = objectNew->Get<Collision*>("Collision");
     sf::FloatRect rect;
     if (objectNew->HasID("Velocity")) {
@@ -141,7 +141,7 @@ void QuadTree::insert(Entity* objectNew) {
     if (nodes[0] != nullptr && !inside(rect)) {
         int index = getIndex(rect);
 
-        if (index != -1) {
+        if (index != -1 && notChild==false) {
             if (nodes[index] != nullptr) {
                 nodes[index]->insert(objectNew);
                 return;
@@ -150,7 +150,7 @@ void QuadTree::insert(Entity* objectNew) {
     }
     objects.push_back(objectNew);
 
-    if (objects.size() > MAX_OCCUPANTS && level < MAX_LEVELS) {
+    if (objects.size() > MAX_OCCUPANTS && level < MAX_LEVELS && notChild==false) {
         if (nodes[0] == nullptr) {
             split();
         }
@@ -214,8 +214,10 @@ void QuadTree::updateTree() {
         } else {
             rect = entity->Get<Collision*>("Collision")->getAABB();
         }
+        
         //si esta dentro del recuadro actual
-        int index = getIndex(entity->Get<Collision*>("Collision"));
+        //entity->Get<Collision*>("Collision")
+        int index = getIndex(rect);
         if (index != -1) {
             if (nodes[index] != nullptr) {
                 nodes[index]->insert(entity);
@@ -224,16 +226,20 @@ void QuadTree::updateTree() {
                 ++it;
             }
         } else {
+            
             if (inside(rect)) {
                 ++it;
             } else {
                 if (parent != nullptr) {
-                    parent->insert(entity);
+                    parent->insert(entity, true);
                     it = objects.erase(it);
+                }else{
+                    ++it;
                 }
             }
         }
     }
+    
 }
 
 bool QuadTree::inside(sf::FloatRect rect) {
