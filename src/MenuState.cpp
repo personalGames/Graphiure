@@ -14,7 +14,7 @@ MenuState::MenuState(StateStack& stack, Context* context)
     sf::Texture& texture = context->textures->get("TitleScreen.png");
     backgroundSprite.setTexture(texture);
     
-//    context.music->play(MusicID::MenuTheme);
+    context->music->play(MusicID::MenuTheme);
 
     GUI::Button* playButton = new GUI::Button(*context);
     playButton->setPosition(100, 300);

@@ -11,7 +11,7 @@ namespace GUI {
 
     Button::Button(Context context) : callback(),
     sprite(context.textures->get("Buttons.png")),
-    text(), isToggle(false){//, mSounds(*context.sounds) {
+    text(), isToggle(false), mSounds(*context.sounds) {
 
         changeTexture(Normal);
         text.setCharacterSize(16);
@@ -67,7 +67,7 @@ namespace GUI {
         if (!isToggle)
             deactivate();
         
-//        mSounds.play(SoundEffectID::Button);
+        mSounds.play(SoundEffectID::Button);
     }
 
     void Button::deactivate() {

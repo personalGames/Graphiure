@@ -18,6 +18,8 @@
 #include "Level.h"
 #include "Player.h"
 #include "SystemManager.h"
+#include "MusicPlayer.h"
+#include "SoundPlayer.h"
 
 
 class Context {
@@ -28,7 +30,7 @@ public:
 
     Context(sf::RenderWindow& window, ResourceHolder<std::string, sf::Texture>& textures,
             ResourceHolder<IDFonts, sf::Font>& fonts, Player& player, 
-            SystemManager& manager);
+            SystemManager& manager,MusicPlayer& music, SoundPlayer& sounds);
 
 
 public:
@@ -44,6 +46,9 @@ public:
     
     //systems
     SystemManager* systemManager;
+    
+    MusicPlayer* music;
+    SoundPlayer* sounds;
 };
 
 #endif	/* CONTEXT_H */

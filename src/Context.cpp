@@ -8,9 +8,10 @@
 #include "Context.h"
 
 Context::Context(sf::RenderWindow& window, ResourceHolder<std::string, sf::Texture>& textures,
-        ResourceHolder<IDFonts, sf::Font>& fonts, Player& player,SystemManager& manager): 
-        window(&window), textures(&textures),
-        fonts(&fonts), actualLevel(nullptr), player(&player), systemManager(&manager) {
+        ResourceHolder<IDFonts, sf::Font>& fonts, Player& player,SystemManager& manager,
+        MusicPlayer& music, SoundPlayer& sounds): 
+        window(&window), textures(&textures), fonts(&fonts), actualLevel(nullptr), 
+        player(&player), systemManager(&manager), music(&music), sounds(&sounds) {
 
 }
 

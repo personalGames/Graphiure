@@ -11,8 +11,8 @@
 const sf::Time Application::timePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application() : window(sf::VideoMode(1024, 768), "Graphiure", sf::Style::Close)
-, textures(), fonts(), player(), systemManager(), stateStack(
-Context(window, textures, fonts, player, systemManager)) {
+, textures(), fonts(), player(), systemManager(), mMusic()
+, mSounds(), stateStack(Context(window, textures, fonts, player, systemManager, mMusic, mSounds)) {
 
     window.setKeyRepeatEnabled(false);
     window.setVerticalSyncEnabled(true);
@@ -20,7 +20,7 @@ Context(window, textures, fonts, player, systemManager)) {
 
     loadFonts();
     loadTextures();
-    
+
     setSystemManager();
     player.initialize(systemManager);
     registerStates();
@@ -29,7 +29,7 @@ Context(window, textures, fonts, player, systemManager)) {
     hud = new ClockHUD(clock, fonts.get(IDFonts::Main));
     clock.setSampleDepth(100); // Sample 100 frames for averaging.
 
-    //    mMusic.setVolume(25.f);
+    mMusic.setVolume(25.f);
 }
 
 void Application::setSystemManager() {
@@ -38,16 +38,16 @@ void Application::setSystemManager() {
 
     system = new SystemGraphic(window, fonts, textures);
     systemManager.addSystem(system);
-    
+
     system = new SystemCommand();
     systemManager.addSystem(system);
-    
+
     system = new SystemObjectsGame(systemManager);
     systemManager.addSystem(system);
-    
+
     system = new SystemMovement();
     systemManager.addSystem(system);
-    
+
     system = new SystemQuest();
     systemManager.addSystem(system);
 

@@ -46,7 +46,7 @@ namespace GUI {
         sf::Sprite sprite;
         sf::Text text;
         bool isToggle;
-//        SoundPlayer& mSounds;
+        SoundPlayer& mSounds;
 
 
         void changeTexture(ButtonState buttonType);

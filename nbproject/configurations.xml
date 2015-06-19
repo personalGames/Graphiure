@@ -167,6 +167,14 @@
         <itemPath>src/Label.cpp</itemPath>
         <itemPath>src/Label.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f18" displayName="Music" projectFiles="true">
+        <itemPath>src/MusicID.h</itemPath>
+        <itemPath>src/MusicPlayer.cpp</itemPath>
+        <itemPath>src/MusicPlayer.h</itemPath>
+        <itemPath>src/SoundEffectID.h</itemPath>
+        <itemPath>src/SoundPlayer.cpp</itemPath>
+        <itemPath>src/SoundPlayer.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="Properties" projectFiles="true">
         <itemPath>src/Behaviour.cpp</itemPath>
         <itemPath>src/Behaviour.h</itemPath>
@@ -514,6 +522,12 @@
       </item>
       <item path="src/MissionStatus.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/MusicID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MusicPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MusicPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Observer.h" ex="false" tool="3" flavor2="0">
@@ -579,6 +593,12 @@
       <item path="src/SettingsState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SettingsState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SoundEffectID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SoundPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SoundPlayer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -967,6 +987,12 @@
       </item>
       <item path="src/MissionStatus.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/MusicID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MusicPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MusicPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Observer.h" ex="false" tool="3" flavor2="0">
@@ -1032,6 +1058,12 @@
       <item path="src/SettingsState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SettingsState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SoundEffectID.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SoundPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SoundPlayer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
       </item>

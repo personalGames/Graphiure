@@ -33,9 +33,6 @@ private:
     ResourceHolder<std::string, sf::Texture> textures;
     ResourceHolder<IDFonts, sf::Font> fonts;
     
-//    MusicPlayer mMusic;
-//    SoundPlayer mSounds;
-    
     void processInput();
     void update(sf::Time dt);
     void render();
@@ -52,6 +49,9 @@ private:
     SystemManager systemManager;
     
     StateStack stateStack;
+    
+    MusicPlayer mMusic;
+    SoundPlayer mSounds;
 
 };
 

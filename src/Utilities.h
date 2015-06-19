@@ -29,9 +29,6 @@ const std::wstring toString(const T& value);
 template <typename T>
 std::string toStringKey(const T& value);
 
-// Convert enumerators to strings
-//std::string toString(sf::Keyboard::Key key);
-
 
 // Call setOrigin() with the center of the object
 void centerOrigin(sf::Sprite& sprite);
