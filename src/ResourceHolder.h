@@ -36,6 +36,11 @@ private:
 
 template <typename Identifier, typename Resource>
 void ResourceHolder<Identifier, Resource>::load(Identifier id, const std::string& filename) {
+    auto found = mResourceMap.find(id);
+	if(found != mResourceMap.end()){
+            return;
+        }
+    
 	// Create and load resource
 	Resource* resource(new Resource());
 	if (!resource->loadFromFile(filename))

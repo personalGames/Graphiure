@@ -10,6 +10,7 @@
 #include "Behaviour.h"
 #include "SystemCollision.h"
 #include "Subject.h"
+#include "Weapon.h"
 
 Player::Player() {
 
@@ -123,7 +124,7 @@ void Player::initializeActions() {
                         entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
                         break;
                 }
-                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer);
+                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionPlayer, nullptr);
             }
         }
     };
@@ -131,40 +132,58 @@ void Player::initializeActions() {
 
     auto finder10 = [this] (Entity& character, sf::Time) {
         if (character.HasID("Weapon")) {
+            Weapon* weapon = character.Get<Weapon*>("Weapon");
             character.Get<StateMachineAnimation*>("Drawable")->update(Actions::Attack);
 
             SystemCollision* coll = static_cast<SystemCollision*> (system.getSystem(TypeSystem::COLLISION));
             sf::FloatRect query = character.Get<Collision*>("Collision")->getAABB();
-            sf::Vector2f range = character.Get<sf::Vector2f>("query");
+            int range = weapon->getRange();
 
             Position* pos = character.Get<Position*>("Position");
             switch (pos->getDirection()) {
                 case CardinalPoints::EAST:
-                    query.width += range.x;
+                    query.width += range;
                     break;
                 case CardinalPoints::WEST:
-                    query.left -= range.x;
-                    query.width += range.x;
+                    query.left -= range;
+                    query.width += range;
                     break;
                 case CardinalPoints::SOUTH:
-                    query.height += range.y;
+                    query.height += range;
                     break;
                 case CardinalPoints::NORTH:
-                    query.top -= range.y;
-                    query.height += range.y;
+                    query.top -= range;
+                    query.height += range;
                     break;
             }
 
+            PropertyManager* prop = new PropertyManager();
+            prop->Add<int>("damage", weapon->getDamage() + weapon->getExtraDamage());
             std::vector<Entity*>* entities = coll->query(query);
             for (Entity* entity : *entities) {
-                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::Attack);
+//                switch (pos->getDirection()) {
+//                    case CardinalPoints::EAST:
+//                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Left);
+//                        break;
+//                    case CardinalPoints::WEST:
+//                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Right);
+//                        break;
+//                    case CardinalPoints::SOUTH:
+//                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Up);
+//                        break;
+//                    case CardinalPoints::NORTH:
+//                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Down);
+//                        break;
+//                }
+                entity->Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::Attack, prop);
             }
+            delete prop;
         }
     };
     actionBinding[Actions::Attack].action = derivedAction<Entity>(finder10);
 
     auto finder11 = [this] (Entity& character, sf::Time) {
-        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionQuest);
+        character.Get<Behaviour*>("Behaviour")->behaviourFunction(Actions::ActionQuest, nullptr);
     };
     actionBinding[Actions::ActionQuest].action = derivedAction<Entity>(finder11);
 

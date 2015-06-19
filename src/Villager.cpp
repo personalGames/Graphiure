@@ -118,7 +118,7 @@ void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
 }
 
 void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
-    auto function = [this, entity] (Actions action) {
+    auto function = [this, entity] (Actions action, PropertyManager* prop) {
         switch (action) {
             case Actions::ActionPlayer:
             {
@@ -145,6 +145,12 @@ void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
             case Actions::Attack:{
                 if(entity->HasID("Life")){
                     //hacer daño
+                    Life* life=entity->Get<Life*>("Life");
+                    int damage=prop->Get<int>("damage");
+                    life->damage(damage);
+                    if(!life->isAlive()){
+                        entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Dead);
+                    }
                 }
                 break;
             }

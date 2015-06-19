@@ -11,6 +11,7 @@
 #include "ISystem.h"
 #include "Quest.h"
 #include "Entity.h"
+#include "MissionStatus.h"
 #include <unordered_map>
 #include <SFML/System/String.hpp>
 #include <SFML/System/NonCopyable.hpp>
@@ -27,6 +28,8 @@ public:
 
     virtual void update(sf::Time dt);
     virtual void updateSecondPart(sf::Time dt){};
+    
+    MissionStatus getStatus();
     
     void addQuest(Quest* quest);
     sf::String* toString();

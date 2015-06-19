@@ -22,6 +22,7 @@
 #include "PauseState.h"
 #include "GameState.h"
 #include "LoadingState.h"
+#include "GameOverState.h"
 
 #include "FrameClock.h"
 #include "ClockHUD.h"

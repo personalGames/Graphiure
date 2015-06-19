@@ -147,6 +147,19 @@ void LoadingLevel::runTask() {
     character = gameObject->prepareEntity(*data.propertiesEntity);
     delete data.propertiesEntity;
     objectsGame->registerEntity(character);
+    
+    parser = IXMLParser::make_parser(TypeParser::CHARACTER);
+    document.load("Media/Data/Enemy.xml");
+    parser->setXML(document);
+    parser->setResources(textures);
+
+    parser->parse(data);
+    delete parser;
+
+    gameObject = FactoryGameObjects::getFactory("Villager");
+    character = gameObject->prepareEntity(*data.propertiesEntity);
+    delete data.propertiesEntity;
+    objectsGame->registerEntity(character);
 
     IdEntity id = character->getId();
 

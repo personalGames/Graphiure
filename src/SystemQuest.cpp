@@ -7,6 +7,7 @@
 
 #include "SystemQuest.h"
 #include "Quest.h"
+#include "MissionStatus.h"
 
 SystemQuest::SystemQuest() {
     type = TypeSystem::QUEST;
@@ -27,6 +28,11 @@ void SystemQuest::update(sf::Time dt) {
         ++it;
     }
 }
+
+MissionStatus SystemQuest::getStatus() {
+    return MissionStatus::MissionSuccess;
+}
+
 
 void SystemQuest::registerEntity(Entity* entity) {
     if (entity->HasID("Questeable")) {

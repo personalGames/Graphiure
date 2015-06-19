@@ -73,9 +73,18 @@ public:
         return !operator<(lhs);
     }
     
+    inline bool isFreeze(){
+        return freeze;
+    }
+    
+    inline void setFreeze(bool freeze){
+        this->freeze=freeze;
+    }
+    
 private:
     sf::Vector2f velocity;
     float maxVelocity;
+    bool freeze;
     
 private:
     float getMagnitud() const;

@@ -18,12 +18,14 @@ void GameState::draw() {
 
 bool GameState::handleEvent(const sf::Event& event) {
     // Game input handling
-    level->handleEvent(event);
+    if (!level->isEnd()) {
+        level->handleEvent(event);
 
-    // Escape pressed, trigger the pause screen
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-        requestStackPush(StatesID::Pause);
-
+        // Escape pressed, trigger the pause screen
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
+            requestStackPush(StatesID::Pause);
+        }
+    }
     return true;
 }
 
@@ -31,14 +33,20 @@ bool GameState::update(sf::Time dt) {
     level->update(dt);
 
     //check if player is alive
+    if (level->isEnd()) {
+        // Show state for 3 seconds, after return to menu
+        mElapsedTime += dt;
+        if (mElapsedTime > sf::seconds(2)) {
+            requestStackPush(StatesID::GameOver);
+        }
 
-    //    CommandQueue& commands = level->getCommandQueue();
-    //    player.handleRealtimeInput(commands);
+    }
 
     return true;
 }
 
 void GameState::pushedAction() {
+    mElapsedTime = sf::Time::Zero;
     level = context->actualLevel;
     level->setPlayer(context->player);
 }

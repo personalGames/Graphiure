@@ -31,7 +31,11 @@ void SystemMovement::removedEntity(Entity* entity) {
 
 void SystemMovement::update(sf::Time dt) {
     for (auto entity : movement) {
+        
         Velocity* velocity = entity->Get<Velocity*>("Velocity");
+        if(velocity->isFreeze()){
+            continue;
+        }
         velocity->adaptVelocity();
 
         Position* position = entity->Get<Position*>("Position");

@@ -1,0 +1,512 @@
+<Entity id="principal">
+	<Properties>
+		<Property id="Position" x="200" y="400" />
+		<Property id="Life" value="100" />
+		<Property id="MaxVelocity" value="300" />
+		<Property id="Drawable" numberAnimations="8"/>
+		<Property id="Collision" />
+		<Property id="query" x="35" y="35" />
+		<Property id="Weapon" type="knife" damage="25" range="10" />
+	</Properties>
+</Entity>
+
+<Collision>
+	<object type="Block" ><polyline x="0" y="0" points="21,43 21,64 43,64 43,43"/></object>
+</Collision>
+
+<StateMachine numberStates="13">
+	<Transition state="0" entry="1" newState="7"/>
+	<Transition state="0" entry="2" newState="6"/>
+	<Transition state="0" entry="3" newState="4"/>
+	<Transition state="0" entry="4" newState="5"/>
+	<Transition state="0" entry="13" newState="8"/>
+	<Transition state="0" entry="12" newState="11"/>
+	
+	<Transition state="1" entry="1" newState="7"/>
+	<Transition state="1" entry="2" newState="6"/>
+	<Transition state="1" entry="3" newState="4"/>
+	<Transition state="1" entry="4" newState="5"/>
+	<Transition state="1" entry="13" newState="8"/>
+	<Transition state="1" entry="12" newState="9"/>
+	
+	<Transition state="2" entry="1" newState="7"/>
+	<Transition state="2" entry="2" newState="6"/>
+	<Transition state="2" entry="3" newState="4"/>
+	<Transition state="2" entry="4" newState="5"/>
+	<Transition state="2" entry="13" newState="8"/>
+	<Transition state="2" entry="12" newState="12"/>
+	
+	<Transition state="3" entry="1" newState="7"/>
+	<Transition state="3" entry="2" newState="6"/>
+	<Transition state="3" entry="3" newState="4"/>
+	<Transition state="3" entry="4" newState="5"/>
+	<Transition state="3" entry="13" newState="8"/>
+	<Transition state="3" entry="12" newState="10"/>
+	
+	<Transition state="4" entry="0" newState="1"/>
+	<Transition state="4" entry="1" newState="7"/>
+	<Transition state="4" entry="2" newState="6"/>
+	<Transition state="4" entry="4" newState="5"/>
+	<Transition state="4" entry="5" newState="7"/>
+	<Transition state="4" entry="7" newState="6"/>
+	<Transition state="4" entry="3" newState="4"/>
+	<Transition state="4" entry="13" newState="8"/>
+	<Transition state="4" entry="12" newState="9"/>
+	
+	
+	<Transition state="5" entry="0" newState="0"/>
+	<Transition state="5" entry="1" newState="7"/>
+	<Transition state="5" entry="2" newState="6"/>
+	<Transition state="5" entry="3" newState="4"/>
+	<Transition state="5" entry="6" newState="7"/>
+	<Transition state="5" entry="8" newState="6"/>
+	<Transition state="5" entry="4" newState="5"/>
+	<Transition state="5" entry="13" newState="8"/>
+	<Transition state="5" entry="12" newState="11"/>
+	
+	<Transition state="6" entry="0" newState="2"/>
+	<Transition state="6" entry="1" newState="7"/>
+	<Transition state="6" entry="3" newState="4"/>
+	<Transition state="6" entry="4" newState="5"/>
+	<Transition state="6" entry="2" newState="6"/>
+	<Transition state="6" entry="13" newState="8"/>
+	<Transition state="6" entry="12" newState="12"/>
+	
+	<Transition state="7" entry="0" newState="3"/>
+	<Transition state="7" entry="2" newState="6"/>
+	<Transition state="7" entry="3" newState="4"/>
+	<Transition state="7" entry="4" newState="5"/>
+	<Transition state="7" entry="1" newState="7"/>
+	<Transition state="7" entry="13" newState="8"/>
+	<Transition state="7" entry="12" newState="10"/>
+	
+	<Transition state="9" entry="0" newState="1"/>
+	<Transition state="10" entry="0" newState="3"/>
+	<Transition state="11" entry="0" newState="0"/>
+	<Transition state="12" entry="0" newState="2"/>
+	
+	<Transition state="9" entry="1" newState="7"/>
+	<Transition state="9" entry="2" newState="6"/>
+	<Transition state="9" entry="3" newState="4"/>
+	<Transition state="9" entry="4" newState="5"/>
+	
+	<Transition state="10" entry="1" newState="7"/>
+	<Transition state="10" entry="2" newState="6"/>
+	<Transition state="10" entry="3" newState="4"/>
+	<Transition state="10" entry="4" newState="5"/>
+	
+	<Transition state="11" entry="1" newState="7"/>
+	<Transition state="11" entry="2" newState="6"/>
+	<Transition state="11" entry="3" newState="4"/>
+	<Transition state="11" entry="4" newState="5"/>
+	
+	<Transition state="12" entry="1" newState="7"/>
+	<Transition state="12" entry="2" newState="6"/>
+	<Transition state="12" entry="3" newState="4"/>
+	<Transition state="12" entry="4" newState="5"/>
+</StateMachine>
+
+
+<Animation id="enemy-down-idle" idImage="enemy" replay="false" wait="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+
+<Animation id="enemy-up-idle" idImage="enemy" replay="false" wait="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-right-idle" idImage="enemy" replay="false" wait="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+
+<Animation id="enemy-left-idle" idImage="enemy" replay="false" wait="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+</Animation>
+<Animation id="enemy-up-walking" idImage="enemy" replay="true" wait="false">
+<frame>
+	<vertice value="64"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="512"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+</Animation>
+
+<Animation id="enemy-down-walking" idImage="enemy" replay="true" wait="false">
+<frame>
+	<vertice value="64"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="640"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+</Animation>
+
+<Animation id="enemy-right-walking" idImage="enemy" replay="true" wait="false">
+<frame>
+	<vertice value="64"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="704"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+
+<Animation id="enemy-left-walking" idImage="enemy" replay="true" wait="false">
+<frame>
+	<vertice value="64"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="384"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="448"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="512"/>
+	<vertice value="576"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-dying" idImage="enemy" replay="false" wait="false">
+<frame>
+	<vertice value="0"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="64"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="1280"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-attack-up" idImage="enemy" replay="false" wait="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="768"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="768"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="768"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="768"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="768"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-attack-left" idImage="enemy" replay="false" wait="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="832"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="832"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="832"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="832"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="832"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-attack-down" idImage="enemy" replay="false" wait="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="896"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="896"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="896"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="896"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="896"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>
+<Animation id="enemy-attack-right" idImage="enemy" replay="false" wait="true">
+<frame>
+	<vertice value="64"/>
+	<vertice value="960"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="128"/>
+	<vertice value="960"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="192"/>
+	<vertice value="960"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="256"/>
+	<vertice value="960"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>
+<frame>
+	<vertice value="320"/>
+	<vertice value="960"/>
+	<vertice value="64"/>
+	<vertice value="64"/>
+</frame>	
+</Animation>

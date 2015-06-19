@@ -7,10 +7,11 @@
 
 #include "Level.h"
 #include "QuestState.h"
+#include "Character.h"
 #include <iostream>
 
 Level::Level(SystemManager& systemManager) :
-Observer(), systemManager(&systemManager), state(nullptr) {
+Observer(), systemManager(&systemManager), status(MissionStatus::MissionRunning), state(nullptr) {
 
     objectsGame = static_cast<SystemObjectsGame*>
             (systemManager.getSystem(TypeSystem::OBJECTS));
@@ -26,7 +27,7 @@ Observer(), systemManager(&systemManager), state(nullptr) {
 
     movement = static_cast<SystemMovement*>
             (systemManager.getSystem(TypeSystem::MOVEMENT));
-    
+
     quests = static_cast<SystemQuest*>
             (systemManager.getSystem(TypeSystem::QUEST));
 
@@ -61,9 +62,9 @@ bool Level::handleEvent(const sf::Event& event) {
 }
 
 void Level::update(sf::Time dt) {
-    if(state!=nullptr && state->isEnded()){
+    if (state != nullptr && state->isEnded()) {
         delete state;
-        state=nullptr;
+        state = nullptr;
     }
     //get the entity/character
     Entity* entity = objectsGame->getEntity(idCharacter);
@@ -102,7 +103,7 @@ void Level::update(sf::Time dt) {
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
-    
+
     quests->update(dt);
 
     //update objects in general (delete dead objects)
@@ -110,7 +111,17 @@ void Level::update(sf::Time dt) {
 
     if (state == nullptr) {
         player->handleRealtimeInput(commandQueue);
+        
+        //compruebo el estado del nivel/niveles
+        status=quests->getStatus();
     }
+}
+
+bool Level::isEnd() {
+    Entity* entity = objectsGame->getEntity(idCharacter);
+    Life* life = entity->Get<Life*>("Life");
+    return !life->isAlive();
+
 }
 
 void Level::update() {

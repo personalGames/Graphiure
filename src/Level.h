@@ -25,6 +25,7 @@
 #include "Observer.h"
 #include "SubStateGame.h"
 #include "ConversationState.h"
+#include "MissionStatus.h"
 
 class Level : private sf::NonCopyable, Observer {
 public:
@@ -41,6 +42,12 @@ public:
     
     void setPlayer(Player* player) {
         this->player = player;
+    }
+    
+    bool isEnd();
+    
+    inline MissionStatus getMissionStatus(){
+        return status;
     }
     
 
@@ -74,6 +81,7 @@ private:
      */
     Player* player;
     
+    MissionStatus status;
     
     SubStateGame* state;
    

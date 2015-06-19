@@ -111,7 +111,7 @@ void Application::registerStates() {
     stateStack.registerState<PauseState>(StatesID::Pause);
     stateStack.registerState<LoadingState>(StatesID::Loading);
     //    stateStack.registerState<SettingsState>(StatesID::Settings);
-    //    stateStack.registerState<GameOverState>(StatesID::GameOver);
+    stateStack.registerState<GameOverState>(StatesID::GameOver);
 }
 
 void Application::loadTextures() {
@@ -119,9 +119,6 @@ void Application::loadTextures() {
     textures.load("healthbar.png", "Media/Textures/healthbar.png");
     textures.load("TitleScreen.png", "Media/Textures/TitleScreen.png");
     textures.load("Buttons.png", "Media/Textures/Buttons.png");
-    textures.load("player.png", "Media/Textures/player.png");
-    textures.load("maskman.png", "Media/Textures/maskman.png");
-    textures.load("character", "Media/Textures/character");
 }
 
 void Application::loadFonts() {

@@ -10,11 +10,12 @@
 
 #include <functional>
 #include "Actions.h"
+#include "PropertyManager.h"
 
 
 struct Behaviour {
     Behaviour() {}
-    std::function<void(Actions action)> behaviourFunction;
+    std::function<void(Actions action, PropertyManager* prop)> behaviourFunction;
 
 };
 

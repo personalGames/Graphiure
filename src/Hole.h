@@ -12,6 +12,7 @@
 #include "PropertyManager.h"
 #include "Entity.h"
 #include "Life.h"
+#include "StateMachineAnimation.h"
 #include "OnCollision.h"
 #include "Position.h"
 #include "GameObjects.h"

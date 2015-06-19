@@ -57,6 +57,8 @@
         <itemPath>src/CommandQueue.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="ConcreteStates" projectFiles="true">
+        <itemPath>src/GameOverState.cpp</itemPath>
+        <itemPath>src/GameOverState.h</itemPath>
         <itemPath>src/GameState.cpp</itemPath>
         <itemPath>src/GameState.h</itemPath>
         <itemPath>src/LoadingState.cpp</itemPath>
@@ -129,8 +131,6 @@
         <itemPath>src/GameObjects.h</itemPath>
         <itemPath>src/Hole.cpp</itemPath>
         <itemPath>src/Hole.h</itemPath>
-        <itemPath>src/Knife.cpp</itemPath>
-        <itemPath>src/Knife.h</itemPath>
         <itemPath>src/StaticBlock.cpp</itemPath>
         <itemPath>src/StaticBlock.h</itemPath>
         <itemPath>src/Villager.cpp</itemPath>
@@ -181,6 +181,7 @@
         <itemPath>src/Velocity.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f17" displayName="Quest" projectFiles="true">
+        <itemPath>src/MissionStatus.h</itemPath>
         <itemPath>src/PartQuest.cpp</itemPath>
         <itemPath>src/PartQuest.h</itemPath>
         <itemPath>src/Quest.cpp</itemPath>
@@ -424,6 +425,10 @@
       </item>
       <item path="src/GameObjects.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/GameOverState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameOverState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
@@ -457,10 +462,6 @@
       <item path="src/IdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Knife.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Knife.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -505,6 +506,8 @@
       <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MissionStatus.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -869,6 +872,10 @@
       </item>
       <item path="src/GameObjects.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/GameOverState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameOverState.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/GameState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState.h" ex="false" tool="3" flavor2="0">
@@ -902,10 +909,6 @@
       <item path="src/IdEntity.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Knife.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Knife.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -950,6 +953,8 @@
       <item path="src/MessageCollision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MessageCollision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MissionStatus.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Observer.cpp" ex="false" tool="1" flavor2="0">
       </item>

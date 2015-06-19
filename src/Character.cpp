@@ -81,7 +81,7 @@ Entity* Character::prepareEntity(PropertyManager& parameters) {
 }
 
 void Character::makeBehaviour(Behaviour* behaviour, Entity* entity) {
-    auto function = [entity] (Actions action) {
+    auto function = [entity] (Actions action, PropertyManager* prop) {
         switch(action){
             case Actions::ActionQuest:{
                 Subject* sub=entity->Get<Subject*>("messageEntities");

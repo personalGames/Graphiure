@@ -52,6 +52,7 @@ void XMLParserAnimation::storeFrames(std::string image, tinyxml2::XMLElement* no
     Animation* anim=new Animation();
     
     //image for this animation
+    textures->load(image, "Media/Textures/"+image);
     textures->get(image);
     anim->setSpriteSheet(textures->get(image));
     anim->setWait(wait);

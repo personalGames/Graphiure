@@ -73,6 +73,14 @@ public:
                     << thePropertyID << ")" << std::endl;
         }
     }
+    
+//    template<class TYPE>
+//    void Delete(const std::string thePropertyID){
+//        std::map<const std::string, IProperty*>::iterator it=mList.find(thePropertyID);
+//        if (it != mList.end()) {
+//            mList.erase (it);
+//        }
+//    }
 
     /**
      * AddProperty Creates a Property and addes it to this entity.

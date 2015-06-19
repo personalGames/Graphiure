@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Velocity::Velocity(): velocity(sf::Vector2f(0,0)) {
+Velocity::Velocity(): velocity(sf::Vector2f(0,0)), freeze(false) {
 }
 
 Velocity::Velocity(const Velocity& orig) {

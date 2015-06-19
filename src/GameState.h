@@ -25,6 +25,7 @@ public:
 private:
     Level* level;
 //    Player& player;
+    sf::Time mElapsedTime;
     SystemManager* systemManager;
 };
 
