@@ -24,6 +24,7 @@ namespace GUI {
         
         virtual bool isSelectable() const;
         void setText(const wchar_t* text);
+        void setText(const std::string& text);
         virtual void handleEvent(const sf::Event& event);
         
     private:

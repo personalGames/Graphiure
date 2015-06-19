@@ -110,7 +110,7 @@ void Application::registerStates() {
     stateStack.registerState<GameState>(StatesID::Game);
     stateStack.registerState<PauseState>(StatesID::Pause);
     stateStack.registerState<LoadingState>(StatesID::Loading);
-    //    stateStack.registerState<SettingsState>(StatesID::Settings);
+    stateStack.registerState<SettingsState>(StatesID::Settings);
     stateStack.registerState<GameOverState>(StatesID::GameOver);
 }
 

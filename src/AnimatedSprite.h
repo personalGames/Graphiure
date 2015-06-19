@@ -67,8 +67,8 @@ private:
     std::size_t m_currentFrame;
     bool m_isPaused;
     bool m_isLooped;
-    bool wait;
     const sf::Texture* m_texture;
+    bool wait;
     sf::Vertex m_vertices[4];
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

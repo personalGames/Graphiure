@@ -17,12 +17,7 @@
 #include "IDTextures.h"
 #include "SystemManager.h"
 
-#include "MenuState.h"
-#include "TitleState.h"
-#include "PauseState.h"
-#include "GameState.h"
-#include "LoadingState.h"
-#include "GameOverState.h"
+#include "IncludeStates.h"
 
 #include "FrameClock.h"
 #include "ClockHUD.h"

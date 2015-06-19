@@ -61,12 +61,15 @@
         <itemPath>src/GameOverState.h</itemPath>
         <itemPath>src/GameState.cpp</itemPath>
         <itemPath>src/GameState.h</itemPath>
+        <itemPath>src/IncludeStates.h</itemPath>
         <itemPath>src/LoadingState.cpp</itemPath>
         <itemPath>src/LoadingState.h</itemPath>
         <itemPath>src/MenuState.cpp</itemPath>
         <itemPath>src/MenuState.h</itemPath>
         <itemPath>src/PauseState.cpp</itemPath>
         <itemPath>src/PauseState.h</itemPath>
+        <itemPath>src/SettingsState.cpp</itemPath>
+        <itemPath>src/SettingsState.h</itemPath>
         <itemPath>src/TitleState.cpp</itemPath>
         <itemPath>src/TitleState.h</itemPath>
       </logicalFolder>
@@ -463,6 +466,8 @@
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/IncludeStates.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -570,6 +575,10 @@
       <item path="src/SceneNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SceneNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SettingsState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SettingsState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -910,6 +919,8 @@
       </item>
       <item path="src/ImportSystems.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/IncludeStates.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Label.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Label.h" ex="false" tool="3" flavor2="0">
@@ -1017,6 +1028,10 @@
       <item path="src/SceneNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/SceneNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SettingsState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SettingsState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/SpriteNode.cpp" ex="false" tool="1" flavor2="0">
       </item>

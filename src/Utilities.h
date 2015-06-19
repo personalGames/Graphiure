@@ -18,10 +18,16 @@
 void centerOrigin(sf::Sprite& sprite);
 void centerOrigin(sf::Text& text);
 
+// Convert enumerators to strings
+std::string toString(sf::Keyboard::Key key);
+
 // Since std::to_string doesn't work on MinGW we have to implement
 // our own to support all platforms.
 template <typename T>
-std::string toString(const T& value);
+const std::wstring toString(const T& value);
+
+template <typename T>
+std::string toStringKey(const T& value);
 
 // Convert enumerators to strings
 //std::string toString(sf::Keyboard::Key key);
@@ -44,10 +50,26 @@ float length(sf::Vector2f vector);
 sf::Vector2f unitVector(sf::Vector2f vector);
 
 template <typename T>
-std::string toString(const T& value) {
+wchar_t* toString(const T& value) {
+    std::wstring stream;
+    stream << value;
+    return stream.c_str();
+}
+
+template <typename T>
+std::string toStringKey(const T& value) {
     std::stringstream stream;
     stream << value;
     return stream.str();
+}
+
+template <typename T>
+const std::wstring toString(const T& value) {
+    std::stringstream stream1;
+    stream1<<value;
+    std::string key=stream1.str();
+    std::wstring result=std::wstring(key.begin(), key.end());
+    return result;
 }
 
 /**

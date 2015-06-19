@@ -31,7 +31,12 @@ namespace GUI {
     void Label::setText(const wchar_t* text) {
         this->text.setString(text);
     }
-        Label::~Label() {
+
+    void Label::setText(const std::string& text) {
+        this->text.setString(text);
+    }
+
+    Label::~Label() {
 
     }
 
