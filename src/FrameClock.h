@@ -32,25 +32,22 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Clock.hpp>
 
-namespace sfx
-{
-    namespace detail
-    {
+namespace sfx {
+    namespace detail {
         // Utility function to disambiguate from macro 'max'.
+
         template<typename T>
-        inline T limit()
-        {
+        inline T limit() {
             return (std::numeric_limits<T>::max)();
         }
-    }   // namespace detail
+    } // namespace detail
 
-    class FrameClock
-    {
+    class FrameClock {
     public:
 
         // Constructs a FrameClock object with sample depth 'depth'.
-        explicit FrameClock(std::size_t depth = 100)
-        {
+
+        explicit FrameClock(std::size_t depth = 100) {
             assert(depth >= 1);
             m_sample.data.resize(depth);
 
@@ -59,48 +56,45 @@ namespace sfx
         }
 
         // Resets all times to zero and discards accumulated samples.
-        void clear()
-        {
+
+        void clear() {
             FrameClock(getSampleDepth()).swap(*this);
         }
 
         // Begin frame timing.
         // Should be called once at the start of each new frame.
-        void beginFrame()
-        {
+
+        void beginFrame() {
             m_clock.restart();
         }
 
         // End frame timing.
         // Should be called once at the end of each frame.
         // Returns: Time elapsed since the matching FrameClock::beginFrame.
-        sf::Time endFrame()
-        {
+
+        sf::Time endFrame() {
             m_time.current = m_clock.getElapsedTime();
 
             m_sample.accumulator -= m_sample.data[m_sample.index];
             m_sample.data[m_sample.index] = m_time.current;
 
             m_sample.accumulator += m_time.current;
-            m_time.elapsed       += m_time.current;
+            m_time.elapsed += m_time.current;
 
-            if (++m_sample.index >= getSampleDepth())
-            {
+            if (++m_sample.index >= getSampleDepth()) {
                 m_sample.index = 0;
             }
 
-            if (m_time.current != sf::microseconds(0))
-            {
+            if (m_time.current != sf::microseconds(0)) {
                 m_freq.current = 1.0f / m_time.current.asSeconds();
             }
 
-            if (m_sample.accumulator != sf::microseconds(0))
-            {
-                const float smooth = static_cast<float>(getSampleDepth());
+            if (m_sample.accumulator != sf::microseconds(0)) {
+                const float smooth = static_cast<float> (getSampleDepth());
                 m_freq.average = smooth / m_sample.accumulator.asSeconds();
             }
 
-            const sf::Int64 smooth = static_cast<sf::Int64>(getSampleDepth());
+            const sf::Int64 smooth = static_cast<sf::Int64> (getSampleDepth());
             m_time.average = sf::microseconds(m_sample.accumulator.asMicroseconds() / smooth);
 
             if (m_freq.current < m_freq.minimum)
@@ -120,81 +114,81 @@ namespace sfx
 
         // Sets the number of frames to be sampled for averaging.
         // 'depth' must be greater than or equal to 1.
-        void setSampleDepth(std::size_t depth)
-        {
+
+        void setSampleDepth(std::size_t depth) {
             assert(depth >= 1);
             FrameClock(depth).swap(*this);
         }
 
         // Returns: The number of frames to be sampled for averaging.
-        std::size_t getSampleDepth() const
-        {
+
+        std::size_t getSampleDepth() const {
             return m_sample.data.size();
         }
 
         // Returns: The total accumulated frame time.
-        sf::Time getTotalFrameTime() const
-        {
+
+        sf::Time getTotalFrameTime() const {
             return m_time.elapsed;
         }
 
         // Returns: The total accumulated number of frames.
-        sf::Uint64 getTotalFrameCount() const
-        {
+
+        sf::Uint64 getTotalFrameCount() const {
             return m_freq.elapsed;
         }
 
         // Returns: Time elapsed during the last 'FrameClock::beginFrame/endFrame' pair.
-        sf::Time getLastFrameTime() const
-        {
+
+        sf::Time getLastFrameTime() const {
             return m_time.current;
         }
 
         // Returns: The shortest measured frame time.
-        sf::Time getMinFrameTime() const
-        {
+
+        sf::Time getMinFrameTime() const {
             return m_time.minimum;
         }
 
         // Returns: The longest measured frame time.
-        sf::Time getMaxtFrameTime() const
-        {
+
+        sf::Time getMaxtFrameTime() const {
             return m_time.maximum;
         }
 
         // Returns: Average frame time over the last getSampleDepth() frames.
-        sf::Time getAverageFrameTime() const
-        {
+
+        sf::Time getAverageFrameTime() const {
             return m_time.average;
         }
 
         // Returns: Frames per second, considering the pervious frame only.
-        float getFramesPerSecond() const
-        {
+
+        float getFramesPerSecond() const {
             return m_freq.current;
         }
 
         // Returns: The lowest measured frames per second.
-        float getMinFramesPerSecond() const
-        {
+
+        float getMinFramesPerSecond() const {
             return m_freq.minimum;
         }
 
         // Returns: The highest measured frames per second.
-        float getMaxFramesPerSecond() const
-        {
+
+        float getMaxFramesPerSecond() const {
             return m_freq.maximum;
         }
 
         // Returns: Average frames per second over the last getSampleDepth() frames.
-        float getAverageFramesPerSecond() const
-        {
+
+        float getAverageFramesPerSecond() const {
             return m_freq.average;
         }
 
         // Swaps the value of this FrameClock instance with 'other'.
-        void swap(FrameClock& other)
-        {
+
+        void swap(FrameClock& other) {
             this->m_time.swap(other.m_time);
             this->m_freq.swap(other.m_freq);
             this->m_sample.swap(other.m_sample);
@@ -204,17 +198,17 @@ namespace sfx
     private:
 
         template<typename T, typename U>
-        struct Range
-        {
+        struct Range {
+
             Range()
-                : minimum()
-                , maximum()
-                , average()
-                , current()
-                , elapsed()
-            {}
-            void swap(Range& other)
-            {
+            : minimum()
+            , maximum()
+            , average()
+            , current()
+            , elapsed() {
+            }
+
+            void swap(Range& other) {
                 std::swap(this->minimum, other.minimum);
                 std::swap(this->maximum, other.maximum);
                 std::swap(this->average, other.average);
@@ -229,29 +223,29 @@ namespace sfx
         };
 
         Range<sf::Time, sf::Time> m_time;
-        Range<float, sf::Uint64>  m_freq;
+        Range<float, sf::Uint64> m_freq;
 
-        struct SampleData
-        {
+        struct SampleData {
+
             SampleData()
-                : accumulator()
-                , data()
-                , index()
-            {}
+            : accumulator()
+            , data()
+            , index() {
+            }
             sf::Time accumulator;
             std::vector<sf::Time> data;
             std::vector<sf::Time>::size_type index;
-            void swap(SampleData& other)
-            {
+
+            void swap(SampleData& other) {
                 std::swap(this->accumulator, other.accumulator);
-                std::swap(this->data,        other.data);
-                std::swap(this->index,       other.index);
+                std::swap(this->data, other.data);
+                std::swap(this->index, other.index);
             }
         } m_sample;
 
         sf::Clock m_clock;
     };
-}   // namespace sfx
+} // namespace sfx
 
 #endif	/* FRAMECLOCK_H */
 

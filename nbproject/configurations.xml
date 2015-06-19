@@ -110,7 +110,6 @@
         <logicalFolder name="f1" displayName="Properties" projectFiles="true">
           <itemPath>src/IProperty.cpp</itemPath>
           <itemPath>src/IProperty.h</itemPath>
-          <itemPath>src/Properties.h</itemPath>
           <itemPath>src/PropertyManager.cpp</itemPath>
           <itemPath>src/PropertyManager.h</itemPath>
           <itemPath>src/TProperty.h</itemPath>
@@ -190,7 +189,6 @@
       </logicalFolder>
       <logicalFolder name="f11" displayName="Resources" projectFiles="true">
         <itemPath>src/IDFonts.h</itemPath>
-        <itemPath>src/IDGroupsTextures.h</itemPath>
         <itemPath>src/IDTextures.h</itemPath>
         <itemPath>src/ResourceHolder.h</itemPath>
       </logicalFolder>
@@ -226,7 +224,6 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Utilities" projectFiles="true">
         <itemPath>src/CardinalPoints.h</itemPath>
-        <itemPath>src/ConvexHull.cpp</itemPath>
         <itemPath>src/ConvexHull.h</itemPath>
         <itemPath>src/ConvexTest.h</itemPath>
         <itemPath>src/HashIdEntity.h</itemPath>
@@ -395,8 +392,6 @@
       </item>
       <item path="src/ConversationState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ConvexTest.h" ex="false" tool="3" flavor2="0">
@@ -442,8 +437,6 @@
       <item path="src/Hole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDTextures.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -544,8 +537,6 @@
       <item path="src/Position.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Position.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Properties.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/PropertyManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -846,8 +837,6 @@
       </item>
       <item path="src/ConversationState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/ConvexHull.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/ConvexHull.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/ConvexTest.h" ex="false" tool="3" flavor2="0">
@@ -893,8 +882,6 @@
       <item path="src/Hole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDFonts.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/IDGroupsTextures.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/IDTextures.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -995,8 +982,6 @@
       <item path="src/Position.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Position.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Properties.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/PropertyManager.cpp" ex="false" tool="1" flavor2="0">
       </item>

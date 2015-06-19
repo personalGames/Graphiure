@@ -12,7 +12,7 @@
 #include "Context.h"
 #include <memory>
 
-class StateStack; //because StateStack has dependencies too with State, so
+class StateStack; //because StateStack has dependencies too with Stat. So
 //to avoid circular dependencies
 
 class State {

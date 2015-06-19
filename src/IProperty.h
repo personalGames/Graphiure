@@ -10,7 +10,7 @@
 
 #include <string>
 
-/// Provides the interface for all IEntity properties
+/// Provides the interface for all properties
 class IProperty {
 public:
     /// Class that represents the type for this class
