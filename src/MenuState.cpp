@@ -13,8 +13,6 @@ MenuState::MenuState(StateStack& stack, Context* context)
 
     sf::Texture& texture = context->textures->get("TitleScreen.png");
     backgroundSprite.setTexture(texture);
-    
-    context->music->play(MusicID::MenuTheme);
 
     GUI::Button* playButton = new GUI::Button(*context);
     playButton->setPosition(100, 300);
@@ -53,6 +51,15 @@ MenuState::MenuState(StateStack& stack, Context* context)
     container.pack(exitButton);
 
 }
+
+void MenuState::pulledAction() {
+    context->music->stop();
+}
+
+void MenuState::pushedAction() {
+    context->music->play(MusicID::MenuTheme);
+}
+
 
 void MenuState::draw() {
     sf::RenderWindow& window = *getContext()->window;

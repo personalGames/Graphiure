@@ -18,6 +18,15 @@ TitleState::TitleState(StateStack& stack, Context* context): State(stack, contex
     text.setPosition(context->window->getView().getSize() / 2.f);
 }
 
+void TitleState::pushedAction() {
+    context->music->play(MusicID::MenuTheme);
+}
+
+void TitleState::pulledAction() {
+    context->music->stop();
+}
+
+
 void TitleState::draw() {
     sf::RenderWindow& window = *getContext()->window;
     window.draw(backgroundSprite);

@@ -55,11 +55,11 @@ PauseState::~PauseState() {
 }
 
 void PauseState::pulledAction() {
-    getContext()->music->setPaused(true);
+    getContext()->music->setPaused(false);
 }
 
 void PauseState::pushedAction() {
-    getContext()->music->setPaused(false);
+    getContext()->music->setPaused(true);
 }
 
 void PauseState::draw() {

@@ -24,6 +24,11 @@ public:
     virtual bool handleEvent(const sf::Event& event);
 
 
+    virtual void pulledAction();
+    virtual void pushedAction();
+
+
+
 private:
     sf::Sprite backgroundSprite;
     sf::Text text;

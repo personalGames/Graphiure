@@ -23,6 +23,12 @@ public:
     virtual void draw();
     virtual bool update(sf::Time delta);
     virtual bool handleEvent(const sf::Event& event);
+    
+
+    virtual void pulledAction();
+    virtual void pushedAction();
+
+
 
 
 private:

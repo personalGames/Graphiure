@@ -74,9 +74,12 @@ void StateStack::applyPendingChanges() {
                 stack.push_back(state);
                 break;
             }
-            case ActionStack::Pop:
+            case ActionStack::Pop:{
+                State* state=stack.back();
+                state->pulledAction();
                 stack.pop_back();
                 break;
+            }
 
             case ActionStack::Clear:
                 stack.clear();

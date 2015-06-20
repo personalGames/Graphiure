@@ -52,5 +52,5 @@ void GameState::pushedAction() {
     level = context->actualLevel;
     level->setPlayer(context->player);
     // Play game theme
-    context->music->play(MusicID::MenuTheme);
+    context->music->play(MusicID::MissionTheme);
 }

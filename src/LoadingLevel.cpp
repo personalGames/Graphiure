@@ -183,7 +183,7 @@ void LoadingLevel::runTask() {
             character=objectsGame->getEntityXml(idCharacter);
             
             if(!character->HasID("Questeable")){
-                questeable = new Questeable(1);
+                questeable = new Questeable(quest->getId());
                 character->Add<Questeable*>("Questeable", questeable);
             }else{
                 Questeable* questeable =character->Get<Questeable*>("Questeable");
