@@ -19,13 +19,14 @@
 #include "StateMachineAnimation.h"
 
 #include "SystemManager.h"
+#include "SoundPlayer.h"
 
 class Player {
 public:
     Player();
     virtual ~Player();
     
-    void initialize(SystemManager& managerSystem);
+    void initialize(SystemManager& managerSystem, SoundPlayer* mSound);
     
     void handleEvent(const sf::Event& event, CommandQueue& commands);
     void handleRealtimeInput(CommandQueue& commands);
@@ -35,6 +36,7 @@ public:
     
 private:
     SystemManager system;
+    SoundPlayer* mSound;
     
     std::map<sf::Keyboard::Key, Actions> keyBinding;
     std::map<Actions, Command> actionBinding;

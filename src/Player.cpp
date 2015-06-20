@@ -11,13 +11,15 @@
 #include "SystemCollision.h"
 #include "Subject.h"
 #include "Weapon.h"
+#include "SoundEffectID.h"
 
 Player::Player() {
 
 }
 
-void Player::initialize(SystemManager& managerSystem) {
+void Player::initialize(SystemManager& managerSystem, SoundPlayer* mSound) {
     this->system = managerSystem;
+    this->mSound=mSound;
     // Set initial key bindings
     keyBinding[sf::Keyboard::Left] = Actions::Left;
     keyBinding[sf::Keyboard::Right] = Actions::Right;
@@ -140,6 +142,9 @@ void Player::initializeActions() {
             int range = weapon->getRange();
 
             Position* pos = character.Get<Position*>("Position");
+            SoundEffectID sound=SoundEffectID::AlliedGunfire;
+            mSound->play(sound, pos->getPosition().getPosition());
+            
             switch (pos->getDirection()) {
                 case CardinalPoints::EAST:
                     query.width += range;

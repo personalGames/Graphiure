@@ -27,6 +27,7 @@ public:
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
     void makeBehaviour(Behaviour* behaviour, Entity* entity);
+    
 };
 
 #endif	/* CHARACTER_H */

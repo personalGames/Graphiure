@@ -22,7 +22,7 @@ Application::Application() : window(sf::VideoMode(1024, 768), "Graphiure", sf::S
     loadTextures();
 
     setSystemManager();
-    player.initialize(systemManager);
+    player.initialize(systemManager, &mSounds);
     registerStates();
     stateStack.pushState(StatesID::Title);
 
