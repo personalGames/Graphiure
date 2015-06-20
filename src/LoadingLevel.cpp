@@ -185,18 +185,15 @@ void LoadingLevel::runTask() {
             
             if(!character->HasID("Questeable")){
                 questeable = new Questeable(quest->getId());
-                std::cout<<"Creo uno nuevo"<<std::endl;
                 //registro los entities questeables
                 quests->registerEntity(character);
                 character->Add<Questeable*>("Questeable", questeable);
             }else{
-                std::cout<<"reutilizo el anterior"<<std::endl;
                 questeable = character->Get<Questeable*>("Questeable");
                 
             }
             questeable->addPartQuest(*it);
             character->Set<Questeable*>("Questeable", questeable);
-            std::cout<<"Tiene "<<questeable->getPartQuest().size()<<std::endl;
         }
         
 
