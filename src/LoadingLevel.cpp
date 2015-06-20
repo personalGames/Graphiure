@@ -181,21 +181,28 @@ void LoadingLevel::runTask() {
             IdEntity idCharacter=(*it)->getIdDestiny();
             std::cout<<idCharacter.getId()<<std::endl;
             character=objectsGame->getEntityXml(idCharacter);
+            std::cout<<"y tengo a "<<character->getIdXml().getId()<<" "<<character->getId().getId()<<std::endl;
             
             if(!character->HasID("Questeable")){
                 questeable = new Questeable(quest->getId());
+                std::cout<<"Creo uno nuevo"<<std::endl;
+                //registro los entities questeables
+                quests->registerEntity(character);
                 character->Add<Questeable*>("Questeable", questeable);
             }else{
-                Questeable* questeable =character->Get<Questeable*>("Questeable");
+                std::cout<<"reutilizo el anterior"<<std::endl;
+                questeable = character->Get<Questeable*>("Questeable");
+                
             }
             questeable->addPartQuest(*it);
+            character->Set<Questeable*>("Questeable", questeable);
+            std::cout<<"Tiene "<<questeable->getPartQuest().size()<<std::endl;
         }
         
 
         //guardo el quest en el sistema
         quests->addQuest(quest);
-        //registro los entities questeables
-        quests->registerEntity(character);
+        
 
         //he terminado con todos los objetos y personajes, ahora formo la historia
         //    sf::String* text=new sf::String("Hablar con el aldeano");

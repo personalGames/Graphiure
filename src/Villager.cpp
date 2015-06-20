@@ -180,47 +180,42 @@ void Villager::processQuest(Questeable* quest, Entity* entity, Actions action) {
     for (std::vector<PartQuest*>::const_iterator it = list.begin(); it != list.end(); ++it) {
         PartQuest* part = *it;
         TypeQuest type = part->getType();
-
-        if (true){//part->getIdDestiny() == entity->getId()) {
-            switch (type) {
-                case TypeQuest::KILL:
-                {
-                    if (entity->HasID("Life")) {
-                        std::cout<<"Voy a hacer daño"<<std::endl;
-                        Life* life = entity->Get<Life*>("Life");
-                        if (!life->isAlive()) {
-                            std::cout<<"Ya no esta vivo"<<std::endl;
-                            part->setDone(true);
-                        }
-                    }
-                    break;
-                }
-
-                case TypeQuest::ACTION:
-                {
-                    if (action == part->getAction()) {
+        switch (type) {
+            case TypeQuest::KILL:
+            {
+                if (entity->HasID("Life")) {
+                    Life* life = entity->Get<Life*>("Life");
+                    if (!life->isAlive()) {
                         part->setDone(true);
                     }
-                    break;
                 }
-
-                case TypeQuest::TALK:
-                {
-                    if (action == Actions::ActionPlayer) {
-                        std::cout<<"He hablado con el aldeano"<<std::endl;
-                        part->setDone(true);
-                    }
-                    break;
-                }
-
-                case TypeQuest::CARRY:
-                {
-                    break;
-                }
-
-                default:
-                    break;
+                break;
             }
+
+            case TypeQuest::ACTION:
+            {
+                if (action == part->getAction()) {
+                    part->setDone(true);
+                }
+                break;
+            }
+
+            case TypeQuest::TALK:
+            {
+                if (action == Actions::ActionPlayer) {
+                    part->setDone(true);
+                }
+                break;
+            }
+
+            case TypeQuest::CARRY:
+            {
+                break;
+            }
+
+            default:
+                break;
         }
+
     }
 }

@@ -23,7 +23,13 @@ void XMLParserQuests::parse(DataUnion& data) {
     while(quest){
         int idQuest=quest->IntAttribute("id");
         sf::String* text=new sf::String(quest->Attribute("text"));
-        sf::Time time = sf::seconds(quest->IntAttribute("time"));
+        int seconds=quest->IntAttribute("time");
+        sf::Time time;
+        if(seconds==0){
+            time=sf::Time::Zero;
+        }else{
+            time=sf::seconds(seconds);
+        }
         oneQuest=new Quest(idQuest, text, time);
         
         bool order=quest->BoolAttribute("order");

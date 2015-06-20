@@ -143,7 +143,7 @@ void Player::initializeActions() {
 
             Position* pos = character.Get<Position*>("Position");
             SoundEffectID sound=SoundEffectID::AlliedGunfire;
-            mSound->play(sound, pos->getPosition().getPosition());
+            mSound->play(sound);
             
             switch (pos->getDirection()) {
                 case CardinalPoints::EAST:

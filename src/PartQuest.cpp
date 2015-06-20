@@ -16,6 +16,7 @@ PartQuest::PartQuest(TypeQuest type, IdEntity destiny, IdEntity origin, Actions 
     this->idDestiny=destiny;
     this->idOrigin=origin;
     this->action=action;
+    this->done=false;
 }
 
 PartQuest::PartQuest(const PartQuest& orig) {
@@ -23,6 +24,7 @@ PartQuest::PartQuest(const PartQuest& orig) {
     idDestiny=orig.idDestiny;
     idOrigin=orig.idOrigin;
     action=orig.action;
+    this->done=orig.done;
 }
 
 PartQuest::~PartQuest() {

@@ -11,6 +11,7 @@
 #include "TypeQuest.h"
 #include "IdEntity.h"
 #include "Actions.h"
+#include <iostream>
 
 
 class PartQuest {

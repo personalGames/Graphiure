@@ -41,7 +41,6 @@ void Quest::update(sf::Time dt) {
     for (std::vector<PartQuest*>::iterator iter = list.begin(); iter != list.end(); ++iter) {
         if ((*iter)->isDone()) {
             if (isInOrder() && finish) {
-                std::cout<<"Me lo quita!!"<<std::endl;
                 (*iter)->setDone(false);
             } else {
                 doneList.push_back(*iter);
@@ -57,7 +56,6 @@ void Quest::update(sf::Time dt) {
         timer += dt;
         if (timer > time) {
             for (std::vector<PartQuest*>::reverse_iterator iter = doneList.rbegin(); iter != doneList.rend(); ++iter) {
-                std::cout<<"Me lo quita!!"<<std::endl;
                 (*iter)->setDone(false);
                 list.insert(list.begin(), *iter);
                 ++iter;
