@@ -1,3 +1,8 @@
-<Quest id="1" time="0" text="Tienes que hablar con el aldeano" order="true" finish="2,3">
-	<part entity="5" type="talk" id="5" idOrigin="2" action=""></part>
+<Quest id="1" time="0" text="Tienes que hablar con el aldeano" order="true" finish="2">
+	<part entity="3" type="talk" id="1" idOrigin="1" action=""></part>
+</Quest>
+
+<Quest id="2" time="0" text="Matar al soldado y avisar al aldeano" order="true" finish="">
+	<part entity="5" type="kill" id="2" idOrigin="1" action=""></part>
+	<part entity="3" type="talk" id="3" idOrigin="1" action=""></part>
 </Quest>

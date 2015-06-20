@@ -25,6 +25,7 @@ public:
     virtual bool handleEvent(const sf::Event& event)=0;
     virtual void pushedAction() { //nothing by default   
     };
+    virtual void pulledAction(){};
     
 protected:
     StateStack* stack;

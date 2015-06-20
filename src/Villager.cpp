@@ -17,6 +17,11 @@ Villager::Villager() {
 Entity* Villager::prepareEntity(PropertyManager& parameters) {
     Entity* entity = new Entity(Category::CHARACTER);
 
+    if (parameters.HasID("idXML")) {
+        IdEntity id = IdEntity(parameters.Get<int>("idXML"));
+        entity->setIdXml(id);
+    }
+
     if (parameters.HasID("MaxVelocity")) {
         Velocity* vel = new Velocity();
         vel->setMaxVelocity(parameters.Get<float>("MaxVelocity"));
@@ -118,7 +123,7 @@ void Villager::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
 }
 
 void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
-    auto function = [this, entity] (Actions action, PropertyManager* prop) {
+    auto function = [this, entity] (Actions action, PropertyManager * prop) {
         switch (action) {
             case Actions::ActionPlayer:
             {
@@ -141,20 +146,21 @@ void Villager::makeBehaviour(Behaviour* behaviour, Entity* entity) {
                 sub->setMessage(m);
                 break;
             }
-            
-            case Actions::Attack:{
-                if(entity->HasID("Life")){
+
+            case Actions::Attack:
+            {
+                if (entity->HasID("Life")) {
                     //hacer daño
-                    Life* life=entity->Get<Life*>("Life");
-                    int damage=prop->Get<int>("damage");
+                    Life* life = entity->Get<Life*>("Life");
+                    int damage = prop->Get<int>("damage");
                     life->damage(damage);
-                    if(!life->isAlive()){
+                    if (!life->isAlive()) {
                         entity->Get<StateMachineAnimation*>("Drawable")->update(Actions::Dead);
                     }
                 }
                 break;
             }
-            
+
             default:
                 break;
         }
@@ -180,8 +186,10 @@ void Villager::processQuest(Questeable* quest, Entity* entity, Actions action) {
                 case TypeQuest::KILL:
                 {
                     if (entity->HasID("Life")) {
+                        std::cout<<"Voy a hacer daño"<<std::endl;
                         Life* life = entity->Get<Life*>("Life");
                         if (!life->isAlive()) {
+                            std::cout<<"Ya no esta vivo"<<std::endl;
                             part->setDone(true);
                         }
                     }
@@ -199,6 +207,7 @@ void Villager::processQuest(Questeable* quest, Entity* entity, Actions action) {
                 case TypeQuest::TALK:
                 {
                     if (action == Actions::ActionPlayer) {
+                        std::cout<<"He hablado con el aldeano"<<std::endl;
                         part->setDone(true);
                     }
                     break;

@@ -27,7 +27,7 @@ PauseState::PauseState(StateStack& stack, Context* context)
     returnButton->setCallback([this] () {
         requestStackPop();
     });
-    
+
     GUI::Button* settingsButton = new GUI::Button(*context);
     settingsButton->setPosition(0.5f * windowSize.x - 100, 0.4f * windowSize.y + 125);
     settingsButton->setText(L"Opciones");
@@ -46,11 +46,19 @@ PauseState::PauseState(StateStack& stack, Context* context)
     GUIContainer.pack(returnButton);
     GUIContainer.pack(settingsButton);
     GUIContainer.pack(backToMenuButton);
-    
-    getContext()->music->setPaused(true);
+
+
 }
 
 PauseState::~PauseState() {
+    getContext()->music->setPaused(false);
+}
+
+void PauseState::pulledAction() {
+    getContext()->music->setPaused(true);
+}
+
+void PauseState::pushedAction() {
     getContext()->music->setPaused(false);
 }
 

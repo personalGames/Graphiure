@@ -1,4 +1,4 @@
-<Entity id="principal">
+<Entity id="5">
 	<Properties>
 		<Property id="Position" x="200" y="400" />
 		<Property id="Life" value="100" />

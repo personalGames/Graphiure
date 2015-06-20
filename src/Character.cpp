@@ -15,6 +15,11 @@ Character::~Character() {
 
 Entity* Character::prepareEntity(PropertyManager& parameters) {
     Entity* entity = new Entity(Category::CHARACTER);
+    
+    if (parameters.HasID("idXML")) {
+        IdEntity id=IdEntity(parameters.Get<int>("idXML"));
+        entity->setIdXml(id);
+    }
 
     Velocity* vel = new Velocity();
     vel->setMaxVelocity(parameters.Get<float>("MaxVelocity"));

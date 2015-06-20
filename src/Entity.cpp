@@ -11,7 +11,7 @@ Entity::Entity(): Entity(Category::NONE) {
 
 }
 
-Entity::Entity(Category category):id(), destroyed(false), category(category) {
+Entity::Entity(Category category):id(), destroyed(false), category(category), idXml(-1) {
 
 }
 

@@ -35,7 +35,6 @@ void XMLParserAnimation::parse(DataUnion& data) {
         std::string image(animation->Attribute("idImage"));
         bool replay=animation->BoolAttribute("replay");
         bool wait=animation->BoolAttribute("wait");
-        std::cout<<wait<<std::endl;
         storeFrames(image, anim, result, replay, wait);
         
        animation=animation->NextSiblingElement("Animation");

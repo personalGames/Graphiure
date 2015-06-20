@@ -1,4 +1,4 @@
-<Entity id="principal">
+<Entity id="1">
 	<Properties>
 		<Property id="Position" x="100" y="100" />
 		<Property id="Life" value="100" />
@@ -6,7 +6,7 @@
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" />
 		<Property id="query" x="35" y="35" />
-		<Property id="Weapon" type="knife" damage="25" range="10" />
+		<Property id="Weapon" type="knife" damage="25" range="20" />
 	</Properties>
 </Entity>
 

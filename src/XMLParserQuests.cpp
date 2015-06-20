@@ -37,7 +37,8 @@ void XMLParserQuests::parse(DataUnion& data) {
         tinyxml2::XMLElement* partQuest=quest->FirstChildElement("part");
         while(partQuest){
             //TypeQuest type, IdEntity destiny, IdEntity origin, Actions action
-            int destiny=partQuest->IntAttribute("id");
+//            int id=partQuest->IntAttribute("id");
+            int destiny=partQuest->IntAttribute("entity");
             int origin=partQuest->IntAttribute("idOrigin");
             sf::String typeString=partQuest->Attribute("type");
             TypeQuest type;

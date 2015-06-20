@@ -16,8 +16,11 @@ void XMLParserCharacter::parse(DataUnion& data) {
     PropertyManager* properties = new PropertyManager();
   
     //get first node
-    tinyxml2::XMLElement* entity = doc->FirstChildElement("Entity")->FirstChildElement("Properties");
- 
+    tinyxml2::XMLElement* entity = doc->FirstChildElement("Entity");
+    int id=entity->IntAttribute("id");
+    properties->Add<int>("idXML",id);
+    entity=entity->FirstChildElement("Properties");
+    
     entity = entity->FirstChildElement("Property");
 
     while (entity) {

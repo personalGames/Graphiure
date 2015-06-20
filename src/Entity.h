@@ -40,10 +40,18 @@ public:
         return category;
     }
 
+    inline IdEntity getIdXml() const {
+        return idXml;
+    }
+
+    inline void setIdXml(IdEntity id) {
+        this->idXml = id;
+    }
 
     
 private:
     IdEntity id;
+    IdEntity idXml;
     bool destroyed;
     Category category;
 };

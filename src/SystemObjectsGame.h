@@ -37,6 +37,7 @@ public:
     }
     
     Entity* getEntity(IdEntity id);
+    Entity* getEntityXml(IdEntity id);
     void destroyEntity(IdEntity id);
     
 private:
@@ -46,6 +47,8 @@ private:
     SystemManager* systemManager;
     
     Subject* messageEntities;
+    
+    std::unordered_map<IdEntity, IdEntity, HashIdEntity> entitiesXml;
 };
 
 #endif	/* SYSTEMOBJECTSGAME_H */

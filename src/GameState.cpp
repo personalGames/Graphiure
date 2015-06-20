@@ -11,8 +11,7 @@ GameState::GameState(StateStack& stack, Context* context) :
 State(stack, context), systemManager(context->systemManager) {
     //player(*context->player)
     
-    // Play game theme
-    context->music->play(MusicID::MenuTheme);
+    
 }
 
 void GameState::draw() {
@@ -52,4 +51,6 @@ void GameState::pushedAction() {
     mElapsedTime = sf::Time::Zero;
     level = context->actualLevel;
     level->setPlayer(context->player);
+    // Play game theme
+    context->music->play(MusicID::MenuTheme);
 }

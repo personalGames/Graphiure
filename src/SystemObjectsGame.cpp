@@ -9,15 +9,15 @@
 
 #include "SystemObjectsGame.h"
 
-SystemObjectsGame::SystemObjectsGame(SystemManager& systemManager): ISystem(), 
-        entities(), systemManager(&systemManager), messageEntities(){
-    type=TypeSystem::OBJECTS;
-    messageEntities=new Subject();
+SystemObjectsGame::SystemObjectsGame(SystemManager& systemManager) : ISystem(),
+entities(), systemManager(&systemManager), messageEntities() {
+    type = TypeSystem::OBJECTS;
+    messageEntities = new Subject();
 }
 
-void SystemObjectsGame::destroyEntity(IdEntity id){
-    Entity* getting=getEntity(id);
-    if(getting!=nullptr){
+void SystemObjectsGame::destroyEntity(IdEntity id) {
+    Entity* getting = getEntity(id);
+    if (getting != nullptr) {
         removedEntities.push_back(getting);
         getting->destroy();
     }
@@ -26,20 +26,32 @@ void SystemObjectsGame::destroyEntity(IdEntity id){
 void SystemObjectsGame::finalize() {
     //elimino todas las entidades
     auto it = entities.begin();
-    while (it != entities.end()){
+    while (it != entities.end()) {
         //elimino el objeto
         delete it->second;
         //elimino la referencia en la lista
-        it=entities.erase(it);
+        it = entities.erase(it);
     }
 }
 
 Entity* SystemObjectsGame::getEntity(IdEntity id) {
-    Entity* result=nullptr;
-    try{
-        result=entities.at(id);
-    }catch(std::out_of_range exception){
-        std::cout<<"Error buscando entidad"<<std::endl;
+    Entity* result = nullptr;
+    try {
+        result = entities.at(id);
+    } catch (std::out_of_range exception) {
+        std::cout << "Error buscando entidad" << std::endl;
+    }
+    return result;
+}
+
+Entity* SystemObjectsGame::getEntityXml(IdEntity id) {
+    Entity* result = nullptr;
+    try {
+        IdEntity xml;
+        xml = entitiesXml.at(id);
+        result = entities.at(xml);
+    } catch (std::out_of_range exception) {
+        std::cout << "Error buscando entidad" << std::endl;
     }
     return result;
 }
@@ -49,33 +61,33 @@ void SystemObjectsGame::initialize() {
 }
 
 void SystemObjectsGame::registerEntity(Entity* entity) {
-    if(entities.find(entity->getId())==entities.end()){
+    if (entities.find(entity->getId()) == entities.end()) {
         entity->Add<Subject*>("messageEntities", messageEntities);
         newEntity(entity);
     }
 }
 
-
 void SystemObjectsGame::newEntity(Entity* entity) {
-    entities[entity->getId()]=entity;
+    entities[entity->getId()] = entity;
+    if (entity->getIdXml() != IdEntity(-1)) {
+        entitiesXml[entity->getIdXml()] = entity->getId();
+    }
     //aviso a los demás subsistemas de que hay nueva entidad por si quieren 
     //vigilarlo
     systemManager->registerEntity(entity);
 }
 
-
 void SystemObjectsGame::update(sf::Time dt) {
-    if(removedEntities.size()>0){
+    if (removedEntities.size() > 0) {
         auto it = removedEntities.begin();
-        while (it != removedEntities.end()){
+        while (it != removedEntities.end()) {
             //aviso a los subsistemas que este id ya no está
             systemManager->removeEntity(*it);
             entities.erase((*it)->getId());
-            it=removedEntities.erase(it);
+            it = removedEntities.erase(it);
         }
     }
 }
-
 
 SystemObjectsGame::~SystemObjectsGame() {
     finalize();

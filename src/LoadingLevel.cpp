@@ -161,8 +161,6 @@ void LoadingLevel::runTask() {
     delete data.propertiesEntity;
     objectsGame->registerEntity(character);
 
-    IdEntity id = character->getId();
-
 
     parser = IXMLParser::make_parser(TypeParser::QUEST);
     document.load("Media/Data/Quests.xml");
@@ -172,17 +170,27 @@ void LoadingLevel::runTask() {
     delete parser;
 
     std::vector<Quest*>* questsData = data.quests;
+    Questeable* questeable;
     for (std::vector<Quest*>::iterator it = questsData->begin(); it != questsData->end(); ++it) {
         Quest* quest = *it;
         quest->setOpened(true);
 
         //a los entities implicados, les añado su partquest asociado
-        Questeable* questeable = new Questeable(1);
         const std::vector<PartQuest*> parts = quest->getPartQuests();
         for (std::vector<PartQuest*>::const_iterator it = parts.begin(); it != parts.end(); ++it) {
+            IdEntity idCharacter=(*it)->getIdDestiny();
+            std::cout<<idCharacter.getId()<<std::endl;
+            character=objectsGame->getEntityXml(idCharacter);
+            
+            if(!character->HasID("Questeable")){
+                questeable = new Questeable(1);
+                character->Add<Questeable*>("Questeable", questeable);
+            }else{
+                Questeable* questeable =character->Get<Questeable*>("Questeable");
+            }
             questeable->addPartQuest(*it);
         }
-        character->Add<Questeable*>("Questeable", questeable);
+        
 
         //guardo el quest en el sistema
         quests->addQuest(quest);

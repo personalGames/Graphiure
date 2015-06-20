@@ -24,6 +24,8 @@ public:
     virtual bool update(sf::Time delta);
     virtual bool handleEvent(const sf::Event& event);
 
+    virtual void pushedAction();
+    virtual void pulledAction();
 
 private:
     sf::Sprite backgroundSprite;
