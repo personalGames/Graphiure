@@ -10,7 +10,7 @@
 
 #include "GameStates.h"
 #include "IdEntity.h"
-
+#include <SFML/System/String.hpp>
 
 class Message {
 public:
@@ -33,11 +33,20 @@ public:
     void setIdEntity(IdEntity id){
         this->idEntity=id;
     }
+    
+    inline void setData(std::string* data){
+        this->data=data;
+    }
+    
+    inline std::string* getData(){
+        return data;
+    }
 
     
 private:
     GameStates state;
     IdEntity idEntity;
+    std::string* data;
 };
 
 #endif	/* MESSAGE_H */

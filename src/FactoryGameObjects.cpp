@@ -8,6 +8,7 @@
 #include "FactoryGameObjects.h"
 #include "Character.h"
 #include "Villager.h"
+#include "ChangeLevel.h"
 #include <iostream>
 
 std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type) {
@@ -19,6 +20,8 @@ std::unique_ptr<GameObjects> FactoryGameObjects::getFactory(std::string type) {
         return std::unique_ptr<Character>(new Character());
     } else if (type.compare("Villager") == 0) {
         return std::unique_ptr<Villager>(new Villager());
+    }else if(type.compare("ChangeLevel")==0){
+        return std::unique_ptr<ChangeLevel>(new ChangeLevel());
     } else {
         return std::unique_ptr<StaticBlock>(new StaticBlock());
     }

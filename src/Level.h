@@ -49,7 +49,8 @@ public:
     inline MissionStatus getMissionStatus(){
         return status;
     }
-    
+    bool changeLevel();
+    std::string* getNextLevel();
 
     virtual void update();
 
@@ -84,6 +85,8 @@ private:
     MissionStatus status;
     
     SubStateGame* state;
+    bool isChangeLevel;
+    std::string* level;
    
 };
 

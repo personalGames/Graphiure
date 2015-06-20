@@ -20,6 +20,7 @@
 #include "Behaviour.h"
 #include "Talk.h"
 #include "Questeable.h"
+#include "Message.h"
 
 class Villager : public GameObjects{
 public:

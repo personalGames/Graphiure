@@ -58,6 +58,8 @@ void MenuState::pulledAction() {
 
 void MenuState::pushedAction() {
     context->music->play(MusicID::MenuTheme);
+    container.deselect();
+    container.deactivate();
 }
 
 

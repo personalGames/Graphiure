@@ -24,6 +24,7 @@ textShown(), marginRectangle(20.f), positionText(0), fontSize(20), textFinish(fa
     } else {
         text = L"...";
     }
+    
 
     textShown.setCharacterSize(fontSize);
     font = &(graphics->getFonts().get(IDFonts::Main));

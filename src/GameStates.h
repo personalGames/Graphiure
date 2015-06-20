@@ -12,7 +12,8 @@ enum GameStates{
     GAMING,
     CONVERSATION,
     INVENTORY,
-    QUEST
+    QUEST,
+    CHANGE_LEVEL
 };
 
 

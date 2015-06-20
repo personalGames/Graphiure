@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <people>
 	<character id="Character.xml" />
 	<villager id="Aldeano.xml" />
@@ -5060,7 +5060,7 @@
   <object id="110" x="662" y="1215.5" name="Block" type="Block">
    <polyline points="0,0 0.5,43 -12.5,54.5 -24,-6"/>
   </object>
-  <object id="113" x="1599.67" y="1450.33" name="ChangeLevel" type="ChangeLevel" level="level2.xml">
+  <object id="113" x="1599.67" y="1450.33" name="ChangeLevel" type="ChangeLevel" level="level1.xml">
    <polyline points="0,0 -32,0 -32.3333,77 0,77.3333"/>
   </object>
  </objectgroup>

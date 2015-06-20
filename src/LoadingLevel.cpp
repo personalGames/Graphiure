@@ -19,7 +19,7 @@
 #include "XMLDocument.h"
 #include "Questeable.h"
 
-LoadingLevel::LoadingLevel(Levels level, Context* context)
+LoadingLevel::LoadingLevel(std::string* level, Context* context)
 : ParallelTask(), level(level), context(context) {
     levelToLoad = context->actualLevel;
     this->textures = context->textures;
@@ -48,12 +48,11 @@ void LoadingLevel::runTask() {
     SystemObjectsGame* objectsGame = static_cast<SystemObjectsGame*> (systemManager->getSystem(TypeSystem::OBJECTS));
 
 
-    XMLDocument document = XMLDocument("Media/Levels/level1.xml");
+    XMLDocument document = XMLDocument("Media/Levels/" + *level);
     //recojo el xml del nivel
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
     parser->setXML(document);
-
     //parseo el nivel
     parser->parse(data);
     delete parser;
@@ -63,18 +62,15 @@ void LoadingLevel::runTask() {
         completion = 10;
     }
 
-
-
-
     //pass the information to build the scene with all this data readed
     graphics->newScene(infoMap);
     collision->newWorldCollision(graphics->getBounds());
+    delete infoMap;
+
     {
         sf::Lock lock(mutex);
         completion = 35;
     }
-    delete infoMap;
-
 
     // leo las colisiones del mapa 
     Entity* colisionable;
@@ -82,7 +78,6 @@ void LoadingLevel::runTask() {
     parser->setXML(document);
     parser->parse(data);
     delete parser;
-
 
     PropertyManager parameters;
     //la posición hay que ajustarla al tamaño modificado del mapa
@@ -97,6 +92,9 @@ void LoadingLevel::runTask() {
         parameters.Add<sf::Vector2f>("Ratio", ratio);
         parameters.Add<sf::Vector2f>("Position", coli->position);
         parameters.Add<sf::VertexArray*>("Vertex", coli->vertices);
+        if (coli->data != nullptr) {
+            parameters.Add<std::string*>("Level", coli->data);
+        }
 
         //preparo el factory que creará el entity
         std::unique_ptr<GameObjects> gameObject = FactoryGameObjects::getFactory(coli->typeCollision);
@@ -108,59 +106,64 @@ void LoadingLevel::runTask() {
         delete *it;
     }
 
-    //recojo los elementos necesarios y los comunico al manejador de recursos
+    {
+        sf::Lock lock(mutex);
+        completion = 40;
+    }
 
-    parser = IXMLParser::make_parser(TypeParser::CHARACTER);
-    document.load("Media/Data/Character.xml");
-    parser->setXML(document);
+    //ahora vienen los personajes del nivel
+    parser = IXMLParser::make_parser(TypeParser::PEOPLE);
     parser->setResources(textures);
-
+    parser->setXML(document);
+    //parseo el nivel
     parser->parse(data);
     delete parser;
+    StructPeople* infoPeople = data.people;
 
+    parser = IXMLParser::make_parser(TypeParser::CHARACTER);
+    document.load("Media/Data/" + *(infoPeople->character));
+    parser->setXML(document);
+    parser->setResources(textures);
+    parser->parse(data);
+    delete parser;
     std::unique_ptr<GameObjects> gameObject = FactoryGameObjects::getFactory("Character");
     Entity* character = gameObject->prepareEntity(*data.propertiesEntity);
+
     delete data.propertiesEntity;
 
 
     levelToLoad->setCharacter(character->getId());
-
     {
         sf::Lock lock(mutex);
-        completion = 70;
+        completion = 55;
     }
 
     //he terminado con mi personaje, lo registro/guardo
     objectsGame->registerEntity(character);
 
 
+    //parseo los personajes del nivel
+    std::vector<std::string*> villagers = *(infoPeople->villagers);
+    for (uint i = 0; i < villagers.size(); ++i) {
+        parser = IXMLParser::make_parser(TypeParser::CHARACTER);
+        std::string* name = villagers.at(i);
+        document.load("Media/Data/" + *name);
+        parser->setXML(document);
+        parser->setResources(textures);
+        parser->parse(data);
+        delete parser;
+        gameObject = FactoryGameObjects::getFactory("Villager");
+        character = gameObject->prepareEntity(*data.propertiesEntity);
 
-    parser = IXMLParser::make_parser(TypeParser::CHARACTER);
-    document.load("Media/Data/Aldeano.xml");
-    parser->setXML(document);
-    parser->setResources(textures);
+        delete data.propertiesEntity;
+        objectsGame->registerEntity(character);
+    }
 
-    parser->parse(data);
-    delete parser;
 
-    gameObject = FactoryGameObjects::getFactory("Villager");
-    character = gameObject->prepareEntity(*data.propertiesEntity);
-    delete data.propertiesEntity;
-    objectsGame->registerEntity(character);
-    
-    parser = IXMLParser::make_parser(TypeParser::CHARACTER);
-    document.load("Media/Data/Enemy.xml");
-    parser->setXML(document);
-    parser->setResources(textures);
-
-    parser->parse(data);
-    delete parser;
-
-    gameObject = FactoryGameObjects::getFactory("Villager");
-    character = gameObject->prepareEntity(*data.propertiesEntity);
-    delete data.propertiesEntity;
-    objectsGame->registerEntity(character);
-
+    {
+        sf::Lock lock(mutex);
+        completion = 70;
+    }
 
     parser = IXMLParser::make_parser(TypeParser::QUEST);
     document.load("Media/Data/Quests.xml");
@@ -178,49 +181,25 @@ void LoadingLevel::runTask() {
         //a los entities implicados, les añado su partquest asociado
         const std::vector<PartQuest*> parts = quest->getPartQuests();
         for (std::vector<PartQuest*>::const_iterator it = parts.begin(); it != parts.end(); ++it) {
-            IdEntity idCharacter=(*it)->getIdDestiny();
-            std::cout<<idCharacter.getId()<<std::endl;
-            character=objectsGame->getEntityXml(idCharacter);
-            std::cout<<"y tengo a "<<character->getIdXml().getId()<<" "<<character->getId().getId()<<std::endl;
-            
-            if(!character->HasID("Questeable")){
+            IdEntity idCharacter = (*it)->getIdDestiny();
+            character = objectsGame->getEntityXml(idCharacter);
+
+            if (!character->HasID("Questeable")) {
                 questeable = new Questeable(quest->getId());
                 //registro los entities questeables
                 quests->registerEntity(character);
                 character->Add<Questeable*>("Questeable", questeable);
-            }else{
+            } else {
                 questeable = character->Get<Questeable*>("Questeable");
-                
+
             }
             questeable->addPartQuest(*it);
             character->Set<Questeable*>("Questeable", questeable);
         }
-        
+
 
         //guardo el quest en el sistema
         quests->addQuest(quest);
-        
-
-        //he terminado con todos los objetos y personajes, ahora formo la historia
-        //    sf::String* text=new sf::String("Hablar con el aldeano");
-        //    Quest* quest=new Quest(1, text); //creo el quest principal y el texto que define lo que hay que hacer (y tiempo si esta limitado)
-        //    quest->setOpened(true);
-        //    quest->setInOrder(true);
-        //    
-        //    //hago las partes del quest
-        //    PartQuest* part=new PartQuest(TypeQuest::TALK, id, idCharacter); 
-        //    quest->addPartQuest(part);
-        //    //aquí añadíría que quest abrirían al cumplirse este
-        //    
-        //    //a los entities implicados, les añado su partquest asociado
-        //    Questeable* questeable=new Questeable(1);
-        //    questeable->addPartQuest(part);
-        //    character->Add<Questeable*>("Questeable", questeable);
-        //    
-        //    //guardo el quest en el sistema
-        //    quests->addQuest(quest);
-        //    //registro los entities questeables
-        //    quests->registerEntity(character);
     }
 
     { // finished may be accessed from multiple threads, protect it

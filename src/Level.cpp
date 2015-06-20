@@ -11,7 +11,7 @@
 #include <iostream>
 
 Level::Level(SystemManager& systemManager) :
-Observer(), systemManager(&systemManager), status(MissionStatus::MissionRunning), state(nullptr) {
+Observer(), systemManager(&systemManager), status(MissionStatus::MissionRunning), state(nullptr), isChangeLevel(false), level(nullptr) {
 
     objectsGame = static_cast<SystemObjectsGame*>
             (systemManager.getSystem(TypeSystem::OBJECTS));
@@ -124,19 +124,35 @@ bool Level::isEnd() {
 
 }
 
+bool Level::changeLevel(){
+    return isChangeLevel;
+}
+
+std::string* Level::getNextLevel() {
+    return level;
+}
+
+
+
 void Level::update() {
     Message message = getSubject()->getMessage();
     GameStates stateGame = message.getState();
     switch (stateGame) {
         case GameStates::GAMING:
+            
             break;
-        case GameStates::CONVERSATION:
+        case GameStates::CONVERSATION:{
             state = (SubStateGame*)new ConversationState(message.getIdEntity(), systemManager);
             break;
+        }
         case GameStates::INVENTORY:
             break;
         case GameStates::QUEST:
             state = (SubStateGame*) new QuestState(systemManager);
+            break;
+        case GameStates::CHANGE_LEVEL:
+            isChangeLevel=true;
+            level=message.getData();
             break;
     }
     //read the messages from the entities and react

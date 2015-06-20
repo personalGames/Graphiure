@@ -27,7 +27,6 @@ void SystemGraphic::initialize() {
 
 void SystemGraphic::newScene(StructMap* infoMap) {
     //clear previous scene
-    
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
         SceneNode* layer = new SceneNode();
@@ -35,7 +34,6 @@ void SystemGraphic::newScene(StructMap* infoMap) {
         sceneLayers[i] = std::move(layer);
         sceneGraph.addChild(std::move(layer));
     }
-
 
     //prepare the principal background
     TileMapNode * tileMap(new TileMapNode(textures,
@@ -49,7 +47,6 @@ void SystemGraphic::newScene(StructMap* infoMap) {
     ratio=tileMap->getAdjustRatio();
     sizeTile=tileMap->getQuadSize();
     sceneLayers[Background]->addChild(std::move(tileMap));
-
     //prepare the underground
     TileNode * tiles(new TileNode(textures,
             infoMap,mapView.getSize().x, mapView.getSize().y,

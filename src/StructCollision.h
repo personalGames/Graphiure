@@ -18,6 +18,7 @@ struct StructCollision {
     sf::VertexArray* vertices;
     std::string typeCollision;
     sf::Vector2f position;
+    std::string* data;
 };
 
 #endif	/* STRUCTCOLLISION_H */

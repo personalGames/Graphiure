@@ -16,8 +16,10 @@
 #include "StructCollision.h"
 #include "PropertyManager.h"
 #include "Quest.h"
+#include "StructPeople.h"
 
 union DataUnion{
+    StructPeople* people;
     StructMap* map;
     Animation* animation;
     StructAnimation* animations;

@@ -52,6 +52,8 @@ private:
     
     MusicPlayer mMusic;
     SoundPlayer mSounds;
+    
+    std::string nameLevel;
 
 };
 

@@ -33,7 +33,7 @@ bool GameState::handleEvent(const sf::Event& event) {
 
 bool GameState::update(sf::Time dt) {
     level->update(dt);
-
+    
     //check if player is alive
     if (level->isEnd()) {
         // Show state for 3 seconds, after return to menu
@@ -42,8 +42,14 @@ bool GameState::update(sf::Time dt) {
             requestStackPush(StatesID::GameOver);
         }
 
+    }else if(level->changeLevel()){
+        std::string* newLevel=level->getNextLevel();
+//        context->nameLevel=newLevel;
+        
+        requestStackPop();
+        requestStackPush(StatesID::Loading);
     }
-
+    
     return true;
 }
 

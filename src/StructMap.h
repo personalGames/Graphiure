@@ -18,6 +18,10 @@ struct StructMap{
     StructMap();
     virtual ~StructMap();
     
+    std::vector<std::string*>* villagers;
+    std::string* character;
+    
+    
     int numberColumns;
     int numberRows;
     int tileHeight;

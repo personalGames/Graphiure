@@ -12,7 +12,7 @@ const sf::Time Application::timePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application() : window(sf::VideoMode(1024, 768), "Graphiure", sf::Style::Close)
 , textures(), fonts(), player(), systemManager(), mMusic()
-, mSounds(), stateStack(Context(window, textures, fonts, player, systemManager, mMusic, mSounds)) {
+, mSounds(), nameLevel("level1.xml"), stateStack(Context(window, textures, fonts, player, systemManager, mMusic, mSounds, nameLevel)) {
 
     window.setKeyRepeatEnabled(false);
     window.setVerticalSyncEnabled(true);

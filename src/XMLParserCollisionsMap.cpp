@@ -24,7 +24,7 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
     //get root node
     tinyxml2::XMLElement* detailsMap = doc->FirstChildElement("map");
     if (detailsMap == nullptr) {
-        std::cout << "Vacio" << std::endl;
+        std::cout << "Vacio?" << std::endl;
     }
 
     //get the node of collisions
@@ -40,6 +40,13 @@ void XMLParserCollisionsMap::parse(DataUnion& data) {
         sf::Vector2f position(object->DoubleAttribute("x"), object->DoubleAttribute("y"));
         collisionObject->position = position;
         collisionObject->typeCollision = object->Attribute("type");
+        
+        if(collisionObject->typeCollision.compare("ChangeLevel")==0){
+            collisionObject->data=new std::string(object->Attribute("level"));
+        }else{
+            collisionObject->data=nullptr;
+        }
+        
         //get the points
         tinyxml2::XMLElement* vertices = object->FirstChildElement("polyline");
 

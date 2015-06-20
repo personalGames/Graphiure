@@ -44,48 +44,24 @@ void LoadingState::draw() {
 }
 
 bool LoadingState::update(sf::Time) {
-    // Update the progress bar from the remote task or finish it
-//    if (loadingTask != nullptr && loadingTask->isFinished()) {
-//        //reset the task so next time will create another task to do
-//        taskCreated = false;
-//        //task finished, deleting data...
-//        delete loadingTask;
-//        requestStackPop();
-//        requestStackPush(StatesID::Game);
-//    } else {
-//        if (!taskCreated) {
-//            //switch que decide qué tarea a cargar ha de realizar según el contexto
-//            //delete the old level and load new level
-//            if (context->actualLevel != nullptr) {
-//                delete context->actualLevel;
-//            }
-//            context->actualLevel = new Level(*context->systemManager);
-//            loadingTask = new LoadingLevel(Levels::Test, context);
-//            loadingTask->execute();
-//            taskCreated = true;
-//        }
-//        setCompletion(loadingTask->getCompletion());
-//    }
-//    return true;
-
-
-
-    //bool taskCreated;
-    //ParallelTask* loadingTask;
-
     //si la tarea está creada, la continúo
     if (taskCreated) {
         if (loadingTask->isFinished()) {
-            
+            //si la tarea se ha terminado, comienzo el siguiente estado
             taskCreated=false;
             requestStackPop();
             requestStackPush(StatesID::Game);
+            
+        //avanzo en la completitud de la tarea
         } else {
             setCompletion(loadingTask->getCompletion());
         }
+        
+    //creo la tarea
     } else {
         context->actualLevel = new Level(*context->systemManager);
-        loadingTask = new LoadingLevel(Levels::Test, context);
+        std::string* level=new std::string("level1.xml");
+        loadingTask = new LoadingLevel(context->nameLevel, context);
         loadingTask->execute();
         taskCreated = true;
     }

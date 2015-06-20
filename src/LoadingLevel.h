@@ -18,7 +18,7 @@
 
 class LoadingLevel : public ParallelTask{
 public:
-    LoadingLevel(Levels levelToLoad, Context* context);
+    LoadingLevel(std::string* level, Context* context);
     virtual ~LoadingLevel();
     
 
@@ -26,7 +26,7 @@ public:
 
     
 private:
-    Levels level;
+    std::string* level;
     Level* levelToLoad;
     ResourceHolder<std::string, sf::Texture>* textures;
     SystemManager* systemManager;

@@ -16,7 +16,8 @@ enum class TypeParser{
     STATE_MACHINE,
     COLLISIONS_MAP,
     COLLISIONS,
-    QUEST
+    QUEST,
+    PEOPLE
 };
 
 

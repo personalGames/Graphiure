@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="111">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="114">
  <tileset firstgid="1" name="TileSet" tilewidth="32" tileheight="32">
   <image source="../../../../../../../../home/dorian/Proyectos/Código/C/Graphiure/Media/Textures/TileSet.png" width="1024" height="1024"/>
  </tileset>
@@ -5056,6 +5056,9 @@
   </object>
   <object id="110" x="662" y="1215.5">
    <polygon points="0,0 0.5,43 -12.5,54.5 -24,-6"/>
+  </object>
+  <object id="113" x="1599.67" y="1450.33">
+   <polyline points="0,0 -32,0 -32.3333,77 0,77.3333"/>
   </object>
  </objectgroup>
 </map>
