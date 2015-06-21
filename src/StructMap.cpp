@@ -10,7 +10,6 @@
 StructMap::StructMap(): numberColumns(0), numberRows(0), tileHeight(0),
         tileWidth(0), tiles(), underground() {
     underground=new std::vector< sf::Vector3i >();
-    villagers=new std::vector<std::string*>();
 }
 
 StructMap::~StructMap() {

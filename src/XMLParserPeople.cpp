@@ -19,7 +19,7 @@ void XMLParserPeople::parse(DataUnion& data, std::string id) {
 
 
 void XMLParserPeople::parse(DataUnion& data) {
-    StructMap* result = new StructMap();
+    StructPeople* result = new StructPeople();
     
     tinyxml2::XMLElement* people= doc->FirstChildElement("people");
     tinyxml2::XMLElement* character=people->FirstChildElement("character");
@@ -42,5 +42,5 @@ void XMLParserPeople::parse(DataUnion& data) {
         layer = layer->NextSiblingElement("villager");
     }
     
-    data.map=result;
+    data.people=result;
 }
