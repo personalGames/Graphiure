@@ -7,7 +7,7 @@
 
 #include "ParallelTask.h"
 
-ParallelTask::ParallelTask(): thread(&ParallelTask::runTask, this), finished(false), completion(0) {
+ParallelTask::ParallelTask() : thread(&ParallelTask::runTask, this), finished(false), completion(0) {
 }
 
 void ParallelTask::execute() {
@@ -22,7 +22,7 @@ bool ParallelTask::isFinished() {
 
 float ParallelTask::getCompletion() {
     sf::Lock lock(mutex);
-    return completion*0.01;
+    return completion * 0.01;
 }
 
 ParallelTask::~ParallelTask() {

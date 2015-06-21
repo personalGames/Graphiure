@@ -16,8 +16,13 @@ namespace GUI {
     void Container::pack(Component* component) {
         children.push_back(component);
 
-        //        if (!hasSelection() && component->isSelectable())
-        //            select(children.size() - 1);
+    }
+
+    void Container::clearSelection() {
+        if(hasSelection()){
+            children[selectedChild]->deselect();
+        }
+        selectedChild = -1;
     }
 
     bool Container::isSelectable() const {

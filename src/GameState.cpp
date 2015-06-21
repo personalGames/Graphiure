@@ -44,7 +44,7 @@ bool GameState::update(sf::Time dt) {
 
     }else if(level->changeLevel()){
         std::string* newLevel=level->getNextLevel();
-//        context->nameLevel=newLevel;
+        context->nameLevel=newLevel;
         
         requestStackPop();
         requestStackPush(StatesID::Loading);

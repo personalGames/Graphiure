@@ -153,6 +153,7 @@ void Level::update() {
         case GameStates::CHANGE_LEVEL:
             isChangeLevel=true;
             level=message.getData();
+            
             break;
     }
     //read the messages from the entities and react

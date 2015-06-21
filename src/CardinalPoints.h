@@ -8,6 +8,9 @@
 #ifndef CARDINALPOINTS_H
 #define	CARDINALPOINTS_H
 
+/**
+ * Enumeración de puntos cardinales
+ */
 enum class CardinalPoints{
     NORTH,
     SOUTH,

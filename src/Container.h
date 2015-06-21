@@ -12,20 +12,32 @@
 #include <SFML/Graphics/RenderStates.hpp>
 #include <vector>
 #include <memory.h>
-//#include <event.h>
 
 #include "Component.h"
 
 namespace GUI {
-
+    /**
+     * Contenedor GUI
+     */
     class Container : public Component {
     public:
+        /**
+         * Constructor
+         */
         Container();
+        /**
+         * Destructor
+         */
         virtual ~Container();
-        
+        /**
+         * 
+         * @param component
+         */
         void pack(Component* component);
         virtual bool isSelectable() const;
         virtual void handleEvent(const sf::Event& event);
+        
+        void clearSelection();
         
     private:
         std::vector<Component*> children;

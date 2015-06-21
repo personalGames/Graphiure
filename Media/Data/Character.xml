@@ -6,7 +6,7 @@
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" />
 		<Property id="query" x="35" y="35" />
-		<Property id="Weapon" type="knife" damage="25" range="20" />
+		<Property id="Weapon" type="knife" damage="25" range="30" />
 	</Properties>
 </Entity>
 

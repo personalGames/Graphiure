@@ -60,6 +60,7 @@ void PauseState::pulledAction() {
 
 void PauseState::pushedAction() {
     getContext()->music->setPaused(true);
+    GUIContainer.clearSelection();
 }
 
 void PauseState::draw() {

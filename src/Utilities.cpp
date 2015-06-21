@@ -8,7 +8,10 @@
 #include "Utilities.h"
 
 namespace {
-
+    /**
+     * Inicializa el random del motor
+     * @return 
+     */
     std::default_random_engine createRandomEngine() {
         auto seed = static_cast<unsigned long> (std::time(nullptr));
         return std::default_random_engine(seed);
@@ -26,11 +29,6 @@ void centerOrigin(sf::Text& text) {
     sf::FloatRect bounds = text.getLocalBounds();
     text.setOrigin(std::floor(bounds.width / 2.f), std::floor(bounds.height / 2.f));
 }
-
-//void centerOrigin(Animation& animation) {
-//    sf::FloatRect bounds = animation.getLocalBounds();
-//    animation.setOrigin(std::floor(bounds.width / 2.f), std::floor(bounds.height / 2.f));
-//}
 
 float toDegree(float radian) {
     return 180.f / 3.141592653589793238462643383f * radian;
@@ -110,6 +108,34 @@ bool LineCollision(const sf::Vector2f& A1, const sf::Vector2f& A2,
     return true;
 }
 
+template <typename T>
+wchar_t* toString(const T& value) {
+    std::wstring stream;
+    stream << value;
+    return stream.c_str();
+}
+
+template <typename T>
+std::string toStringKey(const T& value) {
+    std::stringstream stream;
+    stream << value;
+    return stream.str();
+}
+
+template <typename T>
+const std::wstring toString(const T& value) {
+    std::stringstream stream1;
+    stream1<<value;
+    std::string key=stream1.str();
+    std::wstring result=std::wstring(key.begin(), key.end());
+    return result;
+}
+
+/**
+ * Convierte los códigos de teclado en strings
+ * @param key código de tecla
+ * @return string representando la tecla
+ */
 std::string toString(sf::Keyboard::Key key) {
 #define BOOK_KEYTOSTRING_CASE(KEY) case sf::Keyboard::KEY: return #KEY;
 

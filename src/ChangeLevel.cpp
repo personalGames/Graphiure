@@ -52,6 +52,7 @@ void ChangeLevel::makeOnCollision(IdEntity idObject, OnCollision* onCollision) {
         Subject* sub = other->Get<Subject*>("messageEntities");
         Message m = Message();
         std::string* level=message->entityOne->Get<std::string*>("Level");
+        std::cout<<*level<<std::endl;
         m.setData(level);
         m.setState(GameStates::CHANGE_LEVEL);
 

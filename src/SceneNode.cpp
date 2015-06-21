@@ -118,10 +118,6 @@ void SceneNode::removeWrecks() {
     std::for_each(children.begin(), children.end(), std::mem_fn(&SceneNode::removeWrecks));
 }
 
-//sf::FloatRect SceneNode::getBoundingRect() const {
-//    return sf::FloatRect();
-//}
-
 bool SceneNode::isMarkedForRemoval() const {
     // By default, remove node if entity is destroyed
     return isDestroyed();

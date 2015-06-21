@@ -47,8 +47,9 @@ void LoadingLevel::runTask() {
     //y por último el sistema de objetos
     SystemObjectsGame* objectsGame = static_cast<SystemObjectsGame*> (systemManager->getSystem(TypeSystem::OBJECTS));
 
-
+    level=context->nameLevel;
     XMLDocument document = XMLDocument("Media/Levels/" + *level);
+    std::cout<<*level<<std::endl;
     //recojo el xml del nivel
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);

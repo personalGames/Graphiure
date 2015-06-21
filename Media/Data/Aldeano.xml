@@ -1,9 +1,8 @@
-<Entity id="3" numberChoices="1">
+<Entity id="3">
 	<Properties>
 		<Property id="Position" x="500" y ="500" />
 		<Property id="MaxVelocity" value="100" />
 		<Property id="Drawable" numberAnimations="8"/>
-		<Property id="Life" value="100" />
 		<Property id="Collision" /> 
 		<Property id="Talk" value="Hola chico, que te trae por aquí. Vamos a tener un pequeño problema con el ancho del texto para saber cómo avanzar en la lectura según el usuario dé al botón para continuar leyendo.
 Voy a soltar una parrafada muuucho mayor para poder probar el comportamiento en altura de la división esta de los strings. Menos mal que esto está siendo rápido, porque lo que son los acentos para mí tengo... dios. ¡¡¡¡NO TENGO TIEMPO!!!!

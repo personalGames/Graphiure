@@ -1,6 +1,6 @@
-<Entity id="principal">
+<Entity id="7">
 	<Properties>
-		<Property id="Position" x="100" y="100" />
+		<Property id="Position" x="250" y="600" />
 		<Property id="Life" value="100" />
 		<Property id="MaxVelocity" value="300" />
 		<Property id="Drawable" numberAnimations="8"/>

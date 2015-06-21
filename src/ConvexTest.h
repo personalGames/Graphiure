@@ -10,6 +10,16 @@
 
 #include "StructCollision.h"
 
+/**
+ * Realiza el producto vectorial entre tres puntos en un plano 2D
+ * @param Ax eje x del punto A
+ * @param Ay eje y del punto A
+ * @param Bx eje x del punto B
+ * @param By eje y del punto B
+ * @param Cx eje x del punto C
+ * @param Cy eje y del punto C
+ * @return producto vectorial
+ */
 float crossProductLength(float Ax, float Ay,
         float Bx, float By, float Cx, float Cy) {
     // Get the vectors' coordinates.
@@ -22,9 +32,12 @@ float crossProductLength(float Ax, float Ay,
     return (BAx * BCy - BAy * BCx);
 }
 
+/**
+ * Comprueba si el polígono es convexo
+ * @param collision La estructura de colisión a comprobar
+ * @return true si el polígono es convexo
+ */
 bool polygonIsConvex(StructCollision* collision) {
-    // Return True if the polygon is convex.
-
     // For each set of three adjacent points A, B, C,
     // find the cross product AB · BC. If the sign of
     // all the cross products is the same, the angles
@@ -33,6 +46,7 @@ bool polygonIsConvex(StructCollision* collision) {
     // is convex.
     bool got_negative = false;
     bool got_positive = false;
+    //pillo todos los vértices
     sf::VertexArray points=*(collision->vertices);
     int num_points = points.getVertexCount();;
     int B, C;
