@@ -1,0 +1,172 @@
+\hypertarget{classISystem}{}\section{Referencia de la Clase I\+System}
+\label{classISystem}\index{I\+System@{I\+System}}
+
+
+{\ttfamily \#include $<$I\+System.\+h$>$}
+
+Diagrama de herencias de I\+System\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.382716cm]{classISystem}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+Type\+System \hyperlink{classISystem_a6e94810e4a308aa6ae5ed03411a86800}{get\+Type} ()
+\item 
+virtual void \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{initialize} ()
+\item 
+virtual void \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{finalize} ()
+\item 
+virtual void \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)=0
+\item 
+virtual void \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)=0
+\item 
+bool \hyperlink{classISystem_ad5471c17b45154b31063a1ecbce4eeaa}{is\+Finalized} () const 
+\item 
+bool \hyperlink{classISystem_a6c075151dc75d7ee731947849b35f1d6}{is\+Initialized} () const 
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+Type\+System \hyperlink{classISystem_ae9154cb0a7d9560f0bfa9169a384a995}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase base de un sistema 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{}\index{I\+System@{I\+System}!finalize@{finalize}}
+\index{finalize@{finalize}!I\+System@{I\+System}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classISystem_a4cc1cac06100c45d260a23d24d5618d6}
+Finaliza el sistema 
+
+Reimplementado en \hyperlink{classSystemGraphic_af59c303890f7faf14db27ab746a23d3a}{System\+Graphic}, \hyperlink{classSystemCollision_a8c8ae9c8bb8f9f69e4b656c4ff496a30}{System\+Collision}, \hyperlink{classSystemObjectsGame_a4357e0e5d2e42a6b3e80362cbfdbda39}{System\+Objects\+Game}, \hyperlink{classSystemQuest_a3c9f834570acf2277d4620e3ba16992d}{System\+Quest}, \hyperlink{classSystemCommand_ac9f9019b5d0facf91ed77815d6c577a7}{System\+Command} y \hyperlink{classSystemMovement_a2e4df7be9f17a4572116649552c9d073}{System\+Movement}.
+
+\hypertarget{classISystem_a6e94810e4a308aa6ae5ed03411a86800}{}\index{I\+System@{I\+System}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!I\+System@{I\+System}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Type\+System I\+System\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classISystem_a6e94810e4a308aa6ae5ed03411a86800}
+Devuelve el tipo del sistema \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{}\index{I\+System@{I\+System}!initialize@{initialize}}
+\index{initialize@{initialize}!I\+System@{I\+System}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classISystem_ac9b257acd7d03dbd7aab149792ff98af}
+Inicializa el sistema 
+
+Reimplementado en \hyperlink{classSystemGraphic_a792331587037bbf7fdfdd487cd45575a}{System\+Graphic}, \hyperlink{classSystemCollision_ab2ced8fd115cd326a29a3535ddba7367}{System\+Collision}, \hyperlink{classSystemObjectsGame_a1d915c3471432c344a58af523085b87f}{System\+Objects\+Game}, \hyperlink{classSystemQuest_a48773430521559d0b5eaa931b53d8892}{System\+Quest}, \hyperlink{classSystemCommand_a4e1ca3703de37a8c187618d17a4a676e}{System\+Command} y \hyperlink{classSystemMovement_a5657b5507fd4f6a7bf92e9a9929881d3}{System\+Movement}.
+
+\hypertarget{classISystem_ad5471c17b45154b31063a1ecbce4eeaa}{}\index{I\+System@{I\+System}!is\+Finalized@{is\+Finalized}}
+\index{is\+Finalized@{is\+Finalized}!I\+System@{I\+System}}
+\subsubsection[{is\+Finalized}]{\setlength{\rightskip}{0pt plus 5cm}bool I\+System\+::is\+Finalized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classISystem_ad5471c17b45154b31063a1ecbce4eeaa}
+Devuele si el sistema ya finalizó \begin{DoxyReturn}{Devuelve}
+true si ha finalizado 
+\end{DoxyReturn}
+\hypertarget{classISystem_a6c075151dc75d7ee731947849b35f1d6}{}\index{I\+System@{I\+System}!is\+Initialized@{is\+Initialized}}
+\index{is\+Initialized@{is\+Initialized}!I\+System@{I\+System}}
+\subsubsection[{is\+Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool I\+System\+::is\+Initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classISystem_a6c075151dc75d7ee731947849b35f1d6}
+Devuelve si el sistema ya está inicializado \begin{DoxyReturn}{Devuelve}
+true si está inicializado 
+\end{DoxyReturn}
+\hypertarget{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{}\index{I\+System@{I\+System}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!I\+System@{I\+System}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \hyperlink{classSystemGraphic_a7b905fc340431b0521b975d82ef2fa45}{System\+Graphic}, \hyperlink{classSystemCollision_a228a39b4c9bc3d6b7934a25814acda7a}{System\+Collision}, \hyperlink{classSystemObjectsGame_a6d8cbcab3b14a4ddc4c45ebe0c7aed07}{System\+Objects\+Game}, \hyperlink{classSystemCommand_a6c00eed8d1b14f8f27bd5fb27ffcaffe}{System\+Command}, \hyperlink{classSystemMovement_ae7a01c74fcd8cfae49488a707cf32902}{System\+Movement} y \hyperlink{classSystemQuest_a03ce5db7875898ebae8c9424c1888c37}{System\+Quest}.
+
+\hypertarget{classISystem_a0e966d506838cfe09543ad4ccafa4998}{}\index{I\+System@{I\+System}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!I\+System@{I\+System}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classISystem_a0e966d506838cfe09543ad4ccafa4998}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \hyperlink{classSystemGraphic_a9dba6a98242f2c5f07bd52301bc3dacb}{System\+Graphic}, \hyperlink{classSystemCollision_a8890b0a585ac5e9a99510839a9713de4}{System\+Collision}, \hyperlink{classSystemObjectsGame_ae716ba020dded37eb7cc01e3dab32a1a}{System\+Objects\+Game}, \hyperlink{classSystemCommand_afde58b2c3b053a944dfa262da10eeea2}{System\+Command}, \hyperlink{classSystemMovement_a7fe2e159ce9ef32f5710d9a957a2450b}{System\+Movement} y \hyperlink{classSystemQuest_a588e9982c16288af4675b67bf9177080}{System\+Quest}.
+
+\hypertarget{classISystem_a6931efd2517fd0c81237beeb04297421}{}\index{I\+System@{I\+System}!update@{update}}
+\index{update@{update}!I\+System@{I\+System}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classISystem_a6931efd2517fd0c81237beeb04297421}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \hyperlink{classSystemObjectsGame_a6836f71bd70b620d8b86b98e6e3ee44b}{System\+Objects\+Game}, \hyperlink{classSystemGraphic_aaabd7eb4e9ce5d82dd39126239818283}{System\+Graphic}, \hyperlink{classSystemCollision_ab2dae21a0636bf6d24c6fd7f596f07d1}{System\+Collision}, \hyperlink{classSystemQuest_a76892fc5b11bdb7132e7499e46eb7977}{System\+Quest}, \hyperlink{classSystemCommand_a111fbabb149f7f59a6084a459dd5f37d}{System\+Command} y \hyperlink{classSystemMovement_aab4a789b0bf9d329461896e12ada82c4}{System\+Movement}.
+
+\hypertarget{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{}\index{I\+System@{I\+System}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!I\+System@{I\+System}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+System\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classISystem_aef2545bd6ffac18186b566e4d3d2804b}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \hyperlink{classSystemObjectsGame_ad238ad4e70fb3cc2a5648a7176e69233}{System\+Objects\+Game}, \hyperlink{classSystemGraphic_a0d46ab172987eed86b45ae016240034e}{System\+Graphic}, \hyperlink{classSystemCollision_a731cd70ffedfa221454348ad975ee82c}{System\+Collision}, \hyperlink{classSystemQuest_a3069bdc81a590c47c4479b63add3fc3d}{System\+Quest}, \hyperlink{classSystemCommand_a0ff2e49835ef779e59f04c56fcc87ee1}{System\+Command} y \hyperlink{classSystemMovement_afd66e76ecd00084594be9334434a689d}{System\+Movement}.
+
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classISystem_ae9154cb0a7d9560f0bfa9169a384a995}{}\index{I\+System@{I\+System}!type@{type}}
+\index{type@{type}!I\+System@{I\+System}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}Type\+System I\+System\+::type\hspace{0.3cm}{\ttfamily [protected]}}\label{classISystem_ae9154cb0a7d9560f0bfa9169a384a995}
+Tipo del sistema 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+I\+System.\+h\item 
+I\+System.\+cpp\end{DoxyCompactItemize}

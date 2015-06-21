@@ -1,0 +1,123 @@
+\hypertarget{classIXMLParser}{}\section{Referencia de la Clase I\+X\+M\+L\+Parser}
+\label{classIXMLParser}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+
+
+{\ttfamily \#include $<$I\+X\+M\+L\+Parser.\+h$>$}
+
+Diagrama de herencias de I\+X\+M\+L\+Parser\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classIXMLParser}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classIXMLParser_afe97ecb6c26a8d2c7d91ede1265b924d}{set\+X\+M\+L} (tinyxml2\+::\+X\+M\+L\+Document \&path)
+\item 
+void \hyperlink{classIXMLParser_a4e8bacc2f7ed0c13117e8e701cc5b9e4}{set\+X\+M\+L} (\hyperlink{classXMLDocument}{X\+M\+L\+Document} \&path)
+\item 
+void \hyperlink{classIXMLParser_a9ff44f69f9c9f995259514deb9e279e5}{set\+Resources} (\hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ $\ast$\hyperlink{classIXMLParser_af05edc520158df67ae6417b626a09407}{textures})
+\item 
+virtual void \hyperlink{classIXMLParser_a2d6e54d4628bdf52a45ac1e18902b3d3}{parse} (\hyperlink{unionDataUnion}{Data\+Union} \&data)=0
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classIXMLParser}{I\+X\+M\+L\+Parser} $\ast$ \hyperlink{classIXMLParser_acbf34ba27a24dc449e8303194df4f2a2}{make\+\_\+parser} (Type\+Parser choice)
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+tinyxml2\+::\+X\+M\+L\+Document $\ast$ \hyperlink{classIXMLParser_a8a83507efb159b3eadbb5302d97c0d6a}{doc}
+\item 
+\hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ $\ast$ \hyperlink{classIXMLParser_af05edc520158df67ae6417b626a09407}{textures}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase base para un parseador de xml 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classIXMLParser_acbf34ba27a24dc449e8303194df4f2a2}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!make\+\_\+parser@{make\+\_\+parser}}
+\index{make\+\_\+parser@{make\+\_\+parser}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{make\+\_\+parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+X\+M\+L\+Parser} $\ast$ I\+X\+M\+L\+Parser\+::make\+\_\+parser (
+\begin{DoxyParamCaption}
+\item[{Type\+Parser}]{choice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classIXMLParser_acbf34ba27a24dc449e8303194df4f2a2}
+Devuelve el parseador concreto al tipo escogido 
+\begin{DoxyParams}{Parámetros}
+{\em choice} & tipo de parseador requerido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+parseador pedido 
+\end{DoxyReturn}
+\hypertarget{classIXMLParser_a2d6e54d4628bdf52a45ac1e18902b3d3}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!parse@{parse}}
+\index{parse@{parse}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+X\+M\+L\+Parser\+::parse (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Union} \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classIXMLParser_a2d6e54d4628bdf52a45ac1e18902b3d3}
+Parsea los datos 
+\begin{DoxyParams}{Parámetros}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \hyperlink{classXMLParserCollisionsMap_a2cd272aef88a40c0f649d13b7821e118}{X\+M\+L\+Parser\+Collisions\+Map}, \hyperlink{classXMLParserCollisions_ae22d366d5d11adba7e89f3a183160988}{X\+M\+L\+Parser\+Collisions}, \hyperlink{classXMLParserMap_a428974998d952d3d8a84db0b02176765}{X\+M\+L\+Parser\+Map}, \hyperlink{classXMLParserCharacter_af8caeb3dc23d4b4f3b726824e0220782}{X\+M\+L\+Parser\+Character}, \hyperlink{classXMLParserPeople_a42f23e662f772245febe910aeee07ce3}{X\+M\+L\+Parser\+People}, \hyperlink{classXMLParserQuests_a533240568f62cd15fedf6c32bcb50cf4}{X\+M\+L\+Parser\+Quests}, \hyperlink{classXMLParserAnimation_a9b10d45d037d28b4c4849ef3217a7603}{X\+M\+L\+Parser\+Animation} y \hyperlink{classXMLParserStateMachines_a7af4decc72879799aa43260418bb021b}{X\+M\+L\+Parser\+State\+Machines}.
+
+\hypertarget{classIXMLParser_a9ff44f69f9c9f995259514deb9e279e5}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!set\+Resources@{set\+Resources}}
+\index{set\+Resources@{set\+Resources}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{set\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}void I\+X\+M\+L\+Parser\+::set\+Resources (
+\begin{DoxyParamCaption}
+\item[{{\bf Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ $\ast$}]{textures}
+\end{DoxyParamCaption}
+)}\label{classIXMLParser_a9ff44f69f9c9f995259514deb9e279e5}
+Setea los recursos de imágenes que puede necesitar el parseador 
+\begin{DoxyParams}{Parámetros}
+{\em textures} & imagenes \\
+\hline
+\end{DoxyParams}
+\hypertarget{classIXMLParser_afe97ecb6c26a8d2c7d91ede1265b924d}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!set\+X\+M\+L@{set\+X\+M\+L}}
+\index{set\+X\+M\+L@{set\+X\+M\+L}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{set\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void I\+X\+M\+L\+Parser\+::set\+X\+M\+L (
+\begin{DoxyParamCaption}
+\item[{tinyxml2\+::\+X\+M\+L\+Document \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classIXMLParser_afe97ecb6c26a8d2c7d91ede1265b924d}
+Setea el xml que parseará 
+\begin{DoxyParams}{Parámetros}
+{\em path} & documento xml a parsear \\
+\hline
+\end{DoxyParams}
+\hypertarget{classIXMLParser_a4e8bacc2f7ed0c13117e8e701cc5b9e4}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!set\+X\+M\+L@{set\+X\+M\+L}}
+\index{set\+X\+M\+L@{set\+X\+M\+L}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{set\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void I\+X\+M\+L\+Parser\+::set\+X\+M\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf X\+M\+L\+Document} \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classIXMLParser_a4e8bacc2f7ed0c13117e8e701cc5b9e4}
+Setea el xml que parseará 
+\begin{DoxyParams}{Parámetros}
+{\em path} & documento a parsear \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classIXMLParser_a8a83507efb159b3eadbb5302d97c0d6a}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!doc@{doc}}
+\index{doc@{doc}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{doc}]{\setlength{\rightskip}{0pt plus 5cm}tinyxml2\+::\+X\+M\+L\+Document$\ast$ I\+X\+M\+L\+Parser\+::doc\hspace{0.3cm}{\ttfamily [protected]}}\label{classIXMLParser_a8a83507efb159b3eadbb5302d97c0d6a}
+Documento a parsear \hypertarget{classIXMLParser_af05edc520158df67ae6417b626a09407}{}\index{I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}!textures@{textures}}
+\index{textures@{textures}!I\+X\+M\+L\+Parser@{I\+X\+M\+L\+Parser}}
+\subsubsection[{textures}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Holder}$<$std\+::string, sf\+::\+Texture$>$$\ast$ I\+X\+M\+L\+Parser\+::textures\hspace{0.3cm}{\ttfamily [protected]}}\label{classIXMLParser_af05edc520158df67ae6417b626a09407}
+Imágenes a usar 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+I\+X\+M\+L\+Parser.\+h\item 
+I\+X\+M\+L\+Parser.\+cpp\end{DoxyCompactItemize}

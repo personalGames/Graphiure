@@ -1,0 +1,84 @@
+\hypertarget{classDebug}{}\section{Referencia de la Clase Debug}
+\label{classDebug}\index{Debug@{Debug}}
+
+
+{\ttfamily \#include $<$Debug.\+h$>$}
+
+Diagrama de herencias de Debug\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDebug}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDebug_afd64c07b6b7e27ee4997819a8207f40a}{Debug} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+void \hyperlink{classDebug_ab858f1d67df563c9682a81152e1a61d2}{update\+Current} (sf\+::\+Time delta)
+\item 
+virtual void \hyperlink{classDebug_abbbe01dc7a7166ab745bac4760869acb}{draw\+Current} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo utilizado para debug, en el se dibujan los puntos de colisión de la entidad 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classDebug_afd64c07b6b7e27ee4997819a8207f40a}{}\index{Debug@{Debug}!Debug@{Debug}}
+\index{Debug@{Debug}!Debug@{Debug}}
+\subsubsection[{Debug}]{\setlength{\rightskip}{0pt plus 5cm}Debug\+::\+Debug (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}\label{classDebug_afd64c07b6b7e27ee4997819a8207f40a}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a comprobar su zona de colisión \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classDebug_abbbe01dc7a7166ab745bac4760869acb}{}\index{Debug@{Debug}!draw\+Current@{draw\+Current}}
+\index{draw\+Current@{draw\+Current}!Debug@{Debug}}
+\subsubsection[{draw\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Debug\+::draw\+Current (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Target \&}]{target, }
+\item[{sf\+::\+Render\+States}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDebug_abbbe01dc7a7166ab745bac4760869acb}
+Draw the actual state of the node 
+\begin{DoxyParams}{Parámetros}
+{\em target} & \\
+\hline
+{\em states} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+\hypertarget{classDebug_ab858f1d67df563c9682a81152e1a61d2}{}\index{Debug@{Debug}!update\+Current@{update\+Current}}
+\index{update\+Current@{update\+Current}!Debug@{Debug}}
+\subsubsection[{update\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Debug\+::update\+Current (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDebug_ab858f1d67df563c9682a81152e1a61d2}
+Actualiza la entidad/nodo 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Debug.\+h\item 
+Debug.\+cpp\end{DoxyCompactItemize}

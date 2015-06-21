@@ -1,0 +1,164 @@
+\hypertarget{classSystemQuest}{}\section{Referencia de la Clase System\+Quest}
+\label{classSystemQuest}\index{System\+Quest@{System\+Quest}}
+
+
+{\ttfamily \#include $<$System\+Quest.\+h$>$}
+
+Diagrama de herencias de System\+Quest\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemQuest}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSystemQuest_a48773430521559d0b5eaa931b53d8892}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemQuest_a3c9f834570acf2277d4620e3ba16992d}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemQuest_a03ce5db7875898ebae8c9424c1888c37}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemQuest_a588e9982c16288af4675b67bf9177080}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemQuest_a76892fc5b11bdb7132e7499e46eb7977}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemQuest_a3069bdc81a590c47c4479b63add3fc3d}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+Mission\+Status \hyperlink{classSystemQuest_a6469f12a86c708f7661482aad85b1de7}{get\+Status} ()
+\item 
+void \hyperlink{classSystemQuest_aca9a6f845d267fc9ef58d6531b341094}{add\+Quest} (\hyperlink{classQuest}{Quest} $\ast$quest)
+\item 
+sf\+::\+String $\ast$ \hyperlink{classSystemQuest_a3c5b341ae4087af5b1a0a0386905bfd7}{to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema de misiones 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemQuest_aca9a6f845d267fc9ef58d6531b341094}{}\index{System\+Quest@{System\+Quest}!add\+Quest@{add\+Quest}}
+\index{add\+Quest@{add\+Quest}!System\+Quest@{System\+Quest}}
+\subsubsection[{add\+Quest}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::add\+Quest (
+\begin{DoxyParamCaption}
+\item[{{\bf Quest} $\ast$}]{quest}
+\end{DoxyParamCaption}
+)}\label{classSystemQuest_aca9a6f845d267fc9ef58d6531b341094}
+Añade una nueva misión al sistema 
+\begin{DoxyParams}{Parámetros}
+{\em quest} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemQuest_a3c9f834570acf2277d4620e3ba16992d}{}\index{System\+Quest@{System\+Quest}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Quest@{System\+Quest}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemQuest_a3c9f834570acf2277d4620e3ba16992d}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemQuest_a6469f12a86c708f7661482aad85b1de7}{}\index{System\+Quest@{System\+Quest}!get\+Status@{get\+Status}}
+\index{get\+Status@{get\+Status}!System\+Quest@{System\+Quest}}
+\subsubsection[{get\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Mission\+Status System\+Quest\+::get\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSystemQuest_a6469f12a86c708f7661482aad85b1de7}
+Devuelve el estado de las misiones, de forma que se sepa si ha ganado o perdido el juego, o está en marcha todavía \begin{DoxyReturn}{Devuelve}
+estado del juego 
+\end{DoxyReturn}
+\hypertarget{classSystemQuest_a48773430521559d0b5eaa931b53d8892}{}\index{System\+Quest@{System\+Quest}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Quest@{System\+Quest}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemQuest_a48773430521559d0b5eaa931b53d8892}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemQuest_a03ce5db7875898ebae8c9424c1888c37}{}\index{System\+Quest@{System\+Quest}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Quest@{System\+Quest}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemQuest_a03ce5db7875898ebae8c9424c1888c37}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemQuest_a588e9982c16288af4675b67bf9177080}{}\index{System\+Quest@{System\+Quest}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Quest@{System\+Quest}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemQuest_a588e9982c16288af4675b67bf9177080}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemQuest_a3c5b341ae4087af5b1a0a0386905bfd7}{}\index{System\+Quest@{System\+Quest}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!System\+Quest@{System\+Quest}}
+\subsubsection[{to\+String}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+String $\ast$ System\+Quest\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSystemQuest_a3c5b341ae4087af5b1a0a0386905bfd7}
+Devuelve un string representando las missiones y si están completas \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemQuest_a76892fc5b11bdb7132e7499e46eb7977}{}\index{System\+Quest@{System\+Quest}!update@{update}}
+\index{update@{update}!System\+Quest@{System\+Quest}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Quest\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemQuest_a76892fc5b11bdb7132e7499e46eb7977}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemQuest_a3069bdc81a590c47c4479b63add3fc3d}{}\index{System\+Quest@{System\+Quest}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Quest@{System\+Quest}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void System\+Quest\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classSystemQuest_a3069bdc81a590c47c4479b63add3fc3d}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Quest.\+h\item 
+System\+Quest.\+cpp\end{DoxyCompactItemize}

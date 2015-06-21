@@ -1,0 +1,211 @@
+\hypertarget{classPartQuest}{}\section{Referencia de la Clase Part\+Quest}
+\label{classPartQuest}\index{Part\+Quest@{Part\+Quest}}
+
+
+{\ttfamily \#include $<$Part\+Quest.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPartQuest_a34beee72ffac9011bfe9297a24206734}{Part\+Quest} (Type\+Quest type, \hyperlink{classIdEntity}{Id\+Entity} destiny, \hyperlink{classIdEntity}{Id\+Entity} origin)
+\item 
+\hyperlink{classPartQuest_a95ff917dffd83bb251768845bd29d77f}{Part\+Quest} (Type\+Quest type, \hyperlink{classIdEntity}{Id\+Entity} destiny, \hyperlink{classIdEntity}{Id\+Entity} origin, Actions action)
+\item 
+\hyperlink{classPartQuest_a3c9f1f5534fe3873f7369e2c4c1ada6d}{Part\+Quest} (const \hyperlink{classPartQuest}{Part\+Quest} \&orig)
+\item 
+Actions \hyperlink{classPartQuest_a61047034367ebf891b764725ca2799d2}{get\+Action} () const 
+\item 
+void \hyperlink{classPartQuest_a27045fe31fafd738ea49457c1f776069}{set\+Action} (Actions action)
+\item 
+\hyperlink{classIdEntity}{Id\+Entity} \hyperlink{classPartQuest_a470d693e1e86d3705aae19fa1b77d7cf}{get\+Id\+Destiny} () const 
+\item 
+void \hyperlink{classPartQuest_ac2d0a47c74bfd5cc846e4ceda5547ca5}{set\+Id\+Destiny} (\hyperlink{classIdEntity}{Id\+Entity} id\+Destiny)
+\item 
+\hyperlink{classIdEntity}{Id\+Entity} \hyperlink{classPartQuest_a04d1b9b8e5a22bf18264981a621d8347}{get\+Id\+Origin} () const 
+\item 
+void \hyperlink{classPartQuest_ad72064f10d109cb51c62373ce563aa27}{set\+Id\+Origin} (\hyperlink{classIdEntity}{Id\+Entity} id\+Origin)
+\item 
+Type\+Quest \hyperlink{classPartQuest_a2bbac994710c6dc8b02dde2262d5ffe8}{get\+Type} () const 
+\item 
+void \hyperlink{classPartQuest_a14c9e56b0feed8a7453d19ed05a9e396}{set\+Type} (Type\+Quest type)
+\item 
+bool \hyperlink{classPartQuest_a922b2542a3ada799abb237a7f3cae518}{is\+Done} () const 
+\item 
+void \hyperlink{classPartQuest_adfded17b91e8e73ea8c2b21ea363dac1}{set\+Done} (bool done)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Parte de una mision 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classPartQuest_a34beee72ffac9011bfe9297a24206734}{}\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{Part\+Quest}]{\setlength{\rightskip}{0pt plus 5cm}Part\+Quest\+::\+Part\+Quest (
+\begin{DoxyParamCaption}
+\item[{Type\+Quest}]{type, }
+\item[{{\bf Id\+Entity}}]{destiny, }
+\item[{{\bf Id\+Entity}}]{origin}
+\end{DoxyParamCaption}
+)}\label{classPartQuest_a34beee72ffac9011bfe9297a24206734}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em type} & tipo de mision \\
+\hline
+{\em destiny} & entidad de destino afectado \\
+\hline
+{\em origin} & entidad de origen afectado \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_a95ff917dffd83bb251768845bd29d77f}{}\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{Part\+Quest}]{\setlength{\rightskip}{0pt plus 5cm}Part\+Quest\+::\+Part\+Quest (
+\begin{DoxyParamCaption}
+\item[{Type\+Quest}]{type, }
+\item[{{\bf Id\+Entity}}]{destiny, }
+\item[{{\bf Id\+Entity}}]{origin, }
+\item[{Actions}]{action}
+\end{DoxyParamCaption}
+)}\label{classPartQuest_a95ff917dffd83bb251768845bd29d77f}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em type} & tipo de mision \\
+\hline
+{\em destiny} & entidad de destino afectado \\
+\hline
+{\em origin} & entidad de origen afectado \\
+\hline
+{\em action} & accion concreta cuando se especifica el tipo de mision A\+C\+T\+I\+O\+N \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_a3c9f1f5534fe3873f7369e2c4c1ada6d}{}\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\index{Part\+Quest@{Part\+Quest}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{Part\+Quest}]{\setlength{\rightskip}{0pt plus 5cm}Part\+Quest\+::\+Part\+Quest (
+\begin{DoxyParamCaption}
+\item[{const {\bf Part\+Quest} \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classPartQuest_a3c9f1f5534fe3873f7369e2c4c1ada6d}
+Constructor copia 
+\begin{DoxyParams}{Parámetros}
+{\em orig} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classPartQuest_a61047034367ebf891b764725ca2799d2}{}\index{Part\+Quest@{Part\+Quest}!get\+Action@{get\+Action}}
+\index{get\+Action@{get\+Action}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{get\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Actions Part\+Quest\+::get\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a61047034367ebf891b764725ca2799d2}
+Devuelve la accion concreta \begin{DoxyReturn}{Devuelve}
+accion 
+\end{DoxyReturn}
+\hypertarget{classPartQuest_a470d693e1e86d3705aae19fa1b77d7cf}{}\index{Part\+Quest@{Part\+Quest}!get\+Id\+Destiny@{get\+Id\+Destiny}}
+\index{get\+Id\+Destiny@{get\+Id\+Destiny}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{get\+Id\+Destiny}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id\+Entity} Part\+Quest\+::get\+Id\+Destiny (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a470d693e1e86d3705aae19fa1b77d7cf}
+Devuelve el id de la entidad destino afectada \begin{DoxyReturn}{Devuelve}
+el id de la entidad destino afectada 
+\end{DoxyReturn}
+\hypertarget{classPartQuest_a04d1b9b8e5a22bf18264981a621d8347}{}\index{Part\+Quest@{Part\+Quest}!get\+Id\+Origin@{get\+Id\+Origin}}
+\index{get\+Id\+Origin@{get\+Id\+Origin}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{get\+Id\+Origin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id\+Entity} Part\+Quest\+::get\+Id\+Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a04d1b9b8e5a22bf18264981a621d8347}
+Devuelve el id de la entidad origen afectada \begin{DoxyReturn}{Devuelve}
+el id de la entidad origen afectada 
+\end{DoxyReturn}
+\hypertarget{classPartQuest_a2bbac994710c6dc8b02dde2262d5ffe8}{}\index{Part\+Quest@{Part\+Quest}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Type\+Quest Part\+Quest\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a2bbac994710c6dc8b02dde2262d5ffe8}
+Devuelve el tipo de mision \begin{DoxyReturn}{Devuelve}
+tipo de mision 
+\end{DoxyReturn}
+\hypertarget{classPartQuest_a922b2542a3ada799abb237a7f3cae518}{}\index{Part\+Quest@{Part\+Quest}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{is\+Done}]{\setlength{\rightskip}{0pt plus 5cm}bool Part\+Quest\+::is\+Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a922b2542a3ada799abb237a7f3cae518}
+Indica si está hecho \begin{DoxyReturn}{Devuelve}
+true si está hecho 
+\end{DoxyReturn}
+\hypertarget{classPartQuest_a27045fe31fafd738ea49457c1f776069}{}\index{Part\+Quest@{Part\+Quest}!set\+Action@{set\+Action}}
+\index{set\+Action@{set\+Action}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{set\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Part\+Quest\+::set\+Action (
+\begin{DoxyParamCaption}
+\item[{Actions}]{action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a27045fe31fafd738ea49457c1f776069}
+Setea la accion concreta que es cuando el tipo de mision es A\+C\+T\+I\+O\+N 
+\begin{DoxyParams}{Parámetros}
+{\em action} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_adfded17b91e8e73ea8c2b21ea363dac1}{}\index{Part\+Quest@{Part\+Quest}!set\+Done@{set\+Done}}
+\index{set\+Done@{set\+Done}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{set\+Done}]{\setlength{\rightskip}{0pt plus 5cm}void Part\+Quest\+::set\+Done (
+\begin{DoxyParamCaption}
+\item[{bool}]{done}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_adfded17b91e8e73ea8c2b21ea363dac1}
+Setea si la parte de misión está hecha 
+\begin{DoxyParams}{Parámetros}
+{\em done} & true si está hecho \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_ac2d0a47c74bfd5cc846e4ceda5547ca5}{}\index{Part\+Quest@{Part\+Quest}!set\+Id\+Destiny@{set\+Id\+Destiny}}
+\index{set\+Id\+Destiny@{set\+Id\+Destiny}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{set\+Id\+Destiny}]{\setlength{\rightskip}{0pt plus 5cm}void Part\+Quest\+::set\+Id\+Destiny (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id\+Destiny}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_ac2d0a47c74bfd5cc846e4ceda5547ca5}
+Setea el id de la entidad destino afectada 
+\begin{DoxyParams}{Parámetros}
+{\em id\+Destiny} & el id de la entidad destino afectada \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_ad72064f10d109cb51c62373ce563aa27}{}\index{Part\+Quest@{Part\+Quest}!set\+Id\+Origin@{set\+Id\+Origin}}
+\index{set\+Id\+Origin@{set\+Id\+Origin}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{set\+Id\+Origin}]{\setlength{\rightskip}{0pt plus 5cm}void Part\+Quest\+::set\+Id\+Origin (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id\+Origin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_ad72064f10d109cb51c62373ce563aa27}
+Setea el id de la entidad origen afectada 
+\begin{DoxyParams}{Parámetros}
+{\em id\+Origin} & el id de la entidad origen afectada \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPartQuest_a14c9e56b0feed8a7453d19ed05a9e396}{}\index{Part\+Quest@{Part\+Quest}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Part\+Quest@{Part\+Quest}}
+\subsubsection[{set\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Part\+Quest\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{Type\+Quest}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPartQuest_a14c9e56b0feed8a7453d19ed05a9e396}
+Setea el tipo de mision 
+\begin{DoxyParams}{Parámetros}
+{\em type} & tipo de mision \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Part\+Quest.\+h\item 
+Part\+Quest.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,222 @@
+\hypertarget{classsfx_1_1FrameClock}{}\section{Referencia de la Clase sfx\+:\+:Frame\+Clock}
+\label{classsfx_1_1FrameClock}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsfx_1_1FrameClock_a3a8d349a05fd1660e89aebdc10e9ce8e}{Frame\+Clock} (std\+::size\+\_\+t depth=100)
+\item 
+void \hyperlink{classsfx_1_1FrameClock_a5460df0fca7d2152c9495037ac3be951}{clear} ()
+\item 
+void \hyperlink{classsfx_1_1FrameClock_abbbf7925b85457baa38a5e58f4c59700}{begin\+Frame} ()
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_adc6c03afb4129e937135cc2c8c7efc85}{end\+Frame} ()
+\item 
+void \hyperlink{classsfx_1_1FrameClock_a2794e0ce9787e5ff728213990f25980b}{set\+Sample\+Depth} (std\+::size\+\_\+t depth)
+\item 
+std\+::size\+\_\+t \hyperlink{classsfx_1_1FrameClock_a4cbdd6b8e22258ef512484711cd815b6}{get\+Sample\+Depth} () const 
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_aae9f3f23f938cbb979f1b2192af12eae}{get\+Total\+Frame\+Time} () const 
+\item 
+sf\+::\+Uint64 \hyperlink{classsfx_1_1FrameClock_a27e3203a236bf84053702e878b62a3bd}{get\+Total\+Frame\+Count} () const 
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_a7ffe2e6262e3d47bcb80a9e56f57e6a7}{get\+Last\+Frame\+Time} () const 
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_ac34015580c6bbae9f4419027955a042a}{get\+Min\+Frame\+Time} () const 
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_a208707ee3920b0f0c8edd18edce7c663}{get\+Maxt\+Frame\+Time} () const 
+\item 
+sf\+::\+Time \hyperlink{classsfx_1_1FrameClock_aa7bac1e9ab95ea0409344f16d59daf07}{get\+Average\+Frame\+Time} () const 
+\item 
+float \hyperlink{classsfx_1_1FrameClock_a8b19e892d8ac098d7a7d3fdb1e4df4af}{get\+Frames\+Per\+Second} () const 
+\item 
+float \hyperlink{classsfx_1_1FrameClock_a09340f8787c0fdf244324ab14da893bd}{get\+Min\+Frames\+Per\+Second} () const 
+\item 
+float \hyperlink{classsfx_1_1FrameClock_a3aef85cda6ca3a238cdc886f379fcc3c}{get\+Max\+Frames\+Per\+Second} () const 
+\item 
+float \hyperlink{classsfx_1_1FrameClock_aec7b8a817abfeb934d5701776b50f9bc}{get\+Average\+Frames\+Per\+Second} () const 
+\item 
+void \hyperlink{classsfx_1_1FrameClock_add697719f9f2d5d01c67f52eabe2ef6e}{swap} (\hyperlink{classsfx_1_1FrameClock}{Frame\+Clock} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsfx_1_1FrameClock_a3a8d349a05fd1660e89aebdc10e9ce8e}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!Frame\+Clock@{Frame\+Clock}}
+\index{Frame\+Clock@{Frame\+Clock}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{Frame\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}sfx\+::\+Frame\+Clock\+::\+Frame\+Clock (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{depth = {\ttfamily 100}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{classsfx_1_1FrameClock_a3a8d349a05fd1660e89aebdc10e9ce8e}
+Constructs a \hyperlink{classsfx_1_1FrameClock}{Frame\+Clock} object with sample depth \textquotesingle{}depth\textquotesingle{}. 
+\begin{DoxyParams}{Parámetros}
+{\em depth} & cantidad de frames como muestra \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsfx_1_1FrameClock_abbbf7925b85457baa38a5e58f4c59700}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!begin\+Frame@{begin\+Frame}}
+\index{begin\+Frame@{begin\+Frame}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{begin\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void sfx\+::\+Frame\+Clock\+::begin\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_abbbf7925b85457baa38a5e58f4c59700}
+Begin frame timing. Should be called once at the start of each new frame. \hypertarget{classsfx_1_1FrameClock_a5460df0fca7d2152c9495037ac3be951}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!clear@{clear}}
+\index{clear@{clear}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void sfx\+::\+Frame\+Clock\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a5460df0fca7d2152c9495037ac3be951}
+Resets all times to zero and discards accumulated samples. \hypertarget{classsfx_1_1FrameClock_adc6c03afb4129e937135cc2c8c7efc85}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!end\+Frame@{end\+Frame}}
+\index{end\+Frame@{end\+Frame}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{end\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::end\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_adc6c03afb4129e937135cc2c8c7efc85}
+End frame timing. Should be called once at the end of each frame.
+
+\begin{DoxyReturn}{Devuelve}
+Time elapsed since the matching \hyperlink{classsfx_1_1FrameClock_abbbf7925b85457baa38a5e58f4c59700}{Frame\+Clock\+::begin\+Frame}. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_aec7b8a817abfeb934d5701776b50f9bc}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Average\+Frames\+Per\+Second@{get\+Average\+Frames\+Per\+Second}}
+\index{get\+Average\+Frames\+Per\+Second@{get\+Average\+Frames\+Per\+Second}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Average\+Frames\+Per\+Second}]{\setlength{\rightskip}{0pt plus 5cm}float sfx\+::\+Frame\+Clock\+::get\+Average\+Frames\+Per\+Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_aec7b8a817abfeb934d5701776b50f9bc}
+\begin{DoxyReturn}{Devuelve}
+Average frames per second over the last \hyperlink{classsfx_1_1FrameClock_a4cbdd6b8e22258ef512484711cd815b6}{get\+Sample\+Depth()} frames. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_aa7bac1e9ab95ea0409344f16d59daf07}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Average\+Frame\+Time@{get\+Average\+Frame\+Time}}
+\index{get\+Average\+Frame\+Time@{get\+Average\+Frame\+Time}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Average\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::get\+Average\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_aa7bac1e9ab95ea0409344f16d59daf07}
+\begin{DoxyReturn}{Devuelve}
+Average frame time over the last \hyperlink{classsfx_1_1FrameClock_a4cbdd6b8e22258ef512484711cd815b6}{get\+Sample\+Depth()} frames. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a8b19e892d8ac098d7a7d3fdb1e4df4af}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Frames\+Per\+Second@{get\+Frames\+Per\+Second}}
+\index{get\+Frames\+Per\+Second@{get\+Frames\+Per\+Second}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Frames\+Per\+Second}]{\setlength{\rightskip}{0pt plus 5cm}float sfx\+::\+Frame\+Clock\+::get\+Frames\+Per\+Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a8b19e892d8ac098d7a7d3fdb1e4df4af}
+\begin{DoxyReturn}{Devuelve}
+Frames per second, considering the pervious frame only. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a7ffe2e6262e3d47bcb80a9e56f57e6a7}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Last\+Frame\+Time@{get\+Last\+Frame\+Time}}
+\index{get\+Last\+Frame\+Time@{get\+Last\+Frame\+Time}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Last\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::get\+Last\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a7ffe2e6262e3d47bcb80a9e56f57e6a7}
+\begin{DoxyReturn}{Devuelve}
+Time elapsed during the last \textquotesingle{}\hyperlink{classsfx_1_1FrameClock_abbbf7925b85457baa38a5e58f4c59700}{Frame\+Clock\+::begin\+Frame}/end\+Frame\textquotesingle{} pair. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a3aef85cda6ca3a238cdc886f379fcc3c}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Max\+Frames\+Per\+Second@{get\+Max\+Frames\+Per\+Second}}
+\index{get\+Max\+Frames\+Per\+Second@{get\+Max\+Frames\+Per\+Second}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Max\+Frames\+Per\+Second}]{\setlength{\rightskip}{0pt plus 5cm}float sfx\+::\+Frame\+Clock\+::get\+Max\+Frames\+Per\+Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a3aef85cda6ca3a238cdc886f379fcc3c}
+\begin{DoxyReturn}{Devuelve}
+The highest measured frames per second. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a208707ee3920b0f0c8edd18edce7c663}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Maxt\+Frame\+Time@{get\+Maxt\+Frame\+Time}}
+\index{get\+Maxt\+Frame\+Time@{get\+Maxt\+Frame\+Time}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Maxt\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::get\+Maxt\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a208707ee3920b0f0c8edd18edce7c663}
+\begin{DoxyReturn}{Devuelve}
+The longest measured frame time. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a09340f8787c0fdf244324ab14da893bd}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Min\+Frames\+Per\+Second@{get\+Min\+Frames\+Per\+Second}}
+\index{get\+Min\+Frames\+Per\+Second@{get\+Min\+Frames\+Per\+Second}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Min\+Frames\+Per\+Second}]{\setlength{\rightskip}{0pt plus 5cm}float sfx\+::\+Frame\+Clock\+::get\+Min\+Frames\+Per\+Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a09340f8787c0fdf244324ab14da893bd}
+\begin{DoxyReturn}{Devuelve}
+The lowest measured frames per second. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_ac34015580c6bbae9f4419027955a042a}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Min\+Frame\+Time@{get\+Min\+Frame\+Time}}
+\index{get\+Min\+Frame\+Time@{get\+Min\+Frame\+Time}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Min\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::get\+Min\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_ac34015580c6bbae9f4419027955a042a}
+\begin{DoxyReturn}{Devuelve}
+The shortest measured frame time. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a4cbdd6b8e22258ef512484711cd815b6}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Sample\+Depth@{get\+Sample\+Depth}}
+\index{get\+Sample\+Depth@{get\+Sample\+Depth}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Sample\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}std\+::size\+\_\+t sfx\+::\+Frame\+Clock\+::get\+Sample\+Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a4cbdd6b8e22258ef512484711cd815b6}
+\begin{DoxyReturn}{Devuelve}
+The number of frames to be sampled for averaging. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a27e3203a236bf84053702e878b62a3bd}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Total\+Frame\+Count@{get\+Total\+Frame\+Count}}
+\index{get\+Total\+Frame\+Count@{get\+Total\+Frame\+Count}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Total\+Frame\+Count}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Uint64 sfx\+::\+Frame\+Clock\+::get\+Total\+Frame\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a27e3203a236bf84053702e878b62a3bd}
+\begin{DoxyReturn}{Devuelve}
+The total accumulated number of frames. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_aae9f3f23f938cbb979f1b2192af12eae}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!get\+Total\+Frame\+Time@{get\+Total\+Frame\+Time}}
+\index{get\+Total\+Frame\+Time@{get\+Total\+Frame\+Time}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{get\+Total\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time sfx\+::\+Frame\+Clock\+::get\+Total\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_aae9f3f23f938cbb979f1b2192af12eae}
+\begin{DoxyReturn}{Devuelve}
+The total accumulated frame time. 
+\end{DoxyReturn}
+\hypertarget{classsfx_1_1FrameClock_a2794e0ce9787e5ff728213990f25980b}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!set\+Sample\+Depth@{set\+Sample\+Depth}}
+\index{set\+Sample\+Depth@{set\+Sample\+Depth}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{set\+Sample\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}void sfx\+::\+Frame\+Clock\+::set\+Sample\+Depth (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_a2794e0ce9787e5ff728213990f25980b}
+Sets the number of frames to be sampled for averaging. \textquotesingle{}depth\textquotesingle{} must be greater than or equal to 1. 
+\begin{DoxyParams}{Parámetros}
+{\em depth} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsfx_1_1FrameClock_add697719f9f2d5d01c67f52eabe2ef6e}{}\index{sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}!swap@{swap}}
+\index{swap@{swap}!sfx\+::\+Frame\+Clock@{sfx\+::\+Frame\+Clock}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void sfx\+::\+Frame\+Clock\+::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf Frame\+Clock} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classsfx_1_1FrameClock_add697719f9f2d5d01c67f52eabe2ef6e}
+Swaps the value of this \hyperlink{classsfx_1_1FrameClock}{Frame\+Clock} instance with \textquotesingle{}other\textquotesingle{}. 
+\begin{DoxyParams}{Parámetros}
+{\em other} & other frameclock instance \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Frame\+Clock.\+h\end{DoxyCompactItemize}

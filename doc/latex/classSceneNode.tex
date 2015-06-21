@@ -1,0 +1,229 @@
+\hypertarget{classSceneNode}{}\section{Referencia de la Clase Scene\+Node}
+\label{classSceneNode}\index{Scene\+Node@{Scene\+Node}}
+
+
+{\ttfamily \#include $<$Scene\+Node.\+h$>$}
+
+Diagrama de herencias de Scene\+Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.376238cm]{classSceneNode}
+\end{center}
+\end{figure}
+\subsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSceneNode_a366efca54698fa3f6eaf80b41e7ff4df}{}typedef std\+::pair$<$ \hyperlink{classSceneNode}{Scene\+Node} $\ast$, \hyperlink{classSceneNode}{Scene\+Node} $\ast$ $>$ {\bfseries Pair}\label{classSceneNode_a366efca54698fa3f6eaf80b41e7ff4df}
+
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSceneNode_acc2e7940323560ba86dad8e2d6eb6690}{Scene\+Node} ()
+\item 
+\hyperlink{classSceneNode_af87e82dcbe9fc195a557bc91a4b16317}{Scene\+Node} (Category category)
+\item 
+void \hyperlink{classSceneNode_a0e5790af868dcf846f37630094850fd7}{add\+Child} (\hyperlink{classSceneNode}{Scene\+Node} $\ast$child)
+\item 
+\hyperlink{classSceneNode}{Scene\+Node} $\ast$ \hyperlink{classSceneNode_a6fe848553acf7282b1faf6aaad3eb1b8}{remove\+Child} (const \hyperlink{classSceneNode}{Scene\+Node} \&node)
+\item 
+sf\+::\+Transform \hyperlink{classSceneNode_a88be3d3c93c80ee4a7ba25024d2414ec}{get\+World\+Transform} () const 
+\item 
+sf\+::\+Vector2f \hyperlink{classSceneNode_a410150636d06294c7a9e238d8c4f07b5}{get\+World\+Position} () const 
+\item 
+\hypertarget{classSceneNode_a132fa45a0a23ba86b76247273a16cfce}{}void {\bfseries update} (sf\+::\+Time dt)\label{classSceneNode_a132fa45a0a23ba86b76247273a16cfce}
+
+\item 
+\hypertarget{classSceneNode_a6c42640df0126ae10c4fa02d3bbfd509}{}virtual void {\bfseries update\+Second\+Part} (sf\+::\+Time dt)\label{classSceneNode_a6c42640df0126ae10c4fa02d3bbfd509}
+
+\item 
+virtual unsigned int \hyperlink{classSceneNode_a46b4d2304c0e3e8e18235959f51689d9}{get\+Category} () const 
+\item 
+void \hyperlink{classSceneNode_a4ab07dfa68f4094e2e9152b6f4869794}{remove\+Wrecks} ()
+\item 
+\hypertarget{classSceneNode_a7c07379dc7bd3165843607beb6287ef9}{}virtual bool {\bfseries is\+Marked\+For\+Removal} () const \label{classSceneNode_a7c07379dc7bd3165843607beb6287ef9}
+
+\item 
+virtual bool \hyperlink{classSceneNode_a2299b0d13e03f162adfd560bc29da734}{is\+Destroyed} () const 
+\item 
+float \hyperlink{classSceneNode_afb5602a1256e41b0375e8723368a05af}{get\+X\+Offset} () const 
+\item 
+float \hyperlink{classSceneNode_a8e8b4174abf121a96a2c950a9fbc001c}{get\+Y\+Offset} () const 
+\item 
+void \hyperlink{classSceneNode_a93362a6a508d77212c788bbf17814f96}{set\+X\+Offset} (float \hyperlink{classSceneNode_ad7b83da569e61908f0e828c11549610f}{x\+Offset})
+\item 
+void \hyperlink{classSceneNode_a0248f3ff0c2f90fd8464a87c13d90494}{set\+Y\+Offset} (float \hyperlink{classSceneNode_ac2e7bda67762d356a06386e271f41c23}{y\+Offset})
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classSceneNode_ad7b83da569e61908f0e828c11549610f}{x\+Offset}
+\item 
+float \hyperlink{classSceneNode_ac2e7bda67762d356a06386e271f41c23}{y\+Offset}
+\item 
+std\+::vector$<$ \hyperlink{classSceneNode}{Scene\+Node} $\ast$ $>$ \hyperlink{classSceneNode_a1dd91a11c15e87908157b3156da3d8cf}{children}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Defines a node from a scene graph Can be drawed, has a position and orientation and can\textquotesingle{}t be cloned 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classSceneNode_acc2e7940323560ba86dad8e2d6eb6690}{}\index{Scene\+Node@{Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\index{Scene\+Node@{Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{Scene\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Node\+::\+Scene\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSceneNode_acc2e7940323560ba86dad8e2d6eb6690}
+Constructor \hypertarget{classSceneNode_af87e82dcbe9fc195a557bc91a4b16317}{}\index{Scene\+Node@{Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\index{Scene\+Node@{Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{Scene\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Node\+::\+Scene\+Node (
+\begin{DoxyParamCaption}
+\item[{Category}]{category}
+\end{DoxyParamCaption}
+)}\label{classSceneNode_af87e82dcbe9fc195a557bc91a4b16317}
+Constructor especificando la categoría 
+\begin{DoxyParams}{Parámetros}
+{\em category} & categoría del nodo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSceneNode_a0e5790af868dcf846f37630094850fd7}{}\index{Scene\+Node@{Scene\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Node\+::add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\+Node} $\ast$}]{child}
+\end{DoxyParamCaption}
+)}\label{classSceneNode_a0e5790af868dcf846f37630094850fd7}
+Add a node to this node 
+\begin{DoxyParams}{Parámetros}
+{\em child} & the child \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSceneNode_a46b4d2304c0e3e8e18235959f51689d9}{}\index{Scene\+Node@{Scene\+Node}!get\+Category@{get\+Category}}
+\index{get\+Category@{get\+Category}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{get\+Category}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Scene\+Node\+::get\+Category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSceneNode_a46b4d2304c0e3e8e18235959f51689d9}
+Get the category of this node. \begin{DoxyReturn}{Devuelve}
+the category of the node 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a410150636d06294c7a9e238d8c4f07b5}{}\index{Scene\+Node@{Scene\+Node}!get\+World\+Position@{get\+World\+Position}}
+\index{get\+World\+Position@{get\+World\+Position}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{get\+World\+Position}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Scene\+Node\+::get\+World\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classSceneNode_a410150636d06294c7a9e238d8c4f07b5}
+Get the relative position of the node \begin{DoxyReturn}{Devuelve}
+a vector x,y of floats 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a88be3d3c93c80ee4a7ba25024d2414ec}{}\index{Scene\+Node@{Scene\+Node}!get\+World\+Transform@{get\+World\+Transform}}
+\index{get\+World\+Transform@{get\+World\+Transform}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{get\+World\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Transform Scene\+Node\+::get\+World\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classSceneNode_a88be3d3c93c80ee4a7ba25024d2414ec}
+Get the absolute transform (position/rotation and scale) of the node \begin{DoxyReturn}{Devuelve}
+the absolute transform 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_afb5602a1256e41b0375e8723368a05af}{}\index{Scene\+Node@{Scene\+Node}!get\+X\+Offset@{get\+X\+Offset}}
+\index{get\+X\+Offset@{get\+X\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{get\+X\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}float Scene\+Node\+::get\+X\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSceneNode_afb5602a1256e41b0375e8723368a05af}
+Devuelve el desplazamiento en el eje X, si lo hubiera, a efectos de ordenar y dar sensación de profundidad \begin{DoxyReturn}{Devuelve}
+el offset en el eje x 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a8e8b4174abf121a96a2c950a9fbc001c}{}\index{Scene\+Node@{Scene\+Node}!get\+Y\+Offset@{get\+Y\+Offset}}
+\index{get\+Y\+Offset@{get\+Y\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{get\+Y\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}float Scene\+Node\+::get\+Y\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSceneNode_a8e8b4174abf121a96a2c950a9fbc001c}
+Devuelve el desplazamiento en el eje Y, si lo hubiera, a efectos de ordenar y dar sensación de profundidad \begin{DoxyReturn}{Devuelve}
+el offset en el eje y 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a2299b0d13e03f162adfd560bc29da734}{}\index{Scene\+Node@{Scene\+Node}!is\+Destroyed@{is\+Destroyed}}
+\index{is\+Destroyed@{is\+Destroyed}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{is\+Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}bool Scene\+Node\+::is\+Destroyed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSceneNode_a2299b0d13e03f162adfd560bc29da734}
+Devuelve si el nodo está destruido \begin{DoxyReturn}{Devuelve}
+true si esta destruido 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a6fe848553acf7282b1faf6aaad3eb1b8}{}\index{Scene\+Node@{Scene\+Node}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scene\+Node} $\ast$ Scene\+Node\+::remove\+Child (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)}\label{classSceneNode_a6fe848553acf7282b1faf6aaad3eb1b8}
+Remove the given node to this node 
+\begin{DoxyParams}{Parámetros}
+{\em node} & the child to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the removed node 
+\end{DoxyReturn}
+\hypertarget{classSceneNode_a4ab07dfa68f4094e2e9152b6f4869794}{}\index{Scene\+Node@{Scene\+Node}!remove\+Wrecks@{remove\+Wrecks}}
+\index{remove\+Wrecks@{remove\+Wrecks}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{remove\+Wrecks}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Node\+::remove\+Wrecks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSceneNode_a4ab07dfa68f4094e2e9152b6f4869794}
+Elimina los nodos marcados \hypertarget{classSceneNode_a93362a6a508d77212c788bbf17814f96}{}\index{Scene\+Node@{Scene\+Node}!set\+X\+Offset@{set\+X\+Offset}}
+\index{set\+X\+Offset@{set\+X\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{set\+X\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Node\+::set\+X\+Offset (
+\begin{DoxyParamCaption}
+\item[{float}]{x\+Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSceneNode_a93362a6a508d77212c788bbf17814f96}
+Setea el offset en el eje x 
+\begin{DoxyParams}{Parámetros}
+{\em x\+Offset} & offset en el eje x \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSceneNode_a0248f3ff0c2f90fd8464a87c13d90494}{}\index{Scene\+Node@{Scene\+Node}!set\+Y\+Offset@{set\+Y\+Offset}}
+\index{set\+Y\+Offset@{set\+Y\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{set\+Y\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Node\+::set\+Y\+Offset (
+\begin{DoxyParamCaption}
+\item[{float}]{y\+Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSceneNode_a0248f3ff0c2f90fd8464a87c13d90494}
+Setea el offset en el eje y 
+\begin{DoxyParams}{Parámetros}
+{\em x\+Offset} & offset en el eje y \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classSceneNode_a1dd91a11c15e87908157b3156da3d8cf}{}\index{Scene\+Node@{Scene\+Node}!children@{children}}
+\index{children@{children}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Scene\+Node}$\ast$$>$ Scene\+Node\+::children\hspace{0.3cm}{\ttfamily [protected]}}\label{classSceneNode_a1dd91a11c15e87908157b3156da3d8cf}
+\hyperlink{classVector}{Vector} of children nodes \hypertarget{classSceneNode_ad7b83da569e61908f0e828c11549610f}{}\index{Scene\+Node@{Scene\+Node}!x\+Offset@{x\+Offset}}
+\index{x\+Offset@{x\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{x\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}float Scene\+Node\+::x\+Offset\hspace{0.3cm}{\ttfamily [protected]}}\label{classSceneNode_ad7b83da569e61908f0e828c11549610f}
+Desplazamiento en el eje x \hypertarget{classSceneNode_ac2e7bda67762d356a06386e271f41c23}{}\index{Scene\+Node@{Scene\+Node}!y\+Offset@{y\+Offset}}
+\index{y\+Offset@{y\+Offset}!Scene\+Node@{Scene\+Node}}
+\subsubsection[{y\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}float Scene\+Node\+::y\+Offset\hspace{0.3cm}{\ttfamily [protected]}}\label{classSceneNode_ac2e7bda67762d356a06386e271f41c23}
+Desplazamiento en el eje y 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Scene\+Node.\+h\item 
+Scene\+Node.\+cpp\end{DoxyCompactItemize}

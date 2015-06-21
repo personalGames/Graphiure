@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente StateMachineAnimation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">StateMachineAnimation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   StateMachineAnimation.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 9 de marzo de 2015, 21:09</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef STATEMACHINEANIMATION_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define STATEMACHINEANIMATION_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Animation.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Actions.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/Drawable.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/RenderTarget.hpp&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;StateMachine.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;AnimatedSprite.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classStateMachineAnimation.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStateMachineAnimation.html">StateMachineAnimation</a> : sf::Drawable {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classStateMachineAnimation.html#ab3e0c7cea2112e3ae5a8093e3057a3b6">StateMachineAnimation</a>(<a class="code" href="classStateMachine.html">StateMachine</a> &amp;stateMachine);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classStateMachineAnimation.html">StateMachineAnimation</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStateMachineAnimation.html#aa2d5c955f19ec518080aa0cde7944473">addAnimation</a>(<a class="code" href="classAnimation.html">Animation</a>* animation);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStateMachineAnimation.html#a8c715fbbaa26c4e52c72e074d27e2ea1">update</a>(sf::Time delta);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStateMachineAnimation.html#a8c715fbbaa26c4e52c72e074d27e2ea1">update</a>(<span class="keywordtype">int</span> action);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classStateMachineAnimation.html#a85f6a5c3b3963e9fd8767216ec0e735a">   53</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classStateMachineAnimation.html#a85f6a5c3b3963e9fd8767216ec0e735a">update</a>(Actions action){ <a class="code" href="classStateMachineAnimation.html#a85f6a5c3b3963e9fd8767216ec0e735a">update</a>(static_cast&lt;int&gt;(action)); };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStateMachineAnimation.html#a4612f25e1bc04639bf7998fc6f90c23d">setAnimations</a>(std::vector&lt;Animation*&gt;* animations);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> actualState;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;Animation*&gt;* animations;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classAnimatedSprite.html">AnimatedSprite</a> actualAnimation;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classStateMachine.html">StateMachine</a> stateMachine;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* STATEMACHINEANIMATION_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="ttc" id="classStateMachine_html"><div class="ttname"><a href="classStateMachine.html">StateMachine</a></div><div class="ttdef"><b>Definition:</b> StateMachine.h:37</div></div>
+<div class="ttc" id="classStateMachineAnimation_html_a4612f25e1bc04639bf7998fc6f90c23d"><div class="ttname"><a href="classStateMachineAnimation.html#a4612f25e1bc04639bf7998fc6f90c23d">StateMachineAnimation::setAnimations</a></div><div class="ttdeci">void setAnimations(std::vector&lt; Animation * &gt; *animations)</div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.cpp:18</div></div>
+<div class="ttc" id="classStateMachineAnimation_html_a85f6a5c3b3963e9fd8767216ec0e735a"><div class="ttname"><a href="classStateMachineAnimation.html#a85f6a5c3b3963e9fd8767216ec0e735a">StateMachineAnimation::update</a></div><div class="ttdeci">void update(Actions action)</div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.h:53</div></div>
+<div class="ttc" id="classStateMachineAnimation_html_a8c715fbbaa26c4e52c72e074d27e2ea1"><div class="ttname"><a href="classStateMachineAnimation.html#a8c715fbbaa26c4e52c72e074d27e2ea1">StateMachineAnimation::update</a></div><div class="ttdeci">void update(sf::Time delta)</div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.cpp:33</div></div>
+<div class="ttc" id="classStateMachineAnimation_html_ab3e0c7cea2112e3ae5a8093e3057a3b6"><div class="ttname"><a href="classStateMachineAnimation.html#ab3e0c7cea2112e3ae5a8093e3057a3b6">StateMachineAnimation::StateMachineAnimation</a></div><div class="ttdeci">StateMachineAnimation(StateMachine &amp;stateMachine)</div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.cpp:11</div></div>
+<div class="ttc" id="classAnimatedSprite_html"><div class="ttname"><a href="classAnimatedSprite.html">AnimatedSprite</a></div><div class="ttdef"><b>Definition:</b> AnimatedSprite.h:38</div></div>
+<div class="ttc" id="classAnimation_html"><div class="ttname"><a href="classAnimation.html">Animation</a></div><div class="ttdef"><b>Definition:</b> Animation.h:34</div></div>
+<div class="ttc" id="classStateMachineAnimation_html"><div class="ttname"><a href="classStateMachineAnimation.html">StateMachineAnimation</a></div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.h:25</div></div>
+<div class="ttc" id="classStateMachineAnimation_html_aa2d5c955f19ec518080aa0cde7944473"><div class="ttname"><a href="classStateMachineAnimation.html#aa2d5c955f19ec518080aa0cde7944473">StateMachineAnimation::addAnimation</a></div><div class="ttdeci">void addAnimation(Animation *animation)</div><div class="ttdef"><b>Definition:</b> StateMachineAnimation.cpp:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

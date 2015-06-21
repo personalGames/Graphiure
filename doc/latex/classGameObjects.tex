@@ -1,0 +1,47 @@
+\hypertarget{classGameObjects}{}\section{Referencia de la Clase Game\+Objects}
+\label{classGameObjects}\index{Game\+Objects@{Game\+Objects}}
+
+
+{\ttfamily \#include $<$Game\+Objects.\+h$>$}
+
+Diagrama de herencias de Game\+Objects\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameObjects}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classGameObjects_ad8d8177b229922b5a29e7355c8cf54ca}{prepare\+Entity} (\hyperlink{classPropertyManager}{Property\+Manager} \&parameters)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase base para todos los objetos del juego 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGameObjects_ad8d8177b229922b5a29e7355c8cf54ca}{}\index{Game\+Objects@{Game\+Objects}!prepare\+Entity@{prepare\+Entity}}
+\index{prepare\+Entity@{prepare\+Entity}!Game\+Objects@{Game\+Objects}}
+\subsubsection[{prepare\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Entity}$\ast$ Game\+Objects\+::prepare\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Property\+Manager} \&}]{parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classGameObjects_ad8d8177b229922b5a29e7355c8cf54ca}
+Devuelve una entidad que define objeto del juego 
+\begin{DoxyParams}{Parámetros}
+{\em parameters} & conjunto de parámetros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+entidad formada 
+\end{DoxyReturn}
+
+
+Implementado en \hyperlink{classVillager_a8407dc0b40215058d81a3b83895529f9}{Villager}, \hyperlink{classChangeLevel_aca170d1bbcbedf884246e48d9719fa89}{Change\+Level}, \hyperlink{classHole_a972b6c3658292ff3b8c78e1c7c1076e8}{Hole}, \hyperlink{classStaticBlock_a4443eba7de18fb6ee06fe40630ec22b8}{Static\+Block} y \hyperlink{classCharacter_adf409cd36c4f1cef03ded479451ebefe}{Character}.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Objects.\+h\end{DoxyCompactItemize}

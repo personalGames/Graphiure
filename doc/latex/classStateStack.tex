@@ -1,0 +1,155 @@
+\hypertarget{classStateStack}{}\section{Referencia de la Clase State\+Stack}
+\label{classStateStack}\index{State\+Stack@{State\+Stack}}
+
+
+{\ttfamily \#include $<$State\+Stack.\+h$>$}
+
+Diagrama de herencias de State\+Stack\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStateStack}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStateStack_a435529bdbbf2bc703997b8598767e9f4}{State\+Stack} (\hyperlink{classContext}{Context} context)
+\item 
+virtual \hyperlink{classStateStack_ab2d31c81756ff400d3edfac2a5c3456c}{$\sim$\+State\+Stack} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classStateStack_a377470304b48fdd024ce37aaf5d2e127}{register\+State} (States\+I\+D state\+I\+D)
+\item 
+void \hyperlink{classStateStack_ae90af9f56ce7774d47d0407e2680c27d}{update} (sf\+::\+Time dt)
+\item 
+void \hyperlink{classStateStack_a0990b973b2a0bdf8fad2f326e564931a}{draw} ()
+\item 
+void \hyperlink{classStateStack_a70d3ffad9da499b8356789115f3e2acf}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+void \hyperlink{classStateStack_ac93b7e023e92a9bce352fce6e3ceecf0}{push\+State} (States\+I\+D state\+I\+D)
+\item 
+void \hyperlink{classStateStack_a7e050a57b798295c2344f1318765b5ee}{pop\+State} ()
+\item 
+void \hyperlink{classStateStack_a49f0703d4037c3bf63494e64cb09898d}{clear\+States} ()
+\item 
+bool \hyperlink{classStateStack_a63a73898d24eb0a68cac0215a9fda4fc}{is\+Empty} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Pila de estados 
+\begin{DoxyParams}{Parámetros}
+{\em context} & contexto de la aplicación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classStateStack_a435529bdbbf2bc703997b8598767e9f4}{}\index{State\+Stack@{State\+Stack}!State\+Stack@{State\+Stack}}
+\index{State\+Stack@{State\+Stack}!State\+Stack@{State\+Stack}}
+\subsubsection[{State\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}State\+Stack\+::\+State\+Stack (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{context}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a435529bdbbf2bc703997b8598767e9f4}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateStack_ab2d31c81756ff400d3edfac2a5c3456c}{}\index{State\+Stack@{State\+Stack}!````~State\+Stack@{$\sim$\+State\+Stack}}
+\index{````~State\+Stack@{$\sim$\+State\+Stack}!State\+Stack@{State\+Stack}}
+\subsubsection[{$\sim$\+State\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}State\+Stack\+::$\sim$\+State\+Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classStateStack_ab2d31c81756ff400d3edfac2a5c3456c}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classStateStack_a49f0703d4037c3bf63494e64cb09898d}{}\index{State\+Stack@{State\+Stack}!clear\+States@{clear\+States}}
+\index{clear\+States@{clear\+States}!State\+Stack@{State\+Stack}}
+\subsubsection[{clear\+States}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::clear\+States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a49f0703d4037c3bf63494e64cb09898d}
+Limpia la pila de estados \hypertarget{classStateStack_a0990b973b2a0bdf8fad2f326e564931a}{}\index{State\+Stack@{State\+Stack}!draw@{draw}}
+\index{draw@{draw}!State\+Stack@{State\+Stack}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a0990b973b2a0bdf8fad2f326e564931a}
+Dibuja los estados de la pila \hypertarget{classStateStack_a70d3ffad9da499b8356789115f3e2acf}{}\index{State\+Stack@{State\+Stack}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!State\+Stack@{State\+Stack}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a70d3ffad9da499b8356789115f3e2acf}
+Procesa los eventos delegándolos en los estados de la pila 
+\begin{DoxyParams}{Parámetros}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateStack_a63a73898d24eb0a68cac0215a9fda4fc}{}\index{State\+Stack@{State\+Stack}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!State\+Stack@{State\+Stack}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool State\+Stack\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classStateStack_a63a73898d24eb0a68cac0215a9fda4fc}
+Comprueba si la pila está vacía \begin{DoxyReturn}{Devuelve}
+true si la pila está vacía 
+\end{DoxyReturn}
+\hypertarget{classStateStack_a7e050a57b798295c2344f1318765b5ee}{}\index{State\+Stack@{State\+Stack}!pop\+State@{pop\+State}}
+\index{pop\+State@{pop\+State}!State\+Stack@{State\+Stack}}
+\subsubsection[{pop\+State}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::pop\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a7e050a57b798295c2344f1318765b5ee}
+Saca el último estado de la pila \hypertarget{classStateStack_ac93b7e023e92a9bce352fce6e3ceecf0}{}\index{State\+Stack@{State\+Stack}!push\+State@{push\+State}}
+\index{push\+State@{push\+State}!State\+Stack@{State\+Stack}}
+\subsubsection[{push\+State}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::push\+State (
+\begin{DoxyParamCaption}
+\item[{States\+I\+D}]{state\+I\+D}
+\end{DoxyParamCaption}
+)}\label{classStateStack_ac93b7e023e92a9bce352fce6e3ceecf0}
+Coloca un estado en la pila 
+\begin{DoxyParams}{Parámetros}
+{\em state\+I\+D} & id del estado a colocar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateStack_a377470304b48fdd024ce37aaf5d2e127}{}\index{State\+Stack@{State\+Stack}!register\+State@{register\+State}}
+\index{register\+State@{register\+State}!State\+Stack@{State\+Stack}}
+\subsubsection[{register\+State}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void State\+Stack\+::register\+State (
+\begin{DoxyParamCaption}
+\item[{States\+I\+D}]{state\+I\+D}
+\end{DoxyParamCaption}
+)}\label{classStateStack_a377470304b48fdd024ce37aaf5d2e127}
+Registra un estado en la pila 
+\begin{DoxyParams}{Parámetros}
+{\em state\+I\+D} & Plantilla para el registro de estados. Crea el estado que registra \\
+\hline
+{\em state\+I\+D} & identificador del estado \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateStack_ae90af9f56ce7774d47d0407e2680c27d}{}\index{State\+Stack@{State\+Stack}!update@{update}}
+\index{update@{update}!State\+Stack@{State\+Stack}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Stack\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)}\label{classStateStack_ae90af9f56ce7774d47d0407e2680c27d}
+Actualiza los estados de la pila 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+State\+Stack.\+h\item 
+State\+Stack.\+cpp\end{DoxyCompactItemize}

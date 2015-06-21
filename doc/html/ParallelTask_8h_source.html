@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente ParallelTask.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ParallelTask.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   ParallelTask.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 13 de diciembre de 2014, 17:48</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PARALLELTASK_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define PARALLELTASK_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classParallelTask.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classParallelTask.html">ParallelTask</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classParallelTask.html#a32cb3c361f7b4373f941f0993940576f">ParallelTask</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">     * Ejecuta la tarea en paralelo</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> execute();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classParallelTask.html#a1a67f547aa382fac2087184b2eb19148">isFinished</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classParallelTask.html#ada45e4db1aa8a89f20ab0b8662c6dabc">getCompletion</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classParallelTask.html#aa0832c15ace4a003c1a9e617e48ccb17">~ParallelTask</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classParallelTask.html#a494412a04608d42f3ba91b1b242fd149">runTask</a>()=0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classParallelTask.html#a8ad7af10ec7f3e7fa84998111d280e97">   50</a></span>&#160;    sf::Thread <a class="code" href="classParallelTask.html#a8ad7af10ec7f3e7fa84998111d280e97">thread</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classParallelTask.html#a924792685ebc2bd3bf8ec80e0dabe99f">   54</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classParallelTask.html#a924792685ebc2bd3bf8ec80e0dabe99f">finished</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classParallelTask.html#a39d71d5f6fd7fe3de25452c147028c91">   58</a></span>&#160;    sf::Mutex <a class="code" href="classParallelTask.html#a39d71d5f6fd7fe3de25452c147028c91">mutex</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classParallelTask.html#a415d5be8b846af856f0a5b651711a4ad">   62</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classParallelTask.html#a415d5be8b846af856f0a5b651711a4ad">completion</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* PARALLELTASK_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="ttc" id="classParallelTask_html_ada45e4db1aa8a89f20ab0b8662c6dabc"><div class="ttname"><a href="classParallelTask.html#ada45e4db1aa8a89f20ab0b8662c6dabc">ParallelTask::getCompletion</a></div><div class="ttdeci">float getCompletion()</div><div class="ttdef"><b>Definition:</b> ParallelTask.cpp:23</div></div>
+<div class="ttc" id="classParallelTask_html_a494412a04608d42f3ba91b1b242fd149"><div class="ttname"><a href="classParallelTask.html#a494412a04608d42f3ba91b1b242fd149">ParallelTask::runTask</a></div><div class="ttdeci">virtual void runTask()=0</div></div>
+<div class="ttc" id="classParallelTask_html_a8ad7af10ec7f3e7fa84998111d280e97"><div class="ttname"><a href="classParallelTask.html#a8ad7af10ec7f3e7fa84998111d280e97">ParallelTask::thread</a></div><div class="ttdeci">sf::Thread thread</div><div class="ttdef"><b>Definition:</b> ParallelTask.h:50</div></div>
+<div class="ttc" id="classParallelTask_html_a1a67f547aa382fac2087184b2eb19148"><div class="ttname"><a href="classParallelTask.html#a1a67f547aa382fac2087184b2eb19148">ParallelTask::isFinished</a></div><div class="ttdeci">bool isFinished()</div><div class="ttdef"><b>Definition:</b> ParallelTask.cpp:18</div></div>
+<div class="ttc" id="classParallelTask_html_a924792685ebc2bd3bf8ec80e0dabe99f"><div class="ttname"><a href="classParallelTask.html#a924792685ebc2bd3bf8ec80e0dabe99f">ParallelTask::finished</a></div><div class="ttdeci">bool finished</div><div class="ttdef"><b>Definition:</b> ParallelTask.h:54</div></div>
+<div class="ttc" id="classParallelTask_html"><div class="ttname"><a href="classParallelTask.html">ParallelTask</a></div><div class="ttdef"><b>Definition:</b> ParallelTask.h:16</div></div>
+<div class="ttc" id="classParallelTask_html_aa0832c15ace4a003c1a9e617e48ccb17"><div class="ttname"><a href="classParallelTask.html#aa0832c15ace4a003c1a9e617e48ccb17">ParallelTask::~ParallelTask</a></div><div class="ttdeci">virtual ~ParallelTask()</div><div class="ttdef"><b>Definition:</b> ParallelTask.cpp:28</div></div>
+<div class="ttc" id="classParallelTask_html_a415d5be8b846af856f0a5b651711a4ad"><div class="ttname"><a href="classParallelTask.html#a415d5be8b846af856f0a5b651711a4ad">ParallelTask::completion</a></div><div class="ttdeci">int completion</div><div class="ttdef"><b>Definition:</b> ParallelTask.h:62</div></div>
+<div class="ttc" id="classParallelTask_html_a32cb3c361f7b4373f941f0993940576f"><div class="ttname"><a href="classParallelTask.html#a32cb3c361f7b4373f941f0993940576f">ParallelTask::ParallelTask</a></div><div class="ttdeci">ParallelTask()</div><div class="ttdef"><b>Definition:</b> ParallelTask.cpp:10</div></div>
+<div class="ttc" id="classParallelTask_html_a39d71d5f6fd7fe3de25452c147028c91"><div class="ttname"><a href="classParallelTask.html#a39d71d5f6fd7fe3de25452c147028c91">ParallelTask::mutex</a></div><div class="ttdeci">sf::Mutex mutex</div><div class="ttdef"><b>Definition:</b> ParallelTask.h:58</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

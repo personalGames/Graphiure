@@ -1,0 +1,105 @@
+\hypertarget{classGUI_1_1Container}{}\section{Referencia de la Clase G\+U\+I\+:\+:Container}
+\label{classGUI_1_1Container}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+
+
+{\ttfamily \#include $<$Container.\+h$>$}
+
+Diagrama de herencias de G\+U\+I\+:\+:Container\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGUI_1_1Container}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1Container_a29ad430d6a9f0bebfea8567c91de1095}{Container} ()
+\item 
+virtual \hyperlink{classGUI_1_1Container_a6f08a80f950b90f542a2b29e980e7e79}{$\sim$\+Container} ()
+\item 
+void \hyperlink{classGUI_1_1Container_a9ed6e67b7c809fac99e30594d34a71c2}{pack} (\hyperlink{classGUI_1_1Component}{Component} $\ast$component)
+\item 
+virtual bool \hyperlink{classGUI_1_1Container_a0780d6dc5502c171a8d35e97fa93122d}{is\+Selectable} () const 
+\item 
+virtual void \hyperlink{classGUI_1_1Container_af08db9d157a4e56f706493529901eb7f}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+void \hyperlink{classGUI_1_1Container_a74aa11be28be40edc394fc585c335e74}{clear\+Selection} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Contenedor G\+U\+I 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classGUI_1_1Container_a29ad430d6a9f0bebfea8567c91de1095}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!Container@{Container}}
+\index{Container@{Container}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Container\+::\+Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Container_a29ad430d6a9f0bebfea8567c91de1095}
+Constructor \hypertarget{classGUI_1_1Container_a6f08a80f950b90f542a2b29e980e7e79}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!````~Container@{$\sim$\+Container}}
+\index{````~Container@{$\sim$\+Container}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{$\sim$\+Container}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Container\+::$\sim$\+Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Container_a6f08a80f950b90f542a2b29e980e7e79}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGUI_1_1Container_a74aa11be28be40edc394fc585c335e74}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!clear\+Selection@{clear\+Selection}}
+\index{clear\+Selection@{clear\+Selection}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{clear\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Container\+::clear\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Container_a74aa11be28be40edc394fc585c335e74}
+Limpia la seleccion del contenedor \hypertarget{classGUI_1_1Container_af08db9d157a4e56f706493529901eb7f}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Container\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Container_af08db9d157a4e56f706493529901eb7f}
+Procesa la entrada 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento a procesar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classGUI_1_1Component_aacf5e981e7b5726f5c7e9436455660ba}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Container_a0780d6dc5502c171a8d35e97fa93122d}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!is\+Selectable@{is\+Selectable}}
+\index{is\+Selectable@{is\+Selectable}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{is\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+U\+I\+::\+Container\+::is\+Selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Container_a0780d6dc5502c171a8d35e97fa93122d}
+Indica si es seleccionable el contenedor \begin{DoxyReturn}{Devuelve}
+true si es seleccionable 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classGUI_1_1Component_a44d14506c9a1dbc839e05a6bf99c341b}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Container_a9ed6e67b7c809fac99e30594d34a71c2}{}\index{G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}!pack@{pack}}
+\index{pack@{pack}!G\+U\+I\+::\+Container@{G\+U\+I\+::\+Container}}
+\subsubsection[{pack}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Container\+::pack (
+\begin{DoxyParamCaption}
+\item[{{\bf Component} $\ast$}]{component}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Container_a9ed6e67b7c809fac99e30594d34a71c2}
+Añade un componente al contenedor 
+\begin{DoxyParams}{Parámetros}
+{\em component} & componente a añadir \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Container.\+h\item 
+Container.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{classStateMachineAnimation}{}\section{Referencia de la Clase State\+Machine\+Animation}
+\label{classStateMachineAnimation}\index{State\+Machine\+Animation@{State\+Machine\+Animation}}
+
+
+{\ttfamily \#include $<$State\+Machine\+Animation.\+h$>$}
+
+Diagrama de herencias de State\+Machine\+Animation\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStateMachineAnimation}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStateMachineAnimation_ab3e0c7cea2112e3ae5a8093e3057a3b6}{State\+Machine\+Animation} (\hyperlink{classStateMachine}{State\+Machine} \&state\+Machine)
+\item 
+void \hyperlink{classStateMachineAnimation_aa2d5c955f19ec518080aa0cde7944473}{add\+Animation} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\item 
+void \hyperlink{classStateMachineAnimation_a8c715fbbaa26c4e52c72e074d27e2ea1}{update} (sf\+::\+Time delta)
+\item 
+void \hyperlink{classStateMachineAnimation_aadd7174f7f5aaa13d1a9889e5cc3539f}{update} (int action)
+\item 
+void \hyperlink{classStateMachineAnimation_a85f6a5c3b3963e9fd8767216ec0e735a}{update} (Actions action)
+\item 
+\hypertarget{classStateMachineAnimation_a717c4e5c86f7592acf43e5d4e184c002}{}virtual void {\bfseries draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const \label{classStateMachineAnimation_a717c4e5c86f7592acf43e5d4e184c002}
+
+\item 
+void \hyperlink{classStateMachineAnimation_a4612f25e1bc04639bf7998fc6f90c23d}{set\+Animations} (std\+::vector$<$ \hyperlink{classAnimation}{Animation} $\ast$ $>$ $\ast$animations)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase que representa una máquina de estados finitos y controla la animación que se esté reproduciendo en el momento 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classStateMachineAnimation_ab3e0c7cea2112e3ae5a8093e3057a3b6}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\index{State\+Machine\+Animation@{State\+Machine\+Animation}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{State\+Machine\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}State\+Machine\+Animation\+::\+State\+Machine\+Animation (
+\begin{DoxyParamCaption}
+\item[{{\bf State\+Machine} \&}]{state\+Machine}
+\end{DoxyParamCaption}
+)}\label{classStateMachineAnimation_ab3e0c7cea2112e3ae5a8093e3057a3b6}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em state\+Machine} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classStateMachineAnimation_aa2d5c955f19ec518080aa0cde7944473}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!add\+Animation@{add\+Animation}}
+\index{add\+Animation@{add\+Animation}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{add\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+Animation\+::add\+Animation (
+\begin{DoxyParamCaption}
+\item[{{\bf Animation} $\ast$}]{animation}
+\end{DoxyParamCaption}
+)}\label{classStateMachineAnimation_aa2d5c955f19ec518080aa0cde7944473}
+Añade una animación 
+\begin{DoxyParams}{Parámetros}
+{\em animation} & animación a añadir \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateMachineAnimation_a4612f25e1bc04639bf7998fc6f90c23d}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!set\+Animations@{set\+Animations}}
+\index{set\+Animations@{set\+Animations}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{set\+Animations}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+Animation\+::set\+Animations (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Animation} $\ast$ $>$ $\ast$}]{animations}
+\end{DoxyParamCaption}
+)}\label{classStateMachineAnimation_a4612f25e1bc04639bf7998fc6f90c23d}
+Setea el vector de animaciones de la máquina 
+\begin{DoxyParams}{Parámetros}
+{\em animations} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateMachineAnimation_a8c715fbbaa26c4e52c72e074d27e2ea1}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!update@{update}}
+\index{update@{update}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+Animation\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)}\label{classStateMachineAnimation_a8c715fbbaa26c4e52c72e074d27e2ea1}
+Actualiza la animación actual 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateMachineAnimation_aadd7174f7f5aaa13d1a9889e5cc3539f}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!update@{update}}
+\index{update@{update}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+Animation\+::update (
+\begin{DoxyParamCaption}
+\item[{int}]{action}
+\end{DoxyParamCaption}
+)}\label{classStateMachineAnimation_aadd7174f7f5aaa13d1a9889e5cc3539f}
+Actualiza la máquina de estados finitos con la entrada 
+\begin{DoxyParams}{Parámetros}
+{\em action} & entrada para la máquina \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateMachineAnimation_a85f6a5c3b3963e9fd8767216ec0e735a}{}\index{State\+Machine\+Animation@{State\+Machine\+Animation}!update@{update}}
+\index{update@{update}!State\+Machine\+Animation@{State\+Machine\+Animation}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+Animation\+::update (
+\begin{DoxyParamCaption}
+\item[{Actions}]{action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classStateMachineAnimation_a85f6a5c3b3963e9fd8767216ec0e735a}
+Actualiza la máquina de estados finitos con la entrada 
+\begin{DoxyParams}{Parámetros}
+{\em action} & entrada para la máquina \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+State\+Machine\+Animation.\+h\item 
+State\+Machine\+Animation.\+cpp\end{DoxyCompactItemize}

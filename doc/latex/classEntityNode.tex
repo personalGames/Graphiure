@@ -1,0 +1,117 @@
+\hypertarget{classEntityNode}{}\section{Referencia de la Clase Entity\+Node}
+\label{classEntityNode}\index{Entity\+Node@{Entity\+Node}}
+
+
+{\ttfamily \#include $<$Entity\+Node.\+h$>$}
+
+Diagrama de herencias de Entity\+Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classEntityNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEntityNode_adffc23015f30c960d0e02b9f51ff3742}{Entity\+Node} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classEntityNode_a5eb78668e4ff76d50aed68a9b6b028e2}{get\+Entity} () const 
+\item 
+virtual void \hyperlink{classEntityNode_afcda1234f815222781206bce3e41e67b}{draw\+Current} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const 
+\end{DoxyCompactItemize}
+\subsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classEntityNode_a1fdda1735246e22462e63b7872ddb972}{update\+Current} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classEntityNode_a90f8743448c763b4cd302dbbd2491bb0}{update\+Second\+Part} (sf\+::\+Time dt)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo con una entidad 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classEntityNode_adffc23015f30c960d0e02b9f51ff3742}{}\index{Entity\+Node@{Entity\+Node}!Entity\+Node@{Entity\+Node}}
+\index{Entity\+Node@{Entity\+Node}!Entity\+Node@{Entity\+Node}}
+\subsubsection[{Entity\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+Node\+::\+Entity\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}\label{classEntityNode_adffc23015f30c960d0e02b9f51ff3742}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad del nodo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classEntityNode_afcda1234f815222781206bce3e41e67b}{}\index{Entity\+Node@{Entity\+Node}!draw\+Current@{draw\+Current}}
+\index{draw\+Current@{draw\+Current}!Entity\+Node@{Entity\+Node}}
+\subsubsection[{draw\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+Node\+::draw\+Current (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Target \&}]{target, }
+\item[{sf\+::\+Render\+States}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classEntityNode_afcda1234f815222781206bce3e41e67b}
+Inherit from \hyperlink{classSceneNode}{Scene\+Node}, draw the entity 
+\begin{DoxyParams}{Parámetros}
+{\em target} & \\
+\hline
+{\em states} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+\hypertarget{classEntityNode_a5eb78668e4ff76d50aed68a9b6b028e2}{}\index{Entity\+Node@{Entity\+Node}!get\+Entity@{get\+Entity}}
+\index{get\+Entity@{get\+Entity}!Entity\+Node@{Entity\+Node}}
+\subsubsection[{get\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity}$\ast$ Entity\+Node\+::get\+Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntityNode_a5eb78668e4ff76d50aed68a9b6b028e2}
+Devuelve la entidad del nodo \begin{DoxyReturn}{Devuelve}
+entidad del nodo 
+\end{DoxyReturn}
+\hypertarget{classEntityNode_a1fdda1735246e22462e63b7872ddb972}{}\index{Entity\+Node@{Entity\+Node}!update\+Current@{update\+Current}}
+\index{update\+Current@{update\+Current}!Entity\+Node@{Entity\+Node}}
+\subsubsection[{update\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+Node\+::update\+Current (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classEntityNode_a1fdda1735246e22462e63b7872ddb972}
+Update the node with the time since last update 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+\hypertarget{classEntityNode_a90f8743448c763b4cd302dbbd2491bb0}{}\index{Entity\+Node@{Entity\+Node}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!Entity\+Node@{Entity\+Node}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+Node\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classEntityNode_a90f8743448c763b4cd302dbbd2491bb0}
+Actualiza la entidad/nodo en una segunda pasada 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Entity\+Node.\+h\item 
+Entity\+Node.\+cpp\end{DoxyCompactItemize}

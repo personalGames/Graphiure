@@ -1,0 +1,316 @@
+\hypertarget{classVector}{}\section{Referencia de la Clase Vector}
+\label{classVector}\index{Vector@{Vector}}
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector_a6f80c73b5f18dcf3f8e36065bdc8b9e5}{Vector} ()
+\item 
+\hyperlink{classVector_a7b248851572c39229270f04c3dd192d8}{Vector} (float \hyperlink{classVector_aca49165049a1e21ae47afcfc078819ed}{x}, float \hyperlink{classVector_a81be9102fca6d9beea3efef522c4c09d}{y})
+\item 
+void \hyperlink{classVector_a0cc91580a3011a9eebda448ff4c6e71d}{zero} ()
+\item 
+void \hyperlink{classVector_acc4fab345402e8979203dbc9ac1a8aea}{negate} ()
+\item 
+void \hyperlink{classVector_a4b5f64de730e759afc88fd53e98d3c1b}{add} (const \hyperlink{classVector}{Vector} \&vector)
+\item 
+void \hyperlink{classVector_ac0f345b85e9fff7cfbcbf991c169098c}{subtract} (const \hyperlink{classVector}{Vector} \&vector)
+\item 
+void \hyperlink{classVector_a3e8105767c84093c371ea87d13884fd0}{multiply} (float scalar)
+\item 
+void \hyperlink{classVector_ad1cdb507ea463624b707df32f44ca1cf}{divide} (float scalar)
+\item 
+float \hyperlink{classVector_a6085c16ca644e4530b1e0c618fab556f}{dot} (const \hyperlink{classVector}{Vector} \&vector) const 
+\item 
+\hypertarget{classVector_a42cd8aa8e911feefd505634eb6efdcc6}{}\hyperlink{classVector}{Vector} {\bfseries cross} (float s)\label{classVector_a42cd8aa8e911feefd505634eb6efdcc6}
+
+\item 
+float \hyperlink{classVector_ad7d03652023753f76a5a426abf221128}{length\+Squared} () const 
+\item 
+float \hyperlink{classVector_a41bd7eef3dfc5832eda40ea2a59bb9f5}{length} () const 
+\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_a7586a8c96e492a72418191a0300f3123}{normalize} ()
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{classVector_aca2765e0e086de29cd95fb97bc384599}{unit} () const 
+\item 
+bool \hyperlink{classVector_a66636f72a92a9746e6f080593356cae9}{normalized} () const 
+\item 
+bool \hyperlink{classVector_a164aa24033c4cb6a23fa69902dcbf1f5}{operator==} (const \hyperlink{classVector}{Vector} \&other) const 
+\item 
+bool \hyperlink{classVector_af7382cb07df79766f0f773f8b64c8312}{operator!=} (const \hyperlink{classVector}{Vector} \&other) const 
+\item 
+float \& \hyperlink{classVector_a950c7b6666b92ab5b5b9af29e19067c1}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+const float \& \hyperlink{classVector_aa5b3b63a6d6dd7f381d37789bec33848}{operator\mbox{[}$\,$\mbox{]}} (int i) const 
+\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVector_aca49165049a1e21ae47afcfc078819ed}{}float \hyperlink{classVector_aca49165049a1e21ae47afcfc078819ed}{x}\label{classVector_aca49165049a1e21ae47afcfc078819ed}
+
+\begin{DoxyCompactList}\small\item\em x component of vector \end{DoxyCompactList}\item 
+\hypertarget{classVector_a81be9102fca6d9beea3efef522c4c09d}{}float \hyperlink{classVector_a81be9102fca6d9beea3efef522c4c09d}{y}\label{classVector_a81be9102fca6d9beea3efef522c4c09d}
+
+\begin{DoxyCompactList}\small\item\em y component of vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVector_abf2b446e7047f3f0556b53e4ce7868d0}{}\hyperlink{classVector}{Vector} {\bfseries operator-\/} (const \hyperlink{classVector}{Vector} \&a)\label{classVector_abf2b446e7047f3f0556b53e4ce7868d0}
+
+\item 
+\hypertarget{classVector_a53d6a19cb17320a43a60e4356f80c205}{}\hyperlink{classVector}{Vector} {\bfseries operator+} (const \hyperlink{classVector}{Vector} \&a, const \hyperlink{classVector}{Vector} \&b)\label{classVector_a53d6a19cb17320a43a60e4356f80c205}
+
+\item 
+\hypertarget{classVector_a316d381a8ae7de1d299f2131a042a349}{}\hyperlink{classVector}{Vector} {\bfseries operator-\/} (const \hyperlink{classVector}{Vector} \&a, const \hyperlink{classVector}{Vector} \&b)\label{classVector_a316d381a8ae7de1d299f2131a042a349}
+
+\item 
+\hypertarget{classVector_a4fb2d244db84da243c5931a907fedb45}{}\hyperlink{classVector}{Vector} \& {\bfseries operator+=} (\hyperlink{classVector}{Vector} \&a, const \hyperlink{classVector}{Vector} \&b)\label{classVector_a4fb2d244db84da243c5931a907fedb45}
+
+\item 
+\hypertarget{classVector_ade89f1f57dfe0f62585d061044d01ae4}{}\hyperlink{classVector}{Vector} \& {\bfseries operator-\/=} (\hyperlink{classVector}{Vector} \&a, const \hyperlink{classVector}{Vector} \&b)\label{classVector_ade89f1f57dfe0f62585d061044d01ae4}
+
+\item 
+\hypertarget{classVector_a0bad8928a0e05294b614b3843cfe63a2}{}\hyperlink{classVector}{Vector} {\bfseries operator$\ast$} (const \hyperlink{classVector}{Vector} \&a, float s)\label{classVector_a0bad8928a0e05294b614b3843cfe63a2}
+
+\item 
+\hypertarget{classVector_a5d3b08c505c7eae71de50dbb3d21a5cf}{}\hyperlink{classVector}{Vector} {\bfseries operator/} (const \hyperlink{classVector}{Vector} \&a, float s)\label{classVector_a5d3b08c505c7eae71de50dbb3d21a5cf}
+
+\item 
+\hypertarget{classVector_a0643b5488c2ae01d7c78a9c2939c7601}{}\hyperlink{classVector}{Vector} \& {\bfseries operator$\ast$=} (\hyperlink{classVector}{Vector} \&a, float s)\label{classVector_a0643b5488c2ae01d7c78a9c2939c7601}
+
+\item 
+\hypertarget{classVector_a28d8f00719ae1134b082c4c40ad10167}{}\hyperlink{classVector}{Vector} \& {\bfseries operator/=} (\hyperlink{classVector}{Vector} \&a, float s)\label{classVector_a28d8f00719ae1134b082c4c40ad10167}
+
+\item 
+\hypertarget{classVector_a2e971b56ee4f7f7743269f21f43fbdba}{}\hyperlink{classVector}{Vector} {\bfseries operator$\ast$} (float s, const \hyperlink{classVector}{Vector} \&a)\label{classVector_a2e971b56ee4f7f7743269f21f43fbdba}
+
+\item 
+\hypertarget{classVector_aee36ca7f6efa7cc808e5d6ed523f965b}{}\hyperlink{classVector}{Vector} \& {\bfseries operator$\ast$=} (float s, \hyperlink{classVector}{Vector} \&a)\label{classVector_aee36ca7f6efa7cc808e5d6ed523f965b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase representando un vector de dos puntos y en el que se han sobreescrito operadores a conveniencia para su uso en colisiones. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classVector_a6f80c73b5f18dcf3f8e36065bdc8b9e5}{}\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection[{Vector}]{\setlength{\rightskip}{0pt plus 5cm}Vector\+::\+Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a6f80c73b5f18dcf3f8e36065bdc8b9e5}
+default constructor. does nothing for speed. \hypertarget{classVector_a7b248851572c39229270f04c3dd192d8}{}\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection[{Vector}]{\setlength{\rightskip}{0pt plus 5cm}Vector\+::\+Vector (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a7b248851572c39229270f04c3dd192d8}
+construct vector from x,y components. 
+\begin{DoxyParams}{Parámetros}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classVector_a4b5f64de730e759afc88fd53e98d3c1b}{}\index{Vector@{Vector}!add@{add}}
+\index{add@{add}!Vector@{Vector}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::add (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector} \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a4b5f64de730e759afc88fd53e98d3c1b}
+add another vector to this vector. 
+\begin{DoxyParams}{Parámetros}
+{\em vector} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVector_ad1cdb507ea463624b707df32f44ca1cf}{}\index{Vector@{Vector}!divide@{divide}}
+\index{divide@{divide}!Vector@{Vector}}
+\subsubsection[{divide}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::divide (
+\begin{DoxyParamCaption}
+\item[{float}]{scalar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_ad1cdb507ea463624b707df32f44ca1cf}
+divide this vector by a scalar. 
+\begin{DoxyParams}{Parámetros}
+{\em scalar} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVector_a6085c16ca644e4530b1e0c618fab556f}{}\index{Vector@{Vector}!dot@{dot}}
+\index{dot@{dot}!Vector@{Vector}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}float Vector\+::dot (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector} \&}]{vector}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a6085c16ca644e4530b1e0c618fab556f}
+calculate dot product of this vector with another vector. 
+\begin{DoxyParams}{Parámetros}
+{\em vector} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a41bd7eef3dfc5832eda40ea2a59bb9f5}{}\index{Vector@{Vector}!length@{length}}
+\index{length@{length}!Vector@{Vector}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}float Vector\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a41bd7eef3dfc5832eda40ea2a59bb9f5}
+calculate length of vector. \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_ad7d03652023753f76a5a426abf221128}{}\index{Vector@{Vector}!length\+Squared@{length\+Squared}}
+\index{length\+Squared@{length\+Squared}!Vector@{Vector}}
+\subsubsection[{length\+Squared}]{\setlength{\rightskip}{0pt plus 5cm}float Vector\+::length\+Squared (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_ad7d03652023753f76a5a426abf221128}
+calculate length of vector squared \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a3e8105767c84093c371ea87d13884fd0}{}\index{Vector@{Vector}!multiply@{multiply}}
+\index{multiply@{multiply}!Vector@{Vector}}
+\subsubsection[{multiply}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::multiply (
+\begin{DoxyParamCaption}
+\item[{float}]{scalar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a3e8105767c84093c371ea87d13884fd0}
+multiply this vector by a scalar. 
+\begin{DoxyParams}{Parámetros}
+{\em scalar} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVector_acc4fab345402e8979203dbc9ac1a8aea}{}\index{Vector@{Vector}!negate@{negate}}
+\index{negate@{negate}!Vector@{Vector}}
+\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::negate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_acc4fab345402e8979203dbc9ac1a8aea}
+negate vector. \hypertarget{classVector_a7586a8c96e492a72418191a0300f3123}{}\index{Vector@{Vector}!normalize@{normalize}}
+\index{normalize@{normalize}!Vector@{Vector}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}\& Vector\+::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a7586a8c96e492a72418191a0300f3123}
+normalize vector and return reference to normalized self. \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a66636f72a92a9746e6f080593356cae9}{}\index{Vector@{Vector}!normalized@{normalized}}
+\index{normalized@{normalized}!Vector@{Vector}}
+\subsubsection[{normalized}]{\setlength{\rightskip}{0pt plus 5cm}bool Vector\+::normalized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a66636f72a92a9746e6f080593356cae9}
+test if vector is normalized. \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_af7382cb07df79766f0f773f8b64c8312}{}\index{Vector@{Vector}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vector@{Vector}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Vector\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_af7382cb07df79766f0f773f8b64c8312}
+not equals operator 
+\begin{DoxyParams}{Parámetros}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a164aa24033c4cb6a23fa69902dcbf1f5}{}\index{Vector@{Vector}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector@{Vector}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Vector\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a164aa24033c4cb6a23fa69902dcbf1f5}
+equals operator 
+\begin{DoxyParams}{Parámetros}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a950c7b6666b92ab5b5b9af29e19067c1}{}\index{Vector@{Vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}float\& Vector\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a950c7b6666b92ab5b5b9af29e19067c1}
+element access 
+\begin{DoxyParams}{Parámetros}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_aa5b3b63a6d6dd7f381d37789bec33848}{}\index{Vector@{Vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Vector\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_aa5b3b63a6d6dd7f381d37789bec33848}
+element access (const) 
+\begin{DoxyParams}{Parámetros}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_ac0f345b85e9fff7cfbcbf991c169098c}{}\index{Vector@{Vector}!subtract@{subtract}}
+\index{subtract@{subtract}!Vector@{Vector}}
+\subsubsection[{subtract}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::subtract (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector} \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_ac0f345b85e9fff7cfbcbf991c169098c}
+subtract another vector from this vector. 
+\begin{DoxyParams}{Parámetros}
+{\em vector} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVector_aca2765e0e086de29cd95fb97bc384599}{}\index{Vector@{Vector}!unit@{unit}}
+\index{unit@{unit}!Vector@{Vector}}
+\subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} Vector\+::unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_aca2765e0e086de29cd95fb97bc384599}
+return unit length vector \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classVector_a0cc91580a3011a9eebda448ff4c6e71d}{}\index{Vector@{Vector}!zero@{zero}}
+\index{zero@{zero}!Vector@{Vector}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}void Vector\+::zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVector_a0cc91580a3011a9eebda448ff4c6e71d}
+set vector to zero. 
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Vector.\+h\end{DoxyCompactItemize}

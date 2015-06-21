@@ -1,0 +1,126 @@
+\hypertarget{classSystemMovement}{}\section{Referencia de la Clase System\+Movement}
+\label{classSystemMovement}\index{System\+Movement@{System\+Movement}}
+
+
+{\ttfamily \#include $<$System\+Movement.\+h$>$}
+
+Diagrama de herencias de System\+Movement\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemMovement}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSystemMovement_a5657b5507fd4f6a7bf92e9a9929881d3}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemMovement_a2e4df7be9f17a4572116649552c9d073}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemMovement_aab4a789b0bf9d329461896e12ada82c4}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemMovement_afd66e76ecd00084594be9334434a689d}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemMovement_ae7a01c74fcd8cfae49488a707cf32902}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemMovement_a7fe2e159ce9ef32f5710d9a957a2450b}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema de movimiento 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemMovement_a2e4df7be9f17a4572116649552c9d073}{}\index{System\+Movement@{System\+Movement}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Movement@{System\+Movement}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_a2e4df7be9f17a4572116649552c9d073}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemMovement_a5657b5507fd4f6a7bf92e9a9929881d3}{}\index{System\+Movement@{System\+Movement}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Movement@{System\+Movement}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_a5657b5507fd4f6a7bf92e9a9929881d3}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemMovement_ae7a01c74fcd8cfae49488a707cf32902}{}\index{System\+Movement@{System\+Movement}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Movement@{System\+Movement}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_ae7a01c74fcd8cfae49488a707cf32902}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemMovement_a7fe2e159ce9ef32f5710d9a957a2450b}{}\index{System\+Movement@{System\+Movement}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Movement@{System\+Movement}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_a7fe2e159ce9ef32f5710d9a957a2450b}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemMovement_aab4a789b0bf9d329461896e12ada82c4}{}\index{System\+Movement@{System\+Movement}!update@{update}}
+\index{update@{update}!System\+Movement@{System\+Movement}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_aab4a789b0bf9d329461896e12ada82c4}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemMovement_afd66e76ecd00084594be9334434a689d}{}\index{System\+Movement@{System\+Movement}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Movement@{System\+Movement}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Movement\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemMovement_afd66e76ecd00084594be9334434a689d}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Movement.\+h\item 
+System\+Movement.\+cpp\end{DoxyCompactItemize}

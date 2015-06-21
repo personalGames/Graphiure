@@ -1,0 +1,212 @@
+\hypertarget{classSystemObjectsGame}{}\section{Referencia de la Clase System\+Objects\+Game}
+\label{classSystemObjectsGame}\index{System\+Objects\+Game@{System\+Objects\+Game}}
+
+
+{\ttfamily \#include $<$System\+Objects\+Game.\+h$>$}
+
+Diagrama de herencias de System\+Objects\+Game\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemObjectsGame}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSystemObjectsGame_a8f9dff3f4bc88ebbd64094241448633c}{System\+Objects\+Game} (\hyperlink{classSystemManager}{System\+Manager} \&system\+Manager)
+\item 
+virtual \hyperlink{classSystemObjectsGame_ae32e62e6afe1c353a8c888d15324f01e}{$\sim$\+System\+Objects\+Game} ()
+\item 
+virtual void \hyperlink{classSystemObjectsGame_a1d915c3471432c344a58af523085b87f}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemObjectsGame_a4357e0e5d2e42a6b3e80362cbfdbda39}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemObjectsGame_a6d8cbcab3b14a4ddc4c45ebe0c7aed07}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemObjectsGame_ae716ba020dded37eb7cc01e3dab32a1a}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemObjectsGame_a6836f71bd70b620d8b86b98e6e3ee44b}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemObjectsGame_ad238ad4e70fb3cc2a5648a7176e69233}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+\hyperlink{classSubject}{Subject} $\ast$ \hyperlink{classSystemObjectsGame_a7d1bed32c2cb7ffc4731c21491668e6b}{get\+Message\+Entities} () const 
+\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classSystemObjectsGame_a27f5cdf50a6091f3b44bf5232f30455d}{get\+Entity} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classSystemObjectsGame_ae8adeb2489ef7e3f8bde37d1c7cb4653}{get\+Entity\+Xml} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\item 
+void \hyperlink{classSystemObjectsGame_a86d70dfc35a07455330789de8503b153}{destroy\+Entity} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema de entidades del juego 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classSystemObjectsGame_a8f9dff3f4bc88ebbd64094241448633c}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!System\+Objects\+Game@{System\+Objects\+Game}}
+\index{System\+Objects\+Game@{System\+Objects\+Game}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{System\+Objects\+Game}]{\setlength{\rightskip}{0pt plus 5cm}System\+Objects\+Game\+::\+System\+Objects\+Game (
+\begin{DoxyParamCaption}
+\item[{{\bf System\+Manager} \&}]{system\+Manager}
+\end{DoxyParamCaption}
+)}\label{classSystemObjectsGame_a8f9dff3f4bc88ebbd64094241448633c}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em system\+Manager} & gestor de sistemas \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemObjectsGame_ae32e62e6afe1c353a8c888d15324f01e}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!````~System\+Objects\+Game@{$\sim$\+System\+Objects\+Game}}
+\index{````~System\+Objects\+Game@{$\sim$\+System\+Objects\+Game}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{$\sim$\+System\+Objects\+Game}]{\setlength{\rightskip}{0pt plus 5cm}System\+Objects\+Game\+::$\sim$\+System\+Objects\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemObjectsGame_ae32e62e6afe1c353a8c888d15324f01e}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemObjectsGame_a86d70dfc35a07455330789de8503b153}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!destroy\+Entity@{destroy\+Entity}}
+\index{destroy\+Entity@{destroy\+Entity}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{destroy\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Objects\+Game\+::destroy\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)}\label{classSystemObjectsGame_a86d70dfc35a07455330789de8503b153}
+Borra una entidad 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la entidad \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemObjectsGame_a4357e0e5d2e42a6b3e80362cbfdbda39}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Objects\+Game\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemObjectsGame_a4357e0e5d2e42a6b3e80362cbfdbda39}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemObjectsGame_a27f5cdf50a6091f3b44bf5232f30455d}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!get\+Entity@{get\+Entity}}
+\index{get\+Entity@{get\+Entity}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{get\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} $\ast$ System\+Objects\+Game\+::get\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)}\label{classSystemObjectsGame_a27f5cdf50a6091f3b44bf5232f30455d}
+Devuelve la entidad solicitada 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la entidad solicitada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la entidad solicitada, si no lo encuentra, salta excepción 
+\end{DoxyReturn}
+\hypertarget{classSystemObjectsGame_ae8adeb2489ef7e3f8bde37d1c7cb4653}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!get\+Entity\+Xml@{get\+Entity\+Xml}}
+\index{get\+Entity\+Xml@{get\+Entity\+Xml}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{get\+Entity\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} $\ast$ System\+Objects\+Game\+::get\+Entity\+Xml (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)}\label{classSystemObjectsGame_ae8adeb2489ef7e3f8bde37d1c7cb4653}
+Devuelve la entidad solicitada 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador del xml de la entidad solicitada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la entidad solicitada, si no lo encuentra, salta excepción 
+\end{DoxyReturn}
+\hypertarget{classSystemObjectsGame_a7d1bed32c2cb7ffc4731c21491668e6b}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!get\+Message\+Entities@{get\+Message\+Entities}}
+\index{get\+Message\+Entities@{get\+Message\+Entities}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{get\+Message\+Entities}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Subject}$\ast$ System\+Objects\+Game\+::get\+Message\+Entities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSystemObjectsGame_a7d1bed32c2cb7ffc4731c21491668e6b}
+Devuelve el objeto vigilado del patrón observer \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemObjectsGame_a1d915c3471432c344a58af523085b87f}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Objects\+Game\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemObjectsGame_a1d915c3471432c344a58af523085b87f}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemObjectsGame_a6d8cbcab3b14a4ddc4c45ebe0c7aed07}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Objects\+Game\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemObjectsGame_a6d8cbcab3b14a4ddc4c45ebe0c7aed07}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemObjectsGame_ae716ba020dded37eb7cc01e3dab32a1a}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual void System\+Objects\+Game\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classSystemObjectsGame_ae716ba020dded37eb7cc01e3dab32a1a}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemObjectsGame_a6836f71bd70b620d8b86b98e6e3ee44b}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!update@{update}}
+\index{update@{update}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Objects\+Game\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemObjectsGame_a6836f71bd70b620d8b86b98e6e3ee44b}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemObjectsGame_ad238ad4e70fb3cc2a5648a7176e69233}{}\index{System\+Objects\+Game@{System\+Objects\+Game}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Objects\+Game@{System\+Objects\+Game}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void System\+Objects\+Game\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classSystemObjectsGame_ad238ad4e70fb3cc2a5648a7176e69233}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Objects\+Game.\+h\item 
+System\+Objects\+Game.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\hypertarget{classTileMapNode}{}\section{Referencia de la Clase Tile\+Map\+Node}
+\label{classTileMapNode}\index{Tile\+Map\+Node@{Tile\+Map\+Node}}
+
+
+{\ttfamily \#include $<$Tile\+Map\+Node.\+h$>$}
+
+Diagrama de herencias de Tile\+Map\+Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTileMapNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTileMapNode_a16e53592cfd243c14df0846539368d53}{Tile\+Map\+Node} (const \hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&images, \hyperlink{structStructMap}{Struct\+Map} $\ast$map\+Info, int width, int heiht, int number\+Rows\+Visible, int number\+Columns\+Visible)
+\item 
+void \hyperlink{classTileMapNode_a8a2a414779f90de876e913ad172978df}{prepare\+Map} (const int $\ast$tiles\+Map)
+\item 
+sf\+::\+Vector2f \hyperlink{classTileMapNode_a846a4095195dc673033107c71b48e9df}{get\+Adjust\+Ratio} ()
+\item 
+sf\+::\+Vector2f \hyperlink{classTileMapNode_ad30b875e6c8c59efb170a67d002aaac4}{get\+Size\+Map} ()
+\item 
+sf\+::\+Vector2f \hyperlink{classTileMapNode_adb1c6c943363a024f3eb5b79b5e86525}{get\+Quad\+Size} ()
+\item 
+virtual void \hyperlink{classTileMapNode_acddf8fbc538f4952eb5ef84a211490b6}{draw\+Current} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo para el dibujado del mapa 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classTileMapNode_a16e53592cfd243c14df0846539368d53}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\index{Tile\+Map\+Node@{Tile\+Map\+Node}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{Tile\+Map\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Tile\+Map\+Node\+::\+Tile\+Map\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&}]{images, }
+\item[{{\bf Struct\+Map} $\ast$}]{map\+Info, }
+\item[{int}]{width, }
+\item[{int}]{heiht, }
+\item[{int}]{number\+Rows\+Visible, }
+\item[{int}]{number\+Columns\+Visible}
+\end{DoxyParamCaption}
+)}\label{classTileMapNode_a16e53592cfd243c14df0846539368d53}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em images} & \\
+\hline
+{\em map\+Info} & \\
+\hline
+{\em width} & \\
+\hline
+{\em heiht} & \\
+\hline
+{\em number\+Rows\+Visible} & \\
+\hline
+{\em number\+Columns\+Visible} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classTileMapNode_acddf8fbc538f4952eb5ef84a211490b6}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!draw\+Current@{draw\+Current}}
+\index{draw\+Current@{draw\+Current}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{draw\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Tile\+Map\+Node\+::draw\+Current (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Target \&}]{target, }
+\item[{sf\+::\+Render\+States}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTileMapNode_acddf8fbc538f4952eb5ef84a211490b6}
+Draw the actual state of the node 
+\begin{DoxyParams}{Parámetros}
+{\em target} & \\
+\hline
+{\em states} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classSceneNode}{Scene\+Node}.
+
+\hypertarget{classTileMapNode_a846a4095195dc673033107c71b48e9df}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!get\+Adjust\+Ratio@{get\+Adjust\+Ratio}}
+\index{get\+Adjust\+Ratio@{get\+Adjust\+Ratio}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{get\+Adjust\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Tile\+Map\+Node\+::get\+Adjust\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTileMapNode_a846a4095195dc673033107c71b48e9df}
+Devuelve el ratio de redimensionado \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classTileMapNode_adb1c6c943363a024f3eb5b79b5e86525}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!get\+Quad\+Size@{get\+Quad\+Size}}
+\index{get\+Quad\+Size@{get\+Quad\+Size}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{get\+Quad\+Size}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Tile\+Map\+Node\+::get\+Quad\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTileMapNode_adb1c6c943363a024f3eb5b79b5e86525}
+Devuelve el tamaño del tile en pantalla \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classTileMapNode_ad30b875e6c8c59efb170a67d002aaac4}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!get\+Size\+Map@{get\+Size\+Map}}
+\index{get\+Size\+Map@{get\+Size\+Map}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{get\+Size\+Map}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Tile\+Map\+Node\+::get\+Size\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTileMapNode_ad30b875e6c8c59efb170a67d002aaac4}
+Devuelve el tamaño del mapa que se visualiza, dado por el número de columnas y filas con el tamaño del tile en ventana \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classTileMapNode_a8a2a414779f90de876e913ad172978df}{}\index{Tile\+Map\+Node@{Tile\+Map\+Node}!prepare\+Map@{prepare\+Map}}
+\index{prepare\+Map@{prepare\+Map}!Tile\+Map\+Node@{Tile\+Map\+Node}}
+\subsubsection[{prepare\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void Tile\+Map\+Node\+::prepare\+Map (
+\begin{DoxyParamCaption}
+\item[{const int $\ast$}]{tiles\+Map}
+\end{DoxyParamCaption}
+)}\label{classTileMapNode_a8a2a414779f90de876e913ad172978df}
+Prepare the map after initialize the node with details like numbers of rows/columns, size of windows... 
+\begin{DoxyParams}{Parámetros}
+{\em tiles\+Map} & \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Tile\+Map\+Node.\+h\item 
+Tile\+Map\+Node.\+cpp\end{DoxyCompactItemize}

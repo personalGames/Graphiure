@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente Collision.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Collision.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Collision.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 15 de marzo de 2015, 21:20</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef COLLISION_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define COLLISION_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;TypeCollision.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCollision.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCollision.html">Collision</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classCollision.html#aea8004fbf48b79b5db7b784688b23788">Collision</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classCollision.html">Collision</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#aaf69e6b020eb9fd1cba8aec1d3bb859e">addVertice</a>(sf::Vertex &amp; vertex);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#a100a2d80f4163993669c06666255bc57">addArrayVertex</a>(sf::VertexArray&amp; array);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#a95e06a73baa76a87dc51ffca52fcc691">setArrayVertex</a>(sf::VertexArray* array);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#afb02271f321bcfa150098a19a07c8ee8">update</a>(sf::Transformable&amp; transform);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#a72b8c24b2a8572c86620a75e048fd29b">applyRatio</a>(sf::Vector2f ratio);</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classCollision.html#aecb16f7e4fd3e15a20679fedfbbde57d">   55</a></span>&#160;    <span class="keyword">inline</span> sf::Transformable <a class="code" href="classCollision.html#aecb16f7e4fd3e15a20679fedfbbde57d">getTransform</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> transform;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classCollision.html#a1f943423873c563bae17559933491afd">   63</a></span>&#160;    TypeCollision <a class="code" href="classCollision.html#a1f943423873c563bae17559933491afd">getType</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> type;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classCollision.html#a16a681d155544e54068042cb2d97fbd4">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCollision.html#a16a681d155544e54068042cb2d97fbd4">setType</a>(TypeCollision type) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        this-&gt;type = type;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    sf::FloatRect <a class="code" href="classCollision.html#af88eea50520b50648a3a6cc56ac81a67">getAABB</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    sf::FloatRect <a class="code" href="classCollision.html#af88eea50520b50648a3a6cc56ac81a67">getAABB</a>(<span class="keywordtype">float</span> time);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    sf::FloatRect <a class="code" href="classCollision.html#aa27c1d19aeb0b810be2e8016289d2d67">getPreviousAABB</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    sf::FloatRect <a class="code" href="classCollision.html#ad650a86d63f7e85436f6df161b9c1857">getAABBSwept</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classCollision.html#a6ba388302ae3971d876b0b06b00cab00">  102</a></span>&#160;    sf::VertexArray* <a class="code" href="classCollision.html#a6ba388302ae3971d876b0b06b00cab00">vertices</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    TypeCollision type;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    sf::Transformable transform;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    sf::Transformable previousTransform;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* COLLISION_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="ttc" id="classCollision_html_a6ba388302ae3971d876b0b06b00cab00"><div class="ttname"><a href="classCollision.html#a6ba388302ae3971d876b0b06b00cab00">Collision::vertices</a></div><div class="ttdeci">sf::VertexArray * vertices</div><div class="ttdef"><b>Definition:</b> Collision.h:102</div></div>
+<div class="ttc" id="classCollision_html_aea8004fbf48b79b5db7b784688b23788"><div class="ttname"><a href="classCollision.html#aea8004fbf48b79b5db7b784688b23788">Collision::Collision</a></div><div class="ttdeci">Collision()</div><div class="ttdef"><b>Definition:</b> Collision.cpp:12</div></div>
+<div class="ttc" id="classCollision_html_aaf69e6b020eb9fd1cba8aec1d3bb859e"><div class="ttname"><a href="classCollision.html#aaf69e6b020eb9fd1cba8aec1d3bb859e">Collision::addVertice</a></div><div class="ttdeci">void addVertice(sf::Vertex &amp;vertex)</div><div class="ttdef"><b>Definition:</b> Collision.cpp:32</div></div>
+<div class="ttc" id="classCollision_html_a100a2d80f4163993669c06666255bc57"><div class="ttname"><a href="classCollision.html#a100a2d80f4163993669c06666255bc57">Collision::addArrayVertex</a></div><div class="ttdeci">void addArrayVertex(sf::VertexArray &amp;array)</div><div class="ttdef"><b>Definition:</b> Collision.cpp:19</div></div>
+<div class="ttc" id="classCollision_html_ad650a86d63f7e85436f6df161b9c1857"><div class="ttname"><a href="classCollision.html#ad650a86d63f7e85436f6df161b9c1857">Collision::getAABBSwept</a></div><div class="ttdeci">sf::FloatRect getAABBSwept()</div><div class="ttdef"><b>Definition:</b> Collision.cpp:72</div></div>
+<div class="ttc" id="classCollision_html_aa27c1d19aeb0b810be2e8016289d2d67"><div class="ttname"><a href="classCollision.html#aa27c1d19aeb0b810be2e8016289d2d67">Collision::getPreviousAABB</a></div><div class="ttdeci">sf::FloatRect getPreviousAABB()</div><div class="ttdef"><b>Definition:</b> Collision.cpp:67</div></div>
+<div class="ttc" id="classCollision_html_a95e06a73baa76a87dc51ffca52fcc691"><div class="ttname"><a href="classCollision.html#a95e06a73baa76a87dc51ffca52fcc691">Collision::setArrayVertex</a></div><div class="ttdeci">void setArrayVertex(sf::VertexArray *array)</div><div class="ttdef"><b>Definition:</b> Collision.cpp:25</div></div>
+<div class="ttc" id="classCollision_html_a16a681d155544e54068042cb2d97fbd4"><div class="ttname"><a href="classCollision.html#a16a681d155544e54068042cb2d97fbd4">Collision::setType</a></div><div class="ttdeci">void setType(TypeCollision type)</div><div class="ttdef"><b>Definition:</b> Collision.h:71</div></div>
+<div class="ttc" id="classCollision_html"><div class="ttname"><a href="classCollision.html">Collision</a></div><div class="ttdef"><b>Definition:</b> Collision.h:18</div></div>
+<div class="ttc" id="classCollision_html_af88eea50520b50648a3a6cc56ac81a67"><div class="ttname"><a href="classCollision.html#af88eea50520b50648a3a6cc56ac81a67">Collision::getAABB</a></div><div class="ttdeci">sf::FloatRect getAABB()</div><div class="ttdef"><b>Definition:</b> Collision.cpp:53</div></div>
+<div class="ttc" id="classCollision_html_aecb16f7e4fd3e15a20679fedfbbde57d"><div class="ttname"><a href="classCollision.html#aecb16f7e4fd3e15a20679fedfbbde57d">Collision::getTransform</a></div><div class="ttdeci">sf::Transformable getTransform()</div><div class="ttdef"><b>Definition:</b> Collision.h:55</div></div>
+<div class="ttc" id="classCollision_html_a72b8c24b2a8572c86620a75e048fd29b"><div class="ttname"><a href="classCollision.html#a72b8c24b2a8572c86620a75e048fd29b">Collision::applyRatio</a></div><div class="ttdeci">void applyRatio(sf::Vector2f ratio)</div><div class="ttdef"><b>Definition:</b> Collision.cpp:41</div></div>
+<div class="ttc" id="classCollision_html_afb02271f321bcfa150098a19a07c8ee8"><div class="ttname"><a href="classCollision.html#afb02271f321bcfa150098a19a07c8ee8">Collision::update</a></div><div class="ttdeci">void update(sf::Transformable &amp;transform)</div><div class="ttdef"><b>Definition:</b> Collision.cpp:36</div></div>
+<div class="ttc" id="classCollision_html_a1f943423873c563bae17559933491afd"><div class="ttname"><a href="classCollision.html#a1f943423873c563bae17559933491afd">Collision::getType</a></div><div class="ttdeci">TypeCollision getType() const </div><div class="ttdef"><b>Definition:</b> Collision.h:63</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

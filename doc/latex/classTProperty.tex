@@ -1,0 +1,87 @@
+\hypertarget{classTProperty}{}\section{Referencia de la plantilla de la Clase T\+Property$<$ T\+Y\+P\+E $>$}
+\label{classTProperty}\index{T\+Property$<$ T\+Y\+P\+E $>$@{T\+Property$<$ T\+Y\+P\+E $>$}}
+Diagrama de herencias de T\+Property$<$ T\+Y\+P\+E $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTProperty}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTProperty_a58ede57ac36a9c98bb06ca773f9b62ee}{T\+Property} (const std\+::string the\+Property\+I\+D)
+\item 
+T\+Y\+P\+E \hyperlink{classTProperty_adceda6e9d1c01f091cec619a48b1822f}{Get\+Value} ()
+\item 
+void \hyperlink{classTProperty_ad7949c54d792c67cd73b299964699541}{Set\+Value} (T\+Y\+P\+E the\+Value)
+\item 
+void \hyperlink{classTProperty_ab463fc86cb27252b763b38be21e82c3f}{Update} ()
+\item 
+\hyperlink{classIProperty}{I\+Property} $\ast$ \hyperlink{classTProperty_a40e392d305cc3886255946359977edcb}{Make\+Clone} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classTProperty_a58ede57ac36a9c98bb06ca773f9b62ee}{}\index{T\+Property@{T\+Property}!T\+Property@{T\+Property}}
+\index{T\+Property@{T\+Property}!T\+Property@{T\+Property}}
+\subsubsection[{T\+Property}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E = unsigned int$>$ {\bf T\+Property}$<$ T\+Y\+P\+E $>$\+::{\bf T\+Property} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{the\+Property\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTProperty_a58ede57ac36a9c98bb06ca773f9b62ee}
+\hyperlink{classTProperty}{T\+Property} default constructor 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+I\+D} & to use for this property \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classTProperty_adceda6e9d1c01f091cec619a48b1822f}{}\index{T\+Property@{T\+Property}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!T\+Property@{T\+Property}}
+\subsubsection[{Get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E = unsigned int$>$ T\+Y\+P\+E {\bf T\+Property}$<$ T\+Y\+P\+E $>$\+::Get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTProperty_adceda6e9d1c01f091cec619a48b1822f}
+Get\+Value will return the property value \begin{DoxyReturn}{Devuelve}
+the property value 
+\end{DoxyReturn}
+\hypertarget{classTProperty_a40e392d305cc3886255946359977edcb}{}\index{T\+Property@{T\+Property}!Make\+Clone@{Make\+Clone}}
+\index{Make\+Clone@{Make\+Clone}!T\+Property@{T\+Property}}
+\subsubsection[{Make\+Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E = unsigned int$>$ {\bf I\+Property}$\ast$ {\bf T\+Property}$<$ T\+Y\+P\+E $>$\+::Make\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTProperty_a40e392d305cc3886255946359977edcb}
+Make\+Clone is responsible for creating a clone of this \hyperlink{classIProperty}{I\+Property} derived class and returning it as part of the Prototype and Instance system. The value of the Property will also be copied into the clone. \begin{DoxyReturn}{Devuelve}
+pointer to the \hyperlink{classIProperty}{I\+Property} derived class clone that was created 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classIProperty_a5ae2b99d460cc149f4afa04e9d97d584}{I\+Property}.
+
+\hypertarget{classTProperty_ad7949c54d792c67cd73b299964699541}{}\index{T\+Property@{T\+Property}!Set\+Value@{Set\+Value}}
+\index{Set\+Value@{Set\+Value}!T\+Property@{T\+Property}}
+\subsubsection[{Set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E = unsigned int$>$ void {\bf T\+Property}$<$ T\+Y\+P\+E $>$\+::Set\+Value (
+\begin{DoxyParamCaption}
+\item[{T\+Y\+P\+E}]{the\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTProperty_ad7949c54d792c67cd73b299964699541}
+Set\+Value will set the property value to the value provided. \hypertarget{classTProperty_ab463fc86cb27252b763b38be21e82c3f}{}\index{T\+Property@{T\+Property}!Update@{Update}}
+\index{Update@{Update}!T\+Property@{T\+Property}}
+\subsubsection[{Update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E = unsigned int$>$ void {\bf T\+Property}$<$ T\+Y\+P\+E $>$\+::Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTProperty_ab463fc86cb27252b763b38be21e82c3f}
+Update will be called giving each property a chance to change itself during the Update phase of the Game\+Loop (see I\+Entity\+::\+Update\+Fixed) 
+
+Implementa \hyperlink{classIProperty_af257f5c126fedd5ad89726cdeeccbc0a}{I\+Property}.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+T\+Property.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\hypertarget{classStateMachine}{}\section{Referencia de la Clase State\+Machine}
+\label{classStateMachine}\index{State\+Machine@{State\+Machine}}
+
+
+{\ttfamily \#include $<$State\+Machine.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStateMachine_abff0cdd38e44a9af31972fd01d599348}{State\+Machine} (int number\+States)
+\item 
+void \hyperlink{classStateMachine_abc849e79ebc1b9d5fdcdef05ee76c6fc}{add\+Transition} (\hyperlink{structTransition}{Transition} \&transition)
+\item 
+int \hyperlink{classStateMachine_ae386ede5033e27c114e88bdd830a6ff2}{get\+State} ()
+\item 
+int \hyperlink{classStateMachine_a88789321a07bc082031f87a6a43d9ad7}{process\+Entry} (int entry)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Máquina de estados finitos 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classStateMachine_abff0cdd38e44a9af31972fd01d599348}{}\index{State\+Machine@{State\+Machine}!State\+Machine@{State\+Machine}}
+\index{State\+Machine@{State\+Machine}!State\+Machine@{State\+Machine}}
+\subsubsection[{State\+Machine}]{\setlength{\rightskip}{0pt plus 5cm}State\+Machine\+::\+State\+Machine (
+\begin{DoxyParamCaption}
+\item[{int}]{number\+States}
+\end{DoxyParamCaption}
+)}\label{classStateMachine_abff0cdd38e44a9af31972fd01d599348}
+Constructor con el número de estados totales de la máquina 
+\begin{DoxyParams}{Parámetros}
+{\em number\+States} & numero de estados que tiene \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classStateMachine_abc849e79ebc1b9d5fdcdef05ee76c6fc}{}\index{State\+Machine@{State\+Machine}!add\+Transition@{add\+Transition}}
+\index{add\+Transition@{add\+Transition}!State\+Machine@{State\+Machine}}
+\subsubsection[{add\+Transition}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Machine\+::add\+Transition (
+\begin{DoxyParamCaption}
+\item[{{\bf Transition} \&}]{transition}
+\end{DoxyParamCaption}
+)}\label{classStateMachine_abc849e79ebc1b9d5fdcdef05ee76c6fc}
+Añadir transición a la máquina 
+\begin{DoxyParams}{Parámetros}
+{\em transition} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classStateMachine_ae386ede5033e27c114e88bdd830a6ff2}{}\index{State\+Machine@{State\+Machine}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!State\+Machine@{State\+Machine}}
+\subsubsection[{get\+State}]{\setlength{\rightskip}{0pt plus 5cm}int State\+Machine\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classStateMachine_ae386ede5033e27c114e88bdd830a6ff2}
+devuelve el estado actual de la maquina \begin{DoxyReturn}{Devuelve}
+estado actual de la maquina 
+\end{DoxyReturn}
+\hypertarget{classStateMachine_a88789321a07bc082031f87a6a43d9ad7}{}\index{State\+Machine@{State\+Machine}!process\+Entry@{process\+Entry}}
+\index{process\+Entry@{process\+Entry}!State\+Machine@{State\+Machine}}
+\subsubsection[{process\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}int State\+Machine\+::process\+Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{entry}
+\end{DoxyParamCaption}
+)}\label{classStateMachine_a88789321a07bc082031f87a6a43d9ad7}
+Procesa la entrada y devuelve el nuevo estado 
+\begin{DoxyParams}{Parámetros}
+{\em entry} & entrada para la maquina \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+nuevo estado de la máquina si hay transición o -\/1 si no lo hay 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+State\+Machine.\+h\item 
+State\+Machine.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,240 @@
+\hypertarget{classSystemGraphic}{}\section{Referencia de la Clase System\+Graphic}
+\label{classSystemGraphic}\index{System\+Graphic@{System\+Graphic}}
+
+
+{\ttfamily \#include $<$System\+Graphic.\+h$>$}
+
+Diagrama de herencias de System\+Graphic\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemGraphic}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSystemGraphic_a5c1878f11c82193606c51d4b10bd05f6}{System\+Graphic} (sf\+::\+Render\+Window \&window, \hyperlink{classResourceHolder}{Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&fonts, \hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&images)
+\item 
+virtual void \hyperlink{classSystemGraphic_a792331587037bbf7fdfdd487cd45575a}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemGraphic_af59c303890f7faf14db27ab746a23d3a}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemGraphic_aaabd7eb4e9ce5d82dd39126239818283}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemGraphic_a0d46ab172987eed86b45ae016240034e}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemGraphic_a7b905fc340431b0521b975d82ef2fa45}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemGraphic_a9dba6a98242f2c5f07bd52301bc3dacb}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+\hypertarget{classSystemGraphic_a8b271e0b06df79aa780c52610042156d}{}virtual void {\bfseries execute} ()\label{classSystemGraphic_a8b271e0b06df79aa780c52610042156d}
+
+\item 
+void \hyperlink{classSystemGraphic_a926ff22280da8f657ae8b79fec5e88cd}{new\+Scene} (\hyperlink{structStructMap}{Struct\+Map} $\ast$info\+Map)
+\item 
+sf\+::\+Vector2f \hyperlink{classSystemGraphic_a3e38f35aebdd76068690b131c9be5904}{get\+Ratio} ()
+\item 
+sf\+::\+Float\+Rect \hyperlink{classSystemGraphic_a2160ae459d04c6594d824860bbda33d9}{get\+Bounds} ()
+\item 
+void \hyperlink{classSystemGraphic_abfc8f2497c4507fe45d4c2909bfeb6b3}{correct\+World\+Position} (sf\+::\+Vector2f position\+Center)
+\item 
+sf\+::\+Float\+Rect \hyperlink{classSystemGraphic_a7478ad387903d1d9cc31d4aa21aa3a8f}{get\+View\+Bounds} () const 
+\item 
+sf\+::\+Render\+Target \& \hyperlink{classSystemGraphic_a5b0dbf485eeaafc22d013b4a9768ebc6}{get\+Target} () const 
+\item 
+\hyperlink{classResourceHolder}{Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \& \hyperlink{classSystemGraphic_a97463e77f261e4f733b0d7c9bcd9f56d}{get\+Fonts} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema gráfico 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classSystemGraphic_a5c1878f11c82193606c51d4b10bd05f6}{}\index{System\+Graphic@{System\+Graphic}!System\+Graphic@{System\+Graphic}}
+\index{System\+Graphic@{System\+Graphic}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{System\+Graphic}]{\setlength{\rightskip}{0pt plus 5cm}System\+Graphic\+::\+System\+Graphic (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{{\bf Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&}]{fonts, }
+\item[{{\bf Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&}]{images}
+\end{DoxyParamCaption}
+)}\label{classSystemGraphic_a5c1878f11c82193606c51d4b10bd05f6}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em window} & ventana de la aplicación \\
+\hline
+{\em fonts} & fuentes de la aplicación \\
+\hline
+{\em images} & imágenes de la aplicación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemGraphic_abfc8f2497c4507fe45d4c2909bfeb6b3}{}\index{System\+Graphic@{System\+Graphic}!correct\+World\+Position@{correct\+World\+Position}}
+\index{correct\+World\+Position@{correct\+World\+Position}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{correct\+World\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::correct\+World\+Position (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{position\+Center}
+\end{DoxyParamCaption}
+)}\label{classSystemGraphic_abfc8f2497c4507fe45d4c2909bfeb6b3}
+C\+Orrige la posición de la cámara 
+\begin{DoxyParams}{Parámetros}
+{\em position\+Center} & posición en la que centrar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemGraphic_af59c303890f7faf14db27ab746a23d3a}{}\index{System\+Graphic@{System\+Graphic}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_af59c303890f7faf14db27ab746a23d3a}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemGraphic_a2160ae459d04c6594d824860bbda33d9}{}\index{System\+Graphic@{System\+Graphic}!get\+Bounds@{get\+Bounds}}
+\index{get\+Bounds@{get\+Bounds}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{get\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect System\+Graphic\+::get\+Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSystemGraphic_a2160ae459d04c6594d824860bbda33d9}
+Devuelve los bordes del mapa \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemGraphic_a97463e77f261e4f733b0d7c9bcd9f56d}{}\index{System\+Graphic@{System\+Graphic}!get\+Fonts@{get\+Fonts}}
+\index{get\+Fonts@{get\+Fonts}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{get\+Fonts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Holder}$<$I\+D\+Fonts, sf\+::\+Font$>$\& System\+Graphic\+::get\+Fonts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSystemGraphic_a97463e77f261e4f733b0d7c9bcd9f56d}
+Devuelve las fuentes que está utilizando para dibujar \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemGraphic_a3e38f35aebdd76068690b131c9be5904}{}\index{System\+Graphic@{System\+Graphic}!get\+Ratio@{get\+Ratio}}
+\index{get\+Ratio@{get\+Ratio}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{get\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f System\+Graphic\+::get\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSystemGraphic_a3e38f35aebdd76068690b131c9be5904}
+Devuelve el ratio usado para redimensionar \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemGraphic_a5b0dbf485eeaafc22d013b4a9768ebc6}{}\index{System\+Graphic@{System\+Graphic}!get\+Target@{get\+Target}}
+\index{get\+Target@{get\+Target}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{get\+Target}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Target\& System\+Graphic\+::get\+Target (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSystemGraphic_a5b0dbf485eeaafc22d013b4a9768ebc6}
+Devuelve el target en el que se dibuja \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemGraphic_a7478ad387903d1d9cc31d4aa21aa3a8f}{}\index{System\+Graphic@{System\+Graphic}!get\+View\+Bounds@{get\+View\+Bounds}}
+\index{get\+View\+Bounds@{get\+View\+Bounds}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{get\+View\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect System\+Graphic\+::get\+View\+Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classSystemGraphic_a7478ad387903d1d9cc31d4aa21aa3a8f}
+Devuelve los bordes de la vista \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classSystemGraphic_a792331587037bbf7fdfdd487cd45575a}{}\index{System\+Graphic@{System\+Graphic}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_a792331587037bbf7fdfdd487cd45575a}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemGraphic_a926ff22280da8f657ae8b79fec5e88cd}{}\index{System\+Graphic@{System\+Graphic}!new\+Scene@{new\+Scene}}
+\index{new\+Scene@{new\+Scene}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{new\+Scene}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::new\+Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf Struct\+Map} $\ast$}]{info\+Map}
+\end{DoxyParamCaption}
+)}\label{classSystemGraphic_a926ff22280da8f657ae8b79fec5e88cd}
+Crea una nueva escena gráfica 
+\begin{DoxyParams}{Parámetros}
+{\em info\+Map} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemGraphic_a7b905fc340431b0521b975d82ef2fa45}{}\index{System\+Graphic@{System\+Graphic}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_a7b905fc340431b0521b975d82ef2fa45}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemGraphic_a9dba6a98242f2c5f07bd52301bc3dacb}{}\index{System\+Graphic@{System\+Graphic}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_a9dba6a98242f2c5f07bd52301bc3dacb}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemGraphic_aaabd7eb4e9ce5d82dd39126239818283}{}\index{System\+Graphic@{System\+Graphic}!update@{update}}
+\index{update@{update}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_aaabd7eb4e9ce5d82dd39126239818283}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemGraphic_a0d46ab172987eed86b45ae016240034e}{}\index{System\+Graphic@{System\+Graphic}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Graphic@{System\+Graphic}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Graphic\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemGraphic_a0d46ab172987eed86b45ae016240034e}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Graphic.\+h\item 
+System\+Graphic.\+cpp\end{DoxyCompactItemize}

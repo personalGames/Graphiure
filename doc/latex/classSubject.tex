@@ -1,0 +1,96 @@
+\hypertarget{classSubject}{}\section{Referencia de la Clase Subject}
+\label{classSubject}\index{Subject@{Subject}}
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSubject_ab468044832c824c6d6c2f46272655207}{Subject} ()
+\item 
+void \hyperlink{classSubject_aec0d2f94b266d79c426b0ac454d823a5}{attach} (\hyperlink{classObserver}{Observer} $\ast$obs)
+\item 
+void \hyperlink{classSubject_ad101324d66ad30b943e4fdc31dc16d14}{detach} (\hyperlink{classObserver}{Observer} $\ast$obs)
+\item 
+void \hyperlink{classSubject_ae24f8fe7039fed0caa2acd3790a6b9c4}{set\+Message} (\hyperlink{classMessage}{Message} \&val)
+\item 
+\hyperlink{classMessage}{Message} \hyperlink{classSubject_ad9798f18a9947694b11be57e72d80f12}{get\+Message} ()
+\item 
+void \hyperlink{classSubject_af104c2baf37c7aa63b2ef6d32c2b3a9c}{notify} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase vigilada por los observadores en el patrón observer 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classSubject_ab468044832c824c6d6c2f46272655207}{}\index{Subject@{Subject}!Subject@{Subject}}
+\index{Subject@{Subject}!Subject@{Subject}}
+\subsubsection[{Subject}]{\setlength{\rightskip}{0pt plus 5cm}Subject\+::\+Subject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubject_ab468044832c824c6d6c2f46272655207}
+Constructor por defecto 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSubject_aec0d2f94b266d79c426b0ac454d823a5}{}\index{Subject@{Subject}!attach@{attach}}
+\index{attach@{attach}!Subject@{Subject}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void Subject\+::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Observer} $\ast$}]{obs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubject_aec0d2f94b266d79c426b0ac454d823a5}
+Guarda un observador 
+\begin{DoxyParams}{Parámetros}
+{\em obs} & observador \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSubject_ad101324d66ad30b943e4fdc31dc16d14}{}\index{Subject@{Subject}!detach@{detach}}
+\index{detach@{detach}!Subject@{Subject}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void Subject\+::detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Observer} $\ast$}]{obs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubject_ad101324d66ad30b943e4fdc31dc16d14}
+Quita un observador 
+\begin{DoxyParams}{Parámetros}
+{\em obs} & observador a quitar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSubject_ad9798f18a9947694b11be57e72d80f12}{}\index{Subject@{Subject}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Subject@{Subject}}
+\subsubsection[{get\+Message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message} Subject\+::get\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubject_ad9798f18a9947694b11be57e72d80f12}
+Devuelve el mensaje \begin{DoxyReturn}{Devuelve}
+mensaje 
+\end{DoxyReturn}
+\hypertarget{classSubject_af104c2baf37c7aa63b2ef6d32c2b3a9c}{}\index{Subject@{Subject}!notify@{notify}}
+\index{notify@{notify}!Subject@{Subject}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void Subject\+::notify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSubject_af104c2baf37c7aa63b2ef6d32c2b3a9c}
+Notifica a los observadores de cambios \hypertarget{classSubject_ae24f8fe7039fed0caa2acd3790a6b9c4}{}\index{Subject@{Subject}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Subject@{Subject}}
+\subsubsection[{set\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void Subject\+::set\+Message (
+\begin{DoxyParamCaption}
+\item[{{\bf Message} \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubject_ae24f8fe7039fed0caa2acd3790a6b9c4}
+Setea el mensaje y notifica a los observadores 
+\begin{DoxyParams}{Parámetros}
+{\em val} & mensaje a setear \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Subject.\+h\item 
+Subject.\+cpp\end{DoxyCompactItemize}

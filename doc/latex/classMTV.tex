@@ -1,0 +1,84 @@
+\hypertarget{classMTV}{}\section{Referencia de la Clase M\+T\+V}
+\label{classMTV}\index{M\+T\+V@{M\+T\+V}}
+
+
+{\ttfamily \#include $<$M\+T\+V.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMTV_a1d31139a0556b2a64028f4874e7218a1}{M\+T\+V} ()
+\item 
+\hyperlink{classMTV_aae62474fed30bbbeb6d4b96b6f19ed77}{M\+T\+V} (double d, \hyperlink{classVector}{Vector} axis)
+\item 
+void \hyperlink{classMTV_a8a1a29e5bfea2831edca8e8114ec09cc}{inverse} ()
+\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classMTV_a4698abb506122b1795dccdd61e17c37a}{collision}
+\item 
+double \hyperlink{classMTV_acfb5b0a55e4b63ad18fd205f900e4d60}{push\+X}
+\item 
+double \hyperlink{classMTV_a4e5cd146259cf601cdcf2e0882014f48}{push\+Y}
+\item 
+\hyperlink{classVector}{Vector} \hyperlink{classMTV_a58d902ffde67432fbee0c742f016b2ba}{normal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Minimo vector de traslado 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classMTV_a1d31139a0556b2a64028f4874e7218a1}{}\index{M\+T\+V@{M\+T\+V}!M\+T\+V@{M\+T\+V}}
+\index{M\+T\+V@{M\+T\+V}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{M\+T\+V}]{\setlength{\rightskip}{0pt plus 5cm}M\+T\+V\+::\+M\+T\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMTV_a1d31139a0556b2a64028f4874e7218a1}
+C\+Onstructor por defecto, todos los valores a cero \hypertarget{classMTV_aae62474fed30bbbeb6d4b96b6f19ed77}{}\index{M\+T\+V@{M\+T\+V}!M\+T\+V@{M\+T\+V}}
+\index{M\+T\+V@{M\+T\+V}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{M\+T\+V}]{\setlength{\rightskip}{0pt plus 5cm}M\+T\+V\+::\+M\+T\+V (
+\begin{DoxyParamCaption}
+\item[{double}]{d, }
+\item[{{\bf Vector}}]{axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMTV_aae62474fed30bbbeb6d4b96b6f19ed77}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em d} & multiplicador de los ejes \\
+\hline
+{\em axis} & vectores \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classMTV_a8a1a29e5bfea2831edca8e8114ec09cc}{}\index{M\+T\+V@{M\+T\+V}!inverse@{inverse}}
+\index{inverse@{inverse}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{inverse}]{\setlength{\rightskip}{0pt plus 5cm}void M\+T\+V\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMTV_a8a1a29e5bfea2831edca8e8114ec09cc}
+Inversa del vector 
+
+\subsection{Documentación de los campos}
+\hypertarget{classMTV_a4698abb506122b1795dccdd61e17c37a}{}\index{M\+T\+V@{M\+T\+V}!collision@{collision}}
+\index{collision@{collision}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{collision}]{\setlength{\rightskip}{0pt plus 5cm}bool M\+T\+V\+::collision}\label{classMTV_a4698abb506122b1795dccdd61e17c37a}
+Indica si hay colisión \hypertarget{classMTV_a58d902ffde67432fbee0c742f016b2ba}{}\index{M\+T\+V@{M\+T\+V}!normal@{normal}}
+\index{normal@{normal}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{normal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} M\+T\+V\+::normal}\label{classMTV_a58d902ffde67432fbee0c742f016b2ba}
+La normal \hypertarget{classMTV_acfb5b0a55e4b63ad18fd205f900e4d60}{}\index{M\+T\+V@{M\+T\+V}!push\+X@{push\+X}}
+\index{push\+X@{push\+X}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{push\+X}]{\setlength{\rightskip}{0pt plus 5cm}double M\+T\+V\+::push\+X}\label{classMTV_acfb5b0a55e4b63ad18fd205f900e4d60}
+empuje en eje x \hypertarget{classMTV_a4e5cd146259cf601cdcf2e0882014f48}{}\index{M\+T\+V@{M\+T\+V}!push\+Y@{push\+Y}}
+\index{push\+Y@{push\+Y}!M\+T\+V@{M\+T\+V}}
+\subsubsection[{push\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double M\+T\+V\+::push\+Y}\label{classMTV_a4e5cd146259cf601cdcf2e0882014f48}
+empuje en eje y 
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+M\+T\+V.\+h\end{DoxyCompactItemize}

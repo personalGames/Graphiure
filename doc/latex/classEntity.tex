@@ -1,0 +1,147 @@
+\hypertarget{classEntity}{}\section{Referencia de la Clase Entity}
+\label{classEntity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Diagrama de herencias de Entity\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEntity}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEntity_a980f368aa07ce358583982821533a54a}{Entity} ()
+\item 
+\hyperlink{classEntity_ac015820cb62dac62532f4cff9e26374f}{Entity} (Category category)
+\item 
+virtual \hyperlink{classEntity_adf6d3f7cb1b2ba029b6b048a395cc8ae}{$\sim$\+Entity} ()
+\item 
+\hyperlink{classIdEntity}{Id\+Entity} \hyperlink{classEntity_afd7171167e43dab38b9b75f462fe234c}{get\+Id} () const 
+\item 
+void \hyperlink{classEntity_a8b7e893af5016e5ebff312abb6e7bbc0}{set\+Id} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\item 
+bool \hyperlink{classEntity_a3c86039d4c16de3490b52a8595440f47}{is\+Destroyed} () const 
+\item 
+void \hyperlink{classEntity_a691dbe5f9ec930c27af2af0b97907a9e}{destroy} ()
+\item 
+Category \hyperlink{classEntity_a93708c98b4a7578b11b8c4f821484199}{get\+Category} () const 
+\item 
+\hyperlink{classIdEntity}{Id\+Entity} \hyperlink{classEntity_a9067f2ccad4931dc2a5b5dda1ce5180d}{get\+Id\+Xml} () const 
+\item 
+void \hyperlink{classEntity_abcc6d21fdca8f750c67a638cd1b32537}{set\+Id\+Xml} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Entidad 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classEntity_a980f368aa07ce358583982821533a54a}{}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::\+Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classEntity_a980f368aa07ce358583982821533a54a}
+Constructor \hypertarget{classEntity_ac015820cb62dac62532f4cff9e26374f}{}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::\+Entity (
+\begin{DoxyParamCaption}
+\item[{Category}]{category}
+\end{DoxyParamCaption}
+)}\label{classEntity_ac015820cb62dac62532f4cff9e26374f}
+Constructor en el que se puede especificar la categoría a la que pertenece 
+\begin{DoxyParams}{Parámetros}
+{\em category} & categoria al que pertenece \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_adf6d3f7cb1b2ba029b6b048a395cc8ae}{}\index{Entity@{Entity}!````~Entity@{$\sim$\+Entity}}
+\index{````~Entity@{$\sim$\+Entity}!Entity@{Entity}}
+\subsubsection[{$\sim$\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::$\sim$\+Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classEntity_adf6d3f7cb1b2ba029b6b048a395cc8ae}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classEntity_a691dbe5f9ec930c27af2af0b97907a9e}{}\index{Entity@{Entity}!destroy@{destroy}}
+\index{destroy@{destroy}!Entity@{Entity}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_a691dbe5f9ec930c27af2af0b97907a9e}
+Setea la entidad como destruida \hypertarget{classEntity_a93708c98b4a7578b11b8c4f821484199}{}\index{Entity@{Entity}!get\+Category@{get\+Category}}
+\index{get\+Category@{get\+Category}!Entity@{Entity}}
+\subsubsection[{get\+Category}]{\setlength{\rightskip}{0pt plus 5cm}Category Entity\+::get\+Category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_a93708c98b4a7578b11b8c4f821484199}
+Devuelve la categoría de la entidad \begin{DoxyReturn}{Devuelve}
+categoría de la entidad 
+\end{DoxyReturn}
+\hypertarget{classEntity_afd7171167e43dab38b9b75f462fe234c}{}\index{Entity@{Entity}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Entity@{Entity}}
+\subsubsection[{get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id\+Entity} Entity\+::get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_afd7171167e43dab38b9b75f462fe234c}
+Devuelve el identificador de la entidad \begin{DoxyReturn}{Devuelve}
+identificador de la entidad 
+\end{DoxyReturn}
+\hypertarget{classEntity_a9067f2ccad4931dc2a5b5dda1ce5180d}{}\index{Entity@{Entity}!get\+Id\+Xml@{get\+Id\+Xml}}
+\index{get\+Id\+Xml@{get\+Id\+Xml}!Entity@{Entity}}
+\subsubsection[{get\+Id\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id\+Entity} Entity\+::get\+Id\+Xml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_a9067f2ccad4931dc2a5b5dda1ce5180d}
+Devuelve el identificador de la entidad establecido en el xml de datos \begin{DoxyReturn}{Devuelve}
+el identificador del xml de datos. Por defecto, es un id de -\/1 
+\end{DoxyReturn}
+\hypertarget{classEntity_a3c86039d4c16de3490b52a8595440f47}{}\index{Entity@{Entity}!is\+Destroyed@{is\+Destroyed}}
+\index{is\+Destroyed@{is\+Destroyed}!Entity@{Entity}}
+\subsubsection[{is\+Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}bool Entity\+::is\+Destroyed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_a3c86039d4c16de3490b52a8595440f47}
+Determina si la entidad está destruida \begin{DoxyReturn}{Devuelve}
+true si la entidad está destruida 
+\end{DoxyReturn}
+\hypertarget{classEntity_a8b7e893af5016e5ebff312abb6e7bbc0}{}\index{Entity@{Entity}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!Entity@{Entity}}
+\subsubsection[{set\+Id}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+::set\+Id (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_a8b7e893af5016e5ebff312abb6e7bbc0}
+Setea el identificador de la entidad 
+\begin{DoxyParams}{Parámetros}
+{\em id} & nuevo identificador \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEntity_abcc6d21fdca8f750c67a638cd1b32537}{}\index{Entity@{Entity}!set\+Id\+Xml@{set\+Id\+Xml}}
+\index{set\+Id\+Xml@{set\+Id\+Xml}!Entity@{Entity}}
+\subsubsection[{set\+Id\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}void Entity\+::set\+Id\+Xml (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classEntity_abcc6d21fdca8f750c67a638cd1b32537}
+Setea el identificador de la entidad establecido en el xml de datos 
+\begin{DoxyParams}{Parámetros}
+{\em id} & el identificador del xml de datos \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Entity.\+h\item 
+Entity.\+cpp\end{DoxyCompactItemize}

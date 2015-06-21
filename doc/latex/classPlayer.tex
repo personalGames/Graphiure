@@ -1,0 +1,119 @@
+\hypertarget{classPlayer}{}\section{Referencia de la Clase Player}
+\label{classPlayer}\index{Player@{Player}}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player} ()
+\item 
+virtual \hyperlink{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\+Player} ()
+\item 
+void \hyperlink{classPlayer_ae54732ae250cab9b1a68914e613e6ac4}{initialize} (\hyperlink{classSystemManager}{System\+Manager} \&manager\+System, \hyperlink{classSoundPlayer}{Sound\+Player} $\ast$m\+Sound)
+\item 
+void \hyperlink{classPlayer_ac84a4e0b787f92bf773ccd0d0483f5b1}{handle\+Event} (const sf\+::\+Event \&event, \hyperlink{classCommandQueue}{Command\+Queue} \&commands)
+\item 
+void \hyperlink{classPlayer_ac520744c103fb38763c8856b4f158627}{handle\+Realtime\+Input} (\hyperlink{classCommandQueue}{Command\+Queue} \&commands)
+\item 
+void \hyperlink{classPlayer_adb77b4b92f7e7b81957bb36a0723b5b8}{assign\+Key} (Actions action, sf\+::\+Keyboard\+::\+Key key)
+\item 
+sf\+::\+Keyboard\+::\+Key \hyperlink{classPlayer_acc8c2726b9942264b946e1eb2d5a3300}{get\+Assigned\+Key} (Actions action) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}
+Constructor \hypertarget{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{}\index{Player@{Player}!````~Player@{$\sim$\+Player}}
+\index{````~Player@{$\sim$\+Player}!Player@{Player}}
+\subsubsection[{$\sim$\+Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::$\sim$\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classPlayer_adb77b4b92f7e7b81957bb36a0723b5b8}{}\index{Player@{Player}!assign\+Key@{assign\+Key}}
+\index{assign\+Key@{assign\+Key}!Player@{Player}}
+\subsubsection[{assign\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::assign\+Key (
+\begin{DoxyParamCaption}
+\item[{Actions}]{action, }
+\item[{sf\+::\+Keyboard\+::\+Key}]{key}
+\end{DoxyParamCaption}
+)}\label{classPlayer_adb77b4b92f7e7b81957bb36a0723b5b8}
+Asigna una tecla a una determinada acción 
+\begin{DoxyParams}{Parámetros}
+{\em action} & acción a setear \\
+\hline
+{\em key} & código de tecla asociada a la acción \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_acc8c2726b9942264b946e1eb2d5a3300}{}\index{Player@{Player}!get\+Assigned\+Key@{get\+Assigned\+Key}}
+\index{get\+Assigned\+Key@{get\+Assigned\+Key}!Player@{Player}}
+\subsubsection[{get\+Assigned\+Key}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Keyboard\+::\+Key Player\+::get\+Assigned\+Key (
+\begin{DoxyParamCaption}
+\item[{Actions}]{action}
+\end{DoxyParamCaption}
+) const}\label{classPlayer_acc8c2726b9942264b946e1eb2d5a3300}
+Recupera la tecla asociada a una acción 
+\begin{DoxyParams}{Parámetros}
+{\em action} & acción consultada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+tecla asociada 
+\end{DoxyReturn}
+\hypertarget{classPlayer_ac84a4e0b787f92bf773ccd0d0483f5b1}{}\index{Player@{Player}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Player@{Player}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event, }
+\item[{{\bf Command\+Queue} \&}]{commands}
+\end{DoxyParamCaption}
+)}\label{classPlayer_ac84a4e0b787f92bf773ccd0d0483f5b1}
+Procesa la entrada, creando si es necesario un comando a ejecutar que deja en la pila de comandos 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+{\em commands} & pila de comandos \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_ac520744c103fb38763c8856b4f158627}{}\index{Player@{Player}!handle\+Realtime\+Input@{handle\+Realtime\+Input}}
+\index{handle\+Realtime\+Input@{handle\+Realtime\+Input}!Player@{Player}}
+\subsubsection[{handle\+Realtime\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::handle\+Realtime\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf Command\+Queue} \&}]{commands}
+\end{DoxyParamCaption}
+)}\label{classPlayer_ac520744c103fb38763c8856b4f158627}
+Procesa la entrada en tiempo real, creando si es necesario un comando a ejecutar que deja en la pila de comandos 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+{\em commands} & pila de comandos \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_ae54732ae250cab9b1a68914e613e6ac4}{}\index{Player@{Player}!initialize@{initialize}}
+\index{initialize@{initialize}!Player@{Player}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf System\+Manager} \&}]{manager\+System, }
+\item[{{\bf Sound\+Player} $\ast$}]{m\+Sound}
+\end{DoxyParamCaption}
+)}\label{classPlayer_ae54732ae250cab9b1a68914e613e6ac4}
+Inicializa el jugador, estableciendo la entrada a la que reacciona 
+\begin{DoxyParams}{Parámetros}
+{\em manager\+System} & gestor de sistemas del que pillará la información que necesite \\
+\hline
+{\em m\+Sound} & reproductor de sonidos para reproducir ante eventos \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+h\item 
+Player.\+cpp\end{DoxyCompactItemize}

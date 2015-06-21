@@ -1,0 +1,125 @@
+\hypertarget{classMessage}{}\section{Referencia de la Clase Message}
+\label{classMessage}\index{Message@{Message}}
+
+
+{\ttfamily \#include $<$Message.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMessage_a4fc4f717b634e66070366cb7722d7761}{Message} ()
+\item 
+\hyperlink{classMessage_aea145be2c9b61e83ea5fc5ecc076cf13}{Message} (Game\+States state)
+\item 
+Game\+States \hyperlink{classMessage_aa50d9a886ab478eff2455adc1fe55bde}{get\+State} () const 
+\item 
+void \hyperlink{classMessage_ac744e76db938f119be824b22d6dd8156}{set\+State} (Game\+States state)
+\item 
+\hyperlink{classIdEntity}{Id\+Entity} \hyperlink{classMessage_a18e8816b662ce9b4df16279743b17db0}{get\+Id\+Entity} () const 
+\item 
+void \hyperlink{classMessage_a77ef2e887c2bf958d970f0a240243b65}{set\+Id\+Entity} (\hyperlink{classIdEntity}{Id\+Entity} id)
+\item 
+void \hyperlink{classMessage_ac3df51b5a409d4962768e6d0d8595f2f}{set\+Data} (std\+::string $\ast$data)
+\item 
+std\+::string $\ast$ \hyperlink{classMessage_a18d2d59a27010dd396f2842dbf6ecfc2}{get\+Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Mensaje intermedio que se utiliza en el patrón observer y provocar cambios en el objeto para notificación 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classMessage_a4fc4f717b634e66070366cb7722d7761}{}\index{Message@{Message}!Message@{Message}}
+\index{Message@{Message}!Message@{Message}}
+\subsubsection[{Message}]{\setlength{\rightskip}{0pt plus 5cm}Message\+::\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_a4fc4f717b634e66070366cb7722d7761}
+Constructor \hypertarget{classMessage_aea145be2c9b61e83ea5fc5ecc076cf13}{}\index{Message@{Message}!Message@{Message}}
+\index{Message@{Message}!Message@{Message}}
+\subsubsection[{Message}]{\setlength{\rightskip}{0pt plus 5cm}Message\+::\+Message (
+\begin{DoxyParamCaption}
+\item[{Game\+States}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_aea145be2c9b61e83ea5fc5ecc076cf13}
+Constructor especificando el estado de cambio 
+\begin{DoxyParams}{Parámetros}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classMessage_a18d2d59a27010dd396f2842dbf6ecfc2}{}\index{Message@{Message}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Message@{Message}}
+\subsubsection[{get\+Data}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string$\ast$ Message\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_a18d2d59a27010dd396f2842dbf6ecfc2}
+Devuelve un string de datos arbitario que pudiera ser de interés al observador \begin{DoxyReturn}{Devuelve}
+string de datos 
+\end{DoxyReturn}
+\hypertarget{classMessage_a18e8816b662ce9b4df16279743b17db0}{}\index{Message@{Message}!get\+Id\+Entity@{get\+Id\+Entity}}
+\index{get\+Id\+Entity@{get\+Id\+Entity}!Message@{Message}}
+\subsubsection[{get\+Id\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id\+Entity} Message\+::get\+Id\+Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_a18e8816b662ce9b4df16279743b17db0}
+Devuelve el identificador de la entidad implicada si hubiera \begin{DoxyReturn}{Devuelve}
+identificador de la entidad 
+\end{DoxyReturn}
+\hypertarget{classMessage_aa50d9a886ab478eff2455adc1fe55bde}{}\index{Message@{Message}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Message@{Message}}
+\subsubsection[{get\+State}]{\setlength{\rightskip}{0pt plus 5cm}Game\+States Message\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_aa50d9a886ab478eff2455adc1fe55bde}
+Devuelve el estado asignado \begin{DoxyReturn}{Devuelve}
+estado 
+\end{DoxyReturn}
+\hypertarget{classMessage_ac3df51b5a409d4962768e6d0d8595f2f}{}\index{Message@{Message}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Message@{Message}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_ac3df51b5a409d4962768e6d0d8595f2f}
+Setea un string de datos arbitrario que pudiera ser de interés al observador 
+\begin{DoxyParams}{Parámetros}
+{\em data} & string de datos \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMessage_a77ef2e887c2bf958d970f0a240243b65}{}\index{Message@{Message}!set\+Id\+Entity@{set\+Id\+Entity}}
+\index{set\+Id\+Entity@{set\+Id\+Entity}!Message@{Message}}
+\subsubsection[{set\+Id\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+Id\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_a77ef2e887c2bf958d970f0a240243b65}
+Setea el identificador de la entidad implicada 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la entidad \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMessage_ac744e76db938f119be824b22d6dd8156}{}\index{Message@{Message}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!Message@{Message}}
+\subsubsection[{set\+State}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+State (
+\begin{DoxyParamCaption}
+\item[{Game\+States}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMessage_ac744e76db938f119be824b22d6dd8156}
+Setea el estado 
+\begin{DoxyParams}{Parámetros}
+{\em state} & estado nuevo \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Message.\+h\item 
+Message.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+\hypertarget{classSystemCommand}{}\section{Referencia de la Clase System\+Command}
+\label{classSystemCommand}\index{System\+Command@{System\+Command}}
+
+
+{\ttfamily \#include $<$System\+Command.\+h$>$}
+
+Diagrama de herencias de System\+Command\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemCommand}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSystemCommand_a4e1ca3703de37a8c187618d17a4a676e}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemCommand_ac9f9019b5d0facf91ed77815d6c577a7}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemCommand_a111fbabb149f7f59a6084a459dd5f37d}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemCommand_a0ff2e49835ef779e59f04c56fcc87ee1}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemCommand_a6c00eed8d1b14f8f27bd5fb27ffcaffe}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemCommand_afde58b2c3b053a944dfa262da10eeea2}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+void \hyperlink{classSystemCommand_a58e0a261b3028155192f94b076cb0284}{on\+Command} (\hyperlink{classCommandQueue}{Command\+Queue} \&queue, sf\+::\+Time delta)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema de comandos 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemCommand_ac9f9019b5d0facf91ed77815d6c577a7}{}\index{System\+Command@{System\+Command}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Command@{System\+Command}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_ac9f9019b5d0facf91ed77815d6c577a7}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemCommand_a4e1ca3703de37a8c187618d17a4a676e}{}\index{System\+Command@{System\+Command}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Command@{System\+Command}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_a4e1ca3703de37a8c187618d17a4a676e}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemCommand_a58e0a261b3028155192f94b076cb0284}{}\index{System\+Command@{System\+Command}!on\+Command@{on\+Command}}
+\index{on\+Command@{on\+Command}!System\+Command@{System\+Command}}
+\subsubsection[{on\+Command}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::on\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Command\+Queue} \&}]{queue, }
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)}\label{classSystemCommand_a58e0a261b3028155192f94b076cb0284}
+Ejecuta los comandos sobre las entidades 
+\begin{DoxyParams}{Parámetros}
+{\em queue} & cola de comandos \\
+\hline
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemCommand_a6c00eed8d1b14f8f27bd5fb27ffcaffe}{}\index{System\+Command@{System\+Command}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Command@{System\+Command}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_a6c00eed8d1b14f8f27bd5fb27ffcaffe}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemCommand_afde58b2c3b053a944dfa262da10eeea2}{}\index{System\+Command@{System\+Command}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Command@{System\+Command}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_afde58b2c3b053a944dfa262da10eeea2}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemCommand_a111fbabb149f7f59a6084a459dd5f37d}{}\index{System\+Command@{System\+Command}!update@{update}}
+\index{update@{update}!System\+Command@{System\+Command}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_a111fbabb149f7f59a6084a459dd5f37d}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemCommand_a0ff2e49835ef779e59f04c56fcc87ee1}{}\index{System\+Command@{System\+Command}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Command@{System\+Command}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Command\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCommand_a0ff2e49835ef779e59f04c56fcc87ee1}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Command.\+h\item 
+System\+Command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente Context.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Context.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Context.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 28 de diciembre de 2014, 11:48</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CONTEXT_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define CONTEXT_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/RenderWindow.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/Font.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/Texture.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;ResourceHolder.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;IDFonts.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;Level.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;Player.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;SystemManager.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;MusicPlayer.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;SoundPlayer.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classContext.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classContext.html">Context</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classContext.html#a2d34e4556448e40693f61d15e091b604">~Context</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classContext.html#a6e0630a0d56d8407216decee4add6d3f">Context</a>(sf::RenderWindow&amp; window, <a class="code" href="classResourceHolder.html">ResourceHolder&lt;std::string, sf::Texture&gt;</a>&amp; <a class="code" href="classContext.html#a59ac23d12151de1912ab7f6d76e182b8">textures</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classResourceHolder.html">ResourceHolder&lt;IDFonts, sf::Font&gt;</a>&amp; <a class="code" href="classContext.html#a6e5b6ab3c18fc7f42f205774a597cdc1">fonts</a>, <a class="code" href="classPlayer.html">Player</a>&amp; <a class="code" href="classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081">player</a>, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classSystemManager.html">SystemManager</a>&amp; manager,<a class="code" href="classMusicPlayer.html">MusicPlayer</a>&amp; <a class="code" href="classContext.html#aaec563a152c2a98312c9f72a1b0a342a">music</a>, <a class="code" href="classSoundPlayer.html">SoundPlayer</a>&amp; <a class="code" href="classContext.html#ad83991aa701d0e22274e61e8bedb186f">sounds</a>, std::string&amp; name);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sf::RenderWindow* window;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classContext.html#a59ac23d12151de1912ab7f6d76e182b8">   56</a></span>&#160;    <a class="code" href="classResourceHolder.html">ResourceHolder&lt;std::string, sf::Texture&gt;</a>* <a class="code" href="classContext.html#a59ac23d12151de1912ab7f6d76e182b8">textures</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classContext.html#a6e5b6ab3c18fc7f42f205774a597cdc1">   60</a></span>&#160;    <a class="code" href="classResourceHolder.html">ResourceHolder&lt;IDFonts, sf::Font&gt;</a>* <a class="code" href="classContext.html#a6e5b6ab3c18fc7f42f205774a597cdc1">fonts</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classContext.html#ac7837bc30a1a062d5caab054ffedd917">   65</a></span>&#160;    <a class="code" href="classLevel.html">Level</a>* <a class="code" href="classContext.html#ac7837bc30a1a062d5caab054ffedd917">actualLevel</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081">   69</a></span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081">player</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classContext.html#a7df558279371bada0354b48cd88353dc">   74</a></span>&#160;    <a class="code" href="classSystemManager.html">SystemManager</a>* <a class="code" href="classContext.html#a7df558279371bada0354b48cd88353dc">systemManager</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classContext.html#aaec563a152c2a98312c9f72a1b0a342a">   78</a></span>&#160;    <a class="code" href="classMusicPlayer.html">MusicPlayer</a>* <a class="code" href="classContext.html#aaec563a152c2a98312c9f72a1b0a342a">music</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classContext.html#ad83991aa701d0e22274e61e8bedb186f">   82</a></span>&#160;    <a class="code" href="classSoundPlayer.html">SoundPlayer</a>* <a class="code" href="classContext.html#ad83991aa701d0e22274e61e8bedb186f">sounds</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classContext.html#af675004382eab82f05bd95b5d614e6cf">   86</a></span>&#160;    std::string* <a class="code" href="classContext.html#af675004382eab82f05bd95b5d614e6cf">nameLevel</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* CONTEXT_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="ttc" id="classResourceHolder_html"><div class="ttname"><a href="classResourceHolder.html">ResourceHolder&lt; std::string, sf::Texture &gt;</a></div></div>
+<div class="ttc" id="classContext_html_a7df558279371bada0354b48cd88353dc"><div class="ttname"><a href="classContext.html#a7df558279371bada0354b48cd88353dc">Context::systemManager</a></div><div class="ttdeci">SystemManager * systemManager</div><div class="ttdef"><b>Definition:</b> Context.h:74</div></div>
+<div class="ttc" id="classContext_html_a6e0630a0d56d8407216decee4add6d3f"><div class="ttname"><a href="classContext.html#a6e0630a0d56d8407216decee4add6d3f">Context::Context</a></div><div class="ttdeci">Context(sf::RenderWindow &amp;window, ResourceHolder&lt; std::string, sf::Texture &gt; &amp;textures, ResourceHolder&lt; IDFonts, sf::Font &gt; &amp;fonts, Player &amp;player, SystemManager &amp;manager, MusicPlayer &amp;music, SoundPlayer &amp;sounds, std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Context.cpp:10</div></div>
+<div class="ttc" id="classContext_html"><div class="ttname"><a href="classContext.html">Context</a></div><div class="ttdef"><b>Definition:</b> Context.h:27</div></div>
+<div class="ttc" id="classContext_html_a2d34e4556448e40693f61d15e091b604"><div class="ttname"><a href="classContext.html#a2d34e4556448e40693f61d15e091b604">Context::~Context</a></div><div class="ttdeci">virtual ~Context()</div><div class="ttdef"><b>Definition:</b> Context.cpp:19</div></div>
+<div class="ttc" id="classMusicPlayer_html"><div class="ttname"><a href="classMusicPlayer.html">MusicPlayer</a></div><div class="ttdef"><b>Definition:</b> MusicPlayer.h:21</div></div>
+<div class="ttc" id="classContext_html_aaec563a152c2a98312c9f72a1b0a342a"><div class="ttname"><a href="classContext.html#aaec563a152c2a98312c9f72a1b0a342a">Context::music</a></div><div class="ttdeci">MusicPlayer * music</div><div class="ttdef"><b>Definition:</b> Context.h:78</div></div>
+<div class="ttc" id="classLevel_html"><div class="ttname"><a href="classLevel.html">Level</a></div><div class="ttdef"><b>Definition:</b> Level.h:32</div></div>
+<div class="ttc" id="classSoundPlayer_html"><div class="ttname"><a href="classSoundPlayer.html">SoundPlayer</a></div><div class="ttdef"><b>Definition:</b> SoundPlayer.h:22</div></div>
+<div class="ttc" id="classContext_html_af675004382eab82f05bd95b5d614e6cf"><div class="ttname"><a href="classContext.html#af675004382eab82f05bd95b5d614e6cf">Context::nameLevel</a></div><div class="ttdeci">std::string * nameLevel</div><div class="ttdef"><b>Definition:</b> Context.h:86</div></div>
+<div class="ttc" id="classContext_html_a59ac23d12151de1912ab7f6d76e182b8"><div class="ttname"><a href="classContext.html#a59ac23d12151de1912ab7f6d76e182b8">Context::textures</a></div><div class="ttdeci">ResourceHolder&lt; std::string, sf::Texture &gt; * textures</div><div class="ttdef"><b>Definition:</b> Context.h:56</div></div>
+<div class="ttc" id="classContext_html_a6e5b6ab3c18fc7f42f205774a597cdc1"><div class="ttname"><a href="classContext.html#a6e5b6ab3c18fc7f42f205774a597cdc1">Context::fonts</a></div><div class="ttdeci">ResourceHolder&lt; IDFonts, sf::Font &gt; * fonts</div><div class="ttdef"><b>Definition:</b> Context.h:60</div></div>
+<div class="ttc" id="classSystemManager_html"><div class="ttname"><a href="classSystemManager.html">SystemManager</a></div><div class="ttdef"><b>Definition:</b> SystemManager.h:18</div></div>
+<div class="ttc" id="classContext_html_ad83991aa701d0e22274e61e8bedb186f"><div class="ttname"><a href="classContext.html#ad83991aa701d0e22274e61e8bedb186f">Context::sounds</a></div><div class="ttdeci">SoundPlayer * sounds</div><div class="ttdef"><b>Definition:</b> Context.h:82</div></div>
+<div class="ttc" id="classContext_html_a56c6b66908f8cb170e85a5a0e8dc6081"><div class="ttname"><a href="classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081">Context::player</a></div><div class="ttdeci">Player * player</div><div class="ttdef"><b>Definition:</b> Context.h:69</div></div>
+<div class="ttc" id="classContext_html_ac7837bc30a1a062d5caab054ffedd917"><div class="ttname"><a href="classContext.html#ac7837bc30a1a062d5caab054ffedd917">Context::actualLevel</a></div><div class="ttdeci">Level * actualLevel</div><div class="ttdef"><b>Definition:</b> Context.h:65</div></div>
+<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

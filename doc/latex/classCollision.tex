@@ -1,0 +1,205 @@
+\hypertarget{classCollision}{}\section{Referencia de la Clase Collision}
+\label{classCollision}\index{Collision@{Collision}}
+
+
+{\ttfamily \#include $<$Collision.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCollision_aea8004fbf48b79b5db7b784688b23788}{Collision} ()
+\item 
+void \hyperlink{classCollision_aaf69e6b020eb9fd1cba8aec1d3bb859e}{add\+Vertice} (sf\+::\+Vertex \&vertex)
+\item 
+void \hyperlink{classCollision_a100a2d80f4163993669c06666255bc57}{add\+Array\+Vertex} (sf\+::\+Vertex\+Array \&array)
+\item 
+void \hyperlink{classCollision_a95e06a73baa76a87dc51ffca52fcc691}{set\+Array\+Vertex} (sf\+::\+Vertex\+Array $\ast$array)
+\item 
+void \hyperlink{classCollision_afb02271f321bcfa150098a19a07c8ee8}{update} (sf\+::\+Transformable \&transform)
+\item 
+void \hyperlink{classCollision_a72b8c24b2a8572c86620a75e048fd29b}{apply\+Ratio} (sf\+::\+Vector2f ratio)
+\item 
+sf\+::\+Transformable \hyperlink{classCollision_aecb16f7e4fd3e15a20679fedfbbde57d}{get\+Transform} ()
+\item 
+Type\+Collision \hyperlink{classCollision_a1f943423873c563bae17559933491afd}{get\+Type} () const 
+\item 
+void \hyperlink{classCollision_a16a681d155544e54068042cb2d97fbd4}{set\+Type} (Type\+Collision type)
+\item 
+sf\+::\+Float\+Rect \hyperlink{classCollision_af88eea50520b50648a3a6cc56ac81a67}{get\+A\+A\+B\+B} ()
+\item 
+sf\+::\+Float\+Rect \hyperlink{classCollision_aa0c3873dc05a248348fbe8bacf76213b}{get\+A\+A\+B\+B} (float time)
+\item 
+sf\+::\+Float\+Rect \hyperlink{classCollision_aa27c1d19aeb0b810be2e8016289d2d67}{get\+Previous\+A\+A\+B\+B} ()
+\item 
+sf\+::\+Float\+Rect \hyperlink{classCollision_ad650a86d63f7e85436f6df161b9c1857}{get\+A\+A\+B\+B\+Swept} ()
+\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vertex\+Array $\ast$ \hyperlink{classCollision_a6ba388302ae3971d876b0b06b00cab00}{vertices}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase colisión, define una figura de colisión 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classCollision_aea8004fbf48b79b5db7b784688b23788}{}\index{Collision@{Collision}!Collision@{Collision}}
+\index{Collision@{Collision}!Collision@{Collision}}
+\subsubsection[{Collision}]{\setlength{\rightskip}{0pt plus 5cm}Collision\+::\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classCollision_aea8004fbf48b79b5db7b784688b23788}
+Constructor por defecto 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classCollision_a100a2d80f4163993669c06666255bc57}{}\index{Collision@{Collision}!add\+Array\+Vertex@{add\+Array\+Vertex}}
+\index{add\+Array\+Vertex@{add\+Array\+Vertex}!Collision@{Collision}}
+\subsubsection[{add\+Array\+Vertex}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::add\+Array\+Vertex (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vertex\+Array \&}]{array}
+\end{DoxyParamCaption}
+)}\label{classCollision_a100a2d80f4163993669c06666255bc57}
+Añade un array de vértices 
+\begin{DoxyParams}{Parámetros}
+{\em array} & de vértices \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCollision_aaf69e6b020eb9fd1cba8aec1d3bb859e}{}\index{Collision@{Collision}!add\+Vertice@{add\+Vertice}}
+\index{add\+Vertice@{add\+Vertice}!Collision@{Collision}}
+\subsubsection[{add\+Vertice}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::add\+Vertice (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vertex \&}]{vertex}
+\end{DoxyParamCaption}
+)}\label{classCollision_aaf69e6b020eb9fd1cba8aec1d3bb859e}
+Añade vertice al colisionable 
+\begin{DoxyParams}{Parámetros}
+{\em vertex} & vértice \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCollision_a72b8c24b2a8572c86620a75e048fd29b}{}\index{Collision@{Collision}!apply\+Ratio@{apply\+Ratio}}
+\index{apply\+Ratio@{apply\+Ratio}!Collision@{Collision}}
+\subsubsection[{apply\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::apply\+Ratio (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{ratio}
+\end{DoxyParamCaption}
+)}\label{classCollision_a72b8c24b2a8572c86620a75e048fd29b}
+Aplica un ratio de redimensionado a los vértices 
+\begin{DoxyParams}{Parámetros}
+{\em ratio} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCollision_af88eea50520b50648a3a6cc56ac81a67}{}\index{Collision@{Collision}!get\+A\+A\+B\+B@{get\+A\+A\+B\+B}}
+\index{get\+A\+A\+B\+B@{get\+A\+A\+B\+B}!Collision@{Collision}}
+\subsubsection[{get\+A\+A\+B\+B}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Collision\+::get\+A\+A\+B\+B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classCollision_af88eea50520b50648a3a6cc56ac81a67}
+Devuelve el rectángulo que contiene a los vértices \begin{DoxyReturn}{Devuelve}
+rectángulo que contiene a los vértices 
+\end{DoxyReturn}
+\hypertarget{classCollision_aa0c3873dc05a248348fbe8bacf76213b}{}\index{Collision@{Collision}!get\+A\+A\+B\+B@{get\+A\+A\+B\+B}}
+\index{get\+A\+A\+B\+B@{get\+A\+A\+B\+B}!Collision@{Collision}}
+\subsubsection[{get\+A\+A\+B\+B}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Collision\+::get\+A\+A\+B\+B (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)}\label{classCollision_aa0c3873dc05a248348fbe8bacf76213b}
+Entre la posición anterior y la actual, devuelve el rectángulo que contiene a los vértices en el tiempo especificado 
+\begin{DoxyParams}{Parámetros}
+{\em time} & tiempo entre las posiciones \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+rectángulo en el tiempo especificado 
+\end{DoxyReturn}
+\hypertarget{classCollision_ad650a86d63f7e85436f6df161b9c1857}{}\index{Collision@{Collision}!get\+A\+A\+B\+B\+Swept@{get\+A\+A\+B\+B\+Swept}}
+\index{get\+A\+A\+B\+B\+Swept@{get\+A\+A\+B\+B\+Swept}!Collision@{Collision}}
+\subsubsection[{get\+A\+A\+B\+B\+Swept}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Collision\+::get\+A\+A\+B\+B\+Swept (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classCollision_ad650a86d63f7e85436f6df161b9c1857}
+Entre la posición anterior y la actual, devuelve el rectángulo formado entre los rectángulos de la posición anterior y la actual \begin{DoxyReturn}{Devuelve}
+rectángulo entre ambas posiciones 
+\end{DoxyReturn}
+\hypertarget{classCollision_aa27c1d19aeb0b810be2e8016289d2d67}{}\index{Collision@{Collision}!get\+Previous\+A\+A\+B\+B@{get\+Previous\+A\+A\+B\+B}}
+\index{get\+Previous\+A\+A\+B\+B@{get\+Previous\+A\+A\+B\+B}!Collision@{Collision}}
+\subsubsection[{get\+Previous\+A\+A\+B\+B}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Collision\+::get\+Previous\+A\+A\+B\+B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classCollision_aa27c1d19aeb0b810be2e8016289d2d67}
+Devuelve el rectángulo que contiene a los vértices en la posición anterior \begin{DoxyReturn}{Devuelve}
+rectángulo que contiene a los vértices en la posición anterior 
+\end{DoxyReturn}
+\hypertarget{classCollision_aecb16f7e4fd3e15a20679fedfbbde57d}{}\index{Collision@{Collision}!get\+Transform@{get\+Transform}}
+\index{get\+Transform@{get\+Transform}!Collision@{Collision}}
+\subsubsection[{get\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Transformable Collision\+::get\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classCollision_aecb16f7e4fd3e15a20679fedfbbde57d}
+Devuelve las transformadas (posición, rotación y escalado) \begin{DoxyReturn}{Devuelve}
+transformada 
+\end{DoxyReturn}
+\hypertarget{classCollision_a1f943423873c563bae17559933491afd}{}\index{Collision@{Collision}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Collision@{Collision}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Type\+Collision Collision\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classCollision_a1f943423873c563bae17559933491afd}
+Devuelve el tipo de colisión \begin{DoxyReturn}{Devuelve}
+tipo de colisión 
+\end{DoxyReturn}
+\hypertarget{classCollision_a95e06a73baa76a87dc51ffca52fcc691}{}\index{Collision@{Collision}!set\+Array\+Vertex@{set\+Array\+Vertex}}
+\index{set\+Array\+Vertex@{set\+Array\+Vertex}!Collision@{Collision}}
+\subsubsection[{set\+Array\+Vertex}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::set\+Array\+Vertex (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vertex\+Array $\ast$}]{array}
+\end{DoxyParamCaption}
+)}\label{classCollision_a95e06a73baa76a87dc51ffca52fcc691}
+Setea el array de vértices 
+\begin{DoxyParams}{Parámetros}
+{\em array} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCollision_a16a681d155544e54068042cb2d97fbd4}{}\index{Collision@{Collision}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Collision@{Collision}}
+\subsubsection[{set\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{Type\+Collision}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classCollision_a16a681d155544e54068042cb2d97fbd4}
+Setea el tipo de colisión 
+\begin{DoxyParams}{Parámetros}
+{\em type} & tipo de colisión \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCollision_afb02271f321bcfa150098a19a07c8ee8}{}\index{Collision@{Collision}!update@{update}}
+\index{update@{update}!Collision@{Collision}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Transformable \&}]{transform}
+\end{DoxyParamCaption}
+)}\label{classCollision_afb02271f321bcfa150098a19a07c8ee8}
+Actualiza los vértices con la posición, rotación y escalado especificados 
+\begin{DoxyParams}{Parámetros}
+{\em transform} & posición, rotación y escalado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classCollision_a6ba388302ae3971d876b0b06b00cab00}{}\index{Collision@{Collision}!vertices@{vertices}}
+\index{vertices@{vertices}!Collision@{Collision}}
+\subsubsection[{vertices}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vertex\+Array$\ast$ Collision\+::vertices}\label{classCollision_a6ba388302ae3971d876b0b06b00cab00}
+Vértices de la figura colisionable 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Collision.\+h\item 
+Collision.\+cpp\end{DoxyCompactItemize}

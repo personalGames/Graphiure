@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente Button.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Button.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Button.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 13 de diciembre de 2014, 19:41</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BUTTON_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BUTTON_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Component.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ResourceHolder.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;IDFonts.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Utilities.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;ButtonState.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;wchar.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;Context.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGUI.html">GUI</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGUI_1_1Button.html">   28</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classGUI_1_1Button.html">Button</a> : <span class="keyword">public</span> <a class="code" href="classGUI_1_1Component.html">Component</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGUI_1_1Button.html#ae42ce66ac9fd4834cef81bb6f2fb0dab">   33</a></span>&#160;        <span class="keyword">typedef</span> std::function&lt;void() &gt; <a class="code" href="classGUI_1_1Button.html#ae42ce66ac9fd4834cef81bb6f2fb0dab">Callback</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classGUI_1_1Button.html#a3e3c8c068b07a9865b516560f93cb253">Button</a>(<a class="code" href="classContext.html">Context</a> context);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classGUI_1_1Button.html#a98edcfb20ac836db54ecda4260eac1d9">~Button</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#ae5ac54c7429eaa482eb7069d0efdb79f">setCallback</a>(Callback callback);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#a26ddad6fdc253dbbc593f0204c15fb24">setText</a>(<span class="keyword">const</span>  <span class="keywordtype">wchar_t</span>* text);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#a8198052cf4fe5823c9f5513e778ca94d">setToggle</a>(<span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classGUI_1_1Button.html#a2fba8dea2886fd3bb33c7e250e695e8a">isSelectable</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#a8f141129acb9c068ba6b8d19974d8291">select</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#a6fd040a471dc3ae48ad59cacd93c7292">deselect</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#ad711a129863e0301c52b896911996123">activate</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#ab0a1773817447712b17ab1ad6da767da">deactivate</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classGUI_1_1Button.html#a4d30e4caedd4c4373567ef452acd1fb1">handleEvent</a>(<span class="keyword">const</span> sf::Event&amp; event);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Callback callback;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        sf::Sprite sprite;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        sf::Text text;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">bool</span> isToggle;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classSoundPlayer.html">SoundPlayer</a>&amp; mSounds;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> changeTexture(ButtonState buttonType);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BUTTON_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="ttc" id="classGUI_1_1Button_html_a4d30e4caedd4c4373567ef452acd1fb1"><div class="ttname"><a href="classGUI_1_1Button.html#a4d30e4caedd4c4373567ef452acd1fb1">GUI::Button::handleEvent</a></div><div class="ttdeci">virtual void handleEvent(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> Button.cpp:85</div></div>
+<div class="ttc" id="classGUI_1_1Button_html"><div class="ttname"><a href="classGUI_1_1Button.html">GUI::Button</a></div><div class="ttdef"><b>Definition:</b> Button.h:28</div></div>
+<div class="ttc" id="classContext_html"><div class="ttname"><a href="classContext.html">Context</a></div><div class="ttdef"><b>Definition:</b> Context.h:27</div></div>
+<div class="ttc" id="namespaceGUI_html"><div class="ttname"><a href="namespaceGUI.html">GUI</a></div><div class="ttdef"><b>Definition:</b> Button.cpp:10</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_ad711a129863e0301c52b896911996123"><div class="ttname"><a href="classGUI_1_1Button.html#ad711a129863e0301c52b896911996123">GUI::Button::activate</a></div><div class="ttdeci">virtual void activate()</div><div class="ttdef"><b>Definition:</b> Button.cpp:55</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a8198052cf4fe5823c9f5513e778ca94d"><div class="ttname"><a href="classGUI_1_1Button.html#a8198052cf4fe5823c9f5513e778ca94d">GUI::Button::setToggle</a></div><div class="ttdeci">void setToggle(bool flag)</div><div class="ttdef"><b>Definition:</b> Button.cpp:35</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a98edcfb20ac836db54ecda4260eac1d9"><div class="ttname"><a href="classGUI_1_1Button.html#a98edcfb20ac836db54ecda4260eac1d9">GUI::Button::~Button</a></div><div class="ttdeci">virtual ~Button()</div><div class="ttdef"><b>Definition:</b> Button.cpp:99</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a2fba8dea2886fd3bb33c7e250e695e8a"><div class="ttname"><a href="classGUI_1_1Button.html#a2fba8dea2886fd3bb33c7e250e695e8a">GUI::Button::isSelectable</a></div><div class="ttdeci">virtual bool isSelectable() const </div><div class="ttdef"><b>Definition:</b> Button.cpp:39</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a3e3c8c068b07a9865b516560f93cb253"><div class="ttname"><a href="classGUI_1_1Button.html#a3e3c8c068b07a9865b516560f93cb253">GUI::Button::Button</a></div><div class="ttdeci">Button(Context context)</div><div class="ttdef"><b>Definition:</b> Button.cpp:12</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a26ddad6fdc253dbbc593f0204c15fb24"><div class="ttname"><a href="classGUI_1_1Button.html#a26ddad6fdc253dbbc593f0204c15fb24">GUI::Button::setText</a></div><div class="ttdeci">void setText(const wchar_t *text)</div><div class="ttdef"><b>Definition:</b> Button.cpp:30</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a8f141129acb9c068ba6b8d19974d8291"><div class="ttname"><a href="classGUI_1_1Button.html#a8f141129acb9c068ba6b8d19974d8291">GUI::Button::select</a></div><div class="ttdeci">virtual void select()</div><div class="ttdef"><b>Definition:</b> Button.cpp:43</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_a6fd040a471dc3ae48ad59cacd93c7292"><div class="ttname"><a href="classGUI_1_1Button.html#a6fd040a471dc3ae48ad59cacd93c7292">GUI::Button::deselect</a></div><div class="ttdeci">virtual void deselect()</div><div class="ttdef"><b>Definition:</b> Button.cpp:49</div></div>
+<div class="ttc" id="classGUI_1_1Component_html"><div class="ttname"><a href="classGUI_1_1Component.html">GUI::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:22</div></div>
+<div class="ttc" id="classSoundPlayer_html"><div class="ttname"><a href="classSoundPlayer.html">SoundPlayer</a></div><div class="ttdef"><b>Definition:</b> SoundPlayer.h:22</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_ae42ce66ac9fd4834cef81bb6f2fb0dab"><div class="ttname"><a href="classGUI_1_1Button.html#ae42ce66ac9fd4834cef81bb6f2fb0dab">GUI::Button::Callback</a></div><div class="ttdeci">std::function&lt; void() &gt; Callback</div><div class="ttdef"><b>Definition:</b> Button.h:33</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_ae5ac54c7429eaa482eb7069d0efdb79f"><div class="ttname"><a href="classGUI_1_1Button.html#ae5ac54c7429eaa482eb7069d0efdb79f">GUI::Button::setCallback</a></div><div class="ttdeci">void setCallback(Callback callback)</div><div class="ttdef"><b>Definition:</b> Button.cpp:25</div></div>
+<div class="ttc" id="classGUI_1_1Button_html_ab0a1773817447712b17ab1ad6da767da"><div class="ttname"><a href="classGUI_1_1Button.html#ab0a1773817447712b17ab1ad6da767da">GUI::Button::deactivate</a></div><div class="ttdeci">virtual void deactivate()</div><div class="ttdef"><b>Definition:</b> Button.cpp:73</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

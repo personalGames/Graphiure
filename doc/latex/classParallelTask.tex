@@ -1,0 +1,114 @@
+\hypertarget{classParallelTask}{}\section{Referencia de la Clase Parallel\+Task}
+\label{classParallelTask}\index{Parallel\+Task@{Parallel\+Task}}
+
+
+{\ttfamily \#include $<$Parallel\+Task.\+h$>$}
+
+Diagrama de herencias de Parallel\+Task\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classParallelTask}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelTask_a32cb3c361f7b4373f941f0993940576f}{Parallel\+Task} ()
+\item 
+\hypertarget{classParallelTask_ad1e7ba9134cc7961ab178a2f47cf54be}{}void {\bfseries execute} ()\label{classParallelTask_ad1e7ba9134cc7961ab178a2f47cf54be}
+
+\item 
+bool \hyperlink{classParallelTask_a1a67f547aa382fac2087184b2eb19148}{is\+Finished} ()
+\item 
+float \hyperlink{classParallelTask_ada45e4db1aa8a89f20ab0b8662c6dabc}{get\+Completion} ()
+\item 
+virtual \hyperlink{classParallelTask_aa0832c15ace4a003c1a9e617e48ccb17}{$\sim$\+Parallel\+Task} ()
+\item 
+virtual void \hyperlink{classParallelTask_a494412a04608d42f3ba91b1b242fd149}{run\+Task} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Thread \hyperlink{classParallelTask_a8ad7af10ec7f3e7fa84998111d280e97}{thread}
+\item 
+bool \hyperlink{classParallelTask_a924792685ebc2bd3bf8ec80e0dabe99f}{finished}
+\item 
+sf\+::\+Mutex \hyperlink{classParallelTask_a39d71d5f6fd7fe3de25452c147028c91}{mutex}
+\item 
+int \hyperlink{classParallelTask_a415d5be8b846af856f0a5b651711a4ad}{completion}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase que realiza un trabajo en paralelo 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classParallelTask_a32cb3c361f7b4373f941f0993940576f}{}\index{Parallel\+Task@{Parallel\+Task}!Parallel\+Task@{Parallel\+Task}}
+\index{Parallel\+Task@{Parallel\+Task}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{Parallel\+Task}]{\setlength{\rightskip}{0pt plus 5cm}Parallel\+Task\+::\+Parallel\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classParallelTask_a32cb3c361f7b4373f941f0993940576f}
+Constructor por defecto \hypertarget{classParallelTask_aa0832c15ace4a003c1a9e617e48ccb17}{}\index{Parallel\+Task@{Parallel\+Task}!````~Parallel\+Task@{$\sim$\+Parallel\+Task}}
+\index{````~Parallel\+Task@{$\sim$\+Parallel\+Task}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{$\sim$\+Parallel\+Task}]{\setlength{\rightskip}{0pt plus 5cm}Parallel\+Task\+::$\sim$\+Parallel\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classParallelTask_aa0832c15ace4a003c1a9e617e48ccb17}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classParallelTask_ada45e4db1aa8a89f20ab0b8662c6dabc}{}\index{Parallel\+Task@{Parallel\+Task}!get\+Completion@{get\+Completion}}
+\index{get\+Completion@{get\+Completion}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{get\+Completion}]{\setlength{\rightskip}{0pt plus 5cm}float Parallel\+Task\+::get\+Completion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classParallelTask_ada45e4db1aa8a89f20ab0b8662c6dabc}
+Devuelve un porcentaje \begin{DoxyReturn}{Devuelve}
+porcentaje entre 0 y 1 
+\end{DoxyReturn}
+\hypertarget{classParallelTask_a1a67f547aa382fac2087184b2eb19148}{}\index{Parallel\+Task@{Parallel\+Task}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{is\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}bool Parallel\+Task\+::is\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classParallelTask_a1a67f547aa382fac2087184b2eb19148}
+Indica si ha terminado la tarea \begin{DoxyReturn}{Devuelve}
+true si ha finalizado, false al contrario 
+\end{DoxyReturn}
+\hypertarget{classParallelTask_a494412a04608d42f3ba91b1b242fd149}{}\index{Parallel\+Task@{Parallel\+Task}!run\+Task@{run\+Task}}
+\index{run\+Task@{run\+Task}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{run\+Task}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Parallel\+Task\+::run\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classParallelTask_a494412a04608d42f3ba91b1b242fd149}
+Método a sobreescribir. En él se codifica la tarea a realizar 
+
+Implementado en \hyperlink{classLoadingLevel_a14f8ce9f74732609e4da6c8cce387001}{Loading\+Level}.
+
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classParallelTask_a415d5be8b846af856f0a5b651711a4ad}{}\index{Parallel\+Task@{Parallel\+Task}!completion@{completion}}
+\index{completion@{completion}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{completion}]{\setlength{\rightskip}{0pt plus 5cm}int Parallel\+Task\+::completion\hspace{0.3cm}{\ttfamily [protected]}}\label{classParallelTask_a415d5be8b846af856f0a5b651711a4ad}
+Number between 0 and 1 (percentaje of completion) \hypertarget{classParallelTask_a924792685ebc2bd3bf8ec80e0dabe99f}{}\index{Parallel\+Task@{Parallel\+Task}!finished@{finished}}
+\index{finished@{finished}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}bool Parallel\+Task\+::finished\hspace{0.3cm}{\ttfamily [protected]}}\label{classParallelTask_a924792685ebc2bd3bf8ec80e0dabe99f}
+Variable para comprobar si la tarea ha terminado \hypertarget{classParallelTask_a39d71d5f6fd7fe3de25452c147028c91}{}\index{Parallel\+Task@{Parallel\+Task}!mutex@{mutex}}
+\index{mutex@{mutex}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Mutex Parallel\+Task\+::mutex\hspace{0.3cm}{\ttfamily [protected]}}\label{classParallelTask_a39d71d5f6fd7fe3de25452c147028c91}
+Semáforo para controlar datos entre más de un hilo \hypertarget{classParallelTask_a8ad7af10ec7f3e7fa84998111d280e97}{}\index{Parallel\+Task@{Parallel\+Task}!thread@{thread}}
+\index{thread@{thread}!Parallel\+Task@{Parallel\+Task}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Thread Parallel\+Task\+::thread\hspace{0.3cm}{\ttfamily [protected]}}\label{classParallelTask_a8ad7af10ec7f3e7fa84998111d280e97}
+Hilo donde se ejecuta 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Parallel\+Task.\+h\item 
+Parallel\+Task.\+cpp\end{DoxyCompactItemize}

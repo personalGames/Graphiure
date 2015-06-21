@@ -1,0 +1,93 @@
+\hypertarget{classObserver}{}\section{Referencia de la Clase Observer}
+\label{classObserver}\index{Observer@{Observer}}
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+Diagrama de herencias de Observer\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObserver}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classObserver_a0f330a29d7a3a7444fb79b6e4b59576d}{get\+Id} ()
+\item 
+\hyperlink{classObserver_a19c43f80a38a332a6f694783df3c9835}{Observer} ()
+\item 
+void \hyperlink{classObserver_a75bcfba81bc33d0b19ae1b33be1c9313}{set\+Subject} (\hyperlink{classSubject}{Subject} $\ast$mod)
+\item 
+virtual void \hyperlink{classObserver_ac75e4b339faeb3ea6fe0a01bf0b4a215}{update} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSubject}{Subject} $\ast$ \hyperlink{classObserver_aa9de5b8862df591c9f63eb311ce1b70a}{get\+Subject} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Observador del patrón observer 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classObserver_a19c43f80a38a332a6f694783df3c9835}{}\index{Observer@{Observer}!Observer@{Observer}}
+\index{Observer@{Observer}!Observer@{Observer}}
+\subsubsection[{Observer}]{\setlength{\rightskip}{0pt plus 5cm}Observer\+::\+Observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classObserver_a19c43f80a38a332a6f694783df3c9835}
+Constructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classObserver_a0f330a29d7a3a7444fb79b6e4b59576d}{}\index{Observer@{Observer}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Observer@{Observer}}
+\subsubsection[{get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int Observer\+::get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classObserver_a0f330a29d7a3a7444fb79b6e4b59576d}
+Devuelve el identificador del observador \begin{DoxyReturn}{Devuelve}
+un número identificando al observador 
+\end{DoxyReturn}
+\hypertarget{classObserver_aa9de5b8862df591c9f63eb311ce1b70a}{}\index{Observer@{Observer}!get\+Subject@{get\+Subject}}
+\index{get\+Subject@{get\+Subject}!Observer@{Observer}}
+\subsubsection[{get\+Subject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Subject}$\ast$ Observer\+::get\+Subject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classObserver_aa9de5b8862df591c9f63eb311ce1b70a}
+Devuelve el objeto vigilado \begin{DoxyReturn}{Devuelve}
+objeto vigilado 
+\end{DoxyReturn}
+\hypertarget{classObserver_a75bcfba81bc33d0b19ae1b33be1c9313}{}\index{Observer@{Observer}!set\+Subject@{set\+Subject}}
+\index{set\+Subject@{set\+Subject}!Observer@{Observer}}
+\subsubsection[{set\+Subject}]{\setlength{\rightskip}{0pt plus 5cm}void Observer\+::set\+Subject (
+\begin{DoxyParamCaption}
+\item[{{\bf Subject} $\ast$}]{mod}
+\end{DoxyParamCaption}
+)}\label{classObserver_a75bcfba81bc33d0b19ae1b33be1c9313}
+Setea el objeto a vigilar 
+\begin{DoxyParams}{Parámetros}
+{\em mod} & objeto a vigilar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObserver_ac75e4b339faeb3ea6fe0a01bf0b4a215}{}\index{Observer@{Observer}!update@{update}}
+\index{update@{update}!Observer@{Observer}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Observer\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classObserver_ac75e4b339faeb3ea6fe0a01bf0b4a215}
+Método a ejecutar cuando haya cambios en el objeto vigilado 
+
+Implementado en \hyperlink{classLevel_a62e412eaad753d2baa2f94239cb80e41}{Level}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Observer.\+h\item 
+Observer.\+cpp\end{DoxyCompactItemize}

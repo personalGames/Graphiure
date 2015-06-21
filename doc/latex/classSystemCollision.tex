@@ -1,0 +1,220 @@
+\hypertarget{classSystemCollision}{}\section{Referencia de la Clase System\+Collision}
+\label{classSystemCollision}\index{System\+Collision@{System\+Collision}}
+
+
+{\ttfamily \#include $<$System\+Collision.\+h$>$}
+
+Diagrama de herencias de System\+Collision\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSystemCollision}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSystemCollision_a32a9ae61fbeda597cdd3e8cf991782f6}{System\+Collision} (sf\+::\+Float\+Rect bounds)
+\item 
+virtual void \hyperlink{classSystemCollision_ab2ced8fd115cd326a29a3535ddba7367}{initialize} ()
+\item 
+virtual void \hyperlink{classSystemCollision_a8c8ae9c8bb8f9f69e4b656c4ff496a30}{finalize} ()
+\item 
+virtual void \hyperlink{classSystemCollision_ab2dae21a0636bf6d24c6fd7f596f07d1}{update} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemCollision_a731cd70ffedfa221454348ad975ee82c}{update\+Second\+Part} (sf\+::\+Time dt)
+\item 
+virtual void \hyperlink{classSystemCollision_a228a39b4c9bc3d6b7934a25814acda7a}{register\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+virtual void \hyperlink{classSystemCollision_a8890b0a585ac5e9a99510839a9713de4}{removed\+Entity} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+void \hyperlink{classSystemCollision_a87344c57cc07fbc29741a8f0bf6f71ba}{new\+World\+Collision} (sf\+::\+Float\+Rect bounds)
+\item 
+void \hyperlink{classSystemCollision_a588abcc7ca31e3f2e23a16165f62b74d}{clear} ()
+\item 
+std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ $\ast$ \hyperlink{classSystemCollision_ac9b0781fe501dd70ce28037230a6574f}{query} (sf\+::\+Float\+Rect query)
+\item 
+void \hyperlink{classSystemCollision_afa60781f0a681875d053275eb78a13c9}{check\+Collisions} (sf\+::\+Float\+Rect region)
+\item 
+void \hyperlink{classSystemCollision_acbc4c623f1f4dd9c6def15013498ed3d}{correct\+Inside\+Position} (\hyperlink{classEntity}{Entity} $\ast$entity)
+\item 
+void \hyperlink{classSystemCollision_a90b827486b7e03081af461970a799adb}{resolve\+Collisions} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Sistema de colisiones 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classSystemCollision_a32a9ae61fbeda597cdd3e8cf991782f6}{}\index{System\+Collision@{System\+Collision}!System\+Collision@{System\+Collision}}
+\index{System\+Collision@{System\+Collision}!System\+Collision@{System\+Collision}}
+\subsubsection[{System\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}System\+Collision\+::\+System\+Collision (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{bounds}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_a32a9ae61fbeda597cdd3e8cf991782f6}
+Constructor. Se le pasa los límites del mapa 
+\begin{DoxyParams}{Parámetros}
+{\em bounds} & limites del mapa \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSystemCollision_afa60781f0a681875d053275eb78a13c9}{}\index{System\+Collision@{System\+Collision}!check\+Collisions@{check\+Collisions}}
+\index{check\+Collisions@{check\+Collisions}!System\+Collision@{System\+Collision}}
+\subsubsection[{check\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::check\+Collisions (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{region}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_afa60781f0a681875d053275eb78a13c9}
+Checkea todas las colisiones que se producen en la región dada las va guardando en una pila 
+\begin{DoxyParams}{Parámetros}
+{\em region} & zona a consultar colisiones \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemCollision_a588abcc7ca31e3f2e23a16165f62b74d}{}\index{System\+Collision@{System\+Collision}!clear@{clear}}
+\index{clear@{clear}!System\+Collision@{System\+Collision}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_a588abcc7ca31e3f2e23a16165f62b74d}
+Limpia el mundo colisionable \hypertarget{classSystemCollision_acbc4c623f1f4dd9c6def15013498ed3d}{}\index{System\+Collision@{System\+Collision}!correct\+Inside\+Position@{correct\+Inside\+Position}}
+\index{correct\+Inside\+Position@{correct\+Inside\+Position}!System\+Collision@{System\+Collision}}
+\subsubsection[{correct\+Inside\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::correct\+Inside\+Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_acbc4c623f1f4dd9c6def15013498ed3d}
+mantiene la entidad dentro del mundo, sin que se salga de los límites lo corrige si es necesario 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a comprobar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemCollision_a8c8ae9c8bb8f9f69e4b656c4ff496a30}{}\index{System\+Collision@{System\+Collision}!finalize@{finalize}}
+\index{finalize@{finalize}!System\+Collision@{System\+Collision}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCollision_a8c8ae9c8bb8f9f69e4b656c4ff496a30}
+Finaliza el sistema 
+
+Reimplementado de \hyperlink{classISystem_a4cc1cac06100c45d260a23d24d5618d6}{I\+System}.
+
+\hypertarget{classSystemCollision_ab2ced8fd115cd326a29a3535ddba7367}{}\index{System\+Collision@{System\+Collision}!initialize@{initialize}}
+\index{initialize@{initialize}!System\+Collision@{System\+Collision}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void System\+Collision\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classSystemCollision_ab2ced8fd115cd326a29a3535ddba7367}
+Inicializa el sistema 
+
+Reimplementado de \hyperlink{classISystem_ac9b257acd7d03dbd7aab149792ff98af}{I\+System}.
+
+\hypertarget{classSystemCollision_a87344c57cc07fbc29741a8f0bf6f71ba}{}\index{System\+Collision@{System\+Collision}!new\+World\+Collision@{new\+World\+Collision}}
+\index{new\+World\+Collision@{new\+World\+Collision}!System\+Collision@{System\+Collision}}
+\subsubsection[{new\+World\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::new\+World\+Collision (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{bounds}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_a87344c57cc07fbc29741a8f0bf6f71ba}
+Crea un nuevo mundo colisionable 
+\begin{DoxyParams}{Parámetros}
+{\em bounds} & nuevos limites del mapa \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSystemCollision_ac9b0781fe501dd70ce28037230a6574f}{}\index{System\+Collision@{System\+Collision}!query@{query}}
+\index{query@{query}!System\+Collision@{System\+Collision}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Entity} $\ast$ $>$ $\ast$ System\+Collision\+::query (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{query}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_ac9b0781fe501dd70ce28037230a6574f}
+Busca todas las entidades que colisionan con el cuadrado dado 
+\begin{DoxyParams}{Parámetros}
+{\em query} & zona a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de entidades que colisionan 
+\end{DoxyReturn}
+\hypertarget{classSystemCollision_a228a39b4c9bc3d6b7934a25814acda7a}{}\index{System\+Collision@{System\+Collision}!register\+Entity@{register\+Entity}}
+\index{register\+Entity@{register\+Entity}!System\+Collision@{System\+Collision}}
+\subsubsection[{register\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::register\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCollision_a228a39b4c9bc3d6b7934a25814acda7a}
+Registra una entidad en el sistema si es de su incumbencia 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & entidad a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_aaaef32b093b566b0573cb23e00f8c7ae}{I\+System}.
+
+\hypertarget{classSystemCollision_a8890b0a585ac5e9a99510839a9713de4}{}\index{System\+Collision@{System\+Collision}!removed\+Entity@{removed\+Entity}}
+\index{removed\+Entity@{removed\+Entity}!System\+Collision@{System\+Collision}}
+\subsubsection[{removed\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::removed\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCollision_a8890b0a585ac5e9a99510839a9713de4}
+Elimina la entidad del sistema 
+\begin{DoxyParams}{Parámetros}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classISystem_a0e966d506838cfe09543ad4ccafa4998}{I\+System}.
+
+\hypertarget{classSystemCollision_a90b827486b7e03081af461970a799adb}{}\index{System\+Collision@{System\+Collision}!resolve\+Collisions@{resolve\+Collisions}}
+\index{resolve\+Collisions@{resolve\+Collisions}!System\+Collision@{System\+Collision}}
+\subsubsection[{resolve\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::resolve\+Collisions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSystemCollision_a90b827486b7e03081af461970a799adb}
+Resuelve las colisiones que han quedado en la cola después de comprobar, son delegados en las entidades \hypertarget{classSystemCollision_ab2dae21a0636bf6d24c6fd7f596f07d1}{}\index{System\+Collision@{System\+Collision}!update@{update}}
+\index{update@{update}!System\+Collision@{System\+Collision}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCollision_ab2dae21a0636bf6d24c6fd7f596f07d1}
+Actualiza el sistema en una primera tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_a6931efd2517fd0c81237beeb04297421}{I\+System}.
+
+\hypertarget{classSystemCollision_a731cd70ffedfa221454348ad975ee82c}{}\index{System\+Collision@{System\+Collision}!update\+Second\+Part@{update\+Second\+Part}}
+\index{update\+Second\+Part@{update\+Second\+Part}!System\+Collision@{System\+Collision}}
+\subsubsection[{update\+Second\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Collision\+::update\+Second\+Part (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSystemCollision_a731cd70ffedfa221454348ad975ee82c}
+Actualiza el sistema en una segunda tanda 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classISystem_aef2545bd6ffac18186b566e4d3d2804b}{I\+System}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+System\+Collision.\+h\item 
+System\+Collision.\+cpp\end{DoxyCompactItemize}

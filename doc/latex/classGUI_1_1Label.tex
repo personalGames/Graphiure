@@ -1,0 +1,118 @@
+\hypertarget{classGUI_1_1Label}{}\section{Referencia de la Clase G\+U\+I\+:\+:Label}
+\label{classGUI_1_1Label}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+
+
+{\ttfamily \#include $<$Label.\+h$>$}
+
+Diagrama de herencias de G\+U\+I\+:\+:Label\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGUI_1_1Label}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1Label_afe779498111491b90a7f3a19eca9811c}{Label} (const wchar\+\_\+t $\ast$text, const \hyperlink{classResourceHolder}{Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&fonts)
+\item 
+virtual \hyperlink{classGUI_1_1Label_a343799d4193eb813ef561d3a479c1edd}{$\sim$\+Label} ()
+\item 
+virtual bool \hyperlink{classGUI_1_1Label_a4bf3538b1d2ffa440c184ad59d9b9d76}{is\+Selectable} () const 
+\item 
+void \hyperlink{classGUI_1_1Label_a5d274e6f5ab69563be24c71207c64ab9}{set\+Text} (const wchar\+\_\+t $\ast$text)
+\item 
+void \hyperlink{classGUI_1_1Label_ab86467acdbe18a9fda4712a177e16dae}{set\+Text} (const std\+::string \&text)
+\item 
+virtual void \hyperlink{classGUI_1_1Label_ade8d6fc5a2f56198764ee0ee0f216068}{handle\+Event} (const sf\+::\+Event \&event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Etiqueta G\+U\+I 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classGUI_1_1Label_afe779498111491b90a7f3a19eca9811c}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!Label@{Label}}
+\index{Label@{Label}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{Label}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Label\+::\+Label (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{text, }
+\item[{const {\bf Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&}]{fonts}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Label_afe779498111491b90a7f3a19eca9811c}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em text} & texto de la etiqueta \\
+\hline
+{\em fonts} & fuentes que puede usar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGUI_1_1Label_a343799d4193eb813ef561d3a479c1edd}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!````~Label@{$\sim$\+Label}}
+\index{````~Label@{$\sim$\+Label}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{$\sim$\+Label}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Label\+::$\sim$\+Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Label_a343799d4193eb813ef561d3a479c1edd}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGUI_1_1Label_ade8d6fc5a2f56198764ee0ee0f216068}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Label\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Label_ade8d6fc5a2f56198764ee0ee0f216068}
+Maneja los eventos capturados 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento capturado \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classGUI_1_1Component_aacf5e981e7b5726f5c7e9436455660ba}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Label_a4bf3538b1d2ffa440c184ad59d9b9d76}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!is\+Selectable@{is\+Selectable}}
+\index{is\+Selectable@{is\+Selectable}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{is\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+U\+I\+::\+Label\+::is\+Selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Label_a4bf3538b1d2ffa440c184ad59d9b9d76}
+Devuelve si el componente es seleccionable \begin{DoxyReturn}{Devuelve}
+true si es seleccionable 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classGUI_1_1Component_a44d14506c9a1dbc839e05a6bf99c341b}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Label_a5d274e6f5ab69563be24c71207c64ab9}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Label\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{text}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Label_a5d274e6f5ab69563be24c71207c64ab9}
+Setea el texto de la etiqueta 
+\begin{DoxyParams}{Parámetros}
+{\em text} & nuevo texto \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGUI_1_1Label_ab86467acdbe18a9fda4712a177e16dae}{}\index{G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!G\+U\+I\+::\+Label@{G\+U\+I\+::\+Label}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Label\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{text}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Label_ab86467acdbe18a9fda4712a177e16dae}
+Setea el texto de la etiqueta 
+\begin{DoxyParams}{Parámetros}
+{\em text} & nuevo texto \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Label.\+h\item 
+Label.\+cpp\end{DoxyCompactItemize}

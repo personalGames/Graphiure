@@ -1,0 +1,114 @@
+\hypertarget{classContext}{}\section{Referencia de la Clase Context}
+\label{classContext}\index{Context@{Context}}
+
+
+{\ttfamily \#include $<$Context.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classContext_a2d34e4556448e40693f61d15e091b604}{$\sim$\+Context} ()
+\item 
+\hyperlink{classContext_a6e0630a0d56d8407216decee4add6d3f}{Context} (sf\+::\+Render\+Window \&window, \hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&\hyperlink{classContext_a59ac23d12151de1912ab7f6d76e182b8}{textures}, \hyperlink{classResourceHolder}{Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&\hyperlink{classContext_a6e5b6ab3c18fc7f42f205774a597cdc1}{fonts}, \hyperlink{classPlayer}{Player} \&\hyperlink{classContext_a56c6b66908f8cb170e85a5a0e8dc6081}{player}, \hyperlink{classSystemManager}{System\+Manager} \&manager, \hyperlink{classMusicPlayer}{Music\+Player} \&\hyperlink{classContext_aaec563a152c2a98312c9f72a1b0a342a}{music}, \hyperlink{classSoundPlayer}{Sound\+Player} \&\hyperlink{classContext_ad83991aa701d0e22274e61e8bedb186f}{sounds}, std\+::string \&name)
+\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classContext_adfd0cc74ffbdf3f22ae41f4114afb296}{}sf\+::\+Render\+Window $\ast$ {\bfseries window}\label{classContext_adfd0cc74ffbdf3f22ae41f4114afb296}
+
+\item 
+\hyperlink{classResourceHolder}{Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ $\ast$ \hyperlink{classContext_a59ac23d12151de1912ab7f6d76e182b8}{textures}
+\item 
+\hyperlink{classResourceHolder}{Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ $\ast$ \hyperlink{classContext_a6e5b6ab3c18fc7f42f205774a597cdc1}{fonts}
+\item 
+\hyperlink{classLevel}{Level} $\ast$ \hyperlink{classContext_ac7837bc30a1a062d5caab054ffedd917}{actual\+Level}
+\item 
+\hyperlink{classPlayer}{Player} $\ast$ \hyperlink{classContext_a56c6b66908f8cb170e85a5a0e8dc6081}{player}
+\item 
+\hyperlink{classSystemManager}{System\+Manager} $\ast$ \hyperlink{classContext_a7df558279371bada0354b48cd88353dc}{system\+Manager}
+\item 
+\hyperlink{classMusicPlayer}{Music\+Player} $\ast$ \hyperlink{classContext_aaec563a152c2a98312c9f72a1b0a342a}{music}
+\item 
+\hyperlink{classSoundPlayer}{Sound\+Player} $\ast$ \hyperlink{classContext_ad83991aa701d0e22274e61e8bedb186f}{sounds}
+\item 
+std\+::string $\ast$ \hyperlink{classContext_af675004382eab82f05bd95b5d614e6cf}{name\+Level}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Contexto de la aplicación 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classContext_a2d34e4556448e40693f61d15e091b604}{}\index{Context@{Context}!````~Context@{$\sim$\+Context}}
+\index{````~Context@{$\sim$\+Context}!Context@{Context}}
+\subsubsection[{$\sim$\+Context}]{\setlength{\rightskip}{0pt plus 5cm}Context\+::$\sim$\+Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classContext_a2d34e4556448e40693f61d15e091b604}
+Destructor \hypertarget{classContext_a6e0630a0d56d8407216decee4add6d3f}{}\index{Context@{Context}!Context@{Context}}
+\index{Context@{Context}!Context@{Context}}
+\subsubsection[{Context}]{\setlength{\rightskip}{0pt plus 5cm}Context\+::\+Context (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{{\bf Resource\+Holder}$<$ std\+::string, sf\+::\+Texture $>$ \&}]{textures, }
+\item[{{\bf Resource\+Holder}$<$ I\+D\+Fonts, sf\+::\+Font $>$ \&}]{fonts, }
+\item[{{\bf Player} \&}]{player, }
+\item[{{\bf System\+Manager} \&}]{manager, }
+\item[{{\bf Music\+Player} \&}]{music, }
+\item[{{\bf Sound\+Player} \&}]{sounds, }
+\item[{std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classContext_a6e0630a0d56d8407216decee4add6d3f}
+Constructor. Todos los parámetros que se le pasan están creados previamente 
+\begin{DoxyParams}{Parámetros}
+{\em window} & ventana de la aplicación \\
+\hline
+{\em textures} & texturas \\
+\hline
+{\em fonts} & fuentes \\
+\hline
+{\em player} & jugador \\
+\hline
+{\em manager} & gestor de sistemas \\
+\hline
+{\em music} & reproductor de música \\
+\hline
+{\em sounds} & reproductor de sonidos \\
+\hline
+{\em name} & nombre del nivel \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classContext_ac7837bc30a1a062d5caab054ffedd917}{}\index{Context@{Context}!actual\+Level@{actual\+Level}}
+\index{actual\+Level@{actual\+Level}!Context@{Context}}
+\subsubsection[{actual\+Level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}$\ast$ Context\+::actual\+Level}\label{classContext_ac7837bc30a1a062d5caab054ffedd917}
+Nivel actual del juego \hypertarget{classContext_a6e5b6ab3c18fc7f42f205774a597cdc1}{}\index{Context@{Context}!fonts@{fonts}}
+\index{fonts@{fonts}!Context@{Context}}
+\subsubsection[{fonts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Holder}$<$I\+D\+Fonts, sf\+::\+Font$>$$\ast$ Context\+::fonts}\label{classContext_a6e5b6ab3c18fc7f42f205774a597cdc1}
+Fuentes \hypertarget{classContext_aaec563a152c2a98312c9f72a1b0a342a}{}\index{Context@{Context}!music@{music}}
+\index{music@{music}!Context@{Context}}
+\subsubsection[{music}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Music\+Player}$\ast$ Context\+::music}\label{classContext_aaec563a152c2a98312c9f72a1b0a342a}
+Reproductor de música \hypertarget{classContext_af675004382eab82f05bd95b5d614e6cf}{}\index{Context@{Context}!name\+Level@{name\+Level}}
+\index{name\+Level@{name\+Level}!Context@{Context}}
+\subsubsection[{name\+Level}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string$\ast$ Context\+::name\+Level}\label{classContext_af675004382eab82f05bd95b5d614e6cf}
+Nombre del nivel actual \hypertarget{classContext_a56c6b66908f8cb170e85a5a0e8dc6081}{}\index{Context@{Context}!player@{player}}
+\index{player@{player}!Context@{Context}}
+\subsubsection[{player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ Context\+::player}\label{classContext_a56c6b66908f8cb170e85a5a0e8dc6081}
+Jugador \hypertarget{classContext_ad83991aa701d0e22274e61e8bedb186f}{}\index{Context@{Context}!sounds@{sounds}}
+\index{sounds@{sounds}!Context@{Context}}
+\subsubsection[{sounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound\+Player}$\ast$ Context\+::sounds}\label{classContext_ad83991aa701d0e22274e61e8bedb186f}
+Reproductor de sonidos \hypertarget{classContext_a7df558279371bada0354b48cd88353dc}{}\index{Context@{Context}!system\+Manager@{system\+Manager}}
+\index{system\+Manager@{system\+Manager}!Context@{Context}}
+\subsubsection[{system\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf System\+Manager}$\ast$ Context\+::system\+Manager}\label{classContext_a7df558279371bada0354b48cd88353dc}
+Sistemas del motor \hypertarget{classContext_a59ac23d12151de1912ab7f6d76e182b8}{}\index{Context@{Context}!textures@{textures}}
+\index{textures@{textures}!Context@{Context}}
+\subsubsection[{textures}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Holder}$<$std\+::string, sf\+::\+Texture$>$$\ast$ Context\+::textures}\label{classContext_a59ac23d12151de1912ab7f6d76e182b8}
+Texturas 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Context.\+h\item 
+Context.\+cpp\end{DoxyCompactItemize}

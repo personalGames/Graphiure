@@ -1,0 +1,200 @@
+\hypertarget{classState}{}\section{Referencia de la Clase State}
+\label{classState}\index{State@{State}}
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+Diagrama de herencias de State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.467890cm]{classState}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classState_ae4dcb70a7ad6a1bfe13fcda87600806d}{State} (\hyperlink{classStateStack}{State\+Stack} \&\hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}, \hyperlink{classContext}{Context} $\ast$\hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context})
+\item 
+virtual \hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State} ()
+\item 
+virtual void \hyperlink{classState_ae261605bc40b7e3959ce5df5457e4942}{draw} ()=0
+\item 
+virtual bool \hyperlink{classState_aa6366828eb50639e86b94008cfad9c5d}{update} (sf\+::\+Time delta)=0
+\item 
+virtual bool \hyperlink{classState_a19965f83460b248c42952aac8d001206}{handle\+Event} (const sf\+::\+Event \&event)=0
+\item 
+virtual void \hyperlink{classState_a3cc6a1378f32f9ed6a2d1d8140296808}{pushed\+Action} ()
+\item 
+virtual void \hyperlink{classState_a92620c4648de675037b20ec59edb52a3}{pulled\+Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classState_a0560458d8f71d6fc0e239e726552ea26}{request\+Stack\+Push} (States\+I\+D state)
+\item 
+void \hyperlink{classState_aa418660892d6161772c907bd8d70f910}{request\+Stack\+Pop} ()
+\item 
+void \hyperlink{classState_a4b602bed9bf0179ee5f6748fce340ae6}{request\+State\+Clear} ()
+\item 
+\hyperlink{classContext}{Context} $\ast$ \hyperlink{classState_ab08e1a541e46b2335c92ecbafe369df5}{get\+Context} () const 
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStateStack}{State\+Stack} $\ast$ \hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}
+\item 
+\hyperlink{classContext}{Context} $\ast$ \hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase base de estados 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classState_ae4dcb70a7ad6a1bfe13fcda87600806d}{}\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}State\+::\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf State\+Stack} \&}]{stack, }
+\item[{{\bf Context} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{classState_ae4dcb70a7ad6a1bfe13fcda87600806d}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em stack} & pila de estados \\
+\hline
+{\em context} & contexto \\
+\hline
+\end{DoxyParams}
+\hypertarget{classState_afab438d92b90dc18d194dbd9c9c8bab3}{}\index{State@{State}!````~State@{$\sim$\+State}}
+\index{````~State@{$\sim$\+State}!State@{State}}
+\subsubsection[{$\sim$\+State}]{\setlength{\rightskip}{0pt plus 5cm}State\+::$\sim$\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classState_afab438d92b90dc18d194dbd9c9c8bab3}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classState_ae261605bc40b7e3959ce5df5457e4942}{}\index{State@{State}!draw@{draw}}
+\index{draw@{draw}!State@{State}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void State\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classState_ae261605bc40b7e3959ce5df5457e4942}
+Dibuja el estado 
+
+Implementado en \hyperlink{classSettingsState_afb948fe782ad303939a3833030898d5c}{Settings\+State}, \hyperlink{classTitleState_ae12beafe5aad6929a56089942de1220e}{Title\+State}, \hyperlink{classPauseState_ac4c159c2f6d32eedd351f39e36c43f9d}{Pause\+State}, \hyperlink{classMenuState_aa557d6c3bf06bb3107ed780913a6b47f}{Menu\+State}, \hyperlink{classLoadingState_adfe2c002c52cc2c49967ba3ace4aa73b}{Loading\+State}, \hyperlink{classGameOverState_a9decc1411647e390bfed0bdc009cd691}{Game\+Over\+State} y \hyperlink{classGameState_a3c511417d8934943ae65c04681f321a3}{Game\+State}.
+
+\hypertarget{classState_ab08e1a541e46b2335c92ecbafe369df5}{}\index{State@{State}!get\+Context@{get\+Context}}
+\index{get\+Context@{get\+Context}!State@{State}}
+\subsubsection[{get\+Context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Context} $\ast$ State\+::get\+Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_ab08e1a541e46b2335c92ecbafe369df5}
+Devuelve el contexto guardado en el estado \begin{DoxyReturn}{Devuelve}
+contexto 
+\end{DoxyReturn}
+\hypertarget{classState_a19965f83460b248c42952aac8d001206}{}\index{State@{State}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!State@{State}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool State\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classState_a19965f83460b248c42952aac8d001206}
+Procesa la entrada del usuario 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si lo ha procesado, false si no (o lo ha procesado pero que continúe) 
+\end{DoxyReturn}
+
+
+Implementado en \hyperlink{classSettingsState_a21fddce7003c26dd485154df18261be5}{Settings\+State}, \hyperlink{classTitleState_a91c6ab4d741fe7445d88ed603001971a}{Title\+State}, \hyperlink{classPauseState_a685dda66dca3e1c41f4cb02da93c5a8d}{Pause\+State}, \hyperlink{classMenuState_a04a21241cebf6a8f0fe8ee9ce895ef18}{Menu\+State}, \hyperlink{classLoadingState_a37da243eeeca36460bac2f32cef3e368}{Loading\+State}, \hyperlink{classGameOverState_acf1dc2c7f58fe21b7cfababaf87ff20b}{Game\+Over\+State} y \hyperlink{classGameState_a000dd3306b1cb9faab5a86774a22aa6d}{Game\+State}.
+
+\hypertarget{classState_a92620c4648de675037b20ec59edb52a3}{}\index{State@{State}!pulled\+Action@{pulled\+Action}}
+\index{pulled\+Action@{pulled\+Action}!State@{State}}
+\subsubsection[{pulled\+Action}]{\setlength{\rightskip}{0pt plus 5cm}virtual void State\+::pulled\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classState_a92620c4648de675037b20ec59edb52a3}
+Método ejecutado cuando es sacado de la pila 
+
+Reimplementado en \hyperlink{classTitleState_ab27a65d03920cbbb9cff7f14cd23372c}{Title\+State}, \hyperlink{classPauseState_ac04578f84a4c4fbcdf2d8b963b5f9fd0}{Pause\+State} y \hyperlink{classMenuState_aa465ec731c1ab2b63a54ce5c59092ea3}{Menu\+State}.
+
+\hypertarget{classState_a3cc6a1378f32f9ed6a2d1d8140296808}{}\index{State@{State}!pushed\+Action@{pushed\+Action}}
+\index{pushed\+Action@{pushed\+Action}!State@{State}}
+\subsubsection[{pushed\+Action}]{\setlength{\rightskip}{0pt plus 5cm}virtual void State\+::pushed\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classState_a3cc6a1378f32f9ed6a2d1d8140296808}
+Método ejecutado cuando es puesto en pila 
+
+Reimplementado en \hyperlink{classSettingsState_a0815b26acaac5860b227c9d641842c88}{Settings\+State}, \hyperlink{classTitleState_a6c10b4a33cf09388f0bcca1af0872f68}{Title\+State}, \hyperlink{classMenuState_a74beed2b1d43948dd7ab1b8262519df6}{Menu\+State}, \hyperlink{classPauseState_aa20ec5df0044a9652df788b9ad1aafb9}{Pause\+State}, \hyperlink{classGameOverState_aa0e79a90d666351a0328b051dece3024}{Game\+Over\+State} y \hyperlink{classGameState_aaff561d6fe2a21a2084d093016a1d3be}{Game\+State}.
+
+\hypertarget{classState_aa418660892d6161772c907bd8d70f910}{}\index{State@{State}!request\+Stack\+Pop@{request\+Stack\+Pop}}
+\index{request\+Stack\+Pop@{request\+Stack\+Pop}!State@{State}}
+\subsubsection[{request\+Stack\+Pop}]{\setlength{\rightskip}{0pt plus 5cm}void State\+::request\+Stack\+Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_aa418660892d6161772c907bd8d70f910}
+P\+Ide sacar el último estado de la pila \hypertarget{classState_a0560458d8f71d6fc0e239e726552ea26}{}\index{State@{State}!request\+Stack\+Push@{request\+Stack\+Push}}
+\index{request\+Stack\+Push@{request\+Stack\+Push}!State@{State}}
+\subsubsection[{request\+Stack\+Push}]{\setlength{\rightskip}{0pt plus 5cm}void State\+::request\+Stack\+Push (
+\begin{DoxyParamCaption}
+\item[{States\+I\+D}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_a0560458d8f71d6fc0e239e726552ea26}
+Pide poner un estado en pila 
+\begin{DoxyParams}{Parámetros}
+{\em state} & identificador del estado \\
+\hline
+\end{DoxyParams}
+\hypertarget{classState_a4b602bed9bf0179ee5f6748fce340ae6}{}\index{State@{State}!request\+State\+Clear@{request\+State\+Clear}}
+\index{request\+State\+Clear@{request\+State\+Clear}!State@{State}}
+\subsubsection[{request\+State\+Clear}]{\setlength{\rightskip}{0pt plus 5cm}void State\+::request\+State\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_a4b602bed9bf0179ee5f6748fce340ae6}
+Pide limpiar la pila \hypertarget{classState_aa6366828eb50639e86b94008cfad9c5d}{}\index{State@{State}!update@{update}}
+\index{update@{update}!State@{State}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool State\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classState_aa6366828eb50639e86b94008cfad9c5d}
+Actualiza el estado 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha actualizado 
+\end{DoxyReturn}
+
+
+Implementado en \hyperlink{classSettingsState_a8b93195e2c3d037cbf4b61add04081c2}{Settings\+State}, \hyperlink{classTitleState_aa282ac0c6e22267cb6a7054973d75fdf}{Title\+State}, \hyperlink{classPauseState_aed5aa4149e29b9124ade7a76a63941cd}{Pause\+State}, \hyperlink{classMenuState_a24362f4096e0f76e02a7d1b26ac657af}{Menu\+State}, \hyperlink{classLoadingState_a8f1729b9b5ca91c0ec3918b86bfe8feb}{Loading\+State}, \hyperlink{classGameOverState_a8a2047b5c684965f33574b8aee7b7c8f}{Game\+Over\+State} y \hyperlink{classGameState_a4ac988f0da5c33b43ff356890fcf9c1c}{Game\+State}.
+
+
+
+\subsection{Documentación de los campos}
+\hypertarget{classState_adc93e8ad3199b5891618ca88eed0436a}{}\index{State@{State}!context@{context}}
+\index{context@{context}!State@{State}}
+\subsubsection[{context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Context}$\ast$ State\+::context\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_adc93e8ad3199b5891618ca88eed0436a}
+Contexto de la aplicación \hypertarget{classState_a86c8d3a5a1ee89896828be85a785fb04}{}\index{State@{State}!stack@{stack}}
+\index{stack@{stack}!State@{State}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State\+Stack}$\ast$ State\+::stack\hspace{0.3cm}{\ttfamily [protected]}}\label{classState_a86c8d3a5a1ee89896828be85a785fb04}
+P\+Ila de estados 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+State.\+h\item 
+State.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,216 @@
+\hypertarget{classQuadTree}{}\section{Referencia de la Clase Quad\+Tree}
+\label{classQuadTree}\index{Quad\+Tree@{Quad\+Tree}}
+
+
+{\ttfamily \#include $<$Quad\+Tree.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQuadTree_a96a9d7cbe65726a19c1d04ca590eaec0}{Quad\+Tree} (int level, sf\+::\+Int\+Rect bounds)
+\item 
+\hyperlink{classQuadTree_a4be1f4acd98d186e6da8de3ae7470514}{Quad\+Tree} (int level, sf\+::\+Float\+Rect bounds)
+\item 
+\hyperlink{classQuadTree_a2c195977908b54adde1296d95e190efa}{Quad\+Tree} (int level)
+\item 
+void \hyperlink{classQuadTree_a0c1976706b3dd28abd50efce4024b087}{clear} ()
+\item 
+void \hyperlink{classQuadTree_ae4e2555bfee54d85d918306d8588a29a}{insert} (\hyperlink{classEntity}{Entity} $\ast$object\+New, bool not\+Child=false)
+\item 
+bool \hyperlink{classQuadTree_afe0e6b1888d77e36fde30f394ed486ec}{remove} (\hyperlink{classEntity}{Entity} $\ast$object)
+\item 
+std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ $\ast$ \hyperlink{classQuadTree_a2ed00031c45ea4ea39719070ca962e5a}{retrieve} (std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ $\ast$list, \hyperlink{classEntity}{Entity} $\ast$object)
+\item 
+std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ $\ast$ \hyperlink{classQuadTree_a2b96dd59f214926f73c709c52909eb3c}{retrieve} (std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ $\ast$list, sf\+::\+Float\+Rect rect)
+\item 
+void \hyperlink{classQuadTree_acf6234d19444281325a3f5c248280779}{update} ()
+\item 
+void \hyperlink{classQuadTree_a8fbaf5f22c673ba6b2a71d4bad669867}{get\+Objects} (std\+::vector$<$ \hyperlink{classEntity}{Entity} $\ast$ $>$ \&list)
+\item 
+\hyperlink{classQuadTree}{Quad\+Tree} $\ast$ \hyperlink{classQuadTree_a794eee179f8ecee537f0309357924e41}{get\+Node\+Region} (sf\+::\+Float\+Rect region)
+\item 
+sf\+::\+Float\+Rect \hyperlink{classQuadTree_ad74d47d7e55b4e84de85329fe1678b0d}{get\+Bounds} () const 
+\item 
+void \hyperlink{classQuadTree_ad2e5a59504d9574e5095a42c1a35faea}{to\+String} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Estructura de árbol cuaternario para estructurar por área los elementos colisionables El quadtree es un nodo del árbol 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classQuadTree_a96a9d7cbe65726a19c1d04ca590eaec0}{}\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{Quad\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}Quad\+Tree\+::\+Quad\+Tree (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{sf\+::\+Int\+Rect}]{bounds}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a96a9d7cbe65726a19c1d04ca590eaec0}
+Crea un nodo de un determinado nivel y de una determinada área limitada 
+\begin{DoxyParams}{Parámetros}
+{\em level} & nivel \\
+\hline
+{\em bounds} & área que cubre el nodo \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuadTree_a4be1f4acd98d186e6da8de3ae7470514}{}\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{Quad\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}Quad\+Tree\+::\+Quad\+Tree (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{sf\+::\+Float\+Rect}]{bounds}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a4be1f4acd98d186e6da8de3ae7470514}
+Crea un nodo de un determinado nivel y de una determinada área limitada 
+\begin{DoxyParams}{Parámetros}
+{\em level} & nivel \\
+\hline
+{\em bounds} & área que cubre el nodo \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuadTree_a2c195977908b54adde1296d95e190efa}{}\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\index{Quad\+Tree@{Quad\+Tree}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{Quad\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}Quad\+Tree\+::\+Quad\+Tree (
+\begin{DoxyParamCaption}
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a2c195977908b54adde1296d95e190efa}
+Crea un nodo de un determinado nivel y sin especificar área 
+\begin{DoxyParams}{Parámetros}
+{\em level} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classQuadTree_a0c1976706b3dd28abd50efce4024b087}{}\index{Quad\+Tree@{Quad\+Tree}!clear@{clear}}
+\index{clear@{clear}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Tree\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a0c1976706b3dd28abd50efce4024b087}
+Limpia el área \hypertarget{classQuadTree_ad74d47d7e55b4e84de85329fe1678b0d}{}\index{Quad\+Tree@{Quad\+Tree}!get\+Bounds@{get\+Bounds}}
+\index{get\+Bounds@{get\+Bounds}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{get\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Quad\+Tree\+::get\+Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuadTree_ad74d47d7e55b4e84de85329fe1678b0d}
+Devuelve los límites/región que contiene el nodo \begin{DoxyReturn}{Devuelve}
+rectángulo con los límites de la región que contiene el nodo 
+\end{DoxyReturn}
+\hypertarget{classQuadTree_a794eee179f8ecee537f0309357924e41}{}\index{Quad\+Tree@{Quad\+Tree}!get\+Node\+Region@{get\+Node\+Region}}
+\index{get\+Node\+Region@{get\+Node\+Region}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{get\+Node\+Region}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quad\+Tree} $\ast$ Quad\+Tree\+::get\+Node\+Region (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{region}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a794eee179f8ecee537f0309357924e41}
+Devuelve el nodo más profundo que contiene la región especificada 
+\begin{DoxyParams}{Parámetros}
+{\em region} & región consultada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+nodo que contiene la región o nullptr si no hay nodo que lo contenga 
+\end{DoxyReturn}
+\hypertarget{classQuadTree_a8fbaf5f22c673ba6b2a71d4bad669867}{}\index{Quad\+Tree@{Quad\+Tree}!get\+Objects@{get\+Objects}}
+\index{get\+Objects@{get\+Objects}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{get\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Tree\+::get\+Objects (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Entity} $\ast$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a8fbaf5f22c673ba6b2a71d4bad669867}
+Devuelve las entidades del nodo y sus hijos 
+\begin{DoxyParams}{Parámetros}
+{\em list} & lista de entidades del subárbol a partir de este nodo \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuadTree_ae4e2555bfee54d85d918306d8588a29a}{}\index{Quad\+Tree@{Quad\+Tree}!insert@{insert}}
+\index{insert@{insert}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Tree\+::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{object\+New, }
+\item[{bool}]{not\+Child = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_ae4e2555bfee54d85d918306d8588a29a}
+Inserta una entidad. Si se permite y encaja mejor en algún nodo hijo, lo delega a los hijos. S\+I no encaja en el nodo y tiene padre, se lo pasa al padre 
+\begin{DoxyParams}{Parámetros}
+{\em object\+New} & entidad a guardar \\
+\hline
+{\em not\+Child} & por defecto false, permite que delege en el hijo si encaja mejor, true para no dar a los hijos \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuadTree_afe0e6b1888d77e36fde30f394ed486ec}{}\index{Quad\+Tree@{Quad\+Tree}!remove@{remove}}
+\index{remove@{remove}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}bool Quad\+Tree\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{object}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_afe0e6b1888d77e36fde30f394ed486ec}
+Elimina una entidad 
+\begin{DoxyParams}{Parámetros}
+{\em object} & entidad a eliminar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha eliminado con éxito 
+\end{DoxyReturn}
+\hypertarget{classQuadTree_a2ed00031c45ea4ea39719070ca962e5a}{}\index{Quad\+Tree@{Quad\+Tree}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{retrieve}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Entity} $\ast$ $>$ $\ast$ Quad\+Tree\+::retrieve (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Entity} $\ast$ $>$ $\ast$}]{list, }
+\item[{{\bf Entity} $\ast$}]{object}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a2ed00031c45ea4ea39719070ca962e5a}
+Devuelve una lista de todas las entidades que colisionan con la entidad dada 
+\begin{DoxyParams}{Parámetros}
+{\em list} & lista donde guardar entidades colisionadas \\
+\hline
+{\em object} & entidad al que testear colisiones \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista con las entidades que colisionan 
+\end{DoxyReturn}
+\hypertarget{classQuadTree_a2b96dd59f214926f73c709c52909eb3c}{}\index{Quad\+Tree@{Quad\+Tree}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{retrieve}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Entity} $\ast$ $>$ $\ast$ Quad\+Tree\+::retrieve (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Entity} $\ast$ $>$ $\ast$}]{list, }
+\item[{sf\+::\+Float\+Rect}]{rect}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_a2b96dd59f214926f73c709c52909eb3c}
+Devuelve una lista de todas las entidades que están en la zona dada 
+\begin{DoxyParams}{Parámetros}
+{\em list} & lista donde guardar entidades de la zona \\
+\hline
+{\em rect} & zona a testear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista con las entidades que tocan la zona 
+\end{DoxyReturn}
+\hypertarget{classQuadTree_ad2e5a59504d9574e5095a42c1a35faea}{}\index{Quad\+Tree@{Quad\+Tree}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{to\+String}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Tree\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_ad2e5a59504d9574e5095a42c1a35faea}
+Imprime el árbol a partir de este nodo \hypertarget{classQuadTree_acf6234d19444281325a3f5c248280779}{}\index{Quad\+Tree@{Quad\+Tree}!update@{update}}
+\index{update@{update}!Quad\+Tree@{Quad\+Tree}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Tree\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classQuadTree_acf6234d19444281325a3f5c248280779}
+Actualiza el árbol, recolocando las entidades si es necesario 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Quad\+Tree.\+h\item 
+Quad\+Tree.\+cpp\end{DoxyCompactItemize}

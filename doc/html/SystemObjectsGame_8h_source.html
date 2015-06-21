@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente SystemObjectsGame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">SystemObjectsGame.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   SystemObjectsGame.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 22 de marzo de 2015, 19:09</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SYSTEMOBJECTSGAME_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define SYSTEMOBJECTSGAME_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;ISystem.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;IdEntity.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;SystemManager.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;HashIdEntity.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;Subject.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;SFML/System/NonCopyable.hpp&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classSystemObjectsGame.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSystemObjectsGame.html">SystemObjectsGame</a> : <span class="keyword">public</span> <a class="code" href="classISystem.html">ISystem</a>, sf::NonCopyable {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classSystemObjectsGame.html#a8f9dff3f4bc88ebbd64094241448633c">SystemObjectsGame</a>(<a class="code" href="classSystemManager.html">SystemManager</a>&amp; systemManager);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSystemObjectsGame.html#ae32e62e6afe1c353a8c888d15324f01e">~SystemObjectsGame</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#a1d915c3471432c344a58af523085b87f">initialize</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#a4357e0e5d2e42a6b3e80362cbfdbda39">finalize</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#a6d8cbcab3b14a4ddc4c45ebe0c7aed07">registerEntity</a>(<a class="code" href="classEntity.html">Entity</a>* entity);</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classSystemObjectsGame.html#ae716ba020dded37eb7cc01e3dab32a1a">   40</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#ae716ba020dded37eb7cc01e3dab32a1a">removedEntity</a>(<a class="code" href="classEntity.html">Entity</a>* entity){};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#a6836f71bd70b620d8b86b98e6e3ee44b">update</a>(sf::Time dt);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classSystemObjectsGame.html#ad238ad4e70fb3cc2a5648a7176e69233">   43</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#ad238ad4e70fb3cc2a5648a7176e69233">updateSecondPart</a>(sf::Time dt){};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classSystemObjectsGame.html#a7d1bed32c2cb7ffc4731c21491668e6b">   49</a></span>&#160;    <a class="code" href="classSubject.html">Subject</a>* <a class="code" href="classSystemObjectsGame.html#a7d1bed32c2cb7ffc4731c21491668e6b">getMessageEntities</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> messageEntities;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classEntity.html">Entity</a>* <a class="code" href="classSystemObjectsGame.html#a27f5cdf50a6091f3b44bf5232f30455d">getEntity</a>(<a class="code" href="classIdEntity.html">IdEntity</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classEntity.html">Entity</a>* <a class="code" href="classSystemObjectsGame.html#ae8adeb2489ef7e3f8bde37d1c7cb4653">getEntityXml</a>(<a class="code" href="classIdEntity.html">IdEntity</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSystemObjectsGame.html#a86d70dfc35a07455330789de8503b153">destroyEntity</a>(<a class="code" href="classIdEntity.html">IdEntity</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> newEntity(<a class="code" href="classEntity.html">Entity</a>* entity);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::unordered_map&lt;IdEntity, Entity*, HashIdEntity&gt; entities;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::list&lt;Entity*&gt; removedEntities;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classSystemManager.html">SystemManager</a>* systemManager;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classSubject.html">Subject</a>* messageEntities;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::unordered_map&lt;IdEntity, IdEntity, HashIdEntity&gt; entitiesXml;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEMOBJECTSGAME_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="ttc" id="classSystemObjectsGame_html_ad238ad4e70fb3cc2a5648a7176e69233"><div class="ttname"><a href="classSystemObjectsGame.html#ad238ad4e70fb3cc2a5648a7176e69233">SystemObjectsGame::updateSecondPart</a></div><div class="ttdeci">virtual void updateSecondPart(sf::Time dt)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.h:43</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a8f9dff3f4bc88ebbd64094241448633c"><div class="ttname"><a href="classSystemObjectsGame.html#a8f9dff3f4bc88ebbd64094241448633c">SystemObjectsGame::SystemObjectsGame</a></div><div class="ttdeci">SystemObjectsGame(SystemManager &amp;systemManager)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:12</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a7d1bed32c2cb7ffc4731c21491668e6b"><div class="ttname"><a href="classSystemObjectsGame.html#a7d1bed32c2cb7ffc4731c21491668e6b">SystemObjectsGame::getMessageEntities</a></div><div class="ttdeci">Subject * getMessageEntities() const </div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.h:49</div></div>
+<div class="ttc" id="classSystemObjectsGame_html"><div class="ttname"><a href="classSystemObjectsGame.html">SystemObjectsGame</a></div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.h:24</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a4357e0e5d2e42a6b3e80362cbfdbda39"><div class="ttname"><a href="classSystemObjectsGame.html#a4357e0e5d2e42a6b3e80362cbfdbda39">SystemObjectsGame::finalize</a></div><div class="ttdeci">virtual void finalize()</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:26</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_ae32e62e6afe1c353a8c888d15324f01e"><div class="ttname"><a href="classSystemObjectsGame.html#ae32e62e6afe1c353a8c888d15324f01e">SystemObjectsGame::~SystemObjectsGame</a></div><div class="ttdeci">virtual ~SystemObjectsGame()</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:92</div></div>
+<div class="ttc" id="classISystem_html"><div class="ttname"><a href="classISystem.html">ISystem</a></div><div class="ttdef"><b>Definition:</b> ISystem.h:18</div></div>
+<div class="ttc" id="classEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:18</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a6d8cbcab3b14a4ddc4c45ebe0c7aed07"><div class="ttname"><a href="classSystemObjectsGame.html#a6d8cbcab3b14a4ddc4c45ebe0c7aed07">SystemObjectsGame::registerEntity</a></div><div class="ttdeci">virtual void registerEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:63</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_ae716ba020dded37eb7cc01e3dab32a1a"><div class="ttname"><a href="classSystemObjectsGame.html#ae716ba020dded37eb7cc01e3dab32a1a">SystemObjectsGame::removedEntity</a></div><div class="ttdeci">virtual void removedEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.h:40</div></div>
+<div class="ttc" id="classIdEntity_html"><div class="ttname"><a href="classIdEntity.html">IdEntity</a></div><div class="ttdef"><b>Definition:</b> IdEntity.h:16</div></div>
+<div class="ttc" id="classSubject_html"><div class="ttname"><a href="classSubject.html">Subject</a></div><div class="ttdef"><b>Definition:</b> Subject.h:17</div></div>
+<div class="ttc" id="classSystemManager_html"><div class="ttname"><a href="classSystemManager.html">SystemManager</a></div><div class="ttdef"><b>Definition:</b> SystemManager.h:18</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a27f5cdf50a6091f3b44bf5232f30455d"><div class="ttname"><a href="classSystemObjectsGame.html#a27f5cdf50a6091f3b44bf5232f30455d">SystemObjectsGame::getEntity</a></div><div class="ttdeci">Entity * getEntity(IdEntity id)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:37</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a86d70dfc35a07455330789de8503b153"><div class="ttname"><a href="classSystemObjectsGame.html#a86d70dfc35a07455330789de8503b153">SystemObjectsGame::destroyEntity</a></div><div class="ttdeci">void destroyEntity(IdEntity id)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:18</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a1d915c3471432c344a58af523085b87f"><div class="ttname"><a href="classSystemObjectsGame.html#a1d915c3471432c344a58af523085b87f">SystemObjectsGame::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:59</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_ae8adeb2489ef7e3f8bde37d1c7cb4653"><div class="ttname"><a href="classSystemObjectsGame.html#ae8adeb2489ef7e3f8bde37d1c7cb4653">SystemObjectsGame::getEntityXml</a></div><div class="ttdeci">Entity * getEntityXml(IdEntity id)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:47</div></div>
+<div class="ttc" id="classSystemObjectsGame_html_a6836f71bd70b620d8b86b98e6e3ee44b"><div class="ttname"><a href="classSystemObjectsGame.html#a6836f71bd70b620d8b86b98e6e3ee44b">SystemObjectsGame::update</a></div><div class="ttdeci">virtual void update(sf::Time dt)</div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.cpp:80</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

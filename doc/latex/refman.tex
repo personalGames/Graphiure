@@ -1,0 +1,262 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+\usepackage[spanish]{babel}
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Generado el Domingo, 21 de Junio de 2015 19\+:25\+:26 para Graphiure por Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Generado el Domingo, 21 de Junio de 2015 19\+:25\+:26 para Graphiure por Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarks=true,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{roman}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Graphiure }\\
+\vspace*{1cm}
+{\large Generado por Doxygen 1.8.9.1}\\
+\vspace*{0.5cm}
+{\small Domingo, 21 de Junio de 2015 19:25:26}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{Indice jerárquico}
+\input{hierarchy}
+\chapter{Índice de estructura de datos}
+\input{annotated}
+\chapter{Documentación de las estructuras de datos}
+\input{classAnimatedSprite}
+\input{classAnimation}
+\input{classApplication}
+\input{structBehaviour}
+\input{classGUI_1_1Button}
+\input{classChangeLevel}
+\input{classCharacter}
+\input{classClockHUD}
+\input{classCollision}
+\input{structCommand}
+\input{classCommandQueue}
+\input{classGUI_1_1Component}
+\input{classGUI_1_1Container}
+\input{classContext}
+\input{classConversationState}
+\input{unionDataUnion}
+\input{classDebug}
+\input{classEntity}
+\input{classEntityNode}
+\input{classsfx_1_1FrameClock}
+\input{classGameObjects}
+\input{classGameOverState}
+\input{classGameState}
+\input{classHashIdEntity}
+\input{classHole}
+\input{classIdEntity}
+\input{structIEDGE}
+\input{classIProperty}
+\input{classISystem}
+\input{structITRIANGLE}
+\input{classIXMLParser}
+\input{classGUI_1_1Label}
+\input{classLevel}
+\input{classLife}
+\input{classLifeNode}
+\input{classLoadingLevel}
+\input{classLoadingState}
+\input{classMenuState}
+\input{classMessage}
+\input{structMessageCollision}
+\input{classMTV}
+\input{classMusicPlayer}
+\input{classObserver}
+\input{structOnCollision}
+\input{structOrderScene}
+\input{classParallelTask}
+\input{classPartQuest}
+\input{classPauseState}
+\input{structPendingChange}
+\input{classPlayer}
+\input{structPoint}
+\input{classPosition}
+\input{classPropertyManager}
+\input{classQuadTree}
+\input{classQuest}
+\input{classQuestData}
+\input{classQuesteable}
+\input{classQuestState}
+\input{classResourceHolder}
+\input{classSceneNode}
+\input{classSettingsState}
+\input{classSoundPlayer}
+\input{classSpriteNode}
+\input{classState}
+\input{classStateMachine}
+\input{classStateMachineAnimation}
+\input{classStateStack}
+\input{classStaticBlock}
+\input{structStructAnimation}
+\input{structStructCollision}
+\input{structStructMap}
+\input{structStructPeople}
+\input{classSubject}
+\input{classSubStateGame}
+\input{classSystemCollision}
+\input{classSystemCommand}
+\input{classSystemGraphic}
+\input{classSystemManager}
+\input{classSystemMovement}
+\input{classSystemObjectsGame}
+\input{classSystemQuest}
+\input{structTalk}
+\input{classTextNode}
+\input{classTileMapNode}
+\input{classTileNode}
+\input{classTitleState}
+\input{classTProperty}
+\input{structTransition}
+\input{structTriangle}
+\input{classIProperty_1_1Type__t}
+\input{classVector}
+\input{classVelocity}
+\input{classVillager}
+\input{classWeapon}
+\input{classXMLDocument}
+\input{classXMLParserAnimation}
+\input{classXMLParserCharacter}
+\input{classXMLParserCollisions}
+\input{classXMLParserCollisionsMap}
+\input{classXMLParserMap}
+\input{classXMLParserPeople}
+\input{classXMLParserQuests}
+\input{classXMLParserStateMachines}
+\input{structXYZ}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{Índice}
+\printindex
+
+\end{document}

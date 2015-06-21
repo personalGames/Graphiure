@@ -1,0 +1,99 @@
+\hypertarget{classGameState}{}\section{Referencia de la Clase Game\+State}
+\label{classGameState}\index{Game\+State@{Game\+State}}
+
+
+{\ttfamily \#include $<$Game\+State.\+h$>$}
+
+Diagrama de herencias de Game\+State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameState}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGameState_ab88f7bafdb50469ca74512ad13b7cc66}{}{\bfseries Game\+State} (\hyperlink{classStateStack}{State\+Stack} \&\hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}, \hyperlink{classContext}{Context} $\ast$\hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context})\label{classGameState_ab88f7bafdb50469ca74512ad13b7cc66}
+
+\item 
+virtual void \hyperlink{classGameState_a3c511417d8934943ae65c04681f321a3}{draw} ()
+\item 
+virtual bool \hyperlink{classGameState_a4ac988f0da5c33b43ff356890fcf9c1c}{update} (sf\+::\+Time dt)
+\item 
+virtual bool \hyperlink{classGameState_a000dd3306b1cb9faab5a86774a22aa6d}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+virtual void \hyperlink{classGameState_aaff561d6fe2a21a2084d093016a1d3be}{pushed\+Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Estado de juego 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGameState_a3c511417d8934943ae65c04681f321a3}{}\index{Game\+State@{Game\+State}!draw@{draw}}
+\index{draw@{draw}!Game\+State@{Game\+State}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+State\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameState_a3c511417d8934943ae65c04681f321a3}
+Dibuja el estado 
+
+Implementa \hyperlink{classState_ae261605bc40b7e3959ce5df5457e4942}{State}.
+
+\hypertarget{classGameState_a000dd3306b1cb9faab5a86774a22aa6d}{}\index{Game\+State@{Game\+State}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Game\+State@{Game\+State}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+State\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameState_a000dd3306b1cb9faab5a86774a22aa6d}
+Procesa la entrada del usuario 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si lo ha procesado, false si no (o lo ha procesado pero que continúe) 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_a19965f83460b248c42952aac8d001206}{State}.
+
+\hypertarget{classGameState_aaff561d6fe2a21a2084d093016a1d3be}{}\index{Game\+State@{Game\+State}!pushed\+Action@{pushed\+Action}}
+\index{pushed\+Action@{pushed\+Action}!Game\+State@{Game\+State}}
+\subsubsection[{pushed\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+State\+::pushed\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameState_aaff561d6fe2a21a2084d093016a1d3be}
+Método ejecutado cuando es puesto en pila 
+
+Reimplementado de \hyperlink{classState_a3cc6a1378f32f9ed6a2d1d8140296808}{State}.
+
+\hypertarget{classGameState_a4ac988f0da5c33b43ff356890fcf9c1c}{}\index{Game\+State@{Game\+State}!update@{update}}
+\index{update@{update}!Game\+State@{Game\+State}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+State\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameState_a4ac988f0da5c33b43ff356890fcf9c1c}
+Actualiza el estado 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha actualizado 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_aa6366828eb50639e86b94008cfad9c5d}{State}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Game\+State.\+h\item 
+Game\+State.\+cpp\end{DoxyCompactItemize}

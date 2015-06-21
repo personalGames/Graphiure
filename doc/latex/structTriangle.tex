@@ -1,0 +1,127 @@
+\hypertarget{structTriangle}{}\section{Referencia de la Estructura Triangle}
+\label{structTriangle}\index{Triangle@{Triangle}}
+
+
+{\ttfamily \#include $<$Triangle.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structTriangle_adfb983e02cc6901f9cf28c81036f8dce}{Triangle} (sf\+::\+Vector2f \&p0, sf\+::\+Vector2f \&p1, sf\+::\+Vector2f \&p2)
+\item 
+\hyperlink{structTriangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle} ()
+\item 
+bool \hyperlink{structTriangle_a6e233369dff883d425b1077c4eb1fb39}{point\+Inside} (sf\+::\+Vector2f \&point)
+\item 
+sf\+::\+Float\+Rect \hyperlink{structTriangle_ad65472004d16c530d7a55713f7e9cf29}{get\+Bounds} ()
+\item 
+bool \hyperlink{structTriangle_a8329a43d14d395c4cf7beb79014a5300}{aabb\+Collision} (sf\+::\+Float\+Rect \&one\+Rect)
+\item 
+bool \hyperlink{structTriangle_ab4526a1cd59654ac9018c445ccbc0080}{triangle\+V\+S\+Triangle} (\hyperlink{structTriangle}{Triangle} \&triangle)
+\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structTriangle_a329348e606ae7d13277e4990ab636054}{}sf\+::\+Vector2f {\bfseries p0}\label{structTriangle_a329348e606ae7d13277e4990ab636054}
+
+\item 
+\hypertarget{structTriangle_adb0caecb15df48f0d5bcfe3000ed9ee3}{}sf\+::\+Vector2f {\bfseries p1}\label{structTriangle_adb0caecb15df48f0d5bcfe3000ed9ee3}
+
+\item 
+\hypertarget{structTriangle_af1832d337761d4949cabaff62e9b7711}{}sf\+::\+Vector2f {\bfseries p2}\label{structTriangle_af1832d337761d4949cabaff62e9b7711}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Estructura de un triángulo 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{structTriangle_adfb983e02cc6901f9cf28c81036f8dce}{}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\subsubsection[{Triangle}]{\setlength{\rightskip}{0pt plus 5cm}Triangle\+::\+Triangle (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f \&}]{p0, }
+\item[{sf\+::\+Vector2f \&}]{p1, }
+\item[{sf\+::\+Vector2f \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_adfb983e02cc6901f9cf28c81036f8dce}
+Constructor, construye un triángulo a partir de tres puntos 
+\begin{DoxyParams}{Parámetros}
+{\em p0} & un punto \\
+\hline
+{\em p1} & segundo punto \\
+\hline
+{\em p2} & tercer punto \\
+\hline
+\end{DoxyParams}
+\hypertarget{structTriangle_aaefe4ed500c07918d30c6f0e286332c5}{}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\subsubsection[{Triangle}]{\setlength{\rightskip}{0pt plus 5cm}Triangle\+::\+Triangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_aaefe4ed500c07918d30c6f0e286332c5}
+Triángulo por defecto 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{structTriangle_a8329a43d14d395c4cf7beb79014a5300}{}\index{Triangle@{Triangle}!aabb\+Collision@{aabb\+Collision}}
+\index{aabb\+Collision@{aabb\+Collision}!Triangle@{Triangle}}
+\subsubsection[{aabb\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}bool Triangle\+::aabb\+Collision (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect \&}]{one\+Rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_a8329a43d14d395c4cf7beb79014a5300}
+Testea la colisión entre el triángulo y el rectángulo dado 
+\begin{DoxyParams}{Parámetros}
+{\em one\+Rect} & rectángulo a testear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si colisionan 
+\end{DoxyReturn}
+\hypertarget{structTriangle_ad65472004d16c530d7a55713f7e9cf29}{}\index{Triangle@{Triangle}!get\+Bounds@{get\+Bounds}}
+\index{get\+Bounds@{get\+Bounds}!Triangle@{Triangle}}
+\subsubsection[{get\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Float\+Rect Triangle\+::get\+Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_ad65472004d16c530d7a55713f7e9cf29}
+Devuelve un rectángulo que contenga el triángulo \begin{DoxyReturn}{Devuelve}
+un rectángulo 
+\end{DoxyReturn}
+\hypertarget{structTriangle_a6e233369dff883d425b1077c4eb1fb39}{}\index{Triangle@{Triangle}!point\+Inside@{point\+Inside}}
+\index{point\+Inside@{point\+Inside}!Triangle@{Triangle}}
+\subsubsection[{point\+Inside}]{\setlength{\rightskip}{0pt plus 5cm}bool Triangle\+::point\+Inside (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f \&}]{point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_a6e233369dff883d425b1077c4eb1fb39}
+Comprueba si el punto dado está dentro del triángulo 
+\begin{DoxyParams}{Parámetros}
+{\em point} & punto a testear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el punto está dentro del triángulo 
+\end{DoxyReturn}
+\hypertarget{structTriangle_ab4526a1cd59654ac9018c445ccbc0080}{}\index{Triangle@{Triangle}!triangle\+V\+S\+Triangle@{triangle\+V\+S\+Triangle}}
+\index{triangle\+V\+S\+Triangle@{triangle\+V\+S\+Triangle}!Triangle@{Triangle}}
+\subsubsection[{triangle\+V\+S\+Triangle}]{\setlength{\rightskip}{0pt plus 5cm}bool Triangle\+::triangle\+V\+S\+Triangle (
+\begin{DoxyParamCaption}
+\item[{{\bf Triangle} \&}]{triangle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structTriangle_ab4526a1cd59654ac9018c445ccbc0080}
+Testea la colisión entre el triángulo y otro triángulo dado 
+\begin{DoxyParams}{Parámetros}
+{\em triangle} & triangulo a comprobrar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si colisionan 
+\end{DoxyReturn}
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Triangle.\+h\end{DoxyCompactItemize}

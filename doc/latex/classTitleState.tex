@@ -1,0 +1,129 @@
+\hypertarget{classTitleState}{}\section{Referencia de la Clase Title\+State}
+\label{classTitleState}\index{Title\+State@{Title\+State}}
+
+
+{\ttfamily \#include $<$Title\+State.\+h$>$}
+
+Diagrama de herencias de Title\+State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTitleState}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTitleState_af8f9f14886d8dbfd7c6167dcc4d3aeaf}{Title\+State} (\hyperlink{classStateStack}{State\+Stack} \&\hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}, \hyperlink{classContext}{Context} $\ast$\hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context})
+\item 
+virtual void \hyperlink{classTitleState_ae12beafe5aad6929a56089942de1220e}{draw} ()
+\item 
+virtual bool \hyperlink{classTitleState_aa282ac0c6e22267cb6a7054973d75fdf}{update} (sf\+::\+Time dt)
+\item 
+virtual bool \hyperlink{classTitleState_a91c6ab4d741fe7445d88ed603001971a}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+virtual void \hyperlink{classTitleState_ab27a65d03920cbbb9cff7f14cd23372c}{pulled\+Action} ()
+\item 
+virtual void \hyperlink{classTitleState_a6c10b4a33cf09388f0bcca1af0872f68}{pushed\+Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Estado del título inicial del juego 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classTitleState_af8f9f14886d8dbfd7c6167dcc4d3aeaf}{}\index{Title\+State@{Title\+State}!Title\+State@{Title\+State}}
+\index{Title\+State@{Title\+State}!Title\+State@{Title\+State}}
+\subsubsection[{Title\+State}]{\setlength{\rightskip}{0pt plus 5cm}Title\+State\+::\+Title\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf State\+Stack} \&}]{stack, }
+\item[{{\bf Context} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{classTitleState_af8f9f14886d8dbfd7c6167dcc4d3aeaf}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em stack} & pila de estados \\
+\hline
+{\em context} & contexto \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classTitleState_ae12beafe5aad6929a56089942de1220e}{}\index{Title\+State@{Title\+State}!draw@{draw}}
+\index{draw@{draw}!Title\+State@{Title\+State}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Title\+State\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTitleState_ae12beafe5aad6929a56089942de1220e}
+Dibuja el estado 
+
+Implementa \hyperlink{classState_ae261605bc40b7e3959ce5df5457e4942}{State}.
+
+\hypertarget{classTitleState_a91c6ab4d741fe7445d88ed603001971a}{}\index{Title\+State@{Title\+State}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Title\+State@{Title\+State}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Title\+State\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTitleState_a91c6ab4d741fe7445d88ed603001971a}
+Procesa la entrada del usuario 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si lo ha procesado, false si no (o lo ha procesado pero que continúe) 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_a19965f83460b248c42952aac8d001206}{State}.
+
+\hypertarget{classTitleState_ab27a65d03920cbbb9cff7f14cd23372c}{}\index{Title\+State@{Title\+State}!pulled\+Action@{pulled\+Action}}
+\index{pulled\+Action@{pulled\+Action}!Title\+State@{Title\+State}}
+\subsubsection[{pulled\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Title\+State\+::pulled\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTitleState_ab27a65d03920cbbb9cff7f14cd23372c}
+Método ejecutado cuando es sacado de la pila 
+
+Reimplementado de \hyperlink{classState_a92620c4648de675037b20ec59edb52a3}{State}.
+
+\hypertarget{classTitleState_a6c10b4a33cf09388f0bcca1af0872f68}{}\index{Title\+State@{Title\+State}!pushed\+Action@{pushed\+Action}}
+\index{pushed\+Action@{pushed\+Action}!Title\+State@{Title\+State}}
+\subsubsection[{pushed\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Title\+State\+::pushed\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTitleState_a6c10b4a33cf09388f0bcca1af0872f68}
+Método ejecutado cuando es puesto en pila 
+
+Reimplementado de \hyperlink{classState_a3cc6a1378f32f9ed6a2d1d8140296808}{State}.
+
+\hypertarget{classTitleState_aa282ac0c6e22267cb6a7054973d75fdf}{}\index{Title\+State@{Title\+State}!update@{update}}
+\index{update@{update}!Title\+State@{Title\+State}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Title\+State\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTitleState_aa282ac0c6e22267cb6a7054973d75fdf}
+Actualiza el estado 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha actualizado 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_aa6366828eb50639e86b94008cfad9c5d}{State}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Title\+State.\+h\item 
+Title\+State.\+cpp\end{DoxyCompactItemize}

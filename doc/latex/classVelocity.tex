@@ -1,0 +1,227 @@
+\hypertarget{classVelocity}{}\section{Referencia de la Clase Velocity}
+\label{classVelocity}\index{Velocity@{Velocity}}
+
+
+{\ttfamily \#include $<$Velocity.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVelocity_a852088c8d4dbb7e1beb0d793a57e9d11}{Velocity} ()
+\item 
+\hypertarget{classVelocity_a10d752c066ae650a16d268a6009ee0b4}{}{\bfseries Velocity} (const \hyperlink{classVelocity}{Velocity} \&orig)\label{classVelocity_a10d752c066ae650a16d268a6009ee0b4}
+
+\item 
+sf\+::\+Vector2f \hyperlink{classVelocity_abd0a1d55e1ac76b6d46a4f28ead90c2c}{get\+Velocity} () const 
+\item 
+void \hyperlink{classVelocity_a0ce0664468ac1eb751953baffc50f192}{set\+Velocity} (sf\+::\+Vector2f velocity)
+\item 
+void \hyperlink{classVelocity_a52612183dd88deb4d9689d2eccbcd617}{set\+Velocity} (float x, float y)
+\item 
+void \hyperlink{classVelocity_a1a8f54c80262f620b04b5d7c69a50ceb}{increment\+Velocity} (float x, float y)
+\item 
+void \hyperlink{classVelocity_a9c123f5b61a0aa525c5a3c20d2304ca2}{increment\+Velocity} (sf\+::\+Vector2f increment)
+\item 
+void \hyperlink{classVelocity_a38b4d47e4a40753978b25e88f596f0f7}{reset} ()
+\item 
+void \hyperlink{classVelocity_aed44353fe17ecd06f9eece523f53decb}{adapt\+Velocity} ()
+\item 
+bool \hyperlink{classVelocity_ac012a24f476baebd4cf3a2e41334bc04}{is\+Quiet} ()
+\item 
+void \hyperlink{classVelocity_a8f57dc2a6c0cd1a576193c73d9fc81eb}{update\+Velocity} (sf\+::\+Time dt, \hyperlink{classPosition}{Position} \&actual\+Position)
+\item 
+void \hyperlink{classVelocity_a25b531bfad5ec480edccfe6fc9775712}{set\+Max\+Velocity} (float max\+Velocity)
+\item 
+float \hyperlink{classVelocity_abceb2dcbad96cf374fd72a47a93148b7}{get\+Max\+Velocity} () const 
+\item 
+\hypertarget{classVelocity_ad26e4fc73af7c3ce8b335d5a7286f682}{}bool {\bfseries operator==} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_ad26e4fc73af7c3ce8b335d5a7286f682}
+
+\item 
+\hypertarget{classVelocity_a66d8deae179002415c1e17e5acba9a79}{}bool {\bfseries operator!=} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_a66d8deae179002415c1e17e5acba9a79}
+
+\item 
+\hypertarget{classVelocity_a2ff5bc63f860abdc5e3c91fae551a446}{}bool {\bfseries operator$<$} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_a2ff5bc63f860abdc5e3c91fae551a446}
+
+\item 
+\hypertarget{classVelocity_a71abb462befd60e76bbcb50689f28302}{}bool {\bfseries operator$>$} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_a71abb462befd60e76bbcb50689f28302}
+
+\item 
+\hypertarget{classVelocity_ad6eab112c6b36163bdfc1577d0ca1251}{}bool {\bfseries operator$<$=} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_ad6eab112c6b36163bdfc1577d0ca1251}
+
+\item 
+\hypertarget{classVelocity_a1cafaea2851634089d7be27b8bade4e8}{}bool {\bfseries operator$>$=} (const \hyperlink{classVelocity}{Velocity} \&lhs) const \label{classVelocity_a1cafaea2851634089d7be27b8bade4e8}
+
+\item 
+bool \hyperlink{classVelocity_a44f3da19cb18d7bb713b275e4d22a054}{is\+Freeze} ()
+\item 
+void \hyperlink{classVelocity_ab3fbd18beb5d5baa2dfe916a14853285}{set\+Freeze} (bool freeze)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase velocidad 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classVelocity_a852088c8d4dbb7e1beb0d793a57e9d11}{}\index{Velocity@{Velocity}!Velocity@{Velocity}}
+\index{Velocity@{Velocity}!Velocity@{Velocity}}
+\subsubsection[{Velocity}]{\setlength{\rightskip}{0pt plus 5cm}Velocity\+::\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classVelocity_a852088c8d4dbb7e1beb0d793a57e9d11}
+Constructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classVelocity_aed44353fe17ecd06f9eece523f53decb}{}\index{Velocity@{Velocity}!adapt\+Velocity@{adapt\+Velocity}}
+\index{adapt\+Velocity@{adapt\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{adapt\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::adapt\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classVelocity_aed44353fe17ecd06f9eece523f53decb}
+Ajusta la velocidad máxima \hypertarget{classVelocity_abceb2dcbad96cf374fd72a47a93148b7}{}\index{Velocity@{Velocity}!get\+Max\+Velocity@{get\+Max\+Velocity}}
+\index{get\+Max\+Velocity@{get\+Max\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{get\+Max\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}float Velocity\+::get\+Max\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_abceb2dcbad96cf374fd72a47a93148b7}
+Devuelve la velocidad máxima \begin{DoxyReturn}{Devuelve}
+velocidad máxima 
+\end{DoxyReturn}
+\hypertarget{classVelocity_abd0a1d55e1ac76b6d46a4f28ead90c2c}{}\index{Velocity@{Velocity}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{get\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Velocity\+::get\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_abd0a1d55e1ac76b6d46a4f28ead90c2c}
+Devuelve la velocidad \begin{DoxyReturn}{Devuelve}
+velocidad en forma de vector x,y 
+\end{DoxyReturn}
+\hypertarget{classVelocity_a1a8f54c80262f620b04b5d7c69a50ceb}{}\index{Velocity@{Velocity}!increment\+Velocity@{increment\+Velocity}}
+\index{increment\+Velocity@{increment\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{increment\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::increment\+Velocity (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\label{classVelocity_a1a8f54c80262f620b04b5d7c69a50ceb}
+Incrementa la velocidad en x e y 
+\begin{DoxyParams}{Parámetros}
+{\em x} & incremento en el eje x \\
+\hline
+{\em y} & incremento en el eje y \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a9c123f5b61a0aa525c5a3c20d2304ca2}{}\index{Velocity@{Velocity}!increment\+Velocity@{increment\+Velocity}}
+\index{increment\+Velocity@{increment\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{increment\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::increment\+Velocity (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{increment}
+\end{DoxyParamCaption}
+)}\label{classVelocity_a9c123f5b61a0aa525c5a3c20d2304ca2}
+Incrementa la velocidad 
+\begin{DoxyParams}{Parámetros}
+{\em increment} & vector con el incremento \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a44f3da19cb18d7bb713b275e4d22a054}{}\index{Velocity@{Velocity}!is\+Freeze@{is\+Freeze}}
+\index{is\+Freeze@{is\+Freeze}!Velocity@{Velocity}}
+\subsubsection[{is\+Freeze}]{\setlength{\rightskip}{0pt plus 5cm}bool Velocity\+::is\+Freeze (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_a44f3da19cb18d7bb713b275e4d22a054}
+Comprueba si está congelado y no puede moverse \begin{DoxyReturn}{Devuelve}
+true si no se puede mover (no se aplica velocidad) 
+\end{DoxyReturn}
+\hypertarget{classVelocity_ac012a24f476baebd4cf3a2e41334bc04}{}\index{Velocity@{Velocity}!is\+Quiet@{is\+Quiet}}
+\index{is\+Quiet@{is\+Quiet}!Velocity@{Velocity}}
+\subsubsection[{is\+Quiet}]{\setlength{\rightskip}{0pt plus 5cm}bool Velocity\+::is\+Quiet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classVelocity_ac012a24f476baebd4cf3a2e41334bc04}
+Comprueba si está quieto (no hay velocidad) \begin{DoxyReturn}{Devuelve}
+true si esta quieto 
+\end{DoxyReturn}
+\hypertarget{classVelocity_a38b4d47e4a40753978b25e88f596f0f7}{}\index{Velocity@{Velocity}!reset@{reset}}
+\index{reset@{reset}!Velocity@{Velocity}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classVelocity_a38b4d47e4a40753978b25e88f596f0f7}
+Deja la velocidad a cero \hypertarget{classVelocity_ab3fbd18beb5d5baa2dfe916a14853285}{}\index{Velocity@{Velocity}!set\+Freeze@{set\+Freeze}}
+\index{set\+Freeze@{set\+Freeze}!Velocity@{Velocity}}
+\subsubsection[{set\+Freeze}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::set\+Freeze (
+\begin{DoxyParamCaption}
+\item[{bool}]{freeze}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_ab3fbd18beb5d5baa2dfe916a14853285}
+Setea si se puede mover o no 
+\begin{DoxyParams}{Parámetros}
+{\em freeze} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a25b531bfad5ec480edccfe6fc9775712}{}\index{Velocity@{Velocity}!set\+Max\+Velocity@{set\+Max\+Velocity}}
+\index{set\+Max\+Velocity@{set\+Max\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{set\+Max\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::set\+Max\+Velocity (
+\begin{DoxyParamCaption}
+\item[{float}]{max\+Velocity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_a25b531bfad5ec480edccfe6fc9775712}
+Setea la velocidad máxima 
+\begin{DoxyParams}{Parámetros}
+{\em max\+Velocity} & máxima velocidad \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a0ce0664468ac1eb751953baffc50f192}{}\index{Velocity@{Velocity}!set\+Velocity@{set\+Velocity}}
+\index{set\+Velocity@{set\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{set\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::set\+Velocity (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{velocity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_a0ce0664468ac1eb751953baffc50f192}
+Setea la nueva velocidad 
+\begin{DoxyParams}{Parámetros}
+{\em velocity} & nueva velocidad \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a52612183dd88deb4d9689d2eccbcd617}{}\index{Velocity@{Velocity}!set\+Velocity@{set\+Velocity}}
+\index{set\+Velocity@{set\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{set\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::set\+Velocity (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classVelocity_a52612183dd88deb4d9689d2eccbcd617}
+Setea la velocidad 
+\begin{DoxyParams}{Parámetros}
+{\em x} & velocidad en el eje x \\
+\hline
+{\em y} & velocidad en el eje y \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVelocity_a8f57dc2a6c0cd1a576193c73d9fc81eb}{}\index{Velocity@{Velocity}!update\+Velocity@{update\+Velocity}}
+\index{update\+Velocity@{update\+Velocity}!Velocity@{Velocity}}
+\subsubsection[{update\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Velocity\+::update\+Velocity (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt, }
+\item[{{\bf Position} \&}]{actual\+Position}
+\end{DoxyParamCaption}
+)}\label{classVelocity_a8f57dc2a6c0cd1a576193c73d9fc81eb}
+Actualiza la posición dada con la velocidad que lleva 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo transcurrido \\
+\hline
+{\em actual\+Position} & posición a modificar \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Velocity.\+h\item 
+Velocity.\+cpp\end{DoxyCompactItemize}

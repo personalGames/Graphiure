@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente Weapon.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Weapon.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Weapon.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 18 de mayo de 2015, 9:45</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef WEAPON_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define WEAPON_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classWeapon.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classWeapon.html">Weapon</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classWeapon.html#a026a6d80c7b04f9f8195835b012fec0a">Weapon</a>(<span class="keywordtype">int</span> damage, <span class="keywordtype">int</span> range);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classWeapon.html#a026a6d80c7b04f9f8195835b012fec0a">Weapon</a>(<span class="keyword">const</span> <a class="code" href="classWeapon.html">Weapon</a>&amp; orig);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classWeapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa">~Weapon</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classWeapon.html#a2ca6127e73e6afe823b5daf59d9e93c5">   36</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classWeapon.html#a2ca6127e73e6afe823b5daf59d9e93c5">getDamage</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> damage;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classWeapon.html#a54e4b500dcc3f5c3d02df6f1c29ddbea">   44</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classWeapon.html#a54e4b500dcc3f5c3d02df6f1c29ddbea">setDamage</a>(<span class="keywordtype">int</span> damage) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        this-&gt;damage = damage;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classWeapon.html#a9bd98ad8803ea7933e4a11d52e5f458a">   52</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classWeapon.html#a9bd98ad8803ea7933e4a11d52e5f458a">getExtraDamage</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> extraDamage;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classWeapon.html#a5b61dea8e2eb6048a846c5fa823d85f5">   60</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classWeapon.html#a5b61dea8e2eb6048a846c5fa823d85f5">setExtraDamage</a>(<span class="keywordtype">int</span> extraDamage) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        this-&gt;extraDamage = extraDamage;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classWeapon.html#afb8b8a4035ddf75bdcde45a42386a9d1">   68</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classWeapon.html#afb8b8a4035ddf75bdcde45a42386a9d1">getRange</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> range;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classWeapon.html#a9227da33ba03135c9df353a91a7b0013">   76</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classWeapon.html#a9227da33ba03135c9df353a91a7b0013">setRange</a>(<span class="keywordtype">int</span> range) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        this-&gt;range = range;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> damage;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> range;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> extraDamage;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* WEAPON_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="ttc" id="classWeapon_html_a9227da33ba03135c9df353a91a7b0013"><div class="ttname"><a href="classWeapon.html#a9227da33ba03135c9df353a91a7b0013">Weapon::setRange</a></div><div class="ttdeci">void setRange(int range)</div><div class="ttdef"><b>Definition:</b> Weapon.h:76</div></div>
+<div class="ttc" id="classWeapon_html_afb8b8a4035ddf75bdcde45a42386a9d1"><div class="ttname"><a href="classWeapon.html#afb8b8a4035ddf75bdcde45a42386a9d1">Weapon::getRange</a></div><div class="ttdeci">int getRange() const </div><div class="ttdef"><b>Definition:</b> Weapon.h:68</div></div>
+<div class="ttc" id="classWeapon_html_a9bd98ad8803ea7933e4a11d52e5f458a"><div class="ttname"><a href="classWeapon.html#a9bd98ad8803ea7933e4a11d52e5f458a">Weapon::getExtraDamage</a></div><div class="ttdeci">int getExtraDamage() const </div><div class="ttdef"><b>Definition:</b> Weapon.h:52</div></div>
+<div class="ttc" id="classWeapon_html_a420e7ba3d2017e6de3e93eb579cfd3fa"><div class="ttname"><a href="classWeapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa">Weapon::~Weapon</a></div><div class="ttdeci">virtual ~Weapon()</div><div class="ttdef"><b>Definition:</b> Weapon.cpp:21</div></div>
+<div class="ttc" id="classWeapon_html_a5b61dea8e2eb6048a846c5fa823d85f5"><div class="ttname"><a href="classWeapon.html#a5b61dea8e2eb6048a846c5fa823d85f5">Weapon::setExtraDamage</a></div><div class="ttdeci">void setExtraDamage(int extraDamage)</div><div class="ttdef"><b>Definition:</b> Weapon.h:60</div></div>
+<div class="ttc" id="classWeapon_html_a2ca6127e73e6afe823b5daf59d9e93c5"><div class="ttname"><a href="classWeapon.html#a2ca6127e73e6afe823b5daf59d9e93c5">Weapon::getDamage</a></div><div class="ttdeci">int getDamage() const </div><div class="ttdef"><b>Definition:</b> Weapon.h:36</div></div>
+<div class="ttc" id="classWeapon_html_a54e4b500dcc3f5c3d02df6f1c29ddbea"><div class="ttname"><a href="classWeapon.html#a54e4b500dcc3f5c3d02df6f1c29ddbea">Weapon::setDamage</a></div><div class="ttdeci">void setDamage(int damage)</div><div class="ttdef"><b>Definition:</b> Weapon.h:44</div></div>
+<div class="ttc" id="classWeapon_html"><div class="ttname"><a href="classWeapon.html">Weapon</a></div><div class="ttdef"><b>Definition:</b> Weapon.h:14</div></div>
+<div class="ttc" id="classWeapon_html_a026a6d80c7b04f9f8195835b012fec0a"><div class="ttname"><a href="classWeapon.html#a026a6d80c7b04f9f8195835b012fec0a">Weapon::Weapon</a></div><div class="ttdeci">Weapon(int damage, int range)</div><div class="ttdef"><b>Definition:</b> Weapon.cpp:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

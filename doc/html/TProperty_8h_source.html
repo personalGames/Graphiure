@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente TProperty.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TProperty.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   TProperty.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian // https://github.com/LaurentGomila/SFML/wiki/Tutorial%3A-Object-Properties</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 2 de marzo de 2015, 19:44</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TPROPERTY_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TPROPERTY_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;IProperty.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  The Template version of the IProperty class for custom property values</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> TYPE = <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTProperty.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTProperty.html">TProperty</a> : <span class="keyword">public</span> <a class="code" href="classIProperty.html">IProperty</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classTProperty.html#a58ede57ac36a9c98bb06ca773f9b62ee">   25</a></span>&#160;    <a class="code" href="classTProperty.html#a58ede57ac36a9c98bb06ca773f9b62ee">TProperty</a>(<span class="keyword">const</span> std::string thePropertyID) :</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classIProperty.html">IProperty</a>(typeid (TYPE).name(), thePropertyID) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classTProperty.html#adceda6e9d1c01f091cec619a48b1822f">   33</a></span>&#160;    TYPE <a class="code" href="classTProperty.html#adceda6e9d1c01f091cec619a48b1822f">GetValue</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> mValue;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classTProperty.html#ad7949c54d792c67cd73b299964699541">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTProperty.html#ad7949c54d792c67cd73b299964699541">SetValue</a>(TYPE theValue) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mValue = theValue;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classTProperty.html#ab463fc86cb27252b763b38be21e82c3f">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTProperty.html#ab463fc86cb27252b763b38be21e82c3f">Update</a>() {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classTProperty.html#a40e392d305cc3886255946359977edcb">   58</a></span>&#160;    <a class="code" href="classIProperty.html">IProperty</a>* <a class="code" href="classTProperty.html#a40e392d305cc3886255946359977edcb">MakeClone</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classTProperty.html">TProperty&lt;TYPE&gt;</a>* anProperty = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classTProperty.html">TProperty&lt;TYPE&gt;</a>(<a class="code" href="classIProperty.html#af96e4937115a87d7e116df5afbd0ca37">GetID</a>());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// Make sure new didn&#39;t fail before setting the value for this property</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != anProperty) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            anProperty-&gt;<a class="code" href="classTProperty.html#ad7949c54d792c67cd73b299964699541">SetValue</a>(mValue);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Return cloned anProperty or NULL if none was created</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> anProperty;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    TYPE mValue;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* TPROPERTY_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="ttc" id="classTProperty_html_ab463fc86cb27252b763b38be21e82c3f"><div class="ttname"><a href="classTProperty.html#ab463fc86cb27252b763b38be21e82c3f">TProperty::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> TProperty.h:49</div></div>
+<div class="ttc" id="classTProperty_html_a40e392d305cc3886255946359977edcb"><div class="ttname"><a href="classTProperty.html#a40e392d305cc3886255946359977edcb">TProperty::MakeClone</a></div><div class="ttdeci">IProperty * MakeClone()</div><div class="ttdef"><b>Definition:</b> TProperty.h:58</div></div>
+<div class="ttc" id="classIProperty_html"><div class="ttname"><a href="classIProperty.html">IProperty</a></div><div class="ttdef"><b>Definition:</b> IProperty.h:16</div></div>
+<div class="ttc" id="classIProperty_html_af96e4937115a87d7e116df5afbd0ca37"><div class="ttname"><a href="classIProperty.html#af96e4937115a87d7e116df5afbd0ca37">IProperty::GetID</a></div><div class="ttdeci">const std::string GetID(void) const </div><div class="ttdef"><b>Definition:</b> IProperty.cpp:23</div></div>
+<div class="ttc" id="classTProperty_html_adceda6e9d1c01f091cec619a48b1822f"><div class="ttname"><a href="classTProperty.html#adceda6e9d1c01f091cec619a48b1822f">TProperty::GetValue</a></div><div class="ttdeci">TYPE GetValue()</div><div class="ttdef"><b>Definition:</b> TProperty.h:33</div></div>
+<div class="ttc" id="classTProperty_html_ad7949c54d792c67cd73b299964699541"><div class="ttname"><a href="classTProperty.html#ad7949c54d792c67cd73b299964699541">TProperty::SetValue</a></div><div class="ttdeci">void SetValue(TYPE theValue)</div><div class="ttdef"><b>Definition:</b> TProperty.h:41</div></div>
+<div class="ttc" id="classTProperty_html_a58ede57ac36a9c98bb06ca773f9b62ee"><div class="ttname"><a href="classTProperty.html#a58ede57ac36a9c98bb06ca773f9b62ee">TProperty::TProperty</a></div><div class="ttdeci">TProperty(const std::string thePropertyID)</div><div class="ttdef"><b>Definition:</b> TProperty.h:25</div></div>
+<div class="ttc" id="classTProperty_html"><div class="ttname"><a href="classTProperty.html">TProperty</a></div><div class="ttdef"><b>Definition:</b> TProperty.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,56 @@
+\hypertarget{classSubStateGame}{}\section{Referencia de la Clase Sub\+State\+Game}
+\label{classSubStateGame}\index{Sub\+State\+Game@{Sub\+State\+Game}}
+
+
+{\ttfamily \#include $<$Sub\+State\+Game.\+h$>$}
+
+Diagrama de herencias de Sub\+State\+Game\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSubStateGame}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSubStateGame_a63176b9e97fa67b25609bed1c1810e95}{}virtual void {\bfseries draw} ()=0\label{classSubStateGame_a63176b9e97fa67b25609bed1c1810e95}
+
+\item 
+\hypertarget{classSubStateGame_af8e401cd2b5032e2d677eaac6bff3253}{}virtual bool {\bfseries update} (sf\+::\+Time delta)=0\label{classSubStateGame_af8e401cd2b5032e2d677eaac6bff3253}
+
+\item 
+\hypertarget{classSubStateGame_af4ebe86d83d064a02049160915c4ac97}{}virtual bool {\bfseries handle\+Event} (const sf\+::\+Event \&event)=0\label{classSubStateGame_af4ebe86d83d064a02049160915c4ac97}
+
+\item 
+void \hyperlink{classSubStateGame_ad50890e351e9ca02fec294bd3139e887}{set\+Ended} ()
+\item 
+bool \hyperlink{classSubStateGame_ac5bf0c28ce1a5f2de71246dd4dc4fc0e}{is\+Ended} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase base para los subestados del juego 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classSubStateGame_ac5bf0c28ce1a5f2de71246dd4dc4fc0e}{}\index{Sub\+State\+Game@{Sub\+State\+Game}!is\+Ended@{is\+Ended}}
+\index{is\+Ended@{is\+Ended}!Sub\+State\+Game@{Sub\+State\+Game}}
+\subsubsection[{is\+Ended}]{\setlength{\rightskip}{0pt plus 5cm}bool Sub\+State\+Game\+::is\+Ended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubStateGame_ac5bf0c28ce1a5f2de71246dd4dc4fc0e}
+Devuelve si el subestado del juego ha terminado \begin{DoxyReturn}{Devuelve}
+true si ha terminado 
+\end{DoxyReturn}
+\hypertarget{classSubStateGame_ad50890e351e9ca02fec294bd3139e887}{}\index{Sub\+State\+Game@{Sub\+State\+Game}!set\+Ended@{set\+Ended}}
+\index{set\+Ended@{set\+Ended}!Sub\+State\+Game@{Sub\+State\+Game}}
+\subsubsection[{set\+Ended}]{\setlength{\rightskip}{0pt plus 5cm}void Sub\+State\+Game\+::set\+Ended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSubStateGame_ad50890e351e9ca02fec294bd3139e887}
+Setea si el subestado ha terminado 
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Sub\+State\+Game.\+h\end{DoxyCompactItemize}

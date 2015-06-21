@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente Level.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Level.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Level.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 9 de febrero de 2015, 0:08</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LEVEL_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define LEVEL_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;CommandQueue.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;SceneNode.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Layer.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;ResourceHolder.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;IDFonts.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;TileMapNode.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;IXMLParser.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;StructMap.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;Velocity.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;ImportSystems.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;Player.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;Observer.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;SubStateGame.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;ConversationState.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;MissionStatus.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classLevel.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLevel.html">Level</a> : <span class="keyword">private</span> sf::NonCopyable, <a class="code" href="classObserver.html">Observer</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classLevel.html#ab9c7695bbbc6015fe59e4f8887764d2b">Level</a>(<a class="code" href="classSystemManager.html">SystemManager</a>&amp; systemManager);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLevel.html">Level</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevel.html#a62e412eaad753d2baa2f94239cb80e41">update</a>(sf::Time dt);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevel.html#a16b763dfb766969c8fefec9dd11207e9">setCharacter</a>(<a class="code" href="classIdEntity.html">IdEntity</a> characterCreated);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevel.html#a9b7478818e1aa80d3d4d059fa5faf9bf">draw</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classLevel.html#a9ef5d17350297a086d87b0936fec5ecb">   59</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classCommandQueue.html">CommandQueue</a>&amp; <a class="code" href="classLevel.html#a9ef5d17350297a086d87b0936fec5ecb">getCommandQueue</a>(){ <span class="keywordflow">return</span> commandQueue; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLevel.html#a135b421112c9b9a14229a59b62a82041">handleEvent</a>(<span class="keyword">const</span> sf::Event&amp; event);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classLevel.html#a961437d70dad81b0fddb3fb728ea67af">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevel.html#a961437d70dad81b0fddb3fb728ea67af">setPlayer</a>(<a class="code" href="classPlayer.html">Player</a>* player) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        this-&gt;player = player;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLevel.html#a24b4e540cca52b4d73790ce7850e62db">isEnd</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classLevel.html#a6098504924fa73e05dd7a4a945b61766">   83</a></span>&#160;    <span class="keyword">inline</span> MissionStatus <a class="code" href="classLevel.html#a6098504924fa73e05dd7a4a945b61766">getMissionStatus</a>(){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> status;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLevel.html#a153be085b66dc212ab9ac507c0057240">changeLevel</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::string* <a class="code" href="classLevel.html#a3d7b2e75b73bf8b459bf9a547cd923b7">getNextLevel</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classLevel.html#a62e412eaad753d2baa2f94239cb80e41">update</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classCommandQueue.html">CommandQueue</a> commandQueue;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    sf::Vector2f spawnPosition;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classIdEntity.html">IdEntity</a> idCharacter;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classSystemManager.html">SystemManager</a>* systemManager;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="classSystemObjectsGame.html">SystemObjectsGame</a>* objectsGame;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="classSystemGraphic.html">SystemGraphic</a>* graphics;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="classSystemCollision.html">SystemCollision</a>* collision;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classSystemCommand.html">SystemCommand</a>* commands;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classSystemMovement.html">SystemMovement</a>* movement;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="classSystemQuest.html">SystemQuest</a>* quests;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* player;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    MissionStatus status;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classSubStateGame.html">SubStateGame</a>* state;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">bool</span> isChangeLevel;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::string* level;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;   </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* LEVEL_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="ttc" id="classLevel_html_a24b4e540cca52b4d73790ce7850e62db"><div class="ttname"><a href="classLevel.html#a24b4e540cca52b4d73790ce7850e62db">Level::isEnd</a></div><div class="ttdeci">bool isEnd()</div><div class="ttdef"><b>Definition:</b> Level.cpp:120</div></div>
+<div class="ttc" id="classLevel_html_ab9c7695bbbc6015fe59e4f8887764d2b"><div class="ttname"><a href="classLevel.html#ab9c7695bbbc6015fe59e4f8887764d2b">Level::Level</a></div><div class="ttdeci">Level(SystemManager &amp;systemManager)</div><div class="ttdef"><b>Definition:</b> Level.cpp:13</div></div>
+<div class="ttc" id="classSystemGraphic_html"><div class="ttname"><a href="classSystemGraphic.html">SystemGraphic</a></div><div class="ttdef"><b>Definition:</b> SystemGraphic.h:26</div></div>
+<div class="ttc" id="classSystemMovement_html"><div class="ttname"><a href="classSystemMovement.html">SystemMovement</a></div><div class="ttdef"><b>Definition:</b> SystemMovement.h:21</div></div>
+<div class="ttc" id="classLevel_html_a961437d70dad81b0fddb3fb728ea67af"><div class="ttname"><a href="classLevel.html#a961437d70dad81b0fddb3fb728ea67af">Level::setPlayer</a></div><div class="ttdeci">void setPlayer(Player *player)</div><div class="ttdef"><b>Definition:</b> Level.h:69</div></div>
+<div class="ttc" id="classLevel_html_a62e412eaad753d2baa2f94239cb80e41"><div class="ttname"><a href="classLevel.html#a62e412eaad753d2baa2f94239cb80e41">Level::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdef"><b>Definition:</b> Level.cpp:137</div></div>
+<div class="ttc" id="classSystemCollision_html"><div class="ttname"><a href="classSystemCollision.html">SystemCollision</a></div><div class="ttdef"><b>Definition:</b> SystemCollision.h:27</div></div>
+<div class="ttc" id="classSystemObjectsGame_html"><div class="ttname"><a href="classSystemObjectsGame.html">SystemObjectsGame</a></div><div class="ttdef"><b>Definition:</b> SystemObjectsGame.h:24</div></div>
+<div class="ttc" id="classCommandQueue_html"><div class="ttname"><a href="classCommandQueue.html">CommandQueue</a></div><div class="ttdef"><b>Definition:</b> CommandQueue.h:17</div></div>
+<div class="ttc" id="classLevel_html_a153be085b66dc212ab9ac507c0057240"><div class="ttname"><a href="classLevel.html#a153be085b66dc212ab9ac507c0057240">Level::changeLevel</a></div><div class="ttdeci">bool changeLevel()</div><div class="ttdef"><b>Definition:</b> Level.cpp:127</div></div>
+<div class="ttc" id="classLevel_html_a135b421112c9b9a14229a59b62a82041"><div class="ttname"><a href="classLevel.html#a135b421112c9b9a14229a59b62a82041">Level::handleEvent</a></div><div class="ttdeci">bool handleEvent(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> Level.cpp:55</div></div>
+<div class="ttc" id="classSystemQuest_html"><div class="ttname"><a href="classSystemQuest.html">SystemQuest</a></div><div class="ttdef"><b>Definition:</b> SystemQuest.h:22</div></div>
+<div class="ttc" id="classLevel_html_a6098504924fa73e05dd7a4a945b61766"><div class="ttname"><a href="classLevel.html#a6098504924fa73e05dd7a4a945b61766">Level::getMissionStatus</a></div><div class="ttdeci">MissionStatus getMissionStatus()</div><div class="ttdef"><b>Definition:</b> Level.h:83</div></div>
+<div class="ttc" id="classLevel_html_a9b7478818e1aa80d3d4d059fa5faf9bf"><div class="ttname"><a href="classLevel.html#a9b7478818e1aa80d3d4d059fa5faf9bf">Level::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> Level.cpp:45</div></div>
+<div class="ttc" id="classLevel_html"><div class="ttname"><a href="classLevel.html">Level</a></div><div class="ttdef"><b>Definition:</b> Level.h:32</div></div>
+<div class="ttc" id="classObserver_html"><div class="ttname"><a href="classObserver.html">Observer</a></div><div class="ttdef"><b>Definition:</b> Observer.h:18</div></div>
+<div class="ttc" id="classLevel_html_a9ef5d17350297a086d87b0936fec5ecb"><div class="ttname"><a href="classLevel.html#a9ef5d17350297a086d87b0936fec5ecb">Level::getCommandQueue</a></div><div class="ttdeci">CommandQueue &amp; getCommandQueue()</div><div class="ttdef"><b>Definition:</b> Level.h:59</div></div>
+<div class="ttc" id="classIdEntity_html"><div class="ttname"><a href="classIdEntity.html">IdEntity</a></div><div class="ttdef"><b>Definition:</b> IdEntity.h:16</div></div>
+<div class="ttc" id="classLevel_html_a3d7b2e75b73bf8b459bf9a547cd923b7"><div class="ttname"><a href="classLevel.html#a3d7b2e75b73bf8b459bf9a547cd923b7">Level::getNextLevel</a></div><div class="ttdeci">std::string * getNextLevel()</div><div class="ttdef"><b>Definition:</b> Level.cpp:131</div></div>
+<div class="ttc" id="classLevel_html_a16b763dfb766969c8fefec9dd11207e9"><div class="ttname"><a href="classLevel.html#a16b763dfb766969c8fefec9dd11207e9">Level::setCharacter</a></div><div class="ttdeci">void setCharacter(IdEntity characterCreated)</div><div class="ttdef"><b>Definition:</b> Level.cpp:37</div></div>
+<div class="ttc" id="classSystemManager_html"><div class="ttname"><a href="classSystemManager.html">SystemManager</a></div><div class="ttdef"><b>Definition:</b> SystemManager.h:18</div></div>
+<div class="ttc" id="classSubStateGame_html"><div class="ttname"><a href="classSubStateGame.html">SubStateGame</a></div><div class="ttdef"><b>Definition:</b> SubStateGame.h:17</div></div>
+<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:24</div></div>
+<div class="ttc" id="classSystemCommand_html"><div class="ttname"><a href="classSystemCommand.html">SystemCommand</a></div><div class="ttdef"><b>Definition:</b> SystemCommand.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

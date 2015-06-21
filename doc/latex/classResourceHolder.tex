@@ -1,0 +1,93 @@
+\hypertarget{classResourceHolder}{}\section{Referencia de la plantilla de la Clase Resource\+Holder$<$ Identifier, Resource $>$}
+\label{classResourceHolder}\index{Resource\+Holder$<$ Identifier, Resource $>$@{Resource\+Holder$<$ Identifier, Resource $>$}}
+
+
+{\ttfamily \#include $<$Resource\+Holder.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classResourceHolder_a4d48b233dc2abcebb9feb2b13dde79a6}{load} (Identifier id, const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename Parameter $>$ }\\void \hyperlink{classResourceHolder_a3cbeda6131f4a520fd7f9f1b86fdeea3}{load} (Identifier id, const std\+::string \&filename, const Parameter \&second\+Param)
+\item 
+Resource \& \hyperlink{classResourceHolder_a78d21eaeb968b17f8630e6f088ba07e8}{get} (Identifier id)
+\item 
+const Resource \& \hyperlink{classResourceHolder_aeb05b53a559ab743ab996553d9016ab0}{get} (Identifier id) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+\subsubsection*{template$<$typename Identifier, typename Resource$>$class Resource\+Holder$<$ Identifier, Resource $>$}
+
+Gestor de recursos 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classResourceHolder_a78d21eaeb968b17f8630e6f088ba07e8}{}\index{Resource\+Holder@{Resource\+Holder}!get@{get}}
+\index{get@{get}!Resource\+Holder@{Resource\+Holder}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Resource $>$ Resource \& {\bf Resource\+Holder}$<$ Identifier, Resource $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{Identifier}]{id}
+\end{DoxyParamCaption}
+)}\label{classResourceHolder_a78d21eaeb968b17f8630e6f088ba07e8}
+Devuelve el recurso dado el identificador 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el recurso dado 
+\end{DoxyReturn}
+\hypertarget{classResourceHolder_aeb05b53a559ab743ab996553d9016ab0}{}\index{Resource\+Holder@{Resource\+Holder}!get@{get}}
+\index{get@{get}!Resource\+Holder@{Resource\+Holder}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Resource $>$ const Resource \& {\bf Resource\+Holder}$<$ Identifier, Resource $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{Identifier}]{id}
+\end{DoxyParamCaption}
+) const}\label{classResourceHolder_aeb05b53a559ab743ab996553d9016ab0}
+Devuelve el recurso dado el identificador 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el recurso dado 
+\end{DoxyReturn}
+\hypertarget{classResourceHolder_a4d48b233dc2abcebb9feb2b13dde79a6}{}\index{Resource\+Holder@{Resource\+Holder}!load@{load}}
+\index{load@{load}!Resource\+Holder@{Resource\+Holder}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Resource $>$ void {\bf Resource\+Holder}$<$ Identifier, Resource $>$\+::load (
+\begin{DoxyParamCaption}
+\item[{Identifier}]{id, }
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+)}\label{classResourceHolder_a4d48b233dc2abcebb9feb2b13dde79a6}
+Carga un recurso 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador usado para el recurso \\
+\hline
+{\em filename} & ruta del recurso a cargar\\
+\hline
+\end{DoxyParams}
+Implementación de la clase \hypertarget{classResourceHolder_a3cbeda6131f4a520fd7f9f1b86fdeea3}{}\index{Resource\+Holder@{Resource\+Holder}!load@{load}}
+\index{load@{load}!Resource\+Holder@{Resource\+Holder}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Resource $>$ template$<$typename Parameter $>$ void {\bf Resource\+Holder}$<$ Identifier, Resource $>$\+::load (
+\begin{DoxyParamCaption}
+\item[{Identifier}]{id, }
+\item[{const std\+::string \&}]{filename, }
+\item[{const Parameter \&}]{second\+Param}
+\end{DoxyParamCaption}
+)}\label{classResourceHolder_a3cbeda6131f4a520fd7f9f1b86fdeea3}
+Carga un recurso con parámetros extra 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador usado para el recurso \\
+\hline
+{\em filename} & ruta del recurso a cargar \\
+\hline
+{\em second\+Param} & parámetro extra para la carga del fichero \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Resource\+Holder.\+h\end{DoxyCompactItemize}

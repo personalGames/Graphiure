@@ -1,0 +1,148 @@
+\hypertarget{classLife}{}\section{Referencia de la Clase Life}
+\label{classLife}\index{Life@{Life}}
+
+
+{\ttfamily \#include $<$Life.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLife_a6de2a371f6f778f8b4938d219390b746}{Life} ()
+\item 
+\hyperlink{classLife_a2964d51ba57add1054e4dca7b9267511}{Life} (int max\+Life)
+\item 
+\hyperlink{classLife_a5654f86257b68469dd966eed44a5d1d6}{Life} (const \hyperlink{classLife}{Life} \&orig)
+\item 
+virtual \hyperlink{classLife_ac5a521e06906fb4f834001b2b4f7adc7}{$\sim$\+Life} ()
+\item 
+int \hyperlink{classLife_adc50ff45896057a22eff164c26ff2c97}{get\+Actual\+Life} () const 
+\item 
+void \hyperlink{classLife_afc63b290a513272974e117191326d175}{set\+Actual\+Life} (int actual\+Life)
+\item 
+int \hyperlink{classLife_ad14340558348956867f68369a2b0f642}{get\+Max\+Life} () const 
+\item 
+void \hyperlink{classLife_ad02aacd2902ea4e626aa6bf45dc53e49}{set\+Max\+Life} (int max\+Life)
+\item 
+void \hyperlink{classLife_aa9fb062c056f19b5cc0bf60360dfff73}{damage} (int damage)
+\item 
+bool \hyperlink{classLife_ad596f5eaf723c8188a8043beb0437ef2}{is\+Alive} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase representando una vida 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classLife_a6de2a371f6f778f8b4938d219390b746}{}\index{Life@{Life}!Life@{Life}}
+\index{Life@{Life}!Life@{Life}}
+\subsubsection[{Life}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLife_a6de2a371f6f778f8b4938d219390b746}
+Constructor por defecto dejando una vida de 100 unidades \hypertarget{classLife_a2964d51ba57add1054e4dca7b9267511}{}\index{Life@{Life}!Life@{Life}}
+\index{Life@{Life}!Life@{Life}}
+\subsubsection[{Life}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{max\+Life}
+\end{DoxyParamCaption}
+)}\label{classLife_a2964d51ba57add1054e4dca7b9267511}
+C\+Onstructor especificando el máximo de vida 
+\begin{DoxyParams}{Parámetros}
+{\em max\+Life} & máximo de vida \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLife_a5654f86257b68469dd966eed44a5d1d6}{}\index{Life@{Life}!Life@{Life}}
+\index{Life@{Life}!Life@{Life}}
+\subsubsection[{Life}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::\+Life (
+\begin{DoxyParamCaption}
+\item[{const {\bf Life} \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classLife_a5654f86257b68469dd966eed44a5d1d6}
+Constructor copia 
+\begin{DoxyParams}{Parámetros}
+{\em orig} & vida a copiar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLife_ac5a521e06906fb4f834001b2b4f7adc7}{}\index{Life@{Life}!````~Life@{$\sim$\+Life}}
+\index{````~Life@{$\sim$\+Life}!Life@{Life}}
+\subsubsection[{$\sim$\+Life}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::$\sim$\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLife_ac5a521e06906fb4f834001b2b4f7adc7}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classLife_aa9fb062c056f19b5cc0bf60360dfff73}{}\index{Life@{Life}!damage@{damage}}
+\index{damage@{damage}!Life@{Life}}
+\subsubsection[{damage}]{\setlength{\rightskip}{0pt plus 5cm}void Life\+::damage (
+\begin{DoxyParamCaption}
+\item[{int}]{damage}
+\end{DoxyParamCaption}
+)}\label{classLife_aa9fb062c056f19b5cc0bf60360dfff73}
+Establece un daño, decrementa la vida en las unidades especificadas 
+\begin{DoxyParams}{Parámetros}
+{\em damage} & unidades a decrementar la vida \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLife_adc50ff45896057a22eff164c26ff2c97}{}\index{Life@{Life}!get\+Actual\+Life@{get\+Actual\+Life}}
+\index{get\+Actual\+Life@{get\+Actual\+Life}!Life@{Life}}
+\subsubsection[{get\+Actual\+Life}]{\setlength{\rightskip}{0pt plus 5cm}int Life\+::get\+Actual\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLife_adc50ff45896057a22eff164c26ff2c97}
+Devuelve la vida actual \begin{DoxyReturn}{Devuelve}
+devuelve la vida actual que le queda 
+\end{DoxyReturn}
+\hypertarget{classLife_ad14340558348956867f68369a2b0f642}{}\index{Life@{Life}!get\+Max\+Life@{get\+Max\+Life}}
+\index{get\+Max\+Life@{get\+Max\+Life}!Life@{Life}}
+\subsubsection[{get\+Max\+Life}]{\setlength{\rightskip}{0pt plus 5cm}int Life\+::get\+Max\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLife_ad14340558348956867f68369a2b0f642}
+Devuelve la vida máxima \begin{DoxyReturn}{Devuelve}
+vida máxima 
+\end{DoxyReturn}
+\hypertarget{classLife_ad596f5eaf723c8188a8043beb0437ef2}{}\index{Life@{Life}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!Life@{Life}}
+\subsubsection[{is\+Alive}]{\setlength{\rightskip}{0pt plus 5cm}bool Life\+::is\+Alive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLife_ad596f5eaf723c8188a8043beb0437ef2}
+Determina si está vivo, es decir, si la vida es mayor de 0 \begin{DoxyReturn}{Devuelve}
+true si está vivo 
+\end{DoxyReturn}
+\hypertarget{classLife_afc63b290a513272974e117191326d175}{}\index{Life@{Life}!set\+Actual\+Life@{set\+Actual\+Life}}
+\index{set\+Actual\+Life@{set\+Actual\+Life}!Life@{Life}}
+\subsubsection[{set\+Actual\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Life\+::set\+Actual\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{actual\+Life}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLife_afc63b290a513272974e117191326d175}
+Setea la vida 
+\begin{DoxyParams}{Parámetros}
+{\em actual\+Life} & vida actual a setear \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLife_ad02aacd2902ea4e626aa6bf45dc53e49}{}\index{Life@{Life}!set\+Max\+Life@{set\+Max\+Life}}
+\index{set\+Max\+Life@{set\+Max\+Life}!Life@{Life}}
+\subsubsection[{set\+Max\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Life\+::set\+Max\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{max\+Life}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLife_ad02aacd2902ea4e626aa6bf45dc53e49}
+Setea la vida máxima 
+\begin{DoxyParams}{Parámetros}
+{\em max\+Life} & vida máxima a setear \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Life.\+h\item 
+Life.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+\hypertarget{classLoadingState}{}\section{Referencia de la Clase Loading\+State}
+\label{classLoadingState}\index{Loading\+State@{Loading\+State}}
+
+
+{\ttfamily \#include $<$Loading\+State.\+h$>$}
+
+Diagrama de herencias de Loading\+State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLoadingState}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLoadingState_a44c4ab240d82642ff91498380c9d34d0}{}{\bfseries Loading\+State} (\hyperlink{classStateStack}{State\+Stack} \&\hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}, \hyperlink{classContext}{Context} $\ast$\hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context})\label{classLoadingState_a44c4ab240d82642ff91498380c9d34d0}
+
+\item 
+virtual void \hyperlink{classLoadingState_adfe2c002c52cc2c49967ba3ace4aa73b}{draw} ()
+\item 
+virtual bool \hyperlink{classLoadingState_a8f1729b9b5ca91c0ec3918b86bfe8feb}{update} (sf\+::\+Time delta)
+\item 
+virtual bool \hyperlink{classLoadingState_a37da243eeeca36460bac2f32cef3e368}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+void \hyperlink{classLoadingState_a28bee93e7f9818084af8be6b31ee0ba4}{set\+Completion} (float percent)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Estado de carga 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classLoadingState_adfe2c002c52cc2c49967ba3ace4aa73b}{}\index{Loading\+State@{Loading\+State}!draw@{draw}}
+\index{draw@{draw}!Loading\+State@{Loading\+State}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Loading\+State\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLoadingState_adfe2c002c52cc2c49967ba3ace4aa73b}
+Dibuja el estado 
+
+Implementa \hyperlink{classState_ae261605bc40b7e3959ce5df5457e4942}{State}.
+
+\hypertarget{classLoadingState_a37da243eeeca36460bac2f32cef3e368}{}\index{Loading\+State@{Loading\+State}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Loading\+State@{Loading\+State}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Loading\+State\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLoadingState_a37da243eeeca36460bac2f32cef3e368}
+Procesa la entrada del usuario 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si lo ha procesado, false si no (o lo ha procesado pero que continúe) 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_a19965f83460b248c42952aac8d001206}{State}.
+
+\hypertarget{classLoadingState_a28bee93e7f9818084af8be6b31ee0ba4}{}\index{Loading\+State@{Loading\+State}!set\+Completion@{set\+Completion}}
+\index{set\+Completion@{set\+Completion}!Loading\+State@{Loading\+State}}
+\subsubsection[{set\+Completion}]{\setlength{\rightskip}{0pt plus 5cm}void Loading\+State\+::set\+Completion (
+\begin{DoxyParamCaption}
+\item[{float}]{percent}
+\end{DoxyParamCaption}
+)}\label{classLoadingState_a28bee93e7f9818084af8be6b31ee0ba4}
+Establece el porcentaje de completado, modificando la barra de progeso acorde 
+\begin{DoxyParams}{Parámetros}
+{\em percent} & porcentaje de 0 a 100 completado \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLoadingState_a8f1729b9b5ca91c0ec3918b86bfe8feb}{}\index{Loading\+State@{Loading\+State}!update@{update}}
+\index{update@{update}!Loading\+State@{Loading\+State}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Loading\+State\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLoadingState_a8f1729b9b5ca91c0ec3918b86bfe8feb}
+Actualiza el estado 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha actualizado 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_aa6366828eb50639e86b94008cfad9c5d}{State}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Loading\+State.\+h\item 
+Loading\+State.\+cpp\end{DoxyCompactItemize}

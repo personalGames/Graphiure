@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente StateMachine.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">StateMachine.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   StateMachine.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 9 de marzo de 2015, 21:16</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef STATEMACHINE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define STATEMACHINE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structTransition.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structTransition.html">Transition</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="structTransition.html">Transition</a>(<span class="keywordtype">int</span> <a class="code" href="structTransition.html#ad7509cc6401e1038e17dbeea187c15ca">state</a>, <span class="keywordtype">int</span> <a class="code" href="structTransition.html#a71bfb2883c7991812e7fb3b34e258aab">entry</a>, <span class="keywordtype">int</span> <a class="code" href="structTransition.html#a423a2791bbcafadc339eaa3da7c7fb04">newState</a>):</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structTransition.html#ad7509cc6401e1038e17dbeea187c15ca">   18</a></span>&#160;        <a class="code" href="structTransition.html#ad7509cc6401e1038e17dbeea187c15ca">state</a>(state), <a class="code" href="structTransition.html#a71bfb2883c7991812e7fb3b34e258aab">entry</a>(entry), <a class="code" href="structTransition.html#a423a2791bbcafadc339eaa3da7c7fb04">newState</a>(newState){};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTransition.html#ad7509cc6401e1038e17dbeea187c15ca">state</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structTransition.html#a71bfb2883c7991812e7fb3b34e258aab">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTransition.html#a71bfb2883c7991812e7fb3b34e258aab">entry</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structTransition.html#a423a2791bbcafadc339eaa3da7c7fb04">   31</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTransition.html#a423a2791bbcafadc339eaa3da7c7fb04">newState</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classStateMachine.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStateMachine.html">StateMachine</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classStateMachine.html#abff0cdd38e44a9af31972fd01d599348">StateMachine</a>(<span class="keywordtype">int</span> numberStates);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classStateMachine.html">StateMachine</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStateMachine.html#abc849e79ebc1b9d5fdcdef05ee76c6fc">addTransition</a>(<a class="code" href="structTransition.html">Transition</a> &amp;transition);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classStateMachine.html#ae386ede5033e27c114e88bdd830a6ff2">   56</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classStateMachine.html#ae386ede5033e27c114e88bdd830a6ff2">getState</a>(){ <span class="keywordflow">return</span> state; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStateMachine.html#a88789321a07bc082031f87a6a43d9ad7">processEntry</a>(<span class="keywordtype">int</span> entry);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> state;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt; std::vector&lt;Transition&gt; &gt; transitions;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* STATEMACHINE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="ttc" id="structTransition_html"><div class="ttname"><a href="structTransition.html">Transition</a></div><div class="ttdef"><b>Definition:</b> StateMachine.h:16</div></div>
+<div class="ttc" id="classStateMachine_html"><div class="ttname"><a href="classStateMachine.html">StateMachine</a></div><div class="ttdef"><b>Definition:</b> StateMachine.h:37</div></div>
+<div class="ttc" id="classStateMachine_html_abc849e79ebc1b9d5fdcdef05ee76c6fc"><div class="ttname"><a href="classStateMachine.html#abc849e79ebc1b9d5fdcdef05ee76c6fc">StateMachine::addTransition</a></div><div class="ttdeci">void addTransition(Transition &amp;transition)</div><div class="ttdef"><b>Definition:</b> StateMachine.cpp:18</div></div>
+<div class="ttc" id="structTransition_html_ad7509cc6401e1038e17dbeea187c15ca"><div class="ttname"><a href="structTransition.html#ad7509cc6401e1038e17dbeea187c15ca">Transition::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> StateMachine.h:18</div></div>
+<div class="ttc" id="classStateMachine_html_abff0cdd38e44a9af31972fd01d599348"><div class="ttname"><a href="classStateMachine.html#abff0cdd38e44a9af31972fd01d599348">StateMachine::StateMachine</a></div><div class="ttdeci">StateMachine(int numberStates)</div><div class="ttdef"><b>Definition:</b> StateMachine.cpp:12</div></div>
+<div class="ttc" id="classStateMachine_html_a88789321a07bc082031f87a6a43d9ad7"><div class="ttname"><a href="classStateMachine.html#a88789321a07bc082031f87a6a43d9ad7">StateMachine::processEntry</a></div><div class="ttdeci">int processEntry(int entry)</div><div class="ttdef"><b>Definition:</b> StateMachine.cpp:22</div></div>
+<div class="ttc" id="structTransition_html_a423a2791bbcafadc339eaa3da7c7fb04"><div class="ttname"><a href="structTransition.html#a423a2791bbcafadc339eaa3da7c7fb04">Transition::newState</a></div><div class="ttdeci">int newState</div><div class="ttdef"><b>Definition:</b> StateMachine.h:31</div></div>
+<div class="ttc" id="structTransition_html_a71bfb2883c7991812e7fb3b34e258aab"><div class="ttname"><a href="structTransition.html#a71bfb2883c7991812e7fb3b34e258aab">Transition::entry</a></div><div class="ttdeci">int entry</div><div class="ttdef"><b>Definition:</b> StateMachine.h:27</div></div>
+<div class="ttc" id="classStateMachine_html_ae386ede5033e27c114e88bdd830a6ff2"><div class="ttname"><a href="classStateMachine.html#ae386ede5033e27c114e88bdd830a6ff2">StateMachine::getState</a></div><div class="ttdeci">int getState()</div><div class="ttdef"><b>Definition:</b> StateMachine.h:56</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

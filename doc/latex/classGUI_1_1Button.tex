@@ -1,0 +1,192 @@
+\hypertarget{classGUI_1_1Button}{}\section{Referencia de la Clase G\+U\+I\+:\+:Button}
+\label{classGUI_1_1Button}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+Diagrama de herencias de G\+U\+I\+:\+:Button\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGUI_1_1Button}
+\end{center}
+\end{figure}
+\subsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void() $>$ \hyperlink{classGUI_1_1Button_ae42ce66ac9fd4834cef81bb6f2fb0dab}{Callback}
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGUI_1_1Button_a3e3c8c068b07a9865b516560f93cb253}{Button} (\hyperlink{classContext}{Context} context)
+\item 
+virtual \hyperlink{classGUI_1_1Button_a98edcfb20ac836db54ecda4260eac1d9}{$\sim$\+Button} ()
+\item 
+void \hyperlink{classGUI_1_1Button_ae5ac54c7429eaa482eb7069d0efdb79f}{set\+Callback} (\hyperlink{classGUI_1_1Button_ae42ce66ac9fd4834cef81bb6f2fb0dab}{Callback} callback)
+\item 
+void \hyperlink{classGUI_1_1Button_a26ddad6fdc253dbbc593f0204c15fb24}{set\+Text} (const wchar\+\_\+t $\ast$text)
+\item 
+void \hyperlink{classGUI_1_1Button_a8198052cf4fe5823c9f5513e778ca94d}{set\+Toggle} (bool flag)
+\item 
+virtual bool \hyperlink{classGUI_1_1Button_a2fba8dea2886fd3bb33c7e250e695e8a}{is\+Selectable} () const 
+\item 
+virtual void \hyperlink{classGUI_1_1Button_a8f141129acb9c068ba6b8d19974d8291}{select} ()
+\item 
+virtual void \hyperlink{classGUI_1_1Button_a6fd040a471dc3ae48ad59cacd93c7292}{deselect} ()
+\item 
+virtual void \hyperlink{classGUI_1_1Button_ad711a129863e0301c52b896911996123}{activate} ()
+\item 
+virtual void \hyperlink{classGUI_1_1Button_ab0a1773817447712b17ab1ad6da767da}{deactivate} ()
+\item 
+virtual void \hyperlink{classGUI_1_1Button_a4d30e4caedd4c4373567ef452acd1fb1}{handle\+Event} (const sf\+::\+Event \&event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa un botón en la G\+U\+I 
+
+\subsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\hypertarget{classGUI_1_1Button_ae42ce66ac9fd4834cef81bb6f2fb0dab}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!Callback@{Callback}}
+\index{Callback@{Callback}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{Callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::function$<$void() $>$ {\bf G\+U\+I\+::\+Button\+::\+Callback}}\label{classGUI_1_1Button_ae42ce66ac9fd4834cef81bb6f2fb0dab}
+Define un alias para guardar una función 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classGUI_1_1Button_a3e3c8c068b07a9865b516560f93cb253}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!Button@{Button}}
+\index{Button@{Button}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{Button}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Button\+::\+Button (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{context}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Button_a3e3c8c068b07a9865b516560f93cb253}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em context} & contexto de la aplicación \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGUI_1_1Button_a98edcfb20ac836db54ecda4260eac1d9}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!````~Button@{$\sim$\+Button}}
+\index{````~Button@{$\sim$\+Button}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{$\sim$\+Button}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::\+Button\+::$\sim$\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_a98edcfb20ac836db54ecda4260eac1d9}
+Destructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGUI_1_1Button_ad711a129863e0301c52b896911996123}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!activate@{activate}}
+\index{activate@{activate}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::activate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_ad711a129863e0301c52b896911996123}
+Activa el componente 
+
+Reimplementado de \hyperlink{classGUI_1_1Component_a965823e0e62612a7e532eb8c0b98861d}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_ab0a1773817447712b17ab1ad6da767da}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::deactivate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_ab0a1773817447712b17ab1ad6da767da}
+Desactiva el componente 
+
+Reimplementado de \hyperlink{classGUI_1_1Component_a8964087afef859c015fb8188e619aa81}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_a6fd040a471dc3ae48ad59cacd93c7292}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!deselect@{deselect}}
+\index{deselect@{deselect}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{deselect}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::deselect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_a6fd040a471dc3ae48ad59cacd93c7292}
+Deselecciona el componente 
+
+Reimplementado de \hyperlink{classGUI_1_1Component_aa37424b238293bb308d357cf3b35c81f}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_a4d30e4caedd4c4373567ef452acd1fb1}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_a4d30e4caedd4c4373567ef452acd1fb1}
+Maneja los eventos capturados 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento capturado \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \hyperlink{classGUI_1_1Component_aacf5e981e7b5726f5c7e9436455660ba}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_a2fba8dea2886fd3bb33c7e250e695e8a}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!is\+Selectable@{is\+Selectable}}
+\index{is\+Selectable@{is\+Selectable}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{is\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+U\+I\+::\+Button\+::is\+Selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_a2fba8dea2886fd3bb33c7e250e695e8a}
+Devuelve si el componente es seleccionable \begin{DoxyReturn}{Devuelve}
+true si es seleccionable 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classGUI_1_1Component_a44d14506c9a1dbc839e05a6bf99c341b}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_a8f141129acb9c068ba6b8d19974d8291}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!select@{select}}
+\index{select@{select}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::select (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGUI_1_1Button_a8f141129acb9c068ba6b8d19974d8291}
+Selecciona el componente 
+
+Reimplementado de \hyperlink{classGUI_1_1Component_ad0f7d6cc692edf2b0e426bfbd584be45}{G\+U\+I\+::\+Component}.
+
+\hypertarget{classGUI_1_1Button_ae5ac54c7429eaa482eb7069d0efdb79f}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!set\+Callback@{set\+Callback}}
+\index{set\+Callback@{set\+Callback}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{set\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::set\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Callback}}]{callback}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Button_ae5ac54c7429eaa482eb7069d0efdb79f}
+Establece la función que se ejecutará con el botón 
+\begin{DoxyParams}{Parámetros}
+{\em callback} & función \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGUI_1_1Button_a26ddad6fdc253dbbc593f0204c15fb24}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{text}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Button_a26ddad6fdc253dbbc593f0204c15fb24}
+Setea el texto del botón 
+\begin{DoxyParams}{Parámetros}
+{\em text} & texto \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGUI_1_1Button_a8198052cf4fe5823c9f5513e778ca94d}{}\index{G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}!set\+Toggle@{set\+Toggle}}
+\index{set\+Toggle@{set\+Toggle}!G\+U\+I\+::\+Button@{G\+U\+I\+::\+Button}}
+\subsubsection[{set\+Toggle}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::\+Button\+::set\+Toggle (
+\begin{DoxyParamCaption}
+\item[{bool}]{flag}
+\end{DoxyParamCaption}
+)}\label{classGUI_1_1Button_a8198052cf4fe5823c9f5513e778ca94d}
+Establece si tendrá dos estados o solo uno 
+\begin{DoxyParams}{Parámetros}
+{\em flag} & true si tendrá dos estados \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Button.\+h\item 
+Button.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,61 @@
+\hypertarget{classLoadingLevel}{}\section{Referencia de la Clase Loading\+Level}
+\label{classLoadingLevel}\index{Loading\+Level@{Loading\+Level}}
+
+
+{\ttfamily \#include $<$Loading\+Level.\+h$>$}
+
+Diagrama de herencias de Loading\+Level\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLoadingLevel}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLoadingLevel_a213ac5771607d12a05d5f43726d46d5e}{Loading\+Level} (std\+::string $\ast$level, \hyperlink{classContext}{Context} $\ast$context)
+\item 
+virtual void \hyperlink{classLoadingLevel_a14f8ce9f74732609e4da6c8cce387001}{run\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Tarea paralela para cargar un nivel 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classLoadingLevel_a213ac5771607d12a05d5f43726d46d5e}{}\index{Loading\+Level@{Loading\+Level}!Loading\+Level@{Loading\+Level}}
+\index{Loading\+Level@{Loading\+Level}!Loading\+Level@{Loading\+Level}}
+\subsubsection[{Loading\+Level}]{\setlength{\rightskip}{0pt plus 5cm}Loading\+Level\+::\+Loading\+Level (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{level, }
+\item[{{\bf Context} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{classLoadingLevel_a213ac5771607d12a05d5f43726d46d5e}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em level} & nombre/ruta del nivel a cargar \\
+\hline
+{\em context} & contexto de la aplicación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classLoadingLevel_a14f8ce9f74732609e4da6c8cce387001}{}\index{Loading\+Level@{Loading\+Level}!run\+Task@{run\+Task}}
+\index{run\+Task@{run\+Task}!Loading\+Level@{Loading\+Level}}
+\subsubsection[{run\+Task}]{\setlength{\rightskip}{0pt plus 5cm}void Loading\+Level\+::run\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLoadingLevel_a14f8ce9f74732609e4da6c8cce387001}
+Método a sobreescribir. En él se codifica la tarea a realizar 
+
+Implementa \hyperlink{classParallelTask_a494412a04608d42f3ba91b1b242fd149}{Parallel\+Task}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Loading\+Level.\+h\item 
+Loading\+Level.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Graphiure: Fichero Fuente LoadingState.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graphiure
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">LoadingState.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   LoadingState.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dorian</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 13 de diciembre de 2014, 17:39</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LOADINGSTATE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define LOADINGSTATE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;State.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ParallelTask.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Utilities.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;LoadingLevel.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;Levels.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLoadingState.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLoadingState.html">LoadingState</a> : <span class="keyword">public</span> <a class="code" href="classState.html">State</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classLoadingState.html">LoadingState</a>(<a class="code" href="classStateStack.html">StateStack</a>&amp; <a class="code" href="classState.html#a86c8d3a5a1ee89896828be85a785fb04">stack</a>, <a class="code" href="classContext.html">Context</a>* <a class="code" href="classState.html#adc93e8ad3199b5891618ca88eed0436a">context</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classLoadingState.html#adfe2c002c52cc2c49967ba3ace4aa73b">draw</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classLoadingState.html#a8f1729b9b5ca91c0ec3918b86bfe8feb">update</a>(sf::Time delta);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classLoadingState.html#a37da243eeeca36460bac2f32cef3e368">handleEvent</a>(<span class="keyword">const</span> sf::Event&amp; event);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLoadingState.html#a28bee93e7f9818084af8be6b31ee0ba4">setCompletion</a>(<span class="keywordtype">float</span> percent);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    sf::Text loadingText;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    sf::RectangleShape progressBarBackground;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    sf::RectangleShape progressBar;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> taskCreated;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classParallelTask.html">ParallelTask</a>* loadingTask;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* LOADINGSTATE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="ttc" id="classLoadingState_html_adfe2c002c52cc2c49967ba3ace4aa73b"><div class="ttname"><a href="classLoadingState.html#adfe2c002c52cc2c49967ba3ace4aa73b">LoadingState::draw</a></div><div class="ttdeci">virtual void draw()</div><div class="ttdef"><b>Definition:</b> LoadingState.cpp:36</div></div>
+<div class="ttc" id="classState_html_a86c8d3a5a1ee89896828be85a785fb04"><div class="ttname"><a href="classState.html#a86c8d3a5a1ee89896828be85a785fb04">State::stack</a></div><div class="ttdeci">StateStack * stack</div><div class="ttdef"><b>Definition:</b> State.h:58</div></div>
+<div class="ttc" id="classContext_html"><div class="ttname"><a href="classContext.html">Context</a></div><div class="ttdef"><b>Definition:</b> Context.h:27</div></div>
+<div class="ttc" id="classLoadingState_html_a28bee93e7f9818084af8be6b31ee0ba4"><div class="ttname"><a href="classLoadingState.html#a28bee93e7f9818084af8be6b31ee0ba4">LoadingState::setCompletion</a></div><div class="ttdeci">void setCompletion(float percent)</div><div class="ttdef"><b>Definition:</b> LoadingState.cpp:76</div></div>
+<div class="ttc" id="classParallelTask_html"><div class="ttname"><a href="classParallelTask.html">ParallelTask</a></div><div class="ttdef"><b>Definition:</b> ParallelTask.h:16</div></div>
+<div class="ttc" id="classState_html_adc93e8ad3199b5891618ca88eed0436a"><div class="ttname"><a href="classState.html#adc93e8ad3199b5891618ca88eed0436a">State::context</a></div><div class="ttdeci">Context * context</div><div class="ttdef"><b>Definition:</b> State.h:68</div></div>
+<div class="ttc" id="classState_html"><div class="ttname"><a href="classState.html">State</a></div><div class="ttdef"><b>Definition:</b> State.h:21</div></div>
+<div class="ttc" id="classLoadingState_html_a37da243eeeca36460bac2f32cef3e368"><div class="ttname"><a href="classLoadingState.html#a37da243eeeca36460bac2f32cef3e368">LoadingState::handleEvent</a></div><div class="ttdeci">virtual bool handleEvent(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> LoadingState.cpp:72</div></div>
+<div class="ttc" id="classLoadingState_html_a8f1729b9b5ca91c0ec3918b86bfe8feb"><div class="ttname"><a href="classLoadingState.html#a8f1729b9b5ca91c0ec3918b86bfe8feb">LoadingState::update</a></div><div class="ttdeci">virtual bool update(sf::Time delta)</div><div class="ttdef"><b>Definition:</b> LoadingState.cpp:46</div></div>
+<div class="ttc" id="classLoadingState_html"><div class="ttname"><a href="classLoadingState.html">LoadingState</a></div><div class="ttdef"><b>Definition:</b> LoadingState.h:21</div></div>
+<div class="ttc" id="classStateStack_html"><div class="ttname"><a href="classStateStack.html">StateStack</a></div><div class="ttdef"><b>Definition:</b> StateStack.h:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

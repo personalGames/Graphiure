@@ -1,0 +1,137 @@
+\hypertarget{classPropertyManager}{}\section{Referencia de la Clase Property\+Manager}
+\label{classPropertyManager}\index{Property\+Manager@{Property\+Manager}}
+Diagrama de herencias de Property\+Manager\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPropertyManager}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPropertyManager_a3b65b75bae28db832e98a38aec5774c6}{Property\+Manager} ()
+\item 
+virtual \hyperlink{classPropertyManager_aa16d7f0cb2a2baaa3b3afbe6239aac39}{$\sim$\+Property\+Manager} ()
+\item 
+bool \hyperlink{classPropertyManager_a36a6ba03a959d55810edb07740be3eba}{Has\+I\+D} (const std\+::string the\+Property\+I\+D)
+\item 
+{\footnotesize template$<$class T\+Y\+P\+E $>$ }\\T\+Y\+P\+E \hyperlink{classPropertyManager_aee3e23bbb59187ab2a9ecf7befdb0959}{Get} (const std\+::string the\+Property\+I\+D)
+\item 
+{\footnotesize template$<$class T\+Y\+P\+E $>$ }\\void \hyperlink{classPropertyManager_ab7ce7dda72b81fab5a96c8a13a619c75}{Set} (const std\+::string the\+Property\+I\+D, T\+Y\+P\+E the\+Value)
+\item 
+{\footnotesize template$<$class T\+Y\+P\+E $>$ }\\void \hyperlink{classPropertyManager_adbe08543c7c5a20fa86a0b67c45172c8}{Add} (const std\+::string the\+Property\+I\+D, T\+Y\+P\+E the\+Value)
+\item 
+void \hyperlink{classPropertyManager_af6509e575d0cd677daf63cb909ed91c8}{Add} (\hyperlink{classIProperty}{I\+Property} $\ast$the\+Property)
+\item 
+void \hyperlink{classPropertyManager_a77dc4b4617d344aff0481cd8e1cecb39}{Clone} (const \hyperlink{classPropertyManager}{Property\+Manager} \&the\+Property\+Manager)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classPropertyManager_a3b65b75bae28db832e98a38aec5774c6}{}\index{Property\+Manager@{Property\+Manager}!Property\+Manager@{Property\+Manager}}
+\index{Property\+Manager@{Property\+Manager}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Property\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Property\+Manager\+::\+Property\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPropertyManager_a3b65b75bae28db832e98a38aec5774c6}
+\hyperlink{classPropertyManager}{Property\+Manager} default constructor \hypertarget{classPropertyManager_aa16d7f0cb2a2baaa3b3afbe6239aac39}{}\index{Property\+Manager@{Property\+Manager}!````~Property\+Manager@{$\sim$\+Property\+Manager}}
+\index{````~Property\+Manager@{$\sim$\+Property\+Manager}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{$\sim$\+Property\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Property\+Manager\+::$\sim$\+Property\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPropertyManager_aa16d7f0cb2a2baaa3b3afbe6239aac39}
+\hyperlink{classPropertyManager}{Property\+Manager} deconstructor 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classPropertyManager_adbe08543c7c5a20fa86a0b67c45172c8}{}\index{Property\+Manager@{Property\+Manager}!Add@{Add}}
+\index{Add@{Add}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E $>$ void Property\+Manager\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{the\+Property\+I\+D, }
+\item[{T\+Y\+P\+E}]{the\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPropertyManager_adbe08543c7c5a20fa86a0b67c45172c8}
+Add\+Property Creates a Property and addes it to this entity. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+I\+D} & is the I\+D of the property to create. \\
+\hline
+\mbox{\tt in}  & {\em the\+Value} & is the inital value to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPropertyManager_af6509e575d0cd677daf63cb909ed91c8}{}\index{Property\+Manager@{Property\+Manager}!Add@{Add}}
+\index{Add@{Add}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void Property\+Manager\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Property} $\ast$}]{the\+Property}
+\end{DoxyParamCaption}
+)}\label{classPropertyManager_af6509e575d0cd677daf63cb909ed91c8}
+Add\+Property gets a premade Property and addes it to this entity. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property} & is a pointer to a pre exisiting property. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPropertyManager_a77dc4b4617d344aff0481cd8e1cecb39}{}\index{Property\+Manager@{Property\+Manager}!Clone@{Clone}}
+\index{Clone@{Clone}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}void Property\+Manager\+::\+Clone (
+\begin{DoxyParamCaption}
+\item[{const {\bf Property\+Manager} \&}]{the\+Property\+Manager}
+\end{DoxyParamCaption}
+)}\label{classPropertyManager_a77dc4b4617d344aff0481cd8e1cecb39}
+Clone is responsible for making a clone of each property in the \hyperlink{classPropertyManager}{Property\+Manager} provided. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+Manager} & to clone into ourselves \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPropertyManager_aee3e23bbb59187ab2a9ecf7befdb0959}{}\index{Property\+Manager@{Property\+Manager}!Get@{Get}}
+\index{Get@{Get}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E $>$ T\+Y\+P\+E Property\+Manager\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{the\+Property\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPropertyManager_aee3e23bbb59187ab2a9ecf7befdb0959}
+Get\+Property returns the property as type with the I\+D of the\+Property\+I\+D. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+I\+D} & is the I\+D of the property to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the value stored in the found propery in the form of T\+Y\+P\+E. If no Property was found it returns the default value the type constructor. 
+\end{DoxyReturn}
+\hypertarget{classPropertyManager_a36a6ba03a959d55810edb07740be3eba}{}\index{Property\+Manager@{Property\+Manager}!Has\+I\+D@{Has\+I\+D}}
+\index{Has\+I\+D@{Has\+I\+D}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Has\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}bool Property\+Manager\+::\+Has\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{the\+Property\+I\+D}
+\end{DoxyParamCaption}
+)}\label{classPropertyManager_a36a6ba03a959d55810edb07740be3eba}
+Has\+Property returs true if the\+Property\+I\+D specified exists in this \hyperlink{classPropertyManager}{Property\+Manager}. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+I\+D} & to lookup in this \hyperlink{classPropertyManager}{Property\+Manager} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true if the\+Property\+I\+D exists, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classPropertyManager_ab7ce7dda72b81fab5a96c8a13a619c75}{}\index{Property\+Manager@{Property\+Manager}!Set@{Set}}
+\index{Set@{Set}!Property\+Manager@{Property\+Manager}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+Y\+P\+E $>$ void Property\+Manager\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{the\+Property\+I\+D, }
+\item[{T\+Y\+P\+E}]{the\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPropertyManager_ab7ce7dda72b81fab5a96c8a13a619c75}
+Set\+Property sets the property with the I\+D of the\+Property\+I\+D to the\+Value. 
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em the\+Property\+I\+D} & is the I\+D of the property to set. \\
+\hline
+\mbox{\tt in}  & {\em the\+Value} & is the value to set. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Property\+Manager.\+h\item 
+Property\+Manager.\+cpp\end{DoxyCompactItemize}

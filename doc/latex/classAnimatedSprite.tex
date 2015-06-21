@@ -1,0 +1,261 @@
+\hypertarget{classAnimatedSprite}{}\section{Referencia de la Clase Animated\+Sprite}
+\label{classAnimatedSprite}\index{Animated\+Sprite@{Animated\+Sprite}}
+
+
+{\ttfamily \#include $<$Animated\+Sprite.\+h$>$}
+
+Diagrama de herencias de Animated\+Sprite\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAnimatedSprite}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnimatedSprite_a14c50aaf795c217f187f839d6cca9c76}{Animated\+Sprite} (sf\+::\+Time frame\+Time=sf\+::seconds(0.\+2f), bool paused=false, bool looped=true, bool wait=false)
+\item 
+void \hyperlink{classAnimatedSprite_a17a41ff812631a9d8947d272933d6696}{update} (sf\+::\+Time delta\+Time)
+\item 
+void \hyperlink{classAnimatedSprite_ab1afc57d90d57a0c4bc4f5b090f2dacf}{set\+Animation} (const \hyperlink{classAnimation}{Animation} \&animation)
+\item 
+void \hyperlink{classAnimatedSprite_af598fab5c3599ccc5ed1e2d4fefa68cc}{set\+Frame\+Time} (sf\+::\+Time time)
+\item 
+void \hyperlink{classAnimatedSprite_a203b968f1cb374cca5dbc89716174020}{play} ()
+\item 
+void \hyperlink{classAnimatedSprite_a9ea345649a4e012d096bc04aafe1ecb0}{play} (const \hyperlink{classAnimation}{Animation} \&animation)
+\item 
+void \hyperlink{classAnimatedSprite_a48384db59427423b5c1d98f6ee94fe45}{pause} ()
+\item 
+void \hyperlink{classAnimatedSprite_af9734f4346d3d2370322b2dcaeef133c}{stop} ()
+\item 
+void \hyperlink{classAnimatedSprite_af38c7271d7cd9af432952de2728f8fc9}{set\+Wait} (bool wait)
+\item 
+bool \hyperlink{classAnimatedSprite_a67698a0da51b5d4e008d1a9a33209603}{get\+Wait} ()
+\item 
+void \hyperlink{classAnimatedSprite_a855a5a48ea2e1c51c7c9304857dd2f8c}{set\+Looped} (bool looped)
+\item 
+void \hyperlink{classAnimatedSprite_a1a96a0f6570efddd2eb26f89bc5b6f50}{set\+Color} (const sf\+::\+Color \&color)
+\item 
+const \hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimatedSprite_ad1f89db42fe276e8c8f603d5a501d1ed}{get\+Animation} () const 
+\item 
+\hypertarget{classAnimatedSprite_ab85f8836a5e03ba9b954243acd38556f}{}sf\+::\+Float\+Rect {\bfseries get\+Local\+Bounds} () const \label{classAnimatedSprite_ab85f8836a5e03ba9b954243acd38556f}
+
+\item 
+\hypertarget{classAnimatedSprite_a61f2bded199a5f39ae5d99cf110503a8}{}sf\+::\+Float\+Rect {\bfseries get\+Global\+Bounds} () const \label{classAnimatedSprite_a61f2bded199a5f39ae5d99cf110503a8}
+
+\item 
+bool \hyperlink{classAnimatedSprite_a9988efa6e5dc1868d27ec3345e0ffd11}{is\+Looped} () const 
+\item 
+bool \hyperlink{classAnimatedSprite_a07c49b95f177cedb4e8e82c709e1151c}{is\+Playing} () const 
+\item 
+sf\+::\+Time \hyperlink{classAnimatedSprite_ae36aaffc61eaed8848615f2394dba74f}{get\+Frame\+Time} () const 
+\item 
+void \hyperlink{classAnimatedSprite_a0b3e38fffdc1d29f46fa08df9ef2a747}{set\+Frame} (std\+::size\+\_\+t new\+Frame, bool reset\+Time=true)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase para reproducir una animación 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classAnimatedSprite_a14c50aaf795c217f187f839d6cca9c76}{}\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{Animated\+Sprite}]{\setlength{\rightskip}{0pt plus 5cm}Animated\+Sprite\+::\+Animated\+Sprite (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{frame\+Time = {\ttfamily sf\+:\+:seconds(0.2f)}, }
+\item[{bool}]{paused = {\ttfamily false}, }
+\item[{bool}]{looped = {\ttfamily true}, }
+\item[{bool}]{wait = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classAnimatedSprite_a14c50aaf795c217f187f839d6cca9c76}
+Constructor 
+\begin{DoxyParams}{Parámetros}
+{\em frame\+Time} & tiempo entre frames de la animación \\
+\hline
+{\em paused} & por defecto false, establece si está pausado \\
+\hline
+{\em looped} & por defecto true, establece si es cíclico \\
+\hline
+{\em wait} & por defecto false, establece si hay que esperar a que la animación termine \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classAnimatedSprite_ad1f89db42fe276e8c8f603d5a501d1ed}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+Animation@{get\+Animation}}
+\index{get\+Animation@{get\+Animation}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Animation} $\ast$ Animated\+Sprite\+::get\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classAnimatedSprite_ad1f89db42fe276e8c8f603d5a501d1ed}
+Devuelve la animación \begin{DoxyReturn}{Devuelve}
+la animación seteada 
+\end{DoxyReturn}
+\hypertarget{classAnimatedSprite_ae36aaffc61eaed8848615f2394dba74f}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+Frame\+Time@{get\+Frame\+Time}}
+\index{get\+Frame\+Time@{get\+Frame\+Time}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time Animated\+Sprite\+::get\+Frame\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classAnimatedSprite_ae36aaffc61eaed8848615f2394dba74f}
+Devuelve el tiempo entre frames de la animación \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classAnimatedSprite_a67698a0da51b5d4e008d1a9a33209603}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+Wait@{get\+Wait}}
+\index{get\+Wait@{get\+Wait}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+Wait}]{\setlength{\rightskip}{0pt plus 5cm}bool Animated\+Sprite\+::get\+Wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classAnimatedSprite_a67698a0da51b5d4e008d1a9a33209603}
+Devuelve si se espera por \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classAnimatedSprite_a9988efa6e5dc1868d27ec3345e0ffd11}{}\index{Animated\+Sprite@{Animated\+Sprite}!is\+Looped@{is\+Looped}}
+\index{is\+Looped@{is\+Looped}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{is\+Looped}]{\setlength{\rightskip}{0pt plus 5cm}bool Animated\+Sprite\+::is\+Looped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classAnimatedSprite_a9988efa6e5dc1868d27ec3345e0ffd11}
+Indica si es cíclico \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classAnimatedSprite_a07c49b95f177cedb4e8e82c709e1151c}{}\index{Animated\+Sprite@{Animated\+Sprite}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{is\+Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool Animated\+Sprite\+::is\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classAnimatedSprite_a07c49b95f177cedb4e8e82c709e1151c}
+Indica si se está reproduciendo \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classAnimatedSprite_a48384db59427423b5c1d98f6ee94fe45}{}\index{Animated\+Sprite@{Animated\+Sprite}!pause@{pause}}
+\index{pause@{pause}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a48384db59427423b5c1d98f6ee94fe45}
+Pausa la animación \hypertarget{classAnimatedSprite_a203b968f1cb374cca5dbc89716174020}{}\index{Animated\+Sprite@{Animated\+Sprite}!play@{play}}
+\index{play@{play}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a203b968f1cb374cca5dbc89716174020}
+Reproduce la animación \hypertarget{classAnimatedSprite_a9ea345649a4e012d096bc04aafe1ecb0}{}\index{Animated\+Sprite@{Animated\+Sprite}!play@{play}}
+\index{play@{play}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::play (
+\begin{DoxyParamCaption}
+\item[{const {\bf Animation} \&}]{animation}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a9ea345649a4e012d096bc04aafe1ecb0}
+Reproduce la animación dada y la setea 
+\begin{DoxyParams}{Parámetros}
+{\em animation} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_ab1afc57d90d57a0c4bc4f5b090f2dacf}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Animation@{set\+Animation}}
+\index{set\+Animation@{set\+Animation}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Animation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Animation} \&}]{animation}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_ab1afc57d90d57a0c4bc4f5b090f2dacf}
+Establece la animación 
+\begin{DoxyParams}{Parámetros}
+{\em animation} & animación a setear \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_a1a96a0f6570efddd2eb26f89bc5b6f50}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Color \&}]{color}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a1a96a0f6570efddd2eb26f89bc5b6f50}
+C\+Olorea los vértices 
+\begin{DoxyParams}{Parámetros}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_a0b3e38fffdc1d29f46fa08df9ef2a747}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Frame@{set\+Frame}}
+\index{set\+Frame@{set\+Frame}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Frame (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{new\+Frame, }
+\item[{bool}]{reset\+Time = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a0b3e38fffdc1d29f46fa08df9ef2a747}
+Setea el frame indicado 
+\begin{DoxyParams}{Parámetros}
+{\em new\+Frame} & el indice del frame a setear \\
+\hline
+{\em reset\+Time} & por defecto true, si se empieza a contar desde cero el tiempo de frame \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_af598fab5c3599ccc5ed1e2d4fefa68cc}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Frame\+Time@{set\+Frame\+Time}}
+\index{set\+Frame\+Time@{set\+Frame\+Time}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Frame\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Frame\+Time (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{time}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_af598fab5c3599ccc5ed1e2d4fefa68cc}
+Establece el tiempo entre los frames de la animación 
+\begin{DoxyParams}{Parámetros}
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_a855a5a48ea2e1c51c7c9304857dd2f8c}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Looped@{set\+Looped}}
+\index{set\+Looped@{set\+Looped}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Looped}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Looped (
+\begin{DoxyParamCaption}
+\item[{bool}]{looped}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a855a5a48ea2e1c51c7c9304857dd2f8c}
+Setea si es cíclico 
+\begin{DoxyParams}{Parámetros}
+{\em looped} & true si es cíclico \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_af38c7271d7cd9af432952de2728f8fc9}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Wait@{set\+Wait}}
+\index{set\+Wait@{set\+Wait}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Wait}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Wait (
+\begin{DoxyParamCaption}
+\item[{bool}]{wait}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classAnimatedSprite_af38c7271d7cd9af432952de2728f8fc9}
+Setea si se espera al final de la animación 
+\begin{DoxyParams}{Parámetros}
+{\em wait} & true si se espera, false al contrario \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAnimatedSprite_af9734f4346d3d2370322b2dcaeef133c}{}\index{Animated\+Sprite@{Animated\+Sprite}!stop@{stop}}
+\index{stop@{stop}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_af9734f4346d3d2370322b2dcaeef133c}
+Para la animación \hypertarget{classAnimatedSprite_a17a41ff812631a9d8947d272933d6696}{}\index{Animated\+Sprite@{Animated\+Sprite}!update@{update}}
+\index{update@{update}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta\+Time}
+\end{DoxyParamCaption}
+)}\label{classAnimatedSprite_a17a41ff812631a9d8947d272933d6696}
+Actualiza la animación 
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Animated\+Sprite.\+h\item 
+Animated\+Sprite.\+cpp\end{DoxyCompactItemize}

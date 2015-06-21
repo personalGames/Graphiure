@@ -1,0 +1,283 @@
+\hypertarget{classQuest}{}\section{Referencia de la Clase Quest}
+\label{classQuest}\index{Quest@{Quest}}
+
+
+{\ttfamily \#include $<$Quest.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQuest_a61650b0aba1284905aa8ebd179b6d73d}{Quest} (int id, sf\+::\+String $\ast$text)
+\item 
+\hyperlink{classQuest_abbc3037881ba6cb3d7984308078bbc23}{Quest} (int id, sf\+::\+String $\ast$text, sf\+::\+Time time)
+\item 
+\hyperlink{classQuest_ab65f7c10c43586168876a74c5f4c054f}{Quest} (const \hyperlink{classQuest}{Quest} \&orig)
+\item 
+void \hyperlink{classQuest_af92871b6593c45a837e111826ee5ca25}{add\+Part\+Quest} (\hyperlink{classPartQuest}{Part\+Quest} $\ast$part)
+\item 
+sf\+::\+Time \hyperlink{classQuest_a1b5f2c8524f30a88214da003f41ad329}{get\+Time} () const 
+\item 
+void \hyperlink{classQuest_a68f13a90502307e82ac24112fda3ecde}{set\+Time} (sf\+::\+Time time)
+\item 
+sf\+::\+String $\ast$ \hyperlink{classQuest_af714e617eb99803a2e6459cb853cda00}{get\+Text} ()
+\item 
+bool \hyperlink{classQuest_ac6db87bb6ec663c16d38b67baceb10ff}{is\+Finished} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classQuest_af9233e7f9b5aa42038ba2244844d9700}{on\+Finished} ()
+\item 
+void \hyperlink{classQuest_a522c7653b498a7921afd6d4bb03120d9}{update} (sf\+::\+Time dt)
+\item 
+void \hyperlink{classQuest_a10eb74f76c110f71bf82dc5e8be4a446}{add\+Quest\+Open} (int id)
+\item 
+void \hyperlink{classQuest_ae4ec082cef55170dd6d8841cf2a4801d}{remove\+Quest\+Open} (int id)
+\item 
+int \hyperlink{classQuest_a4bc0819c3b54a86ed2c55be48486ed8b}{get\+Id} () const 
+\item 
+void \hyperlink{classQuest_af2667a3a83e8adc9ae1c5bd05ce4236e}{set\+Id} (int id)
+\item 
+bool \hyperlink{classQuest_ab95e89f2d91d40661dfd6c491de5d31d}{is\+Opened} () const 
+\item 
+void \hyperlink{classQuest_a142441b8eff8bf90cf67ccd0a9a253b9}{set\+Opened} (bool opened)
+\item 
+bool \hyperlink{classQuest_a79d362e6866de68e47e831892b090ea0}{is\+In\+Order} () const 
+\item 
+void \hyperlink{classQuest_ae25b1834eb58ae8db8088e2d73ccfa2c}{set\+In\+Order} (bool in\+Order)
+\item 
+const std\+::vector$<$ \hyperlink{classPartQuest}{Part\+Quest} $\ast$ $>$ \& \hyperlink{classQuest_a94b8c670af1427c533782e367b4e4c93}{get\+Part\+Quests} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa una misión 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classQuest_a61650b0aba1284905aa8ebd179b6d73d}{}\index{Quest@{Quest}!Quest@{Quest}}
+\index{Quest@{Quest}!Quest@{Quest}}
+\subsubsection[{Quest}]{\setlength{\rightskip}{0pt plus 5cm}Quest\+::\+Quest (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{sf\+::\+String $\ast$}]{text}
+\end{DoxyParamCaption}
+)}\label{classQuest_a61650b0aba1284905aa8ebd179b6d73d}
+Constructor para una misión sin limite de tiempo (tiempo=0) 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la mision \\
+\hline
+{\em text} & texto descriptivo de la mision \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_abbc3037881ba6cb3d7984308078bbc23}{}\index{Quest@{Quest}!Quest@{Quest}}
+\index{Quest@{Quest}!Quest@{Quest}}
+\subsubsection[{Quest}]{\setlength{\rightskip}{0pt plus 5cm}Quest\+::\+Quest (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{sf\+::\+String $\ast$}]{text, }
+\item[{sf\+::\+Time}]{time}
+\end{DoxyParamCaption}
+)}\label{classQuest_abbc3037881ba6cb3d7984308078bbc23}
+Constructor para una misión con limite de tiempo 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la mision \\
+\hline
+{\em text} & texto descriptivo de la mision \\
+\hline
+{\em time} & el límite de tiempo para la mision. S\+I es 0, no hay límite \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_ab65f7c10c43586168876a74c5f4c054f}{}\index{Quest@{Quest}!Quest@{Quest}}
+\index{Quest@{Quest}!Quest@{Quest}}
+\subsubsection[{Quest}]{\setlength{\rightskip}{0pt plus 5cm}Quest\+::\+Quest (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quest} \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classQuest_ab65f7c10c43586168876a74c5f4c054f}
+Constructor copia 
+\begin{DoxyParams}{Parámetros}
+{\em orig} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classQuest_af92871b6593c45a837e111826ee5ca25}{}\index{Quest@{Quest}!add\+Part\+Quest@{add\+Part\+Quest}}
+\index{add\+Part\+Quest@{add\+Part\+Quest}!Quest@{Quest}}
+\subsubsection[{add\+Part\+Quest}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::add\+Part\+Quest (
+\begin{DoxyParamCaption}
+\item[{{\bf Part\+Quest} $\ast$}]{part}
+\end{DoxyParamCaption}
+)}\label{classQuest_af92871b6593c45a837e111826ee5ca25}
+Añade una parte más a la mision 
+\begin{DoxyParams}{Parámetros}
+{\em part} & parte de mision \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_a10eb74f76c110f71bf82dc5e8be4a446}{}\index{Quest@{Quest}!add\+Quest\+Open@{add\+Quest\+Open}}
+\index{add\+Quest\+Open@{add\+Quest\+Open}!Quest@{Quest}}
+\subsubsection[{add\+Quest\+Open}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::add\+Quest\+Open (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a10eb74f76c110f71bf82dc5e8be4a446}
+Añade el identificador de una misión que se activará cuando esta misión termine 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la mision que se activará \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_a4bc0819c3b54a86ed2c55be48486ed8b}{}\index{Quest@{Quest}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Quest@{Quest}}
+\subsubsection[{get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int Quest\+::get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a4bc0819c3b54a86ed2c55be48486ed8b}
+Devuelve el id de la mision \begin{DoxyReturn}{Devuelve}
+id de la mision 
+\end{DoxyReturn}
+\hypertarget{classQuest_a94b8c670af1427c533782e367b4e4c93}{}\index{Quest@{Quest}!get\+Part\+Quests@{get\+Part\+Quests}}
+\index{get\+Part\+Quests@{get\+Part\+Quests}!Quest@{Quest}}
+\subsubsection[{get\+Part\+Quests}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Part\+Quest}$\ast$$>$\& Quest\+::get\+Part\+Quests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a94b8c670af1427c533782e367b4e4c93}
+Devuelve las partes de la que consta la misión \begin{DoxyReturn}{Devuelve}
+lista de partes de la mision 
+\end{DoxyReturn}
+\hypertarget{classQuest_af714e617eb99803a2e6459cb853cda00}{}\index{Quest@{Quest}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!Quest@{Quest}}
+\subsubsection[{get\+Text}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+String$\ast$ Quest\+::get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_af714e617eb99803a2e6459cb853cda00}
+Devuelve la descripción de la mision \begin{DoxyReturn}{Devuelve}
+descripcion de la mision 
+\end{DoxyReturn}
+\hypertarget{classQuest_a1b5f2c8524f30a88214da003f41ad329}{}\index{Quest@{Quest}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Quest@{Quest}}
+\subsubsection[{get\+Time}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Time Quest\+::get\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a1b5f2c8524f30a88214da003f41ad329}
+Devuelve el tiempo limite que dispone \begin{DoxyReturn}{Devuelve}
+tiempo limite 
+\end{DoxyReturn}
+\hypertarget{classQuest_ac6db87bb6ec663c16d38b67baceb10ff}{}\index{Quest@{Quest}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Quest@{Quest}}
+\subsubsection[{is\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}bool Quest\+::is\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classQuest_ac6db87bb6ec663c16d38b67baceb10ff}
+Indica si está finalizado \begin{DoxyReturn}{Devuelve}
+true si esta finalizado 
+\end{DoxyReturn}
+\hypertarget{classQuest_a79d362e6866de68e47e831892b090ea0}{}\index{Quest@{Quest}!is\+In\+Order@{is\+In\+Order}}
+\index{is\+In\+Order@{is\+In\+Order}!Quest@{Quest}}
+\subsubsection[{is\+In\+Order}]{\setlength{\rightskip}{0pt plus 5cm}bool Quest\+::is\+In\+Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a79d362e6866de68e47e831892b090ea0}
+Indica si las partes de la mision se hacen en orden o no \begin{DoxyReturn}{Devuelve}
+true si las partes de la mision se tienen que hacer en orden 
+\end{DoxyReturn}
+\hypertarget{classQuest_ab95e89f2d91d40661dfd6c491de5d31d}{}\index{Quest@{Quest}!is\+Opened@{is\+Opened}}
+\index{is\+Opened@{is\+Opened}!Quest@{Quest}}
+\subsubsection[{is\+Opened}]{\setlength{\rightskip}{0pt plus 5cm}bool Quest\+::is\+Opened (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_ab95e89f2d91d40661dfd6c491de5d31d}
+Indica si la mision está activa \begin{DoxyReturn}{Devuelve}
+true si esta activa/abierta 
+\end{DoxyReturn}
+\hypertarget{classQuest_af9233e7f9b5aa42038ba2244844d9700}{}\index{Quest@{Quest}!on\+Finished@{on\+Finished}}
+\index{on\+Finished@{on\+Finished}!Quest@{Quest}}
+\subsubsection[{on\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ Quest\+::on\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classQuest_af9233e7f9b5aa42038ba2244844d9700}
+Lista de misiones que se activarán cuando esta mision se termine \begin{DoxyReturn}{Devuelve}
+lista de misiones a activar al finalizar 
+\end{DoxyReturn}
+\hypertarget{classQuest_ae4ec082cef55170dd6d8841cf2a4801d}{}\index{Quest@{Quest}!remove\+Quest\+Open@{remove\+Quest\+Open}}
+\index{remove\+Quest\+Open@{remove\+Quest\+Open}!Quest@{Quest}}
+\subsubsection[{remove\+Quest\+Open}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::remove\+Quest\+Open (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_ae4ec082cef55170dd6d8841cf2a4801d}
+Elimina una misión dentro de las que se activan al finalizar esta mision 
+\begin{DoxyParams}{Parámetros}
+{\em id} & identificador de la mision a borrar \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_af2667a3a83e8adc9ae1c5bd05ce4236e}{}\index{Quest@{Quest}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!Quest@{Quest}}
+\subsubsection[{set\+Id}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::set\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_af2667a3a83e8adc9ae1c5bd05ce4236e}
+Setea el id de la mision 
+\begin{DoxyParams}{Parámetros}
+{\em id} & id nueva de la mision \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_ae25b1834eb58ae8db8088e2d73ccfa2c}{}\index{Quest@{Quest}!set\+In\+Order@{set\+In\+Order}}
+\index{set\+In\+Order@{set\+In\+Order}!Quest@{Quest}}
+\subsubsection[{set\+In\+Order}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::set\+In\+Order (
+\begin{DoxyParamCaption}
+\item[{bool}]{in\+Order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_ae25b1834eb58ae8db8088e2d73ccfa2c}
+Setea si las partes de la mision se hacen en orden 
+\begin{DoxyParams}{Parámetros}
+{\em in\+Order} & true si se hacen en orden \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_a142441b8eff8bf90cf67ccd0a9a253b9}{}\index{Quest@{Quest}!set\+Opened@{set\+Opened}}
+\index{set\+Opened@{set\+Opened}!Quest@{Quest}}
+\subsubsection[{set\+Opened}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::set\+Opened (
+\begin{DoxyParamCaption}
+\item[{bool}]{opened}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a142441b8eff8bf90cf67ccd0a9a253b9}
+Setea si la mision esta activa 
+\begin{DoxyParams}{Parámetros}
+{\em opened} & true para activar la mision, false para dejarla inactiva \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_a68f13a90502307e82ac24112fda3ecde}{}\index{Quest@{Quest}!set\+Time@{set\+Time}}
+\index{set\+Time@{set\+Time}!Quest@{Quest}}
+\subsubsection[{set\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::set\+Time (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuest_a68f13a90502307e82ac24112fda3ecde}
+Setea el tiempo limite 
+\begin{DoxyParams}{Parámetros}
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQuest_a522c7653b498a7921afd6d4bb03120d9}{}\index{Quest@{Quest}!update@{update}}
+\index{update@{update}!Quest@{Quest}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Quest\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)}\label{classQuest_a522c7653b498a7921afd6d4bb03120d9}
+Actualiza la mision 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Quest.\+h\item 
+Quest.\+cpp\end{DoxyCompactItemize}

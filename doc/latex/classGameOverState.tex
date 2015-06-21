@@ -1,0 +1,99 @@
+\hypertarget{classGameOverState}{}\section{Referencia de la Clase Game\+Over\+State}
+\label{classGameOverState}\index{Game\+Over\+State@{Game\+Over\+State}}
+
+
+{\ttfamily \#include $<$Game\+Over\+State.\+h$>$}
+
+Diagrama de herencias de Game\+Over\+State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameOverState}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGameOverState_ac57e844cdac39492f3b67e29e8ce7086}{}{\bfseries Game\+Over\+State} (\hyperlink{classStateStack}{State\+Stack} \&\hyperlink{classState_a86c8d3a5a1ee89896828be85a785fb04}{stack}, \hyperlink{classContext}{Context} $\ast$\hyperlink{classState_adc93e8ad3199b5891618ca88eed0436a}{context})\label{classGameOverState_ac57e844cdac39492f3b67e29e8ce7086}
+
+\item 
+virtual void \hyperlink{classGameOverState_a9decc1411647e390bfed0bdc009cd691}{draw} ()
+\item 
+virtual bool \hyperlink{classGameOverState_a8a2047b5c684965f33574b8aee7b7c8f}{update} (sf\+::\+Time dt)
+\item 
+virtual bool \hyperlink{classGameOverState_acf1dc2c7f58fe21b7cfababaf87ff20b}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+virtual void \hyperlink{classGameOverState_aa0e79a90d666351a0328b051dece3024}{pushed\+Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Estado de juego finalizado 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classGameOverState_a9decc1411647e390bfed0bdc009cd691}{}\index{Game\+Over\+State@{Game\+Over\+State}!draw@{draw}}
+\index{draw@{draw}!Game\+Over\+State@{Game\+Over\+State}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Over\+State\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameOverState_a9decc1411647e390bfed0bdc009cd691}
+Dibuja el estado 
+
+Implementa \hyperlink{classState_ae261605bc40b7e3959ce5df5457e4942}{State}.
+
+\hypertarget{classGameOverState_acf1dc2c7f58fe21b7cfababaf87ff20b}{}\index{Game\+Over\+State@{Game\+Over\+State}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Game\+Over\+State@{Game\+Over\+State}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Over\+State\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameOverState_acf1dc2c7f58fe21b7cfababaf87ff20b}
+Procesa la entrada del usuario 
+\begin{DoxyParams}{Parámetros}
+{\em event} & evento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si lo ha procesado, false si no (o lo ha procesado pero que continúe) 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_a19965f83460b248c42952aac8d001206}{State}.
+
+\hypertarget{classGameOverState_aa0e79a90d666351a0328b051dece3024}{}\index{Game\+Over\+State@{Game\+Over\+State}!pushed\+Action@{pushed\+Action}}
+\index{pushed\+Action@{pushed\+Action}!Game\+Over\+State@{Game\+Over\+State}}
+\subsubsection[{pushed\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Over\+State\+::pushed\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameOverState_aa0e79a90d666351a0328b051dece3024}
+Método ejecutado cuando es puesto en pila 
+
+Reimplementado de \hyperlink{classState_a3cc6a1378f32f9ed6a2d1d8140296808}{State}.
+
+\hypertarget{classGameOverState_a8a2047b5c684965f33574b8aee7b7c8f}{}\index{Game\+Over\+State@{Game\+Over\+State}!update@{update}}
+\index{update@{update}!Game\+Over\+State@{Game\+Over\+State}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Over\+State\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameOverState_a8a2047b5c684965f33574b8aee7b7c8f}
+Actualiza el estado 
+\begin{DoxyParams}{Parámetros}
+{\em delta} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha actualizado 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classState_aa6366828eb50639e86b94008cfad9c5d}{State}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Over\+State.\+h\item 
+Game\+Over\+State.\+cpp\end{DoxyCompactItemize}

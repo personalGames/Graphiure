@@ -1,0 +1,177 @@
+\hypertarget{classLevel}{}\section{Referencia de la Clase Level}
+\label{classLevel}\index{Level@{Level}}
+
+
+{\ttfamily \#include $<$Level.\+h$>$}
+
+Diagrama de herencias de Level\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLevel}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel_ab9c7695bbbc6015fe59e4f8887764d2b}{Level} (\hyperlink{classSystemManager}{System\+Manager} \&system\+Manager)
+\item 
+void \hyperlink{classLevel_a67f86520cebd83af4312dc7ed26fb694}{update} (sf\+::\+Time dt)
+\item 
+void \hyperlink{classLevel_a16b763dfb766969c8fefec9dd11207e9}{set\+Character} (\hyperlink{classIdEntity}{Id\+Entity} character\+Created)
+\item 
+void \hyperlink{classLevel_a9b7478818e1aa80d3d4d059fa5faf9bf}{draw} ()
+\item 
+\hyperlink{classCommandQueue}{Command\+Queue} \& \hyperlink{classLevel_a9ef5d17350297a086d87b0936fec5ecb}{get\+Command\+Queue} ()
+\item 
+bool \hyperlink{classLevel_a135b421112c9b9a14229a59b62a82041}{handle\+Event} (const sf\+::\+Event \&event)
+\item 
+void \hyperlink{classLevel_a961437d70dad81b0fddb3fb728ea67af}{set\+Player} (\hyperlink{classPlayer}{Player} $\ast$player)
+\item 
+bool \hyperlink{classLevel_a24b4e540cca52b4d73790ce7850e62db}{is\+End} ()
+\item 
+Mission\+Status \hyperlink{classLevel_a6098504924fa73e05dd7a4a945b61766}{get\+Mission\+Status} ()
+\item 
+bool \hyperlink{classLevel_a153be085b66dc212ab9ac507c0057240}{change\+Level} ()
+\item 
+std\+::string $\ast$ \hyperlink{classLevel_a3d7b2e75b73bf8b459bf9a547cd923b7}{get\+Next\+Level} ()
+\item 
+virtual void \hyperlink{classLevel_a62e412eaad753d2baa2f94239cb80e41}{update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase que representa un nivel 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classLevel_ab9c7695bbbc6015fe59e4f8887764d2b}{}\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf System\+Manager} \&}]{system\+Manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classLevel_ab9c7695bbbc6015fe59e4f8887764d2b}
+Constructor explícito 
+\begin{DoxyParams}{Parámetros}
+{\em system\+Manager} & gestor de sistemas \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classLevel_a153be085b66dc212ab9ac507c0057240}{}\index{Level@{Level}!change\+Level@{change\+Level}}
+\index{change\+Level@{change\+Level}!Level@{Level}}
+\subsubsection[{change\+Level}]{\setlength{\rightskip}{0pt plus 5cm}bool Level\+::change\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a153be085b66dc212ab9ac507c0057240}
+Devuelve si se ha de cambiar el nivel o no \begin{DoxyReturn}{Devuelve}
+true si se ha de cambiar de nivel 
+\end{DoxyReturn}
+\hypertarget{classLevel_a9b7478818e1aa80d3d4d059fa5faf9bf}{}\index{Level@{Level}!draw@{draw}}
+\index{draw@{draw}!Level@{Level}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a9b7478818e1aa80d3d4d059fa5faf9bf}
+Dibuja el nivel \hypertarget{classLevel_a9ef5d17350297a086d87b0936fec5ecb}{}\index{Level@{Level}!get\+Command\+Queue@{get\+Command\+Queue}}
+\index{get\+Command\+Queue@{get\+Command\+Queue}!Level@{Level}}
+\subsubsection[{get\+Command\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Command\+Queue}\& Level\+::get\+Command\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a9ef5d17350297a086d87b0936fec5ecb}
+Devuelve la cola de comandos \begin{DoxyReturn}{Devuelve}
+cola de comandos 
+\end{DoxyReturn}
+\hypertarget{classLevel_a6098504924fa73e05dd7a4a945b61766}{}\index{Level@{Level}!get\+Mission\+Status@{get\+Mission\+Status}}
+\index{get\+Mission\+Status@{get\+Mission\+Status}!Level@{Level}}
+\subsubsection[{get\+Mission\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Mission\+Status Level\+::get\+Mission\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a6098504924fa73e05dd7a4a945b61766}
+Pilla el estado de la misión \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classLevel_a3d7b2e75b73bf8b459bf9a547cd923b7}{}\index{Level@{Level}!get\+Next\+Level@{get\+Next\+Level}}
+\index{get\+Next\+Level@{get\+Next\+Level}!Level@{Level}}
+\subsubsection[{get\+Next\+Level}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string $\ast$ Level\+::get\+Next\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a3d7b2e75b73bf8b459bf9a547cd923b7}
+Devuelve el siguiente nivel que se carga \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\hypertarget{classLevel_a135b421112c9b9a14229a59b62a82041}{}\index{Level@{Level}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Level@{Level}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Level\+::handle\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)}\label{classLevel_a135b421112c9b9a14229a59b62a82041}
+Procesa la entrada \hypertarget{classLevel_a24b4e540cca52b4d73790ce7850e62db}{}\index{Level@{Level}!is\+End@{is\+End}}
+\index{is\+End@{is\+End}!Level@{Level}}
+\subsubsection[{is\+End}]{\setlength{\rightskip}{0pt plus 5cm}bool Level\+::is\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a24b4e540cca52b4d73790ce7850e62db}
+Determina si el nivel ha terminado \begin{DoxyReturn}{Devuelve}
+true si el nivel ha terminado 
+\end{DoxyReturn}
+\hypertarget{classLevel_a16b763dfb766969c8fefec9dd11207e9}{}\index{Level@{Level}!set\+Character@{set\+Character}}
+\index{set\+Character@{set\+Character}!Level@{Level}}
+\subsubsection[{set\+Character}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::set\+Character (
+\begin{DoxyParamCaption}
+\item[{{\bf Id\+Entity}}]{character\+Created}
+\end{DoxyParamCaption}
+)}\label{classLevel_a16b763dfb766969c8fefec9dd11207e9}
+Setea el personaje principal 
+\begin{DoxyParams}{Parámetros}
+{\em character\+Created} & entidad del personaje \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a961437d70dad81b0fddb3fb728ea67af}{}\index{Level@{Level}!set\+Player@{set\+Player}}
+\index{set\+Player@{set\+Player}!Level@{Level}}
+\subsubsection[{set\+Player}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::set\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a961437d70dad81b0fddb3fb728ea67af}
+Setea el jugador (captura de eventos) 
+\begin{DoxyParams}{Parámetros}
+{\em player} & jugador \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a67f86520cebd83af4312dc7ed26fb694}{}\index{Level@{Level}!update@{update}}
+\index{update@{update}!Level@{Level}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time}]{dt}
+\end{DoxyParamCaption}
+)}\label{classLevel_a67f86520cebd83af4312dc7ed26fb694}
+Actualiza el nivel 
+\begin{DoxyParams}{Parámetros}
+{\em dt} & tiempo entre frame y frame \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a62e412eaad753d2baa2f94239cb80e41}{}\index{Level@{Level}!update@{update}}
+\index{update@{update}!Level@{Level}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLevel_a62e412eaad753d2baa2f94239cb80e41}
+Actualiza los subestados del juego cuando hay cambios 
+
+Implementa \hyperlink{classObserver_ac75e4b339faeb3ea6fe0a01bf0b4a215}{Observer}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Level.\+h\item 
+Level.\+cpp\end{DoxyCompactItemize}
