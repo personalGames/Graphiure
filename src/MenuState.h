@@ -16,6 +16,9 @@
 #include "Button.h"
 #include "ResourceHolder.h"
 
+/**
+ * Estado para el menú principal
+ */
 class MenuState : public State {
 public:
     MenuState(StateStack& stack, Context* context);
@@ -28,11 +31,14 @@ public:
     virtual void pulledAction();
     virtual void pushedAction();
 
-
-
-
 private:
+    /**
+     * Imagen de fondo
+     */
     sf::Sprite backgroundSprite;
+    /**
+     * Contenedor para los botones
+     */
     GUI::Container container;
 };
 

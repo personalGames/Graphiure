@@ -8,6 +8,9 @@
 #ifndef TYPESYSTEM_H
 #define	TYPESYSTEM_H
 
+/**
+ * Enumeración de sistemas
+ */
 enum class TypeSystem{
     NONE,
     COLLISION,

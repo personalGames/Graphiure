@@ -2,7 +2,7 @@
 #include "GameOverState.h"
 
 GameOverState::GameOverState(StateStack& stack, Context* context)
-: State(stack, context), mGameOverText(), mElapsedTime(sf::Time::Zero) {
+: State(stack, context), mGameOverText() {
 
     sf::Font& font = context->fonts->get(IDFonts::Main);
     mGameOverText.setCharacterSize(70);

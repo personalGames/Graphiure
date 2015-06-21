@@ -11,7 +11,6 @@
 #include "Component.h"
 #include "ResourceHolder.h"
 #include "IDFonts.h"
-#include "IDTextures.h"
 #include "Utilities.h"
 #include "ButtonState.h"
 

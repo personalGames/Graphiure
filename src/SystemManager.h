@@ -12,6 +12,9 @@
 
 #include <vector>
 
+/**
+ * Gestor de sistemas
+ */
 class SystemManager {
 public:
     SystemManager();
@@ -27,9 +30,17 @@ public:
     void registerEntity(Entity* entity);
     void removeEntity(Entity* entity);
     
+    /**
+     * Devuelve un sistema solicitado
+     * @param type tipo del sistema solicitado
+     * @return el sistema
+     */
     ISystem* getSystem(TypeSystem type);
     
 private:
+    /**
+     * Lista de sistemas
+     */
     std::vector<ISystem*> systems;
 };
 

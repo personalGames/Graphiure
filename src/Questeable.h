@@ -10,28 +10,47 @@
 
 #include "PartQuest.h"
 
-
+/**
+ * Clase para la propiedad questeable
+ */
 class Questeable {
 public:
+    /**
+     * Constructor
+     * @param id identificador de la misión
+     */
     Questeable(int id);
     Questeable(const Questeable& orig);
     virtual ~Questeable();
-    
+    /**
+     * Añade la parte de misión asociada
+     * @param quest parte de misión
+     */
     void addPartQuest(PartQuest* quest);
-//    bool isDone();
-    
+    /**
+     * Devuelve el identificador de la misión
+     * @return 
+     */
     inline int getIdQuest() const {
         return idQuest;
     }
     
+    /**
+     * Devuelve la lista de partes de misión asociadas
+     * @return 
+     */
     inline const std::vector<PartQuest*>& getPartQuest(){
         return quest;
     }
-
-//    void setDone(bool done);
     
 private:
+    /**
+     * lista de partes de misiones
+     */
     std::vector<PartQuest*> quest;
+    /**
+     * Identificador de mision asociado
+     */
     int idQuest;
 
 };

@@ -40,14 +40,6 @@ public:
     }
     
     void setPositionIncrement(float x, float y);
-    
-//    inline sf::Transformable getPreviousPosition() const {
-//        return previousPosition;
-//    }
-
-//    inline void setPreviousPosition(sf::Transformable previousPosition) {
-//        this->previousPosition = previousPosition;
-//    }
    
     CardinalPoints getDirection();
     

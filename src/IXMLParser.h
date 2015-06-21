@@ -15,7 +15,6 @@
 #include <vector>
 #include <iostream>
 #include "ResourceHolder.h"
-#include "IDTextures.h"
 #include "XMLDocument.h"
 
 class IXMLParser {

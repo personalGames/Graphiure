@@ -33,6 +33,7 @@ void TitleState::draw() {
     sf::View view=window.getView();
     view.setSize(1024.f,768.f);
     window.setView(view);
+    
     if (showText){
         window.draw(text);
     }
@@ -40,7 +41,8 @@ void TitleState::draw() {
 
 bool TitleState::update(sf::Time delta) {
     textEffectTime += delta;
-
+    //compruebo si ha pasado tiempo para cambiar el estado del texto
+    //y hacer efecto de parpadeo
     if (textEffectTime >= sf::seconds(0.5f)) {
         showText = !showText;
         textEffectTime = sf::Time::Zero;

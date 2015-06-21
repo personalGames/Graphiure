@@ -11,7 +11,9 @@
 #include "StateStack.h"
 #include "Level.h"
 
-
+/**
+ * Estado de juego
+ */
 class GameState : public State {
 public:
     GameState(StateStack& stack, Context* context);
@@ -23,10 +25,14 @@ public:
     virtual void pushedAction();
     
 private:
+    /**
+     * Nivel del juego
+     */
     Level* level;
-//    Player& player;
+    /**
+     * Tiempo transcurrido antes de visualizar game over
+     */
     sf::Time mElapsedTime;
-    SystemManager* systemManager;
 };
 
 #endif	/* GAMESTATE_H */

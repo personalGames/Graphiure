@@ -12,6 +12,9 @@
 #include "Container.h"
 #include <SFML/Graphics.hpp>
 
+/**
+ * Estado de juego finalizado
+ */
 class GameOverState : public State {
 public:
     GameOverState(StateStack& stack, Context* context);
@@ -23,8 +26,10 @@ public:
     virtual void pushedAction();
 
 private:
+    /**
+     * Texto a visualizar
+     */
     sf::Text mGameOverText;
-    sf::Time mElapsedTime;
 };
 
 #endif	/* GAMEOVERSTATE_H */

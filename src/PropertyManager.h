@@ -16,8 +16,9 @@
 #include <iostream>
 
 
-/// Provides the PropertyManager class for managing IProperty classes
-
+/*
+ *  Provides the PropertyManager class for managing IProperty classes
+ */
 class PropertyManager {
 public:
     /**

@@ -11,7 +11,6 @@
 #include "SceneNode.h"
 #include "ResourceHolder.h"
 #include <SFML/Graphics.hpp>
-#include "IDTextures.h"
 #include "StructMap.h"
 
 class TileMapNode : public SceneNode {

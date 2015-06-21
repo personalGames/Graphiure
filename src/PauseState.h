@@ -15,6 +15,11 @@
 #include "Container.h"
 #include "Button.h"
 
+/**
+ * Estado de pausa, muestra algunos botones
+ * @param stack
+ * @param context
+ */
 class PauseState : public State {
 public:
     PauseState(StateStack& stack, Context* context);
@@ -28,8 +33,13 @@ public:
     virtual void pulledAction();
 
 private:
-    sf::Sprite backgroundSprite;
+    /**
+     * Texto de pausa
+     */
     sf::Text pausedText;
+    /**
+     * Contenedor con los botones
+     */
     GUI::Container GUIContainer;
 };
 

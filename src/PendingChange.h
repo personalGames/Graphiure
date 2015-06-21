@@ -11,11 +11,25 @@
 #include "StatesID.h"
 #include "ActionStack.h"
 
-
+/**
+ * Estructura para guardar los cambios pendientes de hacer en la pila
+ * de estados
+ */
 struct PendingChange {
+    /**
+     * Constructor
+     * @param action sacar, limpiar, meter estado...
+     * @param stateID identificador del estado. Por defecto ninguno
+     */
     PendingChange(ActionStack action, StatesID stateID = StatesID::None);
 
+    /**
+     * Acción a realizar
+     */
     ActionStack action;
+    /**
+     * Identificador del estado implicado
+     */
     StatesID stateID;
 };
 

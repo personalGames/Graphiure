@@ -15,6 +15,9 @@
 #include "LoadingLevel.h"
 #include "Levels.h"
 
+/**
+ * Estado de carga
+ */
 class LoadingState : public State {
 public:
     LoadingState(StateStack& stack, Context* context);
@@ -23,14 +26,33 @@ public:
     virtual bool update(sf::Time delta);
     virtual bool handleEvent(const sf::Event& event);
 
+    /**
+     * Establece el porcentaje de completado, modificando la barra de 
+     * progeso acorde
+     * @param percent porcentaje de 0 a 100 completado
+     */
     void setCompletion(float percent);
 
 private:
+    /**
+     * Texto de carga
+     */
     sf::Text loadingText;
+    /**
+     * Fondo de barra de progreso
+     */
     sf::RectangleShape progressBarBackground;
+    /**
+     * Barra de progreso
+     */
     sf::RectangleShape progressBar;
-
+    /**
+     * Indica si la tarea ya ha sido creada
+     */
     bool taskCreated;
+    /**
+     * Tarea que se ejecuta en paralelo mientras
+     */
     ParallelTask* loadingTask;
 };
 

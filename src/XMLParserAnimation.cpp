@@ -7,7 +7,6 @@
 
 #include "XMLParserAnimation.h"
 #include "ResourceHolder.h"
-#include "IDTextures.h"
 #include "Context.h"
 #include "StructAnimation.h"
 #include <iostream>

@@ -8,8 +8,7 @@
 #include "GameState.h"
 
 GameState::GameState(StateStack& stack, Context* context) :
-State(stack, context), systemManager(context->systemManager) {
-    //player(*context->player)
+State(stack, context) {
     
     
 }

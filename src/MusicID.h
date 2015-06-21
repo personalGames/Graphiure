@@ -8,6 +8,9 @@
 #ifndef MUSICID_H
 #define	MUSICID_H
 
+/**
+ * Enumeración de la música disponible
+ */
 enum class MusicID{
     MenuTheme,
     MissionTheme

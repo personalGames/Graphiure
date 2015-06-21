@@ -10,10 +10,14 @@
 
 #include <string>
 
-/// Provides the interface for all properties
+/*
+ *  Provides the interface for all properties
+ */
 class IProperty {
 public:
-    /// Class that represents the type for this class
+    /*
+     * Class that represents the type for this class
+     */
 
     class Type_t {
     private:

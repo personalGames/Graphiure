@@ -15,6 +15,9 @@
 #include "Velocity.h"
 #include "Position.h"
 
+/**
+ * Sistema de movimiento
+ */
 class SystemMovement : public ISystem {
 public:
     SystemMovement();
@@ -28,6 +31,9 @@ public:
     virtual void removedEntity(Entity* entity);
     
 private:
+    /**
+     * Lista de entidades
+     */
     std::vector<Entity*> movement;
 };
 

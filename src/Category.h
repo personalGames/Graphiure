@@ -8,20 +8,12 @@
 #ifndef CATEGORY_H
 #define	CATEGORY_H
 
+/**
+ * Enumeración de categorías
+ */
 enum Category {
     NONE = 0,
-    CHARACTER = 1<<0 //NEVER THE SAME NAME AS A CLASS!!!
-//    PlayerAircraft = 1 << 1,
-//    AlliedAircraft = 1 << 2,
-//    EnemyAircraft = 1 << 3,
-//    Pickup = 1 << 4,
-//    AlliedProjectile = 1 << 5,
-//    EnemyProjectile = 1 << 6,
-//    ParticleSystem = 1 << 7,
-//    SoundEffectCategory			= 1 << 8,
-
-//    Aircraft = PlayerAircraft | AlliedAircraft | EnemyAircraft,
-//    Projectile = AlliedProjectile | EnemyProjectile,
+    CHARACTER = 1<<0
 };
 
 #endif	/* CATEGORY_H */

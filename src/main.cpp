@@ -10,10 +10,11 @@
 #include <X11/Xlib.h>
 
 /*
- * 
+ * PUnto de partida de la aplicación
  */
 int main(int argc, char** argv) {
     try {
+        //inicializo para poder tener hilos
         XInitThreads();
         Application game;
         game.run();

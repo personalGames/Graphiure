@@ -8,6 +8,9 @@
 #ifndef ACTIONSTACK_H
 #define	ACTIONSTACK_H
 
+/**
+ * Acciones posibles sobre la pila
+ */
 enum class ActionStack{
     Push,
     Pop,

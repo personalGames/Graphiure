@@ -23,11 +23,3 @@ Questeable::Questeable(const Questeable& orig) {
 
 Questeable::~Questeable() {
 }
-
-//bool Questeable::isDone() {
-//    return quest->isDone();
-//}
-//
-//void Questeable::setDone(bool done) {
-//    quest->setDone(done);
-//}

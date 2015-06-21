@@ -14,15 +14,39 @@
 #include <stdexcept>
 #include <cassert>
 
+/**
+ * Gestor de recursos
+ */
 template <typename Identifier, typename Resource>
 class ResourceHolder {
 public:
+    /**
+     * Carga un recurso
+     * @param id identificador usado para el recurso
+     * @param filename ruta del recurso a cargar
+     */
     void load(Identifier id, const std::string& filename);
 
+    /**
+     * Carga un recurso con parámetros extra
+     * @param id identificador usado para el recurso
+     * @param filename ruta del recurso a cargar
+     * @param secondParam parámetro extra para la carga del fichero
+     */
     template <typename Parameter>
     void load(Identifier id, const std::string& filename, const Parameter& secondParam);
 
+    /**
+     * Devuelve el recurso dado el identificador
+     * @param id identificador
+     * @return el recurso dado
+     */
     Resource& get(Identifier id);
+    /**
+     * Devuelve el recurso dado el identificador
+     * @param id identificador
+     * @return el recurso dado
+     */
     const Resource& get(Identifier id) const;
 
 
@@ -33,6 +57,14 @@ private:
 private:
     std::map<Identifier, Resource*> mResourceMap;
 };
+
+
+
+/**
+ * Implementación de la clase
+ * 
+ */
+
 
 template <typename Identifier, typename Resource>
 void ResourceHolder<Identifier, Resource>::load(Identifier id, const std::string& filename) {

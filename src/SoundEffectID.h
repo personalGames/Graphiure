@@ -8,6 +8,9 @@
 #ifndef SOUNDEFFECTID_H
 #define	SOUNDEFFECTID_H
 
+/**
+ * Enumeración de efectos de sonido
+ */
 enum SoundEffectID {
     AlliedGunfire,
     EnemyGunfire,

@@ -55,24 +55,15 @@ void Application::setSystemManager() {
 
 void Application::run() {
 
-    //sf::Time timeSinceLastUpdate = sf::Time::Zero;
-
     while (window.isOpen()) {
         // Start a new frame.
         clock.beginFrame();
 
-        //        sf::Time dt = clock.restart();
-        //        timeSinceLastUpdate += dt;
-        //        while (timeSinceLastUpdate > timePerFrame) {
-        //            timeSinceLastUpdate -= timePerFrame;
-
         processInput();
-        //update(timePerFrame);
         update(clock.getLastFrameTime());
         // Check inside this loop, because stack might be empty before update() call
         if (stateStack.isEmpty())
             window.close();
-        //        }
 
         render();
 

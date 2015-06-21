@@ -10,20 +10,37 @@
 
 static int count = 0;
 
+/**
+ * Identificador para una entidad
+ */
 class IdEntity {
 public:
-
+    /**
+     * Constructor
+     * @param id el id de la entidad
+     */
     IdEntity(int id) : id(id) {
     };
 
+    /**
+     * Constructor por defecto, se asigna un nuevo identificador no usado
+     * hasta el momento
+     */
     IdEntity() : id(count) {
         count++;
     };
 
+    /**
+     * Constructor copia
+     * @param orig otro identificador
+     */
     IdEntity(const IdEntity& orig) {
         this->id = orig.id;
     };
 
+    /**
+     * Destructor
+     */
     virtual ~IdEntity() {
     };
     

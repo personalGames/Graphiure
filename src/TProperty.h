@@ -11,7 +11,9 @@
 #include <typeinfo>
 #include "IProperty.h"
 
-/// The Template version of the IProperty class for custom property values
+/*
+ *  The Template version of the IProperty class for custom property values
+ */
 template<class TYPE = unsigned int>
 class TProperty : public IProperty {
 public:

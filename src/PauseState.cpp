@@ -9,7 +9,6 @@
 
 PauseState::PauseState(StateStack& stack, Context* context)
 : State(stack, context)
-, backgroundSprite()
 , pausedText()
 , GUIContainer() {
     sf::Font& font = context->fonts->get(IDFonts::Main);

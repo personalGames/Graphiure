@@ -16,6 +16,9 @@
 #include <list>
 #include "ResourceHolder.h"
 
+/**
+ * 
+ */
 class SoundPlayer : private sf::NonCopyable {
 public:
     SoundPlayer();

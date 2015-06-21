@@ -137,6 +137,7 @@ std::string* Level::getNextLevel() {
 void Level::update() {
     Message message = getSubject()->getMessage();
     GameStates stateGame = message.getState();
+    //según el subestado...
     switch (stateGame) {
         case GameStates::GAMING:
             
@@ -156,8 +157,4 @@ void Level::update() {
             
             break;
     }
-    //read the messages from the entities and react
-    //switch type of message
-    //if talk, change state to talk
-    //if inventory, change state to inventory
 }

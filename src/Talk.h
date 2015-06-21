@@ -10,7 +10,14 @@
 
 #include <SFML/System/String.hpp>
 
+/**
+ * Estructura para guardar una conversación
+ */
 struct Talk {
+    /**
+     * Constructor
+     * @param phrase frase a decir
+     */
     Talk(sf::String* phrase){
         this->phrase=phrase;
     }

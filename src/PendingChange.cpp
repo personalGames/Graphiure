@@ -7,5 +7,6 @@
 
 #include "PendingChange.h"
 
-PendingChange::PendingChange(ActionStack action, StatesID stateID): action(action), stateID(stateID) {
+PendingChange::PendingChange(ActionStack action, StatesID stateID): 
+    action(action), stateID(stateID) {
 }

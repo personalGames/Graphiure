@@ -15,6 +15,9 @@
 #include "Entity.h"
 #include "ISystem.h"
 
+/**
+ * Sistema de comandos
+ */
 class SystemCommand : public ISystem {
 public:
     SystemCommand();
@@ -27,9 +30,17 @@ public:
     virtual void registerEntity(Entity* entity);
     virtual void removedEntity(Entity* entity);
     
+    /**
+     * Ejecuta los comandos sobre las entidades
+     * @param queue cola de comandos
+     * @param delta tiempo entre frame y frame
+     */
     void onCommand(CommandQueue& queue, sf::Time delta);
     
 private:
+    /**
+     * Lista de entidades comandables
+     */
     std::vector<Entity*> commandable;
 };
 
