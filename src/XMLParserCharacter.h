@@ -13,6 +13,9 @@
 #include "Collision.h"
 #include "Weapon.h"
 
+/**
+ * Parsea xml con información sobre una entidad personaje
+ */
 class XMLParserCharacter : public IXMLParser {
 public:
     XMLParserCharacter();

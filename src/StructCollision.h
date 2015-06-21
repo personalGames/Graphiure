@@ -11,6 +11,9 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
+/**
+ * Estructura para guardar información de colisiones
+ */
 struct StructCollision {
     StructCollision():vertices(), typeCollision(), position() {};
     virtual ~StructCollision(){};

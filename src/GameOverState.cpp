@@ -12,9 +12,9 @@ GameOverState::GameOverState(StateStack& stack, Context* context)
 void GameOverState::pushedAction() {
     sf::Vector2f windowSize(context->window->getSize());
     if (context->actualLevel->getMissionStatus() == MissionStatus::MissionFailure) {
-        mGameOverText.setString("Mission failed! Pulsa espacio para continuar");
+        mGameOverText.setString("Mission failed!");
     } else {
-        mGameOverText.setString("Mission successful! Pulsa espacio para continuar");
+        mGameOverText.setString("Mission failed!");
     }
     centerOrigin(mGameOverText);
     mGameOverText.setPosition(0.5f * windowSize.x, 0.4f * windowSize.y);

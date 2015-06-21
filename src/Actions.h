@@ -12,6 +12,9 @@
 #include <string>
 #include <algorithm>
 
+/**
+ * Enumeración de acciones del personaje
+ */
 enum Actions {
     None,
     Left,

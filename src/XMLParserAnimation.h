@@ -10,13 +10,14 @@
 
 #include "IXMLParser.h"
 
-
+/**
+ * Parsea un xml con información sobre animaciones
+ */
 class XMLParserAnimation : public IXMLParser {
 public:
     XMLParserAnimation();
     virtual ~XMLParserAnimation();
     
-    virtual void parse(DataUnion& data, std::string id);
     virtual void parse(DataUnion& data);
     
 private:

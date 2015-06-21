@@ -14,9 +14,21 @@
 #include <SFML/Graphics.hpp>
 #include "SceneNode.h"
 
+/**
+ * Nodo para el dibujado de texto
+ */
 class TextNode : public SceneNode {
 public:
+    /**
+     * Constructor
+     * @param fonts fuentes a usar
+     * @param text texto a dibujar
+     */
     TextNode(const ResourceHolder<IDFonts, sf::Font>& fonts, const std::string& text);
+    /**
+     * Texto a mostrar
+     * @param text texto a setear y mostrar
+     */
     void setString(const std::string& text);
 
 
@@ -24,6 +36,9 @@ private:
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 
 private:
+    /**
+     * Texto a mostrar
+     */
     sf::Text text;
 };
 

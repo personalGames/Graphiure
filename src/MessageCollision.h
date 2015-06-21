@@ -13,8 +13,19 @@
 #include "Triangle.h"
 #include "MTV.h"
 
+/**
+ * Estructura para un mensaje de colisión
+ */
 struct MessageCollision {
+    /**
+     * Constructor por defecto, las entidades están a null
+     */
     MessageCollision(): entityOne(nullptr), entityTwo(nullptr), axisX(false), toRightDown(false){}
+    /**
+     * Constructor donde se especifica las entidades colisionables
+     * @param one
+     * @param two
+     */
     MessageCollision(Entity* one, Entity* two): entityOne(one),entityTwo(two),
                         axisX(false),toRightDown(false) {};
     virtual ~MessageCollision(){};

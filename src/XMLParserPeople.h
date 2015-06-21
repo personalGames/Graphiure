@@ -11,6 +11,9 @@
 #include "IXMLParser.h"
 
 
+/**
+ * Parsea el xml con información sobre entidades que hay en un mapa
+ */
 class XMLParserPeople : public IXMLParser {
 public:
     XMLParserPeople();

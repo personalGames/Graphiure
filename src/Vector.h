@@ -12,61 +12,79 @@
 #include <assert.h>
 #include <math.h>
 
+/**
+ * Clase representando un vector de dos puntos y en el que se 
+ * han sobreescrito operadores a conveniencia para su uso en colisiones.
+ */
 class Vector {
 public:
 
-    /// default constructor.
-    /// does nothing for speed.
-
+    /**
+     * default constructor.
+     * does nothing for speed.
+     */
     Vector() {
         x = 0;
         y = 0;
     };
 
-    /// construct vector from x,y components.
-
+    /**
+     * construct vector from x,y components.
+     * @param x
+     * @param y
+     */
     Vector(float x, float y) {
         this->x = x;
         this->y = y;
     };
 
-    /// set vector to zero.
-
+    /**
+     * set vector to zero.
+     */
     void zero() {
         x = 0;
         y = 0;
     }
 
-    /// negate vector.
-
+    /**
+     * negate vector.
+     */
     void negate() {
         x = -x;
         y = -y;
     }
 
-    /// add another vector to this vector.
-
+    /**
+     * add another vector to this vector.
+     * @param vector
+     */
     void add(const Vector &vector) {
         x += vector.x;
         y += vector.y;
     }
 
-    /// subtract another vector from this vector.
-
+    /**
+     * subtract another vector from this vector.
+     * @param vector
+     */
     void subtract(const Vector &vector) {
         x -= vector.x;
         y -= vector.y;
     }
 
-    /// multiply this vector by a scalar.
-
+    /**
+     * multiply this vector by a scalar.
+     * @param scalar
+     */
     void multiply(float scalar) {
         x *= scalar;
         y *= scalar;
     }
 
-    /// divide this vector by a scalar.
-
+    /**
+     * divide this vector by a scalar.
+     * @param scalar
+     */
     void divide(float scalar) {
         assert(scalar != 0);
         const float inv = 1.0f / scalar;
@@ -74,43 +92,39 @@ public:
         y *= inv;
     }
 
-    /// calculate dot product of this vector with another vector.
-
+    /**
+     * calculate dot product of this vector with another vector.
+     * @param vector
+     * @return 
+     */
     float dot(const Vector &vector) const {
         return x * vector.x + y * vector.y;
     }
-
-//    /// calculate cross product of this vector with another vector.
-//    Vector cross(const Vector &vector) const {
-//        return Vector(y * vector.z - z * vector.y, z * vector.x - x * vector.z, x * vector.y - y * vector.x);
-//    }
-//
-//    /// calculate cross product of this vector with another vector, store result in parameter.
-//
-//    void cross(const Vector &vector, Vector &result) const {
-//        result.x = y * vector.z - z * vector.y;
-//        result.y = z * vector.x - x * vector.z;
-//        result.z = x * vector.y - y * vector.x;
-//    }
 
     Vector cross(float s) {
         return Vector(-s * y, s * x);
     }
 
-    /// calculate length of vector squared
-
+    /**
+     * calculate length of vector squared
+     * @return 
+     */
     float lengthSquared() const {
         return x * x + y*y;
     }
 
-    /// calculate length of vector.
-
+    /**
+     * calculate length of vector.
+     * @return 
+     */
     float length() const {
         return sqrt(x * x + y * y);
     }
 
-    /// normalize vector and return reference to normalized self.
-
+    /**
+     * normalize vector and return reference to normalized self.
+     * @return 
+     */
     Vector& normalize() {
         const float magnitude = sqrt(x * x + y * y);
         if (magnitude > EPSILON) {
@@ -121,21 +135,29 @@ public:
         return *this;
     }
 
-    /// return unit length vector
-
+    /**
+     * return unit length vector
+     * @return 
+     */
     Vector unit() const {
         Vector vector(*this);
         vector.normalize();
         return vector;
     }
 
-    /// test if vector is normalized.
+    /**
+     * test if vector is normalized.
+     * @return 
+     */
     bool normalized() const {
         return equal(length(), 1);
     }
 
-    /// equals operator
-
+    /**
+     * equals operator
+     * @param other
+     * @return 
+     */
     bool operator==(const Vector &other) const {
         if (equal(x, other.x) && equal(y, other.y))
             return true;
@@ -143,21 +165,31 @@ public:
             return false;
     }
 
-    /// not equals operator
+    /**
+     * not equals operator
+     * @param other
+     * @return 
+     */
     bool operator!=(const Vector &other) const {
         return !(*this == other);
     }
 
-    /// element access
-
+    /**
+     * element access
+     * @param i
+     * @return 
+     */
     float& operator[](int i) {
         assert(i >= 0);
         assert(i <= 2);
         return *(&x + i);
     }
 
-    /// element access (const)
-
+    /**
+     * element access (const)
+     * @param i
+     * @return 
+     */
     const float& operator[](int i) const {
         assert(i >= 0);
         assert(i <= 2);
@@ -167,11 +199,11 @@ public:
     friend inline Vector operator-(const Vector &a);
     friend inline Vector operator+(const Vector &a, const Vector &b);
     friend inline Vector operator-(const Vector &a, const Vector &b);
-//    friend inline Vector operator*(const Vector &a, const Vector &b);
+    //    friend inline Vector operator*(const Vector &a, const Vector &b);
     friend inline Vector& operator+=(Vector &a, const Vector &b);
     friend inline Vector& operator-=(Vector &a, const Vector &b);
-//    friend inline Vector& operator*=(Vector &a, const Vector &b);
-//
+    //    friend inline Vector& operator*=(Vector &a, const Vector &b);
+    //
     friend inline Vector operator*(const Vector &a, float s);
     friend inline Vector operator/(const Vector &a, float s);
     friend inline Vector& operator*=(Vector &a, float s);
@@ -206,10 +238,6 @@ inline Vector operator-(const Vector &a, const Vector &b) {
     return Vector(a.x - b.x, a.y - b.y);
 }
 
-//inline Vector operator*(const Vector &a, const Vector &b) {
-//    return Vector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
-//}
-
 inline Vector& operator+=(Vector &a, const Vector &b) {
     a.x += b.x;
     a.y += b.y;
@@ -221,16 +249,6 @@ inline Vector& operator-=(Vector &a, const Vector &b) {
     a.y -= b.y;
     return a;
 }
-
-//inline Vector& operator*=(Vector &a, const Vector &b) {
-//    const float cx = a.y * b.z - a.z * b.y;
-//    const float cy = a.z * b.x - a.x * b.z;
-//    const float cz = a.x * b.y - a.y * b.x;
-//    a.x = cx;
-//    a.y = cy;
-//    a.z = cz;
-//    return a;
-//}
 
 inline Vector operator*(const Vector &a, float s) {
     return Vector(a.x*s, a.y * s);

@@ -14,7 +14,15 @@
 #include "StaticBlock.h"
 #include "Hole.h"
 
+/**
+ * 
+ */
 namespace FactoryGameObjects{
+    /**
+     * Devuelve la instancia de la clase que crea el tipo especificado
+     * @param type tipo de clase especificado
+     * @return la clase que construye el objeto deseado y especificado por el tipo
+     */
     std::unique_ptr<GameObjects> getFactory(std::string type);
 }
 #endif	/* FACTORYGAMEOBJECTS_H */

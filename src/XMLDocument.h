@@ -15,6 +15,11 @@
 #include <iostream>
 #include "Utilities.h"
 
+/**
+
+ * Clase que guarda la ruta y carga el xml indicado.
+ * Mantiene una referencia al documento xml
+ */
 class XMLDocument {
 public:
     XMLDocument(std::string path);

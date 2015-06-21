@@ -11,20 +11,34 @@
 
 #include "Vector.h"
 
+/**
+ * Minimo vector de traslado
+ */
 class MTV
 {
 public:
+    /**
+     * COnstructor por defecto, todos los valores a cero
+     */
 	MTV(){
 		pushX = pushY = 0;
 		normal = Vector(0, 0);
 	};
 
+        /**
+         * Constructor
+         * @param d multiplicador de los ejes
+         * @param axis vectores
+         */
 	MTV(double d, Vector axis)	{
 		pushX = d*axis.x;
 		pushY = d*axis.y;
 		normal = axis;
 	};
 
+        /**
+         * Inversa del vector
+         */
 	void inverse()	{
 		pushX *= -1;
 		pushY *= -1;
@@ -32,9 +46,21 @@ public:
 		normal.y *= -1;
 	}
 
+        /**
+         * Indica si hay colisión
+         */
 	bool   collision;
+        /**
+         * empuje en eje x
+         */
 	double pushX;
+        /**
+         * empuje en eje y
+         */
 	double pushY;
+        /**
+         * La normal
+         */
 	Vector  normal;
 };
 

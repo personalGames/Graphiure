@@ -11,7 +11,10 @@
 #include "IXMLParser.h"
 #include "StructMap.h"
 
-
+/**
+ * Parsea el xml con información sobre el mapa, concretamente sobre los fondos
+ * de tiles
+ */
 class XMLParserMap : public IXMLParser {
 public:
     XMLParserMap();

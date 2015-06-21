@@ -10,6 +10,9 @@
 
 #include "IXMLParser.h"
 
+/**
+ * Parsea el xml con información sobre máquinas de estado finitos
+ */
 class XMLParserStateMachines : public IXMLParser{
 public:
     XMLParserStateMachines();

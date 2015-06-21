@@ -18,6 +18,9 @@
 #include "Quest.h"
 #include "StructPeople.h"
 
+/**
+ * Unión para guardar temporalmente los datos parseados de un xml
+ */
 union DataUnion{
     StructPeople* people;
     StructMap* map;

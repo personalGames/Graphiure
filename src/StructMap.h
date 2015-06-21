@@ -12,14 +12,13 @@
 #include "Layer.h"
 #include <SFML/Graphics.hpp>
 
-
+/**
+ * Estructura para guardar información de tiles de un mapa
+ */
 struct StructMap{
 
     StructMap();
     virtual ~StructMap();
-    
-    std::vector<std::string*>* villagers;
-    std::string* character;
     
     
     int numberColumns;

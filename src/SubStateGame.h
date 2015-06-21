@@ -11,6 +11,9 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
 
+/**
+ * Clase base para los subestados del juego
+ */
 class SubStateGame {
 public:
     SubStateGame(): ended(false) {
@@ -24,15 +27,25 @@ public:
     virtual bool update(sf::Time delta)=0;
     virtual bool handleEvent(const sf::Event& event)=0;
     
+    /**
+     * Setea si el subestado ha terminado
+     */
     void setEnded() {
         this->ended = true;
     }
     
+    /**
+     * Devuelve si el subestado del juego ha terminado
+     * @return true si ha terminado
+     */
     bool isEnded() const {
         return ended;
     }
 
 private:
+    /**
+     * Guarda si el subestado ha terminado
+     */
     bool ended;
 };
 

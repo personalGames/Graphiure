@@ -11,6 +11,9 @@
 #include <queue>
 #include "Command.h"
 
+/**
+ * Pila para los comandos
+ */
 class CommandQueue {
 public:
     /**

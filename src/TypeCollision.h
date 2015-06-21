@@ -8,6 +8,9 @@
 #ifndef TYPECOLLISION_H
 #define	TYPECOLLISION_H
 
+/**
+ * Enumeración de tipos de colisiones
+ */
 enum class TypeCollision{
     STATIC,
     DYNAMIC,

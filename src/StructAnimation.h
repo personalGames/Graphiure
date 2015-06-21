@@ -10,6 +10,9 @@
 
 #include "Animation.h"
 
+/**
+ * Estructura para guardar información sobre animaciones
+ */
 struct StructAnimation {
 public:
     StructAnimation(){

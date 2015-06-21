@@ -18,23 +18,47 @@
 
 #include <iostream>
 
-
+/**
+ * Clase que representa una máquina de estados finitos y controla la animación
+ * que se esté reproduciendo en el momento
+ */
 class StateMachineAnimation : sf::Drawable {
 public:
+    /**
+     * Constructor
+     * @param stateMachine
+     */
     StateMachineAnimation(StateMachine &stateMachine);
     virtual ~StateMachineAnimation();
-    
+    /**
+     * Añade una animación
+     * @param animation animación a añadir
+     */
     void addAnimation(Animation* animation);
     
+    /**
+     * Actualiza la animación actual
+     * @param delta tiempo entre frame y frame
+     */
     void update(sf::Time delta);
-    
+    /**
+     * Actualiza la máquina de estados finitos con la entrada
+     * @param action entrada para la máquina
+     */
     void update(int action);
-    
+    /**
+     * Actualiza la máquina de estados finitos con la entrada
+     * @param action entrada para la máquina
+     */
     inline void update(Actions action){ update(static_cast<int>(action)); };
     
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+    /**
+     * Setea el vector de animaciones de la máquina
+     * @param animations
+     */
     void setAnimations(std::vector<Animation*>* animations);
     
 private:

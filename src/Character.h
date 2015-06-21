@@ -24,8 +24,18 @@ class Character : public GameObjects{
 public:
     virtual ~Character();
     
+    /**
+     * Devuelve una entidad que define un protagonista dado unos parámetros
+     * @param parameters conjunto de parámetros
+     * @return entidad formada
+     */
     virtual Entity* prepareEntity(PropertyManager& parameters);
 private:
+    /**
+     * Define el comportamiento de esta entidad ante las acciones de otra entidad
+     * @param behaviour estructura donde dejar la función que se ejecutará
+     * @param entity la entidad creada
+     */
     void makeBehaviour(Behaviour* behaviour, Entity* entity);
     
 };

@@ -11,10 +11,18 @@
 #include "PropertyManager.h"
 #include "Entity.h"
 
+/**
+ * Clase base para todos los objetos del juego
+ */
 class GameObjects {
 public:
     virtual ~GameObjects() {}
 
+    /**
+     * Devuelve una entidad que define objeto del juego
+     * @param parameters conjunto de parámetros
+     * @return entidad formada
+     */
     virtual Entity* prepareEntity(PropertyManager& parameters)=0;
 };
 

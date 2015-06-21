@@ -14,6 +14,9 @@
 #include <vector>
 #include <string>
 
+/**
+ * Parsea el xml con información sobre colisiones de un mapa
+ */
 class XMLParserCollisionsMap : public IXMLParser {
 public:
     XMLParserCollisionsMap();

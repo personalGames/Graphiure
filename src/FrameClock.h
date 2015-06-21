@@ -44,9 +44,10 @@ namespace sfx {
 
     class FrameClock {
     public:
-
-        // Constructs a FrameClock object with sample depth 'depth'.
-
+        /**
+         * Constructs a FrameClock object with sample depth 'depth'.
+         * @param depth cantidad de frames como muestra
+         */
         explicit FrameClock(std::size_t depth = 100) {
             assert(depth >= 1);
             m_sample.data.resize(depth);
@@ -55,23 +56,28 @@ namespace sfx {
             m_time.minimum = sf::microseconds(detail::limit<sf::Int64>());
         }
 
-        // Resets all times to zero and discards accumulated samples.
-
+        
+        /**
+         * Resets all times to zero and discards accumulated samples.
+         */
         void clear() {
             FrameClock(getSampleDepth()).swap(*this);
         }
 
-        // Begin frame timing.
-        // Should be called once at the start of each new frame.
-
+        /**
+         * Begin frame timing.
+         * Should be called once at the start of each new frame.
+         */
         void beginFrame() {
             m_clock.restart();
         }
 
-        // End frame timing.
-        // Should be called once at the end of each frame.
-        // Returns: Time elapsed since the matching FrameClock::beginFrame.
-
+        /**
+         * End frame timing.
+         * Should be called once at the end of each frame.
+         * 
+         * @return Time elapsed since the matching FrameClock::beginFrame.
+         */
         sf::Time endFrame() {
             m_time.current = m_clock.getElapsedTime();
 
@@ -112,82 +118,109 @@ namespace sfx {
             return m_time.current;
         }
 
-        // Sets the number of frames to be sampled for averaging.
-        // 'depth' must be greater than or equal to 1.
-
+        
+        /**
+         * Sets the number of frames to be sampled for averaging.
+         *  'depth' must be greater than or equal to 1.
+         * @param depth
+         */
         void setSampleDepth(std::size_t depth) {
             assert(depth >= 1);
             FrameClock(depth).swap(*this);
         }
 
-        // Returns: The number of frames to be sampled for averaging.
-
+        /**
+         * 
+         * @return The number of frames to be sampled for averaging.
+         */
         std::size_t getSampleDepth() const {
             return m_sample.data.size();
         }
-
-        // Returns: The total accumulated frame time.
-
+ 
+        /**
+         * 
+         * @return The total accumulated frame time.
+         */
         sf::Time getTotalFrameTime() const {
             return m_time.elapsed;
         }
-
-        // Returns: The total accumulated number of frames.
-
+ 
+        /**
+         * 
+         * @return The total accumulated number of frames.
+         */
         sf::Uint64 getTotalFrameCount() const {
             return m_freq.elapsed;
         }
 
-        // Returns: Time elapsed during the last 'FrameClock::beginFrame/endFrame' pair.
-
+        /**
+         * 
+         * @return Time elapsed during the last 'FrameClock::beginFrame/endFrame' pair.
+         */
         sf::Time getLastFrameTime() const {
             return m_time.current;
         }
 
-        // Returns: The shortest measured frame time.
-
+        /**
+         * 
+         * @return The shortest measured frame time.
+         */
         sf::Time getMinFrameTime() const {
             return m_time.minimum;
         }
 
-        // Returns: The longest measured frame time.
-
+        /**
+         * 
+         * @return The longest measured frame time.
+         */
         sf::Time getMaxtFrameTime() const {
             return m_time.maximum;
         }
 
-        // Returns: Average frame time over the last getSampleDepth() frames.
-
+        /**
+         * 
+         * @return Average frame time over the last getSampleDepth() frames.
+         */
         sf::Time getAverageFrameTime() const {
             return m_time.average;
         }
 
-        // Returns: Frames per second, considering the pervious frame only.
-
+        /**
+         * 
+         * @return  Frames per second, considering the pervious frame only.
+         */
         float getFramesPerSecond() const {
             return m_freq.current;
         }
-
-        // Returns: The lowest measured frames per second.
-
+ 
+        /**
+         * 
+         * @return The lowest measured frames per second.
+         */
         float getMinFramesPerSecond() const {
             return m_freq.minimum;
         }
 
-        // Returns: The highest measured frames per second.
-
+        /**
+         * 
+         * @return The highest measured frames per second.
+         */
         float getMaxFramesPerSecond() const {
             return m_freq.maximum;
         }
-
-        // Returns: Average frames per second over the last getSampleDepth() frames.
-
+ 
+        /**
+         * 
+         * @return Average frames per second over the last getSampleDepth() frames.
+         */
         float getAverageFramesPerSecond() const {
             return m_freq.average;
         }
 
-        // Swaps the value of this FrameClock instance with 'other'.
-
+        /**
+         * Swaps the value of this FrameClock instance with 'other'.
+         * @param other other frameclock instance
+         */
         void swap(FrameClock& other) {
             this->m_time.swap(other.m_time);
             this->m_freq.swap(other.m_freq);

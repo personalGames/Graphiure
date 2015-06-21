@@ -17,12 +17,12 @@
 class SpriteNode : public SceneNode {
 public:
     /**
-     * 
+     * Constructor
      * @param texture of the sprite
      */
     SpriteNode(const sf::Texture& texture);
     /**
-     * 
+     * Constructor para cuando no es la imagen entera, sino una zona concreta
      * @param texture of the sprite
      * @param textureRect region of the texture to draw
      */

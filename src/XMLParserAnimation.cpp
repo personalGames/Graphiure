@@ -17,9 +17,6 @@ XMLParserAnimation::XMLParserAnimation() {
 XMLParserAnimation::~XMLParserAnimation() {
 }
 
-void XMLParserAnimation::parse(DataUnion& data, std::string id) {
-    
-}
 
 void XMLParserAnimation::parse(DataUnion& data) {
     StructAnimation* result=new StructAnimation();

@@ -8,6 +8,9 @@
 #ifndef QUESTDATA_H
 #define	QUESTDATA_H
 
+/**
+ * Estructura para guardar información sobre misiones
+ */
 class QuestData {
 public:
     QuestData();

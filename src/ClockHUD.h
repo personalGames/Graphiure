@@ -15,9 +15,13 @@
 
 #include <SFML/Graphics.hpp>
 #include "FrameClock.h"
-
+/**
+ * Interfaz a dibujar para mostrar estadísticas
+ */
 class ClockHUD : public sf::Drawable {
-
+    /**
+     * Estructura para una estadistica concreta
+     */
     struct Stat {
         sf::Color color;
         std::string str;
@@ -26,7 +30,11 @@ class ClockHUD : public sf::Drawable {
     typedef std::vector<Stat> Stats_t;
 
 public:
-
+    /**
+     * Constructor
+     * @param clock reloj de donde sacar los datos
+     * @param font fuente a usar para mostrar datos
+     */
     ClockHUD(const sfx::FrameClock& clock, const sf::Font& font)
         : m_clock(&clock), m_font(&font) {
     }

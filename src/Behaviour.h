@@ -12,9 +12,15 @@
 #include "Actions.h"
 #include "PropertyManager.h"
 
-
+/**
+ * Estructura de comportamiento que guarda una función a ejecutar
+ */
 struct Behaviour {
     Behaviour() {}
+    /**
+     * Guarda una función que especifica la acción realizada y una serie de
+     * propiedades
+     */
     std::function<void(Actions action, PropertyManager* prop)> behaviourFunction;
 
 };

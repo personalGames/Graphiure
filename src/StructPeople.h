@@ -11,7 +11,9 @@
 #include <vector>
 #include <string>
 
-
+/**
+ * Estructura para guardar los id del protagonista y de aldeanos que hay en un mapa
+ */
 struct StructPeople{
 
     StructPeople();

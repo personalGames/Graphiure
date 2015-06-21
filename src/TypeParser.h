@@ -8,6 +8,9 @@
 #ifndef TYPEPARSER_H
 #define	TYPEPARSER_H
 
+/**
+ * Enumeración de tipos de parseadores xml
+ */
 enum class TypeParser{
     MAP,
     ENTITY,

@@ -8,6 +8,9 @@
 #ifndef TYPEQUEST_H
 #define	TYPEQUEST_H
 
+/**
+ * Tipo de mision
+ */
 enum TypeQuest{
     TALK,
     ACTION,

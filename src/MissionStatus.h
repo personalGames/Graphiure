@@ -8,6 +8,9 @@
 #ifndef MISSIONSTATUS_H
 #define	MISSIONSTATUS_H
 
+/**
+ * Estado de la mision
+ */
 enum class MissionStatus {
     MissionRunning,
     MissionSuccess,

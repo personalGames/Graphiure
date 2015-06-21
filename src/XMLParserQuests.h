@@ -11,6 +11,9 @@
 #include "IXMLParser.h"
 #include <string>
 
+/**
+ * Parsea el xml con información sobre misiones
+ */
 class XMLParserQuests : public IXMLParser{
 public:
     XMLParserQuests();

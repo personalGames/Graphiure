@@ -11,9 +11,14 @@
 #include "MessageCollision.h"
 #include <functional>
 
-
+/**
+ * Estructura de colisión en el que guarda una función a ejecutar
+ */
 struct OnCollision {
     OnCollision() {}
+    /**
+     * Guarda una función que especifica un mensaje de colisión
+     */
     std::function<void(MessageCollision* message)> onCollisionFunction;
 
 };

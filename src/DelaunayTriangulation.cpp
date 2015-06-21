@@ -212,8 +212,6 @@ int Triangulate(int nv, XYZ pxyz[], ITRIANGLE v[], int &ntri) {
     return 0;
 }
 
-/// returns triangle count
-/// Any invalid vectors are ignored (they are delimiters for multiple polygons)
 
 int CreateDelaunayTriangulation(sf::VertexArray* verts, int n_verts, 
         std::vector<sf::Vector2f>& extraPoints, int pointCount, 
