@@ -45,6 +45,15 @@ SceneNode* SceneNode::removeChild(const SceneNode& node) {
     return result;
 }
 
+void SceneNode::remove() {
+    // Call function recursively for all remaining children
+    std::for_each(children.begin(), children.end(), std::mem_fn(&SceneNode::remove));
+    
+    // Remove all children which request so
+    children.clear();
+}
+
+
 void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     // Apply transform of current node
     states.transform *= getTransform();

@@ -40,6 +40,11 @@ public:
     MissionStatus getStatus();
     
     /**
+     * Resetea las misiones
+     */
+    void resetMissions();
+    
+    /**
      * Añade una nueva misión al sistema
      * @param quest
      */

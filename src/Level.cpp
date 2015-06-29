@@ -74,17 +74,14 @@ void Level::update(sf::Time dt) {
         //reset velocity
         entity->Get<Velocity*>("Velocity")->reset();
 
-
         //update all input
         commands->update(dt);
         commands->onCommand(commandQueue, dt);
 
         //simulate movements
         movement->update(dt);
-
         //check CCD, the tree has update with the aabbswept
         collision->update(dt);
-
         //check the collisions
         collision->checkCollisions(graphics->getViewBounds());
         //resolve the collisions (separate bodies and generate the commands
@@ -93,19 +90,16 @@ void Level::update(sf::Time dt) {
     } else {
         state->update(dt);
     }
-
     //update the scene (update the animations)
     graphics->update(dt);
     //graphics second update, only set positions (changed by collisions and anothers) and sort the tree by y
     graphics->updateSecondPart(dt);
-
 
     //update the world with the final position of character
     sf::Vector2f position = entity->Get<Position*>("Position")->getPosition().getPosition();
     graphics->correctWorldPosition(position);
 
     quests->update(dt);
-
     //update objects in general (delete dead objects)
     objectsGame->update(dt);
 

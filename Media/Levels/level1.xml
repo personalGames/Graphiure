@@ -6,7 +6,7 @@
 </people>
 <map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="2">
  <tileset firstgid="1" name="TileSet" tilewidth="32" tileheight="32">
-  <image source="../../../../../../../../home/dorian/Proyectos/Código/C/Graphiure/Media/Textures/TileSet.png" width="1024" height="1024"/>
+  <image source="TileSet.png" width="1024" height="1024"/>
  </tileset>
  <layer name="Underground" width="50" height="50">
   <data>

@@ -27,6 +27,7 @@ void SystemGraphic::initialize() {
 
 void SystemGraphic::newScene(StructMap* infoMap) {
     //clear previous scene
+    sceneGraph.remove();
     // Initialize the different layers
     for (std::size_t i = 0; i < LayerCount; ++i) {
         SceneNode* layer = new SceneNode();

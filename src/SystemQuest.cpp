@@ -33,6 +33,13 @@ MissionStatus SystemQuest::getStatus() {
     return MissionStatus::MissionSuccess;
 }
 
+void SystemQuest::resetMissions() {
+    auto it = quests.begin();
+    while (it != quests.end()) {
+        it->second->resetQuest();
+        ++it;
+    }
+}
 
 void SystemQuest::registerEntity(Entity* entity) {
     if (entity->HasID("Questeable")) {

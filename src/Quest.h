@@ -147,6 +147,8 @@ public:
     void setInOrder(bool inOrder) {
         this->inOrder = inOrder;
     }
+    
+    void resetQuest();
 
     /**
      * Devuelve las partes de la que consta la misión

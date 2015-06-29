@@ -55,6 +55,9 @@ public:
      */
     SceneNode* removeChild(const SceneNode& node);
 
+    
+    void remove();
+    
     /**
      * Get the absolute transform (position/rotation and scale) of the node
      * @return the absolute transform

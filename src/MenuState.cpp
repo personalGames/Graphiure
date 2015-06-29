@@ -17,9 +17,10 @@ MenuState::MenuState(StateStack& stack, Context* context)
     GUI::Button* playButton = new GUI::Button(*context);
     playButton->setPosition(100, 300);
     playButton->setText(L"Nueva partida");
-    playButton->setCallback([this]() {
+    playButton->setCallback([this, context]() {
         requestStackPop();
         requestStackPush(StatesID::Loading);
+        (static_cast<SystemQuest*>(context->systemManager->getSystem(TypeSystem::QUEST)))->resetMissions();
     });
     
     GUI::Button* loadButton = new GUI::Button(*context);
@@ -59,6 +60,7 @@ void MenuState::pulledAction() {
 void MenuState::pushedAction() {
     context->music->play(MusicID::MenuTheme);
     container.clearSelection();
+    context->nameLevel=new std::string("level1.xml");
 }
 
 

@@ -42,6 +42,8 @@ public:
      * @param level
      */
     QuadTree(int level);
+    virtual ~QuadTree();
+
     /**
      * Limpia el área
      */

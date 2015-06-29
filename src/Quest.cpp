@@ -64,6 +64,18 @@ void Quest::update(sf::Time dt) {
     }
 }
 
+void Quest::resetQuest() {
+    std::cout<<"por aqui"<<std::endl;
+    for (auto iter = doneList.rbegin(); iter != doneList.rend(); ++iter) {
+        (*iter)->setDone(false);
+        list.insert(list.begin(), *iter);
+        iter=std::vector<PartQuest*>::reverse_iterator(list.erase(iter.base()));
+        --iter;
+        
+    }
+    std::cout<<"termina"<<std::endl;
+}
+
 Quest::Quest(const Quest& orig) {
 }
 
