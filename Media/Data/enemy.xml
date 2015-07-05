@@ -1,11 +1,11 @@
 <Entity id="7">
 	<Properties>
-		<Property id="Position" x="250" y="600" />
-		<Property id="Life" value="100" />
+		<Property id="Position" x="300" y="600" />
 		<Property id="MaxVelocity" value="300" />
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" />
 		<Property id="query" x="35" y="35" />
+		<Property id="Talk" value="Bienvenido al inframundo, cuidado con las escaleras, no se sabe donde van. Creo que los lugares cambian cada vez."/>
 	</Properties>
 </Entity>
 

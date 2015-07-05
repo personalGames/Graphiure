@@ -47,9 +47,9 @@ void LoadingLevel::runTask() {
     //y por último el sistema de objetos
     SystemObjectsGame* objectsGame = static_cast<SystemObjectsGame*> (systemManager->getSystem(TypeSystem::OBJECTS));
 
-    level=context->nameLevel;
+    level = context->nameLevel;
     XMLDocument document = XMLDocument("Media/Levels/" + *level);
-    std::cout<<*level<<std::endl;
+    //std::cout<<*level<<std::endl;
     //recojo el xml del nivel
     IXMLParser* parser = IXMLParser::make_parser(TypeParser::MAP);
     parser->setResources(textures);
@@ -156,6 +156,26 @@ void LoadingLevel::runTask() {
         gameObject = FactoryGameObjects::getFactory("Villager");
         character = gameObject->prepareEntity(*data.propertiesEntity);
 
+        if (character->HasID("Drawable")) {
+            Actions result;
+            uint azar=randomInt(4);
+            switch(azar){
+                case 0:
+                    result=Up;
+                    break;
+                case 1:
+                    result=Right;
+                    break;
+                case 2:
+                    result=Left;
+                    break;
+                case 3:
+                    result=Down;
+                    break;
+            }
+            character->Get<StateMachineAnimation*>("Drawable")->update(result);
+            
+        }
         delete data.propertiesEntity;
         objectsGame->registerEntity(character);
     }
@@ -163,6 +183,7 @@ void LoadingLevel::runTask() {
 
     {
         sf::Lock lock(mutex);
+        sf::sleep(sf::milliseconds(1000));
         completion = 70;
     }
 

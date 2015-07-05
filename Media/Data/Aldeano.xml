@@ -5,8 +5,8 @@
 		<Property id="Drawable" numberAnimations="8"/>
 		<Property id="Collision" /> 
 		<Property id="Talk" value="Hola chico, me pregunto que haces.
-		Hace bastante buen tiempo y dan ganas de ir a nadar, si quieres ir, yendo al sur puedes encontrar un lago para refrescarte.
-		Pero ten cuidado con las sanguijuelas."/>
+Hace bastante buen tiempo y dan ganas de ir a nadar, si quieres ir, yendo al sur puedes encontrar un lago para refrescarte.
+Pero ten cuidado con las sanguijuelas."/>
 	</Properties>
 </Entity>
 

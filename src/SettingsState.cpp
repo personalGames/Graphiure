@@ -7,7 +7,6 @@
 
 #include "SettingsState.h"
 #include "Actions.h"
-#include "IDTextures.h"
 
 SettingsState::SettingsState(StateStack& stack, Context* context) : State(stack, context), GUIContainer() {
     backgroundSprite.setTexture(context->textures->get("TitleScreen.png"));
