@@ -59,7 +59,7 @@ var searchData=
   ['sounds',['sounds',['../classContext.html#ad83991aa701d0e22274e61e8bedb186f',1,'Context']]],
   ['spritenode',['SpriteNode',['../classSpriteNode.html',1,'SpriteNode'],['../classSpriteNode.html#ad72b769f4c57e5d77a8d6ba223f487b0',1,'SpriteNode::SpriteNode(const sf::Texture &amp;texture)'],['../classSpriteNode.html#ac12927969dcfd6f02da372e7e22c2af1',1,'SpriteNode::SpriteNode(const sf::Texture &amp;texture, const sf::IntRect &amp;textureRect)']]],
   ['stack',['stack',['../classState.html#a86c8d3a5a1ee89896828be85a785fb04',1,'State']]],
-  ['state',['State',['../classState.html',1,'State'],['../classState.html#ae4dcb70a7ad6a1bfe13fcda87600806d',1,'State::State()'],['../structTransition.html#ad7509cc6401e1038e17dbeea187c15ca',1,'Transition::state()']]],
+  ['state',['State',['../classState.html',1,'State'],['../structTransition.html#ad7509cc6401e1038e17dbeea187c15ca',1,'Transition::state()'],['../classState.html#ae4dcb70a7ad6a1bfe13fcda87600806d',1,'State::State()']]],
   ['stateid',['stateID',['../structPendingChange.html#ae91440b55b46e766b964b0c8fa08abdb',1,'PendingChange']]],
   ['statemachine',['StateMachine',['../classStateMachine.html',1,'StateMachine'],['../classStateMachine.html#abff0cdd38e44a9af31972fd01d599348',1,'StateMachine::StateMachine()']]],
   ['statemachineanimation',['StateMachineAnimation',['../classStateMachineAnimation.html',1,'StateMachineAnimation'],['../classStateMachineAnimation.html#ab3e0c7cea2112e3ae5a8093e3057a3b6',1,'StateMachineAnimation::StateMachineAnimation()']]],

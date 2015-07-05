@@ -8,7 +8,7 @@ var searchData=
   ['pausestate',['PauseState',['../classPauseState.html',1,'']]],
   ['pendingchange',['PendingChange',['../structPendingChange.html',1,'PendingChange'],['../structPendingChange.html#a61fb7f911e961d1e63a26ff92cc395e8',1,'PendingChange::PendingChange()']]],
   ['play',['play',['../classAnimatedSprite.html#a203b968f1cb374cca5dbc89716174020',1,'AnimatedSprite::play()'],['../classAnimatedSprite.html#a9ea345649a4e012d096bc04aafe1ecb0',1,'AnimatedSprite::play(const Animation &amp;animation)'],['../classMusicPlayer.html#a47a4a1f9d2e2e3dcdc5fa4d252580d76',1,'MusicPlayer::play()']]],
-  ['player',['Player',['../classPlayer.html',1,'Player'],['../classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081',1,'Context::player()'],['../classPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()']]],
+  ['player',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../classContext.html#a56c6b66908f8cb170e85a5a0e8dc6081',1,'Context::player()']]],
   ['point',['Point',['../structPoint.html',1,'']]],
   ['pointinside',['pointInside',['../structTriangle.html#a6e233369dff883d425b1077c4eb1fb39',1,'Triangle']]],
   ['pop',['pop',['../classCommandQueue.html#ac2dde510222b8df393b55978f4594194',1,'CommandQueue']]],

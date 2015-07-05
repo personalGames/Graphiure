@@ -116,17 +116,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    MissionStatus <a class="code" href="classSystemQuest.html#a6469f12a86c708f7661482aad85b1de7">getStatus</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSystemQuest.html#aca9a6f845d267fc9ef58d6531b341094">addQuest</a>(<a class="code" href="classQuest.html">Quest</a>* quest);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sf::String* <a class="code" href="classSystemQuest.html#a3c5b341ae4087af5b1a0a0386905bfd7">toString</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::vector&lt;Entity*&gt; entities;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::unordered_map&lt;int, Quest*&gt; quests;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEMQUEST_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="ttc" id="classSystemQuest_html_a3c5b341ae4087af5b1a0a0386905bfd7"><div class="ttname"><a href="classSystemQuest.html#a3c5b341ae4087af5b1a0a0386905bfd7">SystemQuest::toString</a></div><div class="ttdeci">sf::String * toString()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:55</div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSystemQuest.html#a3c0fb20076dcca040623e9c1f72e3ecf">resetMissions</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSystemQuest.html#aca9a6f845d267fc9ef58d6531b341094">addQuest</a>(<a class="code" href="classQuest.html">Quest</a>* quest);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sf::String* <a class="code" href="classSystemQuest.html#a3c5b341ae4087af5b1a0a0386905bfd7">toString</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::vector&lt;Entity*&gt; entities;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::unordered_map&lt;int, Quest*&gt; quests;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEMQUEST_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="ttc" id="classSystemQuest_html_a3c5b341ae4087af5b1a0a0386905bfd7"><div class="ttname"><a href="classSystemQuest.html#a3c5b341ae4087af5b1a0a0386905bfd7">SystemQuest::toString</a></div><div class="ttdeci">sf::String * toString()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:62</div></div>
 <div class="ttc" id="classQuest_html"><div class="ttname"><a href="classQuest.html">Quest</a></div><div class="ttdef"><b>Definition:</b> Quest.h:20</div></div>
 <div class="ttc" id="classSystemQuest_html_a6469f12a86c708f7661482aad85b1de7"><div class="ttname"><a href="classSystemQuest.html#a6469f12a86c708f7661482aad85b1de7">SystemQuest::getStatus</a></div><div class="ttdeci">MissionStatus getStatus()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:32</div></div>
 <div class="ttc" id="classSystemQuest_html_aca9a6f845d267fc9ef58d6531b341094"><div class="ttname"><a href="classSystemQuest.html#aca9a6f845d267fc9ef58d6531b341094">SystemQuest::addQuest</a></div><div class="ttdeci">void addQuest(Quest *quest)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:19</div></div>
@@ -134,15 +136,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <div class="ttc" id="classSystemQuest_html"><div class="ttname"><a href="classSystemQuest.html">SystemQuest</a></div><div class="ttdef"><b>Definition:</b> SystemQuest.h:22</div></div>
 <div class="ttc" id="classSystemQuest_html_a76892fc5b11bdb7132e7499e46eb7977"><div class="ttname"><a href="classSystemQuest.html#a76892fc5b11bdb7132e7499e46eb7977">SystemQuest::update</a></div><div class="ttdeci">virtual void update(sf::Time dt)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:23</div></div>
 <div class="ttc" id="classISystem_html"><div class="ttname"><a href="classISystem.html">ISystem</a></div><div class="ttdef"><b>Definition:</b> ISystem.h:18</div></div>
-<div class="ttc" id="classSystemQuest_html_a588e9982c16288af4675b67bf9177080"><div class="ttname"><a href="classSystemQuest.html#a588e9982c16288af4675b67bf9177080">SystemQuest::removedEntity</a></div><div class="ttdeci">virtual void removedEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:43</div></div>
+<div class="ttc" id="classSystemQuest_html_a588e9982c16288af4675b67bf9177080"><div class="ttname"><a href="classSystemQuest.html#a588e9982c16288af4675b67bf9177080">SystemQuest::removedEntity</a></div><div class="ttdeci">virtual void removedEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:50</div></div>
 <div class="ttc" id="classEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:18</div></div>
-<div class="ttc" id="classSystemQuest_html_a3c9f834570acf2277d4620e3ba16992d"><div class="ttname"><a href="classSystemQuest.html#a3c9f834570acf2277d4620e3ba16992d">SystemQuest::finalize</a></div><div class="ttdeci">virtual void finalize()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:47</div></div>
-<div class="ttc" id="classSystemQuest_html_a03ce5db7875898ebae8c9424c1888c37"><div class="ttname"><a href="classSystemQuest.html#a03ce5db7875898ebae8c9424c1888c37">SystemQuest::registerEntity</a></div><div class="ttdeci">virtual void registerEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:37</div></div>
-<div class="ttc" id="classSystemQuest_html_a48773430521559d0b5eaa931b53d8892"><div class="ttname"><a href="classSystemQuest.html#a48773430521559d0b5eaa931b53d8892">SystemQuest::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:51</div></div>
+<div class="ttc" id="classSystemQuest_html_a3c9f834570acf2277d4620e3ba16992d"><div class="ttname"><a href="classSystemQuest.html#a3c9f834570acf2277d4620e3ba16992d">SystemQuest::finalize</a></div><div class="ttdeci">virtual void finalize()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:54</div></div>
+<div class="ttc" id="classSystemQuest_html_a03ce5db7875898ebae8c9424c1888c37"><div class="ttname"><a href="classSystemQuest.html#a03ce5db7875898ebae8c9424c1888c37">SystemQuest::registerEntity</a></div><div class="ttdeci">virtual void registerEntity(Entity *entity)</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:44</div></div>
+<div class="ttc" id="classSystemQuest_html_a3c0fb20076dcca040623e9c1f72e3ecf"><div class="ttname"><a href="classSystemQuest.html#a3c0fb20076dcca040623e9c1f72e3ecf">SystemQuest::resetMissions</a></div><div class="ttdeci">void resetMissions()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:36</div></div>
+<div class="ttc" id="classSystemQuest_html_a48773430521559d0b5eaa931b53d8892"><div class="ttname"><a href="classSystemQuest.html#a48773430521559d0b5eaa931b53d8892">SystemQuest::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> SystemQuest.cpp:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Domingo, 5 de Julio de 2015 22:04:41 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

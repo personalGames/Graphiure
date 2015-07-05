@@ -11,6 +11,7 @@ var searchData=
   ['requeststackpush',['requestStackPush',['../classState.html#a0560458d8f71d6fc0e239e726552ea26',1,'State']]],
   ['requeststateclear',['requestStateClear',['../classState.html#a4b602bed9bf0179ee5f6748fce340ae6',1,'State']]],
   ['reset',['reset',['../classVelocity.html#a38b4d47e4a40753978b25e88f596f0f7',1,'Velocity']]],
+  ['resetmissions',['resetMissions',['../classSystemQuest.html#a3c0fb20076dcca040623e9c1f72e3ecf',1,'SystemQuest']]],
   ['resolvecollisions',['resolveCollisions',['../classSystemCollision.html#a90b827486b7e03081af461970a799adb',1,'SystemCollision']]],
   ['resourceholder',['ResourceHolder',['../classResourceHolder.html',1,'']]],
   ['resourceholder_3c_20idfonts_2c_20sf_3a_3afont_20_3e',['ResourceHolder&lt; IDFonts, sf::Font &gt;',['../classResourceHolder.html',1,'']]],

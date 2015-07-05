@@ -153,28 +153,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classQuest.html#ae25b1834eb58ae8db8088e2d73ccfa2c">  147</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classQuest.html#ae25b1834eb58ae8db8088e2d73ccfa2c">setInOrder</a>(<span class="keywordtype">bool</span> inOrder) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        this-&gt;inOrder = inOrder;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">  155</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::vector&lt;PartQuest*&gt;&amp; <a class="code" href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">getPartQuests</a>(){</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> list;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">bool</span> opened;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    std::vector&lt;PartQuest*&gt; list;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    std::vector&lt;PartQuest*&gt; doneList;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    sf::Time time;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    sf::Time timer;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    std::vector&lt;int&gt; idQuestToOpen;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    sf::String* textQuest;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">bool</span> inOrder;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* QUEST_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> resetQuest();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">  157</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::vector&lt;PartQuest*&gt;&amp; <a class="code" href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">getPartQuests</a>(){</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> list;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">bool</span> opened;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    std::vector&lt;PartQuest*&gt; list;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::vector&lt;PartQuest*&gt; doneList;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    sf::Time time;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    sf::Time timer;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::vector&lt;int&gt; idQuestToOpen;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    sf::String* textQuest;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">bool</span> inOrder;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* QUEST_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
 <div class="ttc" id="classQuest_html_a79d362e6866de68e47e831892b090ea0"><div class="ttname"><a href="classQuest.html#a79d362e6866de68e47e831892b090ea0">Quest::isInOrder</a></div><div class="ttdeci">bool isInOrder() const </div><div class="ttdef"><b>Definition:</b> Quest.h:139</div></div>
 <div class="ttc" id="classQuest_html_ac6db87bb6ec663c16d38b67baceb10ff"><div class="ttname"><a href="classQuest.html#ac6db87bb6ec663c16d38b67baceb10ff">Quest::isFinished</a></div><div class="ttdeci">bool isFinished()</div><div class="ttdef"><b>Definition:</b> Quest.cpp:25</div></div>
-<div class="ttc" id="classQuest_html_a94b8c670af1427c533782e367b4e4c93"><div class="ttname"><a href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">Quest::getPartQuests</a></div><div class="ttdeci">const std::vector&lt; PartQuest * &gt; &amp; getPartQuests()</div><div class="ttdef"><b>Definition:</b> Quest.h:155</div></div>
+<div class="ttc" id="classQuest_html_a94b8c670af1427c533782e367b4e4c93"><div class="ttname"><a href="classQuest.html#a94b8c670af1427c533782e367b4e4c93">Quest::getPartQuests</a></div><div class="ttdeci">const std::vector&lt; PartQuest * &gt; &amp; getPartQuests()</div><div class="ttdef"><b>Definition:</b> Quest.h:157</div></div>
 <div class="ttc" id="classQuest_html_a142441b8eff8bf90cf67ccd0a9a253b9"><div class="ttname"><a href="classQuest.html#a142441b8eff8bf90cf67ccd0a9a253b9">Quest::setOpened</a></div><div class="ttdeci">void setOpened(bool opened)</div><div class="ttdef"><b>Definition:</b> Quest.h:131</div></div>
 <div class="ttc" id="classQuest_html"><div class="ttname"><a href="classQuest.html">Quest</a></div><div class="ttdef"><b>Definition:</b> Quest.h:20</div></div>
 <div class="ttc" id="classQuest_html_ae4ec082cef55170dd6d8841cf2a4801d"><div class="ttname"><a href="classQuest.html#ae4ec082cef55170dd6d8841cf2a4801d">Quest::removeQuestOpen</a></div><div class="ttdeci">void removeQuestOpen(int id)</div><div class="ttdef"><b>Definition:</b> Quest.cpp:33</div></div>
@@ -194,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generado el Domingo, 21 de Junio de 2015 19:25:19 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Domingo, 5 de Julio de 2015 22:04:41 para Graphiure por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

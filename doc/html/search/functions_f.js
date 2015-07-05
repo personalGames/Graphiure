@@ -11,6 +11,7 @@ var searchData=
   ['requeststackpush',['requestStackPush',['../classState.html#a0560458d8f71d6fc0e239e726552ea26',1,'State']]],
   ['requeststateclear',['requestStateClear',['../classState.html#a4b602bed9bf0179ee5f6748fce340ae6',1,'State']]],
   ['reset',['reset',['../classVelocity.html#a38b4d47e4a40753978b25e88f596f0f7',1,'Velocity']]],
+  ['resetmissions',['resetMissions',['../classSystemQuest.html#a3c0fb20076dcca040623e9c1f72e3ecf',1,'SystemQuest']]],
   ['resolvecollisions',['resolveCollisions',['../classSystemCollision.html#a90b827486b7e03081af461970a799adb',1,'SystemCollision']]],
   ['retrieve',['retrieve',['../classQuadTree.html#a2ed00031c45ea4ea39719070ca962e5a',1,'QuadTree::retrieve(std::vector&lt; Entity * &gt; *list, Entity *object)'],['../classQuadTree.html#a2b96dd59f214926f73c709c52909eb3c',1,'QuadTree::retrieve(std::vector&lt; Entity * &gt; *list, sf::FloatRect rect)']]],
   ['run',['run',['../classApplication.html#a68965449404743bf1add056784d6cf81',1,'Application']]],
