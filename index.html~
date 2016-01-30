@@ -47,7 +47,7 @@
         <h2><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
         <p>Again, the video demo is not a good example of the quality, as you can see in screenshots, also with the bad camera effect when you move around. Does not exist on the game, it's just the bad software I used to record. Also, the music doesn't play, but not a big lost.</p>
         <iframe width="420" height="315" src="https://www.youtube.com/embed/f4RloqtdhNM" frameborder="0" allowfullscreen></iframe>
-        <br/><br/>
+        
          <h2><a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h2>
           <img src="images/title.png" alt="title">
 			<img src="images/game.png" alt="game">
