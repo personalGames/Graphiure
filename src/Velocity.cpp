@@ -11,6 +11,7 @@
 
 #include "Velocity.h"
 #include "Position.h"
+#include <cmath>
 
 #include <iostream>
 

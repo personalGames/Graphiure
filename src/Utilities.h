@@ -14,6 +14,7 @@
 #include <string.h>
 #include <cmath>
 #include <cassert>
+#include <random>
 
 void centerOrigin(sf::Sprite& sprite);
 void centerOrigin(sf::Text& text);
